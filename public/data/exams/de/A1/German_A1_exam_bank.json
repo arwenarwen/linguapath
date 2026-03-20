@@ -1,0 +1,701 @@
+{
+  "language": "German",
+  "code": "de",
+  "level": "A1",
+  "format": "multiple_choice",
+  "question_count": 20,
+  "feedback_audio_targets": {
+    "correct": [
+      "Richtig.",
+      "Korrekt.",
+      "Das ist richtig."
+    ],
+    "incorrect": [
+      "Falsch.",
+      "Nicht ganz richtig.",
+      "Leider falsch."
+    ]
+  },
+  "questions": [
+    {
+      "id": "A1_Q01",
+      "question_number": 1,
+      "question": "What does 'Hallo' mean?",
+      "options": [
+        "welcome",
+        "hello",
+        "good morning",
+        "good afternoon"
+      ],
+      "correct_answer": "hello",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Greetings & Introductions — Unit 1 Lesson 1: Saying hello & goodbye",
+      "audio_targets": {
+        "question": "What does 'Hallo' mean?",
+        "options": [
+          "welcome",
+          "hello",
+          "good morning",
+          "good afternoon"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q02",
+      "question_number": 2,
+      "question": "What does 'bitte' mean?",
+      "options": [
+        "you're welcome",
+        "please",
+        "sir / ma'am",
+        "sorry"
+      ],
+      "correct_answer": "please",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Greetings & Introductions — Unit 1 Lesson 2: Polite expressions",
+      "audio_targets": {
+        "question": "What does 'bitte' mean?",
+        "options": [
+          "you're welcome",
+          "please",
+          "sir / ma'am",
+          "sorry"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q03",
+      "question_number": 3,
+      "question": "What does 'Ich heiße...' mean?",
+      "options": [
+        "I'm a student",
+        "I'm from...",
+        "I am ... years old",
+        "My name is..."
+      ],
+      "correct_answer": "My name is...",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Greetings & Introductions — Unit 1 Lesson 3: Introducing yourself",
+      "audio_targets": {
+        "question": "What does 'Ich heiße...' mean?",
+        "options": [
+          "I'm a student",
+          "I'm from...",
+          "I am ... years old",
+          "My name is..."
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q04",
+      "question_number": 4,
+      "question": "What does 'Wie heißt du?' mean?",
+      "options": [
+        "What's your name?",
+        "How old are you?",
+        "What is your name?",
+        "He/She is ... years old"
+      ],
+      "correct_answer": "What is your name?",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "source_title": "Greetings & Introductions — Unit 1 Lesson 4: Asking names & ages",
+      "audio_targets": {
+        "question": "What does 'Wie heißt du?' mean?",
+        "options": [
+          "What's your name?",
+          "How old are you?",
+          "What is your name?",
+          "He/She is ... years old"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q05",
+      "question_number": 5,
+      "question": "What does 'Wie geht's?' mean?",
+      "options": [
+        "I'm fine",
+        "And you?",
+        "so-so",
+        "How are you?"
+      ],
+      "correct_answer": "How are you?",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Greetings & Introductions — Unit 1 Lesson 5: Simple small talk",
+      "audio_targets": {
+        "question": "What does 'Wie geht's?' mean?",
+        "options": [
+          "I'm fine",
+          "And you?",
+          "so-so",
+          "How are you?"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q06",
+      "question_number": 6,
+      "question": "What does 'Hallo' mean?",
+      "options": [
+        "take care",
+        "hello",
+        "good evening",
+        "good morning"
+      ],
+      "correct_answer": "hello",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Greetings & Introductions — Unit 1 Lesson 6: Review & practice",
+      "audio_targets": {
+        "question": "What does 'Hallo' mean?",
+        "options": [
+          "take care",
+          "hello",
+          "good evening",
+          "good morning"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q07",
+      "question_number": 7,
+      "question": "What does 'eins' mean?",
+      "options": [
+        "five",
+        "three",
+        "nine",
+        "one"
+      ],
+      "correct_answer": "one",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Numbers & Time — Unit 2 Lesson 1: Numbers 1–10",
+      "audio_targets": {
+        "question": "What does 'eins' mean?",
+        "options": [
+          "five",
+          "three",
+          "nine",
+          "one"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q08",
+      "question_number": 8,
+      "question": "What does 'elf' mean?",
+      "options": [
+        "eleven",
+        "fifteen",
+        "seventeen",
+        "sixteen"
+      ],
+      "correct_answer": "eleven",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Numbers & Time — Unit 2 Lesson 2: Numbers 11–20",
+      "audio_targets": {
+        "question": "What does 'elf' mean?",
+        "options": [
+          "eleven",
+          "fifteen",
+          "seventeen",
+          "sixteen"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q09",
+      "question_number": 9,
+      "question": "What does 'Wie heißt du?' mean?",
+      "options": [
+        "And what's your name?",
+        "How old are you?",
+        "He/She is ... years old",
+        "What is your name?"
+      ],
+      "correct_answer": "What is your name?",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Numbers & Time — Unit 2 Lesson 3: Asking names & ages",
+      "audio_targets": {
+        "question": "What does 'Wie heißt du?' mean?",
+        "options": [
+          "And what's your name?",
+          "How old are you?",
+          "He/She is ... years old",
+          "What is your name?"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q10",
+      "question_number": 10,
+      "question": "What does 'Montag' mean?",
+      "options": [
+        "Monday",
+        "Thursday",
+        "Sunday",
+        "the weekend"
+      ],
+      "correct_answer": "Monday",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Numbers & Time — Unit 2 Lesson 4: Days of the week",
+      "audio_targets": {
+        "question": "What does 'Montag' mean?",
+        "options": [
+          "Monday",
+          "Thursday",
+          "Sunday",
+          "the weekend"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q11",
+      "question_number": 11,
+      "question": "What does 'Januar' mean?",
+      "options": [
+        "September",
+        "January",
+        "March",
+        "February"
+      ],
+      "correct_answer": "January",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Numbers & Time — Unit 2 Lesson 5: Months & dates",
+      "audio_targets": {
+        "question": "What does 'Januar' mean?",
+        "options": [
+          "September",
+          "January",
+          "March",
+          "February"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q12",
+      "question_number": 12,
+      "question": "What does 'Wie spät ist es?' mean?",
+      "options": [
+        "the afternoon",
+        "What time is it?",
+        "at noon",
+        "It's three o'clock"
+      ],
+      "correct_answer": "What time is it?",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Numbers & Time — Unit 2 Lesson 6: Telling time",
+      "audio_targets": {
+        "question": "What does 'Wie spät ist es?' mean?",
+        "options": [
+          "the afternoon",
+          "What time is it?",
+          "at noon",
+          "It's three o'clock"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q13",
+      "question_number": 13,
+      "question": "What does 'eins' mean?",
+      "options": [
+        "one",
+        "two",
+        "three",
+        "four"
+      ],
+      "correct_answer": "one",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Numbers & Time — Unit 2 Lesson 7: Review & practice",
+      "audio_targets": {
+        "question": "What does 'eins' mean?",
+        "options": [
+          "one",
+          "two",
+          "three",
+          "four"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q14",
+      "question_number": 14,
+      "question": "What does 'Mutter' mean?",
+      "options": [
+        "grandfather",
+        "mother",
+        "grandmother",
+        "aunt"
+      ],
+      "correct_answer": "mother",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Family & People — Unit 3 Lesson 1: Family members",
+      "audio_targets": {
+        "question": "What does 'Mutter' mean?",
+        "options": [
+          "grandfather",
+          "mother",
+          "grandmother",
+          "aunt"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q15",
+      "question_number": 15,
+      "question": "What does 'Ich heiße...' mean?",
+      "options": [
+        "My name is...",
+        "likewise",
+        "I live in...",
+        "And you?"
+      ],
+      "correct_answer": "My name is...",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Family & People — Unit 3 Lesson 2: Introducing yourself",
+      "audio_targets": {
+        "question": "What does 'Ich heiße...' mean?",
+        "options": [
+          "My name is...",
+          "likewise",
+          "I live in...",
+          "And you?"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q16",
+      "question_number": 16,
+      "question": "What does 'Wie heißt du?' mean?",
+      "options": [
+        "I'm twenty years old",
+        "Are you older or younger?",
+        "I'm older",
+        "What is your name?"
+      ],
+      "correct_answer": "What is your name?",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Family & People — Unit 3 Lesson 3: Asking names & ages",
+      "audio_targets": {
+        "question": "What does 'Wie heißt du?' mean?",
+        "options": [
+          "I'm twenty years old",
+          "Are you older or younger?",
+          "I'm older",
+          "What is your name?"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q17",
+      "question_number": 17,
+      "question": "What does 'rot' mean?",
+      "options": [
+        "red",
+        "green",
+        "big",
+        "black"
+      ],
+      "correct_answer": "red",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Family & People — Unit 3 Lesson 4: Colors & adjectives",
+      "audio_targets": {
+        "question": "What does 'rot' mean?",
+        "options": [
+          "red",
+          "green",
+          "big",
+          "black"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q18",
+      "question_number": 18,
+      "question": "What does 'Wie geht's?' mean?",
+      "options": [
+        "How are you?",
+        "What's new?",
+        "not very well",
+        "fantastic"
+      ],
+      "correct_answer": "How are you?",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Family & People — Unit 3 Lesson 5: Simple small talk",
+      "audio_targets": {
+        "question": "What does 'Wie geht's?' mean?",
+        "options": [
+          "How are you?",
+          "What's new?",
+          "not very well",
+          "fantastic"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q19",
+      "question_number": 19,
+      "question": "What does 'Mutter' mean?",
+      "options": [
+        "sister",
+        "uncle",
+        "father",
+        "mother"
+      ],
+      "correct_answer": "mother",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Family & People — Unit 3 Lesson 6: Review & practice",
+      "audio_targets": {
+        "question": "What does 'Mutter' mean?",
+        "options": [
+          "sister",
+          "uncle",
+          "father",
+          "mother"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "A1_Q20",
+      "question_number": 20,
+      "question": "What does 'aufwachen' mean?",
+      "options": [
+        "to wake up",
+        "to arrive at work",
+        "to put on makeup",
+        "to leave home"
+      ],
+      "correct_answer": "to wake up",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Daily Life — Unit 4 Lesson 1: Morning routine",
+      "audio_targets": {
+        "question": "What does 'aufwachen' mean?",
+        "options": [
+          "to wake up",
+          "to arrive at work",
+          "to put on makeup",
+          "to leave home"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    }
+  ]
+}

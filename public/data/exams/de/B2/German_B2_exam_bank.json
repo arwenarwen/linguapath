@@ -1,0 +1,701 @@
+{
+  "language": "German",
+  "code": "de",
+  "level": "B2",
+  "format": "multiple_choice",
+  "question_count": 20,
+  "feedback_audio_targets": {
+    "correct": [
+      "Richtig.",
+      "Korrekt.",
+      "Das ist richtig."
+    ],
+    "incorrect": [
+      "Falsch.",
+      "Nicht ganz richtig.",
+      "Leider falsch."
+    ]
+  },
+  "questions": [
+    {
+      "id": "B2_Q01",
+      "question_number": 1,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "after all",
+        "to leave much to be desired",
+        "there's no other choice",
+        "to keep in mind"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Advanced Travel — Unit 1 Lesson 1: Advanced vocabulary & idioms",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "after all",
+          "to leave much to be desired",
+          "there's no other choice",
+          "to keep in mind"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q02",
+      "question_number": 2,
+      "question": "What does 'Zug' mean?",
+      "options": [
+        "metro",
+        "train",
+        "bicycle",
+        "bus"
+      ],
+      "correct_answer": "train",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Advanced Travel — Unit 1 Lesson 2: Transport vocabulary",
+      "audio_targets": {
+        "question": "What does 'Zug' mean?",
+        "options": [
+          "metro",
+          "train",
+          "bicycle",
+          "bus"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q03",
+      "question_number": 3,
+      "question": "What does 'der Kopf' mean?",
+      "options": [
+        "doctor",
+        "fever",
+        "I need help",
+        "head"
+      ],
+      "correct_answer": "head",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Advanced Travel — Unit 1 Lesson 3: Healthcare & body",
+      "audio_targets": {
+        "question": "What does 'der Kopf' mean?",
+        "options": [
+          "doctor",
+          "fever",
+          "I need help",
+          "head"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q04",
+      "question_number": 4,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "from time to time",
+        "after all",
+        "to keep in mind",
+        "by the way"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "source_title": "Advanced Travel — Unit 1 Lesson 4: Advanced vocabulary & idioms",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "from time to time",
+          "after all",
+          "to keep in mind",
+          "by the way"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q05",
+      "question_number": 5,
+      "question": "What does 'Wo ist...?' mean?",
+      "options": [
+        "it's here",
+        "Where is...?",
+        "to the right",
+        "to the left"
+      ],
+      "correct_answer": "Where is...?",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Advanced Travel — Unit 1 Lesson 5: Asking directions",
+      "audio_targets": {
+        "question": "What does 'Wo ist...?' mean?",
+        "options": [
+          "it's here",
+          "Where is...?",
+          "to the right",
+          "to the left"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q06",
+      "question_number": 6,
+      "question": "What does 'Zug' mean?",
+      "options": [
+        "ticket",
+        "taxi",
+        "airplane",
+        "train"
+      ],
+      "correct_answer": "train",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Advanced Travel — Unit 1 Lesson 6: Review & practice",
+      "audio_targets": {
+        "question": "What does 'Zug' mean?",
+        "options": [
+          "ticket",
+          "taxi",
+          "airplane",
+          "train"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q07",
+      "question_number": 7,
+      "question": "What does 'Geschäft' mean?",
+      "options": [
+        "size",
+        "shop",
+        "fitting room",
+        "color"
+      ],
+      "correct_answer": "shop",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Commerce & Services — Unit 2 Lesson 1: Shopping vocabulary",
+      "audio_targets": {
+        "question": "What does 'Geschäft' mean?",
+        "options": [
+          "size",
+          "shop",
+          "fitting room",
+          "color"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q08",
+      "question_number": 8,
+      "question": "What does 'bitte' mean?",
+      "options": [
+        "please",
+        "thank you",
+        "with pleasure",
+        "many thanks"
+      ],
+      "correct_answer": "please",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Commerce & Services — Unit 2 Lesson 2: Polite expressions",
+      "audio_targets": {
+        "question": "What does 'bitte' mean?",
+        "options": [
+          "please",
+          "thank you",
+          "with pleasure",
+          "many thanks"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q09",
+      "question_number": 9,
+      "question": "What does 'die Arbeit' mean?",
+      "options": [
+        "job/work",
+        "project",
+        "contract",
+        "meeting"
+      ],
+      "correct_answer": "job/work",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Commerce & Services — Unit 2 Lesson 3: Work & professional vocabulary",
+      "audio_targets": {
+        "question": "What does 'die Arbeit' mean?",
+        "options": [
+          "job/work",
+          "project",
+          "contract",
+          "meeting"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q10",
+      "question_number": 10,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "in my opinion",
+        "in conclusion",
+        "on the other hand",
+        "I disagree"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Commerce & Services — Unit 2 Lesson 4: Opinions & discussions",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "in my opinion",
+          "in conclusion",
+          "on the other hand",
+          "I disagree"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q11",
+      "question_number": 11,
+      "question": "What does 'die Arbeit' mean?",
+      "options": [
+        "office",
+        "deadline",
+        "contract",
+        "job/work"
+      ],
+      "correct_answer": "job/work",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Commerce & Services — Unit 2 Lesson 5: Review & practice",
+      "audio_targets": {
+        "question": "What does 'die Arbeit' mean?",
+        "options": [
+          "office",
+          "deadline",
+          "contract",
+          "job/work"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q12",
+      "question_number": 12,
+      "question": "What does 'aufwachen' mean?",
+      "options": [
+        "to have breakfast",
+        "to get dressed",
+        "to wake up",
+        "to leave home"
+      ],
+      "correct_answer": "to wake up",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "source_title": "Lifestyle & Habits — Unit 3 Lesson 1: Morning routine",
+      "audio_targets": {
+        "question": "What does 'aufwachen' mean?",
+        "options": [
+          "to have breakfast",
+          "to get dressed",
+          "to wake up",
+          "to leave home"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q13",
+      "question_number": 13,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "to keep in mind",
+        "by the way",
+        "there's no other choice",
+        "whatever"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Lifestyle & Habits — Unit 3 Lesson 2: Advanced vocabulary & idioms",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "to keep in mind",
+          "by the way",
+          "there's no other choice",
+          "whatever"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q14",
+      "question_number": 14,
+      "question": "What does 'lesen' mean?",
+      "options": [
+        "to swim",
+        "to listen to music",
+        "to cook",
+        "to read"
+      ],
+      "correct_answer": "to read",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Lifestyle & Habits — Unit 3 Lesson 3: Hobbies & free time",
+      "audio_targets": {
+        "question": "What does 'lesen' mean?",
+        "options": [
+          "to swim",
+          "to listen to music",
+          "to cook",
+          "to read"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q15",
+      "question_number": 15,
+      "question": "What does 'lesen' mean?",
+      "options": [
+        "to read",
+        "to swim",
+        "to travel",
+        "to dance"
+      ],
+      "correct_answer": "to read",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Lifestyle & Habits — Unit 3 Lesson 4: Review & practice",
+      "audio_targets": {
+        "question": "What does 'lesen' mean?",
+        "options": [
+          "to read",
+          "to swim",
+          "to travel",
+          "to dance"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q16",
+      "question_number": 16,
+      "question": "What does 'Brot' mean?",
+      "options": [
+        "bread",
+        "vegetables",
+        "cheese",
+        "fruit"
+      ],
+      "correct_answer": "bread",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Food & Culture — Unit 4 Lesson 1: Food vocabulary",
+      "audio_targets": {
+        "question": "What does 'Brot' mean?",
+        "options": [
+          "bread",
+          "vegetables",
+          "cheese",
+          "fruit"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q17",
+      "question_number": 17,
+      "question": "What does 'ein Tisch für zwei' mean?",
+      "options": [
+        "a table for two",
+        "the bill",
+        "gluten-free",
+        "the menu"
+      ],
+      "correct_answer": "a table for two",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Food & Culture — Unit 4 Lesson 2: Ordering in restaurants",
+      "audio_targets": {
+        "question": "What does 'ein Tisch für zwei' mean?",
+        "options": [
+          "a table for two",
+          "the bill",
+          "gluten-free",
+          "the menu"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q18",
+      "question_number": 18,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "I agree",
+        "in my opinion",
+        "on the other hand",
+        "it depends"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Food & Culture — Unit 4 Lesson 3: Opinions & discussions",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "I agree",
+          "in my opinion",
+          "on the other hand",
+          "it depends"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q19",
+      "question_number": 19,
+      "question": "What does 'Brot' mean?",
+      "options": [
+        "bread",
+        "chicken",
+        "cheese",
+        "vegetables"
+      ],
+      "correct_answer": "bread",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Food & Culture — Unit 4 Lesson 4: Review & practice",
+      "audio_targets": {
+        "question": "What does 'Brot' mean?",
+        "options": [
+          "bread",
+          "chicken",
+          "cheese",
+          "vegetables"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B2_Q20",
+      "question_number": 20,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "I agree",
+        "furthermore",
+        "I disagree",
+        "in my opinion"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Social & Opinions — Unit 5 Lesson 1: Opinions & discussions",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "I agree",
+          "furthermore",
+          "I disagree",
+          "in my opinion"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    }
+  ]
+}

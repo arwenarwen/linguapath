@@ -1,0 +1,147 @@
+Question 1: What does 'die Arbeit' mean?
+Option 1: office
+Option 2: deadline
+Option 3: job/work
+Option 4: salary
+Correct answer: job/work
+
+Question 2: What does 'berücksichtigen' mean?
+Option 1: to keep in mind
+Option 2: nevertheless
+Option 3: there's no other choice
+Option 4: in spite of
+Correct answer: to keep in mind
+
+Question 3: What does 'der Kopf' mean?
+Option 1: head
+Option 2: I need help
+Option 3: fever
+Option 4: I'm sick
+Correct answer: head
+
+Question 4: What does 'meiner Meinung nach' mean?
+Option 1: in my opinion
+Option 2: I disagree
+Option 3: it depends
+Option 4: I agree
+Correct answer: in my opinion
+
+Question 5: What does 'berücksichtigen' mean?
+Option 1: from time to time
+Option 2: to be up to date
+Option 3: by the way
+Option 4: to keep in mind
+Correct answer: to keep in mind
+
+Question 6: What does 'bitte' mean?
+Option 1: excuse me
+Option 2: please
+Option 3: thank you
+Option 4: with pleasure
+Correct answer: please
+
+Question 7: What does 'meiner Meinung nach' mean?
+Option 1: in my opinion
+Option 2: furthermore
+Option 3: it depends
+Option 4: I think that
+Correct answer: in my opinion
+
+Question 8: What does 'berücksichtigen' mean?
+Option 1: to leave much to be desired
+Option 2: to be up to date
+Option 3: from time to time
+Option 4: to keep in mind
+Correct answer: to keep in mind
+
+Question 9: What does 'meiner Meinung nach' mean?
+Option 1: on one hand
+Option 2: however
+Option 3: I think that
+Option 4: in my opinion
+Correct answer: in my opinion
+
+Question 10: What does 'die Arbeit' mean?
+Option 1: company
+Option 2: deadline
+Option 3: office
+Option 4: job/work
+Correct answer: job/work
+
+Question 11: What does 'die Arbeit' mean?
+Option 1: contract
+Option 2: job/work
+Option 3: boss
+Option 4: colleague
+Correct answer: job/work
+
+Question 12: What does 'meiner Meinung nach' mean?
+Option 1: I agree
+Option 2: however
+Option 3: in my opinion
+Option 4: I think that
+Correct answer: in my opinion
+
+Question 13: What does 'berücksichtigen' mean?
+Option 1: whatever
+Option 2: to keep in mind
+Option 3: from time to time
+Option 4: after all
+Correct answer: to keep in mind
+
+Question 14: What does 'berücksichtigen' mean?
+Option 1: from time to time
+Option 2: in spite of
+Option 3: to leave much to be desired
+Option 4: to keep in mind
+Correct answer: to keep in mind
+
+Question 15: What does 'berücksichtigen' mean?
+Option 1: to keep in mind
+Option 2: there's no other choice
+Option 3: to be up to date
+Option 4: to leave much to be desired
+Correct answer: to keep in mind
+
+Question 16: What does 'meiner Meinung nach' mean?
+Option 1: on one hand
+Option 2: it depends
+Option 3: in conclusion
+Option 4: in my opinion
+Correct answer: in my opinion
+
+Question 17: What does 'meiner Meinung nach' mean?
+Option 1: on the other hand
+Option 2: in my opinion
+Option 3: in conclusion
+Option 4: I think that
+Correct answer: in my opinion
+
+Question 18: What does 'die Arbeit' mean?
+Option 1: office
+Option 2: deadline
+Option 3: meeting
+Option 4: job/work
+Correct answer: job/work
+
+Question 19: What does 'die Arbeit' mean?
+Option 1: boss
+Option 2: job/work
+Option 3: office
+Option 4: contract
+Correct answer: job/work
+
+Question 20: What does 'meiner Meinung nach' mean?
+Option 1: in my opinion
+Option 2: I think that
+Option 3: however
+Option 4: furthermore
+Correct answer: in my opinion
+
+Feedback:
+Richtig.
+Korrekt.
+Das ist richtig.
+Falsch.
+Nicht ganz richtig.
+Leider falsch.

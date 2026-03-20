@@ -1,0 +1,147 @@
+Question 1: What does 'Hallo' mean?
+Option 1: welcome
+Option 2: hello
+Option 3: good morning
+Option 4: good afternoon
+Correct answer: hello
+
+Question 2: What does 'bitte' mean?
+Option 1: you're welcome
+Option 2: please
+Option 3: sir / ma'am
+Option 4: sorry
+Correct answer: please
+
+Question 3: What does 'Ich heiße...' mean?
+Option 1: I'm a student
+Option 2: I'm from...
+Option 3: I am ... years old
+Option 4: My name is...
+Correct answer: My name is...
+
+Question 4: What does 'Wie heißt du?' mean?
+Option 1: What's your name?
+Option 2: How old are you?
+Option 3: What is your name?
+Option 4: He/She is ... years old
+Correct answer: What is your name?
+
+Question 5: What does 'Wie geht's?' mean?
+Option 1: I'm fine
+Option 2: And you?
+Option 3: so-so
+Option 4: How are you?
+Correct answer: How are you?
+
+Question 6: What does 'Hallo' mean?
+Option 1: take care
+Option 2: hello
+Option 3: good evening
+Option 4: good morning
+Correct answer: hello
+
+Question 7: What does 'eins' mean?
+Option 1: five
+Option 2: three
+Option 3: nine
+Option 4: one
+Correct answer: one
+
+Question 8: What does 'elf' mean?
+Option 1: eleven
+Option 2: fifteen
+Option 3: seventeen
+Option 4: sixteen
+Correct answer: eleven
+
+Question 9: What does 'Wie heißt du?' mean?
+Option 1: And what's your name?
+Option 2: How old are you?
+Option 3: He/She is ... years old
+Option 4: What is your name?
+Correct answer: What is your name?
+
+Question 10: What does 'Montag' mean?
+Option 1: Monday
+Option 2: Thursday
+Option 3: Sunday
+Option 4: the weekend
+Correct answer: Monday
+
+Question 11: What does 'Januar' mean?
+Option 1: September
+Option 2: January
+Option 3: March
+Option 4: February
+Correct answer: January
+
+Question 12: What does 'Wie spät ist es?' mean?
+Option 1: the afternoon
+Option 2: What time is it?
+Option 3: at noon
+Option 4: It's three o'clock
+Correct answer: What time is it?
+
+Question 13: What does 'eins' mean?
+Option 1: one
+Option 2: two
+Option 3: three
+Option 4: four
+Correct answer: one
+
+Question 14: What does 'Mutter' mean?
+Option 1: grandfather
+Option 2: mother
+Option 3: grandmother
+Option 4: aunt
+Correct answer: mother
+
+Question 15: What does 'Ich heiße...' mean?
+Option 1: My name is...
+Option 2: likewise
+Option 3: I live in...
+Option 4: And you?
+Correct answer: My name is...
+
+Question 16: What does 'Wie heißt du?' mean?
+Option 1: I'm twenty years old
+Option 2: Are you older or younger?
+Option 3: I'm older
+Option 4: What is your name?
+Correct answer: What is your name?
+
+Question 17: What does 'rot' mean?
+Option 1: red
+Option 2: green
+Option 3: big
+Option 4: black
+Correct answer: red
+
+Question 18: What does 'Wie geht's?' mean?
+Option 1: How are you?
+Option 2: What's new?
+Option 3: not very well
+Option 4: fantastic
+Correct answer: How are you?
+
+Question 19: What does 'Mutter' mean?
+Option 1: sister
+Option 2: uncle
+Option 3: father
+Option 4: mother
+Correct answer: mother
+
+Question 20: What does 'aufwachen' mean?
+Option 1: to wake up
+Option 2: to arrive at work
+Option 3: to put on makeup
+Option 4: to leave home
+Correct answer: to wake up
+
+Feedback:
+Richtig.
+Korrekt.
+Das ist richtig.
+Falsch.
+Nicht ganz richtig.
+Leider falsch.

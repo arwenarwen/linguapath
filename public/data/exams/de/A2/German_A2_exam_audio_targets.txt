@@ -1,0 +1,147 @@
+Question 1: What does 'die Bushaltestelle' mean?
+Option 1: platform
+Option 2: transfer
+Option 3: departure
+Option 4: bus stop
+Correct answer: bus stop
+
+Question 2: What does 'die Bushaltestelle' mean?
+Option 1: bus stop
+Option 2: arrival
+Option 3: platform
+Option 4: return ticket
+Correct answer: bus stop
+
+Question 3: What does 'Zug' mean?
+Option 1: bus
+Option 2: airplane
+Option 3: stop
+Option 4: train
+Correct answer: train
+
+Question 4: What does 'Zug' mean?
+Option 1: taxi
+Option 2: train
+Option 3: bus
+Option 4: metro
+Correct answer: train
+
+Question 5: What does 'der Kopf' mean?
+Option 1: fever
+Option 2: pain/ache
+Option 3: head
+Option 4: doctor
+Correct answer: head
+
+Question 6: What does 'die Bushaltestelle' mean?
+Option 1: one-way ticket
+Option 2: return ticket
+Option 3: transfer
+Option 4: bus stop
+Correct answer: bus stop
+
+Question 7: What does 'Geschäft' mean?
+Option 1: price
+Option 2: discount
+Option 3: shop
+Option 4: expensive
+Correct answer: shop
+
+Question 8: What does 'Geschäft' mean?
+Option 1: cash
+Option 2: shop
+Option 3: price
+Option 4: expensive
+Correct answer: shop
+
+Question 9: What does 'bitte' mean?
+Option 1: please
+Option 2: sorry
+Option 3: pardon
+Option 4: excuse me
+Correct answer: please
+
+Question 10: What does 'Geschäft' mean?
+Option 1: size
+Option 2: fitting room
+Option 3: credit card
+Option 4: shop
+Correct answer: shop
+
+Question 11: What does 'ein Tisch für zwei' mean?
+Option 1: It was delicious!
+Option 2: the menu
+Option 3: a table for two
+Option 4: gluten-free
+Correct answer: a table for two
+
+Question 12: What does 'Geschäft' mean?
+Option 1: size
+Option 2: cheap
+Option 3: expensive
+Option 4: shop
+Correct answer: shop
+
+Question 13: What does 'aufwachen' mean?
+Option 1: to get dressed
+Option 2: to brush teeth
+Option 3: to wake up
+Option 4: to comb hair
+Correct answer: to wake up
+
+Question 14: What does 'aufwachen' mean?
+Option 1: to wake up
+Option 2: to get dressed
+Option 3: to brush teeth
+Option 4: to leave home
+Correct answer: to wake up
+
+Question 15: What does 'Wie spät ist es?' mean?
+Option 1: half past
+Option 2: What time is it?
+Option 3: quarter to
+Option 4: quarter past
+Correct answer: What time is it?
+
+Question 16: What does 'lesen' mean?
+Option 1: to read
+Option 2: to travel
+Option 3: to swim
+Option 4: to watch TV
+Correct answer: to read
+
+Question 17: What does 'aufwachen' mean?
+Option 1: to get up
+Option 2: to shower
+Option 3: to leave home
+Option 4: to wake up
+Correct answer: to wake up
+
+Question 18: What does 'Brot' mean?
+Option 1: rice
+Option 2: milk
+Option 3: fish
+Option 4: bread
+Correct answer: bread
+
+Question 19: What does 'ein Tisch für zwei' mean?
+Option 1: It was delicious!
+Option 2: I'm vegetarian
+Option 3: a table for two
+Option 4: What do you recommend?
+Correct answer: a table for two
+
+Question 20: What does 'Geschäft' mean?
+Option 1: expensive
+Option 2: size
+Option 3: shop
+Option 4: price
+Correct answer: shop
+
+Feedback:
+Richtig.
+Korrekt.
+Das ist richtig.
+Falsch.
+Nicht ganz richtig.
+Leider falsch.

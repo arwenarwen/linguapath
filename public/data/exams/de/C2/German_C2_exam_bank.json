@@ -1,0 +1,701 @@
+{
+  "language": "German",
+  "code": "de",
+  "level": "C2",
+  "format": "multiple_choice",
+  "question_count": 20,
+  "feedback_audio_targets": {
+    "correct": [
+      "Richtig.",
+      "Korrekt.",
+      "Das ist richtig."
+    ],
+    "incorrect": [
+      "Falsch.",
+      "Nicht ganz richtig.",
+      "Leider falsch."
+    ]
+  },
+  "questions": [
+    {
+      "id": "C2_Q01",
+      "question_number": 1,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "to be up to date",
+        "there's no other choice",
+        "nevertheless",
+        "to keep in mind"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Travel & Directions — Unit 1 Lesson 1: Advanced vocabulary & idioms",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "to be up to date",
+          "there's no other choice",
+          "nevertheless",
+          "to keep in mind"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q02",
+      "question_number": 2,
+      "question": "What does 'die Arbeit' mean?",
+      "options": [
+        "company",
+        "job/work",
+        "salary",
+        "office"
+      ],
+      "correct_answer": "job/work",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Travel & Directions — Unit 1 Lesson 2: Work & professional vocabulary",
+      "audio_targets": {
+        "question": "What does 'die Arbeit' mean?",
+        "options": [
+          "company",
+          "job/work",
+          "salary",
+          "office"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q03",
+      "question_number": 3,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "in conclusion",
+        "I think that",
+        "however",
+        "in my opinion"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Travel & Directions — Unit 1 Lesson 3: Opinions & discussions",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "in conclusion",
+          "I think that",
+          "however",
+          "in my opinion"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q04",
+      "question_number": 4,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "in spite of",
+        "nevertheless",
+        "to be up to date",
+        "to keep in mind"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Travel & Directions — Unit 1 Lesson 4: Review & practice",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "in spite of",
+          "nevertheless",
+          "to be up to date",
+          "to keep in mind"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q05",
+      "question_number": 5,
+      "question": "What does 'bitte' mean?",
+      "options": [
+        "thank you",
+        "please",
+        "with pleasure",
+        "many thanks"
+      ],
+      "correct_answer": "please",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Social & Formal — Unit 2 Lesson 1: Polite expressions",
+      "audio_targets": {
+        "question": "What does 'bitte' mean?",
+        "options": [
+          "thank you",
+          "please",
+          "with pleasure",
+          "many thanks"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q06",
+      "question_number": 6,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "in my opinion",
+        "furthermore",
+        "it depends",
+        "however"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Social & Formal — Unit 2 Lesson 2: Opinions & discussions",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "in my opinion",
+          "furthermore",
+          "it depends",
+          "however"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q07",
+      "question_number": 7,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "to keep in mind",
+        "to leave much to be desired",
+        "there's no other choice",
+        "whatever"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Social & Formal — Unit 2 Lesson 3: Advanced vocabulary & idioms",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "to keep in mind",
+          "to leave much to be desired",
+          "there's no other choice",
+          "whatever"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q08",
+      "question_number": 8,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "on one hand",
+        "in my opinion",
+        "however",
+        "furthermore"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Social & Formal — Unit 2 Lesson 4: Review & practice",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "on one hand",
+          "in my opinion",
+          "however",
+          "furthermore"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q09",
+      "question_number": 9,
+      "question": "What does 'die Arbeit' mean?",
+      "options": [
+        "salary",
+        "colleague",
+        "boss",
+        "job/work"
+      ],
+      "correct_answer": "job/work",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Professional — Unit 3 Lesson 1: Work & professional vocabulary",
+      "audio_targets": {
+        "question": "What does 'die Arbeit' mean?",
+        "options": [
+          "salary",
+          "colleague",
+          "boss",
+          "job/work"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q10",
+      "question_number": 10,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "to keep in mind",
+        "after all",
+        "there's no other choice",
+        "whatever"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Professional — Unit 3 Lesson 2: Advanced vocabulary & idioms",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "to keep in mind",
+          "after all",
+          "there's no other choice",
+          "whatever"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q11",
+      "question_number": 11,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "I think that",
+        "I agree",
+        "it depends",
+        "in my opinion"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Professional — Unit 3 Lesson 3: Opinions & discussions",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "I think that",
+          "I agree",
+          "it depends",
+          "in my opinion"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q12",
+      "question_number": 12,
+      "question": "What does 'die Arbeit' mean?",
+      "options": [
+        "project",
+        "salary",
+        "office",
+        "job/work"
+      ],
+      "correct_answer": "job/work",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Professional — Unit 3 Lesson 4: Review & practice",
+      "audio_targets": {
+        "question": "What does 'die Arbeit' mean?",
+        "options": [
+          "project",
+          "salary",
+          "office",
+          "job/work"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q13",
+      "question_number": 13,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "to be up to date",
+        "by the way",
+        "from time to time",
+        "to keep in mind"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Comprehension — Unit 4 Lesson 1: Advanced vocabulary & idioms",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "to be up to date",
+          "by the way",
+          "from time to time",
+          "to keep in mind"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q14",
+      "question_number": 14,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "there's no other choice",
+        "to keep in mind",
+        "in spite of",
+        "to be up to date"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Comprehension — Unit 4 Lesson 2: Advanced vocabulary & idioms",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "there's no other choice",
+          "to keep in mind",
+          "in spite of",
+          "to be up to date"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q15",
+      "question_number": 15,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "in my opinion",
+        "on the other hand",
+        "in conclusion",
+        "however"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Comprehension — Unit 4 Lesson 3: Opinions & discussions",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "in my opinion",
+          "on the other hand",
+          "in conclusion",
+          "however"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q16",
+      "question_number": 16,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "in my opinion",
+        "on the other hand",
+        "however",
+        "furthermore"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Comprehension — Unit 4 Lesson 4: Review & practice",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "in my opinion",
+          "on the other hand",
+          "however",
+          "furthermore"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q17",
+      "question_number": 17,
+      "question": "What does 'die Arbeit' mean?",
+      "options": [
+        "colleague",
+        "deadline",
+        "contract",
+        "job/work"
+      ],
+      "correct_answer": "job/work",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Writing — Unit 5 Lesson 1: Work & professional vocabulary",
+      "audio_targets": {
+        "question": "What does 'die Arbeit' mean?",
+        "options": [
+          "colleague",
+          "deadline",
+          "contract",
+          "job/work"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q18",
+      "question_number": 18,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "on the other hand",
+        "it depends",
+        "in conclusion",
+        "in my opinion"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Writing — Unit 5 Lesson 2: Opinions & discussions",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "on the other hand",
+          "it depends",
+          "in conclusion",
+          "in my opinion"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q19",
+      "question_number": 19,
+      "question": "What does 'berücksichtigen' mean?",
+      "options": [
+        "to keep in mind",
+        "in spite of",
+        "from time to time",
+        "by the way"
+      ],
+      "correct_answer": "to keep in mind",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Writing — Unit 5 Lesson 3: Advanced vocabulary & idioms",
+      "audio_targets": {
+        "question": "What does 'berücksichtigen' mean?",
+        "options": [
+          "to keep in mind",
+          "in spite of",
+          "from time to time",
+          "by the way"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "C2_Q20",
+      "question_number": 20,
+      "question": "What does 'meiner Meinung nach' mean?",
+      "options": [
+        "in my opinion",
+        "however",
+        "on the other hand",
+        "furthermore"
+      ],
+      "correct_answer": "in my opinion",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Mastery Writing — Unit 5 Lesson 4: Review & practice",
+      "audio_targets": {
+        "question": "What does 'meiner Meinung nach' mean?",
+        "options": [
+          "in my opinion",
+          "however",
+          "on the other hand",
+          "furthermore"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    }
+  ]
+}

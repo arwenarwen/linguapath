@@ -1,0 +1,147 @@
+Question 1: What does 'berücksichtigen' mean?
+Option 1: after all
+Option 2: to leave much to be desired
+Option 3: there's no other choice
+Option 4: to keep in mind
+Correct answer: to keep in mind
+
+Question 2: What does 'Zug' mean?
+Option 1: metro
+Option 2: train
+Option 3: bicycle
+Option 4: bus
+Correct answer: train
+
+Question 3: What does 'der Kopf' mean?
+Option 1: doctor
+Option 2: fever
+Option 3: I need help
+Option 4: head
+Correct answer: head
+
+Question 4: What does 'berücksichtigen' mean?
+Option 1: from time to time
+Option 2: after all
+Option 3: to keep in mind
+Option 4: by the way
+Correct answer: to keep in mind
+
+Question 5: What does 'Wo ist...?' mean?
+Option 1: it's here
+Option 2: Where is...?
+Option 3: to the right
+Option 4: to the left
+Correct answer: Where is...?
+
+Question 6: What does 'Zug' mean?
+Option 1: ticket
+Option 2: taxi
+Option 3: airplane
+Option 4: train
+Correct answer: train
+
+Question 7: What does 'Geschäft' mean?
+Option 1: size
+Option 2: shop
+Option 3: fitting room
+Option 4: color
+Correct answer: shop
+
+Question 8: What does 'bitte' mean?
+Option 1: please
+Option 2: thank you
+Option 3: with pleasure
+Option 4: many thanks
+Correct answer: please
+
+Question 9: What does 'die Arbeit' mean?
+Option 1: job/work
+Option 2: project
+Option 3: contract
+Option 4: meeting
+Correct answer: job/work
+
+Question 10: What does 'meiner Meinung nach' mean?
+Option 1: in my opinion
+Option 2: in conclusion
+Option 3: on the other hand
+Option 4: I disagree
+Correct answer: in my opinion
+
+Question 11: What does 'die Arbeit' mean?
+Option 1: office
+Option 2: deadline
+Option 3: contract
+Option 4: job/work
+Correct answer: job/work
+
+Question 12: What does 'aufwachen' mean?
+Option 1: to have breakfast
+Option 2: to get dressed
+Option 3: to wake up
+Option 4: to leave home
+Correct answer: to wake up
+
+Question 13: What does 'berücksichtigen' mean?
+Option 1: to keep in mind
+Option 2: by the way
+Option 3: there's no other choice
+Option 4: whatever
+Correct answer: to keep in mind
+
+Question 14: What does 'lesen' mean?
+Option 1: to swim
+Option 2: to listen to music
+Option 3: to cook
+Option 4: to read
+Correct answer: to read
+
+Question 15: What does 'lesen' mean?
+Option 1: to read
+Option 2: to swim
+Option 3: to travel
+Option 4: to dance
+Correct answer: to read
+
+Question 16: What does 'Brot' mean?
+Option 1: bread
+Option 2: vegetables
+Option 3: cheese
+Option 4: fruit
+Correct answer: bread
+
+Question 17: What does 'ein Tisch für zwei' mean?
+Option 1: a table for two
+Option 2: the bill
+Option 3: gluten-free
+Option 4: the menu
+Correct answer: a table for two
+
+Question 18: What does 'meiner Meinung nach' mean?
+Option 1: I agree
+Option 2: in my opinion
+Option 3: on the other hand
+Option 4: it depends
+Correct answer: in my opinion
+
+Question 19: What does 'Brot' mean?
+Option 1: bread
+Option 2: chicken
+Option 3: cheese
+Option 4: vegetables
+Correct answer: bread
+
+Question 20: What does 'meiner Meinung nach' mean?
+Option 1: I agree
+Option 2: furthermore
+Option 3: I disagree
+Option 4: in my opinion
+Correct answer: in my opinion
+
+Feedback:
+Richtig.
+Korrekt.
+Das ist richtig.
+Falsch.
+Nicht ganz richtig.
+Leider falsch.

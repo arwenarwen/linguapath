@@ -1,0 +1,701 @@
+{
+  "language": "German",
+  "code": "de",
+  "level": "B1",
+  "format": "multiple_choice",
+  "question_count": 20,
+  "feedback_audio_targets": {
+    "correct": [
+      "Richtig.",
+      "Korrekt.",
+      "Das ist richtig."
+    ],
+    "incorrect": [
+      "Falsch.",
+      "Nicht ganz richtig.",
+      "Leider falsch."
+    ]
+  },
+  "questions": [
+    {
+      "id": "B1_Q01",
+      "question_number": 1,
+      "question": "What does 'die Bushaltestelle' mean?",
+      "options": [
+        "arrival",
+        "bus stop",
+        "one-way ticket",
+        "schedule"
+      ],
+      "correct_answer": "bus stop",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Travel & Navigation — Unit 1 Lesson 1: Public transport vocabulary",
+      "audio_targets": {
+        "question": "What does 'die Bushaltestelle' mean?",
+        "options": [
+          "arrival",
+          "bus stop",
+          "one-way ticket",
+          "schedule"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q02",
+      "question_number": 2,
+      "question": "What does 'Wo ist...?' mean?",
+      "options": [
+        "the street",
+        "far from",
+        "the square",
+        "Where is...?"
+      ],
+      "correct_answer": "Where is...?",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Travel & Navigation — Unit 1 Lesson 2: Asking directions",
+      "audio_targets": {
+        "question": "What does 'Wo ist...?' mean?",
+        "options": [
+          "the street",
+          "far from",
+          "the square",
+          "Where is...?"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q03",
+      "question_number": 3,
+      "question": "What does 'Zug' mean?",
+      "options": [
+        "train",
+        "metro",
+        "ticket",
+        "airplane"
+      ],
+      "correct_answer": "train",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Travel & Navigation — Unit 1 Lesson 3: Transport vocabulary",
+      "audio_targets": {
+        "question": "What does 'Zug' mean?",
+        "options": [
+          "train",
+          "metro",
+          "ticket",
+          "airplane"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q04",
+      "question_number": 4,
+      "question": "What does 'der Kopf' mean?",
+      "options": [
+        "pharmacy",
+        "head",
+        "I need help",
+        "doctor"
+      ],
+      "correct_answer": "head",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Travel & Navigation — Unit 1 Lesson 4: Healthcare & body",
+      "audio_targets": {
+        "question": "What does 'der Kopf' mean?",
+        "options": [
+          "pharmacy",
+          "head",
+          "I need help",
+          "doctor"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q05",
+      "question_number": 5,
+      "question": "What does 'Wo ist...?' mean?",
+      "options": [
+        "Where is...?",
+        "the square",
+        "turn at",
+        "it's here"
+      ],
+      "correct_answer": "Where is...?",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Travel & Navigation — Unit 1 Lesson 5: Asking directions",
+      "audio_targets": {
+        "question": "What does 'Wo ist...?' mean?",
+        "options": [
+          "Where is...?",
+          "the square",
+          "turn at",
+          "it's here"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q06",
+      "question_number": 6,
+      "question": "What does 'Zug' mean?",
+      "options": [
+        "train",
+        "car",
+        "bus",
+        "metro"
+      ],
+      "correct_answer": "train",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Travel & Navigation — Unit 1 Lesson 6: Review & practice",
+      "audio_targets": {
+        "question": "What does 'Zug' mean?",
+        "options": [
+          "train",
+          "car",
+          "bus",
+          "metro"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q07",
+      "question_number": 7,
+      "question": "What does 'Geschäft' mean?",
+      "options": [
+        "shop",
+        "size",
+        "credit card",
+        "discount"
+      ],
+      "correct_answer": "shop",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Shopping & Services — Unit 2 Lesson 1: Shopping vocabulary",
+      "audio_targets": {
+        "question": "What does 'Geschäft' mean?",
+        "options": [
+          "shop",
+          "size",
+          "credit card",
+          "discount"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q08",
+      "question_number": 8,
+      "question": "What does 'Geschäft' mean?",
+      "options": [
+        "shop",
+        "fitting room",
+        "cash",
+        "expensive"
+      ],
+      "correct_answer": "shop",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Shopping & Services — Unit 2 Lesson 2: Shopping vocabulary",
+      "audio_targets": {
+        "question": "What does 'Geschäft' mean?",
+        "options": [
+          "shop",
+          "fitting room",
+          "cash",
+          "expensive"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q09",
+      "question_number": 9,
+      "question": "What does 'bitte' mean?",
+      "options": [
+        "please",
+        "pardon",
+        "no problem",
+        "thank you"
+      ],
+      "correct_answer": "please",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Shopping & Services — Unit 2 Lesson 3: Polite expressions",
+      "audio_targets": {
+        "question": "What does 'bitte' mean?",
+        "options": [
+          "please",
+          "pardon",
+          "no problem",
+          "thank you"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q10",
+      "question_number": 10,
+      "question": "What does 'Geschäft' mean?",
+      "options": [
+        "shop",
+        "price",
+        "expensive",
+        "credit card"
+      ],
+      "correct_answer": "shop",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Shopping & Services — Unit 2 Lesson 4: Shopping vocabulary",
+      "audio_targets": {
+        "question": "What does 'Geschäft' mean?",
+        "options": [
+          "shop",
+          "price",
+          "expensive",
+          "credit card"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q11",
+      "question_number": 11,
+      "question": "What does 'Geschäft' mean?",
+      "options": [
+        "shop",
+        "fitting room",
+        "cash",
+        "discount"
+      ],
+      "correct_answer": "shop",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Shopping & Services — Unit 2 Lesson 5: Review & practice",
+      "audio_targets": {
+        "question": "What does 'Geschäft' mean?",
+        "options": [
+          "shop",
+          "fitting room",
+          "cash",
+          "discount"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q12",
+      "question_number": 12,
+      "question": "What does 'aufwachen' mean?",
+      "options": [
+        "to put on makeup",
+        "to shower",
+        "to have breakfast",
+        "to wake up"
+      ],
+      "correct_answer": "to wake up",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Routines & Schedules — Unit 3 Lesson 1: Morning routine",
+      "audio_targets": {
+        "question": "What does 'aufwachen' mean?",
+        "options": [
+          "to put on makeup",
+          "to shower",
+          "to have breakfast",
+          "to wake up"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q13",
+      "question_number": 13,
+      "question": "What does 'Wie spät ist es?' mean?",
+      "options": [
+        "the afternoon",
+        "What time is it?",
+        "It's three o'clock",
+        "quarter to"
+      ],
+      "correct_answer": "What time is it?",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Routines & Schedules — Unit 3 Lesson 2: Telling time",
+      "audio_targets": {
+        "question": "What does 'Wie spät ist es?' mean?",
+        "options": [
+          "the afternoon",
+          "What time is it?",
+          "It's three o'clock",
+          "quarter to"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q14",
+      "question_number": 14,
+      "question": "What does 'lesen' mean?",
+      "options": [
+        "to read",
+        "to swim",
+        "to paint",
+        "to cook"
+      ],
+      "correct_answer": "to read",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Routines & Schedules — Unit 3 Lesson 3: Hobbies & free time",
+      "audio_targets": {
+        "question": "What does 'lesen' mean?",
+        "options": [
+          "to read",
+          "to swim",
+          "to paint",
+          "to cook"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q15",
+      "question_number": 15,
+      "question": "What does 'aufwachen' mean?",
+      "options": [
+        "to get up",
+        "to wake up",
+        "to shower",
+        "to arrive at work"
+      ],
+      "correct_answer": "to wake up",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Routines & Schedules — Unit 3 Lesson 4: Review & practice",
+      "audio_targets": {
+        "question": "What does 'aufwachen' mean?",
+        "options": [
+          "to get up",
+          "to wake up",
+          "to shower",
+          "to arrive at work"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q16",
+      "question_number": 16,
+      "question": "What does 'ein Tisch für zwei' mean?",
+      "options": [
+        "the bill",
+        "I'm vegetarian",
+        "Is service included?",
+        "a table for two"
+      ],
+      "correct_answer": "a table for two",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "source_title": "Food & Restaurants — Unit 4 Lesson 1: Ordering in restaurants",
+      "audio_targets": {
+        "question": "What does 'ein Tisch für zwei' mean?",
+        "options": [
+          "the bill",
+          "I'm vegetarian",
+          "Is service included?",
+          "a table for two"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q17",
+      "question_number": 17,
+      "question": "What does 'Brot' mean?",
+      "options": [
+        "meat",
+        "water",
+        "bread",
+        "milk"
+      ],
+      "correct_answer": "bread",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "source_title": "Food & Restaurants — Unit 4 Lesson 2: Food vocabulary",
+      "audio_targets": {
+        "question": "What does 'Brot' mean?",
+        "options": [
+          "meat",
+          "water",
+          "bread",
+          "milk"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q18",
+      "question_number": 18,
+      "question": "What does 'Geschäft' mean?",
+      "options": [
+        "discount",
+        "shop",
+        "price",
+        "expensive"
+      ],
+      "correct_answer": "shop",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Food & Restaurants — Unit 4 Lesson 3: Shopping vocabulary",
+      "audio_targets": {
+        "question": "What does 'Geschäft' mean?",
+        "options": [
+          "discount",
+          "shop",
+          "price",
+          "expensive"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q19",
+      "question_number": 19,
+      "question": "What does 'ein Tisch für zwei' mean?",
+      "options": [
+        "the menu",
+        "a table for two",
+        "gluten-free",
+        "I'm vegetarian"
+      ],
+      "correct_answer": "a table for two",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "source_title": "Food & Restaurants — Unit 4 Lesson 4: Review & practice",
+      "audio_targets": {
+        "question": "What does 'ein Tisch für zwei' mean?",
+        "options": [
+          "the menu",
+          "a table for two",
+          "gluten-free",
+          "I'm vegetarian"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    },
+    {
+      "id": "B1_Q20",
+      "question_number": 20,
+      "question": "What does 'lesen' mean?",
+      "options": [
+        "to read",
+        "to travel",
+        "to dance",
+        "to listen to music"
+      ],
+      "correct_answer": "to read",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "source_title": "Social & Invitations — Unit 5 Lesson 1: Hobbies & free time",
+      "audio_targets": {
+        "question": "What does 'lesen' mean?",
+        "options": [
+          "to read",
+          "to travel",
+          "to dance",
+          "to listen to music"
+        ],
+        "correct_feedback": [
+          "Richtig.",
+          "Korrekt.",
+          "Das ist richtig."
+        ],
+        "incorrect_feedback": [
+          "Falsch.",
+          "Nicht ganz richtig.",
+          "Leider falsch."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+Question 1: What does 'die Bushaltestelle' mean?
+Option 1: arrival
+Option 2: bus stop
+Option 3: one-way ticket
+Option 4: schedule
+Correct answer: bus stop
+
+Question 2: What does 'Wo ist...?' mean?
+Option 1: the street
+Option 2: far from
+Option 3: the square
+Option 4: Where is...?
+Correct answer: Where is...?
+
+Question 3: What does 'Zug' mean?
+Option 1: train
+Option 2: metro
+Option 3: ticket
+Option 4: airplane
+Correct answer: train
+
+Question 4: What does 'der Kopf' mean?
+Option 1: pharmacy
+Option 2: head
+Option 3: I need help
+Option 4: doctor
+Correct answer: head
+
+Question 5: What does 'Wo ist...?' mean?
+Option 1: Where is...?
+Option 2: the square
+Option 3: turn at
+Option 4: it's here
+Correct answer: Where is...?
+
+Question 6: What does 'Zug' mean?
+Option 1: train
+Option 2: car
+Option 3: bus
+Option 4: metro
+Correct answer: train
+
+Question 7: What does 'Geschäft' mean?
+Option 1: shop
+Option 2: size
+Option 3: credit card
+Option 4: discount
+Correct answer: shop
+
+Question 8: What does 'Geschäft' mean?
+Option 1: shop
+Option 2: fitting room
+Option 3: cash
+Option 4: expensive
+Correct answer: shop
+
+Question 9: What does 'bitte' mean?
+Option 1: please
+Option 2: pardon
+Option 3: no problem
+Option 4: thank you
+Correct answer: please
+
+Question 10: What does 'Geschäft' mean?
+Option 1: shop
+Option 2: price
+Option 3: expensive
+Option 4: credit card
+Correct answer: shop
+
+Question 11: What does 'Geschäft' mean?
+Option 1: shop
+Option 2: fitting room
+Option 3: cash
+Option 4: discount
+Correct answer: shop
+
+Question 12: What does 'aufwachen' mean?
+Option 1: to put on makeup
+Option 2: to shower
+Option 3: to have breakfast
+Option 4: to wake up
+Correct answer: to wake up
+
+Question 13: What does 'Wie spät ist es?' mean?
+Option 1: the afternoon
+Option 2: What time is it?
+Option 3: It's three o'clock
+Option 4: quarter to
+Correct answer: What time is it?
+
+Question 14: What does 'lesen' mean?
+Option 1: to read
+Option 2: to swim
+Option 3: to paint
+Option 4: to cook
+Correct answer: to read
+
+Question 15: What does 'aufwachen' mean?
+Option 1: to get up
+Option 2: to wake up
+Option 3: to shower
+Option 4: to arrive at work
+Correct answer: to wake up
+
+Question 16: What does 'ein Tisch für zwei' mean?
+Option 1: the bill
+Option 2: I'm vegetarian
+Option 3: Is service included?
+Option 4: a table for two
+Correct answer: a table for two
+
+Question 17: What does 'Brot' mean?
+Option 1: meat
+Option 2: water
+Option 3: bread
+Option 4: milk
+Correct answer: bread
+
+Question 18: What does 'Geschäft' mean?
+Option 1: discount
+Option 2: shop
+Option 3: price
+Option 4: expensive
+Correct answer: shop
+
+Question 19: What does 'ein Tisch für zwei' mean?
+Option 1: the menu
+Option 2: a table for two
+Option 3: gluten-free
+Option 4: I'm vegetarian
+Correct answer: a table for two
+
+Question 20: What does 'lesen' mean?
+Option 1: to read
+Option 2: to travel
+Option 3: to dance
+Option 4: to listen to music
+Correct answer: to read
+
+Feedback:
+Richtig.
+Korrekt.
+Das ist richtig.
+Falsch.
+Nicht ganz richtig.
+Leider falsch.
