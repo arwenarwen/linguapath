@@ -71,7 +71,9 @@ async function speak(text, langCode) {
     // Try static/pre-generated audio first (fastest, no API cost)
     const played = await tryPlayStaticAudio({ text, langCode });
     if (played) return;
-    // Fall through to ElevenLabs TTS for any language including German
+    // German uses static audio only — missing files should be pre-recorded
+    if (langCode === "de") return;
+    // Other languages fall through to ElevenLabs
     const res = await fetch("/api/tts", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({ text, langCode }),
