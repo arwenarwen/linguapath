@@ -1311,6 +1311,9 @@ function LandingPage({ onOpenAuth }) {
   const [wlEmail, setWlEmail] = useState("");
   const [wlState, setWlState] = useState("idle"); // idle | loading | done | error
   const [wlCount, setWlCount] = useState(null);
+  const [wlPosition, setWlPosition] = useState(null);
+  const [wlEarlyAccess, setWlEarlyAccess] = useState(false);
+  const [showWlPopup, setShowWlPopup] = useState(false);
 
   // Load waitlist count on mount
   useEffect(() => {
@@ -1328,14 +1331,17 @@ function LandingPage({ onOpenAuth }) {
     if (!email || !email.includes("@")) return;
     setWlState("loading");
     try {
-      const { error } = await supabase.from("waitlist").insert({ email, source: "landing" });
-      if (error && error.code === "23505") {
-        // Already signed up - still show success
-        setWlState("done");
-        return;
-      }
-      if (error) throw error;
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed");
+      setWlPosition(data.position);
+      setWlEarlyAccess(data.earlyAccess || false);
       setWlState("done");
+      setShowWlPopup(true);
       setWlCount(c => (c || 0) + 1);
     } catch {
       setWlState("error");
@@ -1353,6 +1359,42 @@ function LandingPage({ onOpenAuth }) {
   return (
     <div className="lp-root">
       <style>{CSS}</style>
+
+      {/* Fox waitlist success popup */}
+      {showWlPopup && (
+        <div onClick={() => setShowWlPopup(false)} style={{
+          position:"fixed", inset:0, zIndex:9999,
+          background:"rgba(74,40,0,0.45)", backdropFilter:"blur(8px)",
+          display:"flex", alignItems:"center", justifyContent:"center", padding:24,
+        }}>
+          <div onClick={e => e.stopPropagation()} style={{
+            background:"linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)",
+            borderRadius:28, padding:"36px 28px 32px", maxWidth:360, width:"100%",
+            textAlign:"center", boxShadow:"0 24px 80px rgba(74,40,0,0.3)",
+            border:"1.5px solid rgba(245,165,36,0.4)",
+            fontFamily:"'DM Sans',system-ui,sans-serif",
+          }}>
+            <div style={{ fontSize:72, marginBottom:8, lineHeight:1 }}>🦊</div>
+            <div style={{ fontSize:22, fontWeight:900, color:"#4a2800",
+              fontFamily:"'Playfair Display',Georgia,serif", marginBottom:10 }}>
+              You're on the trail!
+            </div>
+            <div style={{ fontSize:15, color:"rgba(107,61,16,0.75)", lineHeight:1.6, marginBottom:18 }}>
+              {wlEarlyAccess
+                ? <>You're <strong style={{color:"#f5a524"}}>#{wlPosition}</strong> on the waitlist 🎁<br/>You're in the first 50 — you get <strong style={{color:"#f5a524"}}>1 month of Pro free</strong> when we launch!</>
+                : <>You're <strong style={{color:"#f5a524"}}>#{wlPosition}</strong> on the waitlist.<br/>We'll email you the moment LinguaPath is ready. Stay tuned!</>
+              }
+            </div>
+            <button onClick={() => setShowWlPopup(false)} style={{
+              background:"linear-gradient(135deg,#f5a524,#c9a84c)", color:"#fff",
+              border:"none", borderRadius:16, padding:"13px 32px",
+              fontSize:15, fontWeight:800, cursor:"pointer",
+              boxShadow:"0 4px 18px rgba(245,165,36,0.4)",
+            }}>Let's go! 🏔️</button>
+          </div>
+        </div>
+      )}
+
       {/* NAV */}
       <nav className={"lp-nav" + (navSolid ? " solid" : "")}>
         <div className="lp-logo">LingoTrailz</div>

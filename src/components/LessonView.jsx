@@ -8,20 +8,22 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.error) {
       return (
-        <div style={{ minHeight:"100vh", background:"#0a0b10", color:"#f0ede6",
+        <div style={{ minHeight:"100vh",
+          background:"linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)", color:"#4a2800",
           display:"flex", flexDirection:"column", alignItems:"center",
           justifyContent:"center", padding:32, textAlign:"center",
           fontFamily:"'DM Sans',system-ui,sans-serif" }}>
-          <div style={{ fontSize:48, marginBottom:16 }}>⚠️</div>
-          <div style={{ fontSize:20, fontWeight:700, marginBottom:8 }}>Something went wrong</div>
-          <div style={{ fontSize:14, color:"rgba(107,61,16,.48)", marginBottom:28, maxWidth:340 }}>
-            {String(this.state.error?.message || this.state.error)}
+          <div style={{ fontSize:56, marginBottom:12 }}>🦊</div>
+          <div style={{ fontSize:20, fontWeight:800, marginBottom:8, color:"#4a2800" }}>Oops! Something went wrong</div>
+          <div style={{ fontSize:14, color:"rgba(107,61,16,0.6)", marginBottom:28, maxWidth:340, lineHeight:1.6 }}>
+            Don't worry — your progress is saved. Head back to the trail and try again!
           </div>
           <button onClick={this.props.onBack}
-            style={{ padding:"13px 28px", borderRadius:12, border:"none",
-              background:"linear-gradient(135deg,#c9a84c,#a8752e)", color:"#120d00",
-              fontWeight:700, fontSize:15, cursor:"pointer" }}>
-            ← Back to Course
+            style={{ padding:"13px 28px", borderRadius:14, border:"none",
+              background:"linear-gradient(135deg,#f5a524,#c9a84c)", color:"#fff",
+              fontWeight:800, fontSize:15, cursor:"pointer",
+              boxShadow:"0 4px 16px rgba(245,165,36,0.4)" }}>
+            🗺️ Back to Trail
           </button>
         </div>
       );
@@ -65,18 +67,11 @@ function saveMistake(userId, langCode, question, wrong, correct) {
 
 async function speak(text, langCode) {
   if (!text) return;
-
-  // German lessons are locked to local/static audio only.
-  // If no local file exists, fail silently instead of falling back to live TTS.
-  if (langCode === "de") {
-    await tryPlayStaticAudio({ text, langCode });
-    return;
-  }
-
   try {
+    // Try static/pre-generated audio first (fastest, no API cost)
     const played = await tryPlayStaticAudio({ text, langCode });
     if (played) return;
-
+    // Fall through to ElevenLabs TTS for any language including German
     const res = await fetch("/api/tts", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({ text, langCode }),
@@ -876,7 +871,18 @@ function SpeakQuestion({ q, langCode, onAnswer }) {
     rec.onresult = (e) => {
       const alts = Array.from(e.results[0]).map(r => normalize(r.transcript));
       const expected = normalize(q.ans);
-      const correct = alts.some(t => t === expected || t.includes(expected) || expected.includes(t));
+      const expectedWords = expected.split(/\s+/).filter(Boolean);
+      function isMatch(t) {
+        if (!t) return false;
+        if (t === expected) return true;
+        // heard contains expected or expected contains heard
+        if (t.includes(expected) || expected.includes(t)) return true;
+        // word-level: at least 60% of expected words were heard
+        const heardWords = t.split(/\s+/).filter(Boolean);
+        const matched = expectedWords.filter(w => heardWords.some(h => h === w || h.includes(w) || w.includes(h)));
+        return matched.length / Math.max(expectedWords.length, 1) >= 0.6;
+      }
+      const correct = alts.some(isMatch);
       setHeard(alts[0] || "");
       setStatus(correct ? "correct" : "wrong");
       onAnswer(correct);
@@ -1098,7 +1104,7 @@ function Quiz({ module, langCode, userId, onDone }) {
               : opt===chosen ? "wrong" : "dim";
             return (
               <button key={`${oi}-${opt}`} style={optionStyle(state, getLessonTheme())}
-                disabled={!!chosen} onClick={() => { if (q.type !== "en") speak(opt, langCode); pickMCQ(opt); }}>
+                disabled={!!chosen} onClick={() => { speak(opt, langCode); pickMCQ(opt); }}>
                 <span>{opt}</span>
                 {chosen && opt===q.ans && <span>✓</span>}
                 {chosen && opt===chosen && opt!==q.ans && <span>✗</span>}
