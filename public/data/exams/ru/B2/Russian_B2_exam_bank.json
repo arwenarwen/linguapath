@@ -1,0 +1,453 @@
+{
+  "language": "Russian",
+  "code": "ru",
+  "level": "B2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Притом что он был способен, он не очень старался\" mean in English?",
+      "options": [
+        "Though he was able, he did not try very hard",
+        "Because he was able, he didn't try hard",
+        "When he was able, he tried hard",
+        "Since he was able, he didn't work hard"
+      ],
+      "correct_answer": "Though he was able, he did not try very hard",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Притом что он был способен, он не очень старался"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Проблема заключается в том, что нам не хватает ресурсов\" mean in English?",
+      "options": [
+        "We have a problem about resources",
+        "The problem is that we lack resources",
+        "We lack problem of resources",
+        "Resources are problems for us"
+      ],
+      "correct_answer": "The problem is that we lack resources",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Проблема заключается в том, что нам не хватает ресурсов"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Было бы желательно, чтобы участники пришли на час раньше\" mean in English?",
+      "options": [
+        "Participants should come earlier",
+        "It would be desirable if participants came an hour earlier",
+        "Participants would come earlier",
+        "It is desired that participants come"
+      ],
+      "correct_answer": "It would be desirable if participants came an hour earlier",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Было бы желательно, чтобы участники пришли на час раньше"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Его интерпретация произведения была оригинальна и проницательна\" mean in English?",
+      "options": [
+        "His interpretation was original and had insight",
+        "His interpretation was original and sharp",
+        "His interpretation of the work was original and insightful",
+        "His work interpretation was original insight"
+      ],
+      "correct_answer": "His interpretation of the work was original and insightful",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Его интерпретация произведения была оригинальна и проницательна"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Следовательно, можно сделать вывод, что данные недостоверны\" mean in English?",
+      "options": [
+        "Therefore, the data is not reliable",
+        "Consequently, one can conclude that the data is unreliable",
+        "Therefore, data is not truth",
+        "So the data must not be trusted"
+      ],
+      "correct_answer": "Consequently, one can conclude that the data is unreliable",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Следовательно, можно сделать вывод, что данные недостоверны"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"С точки зрения экономики, этот проект имеет смысл\" mean in English?",
+      "options": [
+        "This project makes sense for economy",
+        "From an economic perspective, this project makes sense",
+        "Economically, this project is sense",
+        "This project economically means sense"
+      ],
+      "correct_answer": "From an economic perspective, this project makes sense",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "С точки зрения экономики, этот проект имеет смысл"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Несмотря на ___ на рынке, компания продолжает развиваться.",
+      "options": [
+        "конкуренцию",
+        "конкуренции",
+        "конкурента",
+        "конкурентов"
+      ],
+      "correct_answer": "конкуренцию",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Он предложил ___ стратегию, которую мы не рассматривали.",
+      "options": [
+        "альтернативную",
+        "альтернативный",
+        "альтернативное",
+        "альтернативных"
+      ],
+      "correct_answer": "альтернативную",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Это исследование ___ на анализе большого количества данных.",
+      "options": [
+        "основано",
+        "основано",
+        "основанное",
+        "основывается"
+      ],
+      "correct_answer": "основано",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: К сожалению, его ___ в этом деле привело к провалу.",
+      "options": [
+        "невежество",
+        "невежество",
+        "невежественность",
+        "невежественный"
+      ],
+      "correct_answer": "невежество",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Статистика ___, что большинство одобряет новый закон.",
+      "options": [
+        "показывает",
+        "показывает",
+        "показав",
+        "показавшая"
+      ],
+      "correct_answer": "показывает",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Его ___ к работе была замечена всеми коллегами.",
+      "options": [
+        "ответственность",
+        "ответственная",
+        "ответственно",
+        "ответственного"
+      ],
+      "correct_answer": "ответственность",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "First, we must understand the problem exists",
+        "First of all, one must understand that the problem has existed for a long time",
+        "We understand the problem first",
+        "The first problem is understanding"
+      ],
+      "correct_answer": "First of all, one must understand that the problem has existed for a long time",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Во-первых, нужно понять, что проблема существует уже давно"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Based on what was said, we can assume the following",
+        "From this, we can say something",
+        "The above means we can suppose",
+        "Based on previous, we suppose"
+      ],
+      "correct_answer": "Based on what was said, we can assume the following",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Исходя из вышесказанного, можно предположить следующее"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This approach was more effective unlike before",
+        "This approach, unlike the previous one, proved more effective",
+        "Unlike before, this approach was effective",
+        "This different approach was more effective"
+      ],
+      "correct_answer": "This approach, unlike the previous one, proved more effective",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Этот подход, в отличие от предыдущего, оказался более эффективным"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Data needs careful interpretation",
+        "It must be noted that the data requires careful interpretation",
+        "Data interpretation must be careful",
+        "We need to interpret this data carefully"
+      ],
+      "correct_answer": "It must be noted that the data requires careful interpretation",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Необходимо подчеркнуть, что данные требуют тщательной интерпретации"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Considering the complexity, the solution was good",
+        "Taking into account the complexity of the problem, the solution was quite good",
+        "The problem complexity was solved",
+        "The solution was complex but good"
+      ],
+      "correct_answer": "Taking into account the complexity of the problem, the solution was quite good",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Принимая во внимание сложность проблемы, решение было неплохим"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The proposal contains truth",
+        "It can be argued that the proposal contains an element of truth",
+        "The proposal has some truth",
+        "The truth element is in the proposal"
+      ],
+      "correct_answer": "It can be argued that the proposal contains an element of truth",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Можно утверждать, что предложение содержит элемент истины"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The situation is ambiguous and requires further clarification\"",
+      "options": [
+        "Ситуация двусмысленна и требует дальнейшего уточнения",
+        "Ситуация неясна и нужна дополнительная информация",
+        "Ситуация требует уточнение и является неоднозначной",
+        "Ситуация темная и нужно её разъяснить"
+      ],
+      "correct_answer": "Ситуация двусмысленна и требует дальнейшего уточнения",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"In view of the above facts, the hypothesis appears valid\"",
+      "options": [
+        "В свете указанных фактов гипотеза кажется обоснованной",
+        "По указанным фактам, гипотеза обоснована",
+        "Исходя из факторов, гипотеза действительна",
+        "Учитывая фактов, гипотеза валидна"
+      ],
+      "correct_answer": "В свете указанных фактов гипотеза кажется обоснованной",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The author's argument is based on insufficient evidence\"",
+      "options": [
+        "Аргумент автора основан на недостаточных доказательствах",
+        "Доказательства автора недостаточны",
+        "Автор недостаточно аргументирует",
+        "Аргумент базирован на нехватке фактов"
+      ],
+      "correct_answer": "Аргумент автора основан на недостаточных доказательствах",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"We should not dismiss this possibility without further investigation\"",
+      "options": [
+        "Мы не должны отвергать эту возможность без дальнейшего расследования",
+        "Мы не должны отклонить эту возможность не исследовав",
+        "Нельзя отказываться от возможности без изучения",
+        "Мы не примем эту возможность без исследования"
+      ],
+      "correct_answer": "Мы не должны отвергать эту возможность без дальнейшего расследования",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The implementation of these measures would significantly improve the situation\"",
+      "options": [
+        "Введение этих мер значительно улучшит ситуацию",
+        "Исполнение этих мер значительно улучшало ситуацию",
+        "Реализация этих мер значительно улучшила бы ситуацию",
+        "Эти меры значительно улучшают положение дел"
+      ],
+      "correct_answer": "Реализация этих мер значительно улучшила бы ситуацию",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"It stands to reason that such an approach lacks merit\"",
+      "options": [
+        "Понятно, что такой подход лишён достоинства",
+        "Очевидно, что такой подход не имеет смысла",
+        "Ясно, что подобный подход чужд качеств",
+        "Логично, что такой метод хуже других"
+      ],
+      "correct_answer": "Очевидно, что такой подход не имеет смысла",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Вам нужно критически оценить доклад коллеги. Вы говорите:",
+      "options": [
+        "Доклад хороший",
+        "Доклад содержит интересные идеи, однако я бы оспорил его главный вывод",
+        "Это полная чушь",
+        "Мне не нравится"
+      ],
+      "correct_answer": "Доклад содержит интересные идеи, однако я бы оспорил его главный вывод",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "В статье приводятся противоречивые данные. Вы пишете:",
+      "options": [
+        "Статья неправильна",
+        "На мой взгляд, авторам следовало бы объяснить расхождение в данных",
+        "Данные ошибочны",
+        "Это ничего не значит"
+      ],
+      "correct_answer": "На мой взгляд, авторам следовало бы объяснить расхождение в данных",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Вы предлагаете альтернативный подход к проблеме:",
+      "options": [
+        "Вот лучший способ",
+        "Вместо этого можно рассмотреть следующий подход",
+        "Это неправильно",
+        "Пусть делают по-другому"
+      ],
+      "correct_answer": "Вместо этого можно рассмотреть следующий подход",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "На собрании обсуждается компромисс. Вы говорите:",
+      "options": [
+        "Это плохой компромисс",
+        "Хотя это решение имеет недостатки, оно кажется приемлемым в текущих обстоятельствах",
+        "Это не сработает",
+        "Я против"
+      ],
+      "correct_answer": "Хотя это решение имеет недостатки, оно кажется приемлемым в текущих обстоятельствах",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Вы резюмируете дискуссию. Вы говорите:",
+      "options": [
+        "Все согласны",
+        "Подводя итог, мы согласились рассмотреть обе стороны вопроса и наметить план дальнейших действий",
+        "Мы говорили много",
+        "Всё хорошо"
+      ],
+      "correct_answer": "Подводя итог, мы согласились рассмотреть обе стороны вопроса и наметить план дальнейших действий",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Вы выражаете осторожность перед новым предложением:",
+      "options": [
+        "Идея хороша",
+        "Хотя идея привлекательна, я бы рекомендовал провести тщательный анализ рисков перед её реализацией",
+        "Это плохая идея",
+        "Нет, это не работает"
+      ],
+      "correct_answer": "Хотя идея привлекательна, я бы рекомендовал провести тщательный анализ рисков перед её реализацией",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

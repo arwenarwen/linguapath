@@ -1,0 +1,453 @@
+{
+  "language": "Spanish",
+  "code": "es",
+  "level": "A2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"desayuno\" mean in English?",
+      "options": [
+        "lunch",
+        "breakfast",
+        "dinner",
+        "snack"
+      ],
+      "correct_answer": "breakfast",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "desayuno"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"autobús\" mean in English?",
+      "options": [
+        "car",
+        "bus",
+        "train",
+        "bicycle"
+      ],
+      "correct_answer": "bus",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "autobús"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"mercado\" mean in English?",
+      "options": [
+        "market",
+        "school",
+        "hospital",
+        "garden"
+      ],
+      "correct_answer": "market",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "mercado"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"camisa\" mean in English?",
+      "options": [
+        "shoes",
+        "shirt",
+        "pants",
+        "socks"
+      ],
+      "correct_answer": "shirt",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "camisa"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"espejo\" mean in English?",
+      "options": [
+        "door",
+        "mirror",
+        "window",
+        "wall"
+      ],
+      "correct_answer": "mirror",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "espejo"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"ducha\" mean in English?",
+      "options": [
+        "shower",
+        "bath",
+        "sink",
+        "toilet"
+      ],
+      "correct_answer": "shower",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "ducha"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Ayer ___ al cine.",
+      "options": [
+        "voy",
+        "vas",
+        "fui",
+        "fue"
+      ],
+      "correct_answer": "fui",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Ella ___ en la biblioteca hace dos horas.",
+      "options": [
+        "estaba",
+        "está",
+        "estuvo",
+        "estará"
+      ],
+      "correct_answer": "estaba",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Nosotros ___ el desayuno a las 7 de la mañana.",
+      "options": [
+        "desayunamos",
+        "desayunaban",
+        "desayunaremos",
+        "desayunarían"
+      ],
+      "correct_answer": "desayunamos",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Mi hermana se ___ a las 6 de la mañana.",
+      "options": [
+        "levantaba",
+        "levanta",
+        "levantó",
+        "levantará"
+      ],
+      "correct_answer": "levanta",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Ellos ___ ropa nueva en la tienda.",
+      "options": [
+        "compré",
+        "compraron",
+        "compraré",
+        "compraría"
+      ],
+      "correct_answer": "compraron",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: ¿A qué hora ___ te acuestas?",
+      "options": [
+        "normalmente",
+        "siempre",
+        "nunca",
+        "todavía"
+      ],
+      "correct_answer": "normalmente",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "what time did you leave work?",
+        "when will you leave work?",
+        "what time do you leave work?",
+        "why did you leave work?"
+      ],
+      "correct_answer": "what time did you leave work?",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "¿a qué hora saliste del trabajo?"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I want to go shopping",
+        "I need to go shopping",
+        "I like to go shopping",
+        "I am going shopping"
+      ],
+      "correct_answer": "I need to go shopping",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "necesito ir de compras"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "what color is this dress?",
+        "where is this dress?",
+        "how much does this dress cost?",
+        "do you like this dress?"
+      ],
+      "correct_answer": "how much does this dress cost?",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "¿cuánto cuesta este vestido?"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "please give me a coffee",
+        "I want a coffee",
+        "coffee is good",
+        "do you have coffee?"
+      ],
+      "correct_answer": "please give me a coffee",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "por favor, dame un café"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I have a headache",
+        "my head is big",
+        "I lost my head",
+        "I found my head"
+      ],
+      "correct_answer": "I have a headache",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "me duele la cabeza"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "how will you get home?",
+        "how did you get home?",
+        "how do you get home?",
+        "where is your home?"
+      ],
+      "correct_answer": "how did you get home?",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "¿cómo llegaste a casa?"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"I went to the market yesterday\"",
+      "options": [
+        "Fui al mercado ayer",
+        "Voy al mercado ayer",
+        "Iré al mercado ayer",
+        "Iba al mercado ayer"
+      ],
+      "correct_answer": "Fui al mercado ayer",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"She was watching television\"",
+      "options": [
+        "Ella miraba televisión",
+        "Ella mira televisión",
+        "Ella mirará televisión",
+        "Ella ha mirado televisión"
+      ],
+      "correct_answer": "Ella miraba televisión",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Can you help me, please?\"",
+      "options": [
+        "¿Puedes ayudarme, por favor?",
+        "¿Pueden ayudarme, por favor?",
+        "¿Quieres ayudarme, por favor?",
+        "¿Me ayudas, por favor?"
+      ],
+      "correct_answer": "¿Puedes ayudarme, por favor?",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"I get dressed at 7 in the morning\"",
+      "options": [
+        "Me visto a las 7 de la mañana",
+        "Me visto en las 7 de la mañana",
+        "Te vistes a las 7 de la mañana",
+        "Se viste a las 7 de la mañana"
+      ],
+      "correct_answer": "Me visto a las 7 de la mañana",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"What did you do last weekend?\"",
+      "options": [
+        "¿Qué hiciste el fin de semana pasado?",
+        "¿Qué haces el fin de semana pasado?",
+        "¿Qué harás el fin de semana pasado?",
+        "¿Qué hacías el fin de semana pasado?"
+      ],
+      "correct_answer": "¿Qué hiciste el fin de semana pasado?",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"They were eating lunch when I arrived\"",
+      "options": [
+        "Comían almuerzo cuando llegué",
+        "Están comiendo almuerzo cuando llego",
+        "Comieron almuerzo cuando llegué",
+        "Comerán almuerzo cuando llegue"
+      ],
+      "correct_answer": "Comían almuerzo cuando llegué",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "¿Cuál es el orden correcto de comidas en un día?",
+      "options": [
+        "almuerzo, desayuno, cena",
+        "desayuno, almuerzo, cena",
+        "cena, desayuno, almuerzo",
+        "almuerzo, cena, desayuno"
+      ],
+      "correct_answer": "desayuno, almuerzo, cena",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Si tienes mucho dinero, ¿qué puedes hacer?",
+      "options": [
+        "trabajar más",
+        "ir de vacaciones",
+        "estudiar menos",
+        "dormir todo el día"
+      ],
+      "correct_answer": "ir de vacaciones",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "¿Cuál es una actividad típica de fin de semana?",
+      "options": [
+        "ir a la oficina",
+        "trabajar en la fábrica",
+        "pasar tiempo con familia y amigos",
+        "hacer tarea escolar"
+      ],
+      "correct_answer": "pasar tiempo con familia y amigos",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "¿Qué necesitas para entrar a un autobús?",
+      "options": [
+        "un pasaporte",
+        "un billete o tarjeta de transporte",
+        "una identificación",
+        "una llave"
+      ],
+      "correct_answer": "un billete o tarjeta de transporte",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "¿Cuál es la mejor acción si te duele el brazo?",
+      "options": [
+        "correr",
+        "ir al médico",
+        "jugar deportes",
+        "nadar"
+      ],
+      "correct_answer": "ir al médico",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "¿En qué tienda compras ropa?",
+      "options": [
+        "en la farmacia",
+        "en la tienda de ropa",
+        "en la carnicería",
+        "en el banco"
+      ],
+      "correct_answer": "en la tienda de ropa",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

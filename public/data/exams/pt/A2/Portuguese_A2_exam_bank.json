@@ -1,0 +1,453 @@
+{
+  "language": "Portuguese",
+  "code": "pt",
+  "level": "A2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Ontem fui ao cinema.\" mean in English?",
+      "options": [
+        "I go to the cinema",
+        "I will go to the cinema",
+        "I went to the cinema yesterday",
+        "I am going to the cinema"
+      ],
+      "correct_answer": "I went to the cinema yesterday",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Ontem fui ao cinema."
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Ela estava a estudar quando chegou a polícia.\" mean in English?",
+      "options": [
+        "She is studying when police arrives",
+        "She studies when police arrived",
+        "She was studying when the police arrived",
+        "She studies and police arrived"
+      ],
+      "correct_answer": "She was studying when the police arrived",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Ela estava a estudar quando chegou a polícia."
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Vou comprar pão na padaria.\" mean in English?",
+      "options": [
+        "I buy bread at the bakery",
+        "I will buy bread at the bakery",
+        "I bought bread at the bakery",
+        "I am buying bread at the bakery"
+      ],
+      "correct_answer": "I will buy bread at the bakery",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Vou comprar pão na padaria."
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Quando vejo um filme antigo, gosto muito.\" mean in English?",
+      "options": [
+        "When I see an old film, I like it a lot",
+        "When I saw an old film, I liked it",
+        "When I will see an old film, I will like it",
+        "When I am seeing an old film, I am liking"
+      ],
+      "correct_answer": "When I see an old film, I like it a lot",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Quando vejo um filme antigo, gosto muito."
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"O livro sobre história é interessante.\" mean in English?",
+      "options": [
+        "The book in history is interested",
+        "The book of history is interesting",
+        "The book about history is interesting",
+        "The history book very interesting"
+      ],
+      "correct_answer": "The book about history is interesting",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "O livro sobre história é interessante."
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Não tenho mais dinheiro para comprar esse carro.\" mean in English?",
+      "options": [
+        "I don't have much money to buy this car",
+        "I don't have any more money to buy this car",
+        "I have no money in the car",
+        "I don't buy cars with money"
+      ],
+      "correct_answer": "I don't have any more money to buy this car",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Não tenho mais dinheiro para comprar esse carro."
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Ontem ___ uma carta importante.",
+      "options": [
+        "recebia",
+        "recebi",
+        "recebo",
+        "receberia"
+      ],
+      "correct_answer": "recebi",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Se eu tivesse tempo, ___ contigo ao parque.",
+      "options": [
+        "vou",
+        "iria",
+        "vou ir",
+        "fui"
+      ],
+      "correct_answer": "iria",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Ela está ___ na cozinha.",
+      "options": [
+        "cozinhar",
+        "cozinhando",
+        "cozinhada",
+        "cozinha"
+      ],
+      "correct_answer": "cozinhando",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: O comboio ___ às 15h de Lisboa.",
+      "options": [
+        "partiu",
+        "parte",
+        "partia",
+        "partirá"
+      ],
+      "correct_answer": "parte",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Nós ___ para o trabalho de carro todos os dias.",
+      "options": [
+        "fomos",
+        "vamos",
+        "iremos",
+        "íamos"
+      ],
+      "correct_answer": "vamos",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Você ___ essa música antes?",
+      "options": [
+        "ouve",
+        "ouviu",
+        "ouve",
+        "ouvia"
+      ],
+      "correct_answer": "ouviu",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I am spending a week in Paris",
+        "I spent a week in Paris",
+        "I will spend a week in Paris",
+        "I have weeks in Paris"
+      ],
+      "correct_answer": "I spent a week in Paris",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Passei uma semana em Paris."
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I went to the supermarket to buy food",
+        "I go to the supermarket to buy food",
+        "I will go to the supermarket to buy food",
+        "I am at the supermarket buying food"
+      ],
+      "correct_answer": "I will go to the supermarket to buy food",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Vou ao supermercado comprar comida."
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "He was sleeping during the film",
+        "He has slept during the film",
+        "He had slept during the film",
+        "He sleeps during the film"
+      ],
+      "correct_answer": "He had slept during the film",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Ele havia dormido durante o filme."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "What is your profession?",
+        "What was your profession before?",
+        "What will be your profession?",
+        "What profession do you want?"
+      ],
+      "correct_answer": "What was your profession before?",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Qual era a sua profissão antes?"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The restaurant is near the station",
+        "The restaurant was near the station",
+        "The restaurant will be near the station",
+        "The restaurant has been near the station"
+      ],
+      "correct_answer": "The restaurant was near the station",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "O restaurante ficava perto da estação."
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I visit five countries in two years",
+        "I have visited five countries in two years",
+        "I will visit five countries in two years",
+        "I am visiting five countries in two years"
+      ],
+      "correct_answer": "I have visited five countries in two years",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Já visitei cinco países em dois anos."
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Yesterday I bought a new shirt.\"",
+      "options": [
+        "Ontem comprei uma camisa nova.",
+        "Ontem compro uma camisa nova.",
+        "Ontem vou comprar uma camisa nova.",
+        "Ontem estava comprando uma camisa nova."
+      ],
+      "correct_answer": "Ontem comprei uma camisa nova.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"I was living in the countryside before.\"",
+      "options": [
+        "Estou a viver no campo antes.",
+        "Vivia no campo antes.",
+        "Vou viver no campo antes.",
+        "Tenho vivido no campo antes."
+      ],
+      "correct_answer": "Vivia no campo antes.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"They were going to travel in August.\"",
+      "options": [
+        "Eles iam viajar em agosto.",
+        "Eles viajam em agosto.",
+        "Eles viajaram em agosto.",
+        "Eles vão viajar em agosto."
+      ],
+      "correct_answer": "Eles iam viajar em agosto.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"If you had studied, you would have passed.\"",
+      "options": [
+        "Se estudavas, passavas.",
+        "Se estudasses, passes.",
+        "Se tivesses estudado, terias passado.",
+        "Se estudavas, terias passado."
+      ],
+      "correct_answer": "Se tivesses estudado, terias passado.",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"She has been working here for three years.\"",
+      "options": [
+        "Ela trabalha aqui há três anos.",
+        "Ela trabalhava aqui há três anos.",
+        "Ela trabalhou aqui há três anos.",
+        "Ela estará trabalhando aqui há três anos."
+      ],
+      "correct_answer": "Ela trabalha aqui há três anos.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The patient is being examined by the doctor.\"",
+      "options": [
+        "O doente é examinado pelo médico.",
+        "O doente está sendo examinado pelo médico.",
+        "O doente foi examinado pelo médico.",
+        "O doente será examinado pelo médico."
+      ],
+      "correct_answer": "O doente está sendo examinado pelo médico.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Você vai a um restaurante. O garçom pergunta: 'Que deseja beber?' Qual resposta é apropriada?",
+      "options": [
+        "Tenho muita fome.",
+        "Um suco de laranja, por favor.",
+        "A conta, por favor.",
+        "Está bom o prato?"
+      ],
+      "correct_answer": "Um suco de laranja, por favor.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Seu colega diz 'Vou viajar para o Brasil no próximo mês.' Como você responde naturalmente?",
+      "options": [
+        "Viajei para o Brasil.",
+        "Que legal! Quando vai?",
+        "Não gosto de viajar.",
+        "Você viaja sempre?"
+      ],
+      "correct_answer": "Que legal! Quando vai?",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Você está em uma loja. O vendedor pergunta 'Qual é o seu tamanho?' O que responde?",
+      "options": [
+        "Gosto dessa cor.",
+        "Uso tamanho M.",
+        "Quanto custa?",
+        "Você tem outros?"
+      ],
+      "correct_answer": "Uso tamanho M.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Seu amigo chega atrasado. O que você diz?",
+      "options": [
+        "Chegaste a tempo!",
+        "Estou feliz!",
+        "Demoraste muito!",
+        "Que hora bonita!"
+      ],
+      "correct_answer": "Demoraste muito!",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Você vê um acidente na rua. O que faz primeiro?",
+      "options": [
+        "Continuo caminhando.",
+        "Chamo a polícia e oferço ajuda.",
+        "Tiro uma fotografia.",
+        "Vou para casa."
+      ],
+      "correct_answer": "Chamo a polícia e oferço ajuda.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Um colega diz 'Passei na prova de português!' Como você responde?",
+      "options": [
+        "Que pena!",
+        "Parabéns! Bem-vindo!",
+        "Parabéns! Fico feliz por ti.",
+        "Estudaste bem?"
+      ],
+      "correct_answer": "Parabéns! Fico feliz por ti.",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    }
+  ]
+}

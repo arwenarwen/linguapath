@@ -1,0 +1,453 @@
+{
+  "language": "Japanese",
+  "code": "ja",
+  "level": "A2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"毎日勉強しています。\" mean in English?",
+      "options": [
+        "I studied every day",
+        "I study every day (ongoing)",
+        "I will study every day",
+        "I studied every day (habitual)"
+      ],
+      "correct_answer": "I study every day (ongoing)",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "毎日勉強しています。"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"コンビニに行きたいです。\" mean in English?",
+      "options": [
+        "I want to go to the convenience store",
+        "I have to go to the convenience store",
+        "I went to the convenience store",
+        "I can go to the convenience store"
+      ],
+      "correct_answer": "I want to go to the convenience store",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "コンビニに行きたいです。"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"カレーライスを食べて、コーヒーを飲みました。\" mean in English?",
+      "options": [
+        "I drank coffee and ate curry rice",
+        "I ate curry rice and drank coffee",
+        "I want to eat curry rice and drink coffee",
+        "I can eat curry rice and drink coffee"
+      ],
+      "correct_answer": "I ate curry rice and drank coffee",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "カレーライスを食べて、コーヒーを飲みました。"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"音楽を聞くのが好きです。\" mean in English?",
+      "options": [
+        "I like to listen to music",
+        "I listen to music",
+        "I want to listen to music",
+        "I am listening to music"
+      ],
+      "correct_answer": "I like to listen to music",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "音楽を聞くのが好きです。"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"昨日、雨が降っていました。\" mean in English?",
+      "options": [
+        "It was raining yesterday",
+        "It rained yesterday",
+        "It will rain yesterday",
+        "It was about to rain yesterday"
+      ],
+      "correct_answer": "It was raining yesterday",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "昨日、雨が降っていました。"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"日本人は礼儀正しいと思います。\" mean in English?",
+      "options": [
+        "I thought Japanese people are polite",
+        "I think Japanese people are polite",
+        "Japanese people think I am polite",
+        "Japanese people are polite"
+      ],
+      "correct_answer": "I think Japanese people are polite",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "日本人は礼儀正しいと思います。"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 毎日、朝ご飯___。",
+      "options": [
+        "を食べています",
+        "を食べた",
+        "を食べる",
+        "を食べません"
+      ],
+      "correct_answer": "を食べています",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 私は___したいです。",
+      "options": [
+        "勉強に",
+        "勉強を",
+        "勉強で",
+        "勉強は"
+      ],
+      "correct_answer": "勉強を",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 友達と遊ん___、楽しかったです。",
+      "options": [
+        "で",
+        "て",
+        "て",
+        "に"
+      ],
+      "correct_answer": "て",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 映画を見ることが___。",
+      "options": [
+        "する",
+        "できる",
+        "ある",
+        "好きです"
+      ],
+      "correct_answer": "好きです",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 昨日、田中さん___あいました。",
+      "options": [
+        "を",
+        "に",
+        "で",
+        "は"
+      ],
+      "correct_answer": "に",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: この本は___です。",
+      "options": [
+        "面白い",
+        "面白く",
+        "面白かった",
+        "面白ければ"
+      ],
+      "correct_answer": "面白い",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Was eating",
+        "Is eating",
+        "Will eat",
+        "Eats"
+      ],
+      "correct_answer": "Is eating",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "食べています"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Wanted to go",
+        "Went",
+        "Wants to go",
+        "Can go"
+      ],
+      "correct_answer": "Wants to go",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "行きたい"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "While reading",
+        "Reading",
+        "To read",
+        "Reads"
+      ],
+      "correct_answer": "Reading",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "読んで"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Aggressive dog",
+        "Cute dog",
+        "Large dog",
+        "Small dog"
+      ],
+      "correct_answer": "Cute dog",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "かわいい犬"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Old shoes",
+        "New shoes",
+        "Red shoes",
+        "Comfortable shoes"
+      ],
+      "correct_answer": "New shoes",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "新しい靴"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Am happy",
+        "Am troubled",
+        "Am excited",
+        "Am calm"
+      ],
+      "correct_answer": "Am troubled",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "困っています"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"I am reading a book right now.\"",
+      "options": [
+        "本を読んでいます。",
+        "本を読みました。",
+        "本を読みます。",
+        "本を読むことができます。"
+      ],
+      "correct_answer": "本を読んでいます。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"I want to visit Japan.\"",
+      "options": [
+        "日本を訪ねたいです。",
+        "日本に来たいです。",
+        "日本を訪問したいです。",
+        "日本へ行きたいです。"
+      ],
+      "correct_answer": "日本へ行きたいです。",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"I cleaned my room and then took a shower.\"",
+      "options": [
+        "部屋を掃除して、シャワーを浴びました。",
+        "部屋を掃除したので、シャワーを浴びました。",
+        "部屋を掃除するから、シャワーを浴びます。",
+        "部屋を掃除できて、シャワーを浴びました。"
+      ],
+      "correct_answer": "部屋を掃除して、シャワーを浴びました。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"Playing sports is fun.\"",
+      "options": [
+        "スポーツをすること___楽しい。",
+        "スポーツをするとき___楽しい。",
+        "スポーツをするなら___楽しい。",
+        "スポーツをするから___楽しい。"
+      ],
+      "correct_answer": "スポーツをすること___楽しい。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"It was raining all day yesterday.\"",
+      "options": [
+        "昨日一日中雨が降っていました。",
+        "昨日は雨が降ります。",
+        "昨日一日中雨を降らします。",
+        "昨日雨が降るつもりでした。"
+      ],
+      "correct_answer": "昨日一日中雨が降っていました。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"I think that movie is interesting.\"",
+      "options": [
+        "その映画が面白いと思います。",
+        "その映画に面白いと思います。",
+        "その映画を面白いと思います。",
+        "その映画は面白いと考えます。"
+      ],
+      "correct_answer": "その映画が面白いと思います。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "仕事が忙しくて、やることがいっぱいあります。何か手伝えることはありますか？",
+      "options": [
+        "いいえ、大丈夫です。",
+        "はい、ありがとうございます。",
+        "いいえ、これからします。",
+        "はい、できます。"
+      ],
+      "correct_answer": "はい、ありがとうございます。",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "このケーキ、おいしい___。",
+      "options": [
+        "ね",
+        "よ",
+        "か",
+        "な"
+      ],
+      "correct_answer": "ね",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "週末は何をしたいですか？",
+      "options": [
+        "友達と遊びたいです。",
+        "学校へ行きたいです。",
+        "毎日勉強したいです。",
+        "仕事をしたいです。"
+      ],
+      "correct_answer": "友達と遊びたいです。",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "この靴は新しくて、___いいです。",
+      "options": [
+        "とても",
+        "とっても",
+        "すごく",
+        "ほんとに"
+      ],
+      "correct_answer": "とても",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "朝、コーヒーを飲んで、パンを___。",
+      "options": [
+        "食べます",
+        "食べて",
+        "食べています",
+        "食べました"
+      ],
+      "correct_answer": "食べます",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "雨が降っているから、傘を持って___。",
+      "options": [
+        "いきました",
+        "いきます",
+        "いってください",
+        "いきなさい"
+      ],
+      "correct_answer": "いきます",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

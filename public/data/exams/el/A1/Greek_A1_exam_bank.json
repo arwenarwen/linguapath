@@ -1,0 +1,453 @@
+{
+  "language": "Greek",
+  "code": "el",
+  "level": "A1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Γεια σου\" mean in English?",
+      "options": [
+        "Hello",
+        "Goodbye",
+        "Thank you",
+        "Please"
+      ],
+      "correct_answer": "Hello",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Γεια σου"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Καλημέρα\" mean in English?",
+      "options": [
+        "Good evening",
+        "Good morning",
+        "Good night",
+        "Good afternoon"
+      ],
+      "correct_answer": "Good morning",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Καλημέρα"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Ευχαριστώ\" mean in English?",
+      "options": [
+        "Please",
+        "Thank you",
+        "Goodbye",
+        "Sorry"
+      ],
+      "correct_answer": "Thank you",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Ευχαριστώ"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Παρακαλώ\" mean in English?",
+      "options": [
+        "Thank you",
+        "Please",
+        "Yes",
+        "No"
+      ],
+      "correct_answer": "Please",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Παρακαλώ"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Όνομα\" mean in English?",
+      "options": [
+        "House",
+        "Name",
+        "Water",
+        "Sun"
+      ],
+      "correct_answer": "Name",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Όνομα"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Νερό\" mean in English?",
+      "options": [
+        "Water",
+        "Bread",
+        "Milk",
+        "Wine"
+      ],
+      "correct_answer": "Water",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Νερό"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Εγώ ___ Μαρία.",
+      "options": [
+        "είμαι",
+        "έχω",
+        "θέλω",
+        "πηγαίνω"
+      ],
+      "correct_answer": "είμαι",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Αυτό είναι το ___ μου.",
+      "options": [
+        "όνομα",
+        "σπίτι",
+        "φίλος",
+        "χέρι"
+      ],
+      "correct_answer": "όνομα",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Εγώ ___ ένα αυτοκίνητο.",
+      "options": [
+        "είμαι",
+        "έχω",
+        "πηγαίνω",
+        "τρώω"
+      ],
+      "correct_answer": "έχω",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Ο αριθμός ___ είναι πέντε.",
+      "options": [
+        "ένα",
+        "τρία",
+        "πέντε",
+        "εννέα"
+      ],
+      "correct_answer": "πέντε",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Καλησπέρα! Πώς ___;",
+      "options": [
+        "είσαι",
+        "είμαι",
+        "έχεις",
+        "θέλεις"
+      ],
+      "correct_answer": "είσαι",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Το ___ είναι άσπρο.",
+      "options": [
+        "γάλα",
+        "ψάρι",
+        "κρασί",
+        "ψωμί"
+      ],
+      "correct_answer": "γάλα",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "What is this?",
+        "Who are you?",
+        "Where are you?",
+        "How are you?"
+      ],
+      "correct_answer": "What is this?",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Τι είναι αυτό;"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "What is your name?",
+        "How old are you?",
+        "Where do you live?",
+        "What do you do?"
+      ],
+      "correct_answer": "How old are you?",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Πόσων χρονών είσαι;"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This costs five euros.",
+        "This costs ten euros.",
+        "This costs twenty euros.",
+        "This is ten years old."
+      ],
+      "correct_answer": "This costs ten euros.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Αυτό κοστίζει δέκα ευρώ."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I am sad.",
+        "I am happy.",
+        "I am tired.",
+        "I am hungry."
+      ],
+      "correct_answer": "I am happy.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Είμαι ευχαριστημένος."
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Do you have a sister?",
+        "Do you have a brother?",
+        "Do you have a mother?",
+        "Do you have a father?"
+      ],
+      "correct_answer": "Do you have a brother?",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Έχεις ένα αδερφό;"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Who is your sister?",
+        "What is your name?",
+        "Where is your house?",
+        "How old are you?"
+      ],
+      "correct_answer": "Where is your house?",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Πού είναι το σπίτι σου;"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Hello, my name is John\"",
+      "options": [
+        "Γεια σου, το όνομά μου είναι Γιάννης",
+        "Καλημέρα, είμαι ο Γιάννης",
+        "Καλησπέρα, λέγομαι Γιάννης",
+        "Γεία σας, ονομάζομαι Γιάννης"
+      ],
+      "correct_answer": "Γεια σου, το όνομά μου είναι Γιάννης",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"I have three brothers\"",
+      "options": [
+        "Έχω τρεις αδελφές",
+        "Έχω τρεις αδερφούς",
+        "Έχω δύο αδερφούς",
+        "Έχω τέσσερις αδερφούς"
+      ],
+      "correct_answer": "Έχω τρεις αδερφούς",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The water is cold\"",
+      "options": [
+        "Το νερό είναι θερμό",
+        "Το νερό είναι ψυχρό",
+        "Το νερό είναι καυτό",
+        "Το νερό είναι άνεμο"
+      ],
+      "correct_answer": "Το νερό είναι ψυχρό",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"I want a glass of water\"",
+      "options": [
+        "Θέλω ένα ποτήρι νερό",
+        "Θέλω δύο ποτήρια νερό",
+        "Θέλω λίγο νερό",
+        "Θέλω κατι νερό"
+      ],
+      "correct_answer": "Θέλω ένα ποτήρι νερό",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"What is your phone number?\"",
+      "options": [
+        "Τι είναι το όνομά σου;",
+        "Πoιο είναι το τηλέφωνό σου;",
+        "Ποιο είναι το τηλέφωνό σας;",
+        "Πόσο κοστίζει;"
+      ],
+      "correct_answer": "Πoιο είναι το τηλέφωνό σου;",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Do you like coffee?\"",
+      "options": [
+        "Σου αρέσει το καφέ;",
+        "Θέλεις καφέ;",
+        "Ποιος είναι ο καφές σου;",
+        "Έχεις καφέ;"
+      ],
+      "correct_answer": "Σου αρέσει το καφέ;",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Πολλοί άνθρωποι καπνίζουν. Εσύ τι κάνεις;",
+      "options": [
+        "Καπνίζω κάθε μέρα",
+        "Δεν καπνίζω",
+        "Καπνίζω μόνο τα Σαββατοκύριακα",
+        "Καπνίζω λίγο"
+      ],
+      "correct_answer": "Δεν καπνίζω",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Η μαμά σου σου ρωτά: Τι θέλεις για φαγητό;",
+      "options": [
+        "Θέλω σουπα",
+        "Θέλω κοτόπουλο",
+        "Θέλω σαλάτα",
+        "Θέλω ψάρι"
+      ],
+      "correct_answer": "Θέλω κοτόπουλο",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Πότε ξυπνάς κάθε πρωί;",
+      "options": [
+        "Ξυπνάω στις εφτά",
+        "Ξυπνάω στις εννέα",
+        "Ξυπνάω στις έξι",
+        "Ξυπνάω στις οχτώ"
+      ],
+      "correct_answer": "Ξυπνάω στις εφτά",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Με τι πηγαίνεις στη δουλειά;",
+      "options": [
+        "Πηγαίνω με το αυτοκίνητο",
+        "Πηγαίνω με το λεωφορείο",
+        "Πηγαίνω με το μετρό",
+        "Πηγαίνω με το ποδήλατο"
+      ],
+      "correct_answer": "Πηγαίνω με το αυτοκίνητο",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Ποιο είναι το αγαπημένο σου χρώμα;",
+      "options": [
+        "Το κόκκινο",
+        "Το μπλε",
+        "Το πράσινο",
+        "Το κίτρινο"
+      ],
+      "correct_answer": "Το μπλε",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Πόσα χρόνια είσαι;",
+      "options": [
+        "Είμαι είκοσι χρονών",
+        "Είμαι δύο χρονών",
+        "Είμαι πέντε χρονών",
+        "Είμαι δέκα χρονών"
+      ],
+      "correct_answer": "Είμαι είκοσι χρονών",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

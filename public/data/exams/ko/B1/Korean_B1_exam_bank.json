@@ -1,0 +1,453 @@
+{
+  "language": "Korean",
+  "code": "ko",
+  "level": "B1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"중요하다\" mean in English?",
+      "options": [
+        "Difficult",
+        "Important",
+        "Interesting",
+        "Complex"
+      ],
+      "correct_answer": "Important",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "중요하다"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"가능하다\" mean in English?",
+      "options": [
+        "Impossible",
+        "Possible",
+        "Difficult",
+        "Easy"
+      ],
+      "correct_answer": "Possible",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "가능하다"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"준비하다\" mean in English?",
+      "options": [
+        "Prepare",
+        "Finish",
+        "Begin",
+        "Understand"
+      ],
+      "correct_answer": "Prepare",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "준비하다"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"결정하다\" mean in English?",
+      "options": [
+        "Question",
+        "Decide",
+        "Explain",
+        "Imagine"
+      ],
+      "correct_answer": "Decide",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "결정하다"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"상황\" mean in English?",
+      "options": [
+        "Solution",
+        "Situation",
+        "Reason",
+        "Result"
+      ],
+      "correct_answer": "Situation",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "상황"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"경험\" mean in English?",
+      "options": [
+        "Experiment",
+        "Experience",
+        "Expert",
+        "Expected"
+      ],
+      "correct_answer": "Experience",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "경험"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 만약 시간이 있으_____ 영화를 볼 거예요.",
+      "options": [
+        "면",
+        "면서",
+        "ㄴ다면",
+        "려면"
+      ],
+      "correct_answer": "면",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 한국에 가_____ 고 싶어요.",
+      "options": [
+        "(으)ㄹ",
+        "려고",
+        "고",
+        "싶"
+      ],
+      "correct_answer": "려고",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 어제 영화를 봤으_____, 재미있었어요.",
+      "options": [
+        "니까",
+        "므로",
+        "니",
+        "는데"
+      ],
+      "correct_answer": "니까",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 이 책은 읽_____ 것 같아요.",
+      "options": [
+        "은",
+        "(으)ㄹ",
+        "는",
+        "았"
+      ],
+      "correct_answer": "(으)ㄹ",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 날씨가 좋아서 산_____나가요.",
+      "options": [
+        "ㄹ",
+        "으로",
+        "고",
+        "ㅅ"
+      ],
+      "correct_answer": "ㄹ",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 그는 한국말을 하_____ 수 있어요.",
+      "options": [
+        "ㄹ",
+        "는",
+        "ㅂ",
+        "는"
+      ],
+      "correct_answer": "ㄹ",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Failure",
+        "Success",
+        "Challenge",
+        "Effort"
+      ],
+      "correct_answer": "Success",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "성공"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Danger",
+        "Opportunity",
+        "Threat",
+        "Plan"
+      ],
+      "correct_answer": "Opportunity",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "기회"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Right",
+        "Responsibility",
+        "Permission",
+        "Freedom"
+      ],
+      "correct_answer": "Responsibility",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "책임"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Hope",
+        "Goal",
+        "Dream",
+        "Wish"
+      ],
+      "correct_answer": "Goal",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "목표"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Skill",
+        "Knowledge",
+        "Ability",
+        "Power"
+      ],
+      "correct_answer": "Knowledge",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "지식"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Progress",
+        "Decline",
+        "Change",
+        "Stability"
+      ],
+      "correct_answer": "Progress",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "발전"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Important\"",
+      "options": [
+        "쉬워요",
+        "중요해요",
+        "어려워요",
+        "괜찮아요"
+      ],
+      "correct_answer": "중요해요",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Possible\"",
+      "options": [
+        "불가능해요",
+        "쉬워요",
+        "가능해요",
+        "어려워요"
+      ],
+      "correct_answer": "가능해요",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Prepare\"",
+      "options": [
+        "시작하다",
+        "준비하다",
+        "끝내다",
+        "계획하다"
+      ],
+      "correct_answer": "준비하다",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"Decide\"",
+      "options": [
+        "생각하다",
+        "이해하다",
+        "결정하다",
+        "설명하다"
+      ],
+      "correct_answer": "결정하다",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Reason\"",
+      "options": [
+        "결과",
+        "원인",
+        "이유",
+        "방법"
+      ],
+      "correct_answer": "이유",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Result\"",
+      "options": [
+        "원인",
+        "결과",
+        "이유",
+        "도움"
+      ],
+      "correct_answer": "결과",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "만약 돈이 많으면 뭐 할 거예요?",
+      "options": [
+        "일을 계속 할 거예요",
+        "여행을 가고 싶었어요",
+        "여행을 다닐 거예요",
+        "공부를 못 할 거예요"
+      ],
+      "correct_answer": "여행을 다닐 거예요",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "한국에 가려고 뭘 준비해야 해요?",
+      "options": [
+        "비행기표와 여권",
+        "차량 보험",
+        "건강 보험",
+        "휴가 신청"
+      ],
+      "correct_answer": "비행기표와 여권",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "어제 영화를 봤으니까 어땠어요?",
+      "options": [
+        "아직 안 봤어요",
+        "재미있었어요",
+        "내일 보려고 해요",
+        "너무 길었어요"
+      ],
+      "correct_answer": "재미있었어요",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "이 책을 읽을 것 같은데 어떻게 생각해요?",
+      "options": [
+        "읽기 힘들 것 같아요",
+        "흥미로울 것 같아요",
+        "안 읽을 거예요",
+        "다 읽었어요"
+      ],
+      "correct_answer": "흥미로울 것 같아요",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "경험이 왜 중요해요?",
+      "options": [
+        "지식을 쌓고 성장하기 위해",
+        "시간을 낭비하기 위해",
+        "돈을 버는 방법",
+        "아무 소용 없어요"
+      ],
+      "correct_answer": "지식을 쌓고 성장하기 위해",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "목표를 정하면 뭐가 좋아요?",
+      "options": [
+        "열심히 노력할 동기가 생겨요",
+        "일이 더 많아져요",
+        "휴식이 더 많아져요",
+        "친구가 생겨요"
+      ],
+      "correct_answer": "열심히 노력할 동기가 생겨요",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

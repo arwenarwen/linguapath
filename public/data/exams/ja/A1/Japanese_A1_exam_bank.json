@@ -1,0 +1,453 @@
+{
+  "language": "Japanese",
+  "code": "ja",
+  "level": "A1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"おはよう\" mean in English?",
+      "options": [
+        "Good evening",
+        "Good morning",
+        "Good night",
+        "Hello"
+      ],
+      "correct_answer": "Good morning",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "おはよう"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"ありがとう\" mean in English?",
+      "options": [
+        "Sorry",
+        "Thank you",
+        "Please",
+        "Excuse me"
+      ],
+      "correct_answer": "Thank you",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "ありがとう"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"すし\" mean in English?",
+      "options": [
+        "Tempura",
+        "Sushi",
+        "Ramen",
+        "Soba"
+      ],
+      "correct_answer": "Sushi",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "すし"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"がっこう\" mean in English?",
+      "options": [
+        "Hospital",
+        "Library",
+        "School",
+        "Office"
+      ],
+      "correct_answer": "School",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "がっこう"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"これ\" mean in English?",
+      "options": [
+        "That (far)",
+        "This",
+        "That (near)",
+        "Which"
+      ],
+      "correct_answer": "This",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "これ"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"さくら\" mean in English?",
+      "options": [
+        "Moon",
+        "Snow",
+        "Cherry blossom",
+        "Maple"
+      ],
+      "correct_answer": "Cherry blossom",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "さくら"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: わたし___がくせいです。",
+      "options": [
+        "は",
+        "を",
+        "に",
+        "が"
+      ],
+      "correct_answer": "は",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: これ___ぺん___。",
+      "options": [
+        "の",
+        "を",
+        "は",
+        "に"
+      ],
+      "correct_answer": "は",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: せんせい___あいます。",
+      "options": [
+        "を",
+        "に",
+        "で",
+        "は"
+      ],
+      "correct_answer": "に",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: きょう___がっこう___いきます。",
+      "options": [
+        "へ",
+        "を",
+        "で",
+        "が"
+      ],
+      "correct_answer": "へ",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: あした___いい天気___。",
+      "options": [
+        "は",
+        "を",
+        "に",
+        "が"
+      ],
+      "correct_answer": "は",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: コーヒー___のみます。",
+      "options": [
+        "を",
+        "に",
+        "で",
+        "は"
+      ],
+      "correct_answer": "を",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Good morning",
+        "Hello",
+        "Good night",
+        "Thank you"
+      ],
+      "correct_answer": "Hello",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "こんにちは"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Hello",
+        "Thank you",
+        "Goodbye",
+        "Excuse me"
+      ],
+      "correct_answer": "Goodbye",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "さようなら"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Thank you",
+        "Excuse me",
+        "Sorry",
+        "Yes"
+      ],
+      "correct_answer": "Excuse me",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "すみません"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Thank you for cooking",
+        "Goodbye",
+        "Hello",
+        "Excuse me"
+      ],
+      "correct_answer": "Thank you for cooking",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "いただきます"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Chicken",
+        "Beef",
+        "Pork",
+        "Fish"
+      ],
+      "correct_answer": "Pork",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "ぶたにく"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Blue",
+        "White",
+        "Black",
+        "Red"
+      ],
+      "correct_answer": "Black",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "くろい"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"I am a student.\"",
+      "options": [
+        "わたし___がくせいです。",
+        "あなた___がくせいです。",
+        "かれ___がくせいです。",
+        "かのじょ___がくせいです。"
+      ],
+      "correct_answer": "わたし___がくせいです。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"This is a book.\"",
+      "options": [
+        "これ___ほんです。",
+        "それ___ほんです。",
+        "あれ___ほんです。",
+        "どれ___ほんです。"
+      ],
+      "correct_answer": "これ___ほんです。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"I like Japanese food.\"",
+      "options": [
+        "わたし___にほんご___すきです。",
+        "わたし___にほんしょく___すきです。",
+        "わたし___にほん___すきです。",
+        "わたし___しょくじ___すきです。"
+      ],
+      "correct_answer": "わたし___にほんしょく___すきです。",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"What is your name?\"",
+      "options": [
+        "あなた___なまえ___なん___?",
+        "あなた___しゅみ___なん___?",
+        "あなた___あーど___なん___?",
+        "あなた___べんきょう___なん___?"
+      ],
+      "correct_answer": "あなた___なまえ___なん___?",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"I eat rice every day.\"",
+      "options": [
+        "まいあさ___ご飯___たべます。",
+        "まいひる___ご飯___たべます。",
+        "まいしゅう___ご飯___たべます。",
+        "まいばん___ご飯___たべます。"
+      ],
+      "correct_answer": "まいひる___ご飯___たべます。",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Where is the restroom?\"",
+      "options": [
+        "トイレ___どこ___?",
+        "デパート___どこ___?",
+        "びょういん___どこ___?",
+        "ぎゅうにゅう___どこ___?"
+      ],
+      "correct_answer": "トイレ___どこ___?",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "あした、なにをしますか？",
+      "options": [
+        "がっこうへいきます。",
+        "びょういんへいきます。",
+        "えきへいきます。",
+        "こうえんへいきます。"
+      ],
+      "correct_answer": "がっこうへいきます。",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "いっしょに、すしをたべませんか？",
+      "options": [
+        "いいえ、たべません。",
+        "はい、たべます。",
+        "はい、のみます。",
+        "いいえ、のみません。"
+      ],
+      "correct_answer": "はい、たべます。",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "なんじですか？",
+      "options": [
+        "3さい___。",
+        "3じ___。",
+        "3ばん___。",
+        "3いい___。"
+      ],
+      "correct_answer": "3じ___。",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "すみません、えいご___はなせますか？",
+      "options": [
+        "を",
+        "で",
+        "に",
+        "が"
+      ],
+      "correct_answer": "が",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "みず___ください。",
+      "options": [
+        "を",
+        "は",
+        "に",
+        "が"
+      ],
+      "correct_answer": "を",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "この___, いくらですか？",
+      "options": [
+        "もの",
+        "ひと",
+        "こと",
+        "ば"
+      ],
+      "correct_answer": "もの",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

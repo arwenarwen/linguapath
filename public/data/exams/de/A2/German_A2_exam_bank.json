@@ -3,699 +3,451 @@
   "code": "de",
   "level": "A2",
   "format": "multiple_choice",
-  "question_count": 20,
+  "question_count": 30,
   "feedback_audio_targets": {
     "correct": [
-      "Richtig.",
-      "Korrekt.",
-      "Das ist richtig."
+      "Correct!",
+      "Well done!",
+      "That's right!"
     ],
     "incorrect": [
-      "Falsch.",
-      "Nicht ganz richtig.",
-      "Leider falsch."
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
     ]
   },
   "questions": [
     {
-      "id": "A2_Q01",
+      "id": "Q01",
       "question_number": 1,
-      "question": "What does 'die Bushaltestelle' mean?",
+      "question": "What does \"der Bahnhof\" mean in English?",
       "options": [
-        "platform",
-        "transfer",
-        "departure",
-        "bus stop"
-      ],
-      "correct_answer": "bus stop",
-      "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Travel & Transport — Unit 1 Lesson 1: Public transport vocabulary",
-      "audio_targets": {
-        "question": "What does 'die Bushaltestelle' mean?",
-        "options": [
-          "platform",
-          "transfer",
-          "departure",
-          "bus stop"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "A2_Q02",
-      "question_number": 2,
-      "question": "What does 'die Bushaltestelle' mean?",
-      "options": [
+        "airport",
         "bus stop",
-        "arrival",
-        "platform",
-        "return ticket"
+        "taxi rank",
+        "train station"
       ],
-      "correct_answer": "bus stop",
-      "correct_index": 0,
+      "correct_answer": "train station",
+      "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Travel & Transport — Unit 1 Lesson 2: Public transport vocabulary",
-      "audio_targets": {
-        "question": "What does 'die Bushaltestelle' mean?",
-        "options": [
-          "bus stop",
-          "arrival",
-          "platform",
-          "return ticket"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "der Bahnhof"
     },
     {
-      "id": "A2_Q03",
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"die Apotheke\" mean in English?",
+      "options": [
+        "supermarket",
+        "bakery",
+        "hospital",
+        "pharmacy"
+      ],
+      "correct_answer": "pharmacy",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "die Apotheke"
+    },
+    {
+      "id": "Q03",
       "question_number": 3,
-      "question": "What does 'Zug' mean?",
+      "question": "What does \"das Frühstück\" mean in English?",
       "options": [
-        "bus",
-        "airplane",
-        "stop",
-        "train"
+        "lunch",
+        "dinner",
+        "dessert",
+        "breakfast"
       ],
-      "correct_answer": "train",
+      "correct_answer": "breakfast",
       "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Travel & Transport — Unit 1 Lesson 3: Transport vocabulary",
-      "audio_targets": {
-        "question": "What does 'Zug' mean?",
-        "options": [
-          "bus",
-          "airplane",
-          "stop",
-          "train"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "das Frühstück"
     },
     {
-      "id": "A2_Q04",
+      "id": "Q04",
       "question_number": 4,
-      "question": "What does 'Zug' mean?",
+      "question": "What does \"teuer\" mean in English?",
       "options": [
-        "taxi",
-        "train",
-        "bus",
-        "metro"
-      ],
-      "correct_answer": "train",
-      "correct_index": 1,
-      "exercise_type": "translate-en",
-      "source_title": "Travel & Transport — Unit 1 Lesson 4: Transport vocabulary",
-      "audio_targets": {
-        "question": "What does 'Zug' mean?",
-        "options": [
-          "taxi",
-          "train",
-          "bus",
-          "metro"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "A2_Q05",
-      "question_number": 5,
-      "question": "What does 'der Kopf' mean?",
-      "options": [
-        "fever",
-        "pain/ache",
-        "head",
-        "doctor"
-      ],
-      "correct_answer": "head",
-      "correct_index": 2,
-      "exercise_type": "translate-en",
-      "source_title": "Travel & Transport — Unit 1 Lesson 5: Healthcare & body",
-      "audio_targets": {
-        "question": "What does 'der Kopf' mean?",
-        "options": [
-          "fever",
-          "pain/ache",
-          "head",
-          "doctor"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "A2_Q06",
-      "question_number": 6,
-      "question": "What does 'die Bushaltestelle' mean?",
-      "options": [
-        "one-way ticket",
-        "return ticket",
-        "transfer",
-        "bus stop"
-      ],
-      "correct_answer": "bus stop",
-      "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Travel & Transport — Unit 1 Lesson 6: Review & practice",
-      "audio_targets": {
-        "question": "What does 'die Bushaltestelle' mean?",
-        "options": [
-          "one-way ticket",
-          "return ticket",
-          "transfer",
-          "bus stop"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "A2_Q07",
-      "question_number": 7,
-      "question": "What does 'Geschäft' mean?",
-      "options": [
-        "price",
-        "discount",
-        "shop",
-        "expensive"
-      ],
-      "correct_answer": "shop",
-      "correct_index": 2,
-      "exercise_type": "translate-en",
-      "source_title": "Money & Services — Unit 2 Lesson 1: Shopping vocabulary",
-      "audio_targets": {
-        "question": "What does 'Geschäft' mean?",
-        "options": [
-          "price",
-          "discount",
-          "shop",
-          "expensive"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "A2_Q08",
-      "question_number": 8,
-      "question": "What does 'Geschäft' mean?",
-      "options": [
-        "cash",
-        "shop",
-        "price",
-        "expensive"
-      ],
-      "correct_answer": "shop",
-      "correct_index": 1,
-      "exercise_type": "translate-en",
-      "source_title": "Money & Services — Unit 2 Lesson 2: Shopping vocabulary",
-      "audio_targets": {
-        "question": "What does 'Geschäft' mean?",
-        "options": [
-          "cash",
-          "shop",
-          "price",
-          "expensive"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "A2_Q09",
-      "question_number": 9,
-      "question": "What does 'bitte' mean?",
-      "options": [
-        "please",
-        "sorry",
-        "pardon",
-        "excuse me"
-      ],
-      "correct_answer": "please",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Money & Services — Unit 2 Lesson 3: Polite expressions",
-      "audio_targets": {
-        "question": "What does 'bitte' mean?",
-        "options": [
-          "please",
-          "sorry",
-          "pardon",
-          "excuse me"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "A2_Q10",
-      "question_number": 10,
-      "question": "What does 'Geschäft' mean?",
-      "options": [
-        "size",
-        "fitting room",
-        "credit card",
-        "shop"
-      ],
-      "correct_answer": "shop",
-      "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Money & Services — Unit 2 Lesson 4: Shopping vocabulary",
-      "audio_targets": {
-        "question": "What does 'Geschäft' mean?",
-        "options": [
-          "size",
-          "fitting room",
-          "credit card",
-          "shop"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "A2_Q11",
-      "question_number": 11,
-      "question": "What does 'ein Tisch für zwei' mean?",
-      "options": [
-        "It was delicious!",
-        "the menu",
-        "a table for two",
-        "gluten-free"
-      ],
-      "correct_answer": "a table for two",
-      "correct_index": 2,
-      "exercise_type": "translate-en",
-      "source_title": "Money & Services — Unit 2 Lesson 5: Ordering in restaurants",
-      "audio_targets": {
-        "question": "What does 'ein Tisch für zwei' mean?",
-        "options": [
-          "It was delicious!",
-          "the menu",
-          "a table for two",
-          "gluten-free"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "A2_Q12",
-      "question_number": 12,
-      "question": "What does 'Geschäft' mean?",
-      "options": [
-        "size",
         "cheap",
-        "expensive",
-        "shop"
+        "fresh",
+        "heavy",
+        "expensive"
       ],
-      "correct_answer": "shop",
+      "correct_answer": "expensive",
       "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Money & Services — Unit 2 Lesson 6: Review & practice",
-      "audio_targets": {
-        "question": "What does 'Geschäft' mean?",
-        "options": [
-          "size",
-          "cheap",
-          "expensive",
-          "shop"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "teuer"
     },
     {
-      "id": "A2_Q13",
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"die Verspätung\" mean in English?",
+      "options": [
+        "platform",
+        "arrival",
+        "departure",
+        "delay"
+      ],
+      "correct_answer": "delay",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "die Verspätung"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"früh\" mean in English?",
+      "options": [
+        "late",
+        "often",
+        "never",
+        "early"
+      ],
+      "correct_answer": "early",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "früh"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Gestern ___ ich ins Kino gegangen.",
+      "options": [
+        "habe",
+        "ist",
+        "hat",
+        "bin"
+      ],
+      "correct_answer": "bin",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Sie ___ jeden Morgen Zeitung.",
+      "options": [
+        "lesen",
+        "lest",
+        "lese",
+        "liest"
+      ],
+      "correct_answer": "liest",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Ich möchte ein Ticket ___ München.",
+      "options": [
+        "zu",
+        "in",
+        "an",
+        "nach"
+      ],
+      "correct_answer": "nach",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Haben Sie ein Zimmer ___?",
+      "options": [
+        "freier",
+        "freies",
+        "freiem",
+        "frei"
+      ],
+      "correct_answer": "frei",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Das Konzert ___ um 20 Uhr.",
+      "options": [
+        "beginn",
+        "beginne",
+        "begann",
+        "beginnt"
+      ],
+      "correct_answer": "beginnt",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Ich ___ gestern sehr müde.",
+      "options": [
+        "bin",
+        "habe",
+        "hatte",
+        "war"
+      ],
+      "correct_answer": "war",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
       "question_number": 13,
-      "question": "What does 'aufwachen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "to get dressed",
-        "to brush teeth",
-        "to wake up",
-        "to comb hair"
+        "Where is the nearest station?",
+        "Where is the nearest pharmacy?",
+        "Where is the nearest bus stop?",
+        "Where is the nearest supermarket?"
       ],
-      "correct_answer": "to wake up",
-      "correct_index": 2,
-      "exercise_type": "translate-en",
-      "source_title": "Routines & Habits — Unit 3 Lesson 1: Morning routine",
-      "audio_targets": {
-        "question": "What does 'aufwachen' mean?",
-        "options": [
-          "to get dressed",
-          "to brush teeth",
-          "to wake up",
-          "to comb hair"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "Where is the nearest supermarket?",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Wo ist der nächste Supermarkt?"
     },
     {
-      "id": "A2_Q14",
+      "id": "Q14",
       "question_number": 14,
-      "question": "What does 'aufwachen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "to wake up",
-        "to get dressed",
-        "to brush teeth",
-        "to leave home"
+        "I would like a cup of coffee.",
+        "I would like a glass of juice.",
+        "I would like a bottle of wine.",
+        "I would like a glass of water."
       ],
-      "correct_answer": "to wake up",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Routines & Habits — Unit 3 Lesson 2: Morning routine",
-      "audio_targets": {
-        "question": "What does 'aufwachen' mean?",
-        "options": [
-          "to wake up",
-          "to get dressed",
-          "to brush teeth",
-          "to leave home"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "I would like a glass of water.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Ich hätte gerne ein Glas Wasser."
     },
     {
-      "id": "A2_Q15",
+      "id": "Q15",
       "question_number": 15,
-      "question": "What does 'Wie spät ist es?' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "half past",
-        "What time is it?",
-        "quarter to",
-        "quarter past"
+        "The train departs at nine o'clock.",
+        "The train departs at quarter to nine.",
+        "The train departs at eight o'clock.",
+        "The train departs at half past eight."
       ],
-      "correct_answer": "What time is it?",
-      "correct_index": 1,
-      "exercise_type": "translate-en",
-      "source_title": "Routines & Habits — Unit 3 Lesson 3: Telling time",
-      "audio_targets": {
-        "question": "What does 'Wie spät ist es?' mean?",
-        "options": [
-          "half past",
-          "What time is it?",
-          "quarter to",
-          "quarter past"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "The train departs at half past eight.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Der Zug fährt um halb neun ab."
     },
     {
-      "id": "A2_Q16",
+      "id": "Q16",
       "question_number": 16,
-      "question": "What does 'lesen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "to read",
-        "to travel",
-        "to swim",
-        "to watch TV"
+        "Could you repeat that?",
+        "Do you speak English?",
+        "Where are you from?",
+        "Can you help me?"
       ],
-      "correct_answer": "to read",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Routines & Habits — Unit 3 Lesson 4: Hobbies & free time",
-      "audio_targets": {
-        "question": "What does 'lesen' mean?",
-        "options": [
-          "to read",
-          "to travel",
-          "to swim",
-          "to watch TV"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "Can you help me?",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Können Sie mir helfen?"
     },
     {
-      "id": "A2_Q17",
+      "id": "Q17",
       "question_number": 17,
-      "question": "What does 'aufwachen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "to get up",
-        "to shower",
-        "to leave home",
-        "to wake up"
+        "That costs twelve euros.",
+        "That costs thirty euros.",
+        "That costs two euros.",
+        "That costs twenty euros."
       ],
-      "correct_answer": "to wake up",
+      "correct_answer": "That costs twenty euros.",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Routines & Habits — Unit 3 Lesson 5: Review & practice",
-      "audio_targets": {
-        "question": "What does 'aufwachen' mean?",
-        "options": [
-          "to get up",
-          "to shower",
-          "to leave home",
-          "to wake up"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "listen",
+      "audio": "Das macht zwanzig Euro."
     },
     {
-      "id": "A2_Q18",
+      "id": "Q18",
       "question_number": 18,
-      "question": "What does 'Brot' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "rice",
-        "milk",
-        "fish",
-        "bread"
+        "Please fill in this form.",
+        "Please sign here.",
+        "Please take a seat.",
+        "Please show me your ID."
       ],
-      "correct_answer": "bread",
+      "correct_answer": "Please show me your ID.",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Food & Dining — Unit 4 Lesson 1: Food vocabulary",
-      "audio_targets": {
-        "question": "What does 'Brot' mean?",
-        "options": [
-          "rice",
-          "milk",
-          "fish",
-          "bread"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "listen",
+      "audio": "Bitte zeigen Sie mir Ihren Ausweis."
     },
     {
-      "id": "A2_Q19",
+      "id": "Q19",
       "question_number": 19,
-      "question": "What does 'ein Tisch für zwei' mean?",
+      "question": "Translate to target language: \"I would like a coffee, please.\"",
       "options": [
-        "It was delicious!",
-        "I'm vegetarian",
-        "a table for two",
-        "What do you recommend?"
+        "Ich will Kaffee.",
+        "Ich nehme einen Kaffee.",
+        "Kaffee für mich.",
+        "Ich hätte gerne einen Kaffee, bitte."
       ],
-      "correct_answer": "a table for two",
-      "correct_index": 2,
-      "exercise_type": "translate-en",
-      "source_title": "Food & Dining — Unit 4 Lesson 2: Ordering in restaurants",
-      "audio_targets": {
-        "question": "What does 'ein Tisch für zwei' mean?",
-        "options": [
-          "It was delicious!",
-          "I'm vegetarian",
-          "a table for two",
-          "What do you recommend?"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "Ich hätte gerne einen Kaffee, bitte.",
+      "correct_index": 3,
+      "exercise_type": "translate"
     },
     {
-      "id": "A2_Q20",
+      "id": "Q20",
       "question_number": 20,
-      "question": "What does 'Geschäft' mean?",
+      "question": "Translate to target language: \"How much does this cost?\"",
       "options": [
-        "expensive",
-        "size",
-        "shop",
-        "price"
+        "Was ist das?",
+        "Haben Sie das?",
+        "Wo kauft man das?",
+        "Wie viel kostet das?"
       ],
-      "correct_answer": "shop",
-      "correct_index": 2,
-      "exercise_type": "translate-en",
-      "source_title": "Food & Dining — Unit 4 Lesson 3: Shopping vocabulary",
-      "audio_targets": {
-        "question": "What does 'Geschäft' mean?",
-        "options": [
-          "expensive",
-          "size",
-          "shop",
-          "price"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "Wie viel kostet das?",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Where is the bus stop?\"",
+      "options": [
+        "Wo ist der Bahnhof?",
+        "Wo ist die U-Bahn?",
+        "Wo ist das Taxi?",
+        "Wo ist die Bushaltestelle?"
+      ],
+      "correct_answer": "Wo ist die Bushaltestelle?",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"I need a doctor.\"",
+      "options": [
+        "Ich suche eine Apotheke.",
+        "Ich möchte ins Krankenhaus.",
+        "Ich habe Schmerzen.",
+        "Ich brauche einen Arzt."
+      ],
+      "correct_answer": "Ich brauche einen Arzt.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Can I pay by card?\"",
+      "options": [
+        "Haben Sie Bargeld?",
+        "Wie teuer ist das?",
+        "Ich zahle bar.",
+        "Kann ich mit Karte zahlen?"
+      ],
+      "correct_answer": "Kann ich mit Karte zahlen?",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"A return ticket to Munich, please.\"",
+      "options": [
+        "Eine Fahrkarte nach München, bitte.",
+        "Zwei Tickets nach München.",
+        "Wann fährt der Zug nach München?",
+        "Eine Rückfahrkarte nach München, bitte."
+      ],
+      "correct_answer": "Eine Rückfahrkarte nach München, bitte.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Sie sind im Restaurant und möchten die Rechnung. Was sagen Sie?",
+      "options": [
+        "Ich bin fertig.",
+        "Das Essen war gut.",
+        "Noch etwas?",
+        "Die Rechnung, bitte."
+      ],
+      "correct_answer": "Die Rechnung, bitte.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Im Supermarkt: Sie suchen die Milch. Was fragen Sie?",
+      "options": [
+        "Ich kaufe Milch.",
+        "Die Milch ist lecker.",
+        "Haben Sie Milch gekauft?",
+        "Wo finde ich die Milch, bitte?"
+      ],
+      "correct_answer": "Wo finde ich die Milch, bitte?",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Am Bahnhof: Der Zug hat Verspätung. Was bedeutet das?",
+      "options": [
+        "Der Zug ist abgefahren.",
+        "Der Zug kommt früher an.",
+        "Der Zug fährt nicht.",
+        "Der Zug kommt später an."
+      ],
+      "correct_answer": "Der Zug kommt später an.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Sie sind krank und rufen beim Arzt an. Was sagen Sie zuerst?",
+      "options": [
+        "Ich kaufe Medikamente.",
+        "Ich gehe ins Krankenhaus.",
+        "Ich bleibe zu Hause.",
+        "Ich möchte einen Termin, bitte."
+      ],
+      "correct_answer": "Ich möchte einen Termin, bitte.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Im Hotel: Sie möchten einchecken. Was sagen Sie?",
+      "options": [
+        "Ich suche einen Supermarkt.",
+        "Wo ist das Restaurant?",
+        "Ich brauche ein Taxi.",
+        "Guten Tag, ich habe eine Reservierung."
+      ],
+      "correct_answer": "Guten Tag, ich habe eine Reservierung.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Jemand fragt: 'Wie war Ihr Wochenende?' Wie antworten Sie?",
+      "options": [
+        "Ich weiß nicht.",
+        "Das Wochenende ist morgen.",
+        "Ich habe keine Zeit.",
+        "Es war sehr schön, danke."
+      ],
+      "correct_answer": "Es war sehr schön, danke.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
     }
   ]
 }

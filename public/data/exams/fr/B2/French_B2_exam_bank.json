@@ -1,0 +1,453 @@
+{
+  "language": "French",
+  "code": "fr",
+  "level": "B2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"la négociation\" mean in English?",
+      "options": [
+        "announcement",
+        "presentation",
+        "complaint",
+        "negotiation"
+      ],
+      "correct_answer": "negotiation",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "la négociation"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"influencer\" mean in English?",
+      "options": [
+        "to ignore",
+        "to encourage",
+        "to prevent",
+        "to influence"
+      ],
+      "correct_answer": "to influence",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "influencer"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"durable\" mean in English?",
+      "options": [
+        "modern",
+        "temporary",
+        "expensive",
+        "sustainable"
+      ],
+      "correct_answer": "sustainable",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "durable"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"échouer\" mean in English?",
+      "options": [
+        "to succeed",
+        "to delay",
+        "to compete",
+        "to fail"
+      ],
+      "correct_answer": "to fail",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "échouer"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"l'expertise\" mean in English?",
+      "options": [
+        "work experience",
+        "job title",
+        "expert knowledge",
+        "professional qualification"
+      ],
+      "correct_answer": "expert knowledge",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "l'expertise"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"l'équilibre\" mean in English?",
+      "options": [
+        "atmosphere",
+        "imbalance",
+        "distribution",
+        "balance"
+      ],
+      "correct_answer": "balance",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "l'équilibre"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: ___ il était malade, il est venu au travail quand même.",
+      "options": [
+        "Parce que",
+        "Afin que",
+        "Si",
+        "Bien que"
+      ],
+      "correct_answer": "Bien que",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Le résultat dépend ___, combien de temps nous investissons.",
+      "options": [
+        "de ce que",
+        "jusqu'à",
+        "sur",
+        "combien"
+      ],
+      "correct_answer": "de ce que",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Plus il apprenait, plus il devenait ___ confiant.",
+      "options": [
+        "tellement",
+        "donc",
+        "de",
+        "plus"
+      ],
+      "correct_answer": "plus",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Le nouveau règlement ___ en vigueur à partir de janvier.",
+      "options": [
+        "entrerait",
+        "entrent",
+        "entre",
+        "entre"
+      ],
+      "correct_answer": "entre",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Le projet n'aurait pas été réalisable ___ le financement adéquat.",
+      "options": [
+        "sans",
+        "avec",
+        "par",
+        "pendant"
+      ],
+      "correct_answer": "sans",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Il avait promis d'être ponctuel, ___ il est arrivé en retard.",
+      "options": [
+        "parce que",
+        "pour que",
+        "bien que",
+        "mais"
+      ],
+      "correct_answer": "mais",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The measures were withdrawn due to criticism.",
+        "The measures were discussed but not approved.",
+        "The measures were delayed because of criticism.",
+        "The measures were pushed through despite criticism."
+      ],
+      "correct_answer": "The measures were pushed through despite criticism.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Les mesures ont été adoptées malgré les critiques."
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "There are reasons to be concerned.",
+        "The situation is unclear.",
+        "We are monitoring the situation.",
+        "There is no cause for concern."
+      ],
+      "correct_answer": "There is no cause for concern.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Il n'y a pas lieu de s'inquiéter."
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The application was approved.",
+        "The application is pending.",
+        "The application was withdrawn.",
+        "The application was rejected."
+      ],
+      "correct_answer": "The application was rejected.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "La demande a été refusée."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "We must stand firm.",
+        "We should postpone the decision.",
+        "We have reached an agreement.",
+        "We need to find a compromise."
+      ],
+      "correct_answer": "We need to find a compromise.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Nous devons trouver un compromis."
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The conference was cancelled.",
+        "The conference was moved to a smaller venue.",
+        "The conference is taking place as planned.",
+        "The conference was postponed indefinitely."
+      ],
+      "correct_answer": "The conference was postponed indefinitely.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "La conférence a été reportée indéfiniment."
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "He kept his promise.",
+        "He made a new promise.",
+        "He asked to be released from his promise.",
+        "He did not keep his promise."
+      ],
+      "correct_answer": "He did not keep his promise.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Il n'a pas tenu sa promesse."
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The project was completed on time despite the difficulties.\"",
+      "options": [
+        "Le projet n'a pas été finalisé à cause des difficultés.",
+        "Le projet est à temps, mais il y a eu des problèmes.",
+        "Le projet n'a pas pu être réalisé malgré tout.",
+        "Le projet a été finalisé à temps malgré les difficultés."
+      ],
+      "correct_answer": "Le projet a été finalisé à temps malgré les difficultés.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"I would appreciate your feedback.\"",
+      "options": [
+        "J'ai besoin de vos critiques.",
+        "Pourriez-vous faire moins de commentaires?",
+        "Vos commentaires ne sont pas nécessaires.",
+        "J'apprécierais beaucoup vos commentaires."
+      ],
+      "correct_answer": "J'apprécierais beaucoup vos commentaires.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The results are not yet available.\"",
+      "options": [
+        "Les résultats sont décevants.",
+        "Les résultats n'ont pas encore été discutés.",
+        "Les résultats sont déjà connus.",
+        "Les résultats ne sont pas encore disponibles."
+      ],
+      "correct_answer": "Les résultats ne sont pas encore disponibles.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"We need to reconsider our strategy.\"",
+      "options": [
+        "Nous n'avons plus de stratégie.",
+        "Notre stratégie fonctionne bien.",
+        "Nous devrions rester fidèles à notre stratégie.",
+        "Nous devons reconsidérer notre stratégie."
+      ],
+      "correct_answer": "Nous devons reconsidérer notre stratégie.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Could you elaborate on that point?\"",
+      "options": [
+        "Pourquoi dites-vous cela?",
+        "Pouvez-vous répéter?",
+        "Êtes-vous d'accord?",
+        "Pourriez-vous préciser ce point?"
+      ],
+      "correct_answer": "Pourriez-vous préciser ce point?",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"It is essential that we meet the deadline.\"",
+      "options": [
+        "La date limite n'est pas très importante.",
+        "Ce serait bien de respecter la date limite.",
+        "Nous devrions repousser la date limite.",
+        "Il est absolument nécessaire que nous respections la date limite."
+      ],
+      "correct_answer": "Il est absolument nécessaire que nous respections la date limite.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Lors d'une réunion, on vous demande d'expliquer votre point de vue. Comment commencez-vous?",
+      "options": [
+        "Je ne sais pas.",
+        "Ce n'est pas mon rôle.",
+        "C'est une question difficile.",
+        "Je voudrais brièvement expliquer pourquoi je pense que..."
+      ],
+      "correct_answer": "Je voudrais brièvement expliquer pourquoi je pense que...",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Dans une discussion, vous ne suis pas d'accord. Comment vous opposez-vous poliment?",
+      "options": [
+        "C'est complètement faux.",
+        "Vous ne comprenez pas.",
+        "Ça ne m'intéresse pas.",
+        "Je vois les choses un peu différemment."
+      ],
+      "correct_answer": "Je vois les choses un peu différemment.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Vous recevez un refus pour votre candidature. Quelle est une réaction appropriée?",
+      "options": [
+        "Ne pas réagir.",
+        "Déposer une réclamation.",
+        "Envoyer immédiatement une nouvelle candidature.",
+        "Répondre poliment et demander un retour d'information."
+      ],
+      "correct_answer": "Répondre poliment et demander un retour d'information.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Votre interlocuteur utilise un terme technique que vous ne connaissez pas. Que faites-vous?",
+      "options": [
+        "Faire semblant de le connaître.",
+        "Arrêter la conversation.",
+        "Chercher le terme en ligne sans dire quoi que ce soit.",
+        "Pourriez-vous expliquer brièvement ce terme?"
+      ],
+      "correct_answer": "Pourriez-vous expliquer brièvement ce terme?",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Vous devez rédiger un e-mail formel à un client. Quelle salutation est correcte?",
+      "options": [
+        "Coucou,",
+        "Bonjour à tous,",
+        "Salut,",
+        "Madame, Monsieur,"
+      ],
+      "correct_answer": "Madame, Monsieur,",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Vous devez résumer un long rapport. Qu'est-ce qui est le plus important?",
+      "options": [
+        "Répéter tous les détails.",
+        "Faire le rapport aussi long que possible.",
+        "Utiliser uniquement l'introduction.",
+        "Résumer les points clés clairement et brièvement."
+      ],
+      "correct_answer": "Résumer les points clés clairement et brièvement.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    }
+  ]
+}

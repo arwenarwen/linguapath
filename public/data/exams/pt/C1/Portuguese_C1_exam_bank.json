@@ -1,0 +1,453 @@
+{
+  "language": "Portuguese",
+  "code": "pt",
+  "level": "C1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"A ubiquidade das redes sociais tem suscitado questões éticas profundas.\" mean in English?",
+      "options": [
+        "Social media ubiquity is raising ethics questions",
+        "The ubiquity of social networks has raised profound ethical questions",
+        "Social networks are questioned ethically and ubiquitous",
+        "The ethics of ubiquitous social networks are questioned"
+      ],
+      "correct_answer": "The ubiquity of social networks has raised profound ethical questions",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "A ubiquidade das redes sociais tem suscitado questões éticas profundas."
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Desperta particular interesse a constatação de que a fragmentação discursiva agrava as polarizações políticas.\" mean in English?",
+      "options": [
+        "Political polarization shows that discourse is fragmented",
+        "Of particular interest is the finding that discursive fragmentation exacerbates political polarizations",
+        "Fragmented discourse is political and interesting",
+        "Political polarizations fragment interest in discourse"
+      ],
+      "correct_answer": "Of particular interest is the finding that discursive fragmentation exacerbates political polarizations",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Desperta particular interesse a constatação de que a fragmentação discursiva agrava as polarizações políticas."
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"O fenómeno em apreço revela complexidades que transcendem análises superficiais.\" mean in English?",
+      "options": [
+        "The phenomenon being discussed reveals complexities that transcend superficial analyses",
+        "Phenomena discuss complexities in analysis",
+        "Superficial analyses transcend the complex phenomenon",
+        "The analysis is complex and transcends phenomena"
+      ],
+      "correct_answer": "The phenomenon being discussed reveals complexities that transcend superficial analyses",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "O fenómeno em apreço revela complexidades que transcendem análises superficiais."
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Não se trata meramente de um desajustamento conjuntural, senão de uma reconfiguração estrutural.\" mean in English?",
+      "options": [
+        "It is merely a misalignment happening temporarily",
+        "It is not merely a cyclical maladjustment, but rather a structural reconfiguration",
+        "Structural adjustment is merely cyclical",
+        "Cyclical reconfiguration is structural adjustment"
+      ],
+      "correct_answer": "It is not merely a cyclical maladjustment, but rather a structural reconfiguration",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Não se trata meramente de um desajustamento conjuntural, senão de uma reconfiguração estrutural."
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"A inflexão que se observa nos indicadores macroeconómicos sugere uma inflexão nas expectativas.\" mean in English?",
+      "options": [
+        "Economic indicators are inflexible",
+        "The inflection observed in macroeconomic indicators suggests an inflection in expectations",
+        "Expectations inflect the economic indicators",
+        "Economic indicators expect inflection"
+      ],
+      "correct_answer": "The inflection observed in macroeconomic indicators suggests an inflection in expectations",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "A inflexão que se observa nos indicadores macroeconómicos sugere uma inflexão nas expectativas."
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Cumpre salientar que tal abordagem não é isenta de crítica fundamentada.\" mean in English?",
+      "options": [
+        "This approach is not immune to well-founded criticism",
+        "All approaches are free from criticism",
+        "Criticism is not fundamental to approaches",
+        "The approach criticizes itself fundamentally"
+      ],
+      "correct_answer": "This approach is not immune to well-founded criticism",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Cumpre salientar que tal abordagem não é isenta de crítica fundamentada."
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: O paradoxo reside em que, conquanto os dados ___, as interpretações divergem substancialmente.",
+      "options": [
+        "convergem",
+        "convergissem",
+        "convergiriam",
+        "convergem"
+      ],
+      "correct_answer": "convergem",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Seria profundamente equivocado ___ que a mudança foi meramente cosmética.",
+      "options": [
+        "supor",
+        "supormos",
+        "supúnhamos",
+        "suporá"
+      ],
+      "correct_answer": "supor",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Não menos relevante é a constatação de que os agentes ___ activamente para contrariar essa tendência.",
+      "options": [
+        "actuam",
+        "actuariam",
+        "actuassem",
+        "actuaram"
+      ],
+      "correct_answer": "actuam",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Pressupõe-se, com justificação, que as autoridades ___ cognoscitivas de tal fenómeno.",
+      "options": [
+        "têm consciência",
+        "tinham consciência",
+        "tivessem consciência",
+        "terão consciência"
+      ],
+      "correct_answer": "têm consciência",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Mister é que se ___ em perspectiva a multiplicidade de factores em jogo.",
+      "options": [
+        "considere",
+        "considera",
+        "considerava",
+        "consideraria"
+      ],
+      "correct_answer": "considere",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Delineia-se assim um quadro em que ___ coexistem tensões fundamentais.",
+      "options": [
+        "persistem",
+        "persistam",
+        "persistissem",
+        "persistirão"
+      ],
+      "correct_answer": "persistem",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The problem at hand involves dilemmas that do not admit one-size-fits-all solutions",
+        "The problem is about mold and solutions",
+        "Solutions are diverse and problematic",
+        "Molds create problems without solutions"
+      ],
+      "correct_answer": "The problem at hand involves dilemmas that do not admit one-size-fits-all solutions",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "A problemática em tela envolve dilemas que não comportam soluções de molde único."
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "It is important to highlight the multifaceted nature of this question, whose ramifications exceed the purely technical scope",
+        "Technical aspects are the only ramifications",
+        "This question is simple and technical",
+        "Multifaceted questions have no ramifications"
+      ],
+      "correct_answer": "It is important to highlight the multifaceted nature of this question, whose ramifications exceed the purely technical scope",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Convém destacar o carácter multifacetado desta questão, cujas ramificações extravasam o âmbito puramente técnico."
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "There emerges, then, the urgency to categorically rethink the underlying assumptions",
+        "Assumptions are not urgent or categorical",
+        "Categories urgently emerge",
+        "Underlying categories are not assumptions"
+      ],
+      "correct_answer": "There emerges, then, the urgency to categorically rethink the underlying assumptions",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Emerge, pois, a urgência de se repensar categoricamente os pressupostos subjacentes."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Despite apparent consensus, there subsist paradigmatic discrepancies of magnitude",
+        "Consensus resolves all paradigmatic issues",
+        "Apparent paradigms are discrepant",
+        "Magnitude is apparent in consensus"
+      ],
+      "correct_answer": "Despite apparent consensus, there subsist paradigmatic discrepancies of magnitude",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Não obstante o consenso aparente, subsistem discrepâncias paradigmáticas de envergadura."
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Interpretive sovereignty should not eclipse the need for rigorous foundation",
+        "Interpretive sovereignty eliminates rigor",
+        "Foundations are sovereign and interpretive",
+        "Rigor is eclipsed by sovereignty"
+      ],
+      "correct_answer": "Interpretive sovereignty should not eclipse the need for rigorous foundation",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "A soberania interpretativa não deve, contudo, eclipsar a necessidade de fundamentação rigorosa."
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "One may foresee, therefore, a reconfiguration that appears inevitable under certain conditions",
+        "Reconfiguration is impossible and inevitable",
+        "Conditions are foreseen under reconfiguration",
+        "Inevitable conditions are invisible"
+      ],
+      "correct_answer": "One may foresee, therefore, a reconfiguration that appears inevitable under certain conditions",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Entrevê-se, portanto, uma reconfiguração que se afigura inevitável sob certas condições."
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The multifarious interpretations render univocal assessment problematic.\"",
+      "options": [
+        "As interpretações multífaras tornam a avaliação unívoca problemática.",
+        "As multifárias interpretações tornam problemática uma avaliação unívoca.",
+        "As interpretações multifacetadas tornam univocamente problemática a avaliação.",
+        "Interpretações univocamente multifárias avaliam problematicamente."
+      ],
+      "correct_answer": "As multifárias interpretações tornam problemática uma avaliação unívoca.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"It behooves us to consider the epistemological implications thereof.\"",
+      "options": [
+        "Cumpre-nos considerar as implicações epistemológicas disso.",
+        "Competências nos permitem considerar implicações epistemológicas.",
+        "Nós devemos epistemologicamente implicar considerações.",
+        "As implicações são competência de epistemologia."
+      ],
+      "correct_answer": "Cumpre-nos considerar as implicações epistemológicas disso.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Such reductionism obfuscates the underlying nexus of causality.\"",
+      "options": [
+        "Tal reducionismo obscurece o nexo subjacente de causalidade.",
+        "O reducionismo obscurece tal nexo de causas subjacente.",
+        "Reduções obscurecem causalmente o nexo.",
+        "Causalidade e reducionismo são obscuros."
+      ],
+      "correct_answer": "Tal reducionismo obscurece o nexo subjacente de causalidade.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The paradigmatic shift precipitated unforeseen ramifications.\"",
+      "options": [
+        "A mudança paradigmática precipitou ramificações imprevistas.",
+        "A mudança precipitada do paradigma tem ramificações.",
+        "Paradigmas mudaram e ramificam imprevisivelmente.",
+        "Ramificações paradigmáticas foram precipitadas imprevisivelmente."
+      ],
+      "correct_answer": "A mudança paradigmática precipitou ramificações imprevistas.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Notwithstanding the apparent convergence, substantive divergences persist.\"",
+      "options": [
+        "Não obstante a convergência aparente, divergências substantivas persistem.",
+        "Apesar convergências aparentes, as substâncias divergem.",
+        "Persistem divergências em aparente convergência substantiva.",
+        "Convergência substantiva persiste divergentemente."
+      ],
+      "correct_answer": "Não obstante a convergência aparente, divergências substantivas persistem.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The exigencies of rigorous scholarship demand such circumspection.\"",
+      "options": [
+        "As exigências da erudição rigorosa demandam tal circunspecção.",
+        "Exigências de erudição rigorosa circunspectamente demandam.",
+        "Rigor demanda erudição e circunspecção.",
+        "Circunspecção e rigor são exigências eruditas."
+      ],
+      "correct_answer": "As exigências da erudição rigorosa demandam tal circunspecção.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Num seminário académico, como introduz uma argumentação sofisticada que desafia pensamento aceite?",
+      "options": [
+        "Tudo está errado.",
+        "Contrariamente ao senso comum, a análise contextualizada sugere...",
+        "Ninguém pensa assim.",
+        "É óbvio que..."
+      ],
+      "correct_answer": "Contrariamente ao senso comum, a análise contextualizada sugere...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Está a escrever uma tese. Como navega entre múltiplas perspectivas teóricas?",
+      "options": [
+        "Uma perspectiva está certa, as outras erradas.",
+        "Enquanto X sustenta que..., Y argumenta que..., estas posições revelam...",
+        "Perspectivas são irrelevantes.",
+        "Escolho uma sem justificação."
+      ],
+      "correct_answer": "Enquanto X sustenta que..., Y argumenta que..., estas posições revelam...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Como articula uma crítica fundamentada a uma obra canónica sem descartar sua importância?",
+      "options": [
+        "A obra é completamente inútil.",
+        "Ainda que seminal, a obra apresenta lacunas quando consideramos...",
+        "A obra não importa.",
+        "Deve ser aceita sem crítica."
+      ],
+      "correct_answer": "Ainda que seminal, a obra apresenta lacunas quando consideramos...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Num debate com especialistas, como concilia visões divergentes?",
+      "options": [
+        "Uma está certa.",
+        "Ambas revelam aspectos válidos, porém o quadro completo requer também...",
+        "Não há verdade.",
+        "Especialistas nunca concordam."
+      ],
+      "correct_answer": "Ambas revelam aspectos válidos, porém o quadro completo requer também...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Como conclui um artigo académico de forma impactante?",
+      "options": [
+        "Pronto, terminei.",
+        "Assim, os achados implicam reconfiguração teórica que...",
+        "Ninguém vai ler.",
+        "Conclusões são desnecessárias."
+      ],
+      "correct_answer": "Assim, os achados implicam reconfiguração teórica que...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Está a responder a crítica académica construtiva. Como o faz?",
+      "options": [
+        "Os críticos estão errados.",
+        "Reconheço a pertinência das observações. Quanto a X, a fundamentação repousa em..., porém Y comporta merit revisão.",
+        "Não respondo.",
+        "Crítica é inútil."
+      ],
+      "correct_answer": "Reconheço a pertinência das observações. Quanto a X, a fundamentação repousa em..., porém Y comporta merit revisão.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

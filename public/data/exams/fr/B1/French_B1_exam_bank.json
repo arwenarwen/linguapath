@@ -1,0 +1,453 @@
+{
+  "language": "French",
+  "code": "fr",
+  "level": "B1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"la candidature\" mean in English?",
+      "options": [
+        "job interview",
+        "job advertisement",
+        "job application",
+        "job offer"
+      ],
+      "correct_answer": "job application",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "la candidature"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"l'hôpital\" mean in English?",
+      "options": [
+        "pharmacy",
+        "doctor's office",
+        "health insurance",
+        "hospital"
+      ],
+      "correct_answer": "hospital",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "l'hôpital"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"suggérer\" mean in English?",
+      "options": [
+        "to demand",
+        "to refuse",
+        "to ignore",
+        "to suggest"
+      ],
+      "correct_answer": "to suggest",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "suggérer"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"fiable\" mean in English?",
+      "options": [
+        "ambitious",
+        "flexible",
+        "unreliable",
+        "reliable"
+      ],
+      "correct_answer": "reliable",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "fiable"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"l'avis\" mean in English?",
+      "options": [
+        "news",
+        "meeting",
+        "majority",
+        "opinion"
+      ],
+      "correct_answer": "opinion",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "l'avis"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"se plaindre\" mean in English?",
+      "options": [
+        "to apologise",
+        "to enquire",
+        "to agree",
+        "to complain"
+      ],
+      "correct_answer": "to complain",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "se plaindre"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Bien qu'il pleuve, nous ___ en promenade.",
+      "options": [
+        "allons",
+        "allié",
+        "allez",
+        "allons"
+      ],
+      "correct_answer": "allons",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: J'aimerais voyager ___ j'aurais plus de temps.",
+      "options": [
+        "si",
+        "comme",
+        "parce que",
+        "si"
+      ],
+      "correct_answer": "si",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Le projet ___ être terminé vendredi.",
+      "options": [
+        "devrait",
+        "devra",
+        "doit",
+        "devaient"
+      ],
+      "correct_answer": "doit",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Il habite en France ___ trois ans.",
+      "options": [
+        "pendant",
+        "depuis",
+        "il y a",
+        "pour"
+      ],
+      "correct_answer": "depuis",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Après le dîner, nous ___ parlé des plans.",
+      "options": [
+        "avions",
+        "avez",
+        "ont",
+        "avons"
+      ],
+      "correct_answer": "avons",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Elle m'a aidée à trouver ___ travail.",
+      "options": [
+        "une",
+        "un",
+        "des",
+        "le"
+      ],
+      "correct_answer": "un",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I fully agree with that.",
+        "I haven't decided yet.",
+        "I don't agree with that.",
+        "I need more time to think."
+      ],
+      "correct_answer": "I don't agree with that.",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Je ne suis pas d'accord."
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Could you speak more slowly?",
+        "Could you write that down?",
+        "Could you explain that?",
+        "Could you please repeat that?"
+      ],
+      "correct_answer": "Could you please repeat that?",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Pouvez-vous répéter, s'il vous plaît?"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I'm sorry, I don't understand.",
+        "I'm sorry, I'm late.",
+        "I'm sorry, I was wrong.",
+        "I'm sorry, I forgot."
+      ],
+      "correct_answer": "I'm sorry, I was wrong.",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Je suis désolé, je me suis trompé."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "How far is the journey?",
+        "How much does the journey cost?",
+        "When does the journey start?",
+        "How long does the journey take?"
+      ],
+      "correct_answer": "How long does the journey take?",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Combien de temps dure le voyage?"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I applied for the position.",
+        "I rejected the position.",
+        "I am interested in the position.",
+        "I was offered the position."
+      ],
+      "correct_answer": "I am interested in the position.",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Je m'intéresse au poste."
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "That is certain.",
+        "That is impossible.",
+        "That depends on it.",
+        "That is a good idea."
+      ],
+      "correct_answer": "That depends on it.",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Ça dépend."
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"I have been living in Paris for two years.\"",
+      "options": [
+        "J'ai habité deux ans à Paris.",
+        "Je suis à Paris depuis deux ans.",
+        "Je demeure deux ans à Paris.",
+        "J'habite depuis deux ans à Paris."
+      ],
+      "correct_answer": "J'habite depuis deux ans à Paris.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Could you please speak more slowly?\"",
+      "options": [
+        "Parlez plus clairement, s'il vous plaît.",
+        "Pourriez-vous parler plus fort?",
+        "Répétez cela, s'il vous plaît.",
+        "Pourriez-vous parler plus lentement, s'il vous plaît?"
+      ],
+      "correct_answer": "Pourriez-vous parler plus lentement, s'il vous plaît?",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"In my opinion, this is a good idea.\"",
+      "options": [
+        "C'est une bonne idée.",
+        "Je crois que c'est bien.",
+        "Je suis pour.",
+        "À mon avis, c'est une bonne idée."
+      ],
+      "correct_answer": "À mon avis, c'est une bonne idée.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"I would like to make an appointment.\"",
+      "options": [
+        "J'ai besoin d'un rendez-vous.",
+        "Je veux voir un médecin.",
+        "Je peux avoir un rendez-vous?",
+        "Je voudrais prendre un rendez-vous."
+      ],
+      "correct_answer": "Je voudrais prendre un rendez-vous.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"What do you think about that?\"",
+      "options": [
+        "Vous avez fait cela?",
+        "Comment aimez-vous cela?",
+        "Vous le connaissez?",
+        "Que pensez-vous de cela?"
+      ],
+      "correct_answer": "Que pensez-vous de cela?",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"I have a question about the contract.\"",
+      "options": [
+        "Je ne comprends pas le contrat.",
+        "Je peux lire le contrat?",
+        "Quand le contrat est-il valide?",
+        "J'ai une question sur le contrat."
+      ],
+      "correct_answer": "J'ai une question sur le contrat.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Vous postulez pour un emploi. Qu'y a-t-il dans une candidature complète?",
+      "options": [
+        "Juste la lettre de motivation",
+        "Juste le CV",
+        "Une photo et une recommandation",
+        "Le CV et la lettre de motivation"
+      ],
+      "correct_answer": "Le CV et la lettre de motivation",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Vous êtes chez le médecin. Il vous demande vos plaintes. Que dites-vous?",
+      "options": [
+        "Je suis fatigué.",
+        "Je prends des médicaments.",
+        "J'ai eu mal hier.",
+        "J'ai des maux de tête depuis trois jours."
+      ],
+      "correct_answer": "J'ai des maux de tête depuis trois jours.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Vous voulez exprimer votre avis poliment. Quel expression convient?",
+      "options": [
+        "C'est faux.",
+        "Ce n'est pas du tout vrai.",
+        "Ça ne m'intéresse pas.",
+        "Je suis de l'avis que..."
+      ],
+      "correct_answer": "Je suis de l'avis que...",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Quelqu'un a commis une erreur et s'excuse. Que répondez-vous?",
+      "options": [
+        "C'était très mal.",
+        "Ce n'est pas acceptable.",
+        "Pourquoi avez-vous fait cela?",
+        "Ce n'est pas grave, cela peut arriver."
+      ],
+      "correct_answer": "Ce n'est pas grave, cela peut arriver.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Vous avez une question, mais l'orateur parle trop vite. Que faites-vous?",
+      "options": [
+        "Vous quittez la salle.",
+        "Vous n'écoutez plus.",
+        "Vous ne prenez pas de notes.",
+        "Vous lui demandez de parler plus lentement."
+      ],
+      "correct_answer": "Vous lui demandez de parler plus lentement.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Votre collègue explique un plan. Vous n'êtes pas sûr d'avoir tout compris. Dites...",
+      "options": [
+        "Je le sais déjà.",
+        "Oui, bien sûr.",
+        "Ça m'est égal.",
+        "Excusez-moi, pouvez-vous me le résumer brièvement?"
+      ],
+      "correct_answer": "Excusez-moi, pouvez-vous me le résumer brièvement?",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    }
+  ]
+}

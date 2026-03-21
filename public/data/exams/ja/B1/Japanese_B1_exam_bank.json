@@ -1,0 +1,453 @@
+{
+  "language": "Japanese",
+  "code": "ja",
+  "level": "B1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"彼は毎日会社に行く前に、コーヒーを飲む。\" mean in English?",
+      "options": [
+        "He drinks coffee after he goes to the company every day",
+        "Before he goes to the company every day, he drinks coffee",
+        "He will drink coffee before he goes to the company every day",
+        "He is drinking coffee before he goes to the company every day"
+      ],
+      "correct_answer": "Before he goes to the company every day, he drinks coffee",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "彼は毎日会社に行く前に、コーヒーを飲む。"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"もし雨が降ったら、ピクニックをキャンセルしなければならない。\" mean in English?",
+      "options": [
+        "If it rains, we should cancel the picnic",
+        "If it rained, we would have canceled the picnic",
+        "If it rains, we must cancel the picnic",
+        "If it will rain, we have to cancel the picnic"
+      ],
+      "correct_answer": "If it rains, we must cancel the picnic",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "もし雨が降ったら、ピクニックをキャンセルしなければならない。"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"彼女は勉強しているはずだ。\" mean in English?",
+      "options": [
+        "She is studying on purpose",
+        "She should be studying",
+        "She must study",
+        "She can study"
+      ],
+      "correct_answer": "She should be studying",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "彼女は勉強しているはずだ。"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"このプロジェクトが成功するかどうか、まだわかりません。\" mean in English?",
+      "options": [
+        "Whether this project will succeed or not, I don't know yet",
+        "This project will succeed, I don't know",
+        "I know this project will succeed or not",
+        "Whether this project succeeds, it is not known"
+      ],
+      "correct_answer": "Whether this project will succeed or not, I don't know yet",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "このプロジェクトが成功するかどうか、まだわかりません。"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"彼は仕事が終わるまで、ずっと働き続けた。\" mean in English?",
+      "options": [
+        "He worked until his job was finished",
+        "He kept working until his work was done",
+        "He works until his job finishes",
+        "He will work until his work is finished"
+      ],
+      "correct_answer": "He kept working until his work was done",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "彼は仕事が終わるまで、ずっと働き続けた。"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"その情報が正しいと信じるべきではない。\" mean in English?",
+      "options": [
+        "You should believe that information is correct",
+        "You should not believe that information is correct",
+        "You must not believe that information is correct",
+        "You cannot believe that information is correct"
+      ],
+      "correct_answer": "You should not believe that information is correct",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "その情報が正しいと信じるべきではない。"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 私は彼の意見___同意する。",
+      "options": [
+        "に",
+        "を",
+        "で",
+        "が"
+      ],
+      "correct_answer": "に",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 私たちは___へ行くつもりです。",
+      "options": [
+        "散歩",
+        "散歩を",
+        "散歩に",
+        "散歩で"
+      ],
+      "correct_answer": "散歩に",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 彼が来る___、電話をください。",
+      "options": [
+        "ときに",
+        "まで",
+        "ので",
+        "なら"
+      ],
+      "correct_answer": "まで",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: この本は読む価値がある___思う。",
+      "options": [
+        "と",
+        "で",
+        "に",
+        "は"
+      ],
+      "correct_answer": "と",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 明日の試験のために、勉強___。",
+      "options": [
+        "しなければならない",
+        "したい",
+        "できる",
+        "してもいい"
+      ],
+      "correct_answer": "しなければならない",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 彼は私の質問に答える___できなかった。",
+      "options": [
+        "ことが",
+        "ように",
+        "ほど",
+        "ばかり"
+      ],
+      "correct_answer": "ことが",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Only",
+        "Not only... but also",
+        "Rather than",
+        "As if"
+      ],
+      "correct_answer": "Not only... but also",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "～ばかりか"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "It came to be that...",
+        "It became...",
+        "It is decided that...",
+        "As a result..."
+      ],
+      "correct_answer": "It came to be that...",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "～ことになった"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Try to...",
+        "To the extent that...",
+        "So that...",
+        "In order to..."
+      ],
+      "correct_answer": "Try to...",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "～ようにする"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Because",
+        "In spite of",
+        "Although",
+        "As long as"
+      ],
+      "correct_answer": "In spite of",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "～にもかかわらず"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Regarding",
+        "Related to",
+        "Concerning",
+        "About"
+      ],
+      "correct_answer": "Regarding",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "～に関して"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "To the extent of",
+        "As much as",
+        "As far as",
+        "To the degree that"
+      ],
+      "correct_answer": "To the extent of",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "～ほど"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"If he hadn't been careful, the accident would have happened.\"",
+      "options": [
+        "もし彼が注意していなかったら、事故が起こっていただろう。",
+        "もし彼が注意しなかったら、事故が起こります。",
+        "彼が注意していたので、事故は起こりませんでした。",
+        "もし彼が注意していたら、事故は起こりません。"
+      ],
+      "correct_answer": "もし彼が注意していなかったら、事故が起こっていただろう。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"It is said that this restaurant is very popular.\"",
+      "options": [
+        "このレストランはとても人気があると言われています。",
+        "このレストランがとても人気があると思っています。",
+        "このレストランをとても人気があるとすすめられます。",
+        "このレストランでとても人気があると聞きました。"
+      ],
+      "correct_answer": "このレストランはとても人気があると言われています。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"I will study hard so that I can pass the exam.\"",
+      "options": [
+        "試験に合格するために、一生懸命勉強します。",
+        "試験に合格しるように、一生懸命勉強します。",
+        "試験に合格するほど、一生懸命勉強します。",
+        "試験に合格したら、一生懸命勉強します。"
+      ],
+      "correct_answer": "試験に合格するために、一生懸命勉強します。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"As long as you work hard, you will succeed.\"",
+      "options": [
+        "懸命に働く限り、成功するだろう。",
+        "懸命に働いたので、成功するだろう。",
+        "懸命に働けば、成功するだろう。",
+        "懸命に働くまで、成功するだろう。"
+      ],
+      "correct_answer": "懸命に働く限り、成功するだろう。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Despite the difficulties, he continued his efforts.\"",
+      "options": [
+        "困難にもかかわらず、彼は努力を続けた。",
+        "困難だから、彼は努力を続けた。",
+        "困難になると、彼は努力を続けた。",
+        "困難のために、彼は努力を続けた。"
+      ],
+      "correct_answer": "困難にもかかわらず、彼は努力を続けた。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"I have no choice but to give up.\"",
+      "options": [
+        "あきらめるほかに、仕方がありません。",
+        "あきらめるために、仕方がありません。",
+        "あきらめるけれど、仕方がありません。",
+        "あきらめるので、仕方がありません。"
+      ],
+      "correct_answer": "あきらめるほかに、仕方がありません。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "もし時間があったら、その展覧会に行きたかったです。",
+      "options": [
+        "時間がありませんでした。",
+        "時間があります。",
+        "時間があったので、行きました。",
+        "時間があればいいです。"
+      ],
+      "correct_answer": "時間がありませんでした。",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "彼の話によると、プロジェクトは来月完成するということだ。",
+      "options": [
+        "彼がプロジェクトを完成させます。",
+        "彼はプロジェクトを完成させたいです。",
+        "プロジェクトは来月完成するはずです。",
+        "プロジェクトを来月完成させなければなりません。"
+      ],
+      "correct_answer": "プロジェクトは来月完成するはずです。",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "その建設現場___、多くの危険があります。",
+      "options": [
+        "では",
+        "で",
+        "に",
+        "が"
+      ],
+      "correct_answer": "では",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "この論文の内容___関して、質問があります。",
+      "options": [
+        "に",
+        "を",
+        "で",
+        "が"
+      ],
+      "correct_answer": "に",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "勉強しよう___、テレビを見てしまった。",
+      "options": [
+        "と",
+        "ても",
+        "のに",
+        "ほど"
+      ],
+      "correct_answer": "のに",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "このニュースが本当___わかりません。",
+      "options": [
+        "かどうか",
+        "かもしれません",
+        "かもしれない",
+        "かどうかは"
+      ],
+      "correct_answer": "かどうか",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

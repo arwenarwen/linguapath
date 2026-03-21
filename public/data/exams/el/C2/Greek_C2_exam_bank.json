@@ -1,0 +1,453 @@
+{
+  "language": "Greek",
+  "code": "el",
+  "level": "C2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Η αποτυχία να λάβουμε υπόψη τις εγγενείς αντιφάσεις του συστήματος αποδίδει τις προσπάθειές μας κενές\" mean in English?",
+      "options": [
+        "Success requires ignoring contradictions",
+        "Failure to account for the system's inherent contradictions renders our efforts vacuous",
+        "The system has no contradictions",
+        "Our efforts are always successful"
+      ],
+      "correct_answer": "Failure to account for the system's inherent contradictions renders our efforts vacuous",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η αποτυχία να λάβουμε υπόψη τις εγγενείς αντιφάσεις του συστήματος αποδίδει τις προσπάθειές μας κενές"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Η συντακτική αδυναμία της φορτωμένης πρότασης υποδηλώνει μια βαθύτερη κρίση εννοιολόγησης\" mean in English?",
+      "options": [
+        "Well-formed sentences indicate clarity",
+        "The syntactic inadequacy of the loaded proposition intimates a deeper conceptual crisis",
+        "Language is never problematic",
+        "All expressions are equally valid"
+      ],
+      "correct_answer": "The syntactic inadequacy of the loaded proposition intimates a deeper conceptual crisis",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η συντακτική αδυναμία της φορτωμένης πρότασης υποδηλώνει μια βαθύτερη κρίση εννοιολόγησης"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Η παραδοξογραφία της λόγου αυτού ορύσσει αβυσσιανές αναλογίες με την αρχαία ρητορική\" mean in English?",
+      "options": [
+        "This rhetoric has no historical antecedents",
+        "The paradoxography of this discourse excavates abyssal analogies with ancient rhetoric",
+        "Rhetoric is a modern invention",
+        "The past is irrelevant"
+      ],
+      "correct_answer": "The paradoxography of this discourse excavates abyssal analogies with ancient rhetoric",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η παραδοξογραφία της λόγου αυτού ορύσσει αβυσσιανές αναλογίες με την αρχαία ρητορική"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Η επανακόδικοποίηση της συμβολικής οικονομίας δύναται μόνον διά της διαδικασίας της αιωνοποιημένης διαφοράς\" mean in English?",
+      "options": [
+        "Symbolic systems never change",
+        "Recodification of the symbolic economy can only occur through the process of perpetuated difference",
+        "Change happens instantly",
+        "Difference is irrelevant"
+      ],
+      "correct_answer": "Recodification of the symbolic economy can only occur through the process of perpetuated difference",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η επανακόδικοποίηση της συμβολικής οικονομίας δύναται μόνον διά της διαδικασίας της αιωνοποιημένης διαφοράς"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Η αποδομητική ανάγνωση επιστρέφει στα κείμενα αυτά ό,τι η μεταψυχανάλυσις αφαίρεσε\" mean in English?",
+      "options": [
+        "Deconstructive readings destroy texts",
+        "Deconstructive reading restores to these texts what metapsychoanalysis removed",
+        "Texts have fixed meanings",
+        "Interpretation is impossible"
+      ],
+      "correct_answer": "Deconstructive reading restores to these texts what metapsychoanalysis removed",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η αποδομητική ανάγνωση επιστρέφει στα κείμενα αυτά ό,τι η μεταψυχανάλυσις αφαίρεσε"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Η ηθελημένη αμφιβολία της ονοματοδοσίας επιδεικνύει την ιστορικότητα των κατηγοριών\" mean in English?",
+      "options": [
+        "Naming is straightforward",
+        "The deliberate ambiguity of nomination demonstrates the historicity of categories",
+        "Categories are eternal",
+        "Words have no history"
+      ],
+      "correct_answer": "The deliberate ambiguity of nomination demonstrates the historicity of categories",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η ηθελημένη αμφιβολία της ονοματοδοσίας επιδεικνύει την ιστορικότητα των κατηγοριών"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Η ανάγνωση του κειμένου αυτού _____ τη μεταφυσικών υποδοχών του αναγνώστη.",
+      "options": [
+        "διαμεσολαβεί",
+        "διαμεσολαβεί",
+        "διαμεσολαβούν",
+        "διαμεσολαβούμενη"
+      ],
+      "correct_answer": "διαμεσολαβεί",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Το κείμενο _____ σημαίνειν ότι η αναφορικότης δύναται αναδιατυπωθήναι.",
+      "options": [
+        "υποδηλοί",
+        "υποδηλώνει",
+        "υποδηλούν",
+        "υποδηλωνούμενον"
+      ],
+      "correct_answer": "υποδηλοί",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Η διαφορά _____ εξαιρετικώς πολυσχιδής και ανεπανόρθωτος.",
+      "options": [
+        "παρουσιάζει",
+        "παρουσιάζεται",
+        "παρουσιάζεσθε",
+        "παρουσιάζειν"
+      ],
+      "correct_answer": "παρουσιάζεται",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Ανάγκη μας είναι να _____ τα σημασιολογικά τρώγματα της προτάσεως.",
+      "options": [
+        "εξετάζουμε",
+        "εξετάσουμε",
+        "εξετάζων",
+        "εξετάσθε"
+      ],
+      "correct_answer": "εξετάσουμε",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Η παραδομένη ρητορικότης _____ ούχ ίσχυσε διά πάντων τών δραμάτων.",
+      "options": [
+        "ισχύει",
+        "ισχύσει",
+        "ισχύσασα",
+        "ισχύειν"
+      ],
+      "correct_answer": "ισχύσει",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Το ὑποβαθμισμένον φάσμα _____ προσέταιρε νέας συλλήψεως.",
+      "options": [
+        "συγκροτεί",
+        "συγκροτήθη",
+        "συγκροτηθέντα",
+        "συγκροτῆσαι"
+      ],
+      "correct_answer": "συγκροτεί",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The constituted intellectual structure grasps the distinction between signifier and signified",
+        "There is no intellectual structure",
+        "Language is simple",
+        "Meaning is transparent"
+      ],
+      "correct_answer": "The constituted intellectual structure grasps the distinction between signifier and signified",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Η συνιστάμενη νοητική δομή επιλαμβάνεται της διακρίσεως μεταξύ σημειοτή και σημειωνομένου"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Meaning has a fixed nature",
+        "The infinite reformulation of meaning suggests that significations can be reformulated",
+        "Meaning is irrelevant",
+        "Language is constant"
+      ],
+      "correct_answer": "The infinite reformulation of meaning suggests that significations can be reformulated",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η άπειρος παρατύπωσις του νοήματος υποδηλοί ότι οι σημασίαι δύνανται αναδιατύπωνθαι"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Deconstructive strategy destroys all meaning",
+        "The deconstructive strategy reclaims the significations of the ancient text",
+        "Ancient texts are no longer relevant",
+        "Reading is impossible"
+      ],
+      "correct_answer": "The deconstructive strategy reclaims the significations of the ancient text",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η αποδομητική στρατηγία ανακατακτάται τα σημάσματα του αρχαίου κειμένου"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Texts are free from contradiction",
+        "Traversal through the text reveals the hidden contradictions",
+        "There is no hidden meaning",
+        "Texts are transparent"
+      ],
+      "correct_answer": "Traversal through the text reveals the hidden contradictions",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η περιήγησις διά του κειμένου αποκαλύπτει τας λανθάνουσας αντιφάσεις"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This discourse has no foundational categories",
+        "This discourse contains the fundamental categories of contradiction",
+        "Contradiction is absent from language",
+        "All discourse is identical"
+      ],
+      "correct_answer": "This discourse contains the fundamental categories of contradiction",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η λόγος αυτή ενυπάρχει τάς θεμελιώδεις κατηγορίας αντιφάσεως"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Ancient philosophy is irrelevant",
+        "Neglect of ancient philosophy regarding discourse places new complexities",
+        "There are no complexities",
+        "Language is simple"
+      ],
+      "correct_answer": "Neglect of ancient philosophy regarding discourse places new complexities",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η παραμέληση της αρχαίας φιλοσοφίας επί της λόγου περιτίθησι νέας πολυπλοκότητας"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The spectral genealogy of the text intimates epistemological ruptures that undermine the pretensions of logocentrism\"",
+      "options": [
+        "Κείμενα είναι πάντα σαφή",
+        "Η φασματική γενεαλογία του κειμένου υποδηλοί ότι υπάρχουν επιστημολογικές ρήξεις που υπονομεύουν τις προσποιήσεις του λογοκεντρισμού",
+        "Δεν υπάρχουν εγγραφές",
+        "Ο λογοκεντρισμός είναι αληθής"
+      ],
+      "correct_answer": "Η φασματική γενεαλογία του κειμένου υποδηλοί ότι υπάρχουν επιστημολογικές ρήξεις που υπονομεύουν τις προσποιήσεις του λογοκεντρισμού",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"The oblique phenomenology of differential spacing institutes a non-normative cartography of textual meanings\"",
+      "options": [
+        "Δεν υπάρχει χώρος",
+        "Η πλάγια φαινομενολογία της διαφορικής διαστάσεως ιδρύει μια μη-κανονική καρτογραφία των κειμενικών νοημάτων",
+        "Τα νοήματα είναι σταθερά",
+        "Δεν υπάρχει κείμενο"
+      ],
+      "correct_answer": "Η πλάγια φαινομενολογία της διαφορικής διαστάσεως ιδρύει μια μη-κανονική καρτογραφία των κειμενικών νοημάτων",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The polyvalent deferral of referential stability presages a fundamental undecidability that subverts all ontological fixity\"",
+      "options": [
+        "Η αναφορική σταθερότης είναι ακλόνητη",
+        "Η πολυσχιδής αναβολή της αναφορικής σταθερότητος προσημαίνει μια θεμελιώδη απόφασης που υπονομεύει πάσαν οντολογικήν σταθερότητα",
+        "Σταθερότης υπάρχει",
+        "Η αποφασίμοτης είναι δυνατή"
+      ],
+      "correct_answer": "Η πολυσχιδής αναβολή της αναφορικής σταθερότητος προσημαίνει μια θεμελιώδη απόφασης που υπονομεύει πάσαν οντολογικήν σταθερότητα",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The palimpsestic stratification of the signifying apparatus exhibits traces of anterior regimes of representation that continue to haunt the present configuration\"",
+      "options": [
+        "Δεν υπάρχουν ίχνη του παρελθόντος",
+        "Η παλιμψηστική στρώσιση της σημαίνουσας συσκευής παρουσιάζει ίχνη πρώτερων καθεστώτων αναπαραστάσεως που συνεχίζουν να στοιχειώνουν την παρούσαν διάταξιν",
+        "Το παρελθόν είναι νεκρό",
+        "Δεν υπάρχει αναπαράσταση"
+      ],
+      "correct_answer": "Η παλιμψηστική στρώσιση της σημαίνουσας συσκευής παρουσιάζει ίχνη πρώτερων καθεστώτων αναπαραστάσεως που συνεχίζουν να στοιχειώνουν την παρούσαν διάταξιν",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The aporias inscribed within the performative dimension of language institute a constitutive impossibility that paradoxically enables semiotic production\"",
+      "options": [
+        "Η γλώσσα είναι τέλεια",
+        "Οι απορίαι εγγεγραμμέναι εντός της επιτελεστικής διαστάσεως της γλώσσης ιδρύουν μίαν συντακτικήν αδυναμίαν ήτις παραδόξως δύναται σημειωτικήν παραγωγήν",
+        "Κανένας αποριών υπάρχει",
+        "Η σημειωτική είναι απλή"
+      ],
+      "correct_answer": "Οι απορίαι εγγεγραμμέναι εντός της επιτελεστικής διαστάσεως της γλώσσης ιδρύουν μίαν συντακτικήν αδυναμίαν ήτις παραδόξως δύναται σημειωτικήν παραγωγήν",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The liminal space between utterance and enunciation harbors an originary alterity that eludes the homogenizing grasp of conventional hermeneutics\"",
+      "options": [
+        "Δεν υπάρχει διαφορά",
+        "Ο οριακός χώρος μεταξύ του ειρημένου και της εκφωνήσεως κρύβει μίαν πρωταρχικήν ετερότητα ήτις διαφεύγει του ομοιογονούντος αρμάσματος της συμβατικής ερμηνευτικής",
+        "Η ερμηνεία είναι απλή",
+        "Δεν υπάρχει μνήμη"
+      ],
+      "correct_answer": "Ο οριακός χώρος μεταξύ του ειρημένου και της εκφωνήσεως κρύβει μίαν πρωταρχικήν ετερότητα ήτις διαφεύγει του ομοιογονούντος αρμάσματος της συμβατικής ερμηνευτικής",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Ποια είναι η τελεολογία της αποδόμησης και της μετανοίας;",
+      "options": [
+        "Δεν υπάρχει τελεολογία",
+        "Η μη-ολοκληρωμένη διαδικασία της κριτικής που αίρει τις δογματικές υποθέσεις και επανασυνθέτει το νόημα με διαχρονική ευαισθησία",
+        "Όλα μπορούν να ξεκαθαρίσουν",
+        "Δεν υπάρχει σημασία"
+      ],
+      "correct_answer": "Η μη-ολοκληρωμένη διαδικασία της κριτικής που αίρει τις δογματικές υποθέσεις και επανασυνθέτει το νόημα με διαχρονική ευαισθησία",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Πώς ανταποκρίνεστε στην απειρία του κειμενικού ύφους;",
+      "options": [
+        "Αρνούμαι την απειρία",
+        "Υποδέχομαι τα μειώνιμα σημαίνει της γραφής με αποδεκτή ταπεινότητα και συνεχή αναθεώρηση",
+        "Κλείω τη συζήτηση",
+        "Δεν υπάρχει κείμενο"
+      ],
+      "correct_answer": "Υποδέχομαι τα μειώνιμα σημαίνει της γραφής με αποδεκτή ταπεινότητα και συνεχή αναθεώρηση",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Ποια είναι η πολιτική της προτιμήσεως στα ζητήματα της σημασίας;",
+      "options": [
+        "Δεν έχει πολιτική",
+        "Η αποφυγή της προτιμήσεως και της ιστορικής συνείδησης που θέτει τα κείμενα σε διάλογο με τις πολιτισμικές τους συνθήκες",
+        "Όλα είναι ίσα",
+        "Δεν υπάρχει ιστορία"
+      ],
+      "correct_answer": "Η αποφυγή της προτιμήσεως και της ιστορικής συνείδησης που θέτει τα κείμενα σε διάλογο με τις πολιτισμικές τους συνθήκες",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Τι σημαίνει ο σεβασμός προς την αρχαία παράδοση;",
+      "options": [
+        "Να την απορρίψω",
+        "Να αναγνωρίσω τα πνευματικά κεφάλαιά της χωρίς να υποπίπτω σε ανάχρονο μιμητισμό ή αποδόμηση",
+        "Να τη μιμηθώ πλήρως",
+        "Δεν έχει σημασία"
+      ],
+      "correct_answer": "Να αναγνωρίσω τα πνευματικά κεφάλαιά της χωρίς να υποπίπτω σε ανάχρονο μιμητισμό ή αποδόμηση",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Ποιος είναι ο ρόλος του κριτικού σκεπτισμού;",
+      "options": [
+        "Δεν έχει ρόλο",
+        "Να αναδεικνύει τις απολήξεις των θέσεων και να ανοίγει νέες δυνατότητες σκέψης διατηρώντας δεοντική τρέλα",
+        "Να καταστρέψει όλα",
+        "Δεν υπάρχει σκεπτισμός"
+      ],
+      "correct_answer": "Να αναδεικνύει τις απολήξεις των θέσεων και να ανοίγει νέες δυνατότητες σκέψης διατηρώντας δεοντική τρέλα",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Πώς αντιλαμβάνεσθε τη δυνατότητα της αποδόμησης να επανασυνθέσει τα νοήματα;",
+      "options": [
+        "Δεν είναι δυνατή",
+        "Η αποδόμηση ενώ δεν προσφέρει νέες σημασίες, αποκαλύπτει τη δυναμικότητα των υφιστάμενων δομών να επανακόμψουν τα νοήματα",
+        "Η σημασία είναι σταθερή",
+        "Δεν υπάρχει σημασία"
+      ],
+      "correct_answer": "Η αποδόμηση ενώ δεν προσφέρει νέες σημασίες, αποκαλύπτει τη δυναμικότητα των υφιστάμενων δομών να επανακόμψουν τα νοήματα",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

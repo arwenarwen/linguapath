@@ -1,0 +1,453 @@
+{
+  "language": "Chinese",
+  "code": "zh",
+  "level": "B1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"虽然...但是\" mean in English?",
+      "options": [
+        "If...then",
+        "Because...so",
+        "Although...but",
+        "Before...after"
+      ],
+      "correct_answer": "Although...but",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "虽然...但是"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"完成\" mean in English?",
+      "options": [
+        "Begin",
+        "Complete",
+        "Fail",
+        "Continue"
+      ],
+      "correct_answer": "Complete",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "完成"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"遇到\" mean in English?",
+      "options": [
+        "Avoid",
+        "Meet",
+        "Leave",
+        "Follow"
+      ],
+      "correct_answer": "Meet",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "遇到"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"才能\" mean in English?",
+      "options": [
+        "Cannot",
+        "Can only",
+        "Might",
+        "Should"
+      ],
+      "correct_answer": "Can only",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "才能"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"经历\" mean in English?",
+      "options": [
+        "Experience",
+        "Forget",
+        "Teach",
+        "Learn"
+      ],
+      "correct_answer": "Experience",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "经历"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"环境\" mean in English?",
+      "options": [
+        "Weather",
+        "Environment",
+        "Time",
+        "Place"
+      ],
+      "correct_answer": "Environment",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "环境"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 他___过中国。",
+      "options": [
+        "去",
+        "去过",
+        "会去",
+        "在去"
+      ],
+      "correct_answer": "去过",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 虽然今天下雨，___我还是去公园了。",
+      "options": [
+        "所以",
+        "因为",
+        "但是",
+        "和"
+      ],
+      "correct_answer": "但是",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 这部电影___很好看。",
+      "options": [
+        "了",
+        "着",
+        "过",
+        "呢"
+      ],
+      "correct_answer": "着",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 我把书___在桌子上了。",
+      "options": [
+        "放",
+        "拿",
+        "给",
+        "看"
+      ],
+      "correct_answer": "放",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 这个工作___我来做。",
+      "options": [
+        "被",
+        "把",
+        "由",
+        "让"
+      ],
+      "correct_answer": "由",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 他___足够聪明___理解这个问题。",
+      "options": [
+        "足够...才能",
+        "太...不能",
+        "足够...能",
+        "太...以至于"
+      ],
+      "correct_answer": "足够...能",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I will complete this project",
+        "I am completing this project",
+        "I have already completed this project",
+        "I need to complete this project"
+      ],
+      "correct_answer": "I have already completed this project",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "我已经完成了这个项目"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "He stopped working because he was tired",
+        "Although he was tired, he continued working",
+        "He was too tired to work",
+        "He worked because he was tired"
+      ],
+      "correct_answer": "Although he was tired, he continued working",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "虽然他很累，但是他继续工作"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I solved the difficult problem",
+        "This problem is too easy",
+        "This problem is too difficult, I cannot solve it",
+        "I will solve this problem"
+      ],
+      "correct_answer": "This problem is too difficult, I cannot solve it",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "这个问题太难了，我解决不了"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I took the luggage from the living room",
+        "I am putting luggage in the living room",
+        "I have put the luggage in the living room",
+        "I want to put luggage in the living room"
+      ],
+      "correct_answer": "I have put the luggage in the living room",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "我把行李放在客厅里了"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I practiced Chinese yesterday",
+        "In order to study Chinese well, I practice every day",
+        "Chinese is difficult to learn",
+        "I like learning Chinese"
+      ],
+      "correct_answer": "In order to study Chinese well, I practice every day",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "为了学好中文，我每天都练习"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The food is expensive",
+        "The food is not tasty",
+        "Not only is the food delicious, but the prices are also cheap",
+        "The restaurant is far away"
+      ],
+      "correct_answer": "Not only is the food delicious, but the prices are also cheap",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "这家餐厅的菜不仅好吃，而且价格便宜"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Although it was raining, I went out\"",
+      "options": [
+        "虽然下雨，但是我出去了",
+        "因为下雨，我没有出去",
+        "下雨的时候我出去",
+        "我出去的时候下雨"
+      ],
+      "correct_answer": "虽然下雨，但是我出去了",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"I have never been to that country\"",
+      "options": [
+        "我去过那个国家",
+        "我没有去过那个国家",
+        "我要去那个国家",
+        "那个国家在哪里"
+      ],
+      "correct_answer": "我没有去过那个国家",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"He is studying Chinese\"",
+      "options": [
+        "他学过中文",
+        "他学了中文",
+        "他在学中文",
+        "他会学中文"
+      ],
+      "correct_answer": "他在学中文",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"I put the book on the shelf\"",
+      "options": [
+        "我把书放在书架上了",
+        "我在书架上看书",
+        "书在书架上",
+        "我要看书架上的书"
+      ],
+      "correct_answer": "我把书放在书架上了",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"In order to succeed, you must work hard\"",
+      "options": [
+        "你很努力，成功了",
+        "为了成功，你必须努力工作",
+        "你成功了，因为你努力",
+        "你要努力工作"
+      ],
+      "correct_answer": "为了成功，你必须努力工作",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The teacher explained the grammar very clearly\"",
+      "options": [
+        "老师很清楚",
+        "老师解释语法讲得很清楚",
+        "语法很清楚",
+        "老师要解释语法"
+      ],
+      "correct_answer": "老师解释语法讲得很清楚",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "你想表达：虽然这个电影长，但是我喜欢。你应该说：",
+      "options": [
+        "这个电影长，我不喜欢",
+        "虽然这个电影长，但是我喜欢",
+        "这个电影很长，很好看",
+        "我不喜欢长电影"
+      ],
+      "correct_answer": "虽然这个电影长，但是我喜欢",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "你的朋友问你之前是否去过巴黎。你以前去过。你说：",
+      "options": [
+        "我要去巴黎",
+        "我在巴黎",
+        "我去过巴黎",
+        "我每年都去巴黎"
+      ],
+      "correct_answer": "我去过巴黎",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "现在几点了？你还在工作。你说：",
+      "options": [
+        "我工作了",
+        "我在工作",
+        "我要工作",
+        "我完成工作了"
+      ],
+      "correct_answer": "我在工作",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "你想说一件事情非常困难，以至于你做不了。你说：",
+      "options": [
+        "这件事很容易",
+        "这件事很有意思",
+        "这件事太难了，我做不了",
+        "这件事我能做"
+      ],
+      "correct_answer": "这件事太难了，我做不了",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "你的同学既聪明又努力。你要表达这个意思。你说：",
+      "options": [
+        "他不聪明",
+        "他很懒",
+        "他既聪明又努力",
+        "他只是努力"
+      ],
+      "correct_answer": "他既聪明又努力",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "你已经吃完饭了。别人问你吃了没有。你说：",
+      "options": [
+        "我正在吃",
+        "我要吃",
+        "我吃了",
+        "我没有吃"
+      ],
+      "correct_answer": "我吃了",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    }
+  ]
+}

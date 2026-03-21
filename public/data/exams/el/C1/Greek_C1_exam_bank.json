@@ -1,0 +1,453 @@
+{
+  "language": "Greek",
+  "code": "el",
+  "level": "C1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Η δυσχέρεια που αντιμετώπισε ήταν εξαιρετικά δυσανάλογη προς τα αποτελέσματα\" mean in English?",
+      "options": [
+        "The difficulty he faced was proportional to the results",
+        "The difficulty he faced was extraordinarily disproportionate to the results",
+        "The results justified the difficulty",
+        "Everything was easy"
+      ],
+      "correct_answer": "The difficulty he faced was extraordinarily disproportionate to the results",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η δυσχέρεια που αντιμετώπισε ήταν εξαιρετικά δυσανάλογη προς τα αποτελέσματα"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Αν και οι επικρίσεις ήταν αιχμηρές, δεν ανατράπηκε η απόφασή του\" mean in English?",
+      "options": [
+        "The sharp criticisms changed his mind completely",
+        "Although the criticisms were sharp, his decision was not overturned",
+        "He agreed with all the criticisms",
+        "His decision was easily changed"
+      ],
+      "correct_answer": "Although the criticisms were sharp, his decision was not overturned",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Αν και οι επικρίσεις ήταν αιχμηρές, δεν ανατράπηκε η απόφασή του"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Η κριτική ανάλυση των θεσμών αποκαλύπτει τις εγγενείς διαρρηγνύσεις\" mean in English?",
+      "options": [
+        "Critical analysis hides institutional problems",
+        "Critical analysis of institutions reveals inherent fractures",
+        "Institutions have no problems",
+        "Analysis is unnecessary"
+      ],
+      "correct_answer": "Critical analysis of institutions reveals inherent fractures",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η κριτική ανάλυση των θεσμών αποκαλύπτει τις εγγενείς διαρρηγνύσεις"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Η ετερογένεια των απόψεων αποδεικνύει τη πολυπλοκότητα του θέματος\" mean in English?",
+      "options": [
+        "The homogeneity of views simplifies the issue",
+        "The heterogeneity of views demonstrates the complexity of the matter",
+        "Everyone agrees on everything",
+        "There is no complexity"
+      ],
+      "correct_answer": "The heterogeneity of views demonstrates the complexity of the matter",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η ετερογένεια των απόψεων αποδεικνύει τη πολυπλοκότητα του θέματος"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Η εμπειρία του υπαγόρευσε μια πιο συγκρατημένη στάση\" mean in English?",
+      "options": [
+        "His experience led to a more reckless attitude",
+        "His experience dictated a more temperate stance",
+        "He ignored his experience",
+        "He was very aggressive"
+      ],
+      "correct_answer": "His experience dictated a more temperate stance",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η εμπειρία του υπαγόρευσε μια πιο συγκρατημένη στάση"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Η διερεύνηση της ιστορίας επιφέρει επίγνωση των λαθών μας\" mean in English?",
+      "options": [
+        "Historical investigation is useless",
+        "Inquiry into history brings awareness of our mistakes",
+        "History does not teach us anything",
+        "We should ignore history"
+      ],
+      "correct_answer": "Inquiry into history brings awareness of our mistakes",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η διερεύνηση της ιστορίας επιφέρει επίγνωση των λαθών μας"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Η πολιτική αυτή _____ να χαρακτηρισθεί παρά πολύ προοδευτική.",
+      "options": [
+        "δύναται",
+        "δύνανται",
+        "δυνάμενος",
+        "δυνατότητα"
+      ],
+      "correct_answer": "δύναται",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Ό,τι κι αν _____ στο μέλλον, δεν θα παρατήσουμε τη προσπάθειά μας.",
+      "options": [
+        "συμβαίνει",
+        "συμβεί",
+        "συμβαίνουν",
+        "συμβαίνησαν"
+      ],
+      "correct_answer": "συμβεί",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Η πρόθεσή του ήταν να _____ ένα νέο παράδειγμα στην κοινότητα.",
+      "options": [
+        "δημιουργώ",
+        "δημιουργήσει",
+        "δημιουργούν",
+        "δημιουργήθηκε"
+      ],
+      "correct_answer": "δημιουργήσει",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Με την _____ ότι θα υπάρξουν δυσκολίες, ξεκίνησε το έργο.",
+      "options": [
+        "επίγνωση",
+        "επίγνωσης",
+        "επίγνωσες",
+        "επίγνωσιν"
+      ],
+      "correct_answer": "επίγνωσης",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Η συνεχής _____ για τη βελτίωση είναι αναγκαία.",
+      "options": [
+        "προσπάθεια",
+        "προσπάθειας",
+        "προσπάθειες",
+        "προσπαθήματα"
+      ],
+      "correct_answer": "προσπάθεια",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Δεν θα _____ τις αδικίες ακόμη και αν είμαστε μόνοι.",
+      "options": [
+        "αποδεχθώ",
+        "αποδεχθούμε",
+        "αποδεχόμαστε",
+        "αποδεχθείμεν"
+      ],
+      "correct_answer": "αποδεχθούμε",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The examination shows the issue is simple",
+        "Examination of the phenomenon shows there are multiple dimensions that escape superficial understanding",
+        "There is only one explanation",
+        "The phenomenon is not important"
+      ],
+      "correct_answer": "Examination of the phenomenon shows there are multiple dimensions that escape superficial understanding",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η εξέταση του φαινομένου δείχνει ότι υπάρχουν πολλαπλές διαστάσεις που ξεφεύγουν από την επιφανειακή κατανόηση"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "History is not important",
+        "Our failure to consider the forces of history will cause great harm",
+        "History helps us",
+        "We should ignore the past"
+      ],
+      "correct_answer": "Our failure to consider the forces of history will cause great harm",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η παράλειψη ημών να λάβουμε υπόψη τις δυνάμεις της ιστορίας θα προκαλέσει μεγάλη βλάβη"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Theory and practice are identical",
+        "The balance between theory and practice is exceptionally difficult to maintain",
+        "Keeping balance is easy",
+        "They do not matter"
+      ],
+      "correct_answer": "The balance between theory and practice is exceptionally difficult to maintain",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η αναλογία μεταξύ θεωρίας και πρακτικής είναι εξαιρετικά δύσκολη να διατηρηθεί"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "His testimony is straightforward",
+        "His testimony is particularly contrived and subcategorized",
+        "It is easy to understand",
+        "The testimony is clear"
+      ],
+      "correct_answer": "His testimony is particularly contrived and subcategorized",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η μαρτυρία του είναι ιδιαίτερα αφύσικη και υποκατηγοριοποιημένη"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "There is no difference",
+        "The difference between supposed and actual structure is significant",
+        "Structure does not matter",
+        "They are the same"
+      ],
+      "correct_answer": "The difference between supposed and actual structure is significant",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η διαφορά μεταξύ υποτιθέμενης και πραγματικής δομής είναι σημαντική"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The decision will have no effect",
+        "The long-term consequence of the decision will be redistributed across many generations",
+        "Only one generation is affected",
+        "There are no consequences"
+      ],
+      "correct_answer": "The long-term consequence of the decision will be redistributed across many generations",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η μακροπρόθεσμη συνέπεια της απόφασης θα ανακατανεμηθεί σε πολλές γεννιές"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The epistemological framework underpinning this thesis is built upon a synthesis of disparate methodologies\"",
+      "options": [
+        "Το ερευνητικό πλαίσιο είναι απλό",
+        "Το επιστημολογικό πλαίσιο που υποστηρίζει αυτή τη διατριβή είναι δομημένο σε μια σύνθεση ανόμοιων μεθοδολογιών",
+        "Η θέση είναι χωρίς βάσεις",
+        "Δεν υπάρχει μεθοδολογία"
+      ],
+      "correct_answer": "Το επιστημολογικό πλαίσιο που υποστηρίζει αυτή τη διατριβή είναι δομημένο σε μια σύνθεση ανόμοιων μεθοδολογιών",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"The bifurcation of identities within postmodern discourse necessitates a reconceptualization of subjectivity\"",
+      "options": [
+        "Δεν υπάρχει ταυτότητα",
+        "Η διχοτόμηση των ταυτοτήτων εντός του μεταμοντέρνου λόγου επιτακτικοποιεί μια επανακατασκευή της υποκειμενικότητας",
+        "Η ταυτότητα είναι σταθερή",
+        "Η υποκειμενικότητα δεν αλλάζει"
+      ],
+      "correct_answer": "Η διχοτόμηση των ταυτοτήτων εντός του μεταμοντέρνου λόγου επιτακτικοποιεί μια επανακατασκευή της υποκειμενικότητας",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The hermeneutical rupture between signifier and signified constitutes a fundamental aporia in contemporary semiotics\"",
+      "options": [
+        "Δεν υπάρχει διαφορά μεταξύ σημειωτή και σημειωνόμενου",
+        "Το ερμηνευτικό σχίσμα μεταξύ σημειωτή και σημειωνόμενου αποτελεί μια θεμελιώδη απορία στη σύγχρονη σημειωτική",
+        "Η σημειωτική είναι απλή",
+        "Δεν υπάρχουν προβλήματα στη σημειωτική"
+      ],
+      "correct_answer": "Το ερμηνευτικό σχίσμα μεταξύ σημειωτή και σημειωνόμενου αποτελεί μια θεμελιώδη απορία στη σύγχρονη σημειωτική",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The phenomenological reduction reveals the structures of intentionality that undergird our experiential modalities\"",
+      "options": [
+        "Δεν υπάρχει αναγωγή",
+        "Η φαινομενολογική αναγωγή αποκαλύπτει τις δομές της προθέσεως που υποστηρίζουν τις εμπειρικές μας τροποποιήσεις",
+        "Η εμπειρία είναι τυχαία",
+        "Δεν υπάρχουν δομές"
+      ],
+      "correct_answer": "Η φαινομενολογική αναγωγή αποκαλύπτει τις δομές της προθέσεως που υποστηρίζουν τις εμπειρικές μας τροποποιήσεις",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The recursive deployment of metanarrative strategies instantiates a performative contradiction within the deconstructive apparatus\"",
+      "options": [
+        "Δεν υπάρχει μετααφήγηση",
+        "Η αναδρομική εφαρμογή στρατηγιών μεταφήγησης ενσωματώνει μια επιτελεστική αντίφαση εντός της αποδομητικής συσκευής",
+        "Η αποδόμηση είναι αδύνατη",
+        "Δεν υπάρχουν αντιφάσεις"
+      ],
+      "correct_answer": "Η αναδρομική εφαρμογή στρατηγιών μεταφήγησης ενσωματώνει μια επιτελεστική αντίφαση εντός της αποδομητικής συσκευής",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The genealogical archaeology of discourse unmasks the hidden power relations embedded within supposedly neutral epistemic frameworks\"",
+      "options": [
+        "Η αρχαιολογία δεν έχει σημασία",
+        "Η γενεαλογική αρχαιολογία του λόγου αποκαλύπτει τις κρυμμένες σχέσεις εξουσίας ενσωματωμένες εντός φερόμενων ουδέτερων επιστημικών πλαισίων",
+        "Δεν υπάρχουν σχέσεις εξουσίας",
+        "Το πλαίσιο είναι πραγματικά ουδέτερο"
+      ],
+      "correct_answer": "Η γενεαλογική αρχαιολογία του λόγου αποκαλύπτει τις κρυμμένες σχέσεις εξουσίας ενσωματωμένες εντός φερόμενων ουδέτερων επιστημικών πλαισίων",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Τι σημαίνει για εσάς η φιλοσοφική αναζήτηση της αλήθειας;",
+      "options": [
+        "Δεν έχει σημασία",
+        "Είναι ένα συνεχές εγχείρημα που περιλαμβάνει την ανάπτυξη κριτικής σκέψης και την αμφισβήτηση των δεδομένων παραδόσεων",
+        "Η αλήθεια είναι πάντα σαφής",
+        "Δεν υπάρχει αλήθεια"
+      ],
+      "correct_answer": "Είναι ένα συνεχές εγχείρημα που περιλαμβάνει την ανάπτυξη κριτικής σκέψης και την αμφισβήτηση των δεδομένων παραδόσεων",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Ποια είναι η σχέση μεταξύ γλώσσας και πραγματικότητας;",
+      "options": [
+        "Δεν υπάρχει σχέση",
+        "Η γλώσσα δεν αποδίδει ποτέ τέλεια την πραγματικότητα και φέρει τις νοερές και πολιτισμικές της δομές",
+        "Η γλώσσα είναι αντικειμενική",
+        "Η πραγματικότητα είναι ανεξάρτητη της γλώσσας"
+      ],
+      "correct_answer": "Η γλώσσα δεν αποδίδει ποτέ τέλεια την πραγματικότητα και φέρει τις νοερές και πολιτισμικές της δομές",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Πώς αντιμετωπίζετε τις παγιωμένες αξίες;",
+      "options": [
+        "Τις δέχομαι χωρίς κριτική",
+        "Τις εξετάζω με κριτική σκέψη και ειμαι έτοιμος να τις επανεξετάσω όταν υπάρχουν νέες ενδείξεις",
+        "Τις απορρίπτω πάντα",
+        "Δεν έχω αξίες"
+      ],
+      "correct_answer": "Τις εξετάζω με κριτική σκέψη και ειμαι έτοιμος να τις επανεξετάσω όταν υπάρχουν νέες ενδείξεις",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Τι είναι η σημασία της αυτοκριτικής;",
+      "options": [
+        "Δεν έχει σημασία",
+        "Είναι ζωτική για τη διανοητική ανάπτυξη και τη βελτίωση των μας απόψεων",
+        "Είναι αρνητική",
+        "Σημαίνει ότι άστοχα"
+      ],
+      "correct_answer": "Είναι ζωτική για τη διανοητική ανάπτυξη και τη βελτίωση των μας απόψεων",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Ποια είναι η αξία του διαλόγου με ανθρώπους που έχουν διαφορετικές απόψεις;",
+      "options": [
+        "Είναι χασιμένος χρόνος",
+        "Μας επιτρέπει να αμφισβητήσουμε τις υποθέσεις μας και να επεκτείνουμε την κατανόησή μας",
+        "Δεν μπορούμε να μάθουμε από άλλους",
+        "Όλες οι απόψεις είναι ίσες"
+      ],
+      "correct_answer": "Μας επιτρέπει να αμφισβητήσουμε τις υποθέσεις μας και να επεκτείνουμε την κατανόησή μας",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Πώς κατανοείς τη σχέση μεταξύ ατομικής και συλλογικής ευθύνης;",
+      "options": [
+        "Δεν υπάρχει σχέση",
+        "Ο κάθε άνθρωπος φέρει εν μέρει ευθύνη για τις κοινωνικές συνέπειες των πράξεών του",
+        "Μόνο το άτομο είναι υπεύθυνο",
+        "Δεν υπάρχει καμία ευθύνη"
+      ],
+      "correct_answer": "Ο κάθε άνθρωπος φέρει εν μέρει ευθύνη για τις κοινωνικές συνέπειες των πράξεών του",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

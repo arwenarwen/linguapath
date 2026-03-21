@@ -1,0 +1,453 @@
+{
+  "language": "Portuguese",
+  "code": "pt",
+  "level": "A1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Olá, tudo bem?\" mean in English?",
+      "options": [
+        "Hello, how are you?",
+        "Goodbye, see you later",
+        "Good morning, sleep well",
+        "Thank you very much"
+      ],
+      "correct_answer": "Hello, how are you?",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Olá, tudo bem?"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Eu sou professor.\" mean in English?",
+      "options": [
+        "I am a student",
+        "I am a teacher",
+        "I am a doctor",
+        "I am an engineer"
+      ],
+      "correct_answer": "I am a teacher",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Eu sou professor."
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Qual é o teu nome?\" mean in English?",
+      "options": [
+        "How old are you?",
+        "Where do you live?",
+        "What is your name?",
+        "What do you do?"
+      ],
+      "correct_answer": "What is your name?",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Qual é o teu nome?"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Tenho vinte e cinco anos.\" mean in English?",
+      "options": [
+        "I have twenty-five euros",
+        "I have twenty-five years",
+        "I am twenty-five years old",
+        "I want twenty-five apples"
+      ],
+      "correct_answer": "I am twenty-five years old",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Tenho vinte e cinco anos."
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"A casa é grande.\" mean in English?",
+      "options": [
+        "The house is small",
+        "The house is big",
+        "The house is old",
+        "The house is new"
+      ],
+      "correct_answer": "The house is big",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "A casa é grande."
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Gosto de chocolate.\" mean in English?",
+      "options": [
+        "I dislike chocolate",
+        "I like chocolate",
+        "I love coffee",
+        "I need water"
+      ],
+      "correct_answer": "I like chocolate",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Gosto de chocolate."
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Olá, meu ___ é João.",
+      "options": [
+        "nome",
+        "dia",
+        "ano",
+        "livro"
+      ],
+      "correct_answer": "nome",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Ela ___ médica no hospital.",
+      "options": [
+        "sou",
+        "somos",
+        "é",
+        "são"
+      ],
+      "correct_answer": "é",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Nós ___ três filhos.",
+      "options": [
+        "têm",
+        "tem",
+        "temos",
+        "tenho"
+      ],
+      "correct_answer": "temos",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Você ___ de Portugal?",
+      "options": [
+        "sois",
+        "é",
+        "são",
+        "sou"
+      ],
+      "correct_answer": "é",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Eu ___ café todas as manhãs.",
+      "options": [
+        "bebo",
+        "bebes",
+        "bebemos",
+        "bebem"
+      ],
+      "correct_answer": "bebo",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Hoje ___ segunda-feira.",
+      "options": [
+        "é",
+        "são",
+        "sou",
+        "somos"
+      ],
+      "correct_answer": "é",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Good afternoon, how are you?",
+        "Good morning, how are you?",
+        "Good evening, how are you?",
+        "Goodnight, sleep well"
+      ],
+      "correct_answer": "Good morning, how are you?",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Bom dia, como vai?"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "You are welcome",
+        "Thank you very much",
+        "Excuse me",
+        "I am sorry"
+      ],
+      "correct_answer": "Thank you very much",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Obrigado muito!"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I work in Lisbon",
+        "I live in Lisbon",
+        "I study in Lisbon",
+        "I visit Lisbon"
+      ],
+      "correct_answer": "I live in Lisbon",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Eu moro em Lisboa."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "My email is 123456789",
+        "My address is 123456789",
+        "My phone number is 123456789",
+        "My age is 123456789"
+      ],
+      "correct_answer": "My phone number is 123456789",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "O meu número de telefone é 123456789."
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "What is your name?",
+        "What is your address?",
+        "What is your age?",
+        "What is your job?"
+      ],
+      "correct_answer": "What is your age?",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Qual é a tua idade?"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I have a cat and a bird",
+        "I have a dog and a cat",
+        "I have two dogs",
+        "I have three cats"
+      ],
+      "correct_answer": "I have a dog and a cat",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Eu tenho um cão e um gato."
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"What is your name?\"",
+      "options": [
+        "O que é o teu nome?",
+        "Qual é o teu nome?",
+        "Quem é você?",
+        "Como se chama?"
+      ],
+      "correct_answer": "Qual é o teu nome?",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"I am from Spain.\"",
+      "options": [
+        "Eu estou da Espanha.",
+        "Eu sou de Espanha.",
+        "Eu sou Espanha.",
+        "Eu venho Espanha."
+      ],
+      "correct_answer": "Eu sou de Espanha.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"She likes apples.\"",
+      "options": [
+        "Ela gosta maçãs.",
+        "Ela gosta de maçãs.",
+        "Ela ama maçãs.",
+        "Ela deseja maçãs."
+      ],
+      "correct_answer": "Ela gosta de maçãs.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"We have three children.\"",
+      "options": [
+        "Nós temos três filhos.",
+        "Nós somos três filhos.",
+        "Nós estamos três filhos.",
+        "Nós temos de três filhos."
+      ],
+      "correct_answer": "Nós temos três filhos.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The water is cold.\"",
+      "options": [
+        "A água é fria.",
+        "A água está fria.",
+        "A água é fria muito.",
+        "A água tem fria."
+      ],
+      "correct_answer": "A água é fria.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Do you speak English?\"",
+      "options": [
+        "Tu fales inglês?",
+        "Você fala inglês?",
+        "Você falas inglês?",
+        "Tu fala inglês?"
+      ],
+      "correct_answer": "Você fala inglês?",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Você está na padaria. O vendedor pergunta: 'O que deseja?' Qual é a resposta apropriada?",
+      "options": [
+        "Desejo pão e leite.",
+        "Você vende pão?",
+        "Que horas abre?",
+        "Onde fica o banheiro?"
+      ],
+      "correct_answer": "Desejo pão e leite.",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Seu colega chega e diz 'Olá!' Como você responde?",
+      "options": [
+        "Adeus!",
+        "Olá, tudo bem?",
+        "Que horas são?",
+        "Obrigado!"
+      ],
+      "correct_answer": "Olá, tudo bem?",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Alguém lhe oferece comida. Qual frase usa se não quer?",
+      "options": [
+        "Quero mais!",
+        "Não, obrigado.",
+        "Sim, com prazer.",
+        "É delicioso!"
+      ],
+      "correct_answer": "Não, obrigado.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Você chega a um hotel. O recepcionista pergunta 'Qual é o seu nome?' Como responde?",
+      "options": [
+        "Meu número é 5.",
+        "Meu nome é João.",
+        "Sou de Lisboa.",
+        "Tenho vinte anos."
+      ],
+      "correct_answer": "Meu nome é João.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Seu amigo diz 'Tenho fome!' Como você responde?",
+      "options": [
+        "Tenho sono!",
+        "Está chovendo.",
+        "Vamos comer algo?",
+        "Que dia é hoje?"
+      ],
+      "correct_answer": "Vamos comer algo?",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Na rua, alguém pergunta 'Qual é teu email?' Como você responde de forma natural?",
+      "options": [
+        "Tenho um cão.",
+        "Meu email é joao@email.com",
+        "Sou engenheiro.",
+        "Moro em Lisboa."
+      ],
+      "correct_answer": "Meu email é joao@email.com",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

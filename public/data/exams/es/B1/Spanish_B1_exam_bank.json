@@ -1,0 +1,453 @@
+{
+  "language": "Spanish",
+  "code": "es",
+  "level": "B1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"opinar\" mean in English?",
+      "options": [
+        "to think",
+        "to express an opinion",
+        "to understand",
+        "to believe"
+      ],
+      "correct_answer": "to express an opinion",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "opinar"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"demostrar\" mean in English?",
+      "options": [
+        "to show",
+        "to demonstrate",
+        "to prove",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "demostrar"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"carácter\" mean in English?",
+      "options": [
+        "character",
+        "anger",
+        "letter",
+        "role"
+      ],
+      "correct_answer": "character",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "carácter"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"resolver\" mean in English?",
+      "options": [
+        "to solve",
+        "to resolve",
+        "to fix",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "resolver"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"desarrollarse\" mean in English?",
+      "options": [
+        "to develop",
+        "to unfold",
+        "to expand",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "desarrollarse"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"intercambio\" mean in English?",
+      "options": [
+        "exchange",
+        "traffic",
+        "change",
+        "replacement"
+      ],
+      "correct_answer": "exchange",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "intercambio"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Creo que es importante que ___ estudies más.",
+      "options": [
+        "tu",
+        "tú",
+        "te",
+        "ti"
+      ],
+      "correct_answer": "tú",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Quiero que ___ termines el proyecto antes del viernes.",
+      "options": [
+        "tu",
+        "tú",
+        "haya",
+        "hayas"
+      ],
+      "correct_answer": "hayas",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Es posible que ellos no ___ mañana.",
+      "options": [
+        "vengan",
+        "vienen",
+        "vinieron",
+        "vendrán"
+      ],
+      "correct_answer": "vengan",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Aunque ___ difícil, lo haremos.",
+      "options": [
+        "sea",
+        "es",
+        "fue",
+        "será"
+      ],
+      "correct_answer": "sea",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Cuando ___ el verano, iremos a la playa.",
+      "options": [
+        "llega",
+        "llegue",
+        "llegará",
+        "llegaba"
+      ],
+      "correct_answer": "llegue",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Mientras ___ en el trabajo, recibí una llamada importante.",
+      "options": [
+        "estoy",
+        "estaba",
+        "estuve",
+        "esté"
+      ],
+      "correct_answer": "estaba",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I think climate change is a hoax",
+        "I believe climate change is urgent",
+        "I do not care about climate change",
+        "climate change is not real"
+      ],
+      "correct_answer": "I believe climate change is urgent",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "considero que el cambio climático es urgente"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "contrary to what I thought, it was boring",
+        "as I expected, it was interesting",
+        "unlike what I thought, it was very interesting",
+        "I was wrong about it"
+      ],
+      "correct_answer": "unlike what I thought, it was very interesting",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "a diferencia de lo que pensaba, fue muy interesante"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "fortunately, the economy is booming",
+        "unfortunately, the economy is in crisis",
+        "luckily, the economy has improved",
+        "the economy has recovered"
+      ],
+      "correct_answer": "unfortunately, the economy is in crisis",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "desgraciadamente, la económica está en crisis"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "most students prefer working in the office",
+        "most students prefer remote work",
+        "few students like remote work",
+        "students dislike flexibility"
+      ],
+      "correct_answer": "most students prefer remote work",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "la mayoría de los estudiantes prefiere trabajar remotamente"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "it seems right that you have no rights",
+        "it seems unfair that you do not have equal rights",
+        "it is fair that you have privileges",
+        "I think equality is not important"
+      ],
+      "correct_answer": "it seems unfair that you do not have equal rights",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "me parece injusto que no tengas derechos iguales"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "there are only advantages",
+        "there are only disadvantages",
+        "however, there are advantages and disadvantages in both cases",
+        "one option is always better"
+      ],
+      "correct_answer": "however, there are advantages and disadvantages in both cases",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "sin embargo, hay ventajas y desventajas en ambos casos"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"I think it is important that we discuss this matter carefully\"",
+      "options": [
+        "Pienso que es importante que discutamos este asunto cuidadosamente",
+        "Creo que es importante que discutamos este asunto cuidadosamente",
+        "Me parece importante que discutamos este asunto cuidadosamente",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Although he worked hard, he did not succeed\"",
+      "options": [
+        "Aunque trabajó duro, no tuvo éxito",
+        "Aunque trabaja duro, no tiene éxito",
+        "A pesar que trabajó duro, no tuvo éxito",
+        "Mientras trabajaba duro, no tuvo éxito"
+      ],
+      "correct_answer": "Aunque trabajó duro, no tuvo éxito",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"In my opinion, we should invest more in education\"",
+      "options": [
+        "En mi opinión, deberíamos invertir más en educación",
+        "Según mi pensamiento, deberíamos invertir más en educación",
+        "A mi parecer, tenemos que invertir más en educación",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"It seems to me that the project requires more analysis\"",
+      "options": [
+        "Me parece que el proyecto requiere más análisis",
+        "Me parece que el proyecto necesita más análisis",
+        "Creo que el proyecto requiere más análisis",
+        "both A and B"
+      ],
+      "correct_answer": "both A and B",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"We should not forget that circumstances were different then\"",
+      "options": [
+        "No debemos olvidar que las circunstancias eran diferentes entonces",
+        "No hemos que olvidar que las circunstancias fueron diferentes entonces",
+        "Debemos recordar que las circunstancias eran diferentes entonces",
+        "both A and C"
+      ],
+      "correct_answer": "both A and C",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"If you had studied, you would have passed the exam\"",
+      "options": [
+        "Si hubieras estudiado, habría aprobado el examen",
+        "Si hubieras estudiado, habrías aprobado el examen",
+        "Si estudiaras, aprobarias el examen",
+        "Si hayas estudiado, aprobará el examen"
+      ],
+      "correct_answer": "Si hubieras estudiado, habrías aprobado el examen",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "¿Cuál es una razón válida para estar en desacuerdo con una opinión?",
+      "options": [
+        "porque es diferente",
+        "porque tienes argumentos mejores",
+        "porque no te gusta",
+        "porque quieres ganar"
+      ],
+      "correct_answer": "porque tienes argumentos mejores",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "¿Qué significa 'a largo plazo'?",
+      "options": [
+        "en un mes",
+        "en un año",
+        "durante un período extendido de tiempo",
+        "mañana"
+      ],
+      "correct_answer": "durante un período extendido de tiempo",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "¿Cuál es el propósito de un debate académico?",
+      "options": [
+        "ganar a cualquier precio",
+        "compartir ideas y analizar perspectivas diferentes",
+        "insultar a los oponentes",
+        "imponer tu opinión"
+      ],
+      "correct_answer": "compartir ideas y analizar perspectivas diferentes",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "¿Qué hace una persona cuando 'cambia de opinión'?",
+      "options": [
+        "miente",
+        "reconoce nuevo información y forma otra conclusión",
+        "es inconsistente",
+        "no piensa"
+      ],
+      "correct_answer": "reconoce nuevo información y forma otra conclusión",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "¿Cuál es una característica importante en el lugar de trabajo?",
+      "options": [
+        "permitir solo una perspectiva",
+        "fomentar comunicación abierta y respetuosa",
+        "evitar conflictos siempre",
+        "no hacer preguntas"
+      ],
+      "correct_answer": "fomentar comunicación abierta y respetuosa",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "¿Qué significa 'estar en la misma situación que alguien'?",
+      "options": [
+        "estar en el mismo lugar físico",
+        "tener experiencias similares",
+        "ser amigos",
+        "estar en desacuerdo"
+      ],
+      "correct_answer": "tener experiencias similares",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

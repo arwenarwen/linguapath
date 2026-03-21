@@ -1,0 +1,453 @@
+{
+  "language": "Italian",
+  "code": "it",
+  "level": "A2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Ieri ho mangiato una pizza\" mean in English?",
+      "options": [
+        "Yesterday I ate a pizza",
+        "Yesterday I eat a pizza",
+        "Tomorrow I ate pizza",
+        "Today I am eating pizza"
+      ],
+      "correct_answer": "Yesterday I ate a pizza",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Ieri ho mangiato una pizza"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Sono andato al cinema\" mean in English?",
+      "options": [
+        "I went to the cinema",
+        "I am going to the cinema",
+        "I have gone to the cinema",
+        "I will go to the cinema"
+      ],
+      "correct_answer": "I went to the cinema",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Sono andato al cinema"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Lei ha comprato un nuovo vestito\" mean in English?",
+      "options": [
+        "She bought a new dress",
+        "She is buying a new dress",
+        "She buys a new dress",
+        "She will buy a new dress"
+      ],
+      "correct_answer": "She bought a new dress",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Lei ha comprato un nuovo vestito"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Quanto costa questo libro?\" mean in English?",
+      "options": [
+        "How much does this book cost?",
+        "What book is this?",
+        "When is this book?",
+        "Why is this book?"
+      ],
+      "correct_answer": "How much does this book cost?",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Quanto costa questo libro?"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Vado al mercato due volte a settimana\" mean in English?",
+      "options": [
+        "I go to the market twice a week",
+        "I am going to market two times",
+        "I go to the market for two weeks",
+        "I went to market two days ago"
+      ],
+      "correct_answer": "I go to the market twice a week",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Vado al mercato due volte a settimana"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Mi dispiace, non posso venire\" mean in English?",
+      "options": [
+        "I am sorry, I cannot come",
+        "I like that, I can come",
+        "I am sorry, I can come",
+        "I don't like it, I cannot come"
+      ],
+      "correct_answer": "I am sorry, I cannot come",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Mi dispiace, non posso venire"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Ho ___ a casa tutta la giornata",
+      "options": [
+        "stato",
+        "stai",
+        "stare",
+        "stay"
+      ],
+      "correct_answer": "stato",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Loro ___ mangiato al ristorante",
+      "options": [
+        "hanno",
+        "ha",
+        "sei",
+        "sono"
+      ],
+      "correct_answer": "hanno",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Noi ___ andati in vacanza ___ luglio",
+      "options": [
+        "siamo|a",
+        "siamo|di",
+        "siamo|in",
+        "siamo|da"
+      ],
+      "correct_answer": "siamo|in",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Tu ___ visto questo film ___?",
+      "options": [
+        "hai|ancora",
+        "hai|già",
+        "hai|dopo",
+        "hai|sempre"
+      ],
+      "correct_answer": "hai|già",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Lei abita ___ Milano",
+      "options": [
+        "a",
+        "in",
+        "di",
+        "da"
+      ],
+      "correct_answer": "a",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Mi piace giocare ___ calcio",
+      "options": [
+        "il",
+        "a",
+        "di",
+        "da"
+      ],
+      "correct_answer": "a",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I bought a new car",
+        "I buy a new car",
+        "I am buying a new car",
+        "I will buy a new car"
+      ],
+      "correct_answer": "I bought a new car",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Ho comprato una macchina nuova"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "We are going to the sea tomorrow",
+        "We went to the sea yesterday",
+        "We go to the sea today",
+        "We will go to the beach tomorrow"
+      ],
+      "correct_answer": "We are going to the sea tomorrow",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Andiamo al mare domani"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "How much did it cost?",
+        "How much does it cost?",
+        "How much will it cost?",
+        "How much had it cost?"
+      ],
+      "correct_answer": "How much did it cost?",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Quanto è costato?"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I have never seen this film",
+        "I never saw this film",
+        "I do not see this film",
+        "I have not seen this film yet"
+      ],
+      "correct_answer": "I have never seen this film",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Non ho mai visto questo film"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I like this song very much",
+        "This song likes me",
+        "I very much like to sing",
+        "This song is very liked"
+      ],
+      "correct_answer": "I like this song very much",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Mi piace molto questa canzone"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Where were you last weekend?",
+        "Where are you this weekend?",
+        "Where will you be next weekend?",
+        "Where do you go on weekends?"
+      ],
+      "correct_answer": "Where were you last weekend?",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Dove sei stato il fine settimana scorso?"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"We have just arrived\"",
+      "options": [
+        "Siamo appena arrivati",
+        "Abbiamo appena arrivato",
+        "Siamo arrivati appena",
+        "Proprio ora siamo arrivati"
+      ],
+      "correct_answer": "Siamo appena arrivati",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"They went to the supermarket yesterday\"",
+      "options": [
+        "Loro sono andati al supermercato ieri",
+        "Loro sono andati il supermercato ieri",
+        "Loro vanno al supermercato ieri",
+        "Sono andati al supermercato ieri loro"
+      ],
+      "correct_answer": "Loro sono andati al supermercato ieri",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"She does not like meat\"",
+      "options": [
+        "Lei non ama la carne",
+        "Lei non piace la carne",
+        "La carne non piace lei",
+        "Lei non ha carne"
+      ],
+      "correct_answer": "Lei non ama la carne",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"I spent a lot of money on clothes\"",
+      "options": [
+        "Ho speso molti soldi in vestiti",
+        "Ho speso molti soldi su vestiti",
+        "Ho speso molti soldi di vestiti",
+        "Ho speso molti soldi dai vestiti"
+      ],
+      "correct_answer": "Ho speso molti soldi in vestiti",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The book is on the table\"",
+      "options": [
+        "Il libro è sul tavolo",
+        "Il libro è nel tavolo",
+        "Il libro è a tavolo",
+        "Il libro è presso il tavolo"
+      ],
+      "correct_answer": "Il libro è sul tavolo",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"I prefer coffee to tea\"",
+      "options": [
+        "Preferisco il caffè al tè",
+        "Preferisco il caffè che il tè",
+        "Preferisco il caffè sul tè",
+        "Preferisco il caffè il tè"
+      ],
+      "correct_answer": "Preferisco il caffè al tè",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "At a restaurant, you ask the waiter how much the dinner costs. What do you ask?",
+      "options": [
+        "Quanto costa la cena?",
+        "Quanto è la cena?",
+        "Quanto costa qui?",
+        "Qual è il prezzo?"
+      ],
+      "correct_answer": "Quanto costa la cena?",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "You want to tell someone you went shopping yesterday. What do you say?",
+      "options": [
+        "Sono andato a fare shopping ieri",
+        "Vado a fare shopping ieri",
+        "Andrò a fare shopping ieri",
+        "Sono andare a shopping"
+      ],
+      "correct_answer": "Sono andato a fare shopping ieri",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "You ask a friend where they spent their holidays. What do you ask?",
+      "options": [
+        "Dove hai passato le vacanze?",
+        "Dove sei passato in vacanza?",
+        "Dove stai le vacanze?",
+        "Dove vai a vacanza?"
+      ],
+      "correct_answer": "Dove hai passato le vacanze?",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "You want to say that you have already eaten. What do you say?",
+      "options": [
+        "Ho già mangiato",
+        "Mangio già",
+        "Sto mangiando già",
+        "Mangerò già"
+      ],
+      "correct_answer": "Ho già mangiato",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "You want to invite a friend to go to the beach. How do you ask?",
+      "options": [
+        "Vuoi andare al mare?",
+        "Puoi andare al mare?",
+        "Sei andato al mare?",
+        "Ti piace il mare?"
+      ],
+      "correct_answer": "Vuoi andare al mare?",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Someone bought something expensive. You ask what it cost. What do you ask?",
+      "options": [
+        "Quanto è costato?",
+        "Quanto è costare?",
+        "Quanto costava?",
+        "Quanto costerebbe?"
+      ],
+      "correct_answer": "Quanto è costato?",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

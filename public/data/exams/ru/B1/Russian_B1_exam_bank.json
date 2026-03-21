@@ -1,0 +1,453 @@
+{
+  "language": "Russian",
+  "code": "ru",
+  "level": "B1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Если бы я знал ответ, я бы тебе сказал\" mean in English?",
+      "options": [
+        "If I know the answer, I will tell you",
+        "If I knew the answer, I would tell you",
+        "If I knew the answer, I tell you",
+        "If I will know, I would tell"
+      ],
+      "correct_answer": "If I knew the answer, I would tell you",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Если бы я знал ответ, я бы тебе сказал"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Статья написана известным автором\" mean in English?",
+      "options": [
+        "The author writes the article",
+        "The article is written by a famous author",
+        "The famous author writes articles",
+        "The article was wrote by the author"
+      ],
+      "correct_answer": "The article is written by a famous author",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Статья написана известным автором"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Меня интересуют русские традиции\" mean in English?",
+      "options": [
+        "I am interested in Russian traditions",
+        "I interest Russian traditions",
+        "Russian traditions interest me to",
+        "I like Russian traditions very much"
+      ],
+      "correct_answer": "I am interested in Russian traditions",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Меня интересуют русские традиции"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Хотя он не говорил по-русски, он понимал всё\" mean in English?",
+      "options": [
+        "Although he did not speak Russian, he understood everything",
+        "He didn't speak Russian so he understood",
+        "While speaking Russian, he understood",
+        "Although understanding Russian, he didn't speak"
+      ],
+      "correct_answer": "Although he did not speak Russian, he understood everything",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Хотя он не говорил по-русски, он понимал всё"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Эта книга интереснее, чем та\" mean in English?",
+      "options": [
+        "This book is more interesting than that one",
+        "This book is more interesting as that",
+        "This book is interesting and that book too",
+        "This book and that book are interesting"
+      ],
+      "correct_answer": "This book is more interesting than that one",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Эта книга интереснее, чем та"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"В течение года он закончил четыре курса\" mean in English?",
+      "options": [
+        "For a year he will complete four courses",
+        "During the year he completed four courses",
+        "In year he is completing courses",
+        "For year he was complete four courses"
+      ],
+      "correct_answer": "During the year he completed four courses",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "В течение года он закончил четыре курса"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Он говорил о своём ___ в жизни.",
+      "options": [
+        "опыт",
+        "опыте",
+        "опыта",
+        "опытом"
+      ],
+      "correct_answer": "опыте",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Мы спорили о том, ___ ли справедлив закон.",
+      "options": [
+        "является",
+        "быть",
+        "есть",
+        "быв"
+      ],
+      "correct_answer": "является",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Несмотря на трудность, он ___ задачу.",
+      "options": [
+        "решал",
+        "решил",
+        "решает",
+        "будет решать"
+      ],
+      "correct_answer": "решил",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Это событие ___ значительное влияние на общество.",
+      "options": [
+        "имело",
+        "имеет",
+        "имев",
+        "имея"
+      ],
+      "correct_answer": "имело",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Учитель объяснил нам правило ___ понятно.",
+      "options": [
+        "вполне",
+        "полностью",
+        "совсем",
+        "достаточно"
+      ],
+      "correct_answer": "вполне",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Книга была ___ с большим интересом.",
+      "options": [
+        "читаема",
+        "читана",
+        "читать",
+        "читаемая"
+      ],
+      "correct_answer": "читана",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Education is very important",
+        "I think education is very important",
+        "He believes education is important",
+        "Education must be important"
+      ],
+      "correct_answer": "I think education is very important",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Я считаю, что образование очень важно"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The climate is changing according to experts",
+        "Experts think climate will change",
+        "Climate changes expert opinion",
+        "The experts are changing the climate"
+      ],
+      "correct_answer": "The climate is changing according to experts",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "По мнению экспертов, климат изменяется"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "We will stop working regardless",
+        "Regardless of the result, we will continue working",
+        "We work because of the result",
+        "We stopped working about result"
+      ],
+      "correct_answer": "Regardless of the result, we will continue working",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Независимо от результата, мы продолжим работу"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This work was recognized as a masterpiece",
+        "This work recognized a masterpiece",
+        "This masterpiece was recognized",
+        "He recognized this as a work"
+      ],
+      "correct_answer": "This work was recognized as a masterpiece",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Это произведение было признано шедевром"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Technology is progress",
+        "Development of technology contributes to progress",
+        "Technology prevents progress",
+        "Progress causes technology development"
+      ],
+      "correct_answer": "Development of technology contributes to progress",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Развитие технологии способствует прогрессу"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "He worked when he was a student",
+        "Being a student, he was already working",
+        "He is a working student",
+        "He studied while working"
+      ],
+      "correct_answer": "Being a student, he was already working",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Будучи студентом, он уже работал"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Despite the difficulties, he succeeded\"",
+      "options": [
+        "Несмотря на трудности, он успел",
+        "Несмотря трудности, он успел",
+        "Несмотря на трудности, он удался",
+        "По трудностям, он успел"
+      ],
+      "correct_answer": "Несмотря на трудности, он успел",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"If he had known, he would not have come\"",
+      "options": [
+        "Если он знал бы, он не пришёл бы",
+        "Если бы он знал, он бы не пришёл",
+        "Если бы он знал, он не пришёл",
+        "Если он будет знать, он не придёт"
+      ],
+      "correct_answer": "Если бы он знал, он бы не пришёл",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"This city is more beautiful than that one\"",
+      "options": [
+        "Этот город красивее, чем тот",
+        "Этот город более красивый, чем тот",
+        "Этот город красивый, чем тот",
+        "Этот город красивее того"
+      ],
+      "correct_answer": "Этот город красивее, чем тот",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The letter was signed by the director\"",
+      "options": [
+        "Письмо подписано директором",
+        "Письмо подписал директор",
+        "Директор подписал письмо",
+        "Письмо было подписано от директора"
+      ],
+      "correct_answer": "Письмо подписано директором",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"He spoke as though he knew everything\"",
+      "options": [
+        "Он говорил, как будто он всё знал",
+        "Он говорит, как будто знает всё",
+        "Он говорит так, что знает всё",
+        "Он говорил как ему всё знать"
+      ],
+      "correct_answer": "Он говорил, как будто он всё знал",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"We are interested in this project\"",
+      "options": [
+        "Мы интересуемся этим проектом",
+        "Мы заинтересованы этим проектом",
+        "Мы интересуемся в этом проекте",
+        "Мы интересованы на этот проект"
+      ],
+      "correct_answer": "Мы интересуемся этим проектом",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Во время презентации вы хотите выразить согласие с мнением коллеги:",
+      "options": [
+        "Я не согласен",
+        "Я полностью согласен с вами",
+        "Мне не нравится",
+        "Это неправильно"
+      ],
+      "correct_answer": "Я полностью согласен с вами",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Вам нужно вежливо выразить сомнение в предложении:",
+      "options": [
+        "Это глупая идея",
+        "Я не уверен, что это сработает",
+        "Это не сработает",
+        "Вы не правы"
+      ],
+      "correct_answer": "Я не уверен, что это сработает",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "На встречу пришло меньше людей, чем ожидалось. Вы говорите:",
+      "options": [
+        "Много людей пришло",
+        "Как жаль, что меньше людей, чем мы ожидали",
+        "Людей не было",
+        "Это хорошо"
+      ],
+      "correct_answer": "Как жаль, что меньше людей, чем мы ожидали",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Вам предлагают помощь, но вы её не нуждаетесь. Вы говорите:",
+      "options": [
+        "Да, помогите мне",
+        "Спасибо, но я могу справиться сам",
+        "Нет, я не помощь",
+        "Мне нужна помощь"
+      ],
+      "correct_answer": "Спасибо, но я могу справиться сам",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Обсуждая статью, вы хотите привести свой пример:",
+      "options": [
+        "Статья неправильная",
+        "Например, когда я был студентом...",
+        "Это похоже на мою книгу",
+        "Я не знаю примеров"
+      ],
+      "correct_answer": "Например, когда я был студентом...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Вам нужно объяснить причину своего опоздания на встречу:",
+      "options": [
+        "Я не хотел приходить",
+        "Из-за пробки на дороге я опоздал",
+        "Встреча была скучная",
+        "Мне не понравилось время"
+      ],
+      "correct_answer": "Из-за пробки на дороге я опоздал",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

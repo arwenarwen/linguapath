@@ -1,0 +1,453 @@
+{
+  "language": "Chinese",
+  "code": "zh",
+  "level": "A1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"你好\" mean in English?",
+      "options": [
+        "Hello",
+        "Goodbye",
+        "Thank you",
+        "Please"
+      ],
+      "correct_answer": "Hello",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "你好"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"谢谢\" mean in English?",
+      "options": [
+        "Sorry",
+        "Thank you",
+        "Excuse me",
+        "Please"
+      ],
+      "correct_answer": "Thank you",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "谢谢"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"再见\" mean in English?",
+      "options": [
+        "Welcome",
+        "Hello",
+        "Goodbye",
+        "Good morning"
+      ],
+      "correct_answer": "Goodbye",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "再见"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"对不起\" mean in English?",
+      "options": [
+        "Thank you",
+        "Congratulations",
+        "Sorry",
+        "Cheers"
+      ],
+      "correct_answer": "Sorry",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "对不起"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"水\" mean in English?",
+      "options": [
+        "Fire",
+        "Water",
+        "Earth",
+        "Wind"
+      ],
+      "correct_answer": "Water",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "水"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"猫\" mean in English?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Bird",
+        "Fish"
+      ],
+      "correct_answer": "Cat",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "猫"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 我叫___。",
+      "options": [
+        "张三",
+        "走",
+        "美丽",
+        "多少"
+      ],
+      "correct_answer": "张三",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 这是___。",
+      "options": [
+        "他",
+        "你好",
+        "再见",
+        "好的"
+      ],
+      "correct_answer": "他",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 我有一___。",
+      "options": [
+        "个",
+        "了",
+        "吃",
+        "说"
+      ],
+      "correct_answer": "个",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 你好___？",
+      "options": [
+        "吗",
+        "的",
+        "了",
+        "呢"
+      ],
+      "correct_answer": "吗",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 我___一个学生。",
+      "options": [
+        "是",
+        "有",
+        "在",
+        "做"
+      ],
+      "correct_answer": "是",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 这___很好。",
+      "options": [
+        "个",
+        "的",
+        "了",
+        "在"
+      ],
+      "correct_answer": "个",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Good afternoon",
+        "Good evening",
+        "Good morning",
+        "Good night"
+      ],
+      "correct_answer": "Good morning",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "早上好"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Goodnight",
+        "Good morning",
+        "Good afternoon",
+        "Hello"
+      ],
+      "correct_answer": "Goodnight",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "晚安"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Please sit",
+        "Please leave",
+        "Please come in",
+        "Please speak"
+      ],
+      "correct_answer": "Please come in",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "请进"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "How old",
+        "How much",
+        "What time",
+        "How many"
+      ],
+      "correct_answer": "How much",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "多少钱"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Very important",
+        "No problem",
+        "Very good",
+        "Not allowed"
+      ],
+      "correct_answer": "No problem",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "没关系"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Sorry",
+        "Welcome",
+        "Thank you",
+        "Please"
+      ],
+      "correct_answer": "Welcome",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "欢迎"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"How are you?\"",
+      "options": [
+        "你好吗？",
+        "再见",
+        "谢谢",
+        "对不起"
+      ],
+      "correct_answer": "你好吗？",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"My name is...\"",
+      "options": [
+        "再见",
+        "我叫...",
+        "你是...",
+        "他是..."
+      ],
+      "correct_answer": "我叫...",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"I am a student\"",
+      "options": [
+        "我是老师",
+        "我是学生",
+        "我有学生",
+        "我在学生"
+      ],
+      "correct_answer": "我是学生",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"Do you have water?\"",
+      "options": [
+        "你有水吗？",
+        "我有水",
+        "他没有水",
+        "她是水"
+      ],
+      "correct_answer": "你有水吗？",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"What is this?\"",
+      "options": [
+        "这是什么？",
+        "这是吗？",
+        "什么是这个？",
+        "这很什么"
+      ],
+      "correct_answer": "这是什么？",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Nice to meet you\"",
+      "options": [
+        "再见",
+        "很高兴认识你",
+        "对不起",
+        "谢谢你"
+      ],
+      "correct_answer": "很高兴认识你",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "你想和别人打招呼。你应该说什么？",
+      "options": [
+        "你好",
+        "再见",
+        "谢谢",
+        "对不起"
+      ],
+      "correct_answer": "你好",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "别人帮助了你。你应该说什么？",
+      "options": [
+        "再见",
+        "谢谢",
+        "你好",
+        "没关系"
+      ],
+      "correct_answer": "谢谢",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "你想知道一个东西是什么。你问什么？",
+      "options": [
+        "这是什么？",
+        "这很好吗？",
+        "你有吗？",
+        "谢谢你"
+      ],
+      "correct_answer": "这是什么？",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "你要离开了。你对别人说什么？",
+      "options": [
+        "你好",
+        "谢谢",
+        "再见",
+        "早上好"
+      ],
+      "correct_answer": "再见",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "你做错事了。你应该说什么？",
+      "options": [
+        "你好",
+        "对不起",
+        "谢谢",
+        "再见"
+      ],
+      "correct_answer": "对不起",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "早上8点，你遇到了一个朋友。你说什么？",
+      "options": [
+        "晚安",
+        "早上好",
+        "再见",
+        "谢谢"
+      ],
+      "correct_answer": "早上好",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

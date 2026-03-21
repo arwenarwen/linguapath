@@ -1,0 +1,453 @@
+{
+  "language": "Italian",
+  "code": "it",
+  "level": "C2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"L'aporia del sublime romanticheggiante consiste nel costituirsi quale negazione impotente del principio di identità, risultando in un'estetizzazione paradossale dell'assenza medesima\" mean in English?",
+      "options": [
+        "The aporia of romantic sublimity consists in constituting itself as an impotent negation of the principle of identity, resulting in a paradoxical aestheticization of absence itself",
+        "Romantic sublime is unable to negate identity and creates paradox",
+        "The sublime makes absence aesthetic by negating identity",
+        "Absence becomes sublime when negating the principle of identity"
+      ],
+      "correct_answer": "The aporia of romantic sublimity consists in constituting itself as an impotent negation of the principle of identity, resulting in a paradoxical aestheticization of absence itself",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "L'aporia del sublime romanticheggiante consiste nel costituirsi quale negazione impotente del principio di identità, risultando in un'estetizzazione paradossale dell'assenza medesima"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"L'ontofania nietzschiana rivendica un primato della potenza generativa sulle catene causali della determinatezza, inaugurando una logica della sovrabbondanza significante\" mean in English?",
+      "options": [
+        "Nietzschean ontopoeia asserts the primacy of generative power over the causal chains of determinacy, inaugurating a logic of signifying superabundance",
+        "Nietzsche's ontology shows that power overcomes causality and meaning",
+        "The power to generate overcomes the causality in meaning",
+        "Nietzsche initiates a logic of generative power"
+      ],
+      "correct_answer": "Nietzschean ontopoeia asserts the primacy of generative power over the causal chains of determinacy, inaugurating a logic of signifying superabundance",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "L'ontofania nietzschiana rivendica un primato della potenza generativa sulle catene causali della determinatezza, inaugurando una logica della sovrabbondanza significante"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"La catabasi della ragione strumentale nel dispositivo foucaultiano della biopolitica configura il corpo quale campo di immanentizzazione del potere-sapere\" mean in English?",
+      "options": [
+        "The catabasis of instrumental reason in the Foucaultian apparatus of biopolitics configures the body as a field of immanentization of power-knowledge",
+        "Foucault shows how reason becomes instrumental and controls bodies",
+        "The body is controlled by power and knowledge through reason",
+        "Biopolitics makes the body a field for power and reason"
+      ],
+      "correct_answer": "The catabasis of instrumental reason in the Foucaultian apparatus of biopolitics configures the body as a field of immanentization of power-knowledge",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "La catabasi della ragione strumentale nel dispositivo foucaultiano della biopolitica configura il corpo quale campo di immanentizzazione del potere-sapere"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Il differenziale semantico che struttura la trace derrideana non si risolleva mai pienamente alla coscienza rappresentazionale, permanendo quale sottrazione irrimediabile\" mean in English?",
+      "options": [
+        "The semantic differential that structures the Derridean trace never fully rises into representational consciousness, remaining as an irremediable withdrawal",
+        "Derrida's trace is not fully conscious and remains hidden",
+        "The trace withdraws from consciousness and meaning",
+        "Derrida shows that traces cannot be fully represented"
+      ],
+      "correct_answer": "The semantic differential that structures the Derridean trace never fully rises into representational consciousness, remaining as an irremediable withdrawal",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Il differenziale semantico che struttura la trace derrideana non si risolleva mai pienamente alla coscienza rappresentazionale, permanendo quale sottrazione irrimediabile"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"La pulsazione del logos eracliteo oscilla fra l'emergenza del polemos e la regressione nella quiete dell'essere statico, instaurando una dialettica irriducibile al sintattismo\" mean in English?",
+      "options": [
+        "The pulsation of Heraclitean logos oscillates between the emergence of polemos and regression into the stillness of static being, establishing a dialectic irreducible to syntacticism",
+        "Heraclitus shows that logos moves between conflict and static being",
+        "The logos alternates between conflict and being",
+        "Heraclitus establishes a dialectic that cannot be reduced"
+      ],
+      "correct_answer": "The pulsation of Heraclitean logos oscillates between the emergence of polemos and regression into the stillness of static being, establishing a dialectic irreducible to syntacticism",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "La pulsazione del logos eracliteo oscilla fra l'emergenza del polemos e la regressione nella quiete dell'essere statico, instaurando una dialettica irriducibile al sintattismo"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"La disseminazione del significante attraverso la catena metonimica instaura un regime di senso non-saturo dove la determinatezza semantica rimane perpetuamente differita\" mean in English?",
+      "options": [
+        "The dissemination of the signifier through the metonymic chain establishes a regime of unsaturated meaning where semantic determinacy remains perpetually deferred",
+        "Meaning is scattered through language and never fully determined",
+        "The metonymic structure means that meaning is always deferred",
+        "Signifiers are disseminated and meaning is never complete"
+      ],
+      "correct_answer": "The dissemination of the signifier through the metonymic chain establishes a regime of unsaturated meaning where semantic determinacy remains perpetually deferred",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "La disseminazione del significante attraverso la catena metonimica instaura un regime di senso non-saturo dove la determinatezza semantica rimane perpetuamente differita"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Laddove la fenomenologia husserliana ___ postulato l'evidenza apodittica, ___ necessario riconoscere la costituzione stratificata della corporeità nella sua oscurità ___ ineludibile",
+      "options": [
+        "avesse|diviene|quale",
+        "abbia|devient|come",
+        "aveva|diverrebbe|quale",
+        "avrebbe|sia|che"
+      ],
+      "correct_answer": "avesse|diviene|quale",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Comunque ___ intendere la struttura del linguaggio, rimane il fatto che essa non si ___ mai pienamente alla sfera dell'intenzionalità ___",
+      "options": [
+        "si voglia|trasparisce|cosciente",
+        "vogliasi|trasparisce|consapevole",
+        "voglia|trasparisce|conscia",
+        "si volesse|trasparisse|cosciente"
+      ],
+      "correct_answer": "si volesse|trasparisse|cosciente",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Sebbene la semantica strutturalista ___ propugnato il primato della relazionalità differenziale, ___ rilevante osservare come la significazione ___ incisivamente dai processi enunciativi che la situano",
+      "options": [
+        "abbia|rimane|si diffida",
+        "avesse|diverrebbe|si allontana",
+        "abbia|rimane|dipenda",
+        "aveva|è rimasto|dipendere"
+      ],
+      "correct_answer": "abbia|rimane|dipenda",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Nondimeno, la riflessione decostruttiva non ___ annullare la validità gnoseologica, benché ___ necessario problematizzare gli interstizi dove la ragione ___ il suo fondamento",
+      "options": [
+        "può|risulti|perde",
+        "potrebbe|sia|perderebbe",
+        "vuol|risulta|perde",
+        "può|sia|perda"
+      ],
+      "correct_answer": "può|sia|perda",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Ove si ___ accogliere l'istanza critica della postmodernità, ___ nondimeno opportuno riconoscere come l'aporia testuale ___ la propria condizione ___ irriducibile",
+      "options": [
+        "fosse|risulterebbe|rimane|quale",
+        "volesse|rimane|si pone|quale",
+        "volesse|sarebbe|rimane|quale",
+        "fosse|dovrebbe|resti|come"
+      ],
+      "correct_answer": "volesse|sarebbe|rimane|quale",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Pertanto, la teorizzazione che qui ___ ___ preliminarmente consapevole dell'insufficienza della propria economia concettuale, esponendo così il proprio limite quale ___ di verità",
+      "options": [
+        "si propone|pone|condizione",
+        "propone|rimane|mezzo",
+        "si propone|rimane|soglia",
+        "propone|deve|principio"
+      ],
+      "correct_answer": "si propone|rimane|soglia",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The blending of signifier with signified in Husserlian phenomenology institutes a co-belonging that contemporary semiotics has progressively destabilized",
+        "Husserl showed that meaning and the signifier belong together in phenomenology",
+        "Contemporary semiotics challenges what Husserl said about meaning",
+        "The semiotics of meaning and signifier have been challenged"
+      ],
+      "correct_answer": "The blending of signifier with signified in Husserlian phenomenology institutes a co-belonging that contemporary semiotics has progressively destabilized",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "La crasi del significante con il significato nella fenomenologia husserliana istituisce una coappartenenza che la semiotica contemporanea ha progressivamente destabilizzato"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The inversion of logocentric hierarchy through the deconstructive strategy does not constitute simple reversal but rather rhizomatic proliferation of différance",
+        "Deconstruction simply reverses logocentrism through difference",
+        "The strategy inverts the hierarchy of logos",
+        "Différance causes the reversal of logocentrism"
+      ],
+      "correct_answer": "The inversion of logocentric hierarchy through the deconstructive strategy does not constitute simple reversal but rather rhizomatic proliferation of différance",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "L'inversione della gerarchia logocentrica mediante la strategia della decostruzione non costituisce semplice rovesciamento bensì rizomatica proliferazione della différance"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The performative iteration of the constitutive utterance produces the effect of naturalness where the contingent sediments into apparent necessity",
+        "Performative statements create the appearance of necessity",
+        "Iteration makes contingent things seem necessary",
+        "The utterance makes contingency appear natural"
+      ],
+      "correct_answer": "The performative iteration of the constitutive utterance produces the effect of naturalness where the contingent sediments into apparent necessity",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "L'iterazione performativa dell'enunciato istitutivo produce l'effetto di naturalità dove il contingente si sedimenta in apparente necessità"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The prosemics of the signifier in its irreducible heterogeneity configures a space of undecidability that decision itself posits but cannot resolve",
+        "The signifier creates undecidability that cannot be resolved",
+        "The space between signifiers is undecidable",
+        "The decision creates an undecidable space of meaning"
+      ],
+      "correct_answer": "The prosemics of the signifier in its irreducible heterogeneity configures a space of undecidability that decision itself posits but cannot resolve",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "La prossemica del significante nella sua irriducibile eterogeneità configura uno spazio di indecidibilità che la decisione medesima pone ma non può risolvere"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Romantic irony as a reflexive structure instantiates the movement of infinite negation that exceeds every dialectical stabilization",
+        "Romantic irony is a reflection that negates everything",
+        "The structure of irony exceeds dialectic",
+        "Irony is infinitely negative and reflexive"
+      ],
+      "correct_answer": "Romantic irony as a reflexive structure instantiates the movement of infinite negation that exceeds every dialectical stabilization",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "L'ironia romantica quale struttura riflessiva istanzia il movimento di negazione infinita che eccede ogni stabilizzazione dialettica"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Husserlian catachresis reveals how language never possesses an original semantic fullness but always already transgresses its own foundation",
+        "Language cannot be fully meaningful in Husserl's view",
+        "The foundation of language is always transgressed",
+        "Catachresis shows the limits of linguistic meaning"
+      ],
+      "correct_answer": "Husserlian catachresis reveals how language never possesses an original semantic fullness but always already transgresses its own foundation",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "La catachresi husserliana rivela come il linguaggio non dispone mai di una pienezza significante originaria, ma sempre già trapassa il proprio fondamento"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The inexhaustible fecundity of meaning-production that characterizes signification in its most primordial stratification perpetually exceeds and confutes the totalizing aspirations of any hermeneutic systematicity\"",
+      "options": [
+        "La fecondità inesauribile della produzione di senso che caratterizza la significazione nella sua stratificazione più primordiale eccede perpetuamente e confuta le aspirazioni totalizzanti di qualsivoglia sistematicità ermeneutica",
+        "La produzione di significato è inesauribile e non può essere sistematizzata",
+        "Il significato non può essere totalmente interpretato",
+        "La significazione eccede sempre il sistema ermeneutico"
+      ],
+      "correct_answer": "La fecondità inesauribile della produzione di senso che caratterizza la significazione nella sua stratificazione più primordiale eccede perpetuamente e confuta le aspirazioni totalizzanti di qualsivoglia sistematicità ermeneutica",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"The paradoxical condition wherein the condition of possibility for intelligibility itself constitutes simultaneously the condition of its impossibility establishes a radical problematicity resistant to metaphysical sublation\"",
+      "options": [
+        "La condizione paradossale per cui la condizione di possibilità dell'intelligibilità medesima costituisce simultaneamente la condizione della sua impossibilità istituisce una problematicità radicale resistente alla sublazione metafisica",
+        "La possibilità di intendere non è mai completa e causa problemi",
+        "Le condizioni di significato creano l'impossibilità di significato",
+        "La metafisica non può risolvere il paradosso del significato"
+      ],
+      "correct_answer": "La condizione paradossale per cui la condizione di possibilità dell'intelligibilità medesima costituisce simultaneamente la condizione della sua impossibilità istituisce una problematicità radicale resistente alla sublazione metafisica",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The phenomenological reduction, operationalized as a suspensive bracketing of the natural attitude's empirical commitments, paradoxically implicates in its very structure the latent residuum of that which it purports to transcend\"",
+      "options": [
+        "La riduzione fenomenologica, operazionalizzata quale parentesi sospensiva degli impegni empirici dell'atteggiamento naturale, implica paradossalmente nella sua medesima struttura il residuum latente di ciò che pretende di trascendere",
+        "La riduzione fenomenologica sospende l'atteggiamento naturale",
+        "La fenomenologia non può completamente trascendere l'empirico",
+        "La riduzione mantiene ciò che dice di superare"
+      ],
+      "correct_answer": "La riduzione fenomenologica, operazionalizzata quale parentesi sospensiva degli impegni empirici dell'atteggiamento naturale, implica paradossalmente nella sua medesima struttura il residuum latente di ciò che pretende di trascendere",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The disseminative economy of writing, which Derrida theorizes as escaping the metaphysical closure of presence, instantiates a productive différance that disallows the recuperation of any transcendental signified\"",
+      "options": [
+        "L'economia disseminativa della scrittura, che Derrida teorizza quale fuga dalla chiusura metafisica della presenza, istanzia una différance produttiva che disallowa il recuperamento di qualsivoglia significato trascendentale",
+        "La scrittura in Derrida sfugge al significato trascendentale",
+        "La disseminazione della scrittura crea una différance",
+        "La metafisica della presenza non può spiegare la scrittura"
+      ],
+      "correct_answer": "L'economia disseminativa della scrittura, che Derrida teorizza quale fuga dalla chiusura metafisica della presenza, istanzia una différance produttiva che disallowa il recuperamento di qualsivoglia significato trascendentale",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The constitutive iterability of the performative utterance, far from ensuring its transparent replicability, introduces an irreducible alterity that fractures the illocutionary force from within\"",
+      "options": [
+        "L'iterabilità costitutiva dell'enunciato performativo, lungi dall'assicurare la sua replicabilità trasparente, introduce un'alterità irriducibile che frattura la forza illocutoria dall'interno",
+        "L'enunciato performativo si può replicare, ma questo introduce alterità",
+        "L'iterazione del performativo crea problemi per il significato",
+        "La forza illocutoria del performativo non è stabile"
+      ],
+      "correct_answer": "L'iterabilità costitutiva dell'enunciato performativo, lungi dall'assicurare la sua replicabilità trasparente, introduce un'alterità irriducibile che frattura la forza illocutoria dall'interno",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The onto-theological substrate underlying metaphysical inquiry sustains itself through a systematic effacement of the very question of Being, thereby occluding the originary difference that constitutes its own condition of legibility\"",
+      "options": [
+        "Il substrato onto-teologico sotteso all'indagine metafisica si sostiene attraverso un'effrazione sistematica della questione medesima dell'Essere, occludendo così la differenza originaria che costituisce la sua medesima condizione di leggibilità",
+        "La metafisica nasconde la domanda sull'Essere",
+        "L'onto-teologia è il fondamento della metafisica",
+        "La differenza originaria è la condizione della metafisica"
+      ],
+      "correct_answer": "Il substrato onto-teologico sotteso all'indagine metafisica si sostiene attraverso un'effrazione sistematica della questione medesima dell'Essere, occludendo così la differenza originaria che costituisce la sua medesima condizione di leggibilità",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "In the highest level of critical philosophy, when you need to express that a concept contains internal contradictions that cannot be resolved through conventional logic, how do you formulate this most rigorously?",
+      "options": [
+        "La struttura aporetica del concetto resiste alla sublazione dialettica, instaurando una contraddizione irrisolvibile che espone il limite intrinseco dell'apparato categoriale della ragione",
+        "Il concetto ha una contraddizione interna",
+        "Il concetto non può essere spiegato dalla logica",
+        "La contraddizione nel concetto non può essere risolta"
+      ],
+      "correct_answer": "La struttura aporetica del concetto resiste alla sublazione dialettica, instaurando una contraddizione irrisolvibile che espone il limite intrinseco dell'apparato categoriale della ragione",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "When presenting a deconstructive argument that both employs and simultaneously undermines the very framework it mobilizes, what phrasing best captures this paradoxical operation?",
+      "options": [
+        "La decostruzione procede attraverso una strategia auto-immunizzante che invalida progressivamente i presupposti medesimi che la rendono possibile, inaugurando così un'aporia costitutiva del gesto critico",
+        "La decostruzione distrugge i suoi propri fondamenti",
+        "L'argomento decostruttivo non è coerente",
+        "La decostuzione usa e critica allo stesso tempo"
+      ],
+      "correct_answer": "La decostruzione procede attraverso una strategia auto-immunizzante che invalida progressivamente i presupposti medesimi che la rendono possibile, inaugurando così un'aporia costitutiva del gesto critico",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "In ultra-sophisticated discourse, how would you express that meaning operates through absence and what is not said matters as much as what is articulated?",
+      "options": [
+        "La significazione si struttura nella crasi indissociabile fra la pienezza del detto e la pregnanza del non-detto, dove l'assenza medesima istanzia la propria economicità semantica",
+        "Il significato include quello che non è detto",
+        "L'assenza ha significato nel linguaggio",
+        "Il non-detto è importante come il detto"
+      ],
+      "correct_answer": "La significazione si struttura nella crasi indissociabile fra la pienezza del detto e la pregnanza del non-detto, dove l'assenza medesima istanzia la propria economicità semantica",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "When expressing that a theoretical framework cannot account for all dimensions of a phenomenon without creating new blind spots, what formulation is most appropriate?",
+      "options": [
+        "Il dispositivo interpretativo, nel movimento stesso di illuminare determinate aree fenoméniche, riproduce sistematicamente nuove zone di opacità che ne configurano tanto il potenziale euristico quanto il limite cognitivo",
+        "Ogni teoria ha limiti",
+        "Il framework non può spiegare tutto",
+        "Una teoria crea nuovi problemi risolvendo altri"
+      ],
+      "correct_answer": "Il dispositivo interpretativo, nel movimento stesso di illuminare determinate aree fenoméniche, riproduce sistematicamente nuove zone di opacità che ne configurano tanto il potenziale euristico quanto il limite cognitivo",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "In the most elevated philosophical register, how would you indicate that a seemingly fundamental distinction ultimately collapses when subjected to rigorous scrutiny?",
+      "options": [
+        "La distinzione ritenuta originaria si dissolve nell'economia stessa del suo dispiegamento logico, rivelando una complicità strutturale che essa medesima non poteva riconoscere senza inficiare la propria coerenza",
+        "La distinzione non è reale",
+        "Due cose che sembrano diverse sono uguali",
+        "La distinzione fondamentale è falsa"
+      ],
+      "correct_answer": "La distinzione ritenuta originaria si dissolve nell'economia stessa del suo dispiegamento logico, rivelando una complicità strutturale che essa medesima non poteva riconoscere senza inficiare la propria coerenza",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "When articulating the idea that thought itself remains structured by forces it cannot fully cognize or master, what phrasing best captures this radical problematic?",
+      "options": [
+        "Il pensiero rimane irrimediabilmente ascritto a condizioni di possibilità che lo eccedono, restando così intrappolato nella struttura che pretende di oltrepassare, in una circolarità aporettica dalla quale non può emanciparsi",
+        "Il pensiero non può pensare se stesso",
+        "Ci sono limiti a ciò che si può pensare",
+        "Il pensiero è limitato da forze nascoste"
+      ],
+      "correct_answer": "Il pensiero rimane irrimediabilmente ascritto a condizioni di possibilità che lo eccedono, restando così intrappolato nella struttura che pretende di oltrepassare, in una circolarità aporettica dalla quale non può emanciparsi",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

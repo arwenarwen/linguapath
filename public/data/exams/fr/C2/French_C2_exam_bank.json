@@ -1,0 +1,453 @@
+{
+  "language": "French",
+  "code": "fr",
+  "level": "C2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"la prédilection\" mean in English?",
+      "options": [
+        "indifference",
+        "aversion",
+        "inclination",
+        "predilection"
+      ],
+      "correct_answer": "predilection",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "la prédilection"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"circonvenir\" mean in English?",
+      "options": [
+        "to support",
+        "to circumvent",
+        "to prohibit",
+        "to facilitate"
+      ],
+      "correct_answer": "to circumvent",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "circonvenir"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"l'équivoque\" mean in English?",
+      "options": [
+        "clarity",
+        "certainty",
+        "ambiguity",
+        "precision"
+      ],
+      "correct_answer": "ambiguity",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "l'équivoque"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"déférent\" mean in English?",
+      "options": [
+        "aggressive",
+        "disrespectful",
+        "deferential",
+        "indifferent"
+      ],
+      "correct_answer": "deferential",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "déférent"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"l'apothéose\" mean in English?",
+      "options": [
+        "decline",
+        "catastrophe",
+        "climax",
+        "beginning"
+      ],
+      "correct_answer": "climax",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "l'apothéose"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"lucidité\" mean in English?",
+      "options": [
+        "confusion",
+        "clarity",
+        "deception",
+        "blindness"
+      ],
+      "correct_answer": "clarity",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "lucidité"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: ___ elle fût reconnue tardivement, son influence sur la pensée contemporaine est indéniable.",
+      "options": [
+        "Bien que",
+        "Bien sûr",
+        "Plutôt que",
+        "Si"
+      ],
+      "correct_answer": "Bien que",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Cet auteur cultive une certaine opacité intentionnelle, ___ il faut l'interpréter avec une grande circonspection.",
+      "options": [
+        "ce qui",
+        "d'où",
+        "ainsi",
+        "dont"
+      ],
+      "correct_answer": "d'où",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: L'évolution de sa pensée suit une trajectoire qui contredit ___ la logique conventionnelle ___ les attentes critiques.",
+      "options": [
+        "non seulement...mais aussi",
+        "plutôt...sinon",
+        "et...et",
+        "tant...que"
+      ],
+      "correct_answer": "non seulement...mais aussi",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Faisant abstraction de toute considération idéologique, on ne peut nier que ses arguments ___.",
+      "options": [
+        "soutiennent",
+        "soutiennent",
+        "soutient",
+        "soutienne"
+      ],
+      "correct_answer": "soutiennent",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Ce paradoxe inhérent à l'œuvre ___ d'une profonde réflexion sur les limites du langage.",
+      "options": [
+        "découlèrent",
+        "découle",
+        "découlera",
+        "découlerait"
+      ],
+      "correct_answer": "découle",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Il serait trop commode de réduire la portée de son travail à ___ que la simple polémique.",
+      "options": [
+        "plus",
+        "autant",
+        "moins",
+        "bien"
+      ],
+      "correct_answer": "moins",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "His interpretation is universally recognized.",
+        "His interpretation, while attractive, remains an unwarranted extrapolation.",
+        "His interpretation is completely refuted.",
+        "His interpretation is definitively proven."
+      ],
+      "correct_answer": "His interpretation, while attractive, remains an unwarranted extrapolation.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Son interprétation, bien que séduisante, demeure une extrapolation abusive."
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "One must avoid all criticism.",
+        "One must accept all criticism without question.",
+        "One must distinguish between legitimate criticism and manifest bad faith.",
+        "Criticism is impossible to define."
+      ],
+      "correct_answer": "One must distinguish between legitimate criticism and manifest bad faith.",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Il convient de distinguer entre la critique légitime et la mauvaise foi manifeste."
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This affirmation is well-established and conclusive.",
+        "This affirmation raises more questions than it resolves.",
+        "This affirmation is of no consequence.",
+        "This affirmation is obviously true."
+      ],
+      "correct_answer": "This affirmation raises more questions than it resolves.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Cette affirmation, loin d'être établie, soulève plus de questions qu'elle n'en résout."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "His work easily fits conventional categories.",
+        "His work defies easy categorization and demands continuous rereading.",
+        "His work is not worth studying.",
+        "His work confirms conventional wisdom."
+      ],
+      "correct_answer": "His work defies easy categorization and demands continuous rereading.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Son œuvre transcende les catégorisations faciles et exige une relecture continuée."
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The complexity of style obscures simple content.",
+        "The apparent simplicity of style masks a textual architecture of great subtlety.",
+        "The style is genuinely simple.",
+        "The style and substance are equally simple."
+      ],
+      "correct_answer": "The apparent simplicity of style masks a textual architecture of great subtlety.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "L'apparente simplicité du style masque une architecture textuelle de grande subtilité."
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This is merely formal virtuosity.",
+        "This is not merely formal virtuosity, but embodied philosophy.",
+        "This work lacks any philosophical content.",
+        "Philosophy is absent from this work."
+      ],
+      "correct_answer": "This is not merely formal virtuosity, but embodied philosophy.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Il ne s'agit pas ici de simple virtuosité formelle, mais de philosophie incarnée."
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The dialectical nature of this antagonism precludes any facile synthesis.\"",
+      "options": [
+        "The antagonism is easily resolved by synthesis.",
+        "The dialectical nature of this antagonism precludes any facile synthesis.",
+        "Synthesis is the only solution.",
+        "No antagonism truly exists."
+      ],
+      "correct_answer": "The dialectical nature of this antagonism precludes any facile synthesis.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"His oeuvre represents a deliberate and incisive interrogation of the very foundations of modernity.\"",
+      "options": [
+        "His work is a superficial treatment of modernity.",
+        "His work represents a deliberate and incisive interrogation of the very foundations of modernity.",
+        "His work avoids the question of modernity.",
+        "His work celebrates modernity uncritically."
+      ],
+      "correct_answer": "His work represents a deliberate and incisive interrogation of the very foundations of modernity.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The seeming contradiction dissolves upon more rigorous scrutiny of the author's epistemological framework.\"",
+      "options": [
+        "The contradiction becomes more apparent upon examination.",
+        "The seeming contradiction dissolves upon more rigorous scrutiny of the author's epistemological framework.",
+        "There is no contradiction to examine.",
+        "The author explicitly acknowledges the contradiction."
+      ],
+      "correct_answer": "The seeming contradiction dissolves upon more rigorous scrutiny of the author's epistemological framework.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"While not without certain methodological limitations, this work fundamentally reconceptualises the problematic.\"",
+      "options": [
+        "This work has no limitations whatsoever.",
+        "While not without certain methodological limitations, this work fundamentally reconceptualises the problematic.",
+        "This work fails to address methodological concerns.",
+        "Methodology is irrelevant to this work."
+      ],
+      "correct_answer": "While not without certain methodological limitations, this work fundamentally reconceptualises the problematic.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"One must exercise considerable caution in extrapolating universal principles from these particular instances.\"",
+      "options": [
+        "Universal principles can be easily extrapolated from these cases.",
+        "One must exercise considerable caution in extrapolating universal principles from these particular instances.",
+        "Extrapolation is unnecessary here.",
+        "These instances are completely irrelevant."
+      ],
+      "correct_answer": "One must exercise considerable caution in extrapolating universal principles from these particular instances.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"This theoretical apparatus, while conceptually elegant, risks obscuring rather than illuminating the phenomenon in question.\"",
+      "options": [
+        "This apparatus perfectly illuminates the phenomenon.",
+        "This theoretical apparatus, while conceptually elegant, risks obscuring rather than illuminating the phenomenon in question.",
+        "The apparatus has no conceptual elegance.",
+        "The phenomenon is completely transparent."
+      ],
+      "correct_answer": "This theoretical apparatus, while conceptually elegant, risks obscuring rather than illuminating the phenomenon in question.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Lors d'une conférence académique majeure, vous identifiez une prémisse fondamentale contestée. Quelle est votre réaction?",
+      "options": [
+        "Vous dérangez la présentation.",
+        "Vous attendez le débat et posez une question qui remet en question la prémisse.",
+        "Vous ignorez complètement.",
+        "Vous criez immédiatement objection."
+      ],
+      "correct_answer": "Vous attendez le débat et posez une question qui remet en question la prémisse.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Vous rédigez un article pour une revue prestigieuse qui contredit votre propre travail antérieur. Comment procédez-vous?",
+      "options": [
+        "Vous cachez le contradiction.",
+        "Vous reconnaissez explicitement l'évolution de votre pensée et expliquez les raisons.",
+        "Vous prétendez qu'il n'y a aucune contradiction.",
+        "Vous ne publiez pas du tout."
+      ],
+      "correct_answer": "Vous reconnaissez explicitement l'évolution de votre pensée et expliquez les raisons.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Un collègue propose une interprétation habile mais potentiellement spécieuse de votre travail. Comment réagissez-vous?",
+      "options": [
+        "Vous le remerciez sans réfléchir.",
+        "Vous explorez la pertinence de son interprétation avec rigueur et honnêteté critique.",
+        "Vous rejetez d'emblée tout examen.",
+        "Vous adoptez son interprétation sans vérification."
+      ],
+      "correct_answer": "Vous explorez la pertinence de son interprétation avec rigueur et honnêteté critique.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Dans une controverse disciplinaire, vous constatez que les deux camps comportent des failles logiques. Quelle position adoptez-vous?",
+      "options": [
+        "Vous ignorez les failles.",
+        "Vous défendez aveuglement un camp.",
+        "Vous reconnaissez les failles des deux côtés et proposez une voie constructive.",
+        "Vous déclarez que l'analyse logique n'a aucune utilité."
+      ],
+      "correct_answer": "Vous reconnaissez les failles des deux côtés et proposez une voie constructive.",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Un pair vous reproche une omission significative dans votre bibliographie. Comment procédez-vous?",
+      "options": [
+        "Vous argumentez que c'est sans importance.",
+        "Vous reconnaissez l'omission, en expliquez les raisons si approprié, et envisagez une révision.",
+        "Vous rejetez catégoriquement la critique.",
+        "Vous accusez le critique d'être injuste."
+      ],
+      "correct_answer": "Vous reconnaissez l'omission, en expliquez les raisons si approprié, et envisagez une révision.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "On vous demande de participer à un débat où la bonne foi intellectuelle semble absente de la part de l'opposition. Comment agissez-vous?",
+      "options": [
+        "Vous adoptez les mêmes tactiques déloyales.",
+        "Vous maintenez votre intégrité intellectuelle tout en soulevant poliment ces problèmes de bonne foi.",
+        "Vous quittez sans rien dire.",
+        "Vous recourez à des insultes."
+      ],
+      "correct_answer": "Vous maintenez votre intégrité intellectuelle tout en soulevant poliment ces problèmes de bonne foi.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

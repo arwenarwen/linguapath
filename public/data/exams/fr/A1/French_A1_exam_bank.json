@@ -1,0 +1,453 @@
+{
+  "language": "French",
+  "code": "fr",
+  "level": "A1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Bonjour\" mean in English?",
+      "options": [
+        "goodbye",
+        "good night",
+        "thank you",
+        "hello"
+      ],
+      "correct_answer": "hello",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "Bonjour"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Merci\" mean in English?",
+      "options": [
+        "please",
+        "goodbye",
+        "thank you",
+        "you're welcome"
+      ],
+      "correct_answer": "thank you",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Merci"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Excusez-moi\" mean in English?",
+      "options": [
+        "goodbye",
+        "please",
+        "thank you",
+        "excuse me"
+      ],
+      "correct_answer": "excuse me",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "Excusez-moi"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Bonne nuit\" mean in English?",
+      "options": [
+        "good morning",
+        "goodbye",
+        "good evening",
+        "good night"
+      ],
+      "correct_answer": "good night",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "Bonne nuit"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Je ne comprends pas\" mean in English?",
+      "options": [
+        "I don't know",
+        "I don't understand",
+        "I'm busy",
+        "I'm tired"
+      ],
+      "correct_answer": "I don't understand",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Je ne comprends pas"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Ça coûte combien?\" mean in English?",
+      "options": [
+        "Where is it?",
+        "What time is it?",
+        "How much does it cost?",
+        "Can I help you?"
+      ],
+      "correct_answer": "How much does it cost?",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Ça coûte combien?"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Je m'appelle ___.",
+      "options": [
+        "est",
+        "suis",
+        "appelle",
+        "appel"
+      ],
+      "correct_answer": "appelle",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Comment ___ -tu?",
+      "options": [
+        "est",
+        "appelles",
+        "es",
+        "suis"
+      ],
+      "correct_answer": "appelles",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: C'___ mon livre.",
+      "options": [
+        "es",
+        "est",
+        "suis",
+        "suis"
+      ],
+      "correct_answer": "est",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Je ___ de France.",
+      "options": [
+        "viens",
+        "vient",
+        "venons",
+        "vient"
+      ],
+      "correct_answer": "viens",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Il ___ du thé.",
+      "options": [
+        "bois",
+        "boit",
+        "boivent",
+        "buvons"
+      ],
+      "correct_answer": "boit",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Nous ___ faim.",
+      "options": [
+        "avons",
+        "avez",
+        "ai",
+        "ont"
+      ],
+      "correct_answer": "avons",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Good evening",
+        "Good night",
+        "Hello madam",
+        "Goodbye"
+      ],
+      "correct_answer": "Hello madam",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Bonjour madame"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Where are you from?",
+        "What is your name?",
+        "How are you?",
+        "Where are you?"
+      ],
+      "correct_answer": "How are you?",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Comment allez-vous?"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Hello",
+        "Please",
+        "Thank you",
+        "Goodbye"
+      ],
+      "correct_answer": "Goodbye",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Au revoir"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Where is the exit?",
+        "Where is the toilet?",
+        "Where is the station?",
+        "Where is the bus?"
+      ],
+      "correct_answer": "Where is the toilet?",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Où est la toilette?"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I am from Sophie",
+        "I come from Sophie",
+        "My name is Sophie",
+        "I work with Sophie"
+      ],
+      "correct_answer": "My name is Sophie",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Je m'appelle Sophie"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Thank you very much",
+        "Excuse me please",
+        "I'm sorry",
+        "You're welcome"
+      ],
+      "correct_answer": "I'm sorry",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Désolé"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Good evening\"",
+      "options": [
+        "Bon matin",
+        "Bonne nuit",
+        "Bon jour",
+        "Bonsoir"
+      ],
+      "correct_answer": "Bonsoir",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"My name is Pierre.\"",
+      "options": [
+        "Je suis Pierre.",
+        "Je viens de Pierre.",
+        "J'ai Pierre.",
+        "Je m'appelle Pierre."
+      ],
+      "correct_answer": "Je m'appelle Pierre.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"I come from France.\"",
+      "options": [
+        "Je wohne en France.",
+        "Je suis de France.",
+        "J'habite de France.",
+        "Je viens de France."
+      ],
+      "correct_answer": "Je viens de France.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"I don't understand.\"",
+      "options": [
+        "Je ne sais pas.",
+        "Je ne parle pas français.",
+        "Je ne peux pas.",
+        "Je ne comprends pas."
+      ],
+      "correct_answer": "Je ne comprends pas.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"How old are you?\"",
+      "options": [
+        "Quel est ton nom?",
+        "D'où viens-tu?",
+        "Qu'est-ce que tu fais?",
+        "Quel âge as-tu?"
+      ],
+      "correct_answer": "Quel âge as-tu?",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Where do you live?\"",
+      "options": [
+        "D'où viens-tu?",
+        "Quel est ton nom?",
+        "Qu'est-ce que tu fais?",
+        "Où habites-tu?"
+      ],
+      "correct_answer": "Où habites-tu?",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Vous rencontrez quelqu'un pour la première fois. Que dites-vous?",
+      "options": [
+        "Bonne nuit!",
+        "Bonsoir!",
+        "Au revoir!",
+        "Enchanté, j'ai beaucoup d'amis."
+      ],
+      "correct_answer": "Enchanté, j'ai beaucoup d'amis.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Quelqu'un demande: 'Ça va?' Comment répondez-vous?",
+      "options": [
+        "Je m'appelle Pierre.",
+        "J'habite à Paris.",
+        "Au revoir.",
+        "Ça va bien, merci. Et toi?"
+      ],
+      "correct_answer": "Ça va bien, merci. Et toi?",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Vous voulez savoir l'heure. Que demandez-vous?",
+      "options": [
+        "Où suis-je?",
+        "Ça coûte combien?",
+        "C'est quoi?",
+        "Quelle heure est-il, s'il vous plaît?"
+      ],
+      "correct_answer": "Quelle heure est-il, s'il vous plaît?",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Quelqu'un vous donne un cadeau. Que dites-vous?",
+      "options": [
+        "Excusez-moi.",
+        "Au revoir!",
+        "S'il vous plaît.",
+        "Merci beaucoup!"
+      ],
+      "correct_answer": "Merci beaucoup!",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Vous ne comprenez pas une question. Que dites-vous?",
+      "options": [
+        "Je sais tout.",
+        "Au revoir.",
+        "Je suis fatigué.",
+        "Parlez plus lentement, s'il vous plaît."
+      ],
+      "correct_answer": "Parlez plus lentement, s'il vous plaît.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Vous dites au revoir à un ami. Que dites-vous?",
+      "options": [
+        "Bonjour!",
+        "Salut!",
+        "Ça va?",
+        "À bientôt!"
+      ],
+      "correct_answer": "À bientôt!",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    }
+  ]
+}

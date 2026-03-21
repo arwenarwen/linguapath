@@ -1,0 +1,453 @@
+{
+  "language": "Korean",
+  "code": "ko",
+  "level": "A1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"안녕하세요\" mean in English?",
+      "options": [
+        "Hello",
+        "Thank you",
+        "Goodbye",
+        "Good morning"
+      ],
+      "correct_answer": "Hello",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "안녕하세요"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"감사합니다\" mean in English?",
+      "options": [
+        "Goodbye",
+        "Excuse me",
+        "Thank you",
+        "Yes"
+      ],
+      "correct_answer": "Thank you",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "감사합니다"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"물\" mean in English?",
+      "options": [
+        "Food",
+        "Water",
+        "House",
+        "School"
+      ],
+      "correct_answer": "Water",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "물"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"학교\" mean in English?",
+      "options": [
+        "Park",
+        "School",
+        "Cafe",
+        "Hospital"
+      ],
+      "correct_answer": "School",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "학교"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"고양이\" mean in English?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Bird",
+        "Fish"
+      ],
+      "correct_answer": "Cat",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "고양이"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"친구\" mean in English?",
+      "options": [
+        "Family",
+        "Friend",
+        "Teacher",
+        "Doctor"
+      ],
+      "correct_answer": "Friend",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "친구"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 나는 학생___.",
+      "options": [
+        "이다",
+        "있다",
+        "없다",
+        "간다"
+      ],
+      "correct_answer": "이다",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 그는 책_____ 있습니다.",
+      "options": [
+        "을",
+        "는",
+        "가",
+        "이"
+      ],
+      "correct_answer": "가",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 저_____ 김철수입니다.",
+      "options": [
+        "는",
+        "이",
+        "가",
+        "을"
+      ],
+      "correct_answer": "는",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 물_____ 마시고 싶습니다.",
+      "options": [
+        "을",
+        "를",
+        "는",
+        "이"
+      ],
+      "correct_answer": "를",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 고양이_____ 없습니다.",
+      "options": [
+        "를",
+        "가",
+        "은",
+        "이"
+      ],
+      "correct_answer": "가",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 이것_____ 펜입니다.",
+      "options": [
+        "를",
+        "는",
+        "을",
+        "이"
+      ],
+      "correct_answer": "이",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Pen",
+        "Book",
+        "Apple",
+        "House"
+      ],
+      "correct_answer": "Book",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "책"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Sleep",
+        "Meal",
+        "Walk",
+        "Study"
+      ],
+      "correct_answer": "Meal",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "식사"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Foot",
+        "Nose",
+        "Hand",
+        "Ear"
+      ],
+      "correct_answer": "Hand",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "손"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Cloud",
+        "Sky",
+        "Wind",
+        "Rain"
+      ],
+      "correct_answer": "Sky",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "하늘"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Tree",
+        "Leaf",
+        "Flower",
+        "Grass"
+      ],
+      "correct_answer": "Flower",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "꽃"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Eye",
+        "Nose",
+        "Mouth",
+        "Ear"
+      ],
+      "correct_answer": "Eye",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "눈"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Hello\"",
+      "options": [
+        "감사합니다",
+        "안녕하세요",
+        "미안합니다",
+        "괜찮습니다"
+      ],
+      "correct_answer": "안녕하세요",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Thank you\"",
+      "options": [
+        "잠시만요",
+        "감사합니다",
+        "안녕히",
+        "어디예요"
+      ],
+      "correct_answer": "감사합니다",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Water\"",
+      "options": [
+        "밥",
+        "물",
+        "우유",
+        "주스"
+      ],
+      "correct_answer": "물",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"School\"",
+      "options": [
+        "집",
+        "학교",
+        "병원",
+        "은행"
+      ],
+      "correct_answer": "학교",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Name\"",
+      "options": [
+        "이름",
+        "나이",
+        "주소",
+        "번호"
+      ],
+      "correct_answer": "이름",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Student\"",
+      "options": [
+        "선생님",
+        "학생",
+        "의사",
+        "요리사"
+      ],
+      "correct_answer": "학생",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "만날 때 뭐라고 하나요?",
+      "options": [
+        "안녕하세요",
+        "감사합니다",
+        "미안합니다",
+        "아니입니다"
+      ],
+      "correct_answer": "안녕하세요",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "도움을 받았을 때 뭐라고 하나요?",
+      "options": [
+        "안녕히",
+        "고마워요",
+        "괜찮아요",
+        "맞아요"
+      ],
+      "correct_answer": "고마워요",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "실수했을 때 뭐라고 하나요?",
+      "options": [
+        "정말요",
+        "미안해요",
+        "예뻐요",
+        "맛있어요"
+      ],
+      "correct_answer": "미안해요",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "이름이 뭐예요?",
+      "options": [
+        "저는 학생이에요",
+        "저는 김철수예요",
+        "저는 괜찮아요",
+        "저는 집에 있어요"
+      ],
+      "correct_answer": "저는 김철수예요",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "직업이 뭐예요?",
+      "options": [
+        "저는 한국 사람이에요",
+        "저는 학생이에요",
+        "저는 집에 있어요",
+        "저는 물을 마셔요"
+      ],
+      "correct_answer": "저는 학생이에요",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "어디에서 공부해요?",
+      "options": [
+        "학교에서",
+        "카페에서",
+        "집에서",
+        "도서관에서"
+      ],
+      "correct_answer": "학교에서",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

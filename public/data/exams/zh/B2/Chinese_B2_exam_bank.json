@@ -1,0 +1,453 @@
+{
+  "language": "Chinese",
+  "code": "zh",
+  "level": "B2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"不仅...而且\" mean in English?",
+      "options": [
+        "Neither...nor",
+        "Either...or",
+        "Not only...but also",
+        "Both...and"
+      ],
+      "correct_answer": "Not only...but also",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "不仅...而且"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"趋势\" mean in English?",
+      "options": [
+        "Problem",
+        "Trend",
+        "Solution",
+        "Method"
+      ],
+      "correct_answer": "Trend",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "趋势"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"便利\" mean in English?",
+      "options": [
+        "Difficult",
+        "Convenient",
+        "Complex",
+        "Expensive"
+      ],
+      "correct_answer": "Convenient",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "便利"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"潜在\" mean in English?",
+      "options": [
+        "Final",
+        "Current",
+        "Potential",
+        "Previous"
+      ],
+      "correct_answer": "Potential",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "潜在"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"创新\" mean in English?",
+      "options": [
+        "Traditional",
+        "Innovation",
+        "Development",
+        "Change"
+      ],
+      "correct_answer": "Innovation",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "创新"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"与其...不如\" mean in English?",
+      "options": [
+        "If...then",
+        "Rather...than",
+        "Because...so",
+        "Although...but"
+      ],
+      "correct_answer": "Rather...than",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "与其...不如"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 这种技术不仅___，而且___。",
+      "options": [
+        "先进...实用",
+        "实用...先进",
+        "好...差",
+        "新...旧"
+      ],
+      "correct_answer": "先进...实用",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 与其___，不如___。",
+      "options": [
+        "放弃...坚持",
+        "来...去",
+        "好...坏",
+        "快...慢"
+      ],
+      "correct_answer": "放弃...坚持",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 这个问题涉及到许多___。",
+      "options": [
+        "方面",
+        "时候",
+        "地方",
+        "问题"
+      ],
+      "correct_answer": "方面",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 他___做这个项目___。",
+      "options": [
+        "承诺...了",
+        "试图...了",
+        "决定...了",
+        "承诺..."
+      ],
+      "correct_answer": "承诺...",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 这个现象___一个深层的社会问题。",
+      "options": [
+        "反映",
+        "显示",
+        "表示",
+        "说明"
+      ],
+      "correct_answer": "反映",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 随着科技的___，生活变得更便利了。",
+      "options": [
+        "发展",
+        "改变",
+        "进步",
+        "提高"
+      ],
+      "correct_answer": "发展",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The strategy is not practical",
+        "This strategy is not only practical but also cost-effective",
+        "The strategy is too expensive",
+        "Economic development is important"
+      ],
+      "correct_answer": "This strategy is not only practical but also cost-effective",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "这个策略不仅实用，而且经济高效"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "We should follow trends blindly",
+        "Rather than following blindly, it is better to think independently",
+        "Trends are always good",
+        "Thinking is not important"
+      ],
+      "correct_answer": "Rather than following blindly, it is better to think independently",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "与其盲目跟风，不如独立思考"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Nothing has changed",
+        "This phenomenon reflects the changes of the times",
+        "The world is the same",
+        "Changes are not important"
+      ],
+      "correct_answer": "This phenomenon reflects the changes of the times",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "这种现象反映了时代的变化"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "There are no risks",
+        "We must face up to this potential risk",
+        "Risks are not important",
+        "The future is safe"
+      ],
+      "correct_answer": "We must face up to this potential risk",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "我们必须正视这个潜在的风险"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Innovation is not important",
+        "Innovation is the key to social progress",
+        "Society never changes",
+        "Progress comes from tradition"
+      ],
+      "correct_answer": "Innovation is the key to social progress",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "创新是推动社会进步的关键"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Policies are simple",
+        "Government policies involve multiple aspects",
+        "There are no policies",
+        "Policies only affect one area"
+      ],
+      "correct_answer": "Government policies involve multiple aspects",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "政府的政策涉及多个方面"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Not only is the technology advanced, but it is also affordable\"",
+      "options": [
+        "这个技术很先进，价格很贵",
+        "这个技术不仅先进，而且价格便宜",
+        "这个技术很便宜，不好用",
+        "先进的技术都很贵"
+      ],
+      "correct_answer": "这个技术不仅先进，而且价格便宜",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Rather than give up, it is better to persist\"",
+      "options": [
+        "给了放弃，坚持很难",
+        "与其放弃，不如坚持",
+        "放弃和坚持一样好",
+        "我们应该放弃"
+      ],
+      "correct_answer": "与其放弃，不如坚持",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"This issue involves several complicated factors\"",
+      "options": [
+        "这个问题涉及几个复杂的因素",
+        "这个问题很简单",
+        "因素不影响问题",
+        "问题没有因素"
+      ],
+      "correct_answer": "这个问题涉及几个复杂的因素",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The development of technology has changed our lifestyle\"",
+      "options": [
+        "技术很贵",
+        "技术的发展改变了我们的生活方式",
+        "我们的生活不会改变",
+        "技术不影响生活"
+      ],
+      "correct_answer": "技术的发展改变了我们的生活方式",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"We must critically examine this phenomenon\"",
+      "options": [
+        "现象不重要",
+        "我们必须批判地审视这个现象",
+        "现象是好的",
+        "我们不需要看现象"
+      ],
+      "correct_answer": "我们必须批判地审视这个现象",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"His contribution to the field is immeasurable\"",
+      "options": [
+        "他在这个领域的贡献无法估量",
+        "他没有做贡献",
+        "贡献不重要",
+        "他的贡献很小"
+      ],
+      "correct_answer": "他在这个领域的贡献无法估量",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "你要说一件事既有优点又有缺点。你应该说：",
+      "options": [
+        "这件事完全好",
+        "这件事很差",
+        "这件事不仅有优点，而且有缺点",
+        "这件事没有缺点"
+      ],
+      "correct_answer": "这件事不仅有优点，而且有缺点",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "你在讨论一个社会趋势。你说：",
+      "options": [
+        "没有趋势",
+        "这个趋势反映了社会的变化",
+        "趋势不重要",
+        "一切都一样"
+      ],
+      "correct_answer": "这个趋势反映了社会的变化",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "你的同事说一个项目太难了。你给建议：",
+      "options": [
+        "放弃吧",
+        "与其放弃，不如坚持尝试",
+        "不要做",
+        "这个项目没有价值"
+      ],
+      "correct_answer": "与其放弃，不如坚持尝试",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "你在分析一个复杂问题的多个方面。你说：",
+      "options": [
+        "问题只有一个方面",
+        "这个问题涉及多个方面",
+        "问题很简单",
+        "不需要分析"
+      ],
+      "correct_answer": "这个问题涉及多个方面",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "你在讨论创新的重要性。你说：",
+      "options": [
+        "创新不重要",
+        "创新是进步的关键",
+        "我们应该坚持传统",
+        "一切都应该不变"
+      ],
+      "correct_answer": "创新是进步的关键",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "你要评价某人的贡献。你说：",
+      "options": [
+        "他没有贡献",
+        "他的贡献很小",
+        "他的贡献无法估量",
+        "他没做过什么"
+      ],
+      "correct_answer": "他的贡献无法估量",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    }
+  ]
+}

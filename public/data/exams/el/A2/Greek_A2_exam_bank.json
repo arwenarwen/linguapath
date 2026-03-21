@@ -1,0 +1,453 @@
+{
+  "language": "Greek",
+  "code": "el",
+  "level": "A2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Περπατώ στο πάρκο\" mean in English?",
+      "options": [
+        "I play in the park",
+        "I walk in the park",
+        "I run in the park",
+        "I sit in the park"
+      ],
+      "correct_answer": "I walk in the park",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Περπατώ στο πάρκο"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Αγοράζω ψωμί\" mean in English?",
+      "options": [
+        "I sell bread",
+        "I eat bread",
+        "I buy bread",
+        "I bake bread"
+      ],
+      "correct_answer": "I buy bread",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Αγοράζω ψωμί"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Πηγαίνω στο σχολείο\" mean in English?",
+      "options": [
+        "I go to school",
+        "I work at school",
+        "I teach school",
+        "I clean school"
+      ],
+      "correct_answer": "I go to school",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Πηγαίνω στο σχολείο"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Τρώω πρωινό\" mean in English?",
+      "options": [
+        "I prepare breakfast",
+        "I eat breakfast",
+        "I cook breakfast",
+        "I buy breakfast"
+      ],
+      "correct_answer": "I eat breakfast",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Τρώω πρωινό"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Βλέπω τηλεόραση\" mean in English?",
+      "options": [
+        "I listen to television",
+        "I watch television",
+        "I fix television",
+        "I turn on television"
+      ],
+      "correct_answer": "I watch television",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Βλέπω τηλεόραση"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Κοιμάμαι νωρίς\" mean in English?",
+      "options": [
+        "I go to bed early",
+        "I sleep early",
+        "I wake up early",
+        "I rest early"
+      ],
+      "correct_answer": "I sleep early",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Κοιμάμαι νωρίς"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Χθες ___ ένα ωραίο εστιατόριο.",
+      "options": [
+        "πηγαίνω",
+        "πήγα",
+        "πήγαιν",
+        "πηγαίνω"
+      ],
+      "correct_answer": "πήγα",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Μ' αρέσει να ___ στη θάλασσα.",
+      "options": [
+        "κολυμπώ",
+        "κολύμπησα",
+        "κολυμπάω",
+        "κολυμπώντας"
+      ],
+      "correct_answer": "κολυμπώ",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Πρέπει να ___ στη δουλειά αύριο.",
+      "options": [
+        "πηγαίνω",
+        "πηγαίνουν",
+        "πάω",
+        "πήγα"
+      ],
+      "correct_answer": "πάω",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Τα παιδιά ___ στην τάξη με συχνότητα.",
+      "options": [
+        "πηγαίνουν",
+        "πήγαν",
+        "πάνε",
+        "πήγανε"
+      ],
+      "correct_answer": "πηγαίνουν",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Θέλω να ___ καφέ.",
+      "options": [
+        "πίνω",
+        "πίω",
+        "πίνοντας",
+        "ποτό"
+      ],
+      "correct_answer": "πίω",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Ο καιρός ___ πολύ καλός χθες.",
+      "options": [
+        "είναι",
+        "ήταν",
+        "θα είναι",
+        "έχει"
+      ],
+      "correct_answer": "ήταν",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "What time do you arrive home?",
+        "When do you leave home?",
+        "How do you get home?",
+        "Why do you go home?"
+      ],
+      "correct_answer": "What time do you arrive home?",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Πότε φτάνεις το σπίτι;"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I don't like this food.",
+        "I like this food very much.",
+        "This food is bad.",
+        "I hate this food."
+      ],
+      "correct_answer": "I like this food very much.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Μ' αρέσει πολύ το φαγητό αυτό."
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "How many tickets?",
+        "How much is a ticket?",
+        "Where is the ticket?",
+        "Why do you need a ticket?"
+      ],
+      "correct_answer": "How much is a ticket?",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Πόσο κάνει ένα εισιτήριο;"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I will see my friend tomorrow.",
+        "I saw my friend yesterday.",
+        "I see my friend every day.",
+        "I don't like my friend."
+      ],
+      "correct_answer": "I saw my friend yesterday.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Χθες είδα τον φίλο μου."
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I can stay now.",
+        "I need to leave now.",
+        "I want to stay now.",
+        "I should arrive now."
+      ],
+      "correct_answer": "I need to leave now.",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Πρέπει να φύγω τώρα."
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Is your house small?",
+        "Is your house big?",
+        "Do you have a house?",
+        "Where is your house?"
+      ],
+      "correct_answer": "Is your house big?",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Το δικό σας σπίτι είναι μεγάλο;"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Yesterday I went to the market\"",
+      "options": [
+        "Χθες πήγα στη αγορά",
+        "Χθες πηγαίνω στη αγορά",
+        "Χθες θα πάω στη αγορά",
+        "Χθες ήμουν στη αγορά"
+      ],
+      "correct_answer": "Χθες πήγα στη αγορά",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"I like to read books\"",
+      "options": [
+        "Μ' αρέσει να διαβάζω βιβλία",
+        "Μ' αρέσουν τα βιβλία να διαβάζω",
+        "Θέλω να διαβάσω βιβλία",
+        "Αγαπώ να διαβάζω βιβλία"
+      ],
+      "correct_answer": "Μ' αρέσει να διαβάζω βιβλία",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Where are you from?\"",
+      "options": [
+        "Από πού είσαι;",
+        "Πού πας;",
+        "Πού μένεις;",
+        "Ποια είσαι;"
+      ],
+      "correct_answer": "Από πού είσαι;",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"I want to buy a new dress\"",
+      "options": [
+        "Θέλω να αγοράσω ένα νέο φόρεμα",
+        "Θέλω να φοράω ένα νέο φόρεμα",
+        "Θέλω ένα νέο φόρεμα να αγοράσω",
+        "Θέλω να αγοράσεις ένα νέο φόρεμα"
+      ],
+      "correct_answer": "Θέλω να αγοράσω ένα νέο φόρεμα",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"He works in an office\"",
+      "options": [
+        "Δουλεύει στα γραφεία",
+        "Δουλεύει σε ένα γραφείο",
+        "Δουλεύει με γραφεία",
+        "Δουλεύει για ένα γραφείο"
+      ],
+      "correct_answer": "Δουλεύει σε ένα γραφείο",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Do you have any brothers or sisters?\"",
+      "options": [
+        "Έχεις αδερφούς ή αδελφές;",
+        "Έχεις έναν αδερφό ή αδελφή;",
+        "Έχουν αδερφούς ή αδελφές;",
+        "Έχω αδερφούς ή αδελφές;"
+      ],
+      "correct_answer": "Έχεις αδερφούς ή αδελφές;",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Που πας κάθε πρωί;",
+      "options": [
+        "Πάω στο γραφείο",
+        "Πάω στο σπίτι",
+        "Πάω στο κρεβάτι",
+        "Πάω στο λεωφορείο"
+      ],
+      "correct_answer": "Πάω στο γραφείο",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Τι κάνεις στο ελεύθερό σου χρόνο;",
+      "options": [
+        "Αναλύω τη δουλειά μου",
+        "Διαβάζω βιβλία",
+        "Δουλεύω πολύ",
+        "Κοιμάμαι όλη μέρα"
+      ],
+      "correct_answer": "Διαβάζω βιβλία",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Ποια είναι η δουλειά σου;",
+      "options": [
+        "Είμαι μηχανικός",
+        "Είμαι μαθητής",
+        "Είμαι ιατρός",
+        "Είμαι σχολιάστης"
+      ],
+      "correct_answer": "Είμαι μηχανικός",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Πόσο συχνά τρώς μεσημεριανό;",
+      "options": [
+        "Κάθε μέρα",
+        "Σπάνια",
+        "Ποτέ",
+        "Μόνο τα Σαβατοκύριακα"
+      ],
+      "correct_answer": "Κάθε μέρα",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Τι θα κάνεις το σαββατοκύριακο;",
+      "options": [
+        "Θα πάω στο σπίτι",
+        "Θα δουλέψω",
+        "Θα πάω στον κινηματογράφο",
+        "Θα κοιμηθώ"
+      ],
+      "correct_answer": "Θα πάω στον κινηματογράφο",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Πόσο κοστίζει ένα ποτό εδώ;",
+      "options": [
+        "Περίπου πέντε ευρώ",
+        "Περίπου δέκα ευρώ",
+        "Περίπου τρία ευρώ",
+        "Περίπου είκοσι ευρώ"
+      ],
+      "correct_answer": "Περίπου πέντε ευρώ",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

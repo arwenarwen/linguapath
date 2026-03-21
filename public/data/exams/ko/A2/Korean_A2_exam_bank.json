@@ -1,0 +1,453 @@
+{
+  "language": "Korean",
+  "code": "ko",
+  "level": "A2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"예쁘다\" mean in English?",
+      "options": [
+        "Ugly",
+        "Beautiful",
+        "Small",
+        "Large"
+      ],
+      "correct_answer": "Beautiful",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "예쁘다"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"맛있다\" mean in English?",
+      "options": [
+        "Spicy",
+        "Delicious",
+        "Bitter",
+        "Salty"
+      ],
+      "correct_answer": "Delicious",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "맛있다"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"피곤하다\" mean in English?",
+      "options": [
+        "Happy",
+        "Tired",
+        "Excited",
+        "Angry"
+      ],
+      "correct_answer": "Tired",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "피곤하다"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"바쁘다\" mean in English?",
+      "options": [
+        "Slow",
+        "Fast",
+        "Busy",
+        "Lazy"
+      ],
+      "correct_answer": "Busy",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "바쁘다"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"따뜻하다\" mean in English?",
+      "options": [
+        "Cold",
+        "Warm",
+        "Hot",
+        "Cool"
+      ],
+      "correct_answer": "Warm",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "따뜻하다"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"재미있다\" mean in English?",
+      "options": [
+        "Boring",
+        "Interesting",
+        "Scary",
+        "Sad"
+      ],
+      "correct_answer": "Interesting",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "재미있다"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 날씨가 좋___요.",
+      "options": [
+        "아",
+        "어",
+        "이",
+        "우"
+      ],
+      "correct_answer": "어",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 저는 한국 음식을 좋아___요.",
+      "options": [
+        "하",
+        "해",
+        "합",
+        "한"
+      ],
+      "correct_answer": "해",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 물을 마시___고 싶어요.",
+      "options": [
+        "라",
+        "로",
+        "려",
+        "리"
+      ],
+      "correct_answer": "려",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 학교___서 공부해요.",
+      "options": [
+        "에서",
+        "에",
+        "에게",
+        "는"
+      ],
+      "correct_answer": "에서",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 아침에 일어___서 밥을 먹어요.",
+      "options": [
+        "나",
+        "나",
+        "너",
+        "니"
+      ],
+      "correct_answer": "나",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 친구_____ 영화를 봐요.",
+      "options": [
+        "하고",
+        "와",
+        "에게",
+        "는"
+      ],
+      "correct_answer": "하고",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Moon",
+        "Star",
+        "Sunlight",
+        "Cloud"
+      ],
+      "correct_answer": "Sunlight",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "햇빛"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Food",
+        "Art",
+        "Music",
+        "Dance"
+      ],
+      "correct_answer": "Music",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "음악"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Work",
+        "Study",
+        "Travel",
+        "Play"
+      ],
+      "correct_answer": "Travel",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "여행"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Season",
+        "Weather",
+        "Time",
+        "Date"
+      ],
+      "correct_answer": "Weather",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "날씨"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Space",
+        "Time",
+        "Money",
+        "Place"
+      ],
+      "correct_answer": "Time",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "시간"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Friend",
+        "Teacher",
+        "Family",
+        "Doctor"
+      ],
+      "correct_answer": "Family",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "가족"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Beautiful\"",
+      "options": [
+        "못생겼어요",
+        "예뻤어요",
+        "좋아요",
+        "작아요"
+      ],
+      "correct_answer": "예뻤어요",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Delicious\"",
+      "options": [
+        "맛없어요",
+        "맛있어요",
+        "맛이 강해요",
+        "신맛이 나요"
+      ],
+      "correct_answer": "맛있어요",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Tired\"",
+      "options": [
+        "행복해요",
+        "피곤해요",
+        "신나요",
+        "슬퍼요"
+      ],
+      "correct_answer": "피곤해요",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"Busy\"",
+      "options": [
+        "쉬워요",
+        "어려워요",
+        "바빠요",
+        "재미있어요"
+      ],
+      "correct_answer": "바빠요",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Morning\"",
+      "options": [
+        "저녁",
+        "밤",
+        "아침",
+        "낮"
+      ],
+      "correct_answer": "아침",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Weekend\"",
+      "options": [
+        "주중",
+        "주말",
+        "평일",
+        "휴일"
+      ],
+      "correct_answer": "주말",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "날씨가 어떻게 돼요?",
+      "options": [
+        "시간이 있어요",
+        "음식이 맛있어요",
+        "날씨가 좋아요",
+        "집이 크다"
+      ],
+      "correct_answer": "날씨가 좋아요",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "아침에 뭐 해요?",
+      "options": [
+        "일어나서 밥을 먹어요",
+        "자는 거예요",
+        "놀아요",
+        "공부를 해요"
+      ],
+      "correct_answer": "일어나서 밥을 먹어요",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "친구와 뭐 하고 싶어요?",
+      "options": [
+        "혼자 공부하고 싶어요",
+        "영화를 보고 싶어요",
+        "자고 싶어요",
+        "일해요"
+      ],
+      "correct_answer": "영화를 보고 싶어요",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "왜 학교에 가요?",
+      "options": [
+        "공부하려고",
+        "쉬러",
+        "일하러",
+        "놀러"
+      ],
+      "correct_answer": "공부하려고",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "한국 음식이 어떻어요?",
+      "options": [
+        "못생겼어요",
+        "비싸요",
+        "맛있어요",
+        "부드러워요"
+      ],
+      "correct_answer": "맛있어요",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "주말에 뭐 하고 싶어요?",
+      "options": [
+        "계속 공부하고 싶어요",
+        "쉬고 싶어요",
+        "일하고 싶어요",
+        "밤을 새고 싶어요"
+      ],
+      "correct_answer": "쉬고 싶어요",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

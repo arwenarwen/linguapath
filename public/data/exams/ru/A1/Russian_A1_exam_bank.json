@@ -1,0 +1,453 @@
+{
+  "language": "Russian",
+  "code": "ru",
+  "level": "A1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Привет\" mean in English?",
+      "options": [
+        "Hello",
+        "Goodbye",
+        "Thank you",
+        "Please"
+      ],
+      "correct_answer": "Hello",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Привет"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Спасибо\" mean in English?",
+      "options": [
+        "Sorry",
+        "Thank you",
+        "Please",
+        "Yes"
+      ],
+      "correct_answer": "Thank you",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Спасибо"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Да\" mean in English?",
+      "options": [
+        "No",
+        "Yes",
+        "Maybe",
+        "Not"
+      ],
+      "correct_answer": "Yes",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Да"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Нет\" mean in English?",
+      "options": [
+        "Yes",
+        "No",
+        "Perhaps",
+        "Always"
+      ],
+      "correct_answer": "No",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Нет"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Пожалуйста\" mean in English?",
+      "options": [
+        "Thank you",
+        "Hello",
+        "Please",
+        "Goodbye"
+      ],
+      "correct_answer": "Please",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Пожалуйста"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Кот\" mean in English?",
+      "options": [
+        "Dog",
+        "Bird",
+        "Cat",
+        "Fish"
+      ],
+      "correct_answer": "Cat",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Кот"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Я ___ Иван.",
+      "options": [
+        "есть",
+        "быть",
+        "идти",
+        "говорить"
+      ],
+      "correct_answer": "есть",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Это мой ___.",
+      "options": [
+        "книга",
+        "дом",
+        "стол",
+        "окно"
+      ],
+      "correct_answer": "дом",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: У меня есть ___.",
+      "options": [
+        "стул",
+        "ручка",
+        "тетрадь",
+        "карандаш"
+      ],
+      "correct_answer": "ручка",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Меня зовут ___.",
+      "options": [
+        "Анна",
+        "читать",
+        "видеть",
+        "слушать"
+      ],
+      "correct_answer": "Анна",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Я ___ в школе.",
+      "options": [
+        "живу",
+        "сидишь",
+        "идёт",
+        "едите"
+      ],
+      "correct_answer": "живу",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Это ___ собака.",
+      "options": [
+        "большой",
+        "маленькая",
+        "красивый",
+        "новая"
+      ],
+      "correct_answer": "большой",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Goodbye",
+        "Good morning",
+        "Good afternoon",
+        "Good night"
+      ],
+      "correct_answer": "Good afternoon",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Добрый день"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "What is your name?",
+        "How are you?",
+        "Where are you from?",
+        "What time is it?"
+      ],
+      "correct_answer": "How are you?",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Как дела?"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I am five years old",
+        "I have five books",
+        "I want five apples",
+        "I see five birds"
+      ],
+      "correct_answer": "I am five years old",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Мне пять лет"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This is a banana",
+        "This is an apple",
+        "This is bread",
+        "This is water"
+      ],
+      "correct_answer": "This is an apple",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Это яблоко"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I am a teacher",
+        "I am a student",
+        "I am a doctor",
+        "I am an engineer"
+      ],
+      "correct_answer": "I am a student",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Я студент"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Bad",
+        "Good",
+        "Excellent",
+        "Terrible"
+      ],
+      "correct_answer": "Good",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Хорошо"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"I am a student\"",
+      "options": [
+        "Я студент",
+        "Ты студент",
+        "Он студент",
+        "Вы студент"
+      ],
+      "correct_answer": "Я студент",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"She is Russian\"",
+      "options": [
+        "Он русский",
+        "Она русская",
+        "Оно русское",
+        "Они русские"
+      ],
+      "correct_answer": "Она русская",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"We live in Moscow\"",
+      "options": [
+        "Я живу в Москве",
+        "Ты живёшь в Москве",
+        "Мы живём в Москве",
+        "Они живут в Москве"
+      ],
+      "correct_answer": "Мы живём в Москве",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"Do you speak English?\"",
+      "options": [
+        "Я говорю по-английски",
+        "Ты говоришь по-английски?",
+        "Он говорит по-английски",
+        "Мы говорим по-английски"
+      ],
+      "correct_answer": "Ты говоришь по-английски?",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"I like apples\"",
+      "options": [
+        "Я люблю яблоки",
+        "Ты любишь яблоки",
+        "Он любит яблоки",
+        "Она любит яблоки"
+      ],
+      "correct_answer": "Я люблю яблоки",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Where is the book?\"",
+      "options": [
+        "Где книга?",
+        "Как книга?",
+        "Какая книга?",
+        "Кто книга?"
+      ],
+      "correct_answer": "Где книга?",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Вас спрашивают: 'Как вас зовут?' Вы отвечаете:",
+      "options": [
+        "Хорошо",
+        "Я студент",
+        "Меня зовут Петр",
+        "До свидания"
+      ],
+      "correct_answer": "Меня зовут Петр",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Друг говорит: 'Как дела?' Вы говорите:",
+      "options": [
+        "Спасибо, хорошо",
+        "Привет!",
+        "Где ты?",
+        "Я не знаю"
+      ],
+      "correct_answer": "Спасибо, хорошо",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Вы встречаете друга утром. Вы говорите:",
+      "options": [
+        "Добрый вечер",
+        "Добрый день",
+        "Доброе утро",
+        "Спокойной ночи"
+      ],
+      "correct_answer": "Доброе утро",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Вас благодарят. Вы отвечаете:",
+      "options": [
+        "Пожалуйста",
+        "До свидания",
+        "Привет",
+        "Спасибо"
+      ],
+      "correct_answer": "Пожалуйста",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Вы хотите узнать, откуда человек. Вы спрашиваете:",
+      "options": [
+        "Как тебя зовут?",
+        "Откуда ты?",
+        "Сколько тебе лет?",
+        "Где ты живёшь?"
+      ],
+      "correct_answer": "Откуда ты?",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Вы уходите домой. Вы говорите:",
+      "options": [
+        "Привет",
+        "Добрый день",
+        "До свидания",
+        "Спасибо"
+      ],
+      "correct_answer": "До свидания",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    }
+  ]
+}

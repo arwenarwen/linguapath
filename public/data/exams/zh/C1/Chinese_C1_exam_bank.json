@@ -1,0 +1,453 @@
+{
+  "language": "Chinese",
+  "code": "zh",
+  "level": "C1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"成语\" mean in English?",
+      "options": [
+        "Sentence",
+        "Idiom",
+        "Character",
+        "Word"
+      ],
+      "correct_answer": "Idiom",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "成语"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"卧虎藏龙\" mean in English?",
+      "options": [
+        "Hidden talents",
+        "Tiger and dragon story",
+        "Sleeping cats",
+        "Flying birds"
+      ],
+      "correct_answer": "Hidden talents",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "卧虎藏龙"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"异曲同工\" mean in English?",
+      "options": [
+        "Different paths, same result",
+        "Different songs",
+        "Same musicians",
+        "Different languages"
+      ],
+      "correct_answer": "Different paths, same result",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "异曲同工"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"深邃\" mean in English?",
+      "options": [
+        "Shallow",
+        "Deep and profound",
+        "Simple",
+        "Clear"
+      ],
+      "correct_answer": "Deep and profound",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "深邃"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"阐述\" mean in English?",
+      "options": [
+        "Question",
+        "Elucidate",
+        "Summarize",
+        "Hide"
+      ],
+      "correct_answer": "Elucidate",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "阐述"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"启蒙\" mean in English?",
+      "options": [
+        "Enlightenment",
+        "Ending",
+        "Beginning",
+        "Conclusion"
+      ],
+      "correct_answer": "Enlightenment",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "启蒙"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 这部著作___了作者对人性的深刻理解。",
+      "options": [
+        "阐述",
+        "说",
+        "讲",
+        "读"
+      ],
+      "correct_answer": "阐述",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 他的研究虽然采用了不同的方法，却___。",
+      "options": [
+        "异曲同工",
+        "完全不同",
+        "有问题",
+        "没有价值"
+      ],
+      "correct_answer": "异曲同工",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 这个城市___着许多被忽视的人才。",
+      "options": [
+        "卧虎藏龙",
+        "有",
+        "住",
+        "是"
+      ],
+      "correct_answer": "卧虎藏龙",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 他的思想___而富有洞察力。",
+      "options": [
+        "深邃",
+        "深",
+        "很深",
+        "深度"
+      ],
+      "correct_answer": "深邃",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 这部电影对现代人的___产生了深远的影响。",
+      "options": [
+        "启蒙",
+        "启",
+        "开始",
+        "想法"
+      ],
+      "correct_answer": "启蒙",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 他___了一套独特的理论框架。",
+      "options": [
+        "建构",
+        "建",
+        "做",
+        "创"
+      ],
+      "correct_answer": "建构",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The work uses simple language",
+        "This work elucidates the contradictions of human nature through a complex narrative structure",
+        "The narrative is straightforward",
+        "There is no philosophical meaning"
+      ],
+      "correct_answer": "This work elucidates the contradictions of human nature through a complex narrative structure",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "这部作品通过复杂的叙事结构来阐述人性的矛盾"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The artists' styles are the same",
+        "Although the two artists have completely different styles, their works achieve the same effect",
+        "They created similar works",
+        "Their works are completely different"
+      ],
+      "correct_answer": "Although the two artists have completely different styles, their works achieve the same effect",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "虽然两位艺术家的风格截然不同，但他们的作品却异曲同工"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This community is poor",
+        "This community has hidden talents, many outstanding scholars",
+        "There are no talented people",
+        "The community is small"
+      ],
+      "correct_answer": "This community has hidden talents, many outstanding scholars",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "这个社区卧虎藏龙，有许多杰出的学者"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "His argument is shallow",
+        "His argument is deep and profound and persuasive",
+        "The argument is confusing",
+        "There is no logic"
+      ],
+      "correct_answer": "His argument is deep and profound and persuasive",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "他的论述深邃而富有说服力"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Enlightenment thought has no influence",
+        "The enlightenment thought of this era had a profound impact on modern civilization",
+        "The past is irrelevant",
+        "Modern civilization is independent"
+      ],
+      "correct_answer": "The enlightenment thought of this era had a profound impact on modern civilization",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "这个时代的启蒙思想对现代文明产生了深刻的影响"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "He destroyed the system",
+        "He constructed a grand theoretical system",
+        "His theory is incomplete",
+        "There is no system"
+      ],
+      "correct_answer": "He constructed a grand theoretical system",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "他建构了一个宏大的理论体系"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"This masterpiece elucidates the depths of human emotion\"",
+      "options": [
+        "这部杰作阐述了人类情感的深度",
+        "这是一部很好的作品",
+        "情感很浅",
+        "没有人性"
+      ],
+      "correct_answer": "这部杰作阐述了人类情感的深度",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Although their methods differ, they achieve the same result\"",
+      "options": [
+        "他们的方法和结果都不同",
+        "虽然他们的方法不同，但他们异曲同工",
+        "结果肯定不一样",
+        "方法最重要"
+      ],
+      "correct_answer": "虽然他们的方法不同，但他们异曲同工",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"This intellectual movement contained hidden talents\"",
+      "options": [
+        "这个知识运动卧虎藏龙",
+        "这个运动没有人才",
+        "人才都很明显",
+        "没有知识"
+      ],
+      "correct_answer": "这个知识运动卧虎藏龙",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"His philosophical writings are profound and insightful\"",
+      "options": [
+        "他的哲学著作深邃而富有洞察力",
+        "他的作品很浅",
+        "哲学不重要",
+        "没有深度"
+      ],
+      "correct_answer": "他的哲学著作深邃而富有洞察力",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The Enlightenment had a transformative impact on society\"",
+      "options": [
+        "启蒙运动对社会产生了深刻的影响",
+        "启蒙很无聊",
+        "社会没有改变",
+        "影响不重要"
+      ],
+      "correct_answer": "启蒙运动对社会产生了深刻的影响",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"He has constructed an innovative theoretical framework\"",
+      "options": [
+        "他建构了一个创新的理论框架",
+        "他摧毁了理论",
+        "框架不重要",
+        "没有理论"
+      ],
+      "correct_answer": "他建构了一个创新的理论框架",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "你在学术论文中要提到成语。关于「卧虎藏龙」，正确的理解是：",
+      "options": [
+        "有老虎和龙在睡觉",
+        "隐藏着许多杰出的人才",
+        "龙在洞里",
+        "老虎和龙是敌人"
+      ],
+      "correct_answer": "隐藏着许多杰出的人才",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "两个艺术家用完全不同的方式创作，但效果一样好。你可以用成语说：",
+      "options": [
+        "他们的作品一样",
+        "这是异曲同工",
+        "他们的方法相同",
+        "效果不一样"
+      ],
+      "correct_answer": "这是异曲同工",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "在讨论一个复杂的哲学问题时，你想强调其深度。你说：",
+      "options": [
+        "这个问题很简单",
+        "这个问题很浅",
+        "这个问题深邃而富有意义",
+        "没有深度可言"
+      ],
+      "correct_answer": "这个问题深邃而富有意义",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "你在评价一位学者对某个理论的解释。你说：",
+      "options": [
+        "他没有解释",
+        "他的解释很差",
+        "他深入地阐述了这个理论",
+        "理论不重要"
+      ],
+      "correct_answer": "他深入地阐述了这个理论",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "讨论启蒙运动对现代社会的影响时，正确的认识是：",
+      "options": [
+        "启蒙没有影响",
+        "启蒙只是历史上的事",
+        "启蒙对现代文明产生了深刻的影响",
+        "现代社会与启蒙无关"
+      ],
+      "correct_answer": "启蒙对现代文明产生了深刻的影响",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "你在描述一位思想家的著作。他创造了一套完整的理论体系。你说：",
+      "options": [
+        "他没有理论",
+        "他的理论很混乱",
+        "他建构了一个宏大的理论体系",
+        "理论不值得讨论"
+      ],
+      "correct_answer": "他建构了一个宏大的理论体系",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    }
+  ]
+}

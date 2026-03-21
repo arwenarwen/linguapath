@@ -1,0 +1,453 @@
+{
+  "language": "Greek",
+  "code": "el",
+  "level": "B1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Ενώ έτρωγα, ο τηλέφωνο χτύπησε\" mean in English?",
+      "options": [
+        "While I was eating, the phone rang",
+        "Before I ate, the phone rang",
+        "After I ate, the phone rang",
+        "When I finished eating, the phone rang"
+      ],
+      "correct_answer": "While I was eating, the phone rang",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Ενώ έτρωγα, ο τηλέφωνο χτύπησε"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Θα πάω στο σπίτι αύριο\" mean in English?",
+      "options": [
+        "I go home tomorrow",
+        "I went home tomorrow",
+        "I will go home tomorrow",
+        "I am going home tomorrow"
+      ],
+      "correct_answer": "I will go home tomorrow",
+      "correct_index": 2,
+      "exercise_type": "translate-en",
+      "audio": "Θα πάω στο σπίτι αύριο"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Πρέπει να μιλήσουμε για αυτό\" mean in English?",
+      "options": [
+        "We must talk about this",
+        "We can talk about this",
+        "We like to talk about this",
+        "We should not talk about this"
+      ],
+      "correct_answer": "We must talk about this",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Πρέπει να μιλήσουμε για αυτό"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Η δουλειά του είναι δύσκολη\" mean in English?",
+      "options": [
+        "His work is easy",
+        "His work is difficult",
+        "His work is boring",
+        "His work is interesting"
+      ],
+      "correct_answer": "His work is difficult",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η δουλειά του είναι δύσκολη"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Με ρώτησε αν ήθελα καφέ\" mean in English?",
+      "options": [
+        "He asked me if I wanted coffee",
+        "He told me to want coffee",
+        "He made me want coffee",
+        "He said I wanted coffee"
+      ],
+      "correct_answer": "He asked me if I wanted coffee",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Με ρώτησε αν ήθελα καφέ"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Είμαι πολύ κουρασμένος\" mean in English?",
+      "options": [
+        "I am very happy",
+        "I am very tired",
+        "I am very sick",
+        "I am very hungry"
+      ],
+      "correct_answer": "I am very tired",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Είμαι πολύ κουρασμένος"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Όταν ήμουν παιδί, ___ κάθε μέρα.",
+      "options": [
+        "παίζω",
+        "έπαιζα",
+        "θα παίζω",
+        "έχω παίξει"
+      ],
+      "correct_answer": "έπαιζα",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Δεν ___ αν έχει έρθει ακόμα.",
+      "options": [
+        "ξέρω",
+        "ξέρα",
+        "θα ξέρω",
+        "ήξερα"
+      ],
+      "correct_answer": "ξέρω",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Αν έχω χρόνο, ___ σε επισκεφθώ.",
+      "options": [
+        "έρχομαι",
+        "θα έρθω",
+        "έρχομαι να",
+        "ήρθον"
+      ],
+      "correct_answer": "θα έρθω",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Μα καλύτερα ___ τώρα, ή σας περιμένω;",
+      "options": [
+        "πηγαίνετε",
+        "παίτε",
+        "φεύγετε",
+        "θα φύγετε"
+      ],
+      "correct_answer": "φεύγετε",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Θα ήθελα να ___ πιο καλά.",
+      "options": [
+        "γνωρίζω",
+        "γνωρίσω",
+        "γνώρισα",
+        "γνωρίζα"
+      ],
+      "correct_answer": "γνωρίσω",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Είναι σημαντικό να ___ πάντα την αλήθεια.",
+      "options": [
+        "λέω",
+        "πω",
+        "είπα",
+        "λέγω"
+      ],
+      "correct_answer": "λέω",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I think we should change the strategy",
+        "I don't think we should change",
+        "The strategy is not important",
+        "We must change everything"
+      ],
+      "correct_answer": "I think we should change the strategy",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Πιστεύω ότι πρέπει να αλλάξουμε τη στρατηγική"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I will work here for five years",
+        "I work here for five years",
+        "I have worked here for five years",
+        "I worked here five years ago"
+      ],
+      "correct_answer": "I have worked here for five years",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Έχω δουλέψει εδώ για πέντε χρόνια"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I can come tomorrow",
+        "I will come tomorrow",
+        "Unfortunately, I cannot come tomorrow",
+        "I want to come tomorrow"
+      ],
+      "correct_answer": "Unfortunately, I cannot come tomorrow",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Δυστυχώς, δεν μπορώ να έρθω αύριο"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "It is easy and I will do it",
+        "If it were easy, I would have already done it",
+        "It is difficult but I did it",
+        "It is easy and I did it"
+      ],
+      "correct_answer": "If it were easy, I would have already done it",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Αν ήταν εύκολο, θα το είχα κάνει ήδη"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The weather is improving",
+        "It seems the weather will worsen",
+        "The weather is beautiful",
+        "We should go outside"
+      ],
+      "correct_answer": "It seems the weather will worsen",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Φαίνεται ότι ο καιρός θα χειροτερέψει"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I suggest you enjoy yourself",
+        "I recommend you watch the details",
+        "I suggest you be careful about details",
+        "You should not pay attention"
+      ],
+      "correct_answer": "I suggest you be careful about details",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "Σας συνιστώ να προσέχετε τα λεπτά"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"When I arrive, I will call you\"",
+      "options": [
+        "Όταν φτάσω, θα σε καλέσω",
+        "Όταν έφτασα, σε κάλεσα",
+        "Όταν φτάνω, σε καλώ",
+        "Όταν θα φτάσω, θα σε καλέσω"
+      ],
+      "correct_answer": "Όταν φτάσω, θα σε καλέσω",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"I am opposed to this decision\"",
+      "options": [
+        "Συμφωνώ με αυτή την απόφαση",
+        "Είμαι κατά αυτής της απόφασης",
+        "Μ' αρέσει αυτή η απόφαση",
+        "Υποστηρίζω αυτή την απόφαση"
+      ],
+      "correct_answer": "Είμαι κατά αυτής της απόφασης",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"He was treated unfairly by his colleagues\"",
+      "options": [
+        "Θεωρούσε ότι οι συνάδελφοί του ήταν άδικοι",
+        "Αντιμετώπισε άδικα τους συναδέλφους",
+        "Αντιμετωπίστηκε άδικα από τους συναδέλφους του",
+        "Ήταν άδικος με τους συναδέλφους"
+      ],
+      "correct_answer": "Αντιμετωπίστηκε άδικα από τους συναδέλφους του",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"It is necessary to understand the reasons for this situation\"",
+      "options": [
+        "Πρέπει να καταλάβουμε τους λόγους αυτής της κατάστασης",
+        "Είναι καλό να καταλάβουμε τους λόγους",
+        "Θέλουμε να καταλάβουμε τους λόγους",
+        "Πρέπει κάποιος να καταλάβει τους λόγους"
+      ],
+      "correct_answer": "Πρέπει να καταλάβουμε τους λόγους αυτής της κατάστασης",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Although he is young, he has a lot of experience\"",
+      "options": [
+        "Επειδή είναι νέος, έχει πολλή εμπειρία",
+        "Ενώ είναι νέος, έχει πολλή εμπειρία",
+        "Όταν ήταν νέος, είχε εμπειρία",
+        "Αν ήταν νέος, θα είχε εμπειρία"
+      ],
+      "correct_answer": "Ενώ είναι νέος, έχει πολλή εμπειρία",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The project requires careful planning\"",
+      "options": [
+        "Το έργο απαιτεί προσεκτικό σχεδιασμό",
+        "Το έργο χρειάζεται να σχεδιάσουμε",
+        "Θέλουμε το έργο να σχεδιαστεί",
+        "Πρέπει να κάνουμε το έργο προσεκτικά"
+      ],
+      "correct_answer": "Το έργο απαιτεί προσεκτικό σχεδιασμό",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Τι θα έκανες αν κέρδιζες το λαχείο;",
+      "options": [
+        "Θα συνέχιζα τη δουλειά μου",
+        "Θα ταξίδευα σε όλο τον κόσμο",
+        "Θα έμενα σπίτι",
+        "Θα ήμουν ευτυχής"
+      ],
+      "correct_answer": "Θα ταξίδευα σε όλο τον κόσμο",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Ποια είναι η γνώμη σου για τις κοινωνικές δίκτυα;",
+      "options": [
+        "Δεν έχω γνώμη",
+        "Είναι πολύ χρήσιμα αλλά μπορεί να είναι επικίνδυνα",
+        "Είναι άχρηστα",
+        "Είναι τέλεια"
+      ],
+      "correct_answer": "Είναι πολύ χρήσιμα αλλά μπορεί να είναι επικίνδυνα",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Πώς νιώθεις για την περιβαλλοντική κρίση;",
+      "options": [
+        "Είναι σημαντική και πρέπει να δράσουμε",
+        "Δεν ενδιαφέρομαι",
+        "Δεν υπάρχει κρίση",
+        "Είναι πρόβλημα άλλων χωρών"
+      ],
+      "correct_answer": "Είναι σημαντική και πρέπει να δράσουμε",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Τι επαγγέλματα ήταν πάντα σημαντικά;",
+      "options": [
+        "Η αστυνομία",
+        "Η ιατρική",
+        "Το εμπόριο",
+        "Ο αθλητισμός"
+      ],
+      "correct_answer": "Η ιατρική",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Τι σε χαρακτηρίζει ως χαρακτήρα;",
+      "options": [
+        "Είμαι επιμελής και ειλικρινής",
+        "Είμαι τεμπέλης",
+        "Είμαι ψευδής",
+        "Είμαι κακόντροπος"
+      ],
+      "correct_answer": "Είμαι επιμελής και ειλικρινής",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Πώς σχεδιάζεις το μέλλον σου;",
+      "options": [
+        "Χωρίς σχέδιο",
+        "Σχεδιάζω με προσοχή και ευελιξία, προσαρμόζοντας τα σχέδιά μου καθώς αλλάζουν οι συνθήκες",
+        "Όλα είναι πεπρωμένα",
+        "Δεν μπορώ να σχεδιάσω"
+      ],
+      "correct_answer": "Σχεδιάζω με προσοχή και ευελιξία, προσαρμόζοντας τα σχέδιά μου καθώς αλλάζουν οι συνθήκες",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

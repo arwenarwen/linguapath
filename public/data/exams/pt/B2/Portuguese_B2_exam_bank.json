@@ -1,0 +1,453 @@
+{
+  "language": "Portuguese",
+  "code": "pt",
+  "level": "B2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Sob o ponto de vista sociológico, a situação é complexa.\" mean in English?",
+      "options": [
+        "From a sociological point of view, the situation is complex",
+        "Under the society view, the situation is complex",
+        "The society is viewing the complex situation",
+        "Complexity views the sociological situation"
+      ],
+      "correct_answer": "From a sociological point of view, the situation is complex",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Sob o ponto de vista sociológico, a situação é complexa."
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"A despeito das dificuldades, o projeto foi bem-sucedido.\" mean in English?",
+      "options": [
+        "Because of the difficulties, the project was successful",
+        "In spite of the difficulties, the project was successful",
+        "The difficulties were successful in the project",
+        "Although there were difficulties, we succeeded"
+      ],
+      "correct_answer": "In spite of the difficulties, the project was successful",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "A despeito das dificuldades, o projeto foi bem-sucedido."
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"É imperativo que se revejam as políticas implementadas.\" mean in English?",
+      "options": [
+        "It is imperative that policies are reviewed",
+        "It is imperative that policies be reviewed",
+        "The reviews of policies are imperative",
+        "Reviewing policies is more important"
+      ],
+      "correct_answer": "It is imperative that policies be reviewed",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "É imperativo que se revejam as políticas implementadas."
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Talvez fosse conveniente renegociar os termos do contrato.\" mean in English?",
+      "options": [
+        "Maybe it would be convenient to renegotiate contract terms",
+        "It was convenient that we renegotiate the contract",
+        "Renegotiating is convenient to the contract",
+        "The contract was convenient about negotiation"
+      ],
+      "correct_answer": "Maybe it would be convenient to renegotiate contract terms",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Talvez fosse conveniente renegociar os termos do contrato."
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"O relatório em questão apresenta uma perspectiva inovadora.\" mean in English?",
+      "options": [
+        "The report in question presents an innovative perspective",
+        "The questioned report presents a perspective",
+        "In questions, the report is innovative",
+        "The perspective questions the report's innovation"
+      ],
+      "correct_answer": "The report in question presents an innovative perspective",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "O relatório em questão apresenta uma perspectiva inovadora."
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Ainda que reconheçamos as limitações, devemos perseverar.\" mean in English?",
+      "options": [
+        "Even though we recognize the limitations, we must persevere",
+        "We recognize the limitations and must persevere",
+        "Although recognizing, perseverance is limited",
+        "The limitations are recognized in perseverance"
+      ],
+      "correct_answer": "Even though we recognize the limitations, we must persevere",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Ainda que reconheçamos as limitações, devemos perseverar."
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Convém que os relatórios ___ submetidos até amanhã.",
+      "options": [
+        "sejam",
+        "são",
+        "serão",
+        "foram"
+      ],
+      "correct_answer": "sejam",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: O ministério exigiu que se ___ novas medidas.",
+      "options": [
+        "implementem",
+        "implementam",
+        "implementarão",
+        "implementassem"
+      ],
+      "correct_answer": "implementem",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Caso ___ questões jurídicas, contacte o departamento legal.",
+      "options": [
+        "surgem",
+        "surjam",
+        "surgirem",
+        "surgirão"
+      ],
+      "correct_answer": "surgirem",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: É possível que o resultado ___ interpretado de forma distinta.",
+      "options": [
+        "seja",
+        "é",
+        "será",
+        "foi"
+      ],
+      "correct_answer": "seja",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Supõe-se que a economia ___ a recuperação em 2027.",
+      "options": [
+        "inicia",
+        "inicie",
+        "iniciará",
+        "iniciava"
+      ],
+      "correct_answer": "inicie",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Salvo se ___ contraindicações, prosseguimos com o plano.",
+      "options": [
+        "haja",
+        "há",
+        "haverá",
+        "havia"
+      ],
+      "correct_answer": "haja",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The president defended the legitimacy of decisions made",
+        "The president questioned whether decisions were legitimate",
+        "Decisions legitimized the president's actions",
+        "The president made decisions about legitimacy"
+      ],
+      "correct_answer": "The president defended the legitimacy of decisions made",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "O presidente defendeu a legitimidade das decisões tomadas."
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Critical analysis reveals fundamental inconsistencies in the argument",
+        "Fundamental criticism analyzes the argument",
+        "The argument is inconsistent with analysis",
+        "Analysis is critical about the argument's inconsistency"
+      ],
+      "correct_answer": "Critical analysis reveals fundamental inconsistencies in the argument",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "A análise crítica revela inconsistências fundamentais no argumento."
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "As expected, the payment is due",
+        "As stipulated in the contractual clauses, the payment is due this month",
+        "The contract expects payment in the future",
+        "Clauses predict payment is due"
+      ],
+      "correct_answer": "As stipulated in the contractual clauses, the payment is due this month",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Conforme previsto nas cláusulas contratuais, o pagamento vence no mês atual."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The methodology used is very rigorous",
+        "The methodology employed lacks scientific rigor",
+        "Science endorses the methodology rigorously",
+        "Rigorous science employs this methodology"
+      ],
+      "correct_answer": "The methodology employed lacks scientific rigor",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "A metodologia empregada carece de rigor científico."
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This analysis shows the situation requires immediate intervention",
+        "The analysis prevented immediate intervention",
+        "Intervention is shown in the analysis",
+        "The situation is analyzed as immediate"
+      ],
+      "correct_answer": "This analysis shows the situation requires immediate intervention",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Depreende-se desta análise que a situação requer intervenção imediata."
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Taking into account public interests, authorities reviewed the legislation",
+        "Authorities attended to public interests without revision",
+        "The legislation is reviewed by public interest",
+        "Public review of authorities' interests occurred"
+      ],
+      "correct_answer": "Taking into account public interests, authorities reviewed the legislation",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Atendendo aos interesses públicos, as autoridades revisaram a legislação."
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The administration has systematically ignored the recommendations.\"",
+      "options": [
+        "A administração ignorou sistematicamente as recomendações.",
+        "A administração tem sistematicamente ignorado as recomendações.",
+        "A administração ignora sistematicamente as recomendações.",
+        "A administração sistemática ignora as recomendações."
+      ],
+      "correct_answer": "A administração tem sistematicamente ignorado as recomendações.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Given the circumstances, one could argue that the decision was warranted.\"",
+      "options": [
+        "Dadas as circunstâncias, alguém podia discutir que a decisão era justificada.",
+        "Dado as circunstâncias, poder-se-ia argumentar que a decisão foi justificada.",
+        "As circunstâncias justificam a decisão argumentada.",
+        "Poder-se argumentar que a decisão é circunstancial."
+      ],
+      "correct_answer": "Dado as circunstâncias, poder-se-ia argumentar que a decisão foi justificada.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"It is unlikely that such irregularities would go undetected.\"",
+      "options": [
+        "É improvável que tais irregularidades passem despercebidas.",
+        "É improvável que tais irregularidades passarem despercebidas.",
+        "Tais irregularidades improvavelmente passam despercebidas.",
+        "Irregularidades improváveis não são detectadas."
+      ],
+      "correct_answer": "É improvável que tais irregularidades passem despercebidas.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The effectiveness of this approach remains to be demonstrated.\"",
+      "options": [
+        "A efetividade desta abordagem permanece a demonstrar.",
+        "A efetividade desta abordagem ainda está por ser demonstrada.",
+        "A efetividade desta abordagem permaneceu demonstrada.",
+        "Esta abordagem demonstra efetividade permanente."
+      ],
+      "correct_answer": "A efetividade desta abordagem ainda está por ser demonstrada.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Notwithstanding the obstacles encountered, progress has been substantial.\"",
+      "options": [
+        "Não obstante os obstáculos encontrados, o progresso tem sido substancial.",
+        "Obstáculos não permitindo, o progresso foi substancial.",
+        "Apesar obstáculos, o progresso era substancial.",
+        "Os obstáculos não impediam o progresso substancial."
+      ],
+      "correct_answer": "Não obstante os obstáculos encontrados, o progresso tem sido substancial.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The document in question was subject to multiple interpretations.\"",
+      "options": [
+        "O documento em questão foi assunto de múltiplas interpretações.",
+        "O documento questionado teve múltiplas interpretações.",
+        "O documento em questão estava sujeito a múltiplas interpretações.",
+        "Múltiplas interpretações questionaram o documento."
+      ],
+      "correct_answer": "O documento em questão estava sujeito a múltiplas interpretações.",
+      "correct_index": 2,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Você está numa conferência acadêmica apresentando uma pesquisa. Como apresenta uma ideia controversa?",
+      "options": [
+        "Esta ideia é verdadeira e todos devem acreditar.",
+        "Embora seja controversa, os dados sugerem...",
+        "Ninguém vai concordar comigo.",
+        "Ignore quem discorda."
+      ],
+      "correct_answer": "Embora seja controversa, os dados sugerem...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Um colega questiona sua metodologia. Como responde formalmente?",
+      "options": [
+        "Você está errado.",
+        "Agradeço a questão. Essas limitações foram consideradas porque...",
+        "Não vou responder.",
+        "A metodologia é obviamente correta."
+      ],
+      "correct_answer": "Agradeço a questão. Essas limitações foram consideradas porque...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Você precisa contrariar uma decisão no trabalho em reunião formal. Como procede?",
+      "options": [
+        "Discordo completamente.",
+        "Reconheço os méritos da proposta, contudo gostaria de apontar algumas preocupações...",
+        "Vocês estão todos errados.",
+        "Vou calar."
+      ],
+      "correct_answer": "Reconheço os méritos da proposta, contudo gostaria de apontar algumas preocupações...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Está a escrever um relatório formal. Como conclui?",
+      "options": [
+        "Portanto, temos de fazer algo.",
+        "Em conclusão, os dados indicam que... Recomenda-se...",
+        "Fim.",
+        "Não há conclusão."
+      ],
+      "correct_answer": "Em conclusão, os dados indicam que... Recomenda-se...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Uma política tem argumentos a favor e contra. Como apresenta equidade?",
+      "options": [
+        "A política é boa, ponto final.",
+        "A política têm méritos e limitações. Enquanto..., porém...",
+        "Não há argumento contra.",
+        "Tudo é contra."
+      ],
+      "correct_answer": "A política têm méritos e limitações. Enquanto..., porém...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Você recebe um pedido de uma autoridade que considera inadequado. Como responde respeitosamente?",
+      "options": [
+        "Não faço.",
+        "Reconheço a importância, todavia existem preocupações que...",
+        "É uma má ideia.",
+        "Não concordo, adeus."
+      ],
+      "correct_answer": "Reconheço a importância, todavia existem preocupações que...",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "language": "Russian",
+  "code": "ru",
+  "level": "C2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Аполитичность философской рефлексии оказывается иллюзорной в свете герменевтического разоблачения имманентной идеологичности любого дискурса\" mean in English?",
+      "options": [
+        "Philosophy is apolitical",
+        "The apoliticity of philosophical reflection proves illusory in the light of hermeneutic exposure of the immanent ideological nature of any discourse",
+        "Philosophy and politics are separate",
+        "Ideology is always in discourse"
+      ],
+      "correct_answer": "The apoliticity of philosophical reflection proves illusory in the light of hermeneutic exposure of the immanent ideological nature of any discourse",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Аполитичность философской рефлексии оказывается иллюзорной в свете герменевтического разоблачения имманентной идеологичности любого дискурса"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Трансцендентальная дедукция категорий сопряжена с апорией самообоснования, обнажающей абиссальность трансцендентальных условий познания\" mean in English?",
+      "options": [
+        "Categories are transcendental",
+        "The transcendental deduction of categories is fraught with the aporia of self-justification, exposing the abyssal nature of transcendental conditions of knowledge",
+        "Knowledge needs transcendence",
+        "Deduction shows aporias"
+      ],
+      "correct_answer": "The transcendental deduction of categories is fraught with the aporia of self-justification, exposing the abyssal nature of transcendental conditions of knowledge",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Трансцендентальная дедукция категорий сопряжена с апорией самообоснования, обнажающей абиссальность трансцендентальных условий познания"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Биополитическая диспозиция модерного государства функционирует посредством осуществления дисциплинарного надзора над вымышленной жизнью общества\" mean in English?",
+      "options": [
+        "States control life",
+        "The biopolitical disposition of the modern state functions through the exercise of disciplinary surveillance over the fictional life of society",
+        "Discipline and life in modern state",
+        "Government controls populations"
+      ],
+      "correct_answer": "The biopolitical disposition of the modern state functions through the exercise of disciplinary surveillance over the fictional life of society",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Биополитическая диспозиция модерного государства функционирует посредством осуществления дисциплинарного надзора над вымышленной жизнью общества"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Поэтика архитектурного пространства кодифицирует социальные иерархии, отворяя сосуды скрытых властных отношений в видимости материального порядка\" mean in English?",
+      "options": [
+        "Architecture shows design",
+        "The poetics of architectural space codifies social hierarchies, opening the vessels of hidden power relations in the appearance of material order",
+        "Architecture is about power",
+        "Space structures society"
+      ],
+      "correct_answer": "The poetics of architectural space codifies social hierarchies, opening the vessels of hidden power relations in the appearance of material order",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Поэтика архитектурного пространства кодифицирует социальные иерархии, отворяя сосуды скрытых властных отношений в видимости материального порядка"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Симулякричность постмодернистского текста корумпирует онтологический статус различия между копией и оригиналом, растворяя их в безразличии гиперреальности\" mean in English?",
+      "options": [
+        "Postmodernism is about texts",
+        "The simulacral nature of postmodern text corrupts the ontological status of the difference between copy and original, dissolving them in the indifference of hyperreality",
+        "Texts and reality are different",
+        "Postmodernism is unreal"
+      ],
+      "correct_answer": "The simulacral nature of postmodern text corrupts the ontological status of the difference between copy and original, dissolving them in the indifference of hyperreality",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Симулякричность постмодернистского текста корумпирует онтологический статус различия между копией и оригиналом, растворяя их в безразличии гиперреальности"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Субтильность экзистенциальной ангажированности в предельных ситуациях расстраивает гомогенность социального консенсуса, открывая щель аутентичного опыта\" mean in English?",
+      "options": [
+        "Existence is authentic",
+        "The subtlety of existential engagement in ultimate situations disrupts the homogeneity of social consensus, opening a fissure of authentic experience",
+        "Situations are limiting",
+        "Experience reveals truth"
+      ],
+      "correct_answer": "The subtlety of existential engagement in ultimate situations disrupts the homogeneity of social consensus, opening a fissure of authentic experience",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Субтильность экзистенциальной ангажированности в предельных ситуациях расстраивает гомогенность социального консенсуса, открывая щель аутентичного опыта"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Ризоматическая структура текста ___ иерархическое и логоцентрическое прочтение, постулируя вместо того множественность нелинейных связей.",
+      "options": [
+        "подрывает",
+        "расстраивает",
+        "дезавуирует",
+        "упраздняет"
+      ],
+      "correct_answer": "дезавуирует",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Остраненный взгляд критики ___ окостенелые суждения обыденного сознания, материализуя их отчуждённость и конвенциональность.",
+      "options": [
+        "деавтоматизирует",
+        "дефамилиаризирует",
+        "отчуждает",
+        "эстранжирует"
+      ],
+      "correct_answer": "деавтоматизирует",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Амбивалентная позиция субъекта ___ модернистскому проекту просвещения своей неразрешимостью и внутренней противоречивостью.",
+      "options": [
+        "саботирует",
+        "подрывает",
+        "нивелирует",
+        "имплодирует"
+      ],
+      "correct_answer": "саботирует",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Трансгрессивная энергия революционного жеста ___ границы символического порядка, открывая доступ к неподвластному кодификации остатку реального.",
+      "options": [
+        "преодолевает",
+        "трансцендирует",
+        "пробивает",
+        "проступает"
+      ],
+      "correct_answer": "трансцендирует",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Пустота гипостазированного центра ___ любую попытку стабилизации смысла, конституируя логику перманентной дифферанции.",
+      "options": [
+        "парализует",
+        "отрицает",
+        "блокирует",
+        "пресекает"
+      ],
+      "correct_answer": "парализует",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Архаическое измерение языка ___ под слоями исторической наслоённости, манифестируя присутствие забытого в структуре современности.",
+      "options": [
+        "пульсирует",
+        "тлеет",
+        "трепещет",
+        "вибрирует"
+      ],
+      "correct_answer": "пульсирует",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Mainstream criticism fails",
+        "Mainstream criticism, being unable to articulate its own condition of possibility, remains a hostage to those very repressive structures which it claims to analyze",
+        "Critics are trapped",
+        "Analysis is impossible"
+      ],
+      "correct_answer": "Mainstream criticism, being unable to articulate its own condition of possibility, remains a hostage to those very repressive structures which it claims to analyze",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Мейнстримная критика, будучи не в состоянии артикулировать своё собственное условие возможности, остаётся заложницей тех самых репрессивных структур, которые она претендует подвергать анализу"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Events are complex",
+        "The irreducibility of the event to its components points to the ecstatic nature of truth, exceeding the logic of identity",
+        "Truth is ecstatic",
+        "Events cannot be analyzed"
+      ],
+      "correct_answer": "The irreducibility of the event to its components points to the ecstatic nature of truth, exceeding the logic of identity",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Неразложимость события на его компоненты указывает на экстатическую природу истины, превосходящую логику идентичности"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Structure determines everything",
+        "The overdetermination of structure weaves a web of causal relations in which the subject becomes a node of intersection of multiple dispositions",
+        "Subject and structure relate",
+        "Causality is complex"
+      ],
+      "correct_answer": "The overdetermination of structure weaves a web of causal relations in which the subject becomes a node of intersection of multiple dispositions",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Сверхдетерминированность структуры ткёт паутину причинно-следственных отношений, в которых субъект оказывается узлом пересечения множественных диспозиций"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Authenticity is real",
+        "The restoration of authenticity proves a performative act which itself constructs the object of its desire, revealing desire as constituting force of meaning",
+        "Desire creates meaning",
+        "Authenticity is constructed"
+      ],
+      "correct_answer": "The restoration of authenticity proves a performative act which itself constructs the object of its desire, revealing desire as constituting force of meaning",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Реставрация аутентичности оказывается перформативным актом, который сам конструирует объект своего желания, раскрывая желание конституирующей силой смысла"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "History is absolute",
+        "The eschatological tension between the absolute and the relative permeates the fabric of historical consciousness, promising transcendence that never arrives",
+        "Transcendence is promised",
+        "History is incomplete"
+      ],
+      "correct_answer": "The eschatological tension between the absolute and the relative permeates the fabric of historical consciousness, promising transcendence that never arrives",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Эсхатологическое напряжение между абсолютным и относительным пронизывает ткань исторического сознания, обещая трансценденцию, которая никогда не наступает"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Things are unknowable",
+        "The incomprehensibility of the thing-in-itself, being the condition of transcendental possibility of experience, simultaneously encodes its radical limitation and finitude",
+        "Experience is limited",
+        "Knowledge has limits"
+      ],
+      "correct_answer": "The incomprehensibility of the thing-in-itself, being the condition of transcendental possibility of experience, simultaneously encodes its radical limitation and finitude",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Непостижимость вещи в себе, будучи условием трансцендентальной возможности опыта, одновременно кодирует его радикальную ограниченность и конечность"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The speculative identity of subject and object, posited as ultimate reconciliation, reveals itself as premature universalization foreclosing the alterity of particularity\"",
+      "options": [
+        "Спекулятивная идентичность субъекта и объекта, постулируемая как окончательное примирение, раскрывает себя в качестве преждевременной универсализации, закрывающей инаковость партикулярности",
+        "Предмет и субъект идентичны",
+        "Примирение возможно",
+        "Универсализация предшествует"
+      ],
+      "correct_answer": "Спекулятивная идентичность субъекта и объекта, постулируемая как окончательное примирение, раскрывает себя в качестве преждевременной универсализации, закрывающей инаковость партикулярности",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"The sublime emergence of the inhuman within the heart of the human exposes the foundational heteronomy of the cogito, its constitutive dependence on what it seeks to master\"",
+      "options": [
+        "Возвышенное появление нечеловеческого в сердце человеческого выявляет фундаментальную гетерономность картезианского субъекта, его конституирующую зависимость от того, что он стремится подчинить",
+        "Человек нечеловечен",
+        "Картезий был неправ",
+        "Мышление зависит"
+      ],
+      "correct_answer": "Возвышенное появление нечеловеческого в сердце человеческого выявляет фундаментальную гетерономность картезианского субъекта, его конституирующую зависимость от того, что он стремится подчинить",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The radical contingency of being, its absolute groundlessness, engenders the vertiginous freedom of absolute responsibility without calculable measure or proportion\"",
+      "options": [
+        "Радикальная контингентность бытия, его абсолютная бесосновность, порождает головокружительную свободу абсолютной ответственности без исчисляемой меры или пропорции",
+        "Бытие случайно",
+        "Свобода абсолютна",
+        "Ответственность безгранична"
+      ],
+      "correct_answer": "Радикальная контингентность бытия, его абсолютная бесосновность, порождает головокружительную свободу абсолютной ответственности без исчисляемой меры или пропорции",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The performative contradiction inherent in any meta-position demonstrates the impossibility of occupying a place outside the system from which to judge it\"",
+      "options": [
+        "Перформативное противоречие, присущее любой мета-позиции, демонстрирует невозможность занять место вне системы, с которого её судить",
+        "Система всеохватывающа",
+        "Положение внешнее",
+        "Противоречие всегда есть"
+      ],
+      "correct_answer": "Перформативное противоречие, присущее любой мета-позиции, демонстрирует невозможность занять место вне системы, с которого её судить",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The wound of language, its irreducible distance from the plenum of presence, constitutes both the possibility and the impossibility of communication\"",
+      "options": [
+        "Рана языка, его неустранимое расстояние от полноты присутствия, конституирует как возможность, так и невозможность коммуникации",
+        "Язык ранит",
+        "Присутствие невозможно",
+        "Коммуникация сложна"
+      ],
+      "correct_answer": "Рана языка, его неустранимое расстояние от полноты присутствия, конституирует как возможность, так и невозможность коммуникации",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The infinite deferral inscribed in the structure of supplementarity reveals that presence is always already compromised by the trace of absence\"",
+      "options": [
+        "Бесконечная отсрочка, вписанная в структуру суппилементарности, раскрывает, что присутствие всегда уже скомпрометировано следом отсутствия",
+        "Присутствие отсрочено",
+        "Отсутствие везде",
+        "След везде"
+      ],
+      "correct_answer": "Бесконечная отсрочка, вписанная в структуру суппилементарности, раскрывает, что присутствие всегда уже скомпрометировано следом отсутствия",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Критикуя онтологический реализм, вы утверждаете:",
+      "options": [
+        "Реализм верен",
+        "Наивная вера в онтологическую независимость объектов ускользает от осознания того, что любой доступ к бытию опосредован символической сетью, которая конституирует саму возможность предметности",
+        "Реализм неправ",
+        "Объекты существуют"
+      ],
+      "correct_answer": "Наивная вера в онтологическую независимость объектов ускользает от осознания того, что любой доступ к бытию опосредован символической сетью, которая конституирует саму возможность предметности",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Анализируя гегемониальные режимы производства истины, вы замечаете:",
+      "options": [
+        "Истина объективна",
+        "Режимы производства истины функционируют посредством исключения и маргинализации альтернативных эпистемических позиций, сохраняя видимость нейтральности и универсальности",
+        "Истина субъективна",
+        "Всё относительно"
+      ],
+      "correct_answer": "Режимы производства истины функционируют посредством исключения и маргинализации альтернативных эпистемических позиций, сохраняя видимость нейтральности и универсальности",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Обсуждая инвестированность философии в современном капитализме, вы говорите:",
+      "options": [
+        "Философия независима",
+        "Даже критическая философия оказывается невольно соучастницей тех систем доминирования, которые она аналитически препарирует, поскольку её дискурс уже цифровизирован и коммодифицирован",
+        "Капитализм не влияет",
+        "Философия свободна"
+      ],
+      "correct_answer": "Даже критическая философия оказывается невольно соучастницей тех систем доминирования, которые она аналитически препарирует, поскольку её дискурс уже цифровизирован и коммодифицирован",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Исследуя неоссификацию понятийных аппаратов, вы констатируете:",
+      "options": [
+        "Понятия статичны",
+        "Постоянное обновление терминологии отражает как жизненность мысли, так и её неизбежную коррумпированность переходящими модами и эпохальными тренками",
+        "Понятия развиваются",
+        "Язык меняется"
+      ],
+      "correct_answer": "Постоянное обновление терминологии отражает как жизненность мысли, так и её неизбежную коррумпированность переходящими модами и эпохальными тренками",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Подвергая критике трансценденталистские основания философии, вы отмечаете:",
+      "options": [
+        "Трансценденталь верен",
+        "Претензия на трансцендентальность мышления скрывает его имплицитную укоренённость в исторической партикулярности, которую оно постоянно репрессирует и отрицает",
+        "История не важна",
+        "Мышление универсально"
+      ],
+      "correct_answer": "Претензия на трансцендентальность мышления скрывает его имплицитную укоренённость в исторической партикулярности, которую оно постоянно репрессирует и отрицает",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Размышляя о возможности иного мышления, вы утверждаете:",
+      "options": [
+        "Новое мышление невозможно",
+        "Возможность мышления иначе требует не просто интеллектуального напряжения, но экзистенциального разрыва с исторически наследуемыми модусами субъективации, сам же разрыв остаётся всегда ещё обещанием",
+        "Мышление не меняется",
+        "Иное возможно"
+      ],
+      "correct_answer": "Возможность мышления иначе требует не просто интеллектуального напряжения, но экзистенциального разрыва с исторически наследуемыми модусами субъективации, сам же разрыв остаётся всегда ещё обещанием",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

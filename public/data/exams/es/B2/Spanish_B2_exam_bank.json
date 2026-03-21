@@ -1,0 +1,453 @@
+{
+  "language": "Spanish",
+  "code": "es",
+  "level": "B2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"recopilación\" mean in English?",
+      "options": [
+        "compilation",
+        "collection",
+        "gathering",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "recopilación"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"perspicacia\" mean in English?",
+      "options": [
+        "perception",
+        "insight",
+        "discernment",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "perspicacia"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"conjetura\" mean in English?",
+      "options": [
+        "conjecture",
+        "guess",
+        "supposition",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "conjetura"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"dilucidar\" mean in English?",
+      "options": [
+        "to clarify",
+        "to elucidate",
+        "to explain",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "dilucidar"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"menoscabar\" mean in English?",
+      "options": [
+        "to undermine",
+        "to diminish",
+        "to impair",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "menoscabar"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"subsanar\" mean in English?",
+      "options": [
+        "to remedy",
+        "to fix",
+        "to correct",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate-en",
+      "audio": "subsanar"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Sería conveniente que ___ una reunión antes de tomar la decisión.",
+      "options": [
+        "tenemos",
+        "tengamos",
+        "tuviéramos",
+        "tendremos"
+      ],
+      "correct_answer": "tengamos",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: No cabe duda de que el análisis ___ completo y exhaustivo.",
+      "options": [
+        "sea",
+        "fue",
+        "será",
+        "es"
+      ],
+      "correct_answer": "fue",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Se requiere que los candidatos ___ amplia experiencia en el campo.",
+      "options": [
+        "tengan",
+        "tienen",
+        "tuvieron",
+        "tendrían"
+      ],
+      "correct_answer": "tengan",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Dado que la situación ___ crítica, necesitamos actuar inmediatamente.",
+      "options": [
+        "es",
+        "sea",
+        "fue",
+        "será"
+      ],
+      "correct_answer": "es",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Ha quedado demostrado que la hipótesis ___ incorrecta.",
+      "options": [
+        "era",
+        "fue",
+        "es",
+        "sea"
+      ],
+      "correct_answer": "fue",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Resulta ___ que el proyecto no se haya completado a tiempo.",
+      "options": [
+        "sorprendente",
+        "sorprendida",
+        "sorprendido",
+        "sorprendente"
+      ],
+      "correct_answer": "sorprendente",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "this proposal solves the problem",
+        "this proposal, far from solving the problem, makes it worse",
+        "this proposal is irrelevant",
+        "the problem is already solved"
+      ],
+      "correct_answer": "this proposal, far from solving the problem, makes it worse",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "esta proposición, lejos de resolver el problema, lo agudiza"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "without data",
+        "based on the available data, we can deduce that",
+        "ignoring the evidence",
+        "the data is unclear"
+      ],
+      "correct_answer": "based on the available data, we can deduce that",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "con base en los datos disponibles, podemos deducir que"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "the investigation hides problems",
+        "the investigation reveals certain inconsistencies",
+        "the investigation is complete",
+        "all data agrees perfectly"
+      ],
+      "correct_answer": "the investigation reveals certain inconsistencies",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "la investigación pone de manifiesto ciertas inconsistencias"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "no changes are needed",
+        "a deep reconsideration becomes necessary",
+        "the situation is trivial",
+        "everything should stay the same"
+      ],
+      "correct_answer": "a deep reconsideration becomes necessary",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "se impone la necesidad de un replanteamiento profundo"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "only one statement is true",
+        "although it seems paradoxical, both statements are valid",
+        "the statements contradict each other",
+        "neither statement is correct"
+      ],
+      "correct_answer": "although it seems paradoxical, both statements are valid",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "aunque parezca paradójico, ambas afirmaciones son válidas"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "backward analysis",
+        "retrospective analysis reveals overlooked factors",
+        "future analysis",
+        "no new insights"
+      ],
+      "correct_answer": "retrospective analysis reveals overlooked factors",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "el análisis retrospectivo revela factores desapercibidos"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"It is essential that the committee reconsider its position in light of new evidence\"",
+      "options": [
+        "Es esencial que el comité reconsidere su posición a la luz de nueva evidencia",
+        "Es necesario que el comité reconsidere su posición en vista de nueva evidencia",
+        "Resulta fundamental que el comité reconsidere su posición con base en nueva evidencia",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"The findings of this study contradict the prevailing consensus on the matter\"",
+      "options": [
+        "Los hallazgos de este estudio contradicen el consenso predominante sobre el asunto",
+        "Los resultados de esta investigación van en contra del consenso prevaleciente en la materia",
+        "Los descubrimientos de este análisis refutan la opinión mayoritaria respecto al tema",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Despite the apparent simplicity of the problem, its resolution proves to be far more complex\"",
+      "options": [
+        "A pesar de la aparente simplicidad del problema, su resolución resulta ser mucho más compleja",
+        "Aunque el problema parece simple, su solución es mucho más intrincada",
+        "Sin embargo, la sencillez aparente del problema contrasta con la complejidad de su resolución",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The validity of this argument hinges upon the assumption that the data is accurate\"",
+      "options": [
+        "La validez de este argumento depende del supuesto de que los datos son precisos",
+        "La validez de esta argumentación pende de la hipótesis de que la información es exacta",
+        "La solidez de este razonamiento se basa en la premisa de que los datos son confiables",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The implications of these findings extend far beyond the scope of the initial research\"",
+      "options": [
+        "Las implicaciones de estos hallazgos se extienden mucho más allá del alcance de la investigación inicial",
+        "Las consecuencias de estos descubrimientos trascienden el ámbito de la investigación original",
+        "Las derivaciones de estos resultados van más allá de lo que contemplaba la investigación primaria",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"One might argue that the methodology employed was not entirely rigorous\"",
+      "options": [
+        "Se podría argumentar que la metodología empleada no fue completamente rigurosa",
+        "Cabe sostener que el método utilizado no era del todo riguroso",
+        "Podría alegarse que la metodología aplicada carece de rigor absoluto",
+        "all of the above"
+      ],
+      "correct_answer": "all of the above",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "¿Cuál es el propósito principal de un análisis crítico?",
+      "options": [
+        "aceptar sin cuestionamiento",
+        "examinar críticamente la validez y solidez de los argumentos",
+        "rechazar todas las opiniones",
+        "simplificar los problemas"
+      ],
+      "correct_answer": "examinar críticamente la validez y solidez de los argumentos",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "¿Qué caracteriza un argumento débil?",
+      "options": [
+        "está bien fundamentado",
+        "carece de evidencia suficiente o contiene falacias lógicas",
+        "es coherente",
+        "tiene múltiples fuentes"
+      ],
+      "correct_answer": "carece de evidencia suficiente o contiene falacias lógicas",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "¿Cuál es el valor de considerar perspectivas alternativas?",
+      "options": [
+        "confundir el análisis",
+        "ampliar la comprensión y reconocer complejidades",
+        "perder tiempo",
+        "contradecir la propia posición"
+      ],
+      "correct_answer": "ampliar la comprensión y reconocer complejidades",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "¿Qué significa 'sesgo en la investigación'?",
+      "options": [
+        "ser objetivo",
+        "inclinación hacia ciertos resultados que puede distorsionar la objetividad",
+        "usar datos correctos",
+        "ser sistemático"
+      ],
+      "correct_answer": "inclinación hacia ciertos resultados que puede distorsionar la objetividad",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "¿Cuál es la importancia de las fuentes confiables en académicos?",
+      "options": [
+        "no importa la fuente",
+        "garantizar la credibilidad y validez de la información",
+        "tener muchas referencias",
+        "ser popular"
+      ],
+      "correct_answer": "garantizar la credibilidad y validez de la información",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "¿Qué ocurre cuando se ignora evidencia conflictiva?",
+      "options": [
+        "se fortalece el análisis",
+        "se compromete la integridad del análisis y se llegan a conclusiones incompletas",
+        "todo sigue igual",
+        "se simplifica el problema"
+      ],
+      "correct_answer": "se compromete la integridad del análisis y se llegan a conclusiones incompletas",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

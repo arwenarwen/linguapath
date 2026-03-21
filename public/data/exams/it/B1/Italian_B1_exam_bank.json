@@ -1,0 +1,453 @@
+{
+  "language": "Italian",
+  "code": "it",
+  "level": "B1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Sebbene fosse stanco, ha continuato a lavorare\" mean in English?",
+      "options": [
+        "Although he was tired, he continued to work",
+        "Because he was tired, he continued working",
+        "While he was tired, he worked",
+        "If he was tired, he would continue working"
+      ],
+      "correct_answer": "Although he was tired, he continued to work",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Sebbene fosse stanco, ha continuato a lavorare"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Vorrei che tu venissi alla festa\" mean in English?",
+      "options": [
+        "I would like you to come to the party",
+        "I like that you come to the party",
+        "I would like if you came to the party",
+        "I want you coming to the party"
+      ],
+      "correct_answer": "I would like you to come to the party",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Vorrei che tu venissi alla festa"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Se avessi saputo, avrei telefonato prima\" mean in English?",
+      "options": [
+        "If I had known, I would have called earlier",
+        "If I knew, I would call earlier",
+        "If I know, I call earlier",
+        "If I would know, I call"
+      ],
+      "correct_answer": "If I had known, I would have called earlier",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Se avessi saputo, avrei telefonato prima"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"La situazione è peggiorata negli ultimi mesi\" mean in English?",
+      "options": [
+        "The situation has gotten worse in recent months",
+        "The situation is worse",
+        "The situation worsens monthly",
+        "The situation was worse recently"
+      ],
+      "correct_answer": "The situation has gotten worse in recent months",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "La situazione è peggiorata negli ultimi mesi"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Credo che sia importante studiare le lingue\" mean in English?",
+      "options": [
+        "I believe that it is important to study languages",
+        "I think that languages are important",
+        "I believe languages is important",
+        "I know that studying languages matters"
+      ],
+      "correct_answer": "I believe that it is important to study languages",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Credo che sia importante studiare le lingue"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"L'industria italiana ha una lunga tradizione\" mean in English?",
+      "options": [
+        "The Italian industry has a long tradition",
+        "Italian industries traditionally exist",
+        "The industry of Italy has a tradition",
+        "Italian tradition has industry"
+      ],
+      "correct_answer": "The Italian industry has a long tradition",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "L'industria italiana ha una lunga tradizione"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Pensavo che lui ___ medico",
+      "options": [
+        "fosse",
+        "sia",
+        "è",
+        "era"
+      ],
+      "correct_answer": "fosse",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Ancorché ___ ricco, non è felice",
+      "options": [
+        "fosse",
+        "è",
+        "sia",
+        "era"
+      ],
+      "correct_answer": "sia",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Mi piacerebbe ___ in Italia l'anno prossimo",
+      "options": [
+        "andare",
+        "vada",
+        "vado",
+        "andassi"
+      ],
+      "correct_answer": "andare",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Quando ___arrivato, tutti ___già seduti",
+      "options": [
+        "sono|erano",
+        "ero|sono",
+        "fui|ero",
+        "sono|eravamo"
+      ],
+      "correct_answer": "sono|erano",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Se ___ potessi, ___ un giro del mondo",
+      "options": [
+        "te|farei",
+        "la|farei",
+        "lo|farei",
+        "mi|farei"
+      ],
+      "correct_answer": "lo|farei",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Non penso che ___ una buona idea",
+      "options": [
+        "è",
+        "sia",
+        "fosse",
+        "era"
+      ],
+      "correct_answer": "sia",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I prefer that you study more",
+        "I prefer studying more",
+        "I prefer you studying more",
+        "I like you study more"
+      ],
+      "correct_answer": "I prefer that you study more",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Preferisco che tu studi di più"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "It is possible that they will not come",
+        "It is possible that they do not come",
+        "They possibly will not come",
+        "It is possible that they came not"
+      ],
+      "correct_answer": "It is possible that they will not come",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "È possibile che non vengano"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "I would have liked to see him",
+        "I would like to see him",
+        "It would please me to see him",
+        "I like to see him"
+      ],
+      "correct_answer": "I would have liked to see him",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Mi sarebbe piaciuto vederlo"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The economy is in decline",
+        "The economic decline is",
+        "The economy is declining",
+        "An economic decline exists"
+      ],
+      "correct_answer": "The economy is in decline",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "L'economia è in declino"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Despite the difficulties, we continue",
+        "Because of the difficulties, we continue",
+        "The difficulties continue",
+        "We continue the difficulties"
+      ],
+      "correct_answer": "Despite the difficulties, we continue",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Malgrado le difficoltà, continuiamo"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "It was necessary that we leave early",
+        "It was necessary that we left early",
+        "It is necessary that we leave early",
+        "It was necessary that we are leaving"
+      ],
+      "correct_answer": "It was necessary that we leave early",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Era necessario che partissimo presto"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"I would go if I had time\"",
+      "options": [
+        "Andrei se avessi tempo",
+        "Vado se avrò tempo",
+        "Andare se ho tempo",
+        "Irei se avessi avuto tempo"
+      ],
+      "correct_answer": "Andrei se avessi tempo",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Although it was cold, we went out\"",
+      "options": [
+        "Sebbene facesse freddo, siamo usciti",
+        "Anche se facesse freddo, usciamo",
+        "Perché facesse freddo, siamo usciti",
+        "Nonostante facesse freddo, uscimmo"
+      ],
+      "correct_answer": "Sebbene facesse freddo, siamo usciti",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"He was working when I arrived\"",
+      "options": [
+        "Lavorava quando sono arrivato",
+        "Lavora quando arrivo",
+        "Stava lavorando quando arrivò",
+        "Aveva lavorato quando arrivassi"
+      ],
+      "correct_answer": "Lavorava quando sono arrivato",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"I think you should rest\"",
+      "options": [
+        "Penso che tu debba riposare",
+        "Penso che riposi",
+        "Credo che dovevi riposare",
+        "Penso che riposati"
+      ],
+      "correct_answer": "Penso che tu debba riposare",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Unless he calls, we will leave\"",
+      "options": [
+        "A meno che non chiami, partiremo",
+        "Se non chiama, partiremo",
+        "Nel caso chiami, partiremo",
+        "Finché non chiama, partiremo"
+      ],
+      "correct_answer": "A meno che non chiami, partiremo",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"It is important that everyone understands\"",
+      "options": [
+        "È importante che tutti capiscano",
+        "È importante che tutti capissero",
+        "È importante che tutti capiscono",
+        "È importante che tutti capisca"
+      ],
+      "correct_answer": "È importante che tutti capiscano",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Your boss wants you to complete a project by Friday. You are unsure if you can. What do you say?",
+      "options": [
+        "Non so se riuscirò a finirlo entro venerdì",
+        "Non so se riesco finirlo venerdì",
+        "Vorrei finirlo entro venerdì",
+        "Potrebbe finire il venerdì"
+      ],
+      "correct_answer": "Non so se riuscirò a finirlo entro venerdì",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "You want to express doubt about a plan. What do you say?",
+      "options": [
+        "Dubito che sia una buona idea",
+        "Dubito se sia una buona idea",
+        "Non dubito che è una buona idea",
+        "Dubiterei che sia"
+      ],
+      "correct_answer": "Dubito che sia una buona idea",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "You want to express regret about something you did not do. What do you say?",
+      "options": [
+        "Mi dispiace di non averlo fatto",
+        "Mi dispiacerebbe non farlo",
+        "Mi dispiace che non l'ho fatto",
+        "Dispiacerà che non l'ho fatto"
+      ],
+      "correct_answer": "Mi dispiace di non averlo fatto",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "You heard some news and want to confirm it with someone. What do you ask?",
+      "options": [
+        "È vero che hanno chiuso il negozio?",
+        "È vero se hanno chiuso?",
+        "Hanno chiuso il negozio, vero?",
+        "Chi ha chiuso il negozio?"
+      ],
+      "correct_answer": "È vero che hanno chiuso il negozio?",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "You want to describe something that happened in the past while something else was happening. What tense do you use?",
+      "options": [
+        "L'imperfetto e il passato prossimo",
+        "Il passato remoto e il passato prossimo",
+        "L'imperfetto e il futuro",
+        "Il condizionale e il passato remoto"
+      ],
+      "correct_answer": "L'imperfetto e il passato prossimo",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "A colleague failed to complete work. You want to express that it was necessary they finish on time. What do you say?",
+      "options": [
+        "Era importante che finisse in tempo",
+        "Sarebbe importante che finisce in tempo",
+        "È importante che ha finito in tempo",
+        "Fosse importante che finisse in tempo"
+      ],
+      "correct_answer": "Era importante che finisse in tempo",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

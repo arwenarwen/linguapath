@@ -1,0 +1,453 @@
+{
+  "language": "Japanese",
+  "code": "ja",
+  "level": "C1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"その現象は、複合的な因果関係に起因するものと推察される。\" mean in English?",
+      "options": [
+        "That phenomenon is caused by complex causal relationships",
+        "It is inferred that the phenomenon originates from complex causal relationships",
+        "The phenomenon seems to be caused by complex factors",
+        "Complex causal relationships seem to explain the phenomenon"
+      ],
+      "correct_answer": "It is inferred that the phenomenon originates from complex causal relationships",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "その現象は、複合的な因果関係に起因するものと推察される。"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"従来の方法論に取って代わるべく、新たな枠組みが提唱されている。\" mean in English?",
+      "options": [
+        "A new framework is being proposed in place of the conventional methodology",
+        "The new framework replaces the conventional methodology",
+        "We should replace the conventional methodology with a new framework",
+        "The new framework is proposed to the conventional methodology"
+      ],
+      "correct_answer": "A new framework is being proposed in place of the conventional methodology",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "従来の方法論に取って代わるべく、新たな枠組みが提唱されている。"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"その議論の妥当性は、相応の検証を待つ必要があろう。\" mean in English?",
+      "options": [
+        "The validity of the argument needs to be verified appropriately",
+        "It may be necessary to await appropriate verification of the argument's validity",
+        "We should verify the validity of the argument",
+        "The argument's validity will be checked soon"
+      ],
+      "correct_answer": "It may be necessary to await appropriate verification of the argument's validity",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "その議論の妥当性は、相応の検証を待つ必要があろう。"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"それら複数の知見が相互に補完し合うことで、初めて全体像が浮かび上がってくる。\" mean in English?",
+      "options": [
+        "Only when multiple findings complement each other does the complete picture emerge",
+        "Multiple findings can complement each other to show the complete picture",
+        "The complete picture emerges when multiple findings are combined",
+        "Multiple findings complement each other to show the picture"
+      ],
+      "correct_answer": "Only when multiple findings complement each other does the complete picture emerge",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "それら複数の知見が相互に補完し合うことで、初めて全体像が浮かび上がってくる。"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"当該の問題に関しては、単なる技術的解決に留まらず、社会的・倫理的側面からの検討が急務である。\" mean in English?",
+      "options": [
+        "Regarding this problem, technical solutions are not enough; social and ethical considerations are urgently needed",
+        "The problem requires technical, social, and ethical solutions",
+        "We must solve the problem from technical, social, and ethical perspectives",
+        "The technical solution to the problem is not the only consideration; social and ethical aspects are urgent"
+      ],
+      "correct_answer": "Regarding this problem, technical solutions are not enough; social and ethical considerations are urgently needed",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "当該の問題に関しては、単なる技術的解決に留まらず、社会的・倫理的側面からの検討が急務である。"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"その位置付けは、従来の認識枠組みからは脱却し、新たな観点を導入することで初めて可能となるであろう。\" mean in English?",
+      "options": [
+        "That positioning will become possible only by breaking free from the conventional conceptual framework and introducing a new perspective",
+        "We can position it by introducing new perspectives beyond the conventional framework",
+        "The new positioning requires a conventional framework",
+        "The framework needs to be changed to position the concept"
+      ],
+      "correct_answer": "That positioning will become possible only by breaking free from the conventional conceptual framework and introducing a new perspective",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "その位置付けは、従来の認識枠組みからは脱却し、新たな観点を導入することで初めて可能となるであろう。"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 当該の現象は、様々な要因に___相互作用によってもたらされるものと考えられる。",
+      "options": [
+        "かかわる",
+        "関わる",
+        "係わる",
+        "繋がる"
+      ],
+      "correct_answer": "関わる",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: この理論の妥当性について、さらなる実証的検証が___ことが望まれている。",
+      "options": [
+        "求められる",
+        "必要である",
+        "必須である",
+        "要請される"
+      ],
+      "correct_answer": "求められる",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 従来の認識___相対化することで、新たな視点が開かれるであろう。",
+      "options": [
+        "を",
+        "に",
+        "で",
+        "は"
+      ],
+      "correct_answer": "を",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: その研究成果は、学問的意義___みならず、実践的応用の可能性も秘めている。",
+      "options": [
+        "のみ",
+        "のほか",
+        "だけ",
+        "に"
+      ],
+      "correct_answer": "のみ",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 複雑な現象を解釈___には、多角的なアプローチが不可欠である。",
+      "options": [
+        "するために",
+        "する上で",
+        "するうえに",
+        "することで"
+      ],
+      "correct_answer": "する上で",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: その議論の核心___あるのは、方法論的な根本的相違である。",
+      "options": [
+        "に",
+        "で",
+        "を",
+        "が"
+      ],
+      "correct_answer": "に",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "By means of",
+        "Using",
+        "With",
+        "Through"
+      ],
+      "correct_answer": "By means of",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "～をもって"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "That is",
+        "As it were",
+        "Which is",
+        "Being"
+      ],
+      "correct_answer": "Being",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "～たる"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Unless",
+        "Otherwise",
+        "If not",
+        "Should it not be"
+      ],
+      "correct_answer": "If not",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "～しからずんば"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Without avoiding",
+        "Not hesitating to",
+        "Willingly",
+        "Despite"
+      ],
+      "correct_answer": "Not hesitating to",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "～をいとわず"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Not that... but",
+        "Rather than",
+        "Instead of",
+        "Contrary to"
+      ],
+      "correct_answer": "Rather than",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "～にあらずして"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Until",
+        "To the extent of",
+        "Even to the point of",
+        "Up to"
+      ],
+      "correct_answer": "Even to the point of",
+      "correct_index": 2,
+      "exercise_type": "listen",
+      "audio": "～に至るまで"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The methodology employed must be fundamentally reconsidered in light of recent theoretical developments.\"",
+      "options": [
+        "最近の理論的発展に鑑みて、採用されている方法論は根本的に再検討される必要があろう。",
+        "最近の発展により、方法論は再検討しなければならない。",
+        "最近の理論発展のため、方法論は変わるべきである。",
+        "最近の理論的進展に基づいて、方法論を再検討します。"
+      ],
+      "correct_answer": "最近の理論的発展に鑑みて、採用されている方法論は根本的に再検討される必要があろう。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"These phenomena, when examined through multiple analytical lenses, reveal their interconnected nature.\"",
+      "options": [
+        "これらの現象は、複数の分析的観点を通じて検証されることで、その相互に関連した性質が明らかになる。",
+        "これらの現象を複数の視点で見ると、関連していることがわかります。",
+        "複数の方法を使ってこれらの現象を調べると、つながりが見えます。",
+        "これらの現象は複数の観点から分析される。"
+      ],
+      "correct_answer": "これらの現象は、複数の分析的観点を通じて検証されることで、その相互に関連した性質が明らかになる。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The theoretical framework proposed herein endeavors to synthesize these ostensibly divergent viewpoints.\"",
+      "options": [
+        "本稿で提唱される理論的枠組みは、一見異なるように見えるこれらの見方を統合することを試みている。",
+        "この論文で提案される枠組みは、異なる見方をまとめようとしています。",
+        "これらの見方を統合するために、新しい枠組みが提案されます。",
+        "提案された理論的枠組みは、異なる観点を合わせようとする。"
+      ],
+      "correct_answer": "本稿で提唱される理論的枠組みは、一見異なるように見えるこれらの見方を統合することを試みている。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"Far from being merely descriptive, the analysis undertaken here aspires to generate novel insights into the mechanisms at play.\"",
+      "options": [
+        "ここで行われた分析は、単なる記述的なものではなく、作用しているメカニズムに関する新しい洞察を生み出すことを目指している。",
+        "この分析は記述的ではなく、新しい見方を生み出そうとしています。",
+        "記述的な分析ではなく、メカニズムについての新しい見方が目指されている。",
+        "この分析は単なる説明ではなく、新しい理解を目指す。"
+      ],
+      "correct_answer": "ここで行われた分析は、単なる記述的なものではなく、作用しているメカニズムに関する新しい洞察を生み出すことを目指している。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The validity of such assertions remains contingent upon empirical substantiation that has yet to be forthcoming.\"",
+      "options": [
+        "そのような主張の妥当性は、未だ得られていない実証的な裏付けに依存しているままである。",
+        "その主張が正しいかどうかは、まだ実証されていません。",
+        "このような主張の正当性は、まだ実証されていない。",
+        "そのような主張は、実証的な裏付けが必要である。"
+      ],
+      "correct_answer": "そのような主張の妥当性は、未だ得られていない実証的な裏付けに依存しているままである。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"By transcending the boundaries of disciplinary silos, we can better apprehend the emergent properties of complex systems.\"",
+      "options": [
+        "学問的領域の境界を超越することで、複雑なシステムの創発的性質をより良く理解することができるであろう。",
+        "学問の枠を超えることで、複雑なシステムの性質が見えます。",
+        "異なる分野を統合することで、複雑なシステムが理解できます。",
+        "領域を越えて、複雑なシステムの特性をよく理解できる。"
+      ],
+      "correct_answer": "学問的領域の境界を超越することで、複雑なシステムの創発的性質をより良く理解することができるであろう。",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "当該の議論___根底に流れる仮定を明示化することが肝要である。",
+      "options": [
+        "が",
+        "を",
+        "に",
+        "で"
+      ],
+      "correct_answer": "に",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "従来の認識枠組み___拘泥することなく、新たな視点を導入する必要がある。",
+      "options": [
+        "に",
+        "から",
+        "を",
+        "で"
+      ],
+      "correct_answer": "に",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "その理論の信頼性は、厳密な方法論的検証を___ことが前提である。",
+      "options": [
+        "待つ",
+        "必要とする",
+        "求める",
+        "要求する"
+      ],
+      "correct_answer": "待つ",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "複数の知見が相互補完的に機能することで、初めて総合的理解が___。",
+      "options": [
+        "できる",
+        "もたらされる",
+        "得られる",
+        "実現する"
+      ],
+      "correct_answer": "もたらされる",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "その議論の有効性は、より広い文脈___配置されることで初めて明確になるであろう。",
+      "options": [
+        "に",
+        "で",
+        "を",
+        "まで"
+      ],
+      "correct_answer": "に",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "学問的厳密性___いとわず、実践的応用性を追求することが重要である。",
+      "options": [
+        "をいとわず",
+        "を排除して",
+        "に反して",
+        "に忠実に"
+      ],
+      "correct_answer": "をいとわず",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    }
+  ]
+}

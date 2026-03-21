@@ -1,0 +1,453 @@
+{
+  "language": "Portuguese",
+  "code": "pt",
+  "level": "C2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"A epistemologia contemporânea tem-se defrontado com aporias que desafiam a inteligibilidade ontológica.\" mean in English?",
+      "options": [
+        "Contemporary epistemology faces aporias that challenge ontological intelligibility",
+        "Epistemology challenges contemporary aporia",
+        "Ontology is intelligible and contemporary",
+        "Aporias confront epistemological challenges"
+      ],
+      "correct_answer": "Contemporary epistemology faces aporias that challenge ontological intelligibility",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "A epistemologia contemporânea tem-se defrontado com aporias que desafiam a inteligibilidade ontológica."
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Cumpre examinar as virtualidades inerentes a tal reformulação paradigmática sem incorrer em precipitação.\" mean in English?",
+      "options": [
+        "It behoves us to examine the potentialities inherent in such paradigmatic reformulation without resorting to haste",
+        "We must hastily examine paradigmatic reformulations",
+        "Paradigmatic potentialities prevent examination",
+        "Reformulation hastily examines paradigms"
+      ],
+      "correct_answer": "It behoves us to examine the potentialities inherent in such paradigmatic reformulation without resorting to haste",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Cumpre examinar as virtualidades inerentes a tal reformulação paradigmática sem incorrer em precipitação."
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"A circunscrição do campo semântico revela-se, portanto, problemática quando se proscrevem interpretações alternativas.\" mean in English?",
+      "options": [
+        "Circumscribing the semantic field becomes problematic when alternative interpretations are proscribed",
+        "Alternative interpretations circumscribe semantic fields",
+        "Semantic circumscription prevents problems",
+        "Fields reveal themselves semantically and circularly"
+      ],
+      "correct_answer": "Circumscribing the semantic field becomes problematic when alternative interpretations are proscribed",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "A circunscrição do campo semântico revela-se, portanto, problemática quando se proscrevem interpretações alternativas."
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Depreende-se, do exposto, que as antinomias subjacentes não comportam resolução por vias redutivas.\" mean in English?",
+      "options": [
+        "From what is exposed, it can be inferred that underlying antinomies do not admit of reductive resolution",
+        "Antinomies resolve reductively through exposition",
+        "Reduction exposes antinomies",
+        "Resolutions reduce antinomies underneath"
+      ],
+      "correct_answer": "From what is exposed, it can be inferred that underlying antinomies do not admit of reductive resolution",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Depreende-se, do exposto, que as antinomias subjacentes não comportam resolução por vias redutivas."
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Não menos pertinente é o reconhecimento de que a conceptualização carece de fundamentação suficientemente robusta.\" mean in English?",
+      "options": [
+        "Conceptualization lacks sufficiently robust foundation",
+        "No less pertinent is the recognition that conceptualization lacks sufficiently robust foundation",
+        "Conceptualization is fundamentally robust",
+        "Recognition lacks conceptual pertinence"
+      ],
+      "correct_answer": "No less pertinent is the recognition that conceptualization lacks sufficiently robust foundation",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Não menos pertinente é o reconhecimento de que a conceptualização carece de fundamentação suficientemente robusta."
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"A transgressão dos limites taxonomicamente estabelecidos abre vias fecundas de reinquirição.\" mean in English?",
+      "options": [
+        "Transgressing taxonomically established boundaries opens fruitful avenues for reinquiry",
+        "Taxonomy transgresses boundaries fruitfully",
+        "Established inquiries are fruitful transgressions",
+        "Boundaries open taxonomy to transgressions"
+      ],
+      "correct_answer": "Transgressing taxonomically established boundaries opens fruitful avenues for reinquiry",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "A transgressão dos limites taxonomicamente estabelecidos abre vias fecundas de reinquirição."
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Destarte, ao se reconhecerem os pressupostos subjacentes, abrem-se perspectivas que ___ a reconfiguração epistemológica.",
+      "options": [
+        "viabilizam",
+        "viabilizassem",
+        "viabilizariam",
+        "viabilizaram"
+      ],
+      "correct_answer": "viabilizam",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Mister é que se ___ com rigor as implicações que declinam desta reformulação.",
+      "options": [
+        "delineiem",
+        "delineiam",
+        "delineassem",
+        "delineariam"
+      ],
+      "correct_answer": "delineiam",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Não se trata de que o fenómeno ___ univocamente determinado, senão de que suas determinações são multiformes.",
+      "options": [
+        "fosse",
+        "seja",
+        "é",
+        "será"
+      ],
+      "correct_answer": "fosse",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Apenas quando se admite a polissemia constitutiva do constructo é que se ___ a inteligibilidade plena.",
+      "options": [
+        "alcançam",
+        "alcançaria",
+        "alcançassem",
+        "alcançou"
+      ],
+      "correct_answer": "alcançam",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Há que se considerar, portanto, não somente o que se explicita mas também o que se ___ nas entrelinhas.",
+      "options": [
+        "subsume",
+        "subsome",
+        "subsumisse",
+        "subsumiria"
+      ],
+      "correct_answer": "subsume",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Por conseguinte, a verdadeira crítica deverá ___ em perspectiva as condições históricas de possibilidade.",
+      "options": [
+        "manter",
+        "mantenha",
+        "mantivesse",
+        "manteria"
+      ],
+      "correct_answer": "manter",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The indetermination that pervades the work acquires, in this context, a singular hermeneutic pregnance",
+        "The work determines singularly through hermeneutics",
+        "Hermeneutics acquire indetermination",
+        "Pregnance pervades singular works"
+      ],
+      "correct_answer": "The indetermination that pervades the work acquires, in this context, a singular hermeneutic pregnance",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "A indeterminação que perpassa a obra adquire, neste contexto, uma pregnância hermenêutica singular."
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Such elucidation undoubtedly involves nuances that elude monolithic conceptualizations",
+        "Conceptualizations elude elucidation monolithically",
+        "Monolithic nuances elucidate",
+        "Elucidation avoids monolithic nuance"
+      ],
+      "correct_answer": "Such elucidation undoubtedly involves nuances that elude monolithic conceptualizations",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Tal elucidação comporta, decerto, nuances que escapam a conceptualizações monolíticas."
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Alterity manifested in the textual fabric does not consent to being subsumed by binary categories",
+        "Binary textual categories alter consent",
+        "Textual alterity is binary and subsumed",
+        "Categories alter and consent to textuality"
+      ],
+      "correct_answer": "Alterity manifested in the textual fabric does not consent to being subsumed by binary categories",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "A alteridade que se manifesta no tecido textual não consente em ser subsumida por categorias binárias."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "It is important to note that significant dissemination permeates the very structure of the artifact",
+        "Significance disseminates artifacts",
+        "Structures disseminate significantly",
+        "Artifacts permeate significantly"
+      ],
+      "correct_answer": "It is important to note that significant dissemination permeates the very structure of the artifact",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Importa salientar que a disseminação significativa permeia a própria estrutura do artefacto."
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The hermeneutic palimpsest that thus delineates itself involves dimensions that overflow interpretation",
+        "Interpretation delineates hermeneutic palimpsests",
+        "Dimensions overflow and delineate hermeneutics",
+        "Palimpsests interpret dimensionally"
+      ],
+      "correct_answer": "The hermeneutic palimpsest that thus delineates itself involves dimensions that overflow interpretation",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "O palimpsesto hermenêutico que assim se delineia comporta dimensões que transbordam interpretação."
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "There emerges, thus, a poetics of the ineffable that transcends conceptual domestication",
+        "Ineffable poetics domesticate conceptually",
+        "Transcendence domesticates poetical ineffability",
+        "Conceptual poetics emerge ineffably"
+      ],
+      "correct_answer": "There emerges, thus, a poetics of the ineffable that transcends conceptual domestication",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Emerge, destarte, uma poética do inefável que transcende a domesticação conceptual."
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The aporias engendered by such formulations resist reductive recuperation.\"",
+      "options": [
+        "As aporias engendradas por tais formulações resistem à recuperação redutiva.",
+        "As formulações engendram aporias que reduzem recuperação.",
+        "Recuperação redutiva resiste a formulações aporéticas.",
+        "Formulações resistem redutivamente às aporias engendradas."
+      ],
+      "correct_answer": "As aporias engendradas por tais formulações resistem à recuperação redutiva.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"It is precisely this undecidability that imparts to the work its ethical dimension.\"",
+      "options": [
+        "É precisamente esta indecidibilidade que imprime à obra sua dimensão ética.",
+        "Precisamente, a indecidibilidade imprime dimensões éticas.",
+        "Obras impressionam eticamente pela indecidibilidade.",
+        "Dimensões éticas decidem a indecidibilidade da obra."
+      ],
+      "correct_answer": "É precisamente esta indecidibilidade que imprime à obra sua dimensão ética.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The constitutive polyvalence resists univocal hermeneutic closure.\"",
+      "options": [
+        "A polivalência constitutiva resiste ao encerramento hermenêutico univocal.",
+        "A polivalência constitutiva resiste ao fechamento hermenêutico univocal.",
+        "A polivalência hermenêutica constitui resistência univocal.",
+        "Univocalmente, resistências constituem polivalências hermenêuticas."
+      ],
+      "correct_answer": "A polivalência constitutiva resiste ao fechamento hermenêutico univocal.",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"What emerges is less a doctrine than a problematic of thought.\"",
+      "options": [
+        "O que emerge é menos uma doutrina do que uma problemática do pensamento.",
+        "O que emerge doutrinariamente é menos problemático do pensamento.",
+        "Doutrinas emergem como problemas do pensamento.",
+        "Pensamento problemático emerge doutrinariamente."
+      ],
+      "correct_answer": "O que emerge é menos uma doutrina do que uma problemática do pensamento.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Such circumlocutions ought not, however, occlude the fundamental stakes.\"",
+      "options": [
+        "Tais circunlóquios não deveriam, contudo, ocluir os fundamentos em jogo.",
+        "Circunlóquios ocluem fundamentalmente o que é apostado.",
+        "O fundamental é obscurecido por circunlóquios.",
+        "Stakes fundamentally obscure circumlocutory thought."
+      ],
+      "correct_answer": "Tais circunlóquios não deveriam, contudo, ocluir os fundamentos em jogo.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The hermeneutic wager consists precisely in maintaining this irreducible tension.\"",
+      "options": [
+        "A aposta hermenêutica consiste precisamente em manter esta tensão irreducível.",
+        "Apostar hermeneuticamente mantém tensões reduzidas.",
+        "Tensões hermenêuticas apostam na redução.",
+        "Manter irredutivelmente aposta a hermenêutica."
+      ],
+      "correct_answer": "A aposta hermenêutica consiste precisamente em manter esta tensão irreducível.",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Numa disquisição teórica de nível máximo, como articula a relação entre texto e interpretação quando ambos são constitutivamente indeterminados?",
+      "options": [
+        "O texto determina a interpretação.",
+        "A indeterminação constitutiva de ambos não impede mas antes exige uma hermenêutica que reconheça sua co-implicação e irreducibilidade.",
+        "A interpretação é desnecessária.",
+        "Texto e interpretação são equivalentes."
+      ],
+      "correct_answer": "A indeterminação constitutiva de ambos não impede mas antes exige uma hermenêutica que reconheça sua co-implicação e irreducibilidade.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Como responde a uma crítica que the aponta uma aparente antinomia no seu argumento?",
+      "options": [
+        "A crítica está errada.",
+        "Reconheço a antinomia; porém, tal irredutibilidade é constitutiva do problema e não una falha lógica mas uma exigência ontológica.",
+        "Não há antinomia.",
+        "Evito antinomias."
+      ],
+      "correct_answer": "Reconheço a antinomia; porém, tal irredutibilidade é constitutiva do problema e não una falha lógica mas uma exigência ontológica.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Em que consiste, para si, uma argumentação verdadeiramente sofisticada?",
+      "options": [
+        "Em parecer complexa.",
+        "Em reconhecer a multiplicidade de perspectivas, as aporias inerentes, e em manter a tensão constitutiva sem recorrer a resoluções redutivas.",
+        "Em negar complexidade.",
+        "Em escolher uma posição e mantê-la."
+      ],
+      "correct_answer": "Em reconhecer a multiplicidade de perspectivas, as aporias inerentes, e em manter a tensão constitutiva sem recorrer a resoluções redutivas.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Como conclui um trabalho que se posiciona na vanguarda teórica sem cair em dogmatismo?",
+      "options": [
+        "Demonstrei que tenho razão.",
+        "O investigado revela aporias que abrem vias de reinquirição; a verdade reside no manutenção dessa abertura.",
+        "Ninguém vai compreender.",
+        "Evito conclusões."
+      ],
+      "correct_answer": "O investigado revela aporias que abrem vias de reinquirição; a verdade reside no manutenção dessa abertura.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Como navega entre fidelidade ao arquivo histórico e liberdade interpretativa?",
+      "options": [
+        "O arquivo é tudo.",
+        "A recepção responsável implica não apenas conformidade ao arquivo mas também a capacidade de interrogar suas lacunas e silêncios de forma produtiva.",
+        "Ignoro o arquivo.",
+        "Interpretação ignora história."
+      ],
+      "correct_answer": "A recepção responsável implica não apenas conformidade ao arquivo mas também a capacidade de interrogar suas lacunas e silêncios de forma produtiva.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Qual é o alcance ético de uma análise verdadeiramente rigorosa?",
+      "options": [
+        "A ética é irrelevante.",
+        "Reside em reconhecer a alteridade do outro, seja textual ou humano, e em resistir à domesticação redutiva que violentaria sua irredutibilidade e singularidade.",
+        "Análise não tem ética.",
+        "Rigor é amoral."
+      ],
+      "correct_answer": "Reside em reconhecer a alteridade do outro, seja textual ou humano, e em resistir à domesticação redutiva que violentaria sua irredutibilidade e singularidade.",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

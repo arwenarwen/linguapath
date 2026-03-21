@@ -3,699 +3,451 @@
   "code": "de",
   "level": "C1",
   "format": "multiple_choice",
-  "question_count": 20,
+  "question_count": 30,
   "feedback_audio_targets": {
     "correct": [
-      "Richtig.",
-      "Korrekt.",
-      "Das ist richtig."
+      "Correct!",
+      "Well done!",
+      "That's right!"
     ],
     "incorrect": [
-      "Falsch.",
-      "Nicht ganz richtig.",
-      "Leider falsch."
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
     ]
   },
   "questions": [
     {
-      "id": "C1_Q01",
+      "id": "Q01",
       "question_number": 1,
-      "question": "What does 'die Arbeit' mean?",
+      "question": "What does \"die Schlussfolgerung\" mean in English?",
       "options": [
-        "office",
-        "deadline",
-        "job/work",
-        "salary"
+        "introduction",
+        "assumption",
+        "recommendation",
+        "conclusion"
       ],
-      "correct_answer": "job/work",
-      "correct_index": 2,
+      "correct_answer": "conclusion",
+      "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Professional Travel — Unit 1 Lesson 1: Work & professional vocabulary",
-      "audio_targets": {
-        "question": "What does 'die Arbeit' mean?",
-        "options": [
-          "office",
-          "deadline",
-          "job/work",
-          "salary"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "die Schlussfolgerung"
     },
     {
-      "id": "C1_Q02",
+      "id": "Q02",
       "question_number": 2,
-      "question": "What does 'berücksichtigen' mean?",
+      "question": "What does \"unentbehrlich\" mean in English?",
       "options": [
-        "to keep in mind",
-        "nevertheless",
-        "there's no other choice",
-        "in spite of"
+        "unusual",
+        "unreliable",
+        "controversial",
+        "indispensable"
       ],
-      "correct_answer": "to keep in mind",
-      "correct_index": 0,
+      "correct_answer": "indispensable",
+      "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Professional Travel — Unit 1 Lesson 2: Advanced vocabulary & idioms",
-      "audio_targets": {
-        "question": "What does 'berücksichtigen' mean?",
-        "options": [
-          "to keep in mind",
-          "nevertheless",
-          "there's no other choice",
-          "in spite of"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "unentbehrlich"
     },
     {
-      "id": "C1_Q03",
+      "id": "Q03",
       "question_number": 3,
-      "question": "What does 'der Kopf' mean?",
+      "question": "What does \"der Einwand\" mean in English?",
       "options": [
-        "head",
-        "I need help",
-        "fever",
-        "I'm sick"
+        "proposal",
+        "agreement",
+        "evidence",
+        "objection"
       ],
-      "correct_answer": "head",
-      "correct_index": 0,
+      "correct_answer": "objection",
+      "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Professional Travel — Unit 1 Lesson 3: Healthcare & body",
-      "audio_targets": {
-        "question": "What does 'der Kopf' mean?",
-        "options": [
-          "head",
-          "I need help",
-          "fever",
-          "I'm sick"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "der Einwand"
     },
     {
-      "id": "C1_Q04",
+      "id": "Q04",
       "question_number": 4,
-      "question": "What does 'meiner Meinung nach' mean?",
+      "question": "What does \"verhältnismäßig\" mean in English?",
       "options": [
-        "in my opinion",
-        "I disagree",
-        "it depends",
-        "I agree"
+        "disproportionate",
+        "excessive",
+        "absolute",
+        "proportionate"
       ],
-      "correct_answer": "in my opinion",
-      "correct_index": 0,
+      "correct_answer": "proportionate",
+      "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Professional Travel — Unit 1 Lesson 4: Opinions & discussions",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "in my opinion",
-          "I disagree",
-          "it depends",
-          "I agree"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "verhältnismäßig"
     },
     {
-      "id": "C1_Q05",
+      "id": "Q05",
       "question_number": 5,
-      "question": "What does 'berücksichtigen' mean?",
+      "question": "What does \"einleuchten\" mean in English?",
       "options": [
-        "from time to time",
-        "to be up to date",
-        "by the way",
-        "to keep in mind"
+        "to illuminate",
+        "to confuse",
+        "to complicate",
+        "to make sense"
       ],
-      "correct_answer": "to keep in mind",
+      "correct_answer": "to make sense",
       "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Professional Travel — Unit 1 Lesson 5: Review & practice",
-      "audio_targets": {
-        "question": "What does 'berücksichtigen' mean?",
-        "options": [
-          "from time to time",
-          "to be up to date",
-          "by the way",
-          "to keep in mind"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "einleuchten"
     },
     {
-      "id": "C1_Q06",
+      "id": "Q06",
       "question_number": 6,
-      "question": "What does 'bitte' mean?",
+      "question": "What does \"die Beeinträchtigung\" mean in English?",
       "options": [
-        "excuse me",
-        "please",
-        "thank you",
-        "with pleasure"
+        "enhancement",
+        "influence",
+        "continuation",
+        "impairment"
       ],
-      "correct_answer": "please",
-      "correct_index": 1,
+      "correct_answer": "impairment",
+      "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Social Mastery — Unit 2 Lesson 1: Polite expressions",
-      "audio_targets": {
-        "question": "What does 'bitte' mean?",
-        "options": [
-          "excuse me",
-          "please",
-          "thank you",
-          "with pleasure"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "die Beeinträchtigung"
     },
     {
-      "id": "C1_Q07",
+      "id": "Q07",
       "question_number": 7,
-      "question": "What does 'meiner Meinung nach' mean?",
+      "question": "Complete the sentence: Er bestand darauf, dass der Vertrag ___ werde.",
       "options": [
-        "in my opinion",
-        "furthermore",
-        "it depends",
-        "I think that"
+        "überprüfend",
+        "überprüften",
+        "überprüfen",
+        "überprüft"
       ],
-      "correct_answer": "in my opinion",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Social Mastery — Unit 2 Lesson 2: Opinions & discussions",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "in my opinion",
-          "furthermore",
-          "it depends",
-          "I think that"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "überprüft",
+      "correct_index": 3,
+      "exercise_type": "fill"
     },
     {
-      "id": "C1_Q08",
+      "id": "Q08",
       "question_number": 8,
-      "question": "What does 'berücksichtigen' mean?",
+      "question": "Complete the sentence: Das Gesetz trat ___ der Einwände der Opposition in Kraft.",
       "options": [
-        "to leave much to be desired",
-        "to be up to date",
-        "from time to time",
-        "to keep in mind"
+        "trotzdem",
+        "obwohl",
+        "dennoch",
+        "ungeachtet"
       ],
-      "correct_answer": "to keep in mind",
+      "correct_answer": "ungeachtet",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Social Mastery — Unit 2 Lesson 3: Advanced vocabulary & idioms",
-      "audio_targets": {
-        "question": "What does 'berücksichtigen' mean?",
-        "options": [
-          "to leave much to be desired",
-          "to be up to date",
-          "from time to time",
-          "to keep in mind"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "fill"
     },
     {
-      "id": "C1_Q09",
+      "id": "Q09",
       "question_number": 9,
-      "question": "What does 'meiner Meinung nach' mean?",
+      "question": "Complete the sentence: ___ man auch noch so viel lernt, es gibt immer Neues zu entdecken.",
       "options": [
-        "on one hand",
-        "however",
-        "I think that",
-        "in my opinion"
+        "Darf",
+        "Soll",
+        "Muss",
+        "Mag"
       ],
-      "correct_answer": "in my opinion",
+      "correct_answer": "Mag",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Social Mastery — Unit 2 Lesson 4: Review & practice",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "on one hand",
-          "however",
-          "I think that",
-          "in my opinion"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "fill"
     },
     {
-      "id": "C1_Q10",
+      "id": "Q10",
       "question_number": 10,
-      "question": "What does 'die Arbeit' mean?",
+      "question": "Complete the sentence: Je komplexer das Problem, ___ mehr Zeit wird benötigt.",
       "options": [
-        "company",
-        "deadline",
-        "office",
-        "job/work"
+        "je",
+        "so",
+        "umso",
+        "desto"
       ],
-      "correct_answer": "job/work",
+      "correct_answer": "desto",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Academic & Technical — Unit 3 Lesson 1: Work & professional vocabulary",
-      "audio_targets": {
-        "question": "What does 'die Arbeit' mean?",
-        "options": [
-          "company",
-          "deadline",
-          "office",
-          "job/work"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "fill"
     },
     {
-      "id": "C1_Q11",
+      "id": "Q11",
       "question_number": 11,
-      "question": "What does 'die Arbeit' mean?",
+      "question": "Complete the sentence: Es wird erwartet, dass das neue Modell bis Ende des Jahres ___ wird.",
       "options": [
-        "contract",
-        "job/work",
-        "boss",
-        "colleague"
+        "vorstellend",
+        "vorstellt",
+        "vorstellen",
+        "vorgestellt"
       ],
-      "correct_answer": "job/work",
-      "correct_index": 1,
-      "exercise_type": "translate-en",
-      "source_title": "Academic & Technical — Unit 3 Lesson 2: Work & professional vocabulary",
-      "audio_targets": {
-        "question": "What does 'die Arbeit' mean?",
-        "options": [
-          "contract",
-          "job/work",
-          "boss",
-          "colleague"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "vorgestellt",
+      "correct_index": 3,
+      "exercise_type": "fill"
     },
     {
-      "id": "C1_Q12",
+      "id": "Q12",
       "question_number": 12,
-      "question": "What does 'meiner Meinung nach' mean?",
+      "question": "Complete the sentence: Der Zeuge schilderte die Ereignisse, ___ er sie erlebt hatte.",
       "options": [
-        "I agree",
-        "however",
-        "in my opinion",
-        "I think that"
+        "ob",
+        "weil",
+        "als",
+        "wie"
       ],
-      "correct_answer": "in my opinion",
-      "correct_index": 2,
-      "exercise_type": "translate-en",
-      "source_title": "Academic & Technical — Unit 3 Lesson 3: Opinions & discussions",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "I agree",
-          "however",
-          "in my opinion",
-          "I think that"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "wie",
+      "correct_index": 3,
+      "exercise_type": "fill"
     },
     {
-      "id": "C1_Q13",
+      "id": "Q13",
       "question_number": 13,
-      "question": "What does 'berücksichtigen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "whatever",
-        "to keep in mind",
-        "from time to time",
-        "after all"
+        "That can be easily generalised.",
+        "That is impossible to understand.",
+        "That has been thoroughly researched.",
+        "That cannot be generalised in that way."
       ],
-      "correct_answer": "to keep in mind",
-      "correct_index": 1,
-      "exercise_type": "translate-en",
-      "source_title": "Academic & Technical — Unit 3 Lesson 4: Review & practice",
-      "audio_targets": {
-        "question": "What does 'berücksichtigen' mean?",
-        "options": [
-          "whatever",
-          "to keep in mind",
-          "from time to time",
-          "after all"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "That cannot be generalised in that way.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Das lässt sich so nicht verallgemeinern."
     },
     {
-      "id": "C1_Q14",
+      "id": "Q14",
       "question_number": 14,
-      "question": "What does 'berücksichtigen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "from time to time",
-        "in spite of",
-        "to leave much to be desired",
-        "to keep in mind"
+        "He changed his mind at the last moment.",
+        "He made a poor decision under pressure.",
+        "He regretted his decision afterwards.",
+        "He was not dissuaded from his decision."
       ],
-      "correct_answer": "to keep in mind",
+      "correct_answer": "He was not dissuaded from his decision.",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Comprehension — Unit 4 Lesson 1: Advanced vocabulary & idioms",
-      "audio_targets": {
-        "question": "What does 'berücksichtigen' mean?",
-        "options": [
-          "from time to time",
-          "in spite of",
-          "to leave much to be desired",
-          "to keep in mind"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "listen",
+      "audio": "Er ließ sich nicht von seiner Entscheidung abbringen."
     },
     {
-      "id": "C1_Q15",
+      "id": "Q15",
       "question_number": 15,
-      "question": "What does 'berücksichtigen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "to keep in mind",
-        "there's no other choice",
-        "to be up to date",
-        "to leave much to be desired"
+        "It is necessary to draw conclusions immediately.",
+        "The conclusions are already clear.",
+        "The conclusions are disappointing.",
+        "It would be premature to draw conclusions now."
       ],
-      "correct_answer": "to keep in mind",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Comprehension — Unit 4 Lesson 2: Advanced vocabulary & idioms",
-      "audio_targets": {
-        "question": "What does 'berücksichtigen' mean?",
-        "options": [
-          "to keep in mind",
-          "there's no other choice",
-          "to be up to date",
-          "to leave much to be desired"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "It would be premature to draw conclusions now.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Es wäre voreilig, jetzt schon Schlüsse zu ziehen."
     },
     {
-      "id": "C1_Q16",
+      "id": "Q16",
       "question_number": 16,
-      "question": "What does 'meiner Meinung nach' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "on one hand",
-        "it depends",
-        "in conclusion",
-        "in my opinion"
+        "That is highly questionable.",
+        "That is open to debate.",
+        "That has not been answered yet.",
+        "That is beyond question."
       ],
-      "correct_answer": "in my opinion",
+      "correct_answer": "That is beyond question.",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Comprehension — Unit 4 Lesson 3: Opinions & discussions",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "on one hand",
-          "it depends",
-          "in conclusion",
-          "in my opinion"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "listen",
+      "audio": "Das steht außer Frage."
     },
     {
-      "id": "C1_Q17",
+      "id": "Q17",
       "question_number": 17,
-      "question": "What does 'meiner Meinung nach' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "on the other hand",
-        "in my opinion",
-        "in conclusion",
-        "I think that"
+        "He assessed the situation correctly.",
+        "He refused to comment on the situation.",
+        "He was completely unaware of the situation.",
+        "He completely misjudged the situation."
       ],
-      "correct_answer": "in my opinion",
-      "correct_index": 1,
-      "exercise_type": "translate-en",
-      "source_title": "Comprehension — Unit 4 Lesson 4: Review & practice",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "on the other hand",
-          "in my opinion",
-          "in conclusion",
-          "I think that"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "C1_Q18",
-      "question_number": 18,
-      "question": "What does 'die Arbeit' mean?",
-      "options": [
-        "office",
-        "deadline",
-        "meeting",
-        "job/work"
-      ],
-      "correct_answer": "job/work",
+      "correct_answer": "He completely misjudged the situation.",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Advanced Writing — Unit 5 Lesson 1: Work & professional vocabulary",
-      "audio_targets": {
-        "question": "What does 'die Arbeit' mean?",
-        "options": [
-          "office",
-          "deadline",
-          "meeting",
-          "job/work"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "listen",
+      "audio": "Er hat die Situation völlig falsch eingeschätzt."
     },
     {
-      "id": "C1_Q19",
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The negotiations have broken down.",
+        "The negotiations are just beginning.",
+        "The negotiations will take several more months.",
+        "The negotiations are close to completion."
+      ],
+      "correct_answer": "The negotiations are close to completion.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Die Verhandlungen stehen kurz vor dem Abschluss."
+    },
+    {
+      "id": "Q19",
       "question_number": 19,
-      "question": "What does 'die Arbeit' mean?",
+      "question": "Translate to target language: \"The proposal was met with considerable scepticism.\"",
       "options": [
-        "boss",
-        "job/work",
-        "office",
-        "contract"
+        "Der Vorschlag stieß auf große Zustimmung.",
+        "Der Vorschlag wurde zurückgezogen.",
+        "Der Vorschlag war überraschend erfolgreich.",
+        "Der Vorschlag stieß auf erhebliche Skepsis."
       ],
-      "correct_answer": "job/work",
-      "correct_index": 1,
-      "exercise_type": "translate-en",
-      "source_title": "Advanced Writing — Unit 5 Lesson 2: Work & professional vocabulary",
-      "audio_targets": {
-        "question": "What does 'die Arbeit' mean?",
-        "options": [
-          "boss",
-          "job/work",
-          "office",
-          "contract"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "Der Vorschlag stieß auf erhebliche Skepsis.",
+      "correct_index": 3,
+      "exercise_type": "translate"
     },
     {
-      "id": "C1_Q20",
+      "id": "Q20",
       "question_number": 20,
-      "question": "What does 'meiner Meinung nach' mean?",
+      "question": "Translate to target language: \"It goes without saying that punctuality is expected.\"",
       "options": [
-        "in my opinion",
-        "I think that",
-        "however",
-        "furthermore"
+        "Pünktlichkeit ist manchmal wichtig.",
+        "Pünktlichkeit ist eine Tugend.",
+        "Es ist unklar, ob Pünktlichkeit erwartet wird.",
+        "Es versteht sich von selbst, dass Pünktlichkeit erwartet wird."
       ],
-      "correct_answer": "in my opinion",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Advanced Writing — Unit 5 Lesson 3: Opinions & discussions",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "in my opinion",
-          "I think that",
-          "however",
-          "furthermore"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "Es versteht sich von selbst, dass Pünktlichkeit erwartet wird.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The findings give cause for concern.\"",
+      "options": [
+        "Die Ergebnisse sind überraschend positiv.",
+        "Die Ergebnisse wurden noch nicht ausgewertet.",
+        "Die Ergebnisse entsprechen den Erwartungen.",
+        "Die Ergebnisse geben Anlass zur Besorgnis."
+      ],
+      "correct_answer": "Die Ergebnisse geben Anlass zur Besorgnis.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"She made a compelling argument.\"",
+      "options": [
+        "Sie hat ein langes Argument vorgebracht.",
+        "Sie hat ihr Argument zurückgezogen.",
+        "Sie hat das Argument nicht verstanden.",
+        "Sie hat ein überzeugendes Argument vorgebracht."
+      ],
+      "correct_answer": "Sie hat ein überzeugendes Argument vorgebracht.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The amendment was adopted unanimously.\"",
+      "options": [
+        "Die Änderung wurde mehrheitlich abgelehnt.",
+        "Die Änderung wurde diskutiert aber nicht beschlossen.",
+        "Die Änderung wurde vertagt.",
+        "Die Änderung wurde einstimmig angenommen."
+      ],
+      "correct_answer": "Die Änderung wurde einstimmig angenommen.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"He tends to overlook the bigger picture.\"",
+      "options": [
+        "Er sieht das große Ganze sehr gut.",
+        "Er konzentriert sich nur auf das Wesentliche.",
+        "Er verliert selten den Überblick.",
+        "Er neigt dazu, das große Ganze zu übersehen."
+      ],
+      "correct_answer": "Er neigt dazu, das große Ganze zu übersehen.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "In einem akademischen Vortrag möchten Sie ein Gegenargument einleiten. Was sagen Sie?",
+      "options": [
+        "Das stimmt überhaupt nicht.",
+        "Das ist eine schlechte Idee.",
+        "Ich bin anderer Meinung.",
+        "Man könnte jedoch einwenden, dass..."
+      ],
+      "correct_answer": "Man könnte jedoch einwenden, dass...",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Sie leiten eine Diskussion und möchten zum nächsten Punkt übergehen. Was sagen Sie?",
+      "options": [
+        "Ich habe genug gehört.",
+        "Das reicht für heute.",
+        "Jetzt spreche ich.",
+        "Kommen wir nun zum nächsten Punkt."
+      ],
+      "correct_answer": "Kommen wir nun zum nächsten Punkt.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Sie stimmen einer These weitgehend zu, sehen aber Einschränkungen. Was sagen Sie?",
+      "options": [
+        "Das ist falsch.",
+        "Ich stimme zu.",
+        "Das ist eine interessante Frage.",
+        "Im Großen und Ganzen stimme ich zu, allerdings..."
+      ],
+      "correct_answer": "Im Großen und Ganzen stimme ich zu, allerdings...",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Ein Kollege behauptet etwas faktisch Falsches in einer Präsentation. Wie reagieren Sie höflich?",
+      "options": [
+        "Das ist völlig falsch.",
+        "Sie sollten das besser recherchieren.",
+        "Das stimmt nicht, das weiß jeder.",
+        "Ich glaube, da liegt möglicherweise ein Missverständnis vor."
+      ],
+      "correct_answer": "Ich glaube, da liegt möglicherweise ein Missverständnis vor.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Sie müssen einen komplexen Sachverhalt schriftlich erklären. Was ist besonders wichtig?",
+      "options": [
+        "Möglichst viel Text schreiben.",
+        "Technische Fachbegriffe häufen.",
+        "Den Text möglichst kurz halten, egal wie unklar.",
+        "Klare Struktur und präzise Formulierungen."
+      ],
+      "correct_answer": "Klare Struktur und präzise Formulierungen.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Sie sollen einen längeren Text auf seine Hauptaussage hin zusammenfassen. Welche Strategie verwenden Sie?",
+      "options": [
+        "Den gesamten Text wörtlich abschreiben.",
+        "Nur die erste und letzte Seite lesen.",
+        "Den Text nach Adjektiven durchsuchen.",
+        "Den Text überfliegen und dann die Hauptpunkte herausarbeiten."
+      ],
+      "correct_answer": "Den Text überfliegen und dann die Hauptpunkte herausarbeiten.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
     }
   ]
 }

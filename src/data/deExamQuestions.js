@@ -1,1668 +1,261 @@
-// German CEFR Exam Questions — 25 per level
-// Types: mcq, fill, speak, listen, translate, translate-en, truefalse, word-order
-// Prompts are in English; answers/options are in German
+// German CEFR Exam Questions — 30 per level (A1–C2)
+// Structure per level:
+//   Q01–Q06  Vocabulary in Context  (translate-en: see German, choose English meaning)
+//   Q07–Q12  Grammar in Context     (fill: German sentence with blank, German options)
+//   Q13–Q18  Listening              (listen: hear German phrase, choose English meaning)
+//   Q19–Q24  Speaking → Translate   (translate: English prompt, German options)
+//   Q25–Q30  Scenario Tasks         (mcq: German situational prompt, German options)
 
 export const DE_EXAM_QUESTIONS = {
   "A1": [
-    {
-      "type": "mcq",
-      "prompt": "Which German word means \"hello\"?",
-      "options": [
-        "Guten Tag",
-        "Guten Morgen",
-        "Guten Abend",
-        "Hallo"
-      ],
-      "answer": "Hallo"
-    },
-    {
-      "type": "mcq",
-      "prompt": "How do you say \"good night\" in German?",
-      "options": [
-        "Bis morgen",
-        "Bis später",
-        "Gute Nacht",
-        "Auf Wiedersehen"
-      ],
-      "answer": "Gute Nacht"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "welcome",
-      "options": [
-        "Mach's gut",
-        "danke",
-        "bitte",
-        "Willkommen"
-      ],
-      "answer": "Willkommen"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "vielen Dank",
-      "options": [
-        "you're welcome",
-        "excuse me",
-        "many thanks",
-        "sorry"
-      ],
-      "answer": "many thanks"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "Verzeihung",
-      "options": [
-        "no problem",
-        "with pleasure",
-        "sir / ma'am",
-        "pardon"
-      ],
-      "answer": "pardon",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "You say '___' when you greet someone in the morning.",
-      "blank": "_____",
-      "options": [
-        "Guten Tag",
-        "Gute Nacht",
-        "Guten Abend",
-        "Guten Morgen"
-      ],
-      "answer": "Guten Morgen"
-    },
-    {
-      "type": "mcq",
-      "prompt": "What does \"Ich heiße...\" mean?",
-      "options": [
-        "I am ... years old",
-        "I'm from...",
-        "My name is...",
-        "I'm a student"
-      ],
-      "answer": "My name is...",
-      "hint": "Think about greetings"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "I live in...",
-      "answer": "Ich wohne in..."
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "pleased to meet you",
-      "options": [
-        "Freut mich",
-        "Gleichfalls",
-        "Angenehm",
-        "Und du?"
-      ],
-      "answer": "Angenehm"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "Woher kommst du?",
-      "options": [
-        "Where are you from?",
-        "How old are you?",
-        "What is your name?",
-        "What's your name?"
-      ],
-      "answer": "Where are you from?",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"Ich bin zwanzig Jahre alt\" means \"I'm twenty years old\" in English.",
-      "german": "Ich bin zwanzig Jahre alt",
-      "english_shown": "I'm twenty years old",
-      "answer": "True"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"Und du, wie heißt du?\" means \"His/Her name is...\" in English.",
-      "german": "Und du, wie heißt du?",
-      "english_shown": "His/Her name is...",
-      "answer": "False"
-    },
-    {
-      "type": "mcq",
-      "prompt": "How do you say \"He/She is ... years old\" in German?",
-      "options": [
-        "Ich bin älter",
-        "Ich bin jünger",
-        "Er/Sie ist ... Jahre alt",
-        "Bist du älter oder jünger?"
-      ],
-      "answer": "Er/Sie ist ... Jahre alt"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "To say goodbye formally, you say '___'.",
-      "blank": "_____",
-      "options": [
-        "Guten Morgen",
-        "Hallo",
-        "Bis später",
-        "Auf Wiedersehen"
-      ],
-      "answer": "Auf Wiedersehen"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "How are you?",
-      "answer": "Wie geht's?"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "Mir geht's gut",
-      "options": [
-        "everything's good",
-        "How's it going?",
-        "so-so",
-        "I'm fine"
-      ],
-      "answer": "I'm fine"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "Und dir?",
-      "options": [
-        "What's new?",
-        "fantastic",
-        "And you?",
-        "not very well"
-      ],
-      "answer": "And you?",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which option correctly translates \"nothing special\"?",
-      "options": [
-        "Guten Morgen",
-        "Guten Tag",
-        "Hallo",
-        "Nichts Besonderes"
-      ],
-      "answer": "Nichts Besonderes"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "Someone asks your name. You reply: 'Ich heiße ___.'",
-      "blank": "___",
-      "options": [
-        "Anna",
-        "Thomas",
-        "Danke",
-        "Guten Tag"
-      ],
-      "answer": "Anna"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "good evening",
-      "options": [
-        "Bis später",
-        "Guten Abend",
-        "Auf Wiedersehen",
-        "Gute Nacht"
-      ],
-      "answer": "Guten Abend"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "see you tomorrow",
-      "answer": "Bis morgen"
-    },
-    {
-      "type": "mcq",
-      "prompt": "What does \"Willkommen\" mean in English?",
-      "options": [
-        "take care",
-        "good morning",
-        "hello",
-        "welcome"
-      ],
-      "answer": "welcome"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "Guten Tag",
-      "options": [
-        "good evening",
-        "goodbye",
-        "good afternoon",
-        "good night"
-      ],
-      "answer": "good afternoon",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "To say 'thank you' in German, you say '___'.",
-      "blank": "___",
-      "options": [
-        "Nein",
-        "Hallo",
-        "Bitte",
-        "Danke"
-      ],
-      "answer": "Danke"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "Bis später",
-      "options": [
-        "see you later",
-        "see you tomorrow",
-        "welcome",
-        "take care"
-      ],
-      "answer": "see you later"
-    }
+    // ── Section 1: Vocabulary in Context ──────────────────────────────────────
+    { type:"translate-en", german:"Hallo",                options:["hello","goodbye","thank you","please"],                                                answer:"hello" },
+    { type:"translate-en", german:"danke",                options:["please","sorry","thank you","excuse me"],                                             answer:"thank you" },
+    { type:"translate-en", german:"Entschuldigung",       options:["you're welcome","goodbye","please","excuse me"],                                      answer:"excuse me" },
+    { type:"translate-en", german:"Gute Nacht",           options:["good morning","good evening","goodbye","good night"],                                 answer:"good night" },
+    { type:"translate-en", german:"Ich verstehe nicht",  options:["I speak German","I don't know","I don't understand","I'm not sure"],                  answer:"I don't understand" },
+    { type:"translate-en", german:"Wie viel kostet das?",options:["Where is this?","What time is it?","Can I help you?","How much does that cost?"],      answer:"How much does that cost?" },
+
+    // ── Section 2: Grammar in Context ─────────────────────────────────────────
+    { type:"fill", sentence:"Ich ___ Anna.",               options:["heißt","heißen","heiß","heiße"],          answer:"heiße" },
+    { type:"fill", sentence:"Wie ___ du?",                 options:["heiße","heißen","bin","heißt"],           answer:"heißt" },
+    { type:"fill", sentence:"Das ___ mein Buch.",          options:["bin","bist","sind","ist"],                answer:"ist" },
+    { type:"fill", sentence:"Ich ___ aus Deutschland.",    options:["kommt","kommst","kommen","komme"],        answer:"komme" },
+    { type:"fill", sentence:"Er ___ Tee.",                 options:["trinke","trinkst","trinken","trinkt"],    answer:"trinkt" },
+    { type:"fill", sentence:"Wir ___ Hunger.",             options:["habe","hast","habt","haben"],            answer:"haben" },
+
+    // ── Section 3: Listening ──────────────────────────────────────────────────
+    { type:"listen", audio:"Guten Morgen",          options:["Good afternoon","Good evening","Good night","Good morning"],                         answer:"Good morning" },
+    { type:"listen", audio:"Wie geht es Ihnen?",    options:["What is your name?","Where are you from?","How old are you?","How are you?"],         answer:"How are you?" },
+    { type:"listen", audio:"Auf Wiedersehen",        options:["Hello","Thank you","Please","Goodbye"],                                             answer:"Goodbye" },
+    { type:"listen", audio:"Wo ist die Toilette?",  options:["Where is the exit?","Where is the station?","Where is the supermarket?","Where is the toilet?"], answer:"Where is the toilet?" },
+    { type:"listen", audio:"Ich heiße Lukas",       options:["I come from Lukas","I am from Lukas","I speak Lukas","My name is Lukas"],            answer:"My name is Lukas" },
+    { type:"listen", audio:"Es tut mir leid",       options:["Thank you very much","You're welcome","Excuse me please","I'm sorry"],              answer:"I'm sorry" },
+
+    // ── Section 4: Speaking → Translate ───────────────────────────────────────
+    { type:"translate", english:"Good evening",         options:["Guten Morgen","Gute Nacht","Guten Tag","Guten Abend"],                                    answer:"Guten Abend" },
+    { type:"translate", english:"My name is Anna.",     options:["Ich bin Anna.","Ich komme aus Anna.","Ich habe Anna.","Ich heiße Anna."],                 answer:"Ich heiße Anna." },
+    { type:"translate", english:"I come from Germany.", options:["Ich wohne in Deutschland.","Ich bin aus Deutschland.","Ich mag Deutschland.","Ich komme aus Deutschland."], answer:"Ich komme aus Deutschland." },
+    { type:"translate", english:"I don't understand.", options:["Ich weiß nicht.","Ich spreche nicht Deutsch.","Ich kann nicht.","Ich verstehe nicht."],    answer:"Ich verstehe nicht." },
+    { type:"translate", english:"How old are you?",    options:["Wie heißt du?","Woher kommst du?","Was machst du?","Wie alt bist du?"],                    answer:"Wie alt bist du?" },
+    { type:"translate", english:"Where do you live?",  options:["Woher kommst du?","Wie heißt du?","Was machst du?","Wo wohnst du?"],                       answer:"Wo wohnst du?" },
+
+    // ── Section 5: Scenario Tasks ─────────────────────────────────────────────
+    { type:"mcq", prompt:"Sie treffen jemanden zum ersten Mal. Was sagen Sie?",               options:["Gute Nacht!","Schönen Abend!","Tschüss!","Freut mich, Sie kennenzulernen."],            answer:"Freut mich, Sie kennenzulernen." },
+    { type:"mcq", prompt:"Jemand fragt: 'Wie geht\'s?' Wie antworten Sie?",                   options:["Ich heiße Anna.","Ich wohne in Berlin.","Auf Wiedersehen.","Danke, gut. Und Ihnen?"],   answer:"Danke, gut. Und Ihnen?" },
+    { type:"mcq", prompt:"Sie wollen wissen, wie spät es ist. Was fragen Sie?",               options:["Wo bin ich?","Wie viel kostet das?","Was ist das?","Wie spät ist es bitte?"],           answer:"Wie spät ist es bitte?" },
+    { type:"mcq", prompt:"Jemand gibt Ihnen ein Geschenk. Was sagen Sie?",                   options:["Entschuldigung.","Tschüss!","Bitte sehr.","Vielen Dank!"],                             answer:"Vielen Dank!" },
+    { type:"mcq", prompt:"Sie verstehen eine Frage nicht. Was sagen Sie?",                   options:["Ich weiß alles.","Auf Wiedersehen.","Ich bin müde.","Sprechen Sie bitte langsamer."],   answer:"Sprechen Sie bitte langsamer." },
+    { type:"mcq", prompt:"Sie verabschieden sich von einem Freund. Was sagen Sie?",          options:["Guten Morgen!","Hallo!","Wie geht's?","Bis bald!"],                                    answer:"Bis bald!" },
   ],
+
   "A2": [
-    {
-      "type": "mcq",
-      "prompt": "Which phrase means \"bus stop\" in German?",
-      "options": [
-        "die Bushaltestelle",
-        "der Fahrplan",
-        "die Einzelfahrkarte",
-        "der Bahnsteig"
-      ],
-      "answer": "die Bushaltestelle"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "die Hin- und Rückfahrkarte",
-      "options": [
-        "return ticket",
-        "departure",
-        "arrival",
-        "transfer"
-      ],
-      "answer": "return ticket",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "You are at the train station. You ask: 'Wo ist ___?'",
-      "blank": "___",
-      "options": [
-        "die Verspätung",
-        "die Bushaltestelle",
-        "Wo ist der Schalter?",
-        "die Bushaltestelle"
-      ],
-      "answer": "die Bushaltestelle"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "platform",
-      "options": [
-        "die Einzelfahrkarte",
-        "die Hin- und Rückfahrkarte",
-        "der Bahnsteig",
-        "der Fahrplan"
-      ],
-      "answer": "der Bahnsteig"
-    },
-    {
-      "type": "mcq",
-      "prompt": "What does \"der Umstieg\" mean?",
-      "options": [
-        "departure",
-        "transfer",
-        "arrival",
-        "delay"
-      ],
-      "answer": "transfer"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "Where is the ticket office?",
-      "answer": "Wo ist der Schalter?"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "Zug",
-      "options": [
-        "bus",
-        "taxi",
-        "train",
-        "metro"
-      ],
-      "answer": "train"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "The train is delayed. You say: 'Es gibt eine ___.'",
-      "blank": "___",
-      "options": [
-        "Fahrrad",
-        "Boot",
-        "Flugzeug",
-        "Verspätung"
-      ],
-      "answer": "Verspätung"
-    },
-    {
-      "type": "mcq",
-      "prompt": "How do you say \"car\" in German?",
-      "options": [
-        "Fahrkarte",
-        "Zug",
-        "Auto",
-        "Haltestelle"
-      ],
-      "answer": "Auto"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "Bus",
-      "options": [
-        "airplane",
-        "metro",
-        "bus",
-        "taxi"
-      ],
-      "answer": "bus",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"Boot\" means \"boat\" in English.",
-      "german": "Boot",
-      "english_shown": "boat",
-      "answer": "True"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"Fahrrad\" means \"car\" in English.",
-      "german": "Fahrrad",
-      "english_shown": "car",
-      "answer": "False"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "ticket",
-      "answer": "Fahrkarte"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "You want a one-way ticket. You say: 'Eine ___, bitte.'",
-      "blank": "___",
-      "options": [
-        "Einzelfahrkarte",
-        "Haltestelle",
-        "der Kopf",
-        "der Schmerz"
-      ],
-      "answer": "Einzelfahrkarte"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which word means \"fever\"?",
-      "options": [
-        "die Apotheke",
-        "das Fieber",
-        "das Krankenhaus",
-        "der Arzt"
-      ],
-      "answer": "das Fieber"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "prescription",
-      "options": [
-        "das Rezept",
-        "ich brauche Hilfe",
-        "ich bin krank",
-        "das Medikament"
-      ],
-      "answer": "das Rezept"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "die Bushaltestelle",
-      "options": [
-        "bus stop",
-        "platform",
-        "schedule",
-        "one-way ticket"
-      ],
-      "answer": "bus stop",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "You check in at the hotel. They say: 'Haben Sie eine ___?'",
-      "blank": "___",
-      "options": [
-        "der Fahrplan",
-        "die Hin- und Rückfahrkarte",
-        "der Bahnsteig",
-        "die Einzelfahrkarte"
-      ],
-      "answer": "der Bahnsteig"
-    },
-    {
-      "type": "mcq",
-      "prompt": "What does \"die Hin- und Rückfahrkarte\" mean in English?",
-      "options": [
-        "transfer",
-        "arrival",
-        "return ticket",
-        "departure"
-      ],
-      "answer": "return ticket"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "delay",
-      "answer": "die Verspätung"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "Wo ist der Schalter?",
-      "options": [
-        "bus stop",
-        "platform",
-        "schedule",
-        "Where is the ticket office?"
-      ],
-      "answer": "Where is the ticket office?"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Choose the correct German word for \"transfer\":",
-      "options": [
-        "die Ankunft",
-        "der Umstieg",
-        "die Abfahrt",
-        "die Verspätung"
-      ],
-      "answer": "der Umstieg"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "Departure in German is: '___'.",
-      "blank": "___",
-      "options": [
-        "Abfahrt",
-        "Verspätung",
-        "Ankunft",
-        "Umstieg"
-      ],
-      "answer": "Abfahrt"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "Wo ist der Schalter?",
-      "options": [
-        "bus stop",
-        "Where is the ticket office?",
-        "schedule",
-        "platform"
-      ],
-      "answer": "Where is the ticket office?",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "one-way ticket",
-      "options": [
-        "die Ankunft",
-        "die Hin- und Rückfahrkarte",
-        "der Umstieg",
-        "die Einzelfahrkarte"
-      ],
-      "answer": "die Einzelfahrkarte"
-    }
+    // ── Section 1: Vocabulary in Context ──────────────────────────────────────
+    { type:"translate-en", german:"der Bahnhof",      options:["airport","bus stop","taxi rank","train station"],     answer:"train station" },
+    { type:"translate-en", german:"die Apotheke",     options:["supermarket","bakery","hospital","pharmacy"],          answer:"pharmacy" },
+    { type:"translate-en", german:"das Frühstück",    options:["lunch","dinner","dessert","breakfast"],                answer:"breakfast" },
+    { type:"translate-en", german:"teuer",            options:["cheap","fresh","heavy","expensive"],                   answer:"expensive" },
+    { type:"translate-en", german:"die Verspätung",   options:["platform","arrival","departure","delay"],             answer:"delay" },
+    { type:"translate-en", german:"früh",             options:["late","often","never","early"],                        answer:"early" },
+
+    // ── Section 2: Grammar in Context ─────────────────────────────────────────
+    { type:"fill", sentence:"Gestern ___ ich ins Kino gegangen.",       options:["habe","ist","hat","bin"],                  answer:"bin" },
+    { type:"fill", sentence:"Sie ___ jeden Morgen Zeitung.",            options:["lesen","lest","lese","liest"],             answer:"liest" },
+    { type:"fill", sentence:"Ich möchte ein Ticket ___ München.",       options:["zu","in","an","nach"],                     answer:"nach" },
+    { type:"fill", sentence:"Haben Sie ein Zimmer ___?",                options:["freier","freies","freiem","frei"],          answer:"frei" },
+    { type:"fill", sentence:"Das Konzert ___ um 20 Uhr.",               options:["beginn","beginne","begann","beginnt"],     answer:"beginnt" },
+    { type:"fill", sentence:"Ich ___ gestern sehr müde.",               options:["bin","habe","hatte","war"],                answer:"war" },
+
+    // ── Section 3: Listening ──────────────────────────────────────────────────
+    { type:"listen", audio:"Wo ist der nächste Supermarkt?",           options:["Where is the nearest station?","Where is the nearest pharmacy?","Where is the nearest bus stop?","Where is the nearest supermarket?"], answer:"Where is the nearest supermarket?" },
+    { type:"listen", audio:"Ich hätte gerne ein Glas Wasser.",         options:["I would like a cup of coffee.","I would like a glass of juice.","I would like a bottle of wine.","I would like a glass of water."],     answer:"I would like a glass of water." },
+    { type:"listen", audio:"Der Zug fährt um halb neun ab.",           options:["The train departs at nine o'clock.","The train departs at quarter to nine.","The train departs at eight o'clock.","The train departs at half past eight."], answer:"The train departs at half past eight." },
+    { type:"listen", audio:"Können Sie mir helfen?",                   options:["Could you repeat that?","Do you speak English?","Where are you from?","Can you help me?"],                                              answer:"Can you help me?" },
+    { type:"listen", audio:"Das macht zwanzig Euro.",                  options:["That costs twelve euros.","That costs thirty euros.","That costs two euros.","That costs twenty euros."],                              answer:"That costs twenty euros." },
+    { type:"listen", audio:"Bitte zeigen Sie mir Ihren Ausweis.",      options:["Please fill in this form.","Please sign here.","Please take a seat.","Please show me your ID."],                                       answer:"Please show me your ID." },
+
+    // ── Section 4: Speaking → Translate ───────────────────────────────────────
+    { type:"translate", english:"I would like a coffee, please.",      options:["Ich will Kaffee.","Ich nehme einen Kaffee.","Kaffee für mich.","Ich hätte gerne einen Kaffee, bitte."],         answer:"Ich hätte gerne einen Kaffee, bitte." },
+    { type:"translate", english:"How much does this cost?",            options:["Was ist das?","Haben Sie das?","Wo kauft man das?","Wie viel kostet das?"],                                     answer:"Wie viel kostet das?" },
+    { type:"translate", english:"Where is the bus stop?",              options:["Wo ist der Bahnhof?","Wo ist die U-Bahn?","Wo ist das Taxi?","Wo ist die Bushaltestelle?"],                     answer:"Wo ist die Bushaltestelle?" },
+    { type:"translate", english:"I need a doctor.",                    options:["Ich suche eine Apotheke.","Ich möchte ins Krankenhaus.","Ich habe Schmerzen.","Ich brauche einen Arzt."],       answer:"Ich brauche einen Arzt." },
+    { type:"translate", english:"Can I pay by card?",                  options:["Haben Sie Bargeld?","Wie teuer ist das?","Ich zahle bar.","Kann ich mit Karte zahlen?"],                        answer:"Kann ich mit Karte zahlen?" },
+    { type:"translate", english:"A return ticket to Munich, please.",  options:["Eine Fahrkarte nach München, bitte.","Zwei Tickets nach München.","Wann fährt der Zug nach München?","Eine Rückfahrkarte nach München, bitte."], answer:"Eine Rückfahrkarte nach München, bitte." },
+
+    // ── Section 5: Scenario Tasks ─────────────────────────────────────────────
+    { type:"mcq", prompt:"Sie sind im Restaurant und möchten die Rechnung. Was sagen Sie?",          options:["Ich bin fertig.","Das Essen war gut.","Noch etwas?","Die Rechnung, bitte."],                                 answer:"Die Rechnung, bitte." },
+    { type:"mcq", prompt:"Im Supermarkt: Sie suchen die Milch. Was fragen Sie?",                     options:["Ich kaufe Milch.","Die Milch ist lecker.","Haben Sie Milch gekauft?","Wo finde ich die Milch, bitte?"],     answer:"Wo finde ich die Milch, bitte?" },
+    { type:"mcq", prompt:"Am Bahnhof: Der Zug hat Verspätung. Was bedeutet das?",                   options:["Der Zug ist abgefahren.","Der Zug kommt früher an.","Der Zug fährt nicht.","Der Zug kommt später an."],     answer:"Der Zug kommt später an." },
+    { type:"mcq", prompt:"Sie sind krank und rufen beim Arzt an. Was sagen Sie zuerst?",             options:["Ich kaufe Medikamente.","Ich gehe ins Krankenhaus.","Ich bleibe zu Hause.","Ich möchte einen Termin, bitte."], answer:"Ich möchte einen Termin, bitte." },
+    { type:"mcq", prompt:"Im Hotel: Sie möchten einchecken. Was sagen Sie?",                         options:["Ich suche einen Supermarkt.","Wo ist das Restaurant?","Ich brauche ein Taxi.","Guten Tag, ich habe eine Reservierung."], answer:"Guten Tag, ich habe eine Reservierung." },
+    { type:"mcq", prompt:"Jemand fragt: 'Wie war Ihr Wochenende?' Wie antworten Sie?",              options:["Ich weiß nicht.","Das Wochenende ist morgen.","Ich habe keine Zeit.","Es war sehr schön, danke."],          answer:"Es war sehr schön, danke." },
   ],
+
   "B1": [
-    {
-      "type": "mcq",
-      "prompt": "Which German phrase best expresses \"bus stop\"?",
-      "options": [
-        "die Einzelfahrkarte",
-        "der Bahnsteig",
-        "die Bushaltestelle",
-        "der Fahrplan"
-      ],
-      "answer": "die Bushaltestelle"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "Yesterday I went to the market. Complete: 'Gestern bin ich zum ___ gegangen.'",
-      "blank": "___",
-      "options": [
-        "die Ankunft",
-        "der Umstieg",
-        "die Hin- und Rückfahrkarte",
-        "die Abfahrt"
-      ],
-      "answer": "die Hin- und Rückfahrkarte"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "delay",
-      "options": [
-        "rechts",
-        "Wo ist der Schalter?",
-        "Wo ist...?",
-        "die Verspätung"
-      ],
-      "answer": "die Verspätung"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "links",
-      "options": [
-        "the square",
-        "to the left",
-        "the street",
-        "straight ahead"
-      ],
-      "answer": "to the left",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "mcq",
-      "prompt": "What does \"in der Nähe von\" mean in context?",
-      "options": [
-        "far from",
-        "near",
-        "it's here",
-        "turn at"
-      ],
-      "answer": "near"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "train",
-      "answer": "Zug"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "To express your opinion you say: 'Ich ___, dass das wichtig ist.'",
-      "blank": "___",
-      "options": [
-        "habe",
-        "denke",
-        "gehe",
-        "sage"
-      ],
-      "answer": "denke"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "Bus",
-      "options": [
-        "airplane",
-        "metro",
-        "taxi",
-        "bus"
-      ],
-      "answer": "bus"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Choose the correct translation for \"boat\":",
-      "options": [
-        "Fahrrad",
-        "Auto",
-        "Boot",
-        "Fahrkarte"
-      ],
-      "answer": "Boot"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "Haltestelle",
-      "options": [
-        "fever",
-        "stop",
-        "head",
-        "pain/ache"
-      ],
-      "answer": "stop",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"der Arzt\" means \"doctor\" in English.",
-      "german": "der Arzt",
-      "english_shown": "doctor",
-      "answer": "True"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"die Apotheke\" means \"hospital\" in English.",
-      "german": "die Apotheke",
-      "english_shown": "hospital",
-      "answer": "False"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "prescription",
-      "answer": "das Rezept"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "You describe a problem: 'Das ___ mich wirklich.'",
-      "blank": "___",
-      "options": [
-        "kommt",
-        "macht",
-        "gibt",
-        "stört"
-      ],
-      "answer": "stört"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which option means \"medicine\"?",
-      "options": [
-        "Wo ist...?",
-        "ich bin krank",
-        "ich brauche Hilfe",
-        "das Medikament"
-      ],
-      "answer": "das Medikament"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "to the right",
-      "options": [
-        "links",
-        "die Straße",
-        "geradeaus",
-        "rechts"
-      ],
-      "answer": "rechts"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "der Platz",
-      "options": [
-        "the square",
-        "turn at",
-        "far from",
-        "near"
-      ],
-      "answer": "the square",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "Connect the clauses: 'Ich lerne Deutsch, ___ ich in Berlin leben möchte.'",
-      "blank": "___",
-      "options": [
-        "weil",
-        "aber",
-        "obwohl",
-        "wenn"
-      ],
-      "answer": "weil"
-    },
-    {
-      "type": "mcq",
-      "prompt": "What does \"es ist hier\" mean?",
-      "options": [
-        "metro",
-        "it's here",
-        "bus",
-        "train"
-      ],
-      "answer": "it's here"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "taxi",
-      "answer": "Taxi"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "Flugzeug",
-      "options": [
-        "airplane",
-        "car",
-        "boat",
-        "bicycle"
-      ],
-      "answer": "airplane"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Choose the best German phrase for \"ticket\":",
-      "options": [
-        "Fahrkarte",
-        "Haltestelle",
-        "die Bushaltestelle",
-        "der Bahnsteig"
-      ],
-      "answer": "Fahrkarte"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "The past tense of 'gehen' is: 'Er ___ gestern nach Hause.'",
-      "blank": "___",
-      "options": [
-        "geht",
-        "gegangen",
-        "gehen",
-        "ging"
-      ],
-      "answer": "ging"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "der Fahrplan",
-      "options": [
-        "return ticket",
-        "transfer",
-        "one-way ticket",
-        "schedule"
-      ],
-      "answer": "schedule",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "arrival",
-      "options": [
-        "Wo ist der Schalter?",
-        "die Ankunft",
-        "die Verspätung",
-        "die Abfahrt"
-      ],
-      "answer": "die Ankunft"
-    }
+    // ── Section 1: Vocabulary in Context ──────────────────────────────────────
+    { type:"translate-en", german:"die Bewerbung",      options:["job interview","job advertisement","job offer","job application"],     answer:"job application" },
+    { type:"translate-en", german:"das Krankenhaus",    options:["pharmacy","doctor's surgery","health insurance","hospital"],           answer:"hospital" },
+    { type:"translate-en", german:"vorschlagen",        options:["to demand","to refuse","to ignore","to suggest"],                      answer:"to suggest" },
+    { type:"translate-en", german:"zuverlässig",        options:["ambitious","flexible","unreliable","reliable"],                        answer:"reliable" },
+    { type:"translate-en", german:"die Meinung",        options:["news","meeting","majority","opinion"],                                 answer:"opinion" },
+    { type:"translate-en", german:"sich beschweren",    options:["to apologise","to enquire","to agree","to complain"],                  answer:"to complain" },
+
+    // ── Section 2: Grammar in Context ─────────────────────────────────────────
+    { type:"fill", sentence:"Obwohl es regnete, ___ wir spazieren.",                         options:["gehen","gegangen","geht","gingen"],        answer:"gingen" },
+    { type:"fill", sentence:"Ich ___ gerne reisen, wenn ich mehr Zeit hätte.",               options:["werde","wurde","wäre","würde"],            answer:"würde" },
+    { type:"fill", sentence:"Das Projekt ___ bis Freitag fertig sein.",                      options:["musste","müsste","mag","muss"],            answer:"muss" },
+    { type:"fill", sentence:"Er ist seit drei Jahren ___ Deutschland.",                      options:["nach","aus","von","in"],                   answer:"in" },
+    { type:"fill", sentence:"Wir haben ___ dem Essen über die Pläne gesprochen.",            options:["vor","bei","während","nach"],              answer:"nach" },
+    { type:"fill", sentence:"Sie hat mir geholfen, ___ Arbeit zu finden.",                   options:["einen","einem","ein","eine"],              answer:"eine" },
+
+    // ── Section 3: Listening ──────────────────────────────────────────────────
+    { type:"listen", audio:"Ich bin damit nicht einverstanden.",         options:["I fully agree with that.","I haven't decided yet.","I need more time to think.","I don't agree with that."],                 answer:"I don't agree with that." },
+    { type:"listen", audio:"Könnten Sie das bitte wiederholen?",         options:["Could you speak more slowly?","Could you write that down?","Could you explain that?","Could you please repeat that?"],        answer:"Could you please repeat that?" },
+    { type:"listen", audio:"Es tut mir leid, ich habe mich geirrt.",     options:["I'm sorry, I don't understand.","I'm sorry, I'm late.","I'm sorry, I forgot.","I'm sorry, I was wrong."],                   answer:"I'm sorry, I was wrong." },
+    { type:"listen", audio:"Wie lange dauert die Fahrt?",                options:["How far is the journey?","How much does the journey cost?","When does the journey start?","How long does the journey take?"],  answer:"How long does the journey take?" },
+    { type:"listen", audio:"Ich interessiere mich für die Stelle.",      options:["I applied for the position.","I rejected the position.","I was offered the position.","I am interested in the position."],    answer:"I am interested in the position." },
+    { type:"listen", audio:"Das hängt davon ab.",                        options:["That is certain.","That is impossible.","That is a good idea.","That depends on it."],                                        answer:"That depends on it." },
+
+    // ── Section 4: Speaking → Translate ───────────────────────────────────────
+    { type:"translate", english:"I have been living in Berlin for two years.",    options:["Ich habe zwei Jahre in Berlin gewohnt.","Ich wohnteдва Jahre in Berlin.","Ich bin zwei Jahre in Berlin.","Ich wohne seit zwei Jahren in Berlin."],    answer:"Ich wohne seit zwei Jahren in Berlin." },
+    { type:"translate", english:"Could you please speak more slowly?",            options:["Sprechen Sie bitte deutlicher.","Können Sie lauter sprechen?","Wiederholen Sie das bitte.","Könnten Sie bitte langsamer sprechen?"],                  answer:"Könnten Sie bitte langsamer sprechen?" },
+    { type:"translate", english:"In my opinion, this is a good idea.",            options:["Das ist eine gute Idee.","Ich glaube, das ist gut.","Ich bin dafür.","Meiner Meinung nach ist das eine gute Idee."],                               answer:"Meiner Meinung nach ist das eine gute Idee." },
+    { type:"translate", english:"I would like to make an appointment.",           options:["Ich brauche einen Termin.","Ich möchte einen Arzt besuchen.","Kann ich einen Termin haben?","Ich würde gerne einen Termin vereinbaren."],            answer:"Ich würde gerne einen Termin vereinbaren." },
+    { type:"translate", english:"What do you think about that?",                  options:["Haben Sie das gemacht?","Wie gefällt Ihnen das?","Kennen Sie das?","Was denken Sie darüber?"],                                                       answer:"Was denken Sie darüber?" },
+    { type:"translate", english:"I have a question about the contract.",          options:["Ich verstehe den Vertrag nicht.","Darf ich den Vertrag lesen?","Wann gilt der Vertrag?","Ich habe eine Frage zum Vertrag."],                         answer:"Ich habe eine Frage zum Vertrag." },
+
+    // ── Section 5: Scenario Tasks ─────────────────────────────────────────────
+    { type:"mcq", prompt:"Sie bewerben sich um eine Stelle. Was gehört in eine vollständige Bewerbung?",              options:["Nur das Anschreiben","Nur der Lebenslauf","Ein Foto und eine Empfehlung","Lebenslauf und Anschreiben"],                      answer:"Lebenslauf und Anschreiben" },
+    { type:"mcq", prompt:"Sie sind beim Arzt. Er fragt nach Ihren Beschwerden. Was sagen Sie?",                       options:["Ich bin müde.","Ich nehme Medikamente.","Ich war gestern krank.","Ich habe seit drei Tagen Kopfschmerzen."],              answer:"Ich habe seit drei Tagen Kopfschmerzen." },
+    { type:"mcq", prompt:"Sie möchten Ihre Meinung höflich äußern. Welcher Ausdruck passt?",                          options:["Das ist falsch.","Das stimmt überhaupt nicht.","Das interessiert mich nicht.","Ich bin der Meinung, dass..."],            answer:"Ich bin der Meinung, dass..." },
+    { type:"mcq", prompt:"Jemand hat einen Fehler gemacht und entschuldigt sich. Was antworten Sie?",                 options:["Das war sehr schlecht.","Das ist nicht in Ordnung.","Warum haben Sie das gemacht?","Kein Problem, das kann passieren."], answer:"Kein Problem, das kann passieren." },
+    { type:"mcq", prompt:"Sie haben eine Frage, aber der Redner spricht zu schnell. Was tun Sie?",                    options:["Sie verlassen den Raum.","Sie hören nicht mehr zu.","Sie schreiben nichts auf.","Sie bitten ihn, langsamer zu sprechen."], answer:"Sie bitten ihn, langsamer zu sprechen." },
+    { type:"mcq", prompt:"Ihr Kollege erklärt einen Plan. Sie sind unsicher, ob Sie alles verstanden haben. Was sagen Sie?", options:["Das weiß ich schon.","Ja, natürlich.","Das ist mir egal.","Entschuldigung, könnten Sie das kurz zusammenfassen?"], answer:"Entschuldigung, könnten Sie das kurz zusammenfassen?" },
   ],
+
   "B2": [
-    {
-      "type": "mcq",
-      "prompt": "Which phrase best captures the nuance of \"to keep in mind\" in a formal context?",
-      "options": [
-        "trotz",
-        "dennoch",
-        "letztendlich",
-        "berücksichtigen"
-      ],
-      "answer": "berücksichtigen"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "Express a polite request: 'Könnten Sie mir bitte ___?'",
-      "blank": "___",
-      "options": [
-        "helfe",
-        "geholfen",
-        "helfen",
-        "hilft"
-      ],
-      "answer": "helfen"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "from time to time",
-      "options": [
-        "wie auch immer",
-        "es gibt keine andere Wahl",
-        "ab und zu",
-        "übrigens"
-      ],
-      "answer": "ab und zu"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "auf dem Laufenden sein",
-      "options": [
-        "to be up to date",
-        "to leave much to be desired",
-        "bus",
-        "train"
-      ],
-      "answer": "to be up to date",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "mcq",
-      "prompt": "In a business email, which phrase means \"metro\"?",
-      "options": [
-        "Boot",
-        "U-Bahn",
-        "Flugzeug",
-        "Taxi"
-      ],
-      "answer": "U-Bahn"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "bicycle",
-      "answer": "Fahrrad"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "The meeting was cancelled. Complete: 'Das Treffen ___ abgesagt.'",
-      "blank": "___",
-      "options": [
-        "war",
-        "hat",
-        "wurde",
-        "ist"
-      ],
-      "answer": "wurde"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "Auto",
-      "options": [
-        "ticket",
-        "stop",
-        "car",
-        "head"
-      ],
-      "answer": "car"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which word is closest in meaning to \"der Schmerz\"?",
-      "options": [
-        "das Krankenhaus",
-        "der Arzt",
-        "die Apotheke",
-        "das Fieber"
-      ],
-      "answer": "das Fieber",
-      "hint": "Think about synonyms"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "das Rezept",
-      "options": [
-        "prescription",
-        "I need help",
-        "medicine",
-        "I'm sick"
-      ],
-      "answer": "prescription",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"berücksichtigen\" means \"to keep in mind\" in English.",
-      "german": "berücksichtigen",
-      "english_shown": "to keep in mind",
-      "answer": "True"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"trotz\" means \"nevertheless\" in English.",
-      "german": "trotz",
-      "english_shown": "nevertheless",
-      "answer": "False"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "after all",
-      "answer": "letztendlich"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "The man who lives next door: 'Der Mann, ___ nebenan wohnt.'",
-      "blank": "___",
-      "options": [
-        "den",
-        "der",
-        "dem",
-        "das"
-      ],
-      "answer": "der"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which phrase correctly translates \"from time to time\"?",
-      "options": [
-        "übrigens",
-        "wie auch immer",
-        "es gibt keine andere Wahl",
-        "ab und zu"
-      ],
-      "answer": "ab und zu"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "to be up to date",
-      "options": [
-        "zu wünschen übrig lassen",
-        "rechts",
-        "auf dem Laufenden sein",
-        "Wo ist...?"
-      ],
-      "answer": "auf dem Laufenden sein"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "links",
-      "options": [
-        "the street",
-        "the square",
-        "to the left",
-        "straight ahead"
-      ],
-      "answer": "to the left",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "The end of the story: 'Das Ende ___ Geschichte.'",
-      "blank": "___",
-      "options": [
-        "den",
-        "der",
-        "dem",
-        "die"
-      ],
-      "answer": "der"
-    },
-    {
-      "type": "mcq",
-      "prompt": "What does \"in der Nähe von\" mean in this context?",
-      "options": [
-        "it's here",
-        "near",
-        "far from",
-        "turn at"
-      ],
-      "answer": "near"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "train",
-      "answer": "Zug"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "Bus",
-      "options": [
-        "taxi",
-        "airplane",
-        "metro",
-        "bus"
-      ],
-      "answer": "bus"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which is the correct adjective ending? 'Das ___ Buch liegt auf dem Tisch.'",
-      "options": [
-        "altes",
-        "alter",
-        "alten",
-        "alte"
-      ],
-      "answer": "alte"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "Although it was raining, we went outside: '___ es regnete, gingen wir hinaus.'",
-      "blank": "___",
-      "options": [
-        "Weil",
-        "Wenn",
-        "Damit",
-        "Obwohl"
-      ],
-      "answer": "Obwohl"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "Boot",
-      "options": [
-        "boat",
-        "car",
-        "bicycle",
-        "ticket"
-      ],
-      "answer": "boat",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "stop",
-      "options": [
-        "trotz",
-        "Haltestelle",
-        "dennoch",
-        "berücksichtigen"
-      ],
-      "answer": "Haltestelle"
-    }
+    // ── Section 1: Vocabulary in Context ──────────────────────────────────────
+    { type:"translate-en", german:"die Verhandlung",    options:["announcement","presentation","complaint","negotiation"],           answer:"negotiation" },
+    { type:"translate-en", german:"beeinflussen",       options:["to ignore","to encourage","to prevent","to influence"],            answer:"to influence" },
+    { type:"translate-en", german:"nachhaltig",         options:["modern","temporary","expensive","sustainable"],                    answer:"sustainable" },
+    { type:"translate-en", german:"scheitern",          options:["to succeed","to delay","to compete","to fail"],                    answer:"to fail" },
+    { type:"translate-en", german:"die Fachkenntnis",   options:["work experience","job title","professional qualification","expert knowledge"], answer:"expert knowledge" },
+    { type:"translate-en", german:"das Gleichgewicht",  options:["atmosphere","imbalance","distribution","balance"],                 answer:"balance" },
+
+    // ── Section 2: Grammar in Context ─────────────────────────────────────────
+    { type:"fill", sentence:"___ er krank war, kam er trotzdem zur Arbeit.",                     options:["Weil","Damit","Falls","Obwohl"],             answer:"Obwohl" },
+    { type:"fill", sentence:"Das Ergebnis hängt davon ___, wie viel Zeit wir investieren.",      options:["ein","an","auf","ab"],                       answer:"ab" },
+    { type:"fill", sentence:"Je mehr er lernte, ___ sicherer wurde er.",                         options:["umso","so","wie","desto"],                   answer:"desto" },
+    { type:"fill", sentence:"Die neue Regelung ___ ab Januar in Kraft.",                         options:["träte","treten","trete","tritt"],            answer:"tritt" },
+    { type:"fill", sentence:"Das Projekt wäre ohne ausreichende Finanzierung nicht ___.",        options:["realisiert","realisierend","realisiere","realisierbar"], answer:"realisierbar" },
+    { type:"fill", sentence:"Er hatte versprochen, pünktlich zu sein, ___ er zu spät kam.",     options:["weil","damit","obwohl","aber"],              answer:"aber" },
+
+    // ── Section 3: Listening ──────────────────────────────────────────────────
+    { type:"listen", audio:"Die Maßnahmen wurden trotz Kritik durchgesetzt.",         options:["The measures were withdrawn due to criticism.","The measures were discussed but not approved.","The measures were delayed because of criticism.","The measures were pushed through despite criticism."],                  answer:"The measures were pushed through despite criticism." },
+    { type:"listen", audio:"Es besteht kein Anlass zur Besorgnis.",                   options:["There are reasons to be concerned.","The situation is unclear.","We are monitoring the situation.","There is no cause for concern."],                                                                                    answer:"There is no cause for concern." },
+    { type:"listen", audio:"Der Antrag wurde abgelehnt.",                             options:["The application was approved.","The application is pending.","The application was withdrawn.","The application was rejected."],                                                                                          answer:"The application was rejected." },
+    { type:"listen", audio:"Wir müssen einen Kompromiss finden.",                     options:["We must stand firm.","We should postpone the decision.","We have reached an agreement.","We need to find a compromise."],                                                                                              answer:"We need to find a compromise." },
+    { type:"listen", audio:"Die Konferenz wurde auf unbestimmte Zeit verschoben.",    options:["The conference was cancelled.","The conference was moved to a smaller venue.","The conference is taking place as planned.","The conference was postponed indefinitely."],                                               answer:"The conference was postponed indefinitely." },
+    { type:"listen", audio:"Er hat sein Versprechen nicht gehalten.",                 options:["He kept his promise.","He made a new promise.","He asked to be released from his promise.","He did not keep his promise."],                                                                                             answer:"He did not keep his promise." },
+
+    // ── Section 4: Speaking → Translate ───────────────────────────────────────
+    { type:"translate", english:"The project was completed on time despite the difficulties.",  options:["Das Projekt wurde wegen der Schwierigkeiten nicht abgeschlossen.","Das Projekt ist pünktlich, aber es gab Probleme.","Das Projekt konnte trotz allem nicht fertiggestellt werden.","Das Projekt wurde trotz der Schwierigkeiten pünktlich abgeschlossen."], answer:"Das Projekt wurde trotz der Schwierigkeiten pünktlich abgeschlossen." },
+    { type:"translate", english:"I would appreciate your feedback.",                            options:["Ich brauche Ihre Kritik.","Könnten Sie bitte weniger Feedback geben?","Ihr Feedback ist nicht notwendig.","Ich würde mich über Ihr Feedback freuen."],                                                          answer:"Ich würde mich über Ihr Feedback freuen." },
+    { type:"translate", english:"The results are not yet available.",                           options:["Die Ergebnisse sind enttäuschend.","Die Ergebnisse wurden noch nicht besprochen.","Die Ergebnisse sind bereits bekannt.","Die Ergebnisse liegen noch nicht vor."],                                            answer:"Die Ergebnisse liegen noch nicht vor." },
+    { type:"translate", english:"We need to reconsider our strategy.",                          options:["Wir haben keine Strategie mehr.","Unsere Strategie funktioniert gut.","Wir sollten an unserer Strategie festhalten.","Wir müssen unsere Strategie überdenken."],                                              answer:"Wir müssen unsere Strategie überdenken." },
+    { type:"translate", english:"Could you elaborate on that point?",                          options:["Warum sagen Sie das?","Können Sie das wiederholen?","Sind Sie damit einverstanden?","Könnten Sie diesen Punkt näher erläutern?"],                                                                              answer:"Könnten Sie diesen Punkt näher erläutern?" },
+    { type:"translate", english:"It is essential that we meet the deadline.",                   options:["Die Frist ist nicht so wichtig.","Es wäre gut, die Frist zu halten.","Wir sollten die Frist verlängern.","Es ist unbedingt erforderlich, dass wir die Frist einhalten."],                                    answer:"Es ist unbedingt erforderlich, dass wir die Frist einhalten." },
+
+    // ── Section 5: Scenario Tasks ─────────────────────────────────────────────
+    { type:"mcq", prompt:"Bei einer Besprechung werden Sie gebeten, Ihren Standpunkt zu erläutern. Wie beginnen Sie?",  options:["Das weiß ich nicht.","Das ist nicht meine Aufgabe.","Das ist eine schwierige Frage.","Ich möchte kurz erklären, warum ich der Meinung bin, dass..."],              answer:"Ich möchte kurz erklären, warum ich der Meinung bin, dass..." },
+    { type:"mcq", prompt:"In einer Diskussion stimmen Sie nicht zu. Wie widersprechen Sie höflich?",                     options:["Das ist völlig falsch.","Sie verstehen das nicht.","Das interessiert mich nicht.","Ich sehe das etwas anders."],                                                       answer:"Ich sehe das etwas anders." },
+    { type:"mcq", prompt:"Sie erhalten eine Absage auf Ihre Bewerbung. Was ist eine angemessene Reaktion?",              options:["Gar nicht reagieren.","Eine Beschwerde einreichen.","Sofort eine neue Bewerbung schicken.","Höflich antworten und nach Feedback fragen."],                           answer:"Höflich antworten und nach Feedback fragen." },
+    { type:"mcq", prompt:"Ihr Gesprächspartner benutzt einen Fachausdruck, den Sie nicht kennen. Was tun Sie?",          options:["So tun, als ob Sie ihn kennen.","Das Gespräch abbrechen.","Den Begriff googeln, ohne etwas zu sagen.","Könnten Sie diesen Begriff kurz erklären?"],               answer:"Könnten Sie diesen Begriff kurz erklären?" },
+    { type:"mcq", prompt:"Sie sollen eine formelle E-Mail an einen Kunden beginnen. Welche Anrede ist korrekt?",         options:["Hey,","Hallo zusammen,","Hi,","Sehr geehrte Damen und Herren,"],                                                                                                    answer:"Sehr geehrte Damen und Herren," },
+    { type:"mcq", prompt:"Sie sollen einen langen Bericht zusammenfassen. Was ist am wichtigsten?",                     options:["Alle Details wiederholen.","Den Bericht möglichst lang machen.","Nur die Einleitung verwenden.","Die Hauptpunkte klar und knapp zusammenfassen."],                  answer:"Die Hauptpunkte klar und knapp zusammenfassen." },
   ],
+
   "C1": [
-    {
-      "type": "mcq",
-      "prompt": "Choose the most precise German equivalent for \"job/work\" in academic writing:",
-      "options": [
-        "die Besprechung",
-        "die Arbeit",
-        "der Kollege",
-        "das Büro"
-      ],
-      "answer": "die Arbeit"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "Reported speech: He said he was coming. 'Er sagte, er ___ kommen.'",
-      "blank": "___",
-      "options": [
-        "komme",
-        "kommen",
-        "käme",
-        "wird"
-      ],
-      "answer": "komme"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "boss",
-      "options": [
-        "der Chef",
-        "die Frist",
-        "das Gehalt",
-        "das Projekt"
-      ],
-      "answer": "der Chef"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "der Vertrag",
-      "options": [
-        "to keep in mind",
-        "in spite of",
-        "contract",
-        "company"
-      ],
-      "answer": "contract",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "mcq",
-      "prompt": "In formal academic writing, which phrase replaces \"dennoch\"?",
-      "options": [
-        "übrigens",
-        "wie auch immer",
-        "letztendlich",
-        "ab und zu"
-      ],
-      "answer": "letztendlich"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "there's no other choice",
-      "answer": "es gibt keine andere Wahl"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "The recently published article: 'Der kürzlich ___ Artikel'",
-      "blank": "___",
-      "options": [
-        "veröffentlicht",
-        "veröffentlichend",
-        "veröffentlichte",
-        "veröffentlichen"
-      ],
-      "answer": "veröffentlichte"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "auf dem Laufenden sein",
-      "options": [
-        "to leave much to be desired",
-        "to be up to date",
-        "head",
-        "pain/ache"
-      ],
-      "answer": "to be up to date"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which best captures the connotation of \"das Fieber\"?",
-      "options": [
-        "doctor",
-        "hospital",
-        "pharmacy",
-        "fever"
-      ],
-      "answer": "fever"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "das Rezept",
-      "options": [
-        "I need help",
-        "I'm sick",
-        "prescription",
-        "medicine"
-      ],
-      "answer": "prescription",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"meiner Meinung nach\" means \"in my opinion\" in English.",
-      "german": "meiner Meinung nach",
-      "english_shown": "in my opinion",
-      "answer": "True"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"ich denke, dass\" means \"I agree\" in English.",
-      "german": "ich denke, dass",
-      "english_shown": "I agree",
-      "answer": "False"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "I disagree",
-      "answer": "ich stimme nicht zu"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "If I were you, I would study more. 'Wenn ich du ___, würde ich mehr lernen.'",
-      "blank": "___",
-      "options": [
-        "sei",
-        "wäre",
-        "war",
-        "bin"
-      ],
-      "answer": "wäre"
-    },
-    {
-      "type": "mcq",
-      "prompt": "What is the precise meaning of \"es kommt darauf an\"?",
-      "options": [
-        "however",
-        "it depends",
-        "on the other hand",
-        "on one hand"
-      ],
-      "answer": "it depends"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "furthermore",
-      "options": [
-        "trotz",
-        "berücksichtigen",
-        "abschließend",
-        "außerdem"
-      ],
-      "answer": "außerdem"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "dennoch",
-      "options": [
-        "whatever",
-        "after all",
-        "nevertheless",
-        "from time to time"
-      ],
-      "answer": "nevertheless",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "Soften the request: 'Kannst du ___ kurz helfen?'",
-      "blank": "___",
-      "options": [
-        "mal",
-        "doch",
-        "halt",
-        "nur"
-      ],
-      "answer": "mal"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which option best translates \"by the way\"?",
-      "options": [
-        "übrigens",
-        "zu wünschen übrig lassen",
-        "auf dem Laufenden sein",
-        "es gibt keine andere Wahl"
-      ],
-      "answer": "übrigens"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "please",
-      "answer": "bitte"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "danke",
-      "options": [
-        "you're welcome",
-        "thank you",
-        "many thanks",
-        "excuse me"
-      ],
-      "answer": "thank you"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which is the correct noun derived from 'entscheiden'?",
-      "options": [
-        "der Entscheider",
-        "die Entschiedenheit",
-        "das Entscheiden",
-        "die Entscheidung"
-      ],
-      "answer": "die Entscheidung"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "She thought about her future. 'Sie dachte ___ ihre Zukunft.'",
-      "blank": "___",
-      "options": [
-        "für",
-        "mit",
-        "über",
-        "an"
-      ],
-      "answer": "an"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "es tut mir leid",
-      "options": [
-        "with pleasure",
-        "pardon",
-        "sorry",
-        "no problem"
-      ],
-      "answer": "sorry",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "sir / ma'am",
-      "options": [
-        "das Büro",
-        "die Arbeit",
-        "die Besprechung",
-        "Herr / Frau"
-      ],
-      "answer": "Herr / Frau"
-    }
+    // ── Section 1: Vocabulary in Context ──────────────────────────────────────
+    { type:"translate-en", german:"die Schlussfolgerung",  options:["introduction","assumption","recommendation","conclusion"],      answer:"conclusion" },
+    { type:"translate-en", german:"unentbehrlich",         options:["unusual","unreliable","controversial","indispensable"],         answer:"indispensable" },
+    { type:"translate-en", german:"der Einwand",           options:["proposal","agreement","evidence","objection"],                 answer:"objection" },
+    { type:"translate-en", german:"verhältnismäßig",       options:["disproportionate","excessive","absolute","proportionate"],     answer:"proportionate" },
+    { type:"translate-en", german:"einleuchten",           options:["to illuminate","to confuse","to complicate","to make sense"],  answer:"to make sense" },
+    { type:"translate-en", german:"die Beeinträchtigung",  options:["enhancement","influence","continuation","impairment"],        answer:"impairment" },
+
+    // ── Section 2: Grammar in Context ─────────────────────────────────────────
+    { type:"fill", sentence:"Er bestand darauf, dass der Vertrag ___ werde.",                      options:["überprüfend","überprüften","überprüfen","überprüft"],    answer:"überprüft" },
+    { type:"fill", sentence:"Das Gesetz trat ___ der Einwände der Opposition in Kraft.",           options:["trotzdem","obwohl","dennoch","ungeachtet"],              answer:"ungeachtet" },
+    { type:"fill", sentence:"___ man auch noch so viel lernt, es gibt immer Neues zu entdecken.", options:["Darf","Soll","Muss","Mag"],                              answer:"Mag" },
+    { type:"fill", sentence:"Je komplexer das Problem, ___ mehr Zeit wird benötigt.",              options:["je","so","umso","desto"],                                answer:"desto" },
+    { type:"fill", sentence:"Es wird erwartet, dass das neue Modell bis Ende des Jahres ___ wird.",options:["vorstellend","vorstellt","vorstellen","vorgestellt"],   answer:"vorgestellt" },
+    { type:"fill", sentence:"Der Zeuge schilderte die Ereignisse, ___ er sie erlebt hatte.",       options:["ob","weil","als","wie"],                                answer:"wie" },
+
+    // ── Section 3: Listening ──────────────────────────────────────────────────
+    { type:"listen", audio:"Das lässt sich so nicht verallgemeinern.",            options:["That can be easily generalised.","That is impossible to understand.","That has been thoroughly researched.","That cannot be generalised in that way."],                     answer:"That cannot be generalised in that way." },
+    { type:"listen", audio:"Er ließ sich nicht von seiner Entscheidung abbringen.",options:["He changed his mind at the last moment.","He made a poor decision under pressure.","He regretted his decision afterwards.","He was not dissuaded from his decision."],    answer:"He was not dissuaded from his decision." },
+    { type:"listen", audio:"Es wäre voreilig, jetzt schon Schlüsse zu ziehen.",   options:["It is necessary to draw conclusions immediately.","The conclusions are already clear.","The conclusions are disappointing.","It would be premature to draw conclusions now."], answer:"It would be premature to draw conclusions now." },
+    { type:"listen", audio:"Das steht außer Frage.",                              options:["That is highly questionable.","That is open to debate.","That has not been answered yet.","That is beyond question."],                                                       answer:"That is beyond question." },
+    { type:"listen", audio:"Er hat die Situation völlig falsch eingeschätzt.",    options:["He assessed the situation correctly.","He refused to comment on the situation.","He was completely unaware of the situation.","He completely misjudged the situation."],     answer:"He completely misjudged the situation." },
+    { type:"listen", audio:"Die Verhandlungen stehen kurz vor dem Abschluss.",   options:["The negotiations have broken down.","The negotiations are just beginning.","The negotiations will take several more months.","The negotiations are close to completion."],   answer:"The negotiations are close to completion." },
+
+    // ── Section 4: Speaking → Translate ───────────────────────────────────────
+    { type:"translate", english:"The proposal was met with considerable scepticism.",        options:["Der Vorschlag stieß auf große Zustimmung.","Der Vorschlag wurde zurückgezogen.","Der Vorschlag war überraschend erfolgreich.","Der Vorschlag stieß auf erhebliche Skepsis."],           answer:"Der Vorschlag stieß auf erhebliche Skepsis." },
+    { type:"translate", english:"It goes without saying that punctuality is expected.",      options:["Pünktlichkeit ist manchmal wichtig.","Pünktlichkeit ist eine Tugend.","Es ist unklar, ob Pünktlichkeit erwartet wird.","Es versteht sich von selbst, dass Pünktlichkeit erwartet wird."], answer:"Es versteht sich von selbst, dass Pünktlichkeit erwartet wird." },
+    { type:"translate", english:"The findings give cause for concern.",                      options:["Die Ergebnisse sind überraschend positiv.","Die Ergebnisse wurden noch nicht ausgewertet.","Die Ergebnisse entsprechen den Erwartungen.","Die Ergebnisse geben Anlass zur Besorgnis."],   answer:"Die Ergebnisse geben Anlass zur Besorgnis." },
+    { type:"translate", english:"She made a compelling argument.",                           options:["Sie hat ein langes Argument vorgebracht.","Sie hat ihr Argument zurückgezogen.","Sie hat das Argument nicht verstanden.","Sie hat ein überzeugendes Argument vorgebracht."],               answer:"Sie hat ein überzeugendes Argument vorgebracht." },
+    { type:"translate", english:"The amendment was adopted unanimously.",                    options:["Die Änderung wurde mehrheitlich abgelehnt.","Die Änderung wurde diskutiert aber nicht beschlossen.","Die Änderung wurde vertagt.","Die Änderung wurde einstimmig angenommen."],         answer:"Die Änderung wurde einstimmig angenommen." },
+    { type:"translate", english:"He tends to overlook the bigger picture.",                  options:["Er sieht das große Ganze sehr gut.","Er konzentriert sich nur auf das Wesentliche.","Er verliert selten den Überblick.","Er neigt dazu, das große Ganze zu übersehen."],                answer:"Er neigt dazu, das große Ganze zu übersehen." },
+
+    // ── Section 5: Scenario Tasks ─────────────────────────────────────────────
+    { type:"mcq", prompt:"In einem akademischen Vortrag möchten Sie ein Gegenargument einleiten. Was sagen Sie?",                options:["Das stimmt überhaupt nicht.","Das ist eine schlechte Idee.","Ich bin anderer Meinung.","Man könnte jedoch einwenden, dass..."],                                    answer:"Man könnte jedoch einwenden, dass..." },
+    { type:"mcq", prompt:"Sie leiten eine Diskussion und möchten zum nächsten Punkt übergehen. Was sagen Sie?",                   options:["Ich habe genug gehört.","Das reicht für heute.","Jetzt spreche ich.","Kommen wir nun zum nächsten Punkt."],                                                   answer:"Kommen wir nun zum nächsten Punkt." },
+    { type:"mcq", prompt:"Sie stimmen einer These weitgehend zu, sehen aber Einschränkungen. Was sagen Sie?",                     options:["Das ist falsch.","Ich stimme zu.","Das ist eine interessante Frage.","Im Großen und Ganzen stimme ich zu, allerdings..."],                                    answer:"Im Großen und Ganzen stimme ich zu, allerdings..." },
+    { type:"mcq", prompt:"Ein Kollege behauptet etwas faktisch Falsches in einer Präsentation. Wie reagieren Sie höflich?",        options:["Das ist völlig falsch.","Sie sollten das besser recherchieren.","Das stimmt nicht, das weiß jeder.","Ich glaube, da liegt möglicherweise ein Missverständnis vor."], answer:"Ich glaube, da liegt möglicherweise ein Missverständnis vor." },
+    { type:"mcq", prompt:"Sie müssen einen komplexen Sachverhalt schriftlich erklären. Was ist besonders wichtig?",               options:["Möglichst viel Text schreiben.","Technische Fachbegriffe häufen.","Den Text möglichst kurz halten, egal wie unklar.","Klare Struktur und präzise Formulierungen."], answer:"Klare Struktur und präzise Formulierungen." },
+    { type:"mcq", prompt:"Sie sollen einen längeren Text auf seine Hauptaussage hin zusammenfassen. Welche Strategie verwenden Sie?", options:["Den gesamten Text wörtlich abschreiben.","Nur die erste und letzte Seite lesen.","Den Text nach Adjektiven durchsuchen.","Den Text überfliegen und dann die Hauptpunkte herausarbeiten."], answer:"Den Text überfliegen und dann die Hauptpunkte herausarbeiten." },
   ],
+
   "C2": [
-    {
-      "type": "mcq",
-      "prompt": "Which phrasing is most idiomatic and natural for \"to keep in mind\" in native German?",
-      "options": [
-        "letztendlich",
-        "trotz",
-        "berücksichtigen",
-        "dennoch"
-      ],
-      "answer": "berücksichtigen"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "I would have liked to help. 'Ich hätte helfen ___.'",
-      "blank": "___",
-      "options": [
-        "gewollt",
-        "wollen",
-        "will",
-        "wollte"
-      ],
-      "answer": "wollen"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "from time to time",
-      "options": [
-        "wie auch immer",
-        "ab und zu",
-        "es gibt keine andere Wahl",
-        "übrigens"
-      ],
-      "answer": "ab und zu"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "auf dem Laufenden sein",
-      "options": [
-        "job/work",
-        "to be up to date",
-        "office",
-        "to leave much to be desired"
-      ],
-      "answer": "to be up to date",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which phrase carries a slightly ironic tone when meaning \"meeting\"?",
-      "options": [
-        "der Kollege",
-        "das Gehalt",
-        "der Chef",
-        "die Besprechung"
-      ],
-      "answer": "die Besprechung"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "project",
-      "answer": "das Projekt"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "The door is (already) closed [state]. 'Die Tür ___ geschlossen.'",
-      "blank": "___",
-      "options": [
-        "wurde",
-        "ist",
-        "wird",
-        "war"
-      ],
-      "answer": "ist"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "die Frist",
-      "options": [
-        "in my opinion",
-        "contract",
-        "deadline",
-        "company"
-      ],
-      "answer": "deadline"
-    },
-    {
-      "type": "mcq",
-      "prompt": "The word 'das Gift' in German means:",
-      "options": [
-        "talent",
-        "poison",
-        "a gift",
-        "donation"
-      ],
-      "answer": "poison"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "andererseits",
-      "options": [
-        "in conclusion",
-        "however",
-        "furthermore",
-        "on the other hand"
-      ],
-      "answer": "on the other hand",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"berücksichtigen\" means \"to keep in mind\" in English.",
-      "german": "berücksichtigen",
-      "english_shown": "to keep in mind",
-      "answer": "True"
-    },
-    {
-      "type": "truefalse",
-      "prompt": "True or False: \"bekommen\" means \"to become\" in German.",
-      "answer": "False",
-      "explanation": "'bekommen' means 'to receive/get'. 'Werden' means 'to become'."
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "after all",
-      "answer": "letztendlich"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "She has never been to Berlin. 'Sie ___ noch nie in Berlin ___.'",
-      "blank": "___",
-      "options": [
-        "hat / gehabt",
-        "war / gewesen",
-        "ist / gewesen",
-        "wird / sein"
-      ],
-      "answer": "ist / gewesen"
-    },
-    {
-      "type": "mcq",
-      "prompt": "In literary prose, which is preferred over \"ab und zu\"?",
-      "options": [
-        "auf dem Laufenden sein",
-        "übrigens",
-        "wie auch immer",
-        "es gibt keine andere Wahl"
-      ],
-      "answer": "wie auch immer"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "to be up to date",
-      "options": [
-        "auf dem Laufenden sein",
-        "danke",
-        "bitte",
-        "zu wünschen übrig lassen"
-      ],
-      "answer": "auf dem Laufenden sein"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "vielen Dank",
-      "options": [
-        "you're welcome",
-        "many thanks",
-        "excuse me",
-        "sorry"
-      ],
-      "answer": "many thanks",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "'Das ist ___ interessant!' — You're emphasizing genuine surprise.",
-      "blank": "___",
-      "options": [
-        "doch",
-        "mal",
-        "schon",
-        "ja"
-      ],
-      "answer": "ja"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which captures \"pardon\" most precisely in formal German?",
-      "options": [
-        "mit Vergnügen",
-        "Herr / Frau",
-        "kein Problem",
-        "Verzeihung"
-      ],
-      "answer": "Verzeihung"
-    },
-    {
-      "type": "speak",
-      "prompt": "Say the following in German. Tap the microphone when ready.",
-      "english": "in my opinion",
-      "answer": "meiner Meinung nach"
-    },
-    {
-      "type": "translate-en",
-      "prompt": "What does this German word or phrase mean in English?",
-      "german": "ich denke, dass",
-      "options": [
-        "I agree",
-        "I disagree",
-        "I think that",
-        "it depends"
-      ],
-      "answer": "I think that"
-    },
-    {
-      "type": "mcq",
-      "prompt": "Which German word means 'sensible / reasonable' (NOT 'sensitive')?",
-      "options": [
-        "gefühlvoll",
-        "vernünftig",
-        "sensibel",
-        "empfindlich"
-      ],
-      "answer": "vernünftig"
-    },
-    {
-      "type": "fill",
-      "prompt": "Fill in the blank with the correct German word or phrase.",
-      "sentence": "Choose the correct article: '___ Entscheidung war schwierig.'",
-      "blank": "___",
-      "options": [
-        "Der",
-        "Den",
-        "Die",
-        "Das"
-      ],
-      "answer": "Die"
-    },
-    {
-      "type": "listen",
-      "prompt": "Listen to the German word or phrase and choose what you heard.",
-      "audio": "einerseits",
-      "options": [
-        "furthermore",
-        "however",
-        "on the other hand",
-        "on one hand"
-      ],
-      "answer": "on one hand",
-      "note": "[Audio plays automatically]"
-    },
-    {
-      "type": "translate",
-      "prompt": "Translate to German. Choose the correct option.",
-      "english": "in conclusion",
-      "options": [
-        "dennoch",
-        "trotz",
-        "abschließend",
-        "berücksichtigen"
-      ],
-      "answer": "abschließend"
-    }
-  ]
+    // ── Section 1: Vocabulary in Context ──────────────────────────────────────
+    { type:"translate-en", german:"die Ambiguität",     options:["clarity","precision","complexity","ambiguity"],             answer:"ambiguity" },
+    { type:"translate-en", german:"erschöpfend",        options:["tiring","incomplete","preliminary","exhaustive"],           answer:"exhaustive" },
+    { type:"translate-en", german:"hinfällig",          options:["essential","urgent","relevant","moot"],                     answer:"moot" },
+    { type:"translate-en", german:"die Abgrenzung",     options:["combination","overlap","connection","delimitation"],        answer:"delimitation" },
+    { type:"translate-en", german:"wohingegen",         options:["therefore","nevertheless","provided that","whereas"],       answer:"whereas" },
+    { type:"translate-en", german:"der Vorbehalt",      options:["assumption","exception","requirement","reservation"],       answer:"reservation" },
+
+    // ── Section 2: Grammar in Context ─────────────────────────────────────────
+    { type:"fill", sentence:"Wäre er früher gegangen, ___ er den Zug nicht verpasst.",                       options:["würde","wäre","hatte","hätte"],                                      answer:"hätte" },
+    { type:"fill", sentence:"Die Studie, ___ Ergebnisse aufsehen erregend sind, wird nächste Woche veröffentlicht.", options:["die","das","derer","deren"],                                answer:"deren" },
+    { type:"fill", sentence:"Nicht ___ verstand er die Frage, sondern er konnte sie auch beantworten.",      options:["auch","einmal","mal","nur"],                                         answer:"nur" },
+    { type:"fill", sentence:"Der Beschluss gilt, ___ man ihn gutheißt oder nicht.",                          options:["wenn","falls","obwohl","ob"],                                       answer:"ob" },
+    { type:"fill", sentence:"Er sprach so überzeugend, ___ alle schließlich zustimmten.",                    options:["obwohl","damit","sodass","dass"],                                    answer:"dass" },
+    { type:"fill", sentence:"Die Regelung gilt ___ für alle Verträge, die nach dem 1. Januar geschlossen wurden.", options:["vorrangig","allgemein","gleichermaßen","ausschließlich"],     answer:"ausschließlich" },
+
+    // ── Section 3: Listening ──────────────────────────────────────────────────
+    { type:"listen", audio:"Das Argument entbehrt jeder Grundlage.",                             options:["The argument is well-founded.","The argument needs further evidence.","The argument is partially correct.","The argument has no basis whatsoever."],                          answer:"The argument has no basis whatsoever." },
+    { type:"listen", audio:"Sie ließ keinen Zweifel an ihrer Haltung.",                          options:["She was uncertain about her position.","She changed her position under pressure.","She expressed doubts about her stance.","She left no doubt about her position."],          answer:"She left no doubt about her position." },
+    { type:"listen", audio:"Das Vorhaben scheiterte an mangelndem politischen Willen.",          options:["The project succeeded thanks to political support.","The project was cancelled for financial reasons.","The project was delayed by political disagreement.","The project failed due to lack of political will."], answer:"The project failed due to lack of political will." },
+    { type:"listen", audio:"Man darf die Tragweite dieser Entscheidung nicht unterschätzen.",   options:["One should not overestimate the impact of this decision.","This decision has no significant consequences.","This decision is unlikely to have any impact.","One must not underestimate the significance of this decision."], answer:"One must not underestimate the significance of this decision." },
+    { type:"listen", audio:"Die Studie kommt zu dem Schluss, dass weitere Forschung notwendig ist.", options:["The study concludes that no further research is needed.","The study was unable to reach any conclusions.","The study's conclusions have been challenged.","The study concludes that further research is necessary."], answer:"The study concludes that further research is necessary." },
+    { type:"listen", audio:"Er vermied es geschickt, eine direkte Antwort zu geben.",            options:["He gave a very direct and honest answer.","He was unable to answer the question.","He answered the question after some hesitation.","He cleverly avoided giving a direct answer."],  answer:"He cleverly avoided giving a direct answer." },
+
+    // ── Section 4: Speaking → Translate ───────────────────────────────────────
+    { type:"translate", english:"The implications of this decision remain to be seen.",          options:["Die Entscheidung hatte keine Folgen.","Die Folgen dieser Entscheidung wurden bereits analysiert.","Die Entscheidung wurde noch nicht getroffen.","Die Auswirkungen dieser Entscheidung bleiben abzuwarten."],   answer:"Die Auswirkungen dieser Entscheidung bleiben abzuwarten." },
+    { type:"translate", english:"Her argument was both nuanced and persuasive.",                 options:["Ihr Argument war lang und detailliert.","Ihr Argument war schwer verständlich.","Ihr Argument überzeugte niemanden.","Ihr Argument war sowohl differenziert als auch überzeugend."],                          answer:"Ihr Argument war sowohl differenziert als auch überzeugend." },
+    { type:"translate", english:"The data corroborates the initial hypothesis.",                 options:["Die Daten widerlegen die ursprüngliche Hypothese.","Die Daten stehen in keinem Zusammenhang zur Hypothese.","Die Daten machen die Hypothese unnötig.","Die Daten bestätigen die ursprüngliche Hypothese."],    answer:"Die Daten bestätigen die ursprüngliche Hypothese." },
+    { type:"translate", english:"It would be misleading to draw such a conclusion.",             options:["Diese Schlussfolgerung ist naheliegend.","Es ist wichtig, diese Schlussfolgerung zu ziehen.","Diese Schlussfolgerung ist schwer zu vermeiden.","Es wäre irreführend, eine solche Schlussfolgerung zu ziehen."],  answer:"Es wäre irreführend, eine solche Schlussfolgerung zu ziehen." },
+    { type:"translate", english:"Despite extensive research, the cause remains unknown.",        options:["Nach umfangreicher Forschung wurde die Ursache gefunden.","Die Forschung zu diesem Thema steht noch am Anfang.","Die Ursache ist bekannt, aber umstritten.","Trotz umfangreicher Forschung ist die Ursache nach wie vor unbekannt."], answer:"Trotz umfangreicher Forschung ist die Ursache nach wie vor unbekannt." },
+    { type:"translate", english:"The committee reached a unanimous verdict.",                    options:["Das Komitee konnte sich nicht einigen.","Das Komitee vertagte die Entscheidung.","Das Komitee stimmte mehrheitlich dafür.","Das Komitee kam zu einem einstimmigen Urteil."],                                   answer:"Das Komitee kam zu einem einstimmigen Urteil." },
+
+    // ── Section 5: Scenario Tasks ─────────────────────────────────────────────
+    { type:"mcq", prompt:"Sie sollen ein wissenschaftliches Gutachten kritisch bewerten. Worauf achten Sie zuerst?",           options:["Den Namen des Autors","Die Länge des Textes","Das Layout und die Formatierung","Methodik, Quellen und Schlussfolgerungen"],                                              answer:"Methodik, Quellen und Schlussfolgerungen" },
+    { type:"mcq", prompt:"In einem hochrangigen Gespräch möchten Sie Zustimmung mit Vorbehalt ausdrücken. Was sagen Sie?",     options:["Ich stimme vollständig zu.","Das ist eine schwierige Frage.","Ich bin nicht einverstanden.","Das leuchtet mir ein, wenngleich man bedenken sollte, dass..."],           answer:"Das leuchtet mir ein, wenngleich man bedenken sollte, dass..." },
+    { type:"mcq", prompt:"Jemand formuliert ein Argument mit einem logischen Fehlschluss. Wie weisen Sie höflich darauf hin?", options:["Das ist völlig falsch.","Sie denken nicht logisch.","Das kann ich nicht akzeptieren.","Ihr Argument setzt voraus, dass... — ist das nicht möglicherweise fraglich?"],  answer:"Ihr Argument setzt voraus, dass... — ist das nicht möglicherweise fraglich?" },
+    { type:"mcq", prompt:"Ein Kollege verwendet einen Begriff in einem falschen Kontext. Wie reagieren Sie sachlich?",          options:["Sie sagen nichts, um Konflikte zu vermeiden.","Sie lachen über den Fehler.","Sie korrigieren ihn laut vor allen.","In diesem Zusammenhang würde ich eher den Begriff '...' verwenden."], answer:"In diesem Zusammenhang würde ich eher den Begriff '...' verwenden." },
+    { type:"mcq", prompt:"Sie übersetzen einen juristischen Text ins Deutsche. Was ist dabei besonders anspruchsvoll?",         options:["Die Länge des Textes","Das Finden von Synonymen","Die Schriftgröße und das Format","Fachterminologie und Bedeutungsgenauigkeit"],                                          answer:"Fachterminologie und Bedeutungsgenauigkeit" },
+    { type:"mcq", prompt:"Sie müssen in einer Sitzung spontan einen komplexen Sachverhalt erläutern. Was tun Sie?",            options:["Sie bitten darum, es schriftlich einzureichen.","Sie weichen der Frage aus.","Sie lesen aus einem Dokument vor, ohne es zu erklären.","Den Sachverhalt strukturiert und in klaren Begriffen zusammenfassen."], answer:"Den Sachverhalt strukturiert und in klaren Begriffen zusammenfassen." },
+  ],
 };

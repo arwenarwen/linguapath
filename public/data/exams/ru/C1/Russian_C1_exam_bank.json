@@ -1,0 +1,453 @@
+{
+  "language": "Russian",
+  "code": "ru",
+  "level": "C1",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Акцентируя внимание на эпистемологических основах, автор демонстрирует филологическую эрудицию\" mean in English?",
+      "options": [
+        "The author shows knowledge about epistemology",
+        "By emphasizing epistemological foundations, the author demonstrates philological erudition",
+        "The author writes about epistemology and language",
+        "Epistemology and language erudition are shown"
+      ],
+      "correct_answer": "By emphasizing epistemological foundations, the author demonstrates philological erudition",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Акцентируя внимание на эпистемологических основах, автор демонстрирует филологическую эрудицию"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Парадигматический сдвиг в научном дискурсе обусловлен методологическими инновациями\" mean in English?",
+      "options": [
+        "Scientific discourse changed methods",
+        "The paradigmatic shift in scientific discourse is conditioned by methodological innovations",
+        "Methods innovate scientific discussions",
+        "Scientific thinking changed due to new procedures"
+      ],
+      "correct_answer": "The paradigmatic shift in scientific discourse is conditioned by methodological innovations",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Парадигматический сдвиг в научном дискурсе обусловлен методологическими инновациями"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Анализируя рецепцию текста, необходимо учитывать интерпретативные стратегии читателя\" mean in English?",
+      "options": [
+        "Readers interpret texts differently",
+        "When analyzing the reception of the text, one must consider the reader's interpretative strategies",
+        "The reader's interpretation matters for analysis",
+        "Text reception is interpreted by readers"
+      ],
+      "correct_answer": "When analyzing the reception of the text, one must consider the reader's interpretative strategies",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Анализируя рецепцию текста, необходимо учитывать интерпретативные стратегии читателя"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Дихотомия между номинальным и реальным определением эксплицирует фундаментальное противоречие\" mean in English?",
+      "options": [
+        "Definitions are contradictory",
+        "The dichotomy between nominal and real definition explicates a fundamental contradiction",
+        "Real and nominal definitions are opposite",
+        "Defining terms shows contradictions"
+      ],
+      "correct_answer": "The dichotomy between nominal and real definition explicates a fundamental contradiction",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Дихотомия между номинальным и реальным определением эксплицирует фундаментальное противоречие"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Полисемия лексических единиц создаёт амбивалентность семантического пространства\" mean in English?",
+      "options": [
+        "Words have many meanings",
+        "The polysemy of lexical units creates ambivalence in semantic space",
+        "Polysemous words make meanings unclear",
+        "Semantic meanings are ambiguous because of words"
+      ],
+      "correct_answer": "The polysemy of lexical units creates ambivalence in semantic space",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Полисемия лексических единиц создаёт амбивалентность семантического пространства"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Апелляция к авторитету, будучи логическим приёмом, тем не менее содержит потенциал манипуляции\" mean in English?",
+      "options": [
+        "Authority is good in logic",
+        "Appeal to authority, being a logical device, nonetheless contains the potential for manipulation",
+        "Using authority is manipulative",
+        "Authority in logic is manipulated"
+      ],
+      "correct_answer": "Appeal to authority, being a logical device, nonetheless contains the potential for manipulation",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Апелляция к авторитету, будучи логическим приёмом, тем не менее содержит потенциал манипуляции"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Аллюзивность текста ___ реципиента к активному декодированию интертекстуальных связей.",
+      "options": [
+        "обязывает",
+        "побуждает",
+        "заставляет",
+        "принуждает"
+      ],
+      "correct_answer": "побуждает",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Гегемоническая позиция дискурса ___ альтернативные нарративы на периферию общественного внимания.",
+      "options": [
+        "перемещает",
+        "вытесняет",
+        "смещает",
+        "удаляет"
+      ],
+      "correct_answer": "вытесняет",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Герменевтическая деятельность ___ необходимость контекстуализации символических форм.",
+      "options": [
+        "допускает",
+        "предполагает",
+        "требует",
+        "позволяет"
+      ],
+      "correct_answer": "предполагает",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Редукционистский подход ___ сложность многоуровневых систем в угоду монистической модели.",
+      "options": [
+        "скрывает",
+        "затемняет",
+        "элиминирует",
+        "упрощает"
+      ],
+      "correct_answer": "элиминирует",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Трансцендентальная критика Канта ___ фундаментальное отличие между явлением и ноуменом.",
+      "options": [
+        "выделяет",
+        "устанавливает",
+        "акцентирует",
+        "подтверждает"
+      ],
+      "correct_answer": "устанавливает",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Синергетический эффект от взаимодействия компонентов ___ эмергентные свойства системы.",
+      "options": [
+        "создаёт",
+        "порождает",
+        "генерирует",
+        "производит"
+      ],
+      "correct_answer": "порождает",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Structuralism explains phenomena",
+        "The conceptualization of the phenomenon through the prism of structuralism reveals the implicit dimensions of reality",
+        "Reality has structural dimensions",
+        "Structuralism is about reality concepts"
+      ],
+      "correct_answer": "The conceptualization of the phenomenon through the prism of structuralism reveals the implicit dimensions of reality",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Концептуализация феномена через призму структурализма раскрывает имплицитные измерения реальности"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Philology is practical",
+        "The pragmatic orientation of philological analysis manifests its applicability to current discursive practices",
+        "Analysis is practical for language study",
+        "Philology applies to current discourse"
+      ],
+      "correct_answer": "The pragmatic orientation of philological analysis manifests its applicability to current discursive practices",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Прагматическая ориентация филологического анализа манифестирует его применимость к актуальным дискурсивным практикам"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Symbols have one meaning",
+        "The semiotic ambiguity of symbols generates a multiplicity of meanings in the decoding process",
+        "Symbols are ambiguous in language",
+        "Decoding creates symbol meanings"
+      ],
+      "correct_answer": "The semiotic ambiguity of symbols generates a multiplicity of meanings in the decoding process",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Семиотическая амбигуальность символов генерирует множественность смыслов в процессе декодирования"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Ancient texts are compared",
+        "The methodology of comparative analysis of archaic texts allows the reconstruction of prototypical semantic structures",
+        "Analyzing old texts reveals meanings",
+        "Comparative method reconstructs text meaning"
+      ],
+      "correct_answer": "The methodology of comparative analysis of archaic texts allows the reconstruction of prototypical semantic structures",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Методология компаративного анализа архаичных текстов допускает реконструкцию прототипических смысловых структур"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The author writes ideology",
+        "The author's discursive strategy articulates a hidden ideologeme existing in the interstices of the text",
+        "Ideology is hidden in text",
+        "Strategy reveals text meaning"
+      ],
+      "correct_answer": "The author's discursive strategy articulates a hidden ideologeme existing in the interstices of the text",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Дискурсивная стратегия автора артикулирует скрытую идеологему, существующую в интерстициях текста"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Ontology is philosophical",
+        "Explication of the ontological presuppositions of philosophical discourse is critically relevant for its adequate understanding",
+        "Understanding philosophy requires ontology",
+        "Philosophical discourse assumes ontology"
+      ],
+      "correct_answer": "Explication of the ontological presuppositions of philosophical discourse is critically relevant for its adequate understanding",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Экспликация онтологических предпосылок философского дискурса критически релевантна для его адекватного понимания"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The multifaceted nature of the phenomenon necessitates a pluralistic epistemological approach\"",
+      "options": [
+        "Многоаспектный характер явления требует плюралистического эпистемологического подхода",
+        "Явление имеет много аспектов и нужен подход",
+        "Плюрализм необходим для явления",
+        "Многоуровневое явление требует подхода"
+      ],
+      "correct_answer": "Многоаспектный характер явления требует плюралистического эпистемологического подхода",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"The genealogical deconstruction of teleological narratives unveils the contingency of putative inevitabilities\"",
+      "options": [
+        "Генеалогическая деконструкция телеологических нарративов раскрывает контингентность предполагаемых неизбежностей",
+        "Генеалогия разрушает идеи неизбежности",
+        "Нарративы телеологичны и контингентны",
+        "Декструкция показывает неизбежность"
+      ],
+      "correct_answer": "Генеалогическая деконструкция телеологических нарративов раскрывает контингентность предполагаемых неизбежностей",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The phenomenological bracketing of ontological commitments permits the elucidation of transcendental structures\"",
+      "options": [
+        "Феноменологическое брекетирование онтологических обязательств позволяет уточнить трансцендентальные структуры",
+        "Феноменология раскрывает структуры",
+        "Онтология и феноменология связаны",
+        "Трансцендентальные структуры нужны"
+      ],
+      "correct_answer": "Феноменологическое брекетирование онтологических обязательств позволяет уточнить трансцендентальные структуры",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The aporias inherent in the representationalist paradigm necessitate a comprehensive reconceptualization of epistemic relationality\"",
+      "options": [
+        "Апории репрезентационалистской парадигмы требуют полной переконцептуализации эпистемической реляциональности",
+        "Репрезентационализм имеет проблемы",
+        "Парадигма нуждается в новых идеях",
+        "Эпистемология и апории связаны"
+      ],
+      "correct_answer": "Апории репрезентационалистской парадигмы требуют полной переконцептуализации эпистемической реляциональности",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The hermeneutical fusion of horizons facilitates the transcendence of historical alterity through dialogical engagement\"",
+      "options": [
+        "Герменевтическое слияние горизонтов облегчает преодоление исторической инаковости через диалогическое взаимодействие",
+        "Герменевтика и история связаны",
+        "Диалог преодолевает различия",
+        "Слияние горизонтов происходит"
+      ],
+      "correct_answer": "Герменевтическое слияние горизонтов облегчает преодоление исторической инаковости через диалогическое взаимодействие",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The sublation of subject-object dualism engendered by dialectical thought constitutes a paradigmatic reorientation of philosophical inquiry\"",
+      "options": [
+        "Снятие дуализма субъекта и объекта, порождённое диалектическим мышлением, представляет парадигматическую переориентацию философского исследования",
+        "Диалектика снимает дуализм",
+        "Философское исследование переориентируется",
+        "Субъект и объект связаны"
+      ],
+      "correct_answer": "Снятие дуализма субъекта и объекта, порождённое диалектическим мышлением, представляет парадигматическую переориентацию философского исследования",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Критикуя редукционистскую методологию, вы утверждаете:",
+      "options": [
+        "Редукционизм хорош",
+        "Хотя редукционизм обладает определённой эвристической ценностью, его применение к сложным системам нередко оборачивается элиминацией существенных аспектов анализируемого феномена",
+        "Редукционизм неправилен",
+        "Методология плохая"
+      ],
+      "correct_answer": "Хотя редукционизм обладает определённой эвристической ценностью, его применение к сложным системам нередко оборачивается элиминацией существенных аспектов анализируемого феномена",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Обсуждая интертекстуальность произведения, вы замечаете:",
+      "options": [
+        "Текст имеет ссылки",
+        "Полисемия текстовых аллюзий порождает множественность прочитаний, каждое из которых актуализирует различные потенциальности смыслового поля",
+        "Ссылки в тексте",
+        "Текст интересен"
+      ],
+      "correct_answer": "Полисемия текстовых аллюзий порождает множественность прочитаний, каждое из которых актуализирует различные потенциальности смыслового поля",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Оценивая методологическую обоснованность аргумента, вы говорите:",
+      "options": [
+        "Аргумент верен",
+        "Следует отметить, что аргумент, несмотря на логическую стройность, нуждается в эмпирической верификации и дополнительной операционализации своих центральных концептов",
+        "Это неверно",
+        "Аргумент неправилен"
+      ],
+      "correct_answer": "Следует отметить, что аргумент, несмотря на логическую стройность, нуждается в эмпирической верификации и дополнительной операционализации своих центральных концептов",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Исследуя философскую позицию автора, вы констатируете:",
+      "options": [
+        "Позиция ясна",
+        "Экспликация метафизических предпосылок философского дискурса автора обнаруживает скрытую номиналистическую ориентацию, которая существенным образом детерминирует его аргументативное развёртывание",
+        "Позиция неверна",
+        "Автор философ"
+      ],
+      "correct_answer": "Экспликация метафизических предпосылок философского дискурса автора обнаруживает скрытую номиналистическую ориентацию, которая существенным образом детерминирует его аргументативное развёртывание",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Анализируя дискурсивные стратегии текста, вы отмечаете:",
+      "options": [
+        "Стратегии хорошие",
+        "Нарративное конструирование реальности осуществляется посредством рекуррентных риторических операций, которые постепенно устанавливают гегемонию определённого смыслового фрейма",
+        "Текст интересен",
+        "Стратегии используются"
+      ],
+      "correct_answer": "Нарративное конструирование реальности осуществляется посредством рекуррентных риторических операций, которые постепенно устанавливают гегемонию определённого смыслового фрейма",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Подвергая критике позитивистский подход, вы утверждаете:",
+      "options": [
+        "Позитивизм хорош",
+        "Несмотря на претензии позитивизма на объективность, его конstitutive presuppositions остаются скрыты от критического анализа, что делает его уязвимым для концептуальной деконструкции",
+        "Позитивизм неверен",
+        "Это плохой подход"
+      ],
+      "correct_answer": "Несмотря на претензии позитивизма на объективность, его конstitutive presuppositions остаются скрыты от критического анализа, что делает его уязвимым для концептуальной деконструкции",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

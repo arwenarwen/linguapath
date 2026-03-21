@@ -1,0 +1,453 @@
+{
+  "language": "Chinese",
+  "code": "zh",
+  "level": "C2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"悖论\" mean in English?",
+      "options": [
+        "Paradox",
+        "Problem",
+        "Theory",
+        "Solution"
+      ],
+      "correct_answer": "Paradox",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "悖论"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"颠覆\" mean in English?",
+      "options": [
+        "Support",
+        "Overthrow",
+        "Confirm",
+        "Establish"
+      ],
+      "correct_answer": "Overthrow",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "颠覆"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"融贯\" mean in English?",
+      "options": [
+        "Separated",
+        "Coherent",
+        "Divided",
+        "Fragmented"
+      ],
+      "correct_answer": "Coherent",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "融贯"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"二元对立\" mean in English?",
+      "options": [
+        "Unity",
+        "Binary opposition",
+        "Single perspective",
+        "Agreement"
+      ],
+      "correct_answer": "Binary opposition",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "二元对立"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"形而上\" mean in English?",
+      "options": [
+        "Physical",
+        "Metaphysical",
+        "Material",
+        "Empirical"
+      ],
+      "correct_answer": "Metaphysical",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "形而上"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"诗性\" mean in English?",
+      "options": [
+        "Logic",
+        "Poetic quality",
+        "Rational",
+        "Scientific"
+      ],
+      "correct_answer": "Poetic quality",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "诗性"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 这一论断看似自洽，实则___着内在的___。",
+      "options": [
+        "隐含...悖论",
+        "有...问题",
+        "包含...错误",
+        "显示...区别"
+      ],
+      "correct_answer": "隐含...悖论",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 后现代主义___了传统的叙事方式。",
+      "options": [
+        "颠覆",
+        "支持",
+        "继承",
+        "延续"
+      ],
+      "correct_answer": "颠覆",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 这个理论虽然在局部上有说服力，但整体上缺乏___。",
+      "options": [
+        "融贯性",
+        "对称性",
+        "平衡性",
+        "完整性"
+      ],
+      "correct_answer": "融贯性",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 我们需要超越___，去寻求更深层的理解。",
+      "options": [
+        "二元对立",
+        "两个观点",
+        "两方",
+        "两个问题"
+      ],
+      "correct_answer": "二元对立",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 这部作品融合了形而上的思考与___的表现。",
+      "options": [
+        "诗性",
+        "实际",
+        "具体",
+        "物质"
+      ],
+      "correct_answer": "诗性",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 他的论述___了多个维度的相互关联性。",
+      "options": [
+        "揭示",
+        "隐藏",
+        "忽视",
+        "否定"
+      ],
+      "correct_answer": "揭示",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "There is no contradiction",
+        "This apparent contradiction precisely reflects a deeper paradox",
+        "Contradiction is meaningless",
+        "Everything is logical"
+      ],
+      "correct_answer": "This apparent contradiction precisely reflects a deeper paradox",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "这个表面上的矛盾恰恰反映了一个更深层的悖论"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Heidegger supports Cartesian dualism",
+        "Heidegger attempted to overthrow the Cartesian dualist tradition",
+        "Dualism is correct",
+        "Tradition never changes"
+      ],
+      "correct_answer": "Heidegger attempted to overthrow the Cartesian dualist tradition",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "海德格尔试图颠覆笛卡尔的二元论传统"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Binary opposition is helpful",
+        "We must go beyond the existing binary opposition framework",
+        "Dualism is the only way",
+        "Categories are absolute"
+      ],
+      "correct_answer": "We must go beyond the existing binary opposition framework",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "我们必须超越既有的二元对立框架"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The text is purely physical",
+        "This text has both metaphysical depth and poetic vitality",
+        "Poetry and philosophy are separate",
+        "Neither philosophy nor poetry matters"
+      ],
+      "correct_answer": "This text has both metaphysical depth and poetic vitality",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "这个文本既具有形而上的深度，又保有诗性的生命力"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The argument is perfectly coherent",
+        "The entire argumentative system lacks internal coherence",
+        "Coherence is not important",
+        "Everything fits together perfectly"
+      ],
+      "correct_answer": "The entire argumentative system lacks internal coherence",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "整个论证体系缺乏内在的融贯性"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Opposition is always correct",
+        "The limitation of this oppositional thinking is that it ignores the complexity of phenomena",
+        "Phenomena are simple",
+        "Complexity does not exist"
+      ],
+      "correct_answer": "The limitation of this oppositional thinking is that it ignores the complexity of phenomena",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "这种对立思维的局限性在于它忽视了现象的复杂性"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"This apparent contradiction conceals a fundamental paradox\"",
+      "options": [
+        "这个矛盾很简单",
+        "这个表面的矛盾隐含着一个根本的悖论",
+        "没有矛盾",
+        "矛盾不重要"
+      ],
+      "correct_answer": "这个表面的矛盾隐含着一个根本的悖论",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Deconstruction as a method fundamentally overthrows traditional hermeneutics\"",
+      "options": [
+        "解构主义支持传统解释学",
+        "解构作为一种方法从根本上颠覆了传统的解释学",
+        "传统方法是对的",
+        "没有解释学"
+      ],
+      "correct_answer": "解构作为一种方法从根本上颠覆了传统的解释学",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"We must transcend the binary opposition between subject and object\"",
+      "options": [
+        "主客对立是永恒的",
+        "我们必须超越主体与客体之间的二元对立",
+        "对立不存在",
+        "对立很好"
+      ],
+      "correct_answer": "我们必须超越主体与客体之间的二元对立",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The metaphysical dimension of this work reveals both philosophical rigor and poetic resonance\"",
+      "options": [
+        "这个作品很肤浅",
+        "这部作品的形而上维度既呈现哲学的严谨，又具有诗性的共鸣",
+        "哲学和诗歌无法结合",
+        "没有深度"
+      ],
+      "correct_answer": "这部作品的形而上维度既呈现哲学的严谨，又具有诗性的共鸣",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"The lack of internal coherence undermines the entire argumentative framework\"",
+      "options": [
+        "论证很完美",
+        "缺乏内在的融贯性破坏了整个论证框架",
+        "论证不重要",
+        "一切都融贯"
+      ],
+      "correct_answer": "缺乏内在的融贯性破坏了整个论证框架",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"By interrogating the premises of binary thinking, we can reveal its limitations\"",
+      "options": [
+        "二元思维没有局限",
+        "通过质疑二元思维的前提，我们可以揭示其局限性",
+        "前提不重要",
+        "没有限制"
+      ],
+      "correct_answer": "通过质疑二元思维的前提，我们可以揭示其局限性",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "在形而上学的讨论中，「悖论」最准确的含义是：",
+      "options": [
+        "一个简单的矛盾",
+        "一个表面上自相矛盾但可能蕴含深层真理的论述",
+        "一个错误的论断",
+        "没有意义的说法"
+      ],
+      "correct_answer": "一个表面上自相矛盾但可能蕴含深层真理的论述",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "讨论后现代主义对既有观念的态度，正确的是：",
+      "options": [
+        "后现代主义接受所有传统",
+        "后现代主义颠覆了许多既有的文化和哲学假设",
+        "后现代主义没有立场",
+        "传统从不被质疑"
+      ],
+      "correct_answer": "后现代主义颠覆了许多既有的文化和哲学假设",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "论证一个理论的弱点时，你可能会指出它：",
+      "options": [
+        "完全正确",
+        "在各个方面都融贯一致",
+        "缺乏内在的融贯性",
+        "不需要检验"
+      ],
+      "correct_answer": "缺乏内在的融贯性",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "关于「二元对立」的理解，现代哲学倾向于：",
+      "options": [
+        "二元对立是永恒的真理",
+        "我们应该超越二元对立去看到更复杂的现实",
+        "对立无法克服",
+        "没有对立"
+      ],
+      "correct_answer": "我们应该超越二元对立去看到更复杂的现实",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "一部既有深邃的哲学思想，又有美的艺术表达的作品，可以描述为：",
+      "options": [
+        "只有哲学价值",
+        "既有形而上的思考，又具有诗性的生命力",
+        "艺术和哲学不能结合",
+        "都不重要"
+      ],
+      "correct_answer": "既有形而上的思考，又具有诗性的生命力",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "批判一种思维方式的局限性时，你可能会论证它：",
+      "options": [
+        "完美无缺",
+        "揭示了全部真理",
+        "忽视了现象的复杂性，建立在简化的二元假设上",
+        "没有缺点"
+      ],
+      "correct_answer": "忽视了现象的复杂性，建立在简化的二元假设上",
+      "correct_index": 2,
+      "exercise_type": "mcq"
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "language": "Korean",
+  "code": "ko",
+  "level": "C2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"경주\" mean in English?",
+      "options": [
+        "Contest",
+        "Race",
+        "City",
+        "Station"
+      ],
+      "correct_answer": "Race",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "경주"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"메커니즘\" mean in English?",
+      "options": [
+        "Mechanism",
+        "Management",
+        "Memory",
+        "Medicine"
+      ],
+      "correct_answer": "Mechanism",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "메커니즘"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"심오하다\" mean in English?",
+      "options": [
+        "Shallow",
+        "Profound",
+        "Simple",
+        "Complex"
+      ],
+      "correct_answer": "Profound",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "심오하다"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"미묘하다\" mean in English?",
+      "options": [
+        "Bold",
+        "Subtle",
+        "Clear",
+        "Obvious"
+      ],
+      "correct_answer": "Subtle",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "미묘하다"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"논증\" mean in English?",
+      "options": [
+        "Argument",
+        "Argument",
+        "Authority",
+        "Archive"
+      ],
+      "correct_answer": "Argument",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "논증"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"정당화\" mean in English?",
+      "options": [
+        "Justification",
+        "Justice",
+        "Jealousy",
+        "Joint"
+      ],
+      "correct_answer": "Justification",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "정당화"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: 이 철학적 문제의 심오함은 단순한 논의만으로는 포착할 수 없___니, 더 깊은 성찰이 필요합니다.",
+      "options": [
+        "으므로",
+        "다",
+        "는",
+        "까"
+      ],
+      "correct_answer": "까",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: 그의 주장이 명백히 정당화되기 위해서___는 더욱 충분한 증거와 이론적 근거가 요구됩니다.",
+      "options": [
+        "는",
+        "서는",
+        "라",
+        "면"
+      ],
+      "correct_answer": "서는",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: 문명의 발전 과정에서 관찰할 수 있는 미묘한 변화들___이 곧 역사적 전환점을 의미하기도 합니다.",
+      "options": [
+        "은",
+        "가",
+        "를",
+        "의"
+      ],
+      "correct_answer": "가",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: 이 현상의 메커니즘을 완전히 이해___려면 여러 학문 분야의 통합적 접근이 불가피합니다.",
+      "options": [
+        "하기",
+        "하",
+        "했",
+        "할"
+      ],
+      "correct_answer": "하기",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: 패러다임의 전환___시점에서 우리는 기존의 가정들을 의문에 부쳐야 합니다.",
+      "options": [
+        "하",
+        "가",
+        "ㄹ",
+        "는"
+      ],
+      "correct_answer": "는",
+      "correct_index": 3,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: 문명 간의 충돌은 종종 상이한 가치관과 세계관의 충돌___나타나므로, 표면적 해결책___로는 근본적인 문제를 해결할 수 없습니다.",
+      "options": [
+        "으로",
+        "으로만",
+        "으로는",
+        "으로도"
+      ],
+      "correct_answer": "으로는",
+      "correct_index": 2,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Mathematical question",
+        "Metaphysical question",
+        "Physical question",
+        "Medical question"
+      ],
+      "correct_answer": "Metaphysical question",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "형이상학적 질문"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Epistemological stance",
+        "Ontological stance",
+        "Ethical stance",
+        "Aesthetic stance"
+      ],
+      "correct_answer": "Epistemological stance",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "인식론적 입장"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Dialectical method",
+        "Digital method",
+        "Practical method",
+        "Physical method"
+      ],
+      "correct_answer": "Dialectical method",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "변증법적 방법"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Rationalism",
+        "Relativism",
+        "Realism",
+        "Romanticism"
+      ],
+      "correct_answer": "Relativism",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "상대주의"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Transcendent",
+        "Transparent",
+        "Transient",
+        "Transmitted"
+      ],
+      "correct_answer": "Transcendent",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "초월적"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "Ontology",
+        "Ontogeny",
+        "Ornithology",
+        "Orology"
+      ],
+      "correct_answer": "Ontology",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "존재론"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"Race\"",
+      "options": [
+        "경주",
+        "경험",
+        "경험",
+        "경쟁"
+      ],
+      "correct_answer": "경주",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"Mechanism\"",
+      "options": [
+        "메시지",
+        "메커니즘",
+        "메달",
+        "메모"
+      ],
+      "correct_answer": "메커니즘",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Profound\"",
+      "options": [
+        "주의",
+        "심오하다",
+        "신중하다",
+        "직접적"
+      ],
+      "correct_answer": "심오하다",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"Subtle\"",
+      "options": [
+        "뚜렷하다",
+        "미묘하다",
+        "명확하다",
+        "단호하다"
+      ],
+      "correct_answer": "미묘하다",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Argument\"",
+      "options": [
+        "주장",
+        "논증",
+        "증거",
+        "결론"
+      ],
+      "correct_answer": "논증",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"Justification\"",
+      "options": [
+        "정당화",
+        "질문",
+        "정의",
+        "정책"
+      ],
+      "correct_answer": "정당화",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "형이상학적 질문이 왜 철학에서 중요한가요?",
+      "options": [
+        "실용적 해답을 제공하기 위해",
+        "존재와 의미에 대한 근본적 이해를 도모하기 위해",
+        "과학적 방법을 발전시키기 위해",
+        "사회 문제를 해결하기 위해"
+      ],
+      "correct_answer": "존재와 의미에 대한 근본적 이해를 도모하기 위해",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "상대주의 입장에서는 진리를 어떻게 보나요?",
+      "options": [
+        "절대적이고 보편적이다",
+        "시간과 맥락에 따라 달라진다",
+        "객관적이고 불변이다",
+        "개인의 신념에 따라 정해진다"
+      ],
+      "correct_answer": "시간과 맥락에 따라 달라진다",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "변증법적 방법의 핵심은 무엇입니까?",
+      "options": [
+        "논리적 연역",
+        "대립과 통합의 과정",
+        "경험적 관찰",
+        "수학적 계산"
+      ],
+      "correct_answer": "대립과 통합의 과정",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "이 철학적 문제의 심오함을 이해하려면 무엇이 필요합니까?",
+      "options": [
+        "표면적인 이해",
+        "더 깊은 성찰과 다각적 분석",
+        "순수한 논리",
+        "개인의 직관"
+      ],
+      "correct_answer": "더 깊은 성찰과 다각적 분석",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "초월적 경험이란 무엇을 의미합니까?",
+      "options": [
+        "일상적 경험을 넘어서는 경험",
+        "초능력을 갖춘 경험",
+        "초과된 경험",
+        "초기의 경험"
+      ],
+      "correct_answer": "일상적 경험을 넘어서는 경험",
+      "correct_index": 0,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "존재론과 인식론은 어떤 차이가 있습니까?",
+      "options": [
+        "구별할 수 없다",
+        "존재론은 무엇이 존재하는가, 인식론은 무엇을 알 수 있는가에 관한 것이다",
+        "인식론이 더 중요하다",
+        "현대에는 둘 다 쓸모없다"
+      ],
+      "correct_answer": "존재론은 무엇이 존재하는가, 인식론은 무엇을 알 수 있는가에 관한 것이다",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

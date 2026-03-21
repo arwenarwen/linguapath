@@ -1,0 +1,453 @@
+{
+  "language": "Greek",
+  "code": "el",
+  "level": "B2",
+  "format": "multiple_choice",
+  "question_count": 30,
+  "feedback_audio_targets": {
+    "correct": [
+      "Correct!",
+      "Well done!",
+      "That's right!"
+    ],
+    "incorrect": [
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
+    ]
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question_number": 1,
+      "question": "What does \"Η αποτυχία του έργου ήταν αποτέλεσμα κακής διαχείρισης\" mean in English?",
+      "options": [
+        "The project was successful due to good management",
+        "The failure of the project resulted from mismanagement",
+        "The project failed because of bad weather",
+        "The management was excellent"
+      ],
+      "correct_answer": "The failure of the project resulted from mismanagement",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η αποτυχία του έργου ήταν αποτέλεσμα κακής διαχείρισης"
+    },
+    {
+      "id": "Q02",
+      "question_number": 2,
+      "question": "What does \"Παρότι οι συνθήκες ήταν δύσκολες, συνέχισαν το έργο\" mean in English?",
+      "options": [
+        "They stopped the project because of difficult conditions",
+        "Despite difficult conditions, they continued the project",
+        "The conditions were easy and they continued",
+        "They abandoned the project immediately"
+      ],
+      "correct_answer": "Despite difficult conditions, they continued the project",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Παρότι οι συνθήκες ήταν δύσκολες, συνέχισαν το έργο"
+    },
+    {
+      "id": "Q03",
+      "question_number": 3,
+      "question": "What does \"Η ανάπτυξη της τεχνολογίας έχει μετασχηματίσει την κοινωνία\" mean in English?",
+      "options": [
+        "Technology prevents social change",
+        "The development of technology has transformed society",
+        "Society is preventing technological development",
+        "Technology is slowly changing"
+      ],
+      "correct_answer": "The development of technology has transformed society",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Η ανάπτυξη της τεχνολογίας έχει μετασχηματίσει την κοινωνία"
+    },
+    {
+      "id": "Q04",
+      "question_number": 4,
+      "question": "What does \"Θα ήμουν ευγνώμων αν μπορούσατε να με συνεγείρετε\" mean in English?",
+      "options": [
+        "I appreciate you waking me up",
+        "I would be grateful if you could wake me up",
+        "I don't want to be woken up",
+        "Thank you for not waking me"
+      ],
+      "correct_answer": "I would be grateful if you could wake me up",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Θα ήμουν ευγνώμων αν μπορούσατε να με συνεγείρετε"
+    },
+    {
+      "id": "Q05",
+      "question_number": 5,
+      "question": "What does \"Η επίμονή του στο έργο ήταν αξιοθαύμαστη\" mean in English?",
+      "options": [
+        "His persistence in the work was admirable",
+        "His work was not persistent",
+        "He did not persist in his work",
+        "His work was easy"
+      ],
+      "correct_answer": "His persistence in the work was admirable",
+      "correct_index": 0,
+      "exercise_type": "translate-en",
+      "audio": "Η επίμονή του στο έργο ήταν αξιοθαύμαστη"
+    },
+    {
+      "id": "Q06",
+      "question_number": 6,
+      "question": "What does \"Αναμφίβολα, αυτή η απόφαση θα έχει σοβαρές συνέπειες\" mean in English?",
+      "options": [
+        "This decision has no consequences",
+        "Undoubtedly, this decision will have serious consequences",
+        "This decision is not important",
+        "The consequences will be positive"
+      ],
+      "correct_answer": "Undoubtedly, this decision will have serious consequences",
+      "correct_index": 1,
+      "exercise_type": "translate-en",
+      "audio": "Αναμφίβολα, αυτή η απόφαση θα έχει σοβαρές συνέπειες"
+    },
+    {
+      "id": "Q07",
+      "question_number": 7,
+      "question": "Complete the sentence: Εάν είχα _____ όλη την πληροφορία, θα είχα λάβει άλλη απόφαση.",
+      "options": [
+        "έχει",
+        "είχα",
+        "έχουν",
+        "έχουμε"
+      ],
+      "correct_answer": "έχει",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q08",
+      "question_number": 8,
+      "question": "Complete the sentence: Προκειμένου να _____ τη δύσκολη κατάσταση, θα πρέπει να συνεργαστούμε.",
+      "options": [
+        "αντιμετωπίσουμε",
+        "αντιμετώπισε",
+        "αντιμετωπίζουμε",
+        "αντιμετωπίστηκε"
+      ],
+      "correct_answer": "αντιμετωπίσουμε",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q09",
+      "question_number": 9,
+      "question": "Complete the sentence: Το γεγονός ότι ___ τα δύσκολα χρόνια με αποτελεί περήφανο.",
+      "options": [
+        "υπέμεινε",
+        "υπομένουν",
+        "υπέμεναν",
+        "υπέμεινα"
+      ],
+      "correct_answer": "υπέμεινε",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q10",
+      "question_number": 10,
+      "question": "Complete the sentence: Αν δεν την _____, δεν θα ήμασταν εδώ σήμερα.",
+      "options": [
+        "υποστηρίξουμε",
+        "υποστήριξε",
+        "υποστηρίζουμε",
+        "υποστηρίζαμε"
+      ],
+      "correct_answer": "υποστήριξε",
+      "correct_index": 1,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q11",
+      "question_number": 11,
+      "question": "Complete the sentence: Τα δεδομένα _____ ότι η μέθοδος είναι αποτελεσματική.",
+      "options": [
+        "δείχνουν",
+        "έδειξαν",
+        "δείχνει",
+        "είχαν δείξει"
+      ],
+      "correct_answer": "δείχνουν",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q12",
+      "question_number": 12,
+      "question": "Complete the sentence: Θα _____ τις προτάσεις του παρόλο που δεν συμφωνώ εντελώς.",
+      "options": [
+        "λάβω",
+        "λήψω",
+        "λαμβάνω",
+        "λήφθησαν"
+      ],
+      "correct_answer": "λάβω",
+      "correct_index": 0,
+      "exercise_type": "fill"
+    },
+    {
+      "id": "Q13",
+      "question_number": 13,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "This approach has proven to be particularly effective",
+        "This approach is not effective at all",
+        "We should try a different approach",
+        "The results were disappointing"
+      ],
+      "correct_answer": "This approach has proven to be particularly effective",
+      "correct_index": 0,
+      "exercise_type": "listen",
+      "audio": "Η συγκεκριμένη προσέγγιση έχει αποδειχθεί ιδιαίτερα αποτελεσματική"
+    },
+    {
+      "id": "Q14",
+      "question_number": 14,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "They had many choices available",
+        "Given the circumstances, they had no other choice",
+        "The circumstances were favorable",
+        "They chose the wrong path"
+      ],
+      "correct_answer": "Given the circumstances, they had no other choice",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Δεδομένων των περιστάσεων, δεν είχαν άλλη επιλογή"
+    },
+    {
+      "id": "Q15",
+      "question_number": 15,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The results show that research is finished",
+        "The results imply that further research is needed",
+        "No more research is necessary",
+        "The results are conclusive"
+      ],
+      "correct_answer": "The results imply that further research is needed",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Τα αποτελέσματα υπονοούν ότι απαιτείται περαιτέρω έρευνα"
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "He gave up due to obstacles",
+        "Despite the obstacles, he managed to complete the project",
+        "The obstacles prevented him from finishing",
+        "He abandoned the project"
+      ],
+      "correct_answer": "Despite the obstacles, he managed to complete the project",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Παρόλα τα εμπόδια, κατόρθωσε να ολοκληρώσει το έργο"
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The problem has no solution",
+        "The nature of the problem requires systematic and planned approach",
+        "We should ignore this problem",
+        "The problem is simple"
+      ],
+      "correct_answer": "The nature of the problem requires systematic and planned approach",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Η φύση του προβλήματος απαιτεί συστηματική και σχεδιασμένη αντιμετώπιση"
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "He gave up immediately",
+        "Regardless of the difficulties, he never resigned",
+        "He found it very easy",
+        "He complained constantly"
+      ],
+      "correct_answer": "Regardless of the difficulties, he never resigned",
+      "correct_index": 1,
+      "exercise_type": "listen",
+      "audio": "Ανεξάρτητα από τις δυσκολίες, δεν παραιτήθηκε ποτέ"
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The commission was tasked with investigating the alleged corruption\"",
+      "options": [
+        "Η επιτροπή έπρεπε να ερευνήσει τη φερόμενη διαφθορά",
+        "Η επιτροπή ανακάλυψε τη διαφθορά",
+        "Η διαφθορά ήταν γνωστή σε όλους",
+        "Η επιτροπή δεν έκανε τίποτα"
+      ],
+      "correct_answer": "Η επιτροπή έπρεπε να ερευνήσει τη φερόμενη διαφθορά",
+      "correct_index": 0,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"The proposals, while innovative, posed significant challenges\"",
+      "options": [
+        "Οι προτάσεις ήταν πολύ παλιές",
+        "Οι προτάσεις, ενώ καινοτόμες, εισήγαγαν σημαντικές προκλήσεις",
+        "Οι προτάσεις ήταν εύκολες στην εφαρμογή",
+        "Δεν υπήρχαν προκλήσεις"
+      ],
+      "correct_answer": "Οι προτάσεις, ενώ καινοτόμες, εισήγαγαν σημαντικές προκλήσεις",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"Contrary to what was expected, the outcome proved to be negative\"",
+      "options": [
+        "Το αποτέλεσμα ήταν θετικό όπως περιμέναμε",
+        "Αντίθετα με ό,τι αναμενόταν, το αποτέλεσμα αποδείχθηκε αρνητικό",
+        "Το αποτέλεσμα ήταν αναμενόμενο και θετικό",
+        "Δεν υπήρχε αποτέλεσμα"
+      ],
+      "correct_answer": "Αντίθετα με ό,τι αναμενόταν, το αποτέλεσμα αποδείχθηκε αρνητικό",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"The subsequent investigation shed light on the underlying causes\"",
+      "options": [
+        "Η έρευνα ήταν άχρηστη",
+        "Η επακόλουθη έρευνα έρριξε φως στις υποκείμενες αιτίες",
+        "Δεν υπήρχαν αιτίες",
+        "Η έρευνα ήταν αρνητική"
+      ],
+      "correct_answer": "Η επακόλουθη έρευνα έρριξε φως στις υποκείμενες αιτίες",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Notwithstanding these setbacks, the organization maintained its commitment\"",
+      "options": [
+        "Η οργάνωση εγκατέλειψε τους στόχους",
+        "Παρά αυτές τις καταστροφές, η οργάνωση διατήρησε τη δέσμευσή της",
+        "Η οργάνωση δεν είχε δέσμευση",
+        "Κανένα πρόβλημα δεν προέκυψε"
+      ],
+      "correct_answer": "Παρά αυτές τις καταστροφές, η οργάνωση διατήρησε τη δέσμευσή της",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"The implications of this decision extend far beyond the immediate context\"",
+      "options": [
+        "Η απόφαση δεν έχει σημασία",
+        "Οι επιπτώσεις αυτής της απόφασης εκτείνονται πολύ πέρα από το άμεσο πλαίσιο",
+        "Η απόφαση είναι απλή",
+        "Κανείς δεν ενδιαφέρεται"
+      ],
+      "correct_answer": "Οι επιπτώσεις αυτής της απόφασης εκτείνονται πολύ πέρα από το άμεσο πλαίσιο",
+      "correct_index": 1,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Πώς θα μπορούσαμε να βελτιώσουμε τη στρατηγική μας;",
+      "options": [
+        "Δεν χρειάζεται βελτίωση",
+        "Θα πρέπει να αναλύσουμε τα δεδομένα και να κάνουμε αλλαγές βάσει των αποτελεσμάτων",
+        "Θα πρέπει να χρησιμοποιήσουμε παλιές μεθόδους",
+        "Η στρατηγική είναι τέλεια"
+      ],
+      "correct_answer": "Θα πρέπει να αναλύσουμε τα δεδομένα και να κάνουμε αλλαγές βάσει των αποτελεσμάτων",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "Τι πιστεύεις ότι είναι το μεγαλύτερο πρόβλημα της σύγχρονης κοινωνίας;",
+      "options": [
+        "Δεν υπάρχουν προβλήματα",
+        "Το κλίμα και η περιβαλλοντική κρίση",
+        "Δεν ενδιαφέρομαι",
+        "Όλα είναι καλά"
+      ],
+      "correct_answer": "Το κλίμα και η περιβαλλοντική κρίση",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Ποια είναι η σημασία της εκπαίδευσης στη σημερινή εποχή;",
+      "options": [
+        "Η εκπαίδευση δεν έχει σημασία",
+        "Η εκπαίδευση είναι κρίσιμη για την προετοιμασία των ανθρώπων για το μέλλον",
+        "Μόνο λίγοι έχουν ανάγκη εκπαίδευσης",
+        "Η εκπαίδευση είναι πολύ δύσκολη"
+      ],
+      "correct_answer": "Η εκπαίδευση είναι κρίσιμη για την προετοιμασία των ανθρώπων για το μέλλον",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Πώς νιώθεις για τις αλλαγές που φέρνει η τεχνολογία;",
+      "options": [
+        "Η τεχνολογία είναι άχρηστη",
+        "Η τεχνολογία φέρνει πολλές ευκαιρίες αλλά και προκλήσεις που πρέπει να διαχειριστούμε προσεκτικά",
+        "Η τεχνολογία είναι τέλεια και χωρίς προβλήματα",
+        "Θα πρέπει να σταματήσουμε όλη τη τεχνολογία"
+      ],
+      "correct_answer": "Η τεχνολογία φέρνει πολλές ευκαιρίες αλλά και προκλήσεις που πρέπει να διαχειριστούμε προσεκτικά",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Ποια είναι η αξία των διεθνών συνεργασιών;",
+      "options": [
+        "Δεν έχουν αξία",
+        "Αυξάνουν την κατανόηση μεταξύ των χωρών και βοηθούν στην επίλυση παγκόσμιων προβλημάτων",
+        "Είναι περιττές",
+        "Μόνο μια χώρα μπορεί να λύσει τα προβλήματα"
+      ],
+      "correct_answer": "Αυξάνουν την κατανόηση μεταξύ των χωρών και βοηθούν στην επίλυση παγκόσμιων προβλημάτων",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Τι θα ήθελες να άλλαζες στον κόσμο;",
+      "options": [
+        "Δεν θέλω να αλλάξει τίποτα",
+        "Θα ήθελα να δούμε μεγαλύτερη δικαιοσύνη, συνεργασία και προστασία του περιβάλλοντος",
+        "Όλα πρέπει να ανατραπούν",
+        "Ο κόσμος είναι τέλειος"
+      ],
+      "correct_answer": "Θα ήθελα να δούμε μεγαλύτερη δικαιοσύνη, συνεργασία και προστασία του περιβάλλοντος",
+      "correct_index": 1,
+      "exercise_type": "mcq"
+    }
+  ]
+}

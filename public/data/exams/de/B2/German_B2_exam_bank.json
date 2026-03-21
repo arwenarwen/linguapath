@@ -3,699 +3,451 @@
   "code": "de",
   "level": "B2",
   "format": "multiple_choice",
-  "question_count": 20,
+  "question_count": 30,
   "feedback_audio_targets": {
     "correct": [
-      "Richtig.",
-      "Korrekt.",
-      "Das ist richtig."
+      "Correct!",
+      "Well done!",
+      "That's right!"
     ],
     "incorrect": [
-      "Falsch.",
-      "Nicht ganz richtig.",
-      "Leider falsch."
+      "Incorrect.",
+      "Not quite.",
+      "Wrong answer."
     ]
   },
   "questions": [
     {
-      "id": "B2_Q01",
+      "id": "Q01",
       "question_number": 1,
-      "question": "What does 'berücksichtigen' mean?",
+      "question": "What does \"die Verhandlung\" mean in English?",
       "options": [
-        "after all",
-        "to leave much to be desired",
-        "there's no other choice",
-        "to keep in mind"
+        "announcement",
+        "presentation",
+        "complaint",
+        "negotiation"
       ],
-      "correct_answer": "to keep in mind",
+      "correct_answer": "negotiation",
       "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Advanced Travel — Unit 1 Lesson 1: Advanced vocabulary & idioms",
-      "audio_targets": {
-        "question": "What does 'berücksichtigen' mean?",
-        "options": [
-          "after all",
-          "to leave much to be desired",
-          "there's no other choice",
-          "to keep in mind"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "die Verhandlung"
     },
     {
-      "id": "B2_Q02",
+      "id": "Q02",
       "question_number": 2,
-      "question": "What does 'Zug' mean?",
+      "question": "What does \"beeinflussen\" mean in English?",
       "options": [
-        "metro",
-        "train",
-        "bicycle",
-        "bus"
+        "to ignore",
+        "to encourage",
+        "to prevent",
+        "to influence"
       ],
-      "correct_answer": "train",
-      "correct_index": 1,
+      "correct_answer": "to influence",
+      "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Advanced Travel — Unit 1 Lesson 2: Transport vocabulary",
-      "audio_targets": {
-        "question": "What does 'Zug' mean?",
-        "options": [
-          "metro",
-          "train",
-          "bicycle",
-          "bus"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "beeinflussen"
     },
     {
-      "id": "B2_Q03",
+      "id": "Q03",
       "question_number": 3,
-      "question": "What does 'der Kopf' mean?",
+      "question": "What does \"nachhaltig\" mean in English?",
       "options": [
-        "doctor",
-        "fever",
-        "I need help",
-        "head"
+        "modern",
+        "temporary",
+        "expensive",
+        "sustainable"
       ],
-      "correct_answer": "head",
+      "correct_answer": "sustainable",
       "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Advanced Travel — Unit 1 Lesson 3: Healthcare & body",
-      "audio_targets": {
-        "question": "What does 'der Kopf' mean?",
-        "options": [
-          "doctor",
-          "fever",
-          "I need help",
-          "head"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "nachhaltig"
     },
     {
-      "id": "B2_Q04",
+      "id": "Q04",
       "question_number": 4,
-      "question": "What does 'berücksichtigen' mean?",
+      "question": "What does \"scheitern\" mean in English?",
       "options": [
-        "from time to time",
-        "after all",
-        "to keep in mind",
-        "by the way"
+        "to succeed",
+        "to delay",
+        "to compete",
+        "to fail"
       ],
-      "correct_answer": "to keep in mind",
-      "correct_index": 2,
+      "correct_answer": "to fail",
+      "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Advanced Travel — Unit 1 Lesson 4: Advanced vocabulary & idioms",
-      "audio_targets": {
-        "question": "What does 'berücksichtigen' mean?",
-        "options": [
-          "from time to time",
-          "after all",
-          "to keep in mind",
-          "by the way"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "scheitern"
     },
     {
-      "id": "B2_Q05",
+      "id": "Q05",
       "question_number": 5,
-      "question": "What does 'Wo ist...?' mean?",
+      "question": "What does \"die Fachkenntnis\" mean in English?",
       "options": [
-        "it's here",
-        "Where is...?",
-        "to the right",
-        "to the left"
+        "work experience",
+        "job title",
+        "professional qualification",
+        "expert knowledge"
       ],
-      "correct_answer": "Where is...?",
-      "correct_index": 1,
+      "correct_answer": "expert knowledge",
+      "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Advanced Travel — Unit 1 Lesson 5: Asking directions",
-      "audio_targets": {
-        "question": "What does 'Wo ist...?' mean?",
-        "options": [
-          "it's here",
-          "Where is...?",
-          "to the right",
-          "to the left"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "die Fachkenntnis"
     },
     {
-      "id": "B2_Q06",
+      "id": "Q06",
       "question_number": 6,
-      "question": "What does 'Zug' mean?",
+      "question": "What does \"das Gleichgewicht\" mean in English?",
       "options": [
-        "ticket",
-        "taxi",
-        "airplane",
-        "train"
+        "atmosphere",
+        "imbalance",
+        "distribution",
+        "balance"
       ],
-      "correct_answer": "train",
+      "correct_answer": "balance",
       "correct_index": 3,
       "exercise_type": "translate-en",
-      "source_title": "Advanced Travel — Unit 1 Lesson 6: Review & practice",
-      "audio_targets": {
-        "question": "What does 'Zug' mean?",
-        "options": [
-          "ticket",
-          "taxi",
-          "airplane",
-          "train"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "audio": "das Gleichgewicht"
     },
     {
-      "id": "B2_Q07",
+      "id": "Q07",
       "question_number": 7,
-      "question": "What does 'Geschäft' mean?",
+      "question": "Complete the sentence: ___ er krank war, kam er trotzdem zur Arbeit.",
       "options": [
-        "size",
-        "shop",
-        "fitting room",
-        "color"
+        "Weil",
+        "Damit",
+        "Falls",
+        "Obwohl"
       ],
-      "correct_answer": "shop",
-      "correct_index": 1,
-      "exercise_type": "translate-en",
-      "source_title": "Commerce & Services — Unit 2 Lesson 1: Shopping vocabulary",
-      "audio_targets": {
-        "question": "What does 'Geschäft' mean?",
-        "options": [
-          "size",
-          "shop",
-          "fitting room",
-          "color"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "Obwohl",
+      "correct_index": 3,
+      "exercise_type": "fill"
     },
     {
-      "id": "B2_Q08",
+      "id": "Q08",
       "question_number": 8,
-      "question": "What does 'bitte' mean?",
+      "question": "Complete the sentence: Das Ergebnis hängt davon ___, wie viel Zeit wir investieren.",
       "options": [
-        "please",
-        "thank you",
-        "with pleasure",
-        "many thanks"
+        "ein",
+        "an",
+        "auf",
+        "ab"
       ],
-      "correct_answer": "please",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Commerce & Services — Unit 2 Lesson 2: Polite expressions",
-      "audio_targets": {
-        "question": "What does 'bitte' mean?",
-        "options": [
-          "please",
-          "thank you",
-          "with pleasure",
-          "many thanks"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "ab",
+      "correct_index": 3,
+      "exercise_type": "fill"
     },
     {
-      "id": "B2_Q09",
+      "id": "Q09",
       "question_number": 9,
-      "question": "What does 'die Arbeit' mean?",
+      "question": "Complete the sentence: Je mehr er lernte, ___ sicherer wurde er.",
       "options": [
-        "job/work",
-        "project",
-        "contract",
-        "meeting"
+        "umso",
+        "so",
+        "wie",
+        "desto"
       ],
-      "correct_answer": "job/work",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Commerce & Services — Unit 2 Lesson 3: Work & professional vocabulary",
-      "audio_targets": {
-        "question": "What does 'die Arbeit' mean?",
-        "options": [
-          "job/work",
-          "project",
-          "contract",
-          "meeting"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "desto",
+      "correct_index": 3,
+      "exercise_type": "fill"
     },
     {
-      "id": "B2_Q10",
+      "id": "Q10",
       "question_number": 10,
-      "question": "What does 'meiner Meinung nach' mean?",
+      "question": "Complete the sentence: Die neue Regelung ___ ab Januar in Kraft.",
       "options": [
-        "in my opinion",
-        "in conclusion",
-        "on the other hand",
-        "I disagree"
+        "träte",
+        "treten",
+        "trete",
+        "tritt"
       ],
-      "correct_answer": "in my opinion",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Commerce & Services — Unit 2 Lesson 4: Opinions & discussions",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "in my opinion",
-          "in conclusion",
-          "on the other hand",
-          "I disagree"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "tritt",
+      "correct_index": 3,
+      "exercise_type": "fill"
     },
     {
-      "id": "B2_Q11",
+      "id": "Q11",
       "question_number": 11,
-      "question": "What does 'die Arbeit' mean?",
+      "question": "Complete the sentence: Das Projekt wäre ohne ausreichende Finanzierung nicht ___.",
       "options": [
-        "office",
-        "deadline",
-        "contract",
-        "job/work"
+        "realisiert",
+        "realisierend",
+        "realisiere",
+        "realisierbar"
       ],
-      "correct_answer": "job/work",
+      "correct_answer": "realisierbar",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Commerce & Services — Unit 2 Lesson 5: Review & practice",
-      "audio_targets": {
-        "question": "What does 'die Arbeit' mean?",
-        "options": [
-          "office",
-          "deadline",
-          "contract",
-          "job/work"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "fill"
     },
     {
-      "id": "B2_Q12",
+      "id": "Q12",
       "question_number": 12,
-      "question": "What does 'aufwachen' mean?",
+      "question": "Complete the sentence: Er hatte versprochen, pünktlich zu sein, ___ er zu spät kam.",
       "options": [
-        "to have breakfast",
-        "to get dressed",
-        "to wake up",
-        "to leave home"
+        "weil",
+        "damit",
+        "obwohl",
+        "aber"
       ],
-      "correct_answer": "to wake up",
-      "correct_index": 2,
-      "exercise_type": "translate-en",
-      "source_title": "Lifestyle & Habits — Unit 3 Lesson 1: Morning routine",
-      "audio_targets": {
-        "question": "What does 'aufwachen' mean?",
-        "options": [
-          "to have breakfast",
-          "to get dressed",
-          "to wake up",
-          "to leave home"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "aber",
+      "correct_index": 3,
+      "exercise_type": "fill"
     },
     {
-      "id": "B2_Q13",
+      "id": "Q13",
       "question_number": 13,
-      "question": "What does 'berücksichtigen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "to keep in mind",
-        "by the way",
-        "there's no other choice",
-        "whatever"
+        "The measures were withdrawn due to criticism.",
+        "The measures were discussed but not approved.",
+        "The measures were delayed because of criticism.",
+        "The measures were pushed through despite criticism."
       ],
-      "correct_answer": "to keep in mind",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Lifestyle & Habits — Unit 3 Lesson 2: Advanced vocabulary & idioms",
-      "audio_targets": {
-        "question": "What does 'berücksichtigen' mean?",
-        "options": [
-          "to keep in mind",
-          "by the way",
-          "there's no other choice",
-          "whatever"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "correct_answer": "The measures were pushed through despite criticism.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Die Maßnahmen wurden trotz Kritik durchgesetzt."
     },
     {
-      "id": "B2_Q14",
+      "id": "Q14",
       "question_number": 14,
-      "question": "What does 'lesen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "to swim",
-        "to listen to music",
-        "to cook",
-        "to read"
+        "There are reasons to be concerned.",
+        "The situation is unclear.",
+        "We are monitoring the situation.",
+        "There is no cause for concern."
       ],
-      "correct_answer": "to read",
+      "correct_answer": "There is no cause for concern.",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Lifestyle & Habits — Unit 3 Lesson 3: Hobbies & free time",
-      "audio_targets": {
-        "question": "What does 'lesen' mean?",
-        "options": [
-          "to swim",
-          "to listen to music",
-          "to cook",
-          "to read"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "listen",
+      "audio": "Es besteht kein Anlass zur Besorgnis."
     },
     {
-      "id": "B2_Q15",
+      "id": "Q15",
       "question_number": 15,
-      "question": "What does 'lesen' mean?",
+      "question": "Listen and choose what you heard.",
       "options": [
-        "to read",
-        "to swim",
-        "to travel",
-        "to dance"
+        "The application was approved.",
+        "The application is pending.",
+        "The application was withdrawn.",
+        "The application was rejected."
       ],
-      "correct_answer": "to read",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Lifestyle & Habits — Unit 3 Lesson 4: Review & practice",
-      "audio_targets": {
-        "question": "What does 'lesen' mean?",
-        "options": [
-          "to read",
-          "to swim",
-          "to travel",
-          "to dance"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "B2_Q16",
-      "question_number": 16,
-      "question": "What does 'Brot' mean?",
-      "options": [
-        "bread",
-        "vegetables",
-        "cheese",
-        "fruit"
-      ],
-      "correct_answer": "bread",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Food & Culture — Unit 4 Lesson 1: Food vocabulary",
-      "audio_targets": {
-        "question": "What does 'Brot' mean?",
-        "options": [
-          "bread",
-          "vegetables",
-          "cheese",
-          "fruit"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "B2_Q17",
-      "question_number": 17,
-      "question": "What does 'ein Tisch für zwei' mean?",
-      "options": [
-        "a table for two",
-        "the bill",
-        "gluten-free",
-        "the menu"
-      ],
-      "correct_answer": "a table for two",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Food & Culture — Unit 4 Lesson 2: Ordering in restaurants",
-      "audio_targets": {
-        "question": "What does 'ein Tisch für zwei' mean?",
-        "options": [
-          "a table for two",
-          "the bill",
-          "gluten-free",
-          "the menu"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "B2_Q18",
-      "question_number": 18,
-      "question": "What does 'meiner Meinung nach' mean?",
-      "options": [
-        "I agree",
-        "in my opinion",
-        "on the other hand",
-        "it depends"
-      ],
-      "correct_answer": "in my opinion",
-      "correct_index": 1,
-      "exercise_type": "translate-en",
-      "source_title": "Food & Culture — Unit 4 Lesson 3: Opinions & discussions",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "I agree",
-          "in my opinion",
-          "on the other hand",
-          "it depends"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "B2_Q19",
-      "question_number": 19,
-      "question": "What does 'Brot' mean?",
-      "options": [
-        "bread",
-        "chicken",
-        "cheese",
-        "vegetables"
-      ],
-      "correct_answer": "bread",
-      "correct_index": 0,
-      "exercise_type": "translate-en",
-      "source_title": "Food & Culture — Unit 4 Lesson 4: Review & practice",
-      "audio_targets": {
-        "question": "What does 'Brot' mean?",
-        "options": [
-          "bread",
-          "chicken",
-          "cheese",
-          "vegetables"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
-    },
-    {
-      "id": "B2_Q20",
-      "question_number": 20,
-      "question": "What does 'meiner Meinung nach' mean?",
-      "options": [
-        "I agree",
-        "furthermore",
-        "I disagree",
-        "in my opinion"
-      ],
-      "correct_answer": "in my opinion",
+      "correct_answer": "The application was rejected.",
       "correct_index": 3,
-      "exercise_type": "translate-en",
-      "source_title": "Social & Opinions — Unit 5 Lesson 1: Opinions & discussions",
-      "audio_targets": {
-        "question": "What does 'meiner Meinung nach' mean?",
-        "options": [
-          "I agree",
-          "furthermore",
-          "I disagree",
-          "in my opinion"
-        ],
-        "correct_feedback": [
-          "Richtig.",
-          "Korrekt.",
-          "Das ist richtig."
-        ],
-        "incorrect_feedback": [
-          "Falsch.",
-          "Nicht ganz richtig.",
-          "Leider falsch."
-        ]
-      }
+      "exercise_type": "listen",
+      "audio": "Der Antrag wurde abgelehnt."
+    },
+    {
+      "id": "Q16",
+      "question_number": 16,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "We must stand firm.",
+        "We should postpone the decision.",
+        "We have reached an agreement.",
+        "We need to find a compromise."
+      ],
+      "correct_answer": "We need to find a compromise.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Wir müssen einen Kompromiss finden."
+    },
+    {
+      "id": "Q17",
+      "question_number": 17,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "The conference was cancelled.",
+        "The conference was moved to a smaller venue.",
+        "The conference is taking place as planned.",
+        "The conference was postponed indefinitely."
+      ],
+      "correct_answer": "The conference was postponed indefinitely.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Die Konferenz wurde auf unbestimmte Zeit verschoben."
+    },
+    {
+      "id": "Q18",
+      "question_number": 18,
+      "question": "Listen and choose what you heard.",
+      "options": [
+        "He kept his promise.",
+        "He made a new promise.",
+        "He asked to be released from his promise.",
+        "He did not keep his promise."
+      ],
+      "correct_answer": "He did not keep his promise.",
+      "correct_index": 3,
+      "exercise_type": "listen",
+      "audio": "Er hat sein Versprechen nicht gehalten."
+    },
+    {
+      "id": "Q19",
+      "question_number": 19,
+      "question": "Translate to target language: \"The project was completed on time despite the difficulties.\"",
+      "options": [
+        "Das Projekt wurde wegen der Schwierigkeiten nicht abgeschlossen.",
+        "Das Projekt ist pünktlich, aber es gab Probleme.",
+        "Das Projekt konnte trotz allem nicht fertiggestellt werden.",
+        "Das Projekt wurde trotz der Schwierigkeiten pünktlich abgeschlossen."
+      ],
+      "correct_answer": "Das Projekt wurde trotz der Schwierigkeiten pünktlich abgeschlossen.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q20",
+      "question_number": 20,
+      "question": "Translate to target language: \"I would appreciate your feedback.\"",
+      "options": [
+        "Ich brauche Ihre Kritik.",
+        "Könnten Sie bitte weniger Feedback geben?",
+        "Ihr Feedback ist nicht notwendig.",
+        "Ich würde mich über Ihr Feedback freuen."
+      ],
+      "correct_answer": "Ich würde mich über Ihr Feedback freuen.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q21",
+      "question_number": 21,
+      "question": "Translate to target language: \"The results are not yet available.\"",
+      "options": [
+        "Die Ergebnisse sind enttäuschend.",
+        "Die Ergebnisse wurden noch nicht besprochen.",
+        "Die Ergebnisse sind bereits bekannt.",
+        "Die Ergebnisse liegen noch nicht vor."
+      ],
+      "correct_answer": "Die Ergebnisse liegen noch nicht vor.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q22",
+      "question_number": 22,
+      "question": "Translate to target language: \"We need to reconsider our strategy.\"",
+      "options": [
+        "Wir haben keine Strategie mehr.",
+        "Unsere Strategie funktioniert gut.",
+        "Wir sollten an unserer Strategie festhalten.",
+        "Wir müssen unsere Strategie überdenken."
+      ],
+      "correct_answer": "Wir müssen unsere Strategie überdenken.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q23",
+      "question_number": 23,
+      "question": "Translate to target language: \"Could you elaborate on that point?\"",
+      "options": [
+        "Warum sagen Sie das?",
+        "Können Sie das wiederholen?",
+        "Sind Sie damit einverstanden?",
+        "Könnten Sie diesen Punkt näher erläutern?"
+      ],
+      "correct_answer": "Könnten Sie diesen Punkt näher erläutern?",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q24",
+      "question_number": 24,
+      "question": "Translate to target language: \"It is essential that we meet the deadline.\"",
+      "options": [
+        "Die Frist ist nicht so wichtig.",
+        "Es wäre gut, die Frist zu halten.",
+        "Wir sollten die Frist verlängern.",
+        "Es ist unbedingt erforderlich, dass wir die Frist einhalten."
+      ],
+      "correct_answer": "Es ist unbedingt erforderlich, dass wir die Frist einhalten.",
+      "correct_index": 3,
+      "exercise_type": "translate"
+    },
+    {
+      "id": "Q25",
+      "question_number": 25,
+      "question": "Bei einer Besprechung werden Sie gebeten, Ihren Standpunkt zu erläutern. Wie beginnen Sie?",
+      "options": [
+        "Das weiß ich nicht.",
+        "Das ist nicht meine Aufgabe.",
+        "Das ist eine schwierige Frage.",
+        "Ich möchte kurz erklären, warum ich der Meinung bin, dass..."
+      ],
+      "correct_answer": "Ich möchte kurz erklären, warum ich der Meinung bin, dass...",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q26",
+      "question_number": 26,
+      "question": "In einer Diskussion stimmen Sie nicht zu. Wie widersprechen Sie höflich?",
+      "options": [
+        "Das ist völlig falsch.",
+        "Sie verstehen das nicht.",
+        "Das interessiert mich nicht.",
+        "Ich sehe das etwas anders."
+      ],
+      "correct_answer": "Ich sehe das etwas anders.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q27",
+      "question_number": 27,
+      "question": "Sie erhalten eine Absage auf Ihre Bewerbung. Was ist eine angemessene Reaktion?",
+      "options": [
+        "Gar nicht reagieren.",
+        "Eine Beschwerde einreichen.",
+        "Sofort eine neue Bewerbung schicken.",
+        "Höflich antworten und nach Feedback fragen."
+      ],
+      "correct_answer": "Höflich antworten und nach Feedback fragen.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q28",
+      "question_number": 28,
+      "question": "Ihr Gesprächspartner benutzt einen Fachausdruck, den Sie nicht kennen. Was tun Sie?",
+      "options": [
+        "So tun, als ob Sie ihn kennen.",
+        "Das Gespräch abbrechen.",
+        "Den Begriff googeln, ohne etwas zu sagen.",
+        "Könnten Sie diesen Begriff kurz erklären?"
+      ],
+      "correct_answer": "Könnten Sie diesen Begriff kurz erklären?",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q29",
+      "question_number": 29,
+      "question": "Sie sollen eine formelle E-Mail an einen Kunden beginnen. Welche Anrede ist korrekt?",
+      "options": [
+        "Hey,",
+        "Hallo zusammen,",
+        "Hi,",
+        "Sehr geehrte Damen und Herren,"
+      ],
+      "correct_answer": "Sehr geehrte Damen und Herren,",
+      "correct_index": 3,
+      "exercise_type": "mcq"
+    },
+    {
+      "id": "Q30",
+      "question_number": 30,
+      "question": "Sie sollen einen langen Bericht zusammenfassen. Was ist am wichtigsten?",
+      "options": [
+        "Alle Details wiederholen.",
+        "Den Bericht möglichst lang machen.",
+        "Nur die Einleitung verwenden.",
+        "Die Hauptpunkte klar und knapp zusammenfassen."
+      ],
+      "correct_answer": "Die Hauptpunkte klar und knapp zusammenfassen.",
+      "correct_index": 3,
+      "exercise_type": "mcq"
     }
   ]
 }
