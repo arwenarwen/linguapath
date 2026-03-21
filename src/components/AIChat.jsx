@@ -1031,7 +1031,11 @@ ${starter}`;
 
 
 async function loadLocalExamBank(langCode, level) {
-  const bankNameMap = { de: "German" };
+  const bankNameMap = {
+    de: "German", fr: "French",  es: "Spanish",  it: "Italian",
+    pt: "Portuguese", ru: "Russian", zh: "Chinese", ja: "Japanese",
+    ko: "Korean",  el: "Greek",
+  };
   const prefix = bankNameMap[langCode] || "German";
   const res = await fetch(`/data/exams/${langCode}/${level}/${prefix}_${level}_exam_bank.json`);
   if (!res.ok) throw new Error(`Failed to load local exam bank: HTTP ${res.status}`);
@@ -1058,15 +1062,23 @@ function formatLocalExamQuestion(question, total = 20, index = null) {
   return lines.join("\n");
 }
 
-function buildExamSpeechText(question, index = 1, total = 20, langCode = "de") {
-  if (!question) return "";
-  const raw = String(question.question || "").trim();
-  if (langCode === "de") {
-    const m = raw.match(/['“"]([^'”"]+)['”"]/);
-    const term = m?.[1];
-    if (term) return `Frage ${index}. Was bedeutet ${term}?`;
-  }
-  return `Question ${index}. ${raw}`;
+function buildExamSpeechText(question, index = 1, total = 20, langCode = “de”) {
+  if (!question) return “”;
+  const raw  = String(question.question || “”).trim();
+  const type = question.exercise_type || “”;
+
+  // For translate-en / listen, just speak the target-language audio field
+  if ((type === “translate-en” || type === “listen”) && question.audio) return question.audio;
+
+  // Strip known English prefixes so the TTS speaks clean target-language text
+  const sentence = raw
+    .replace(/^Complete the sentence:\s*/i, “”)
+    .replace(/^Translate to [^:]+:\s*/i, “”)
+    .replace(/^What does ['”]?(.+?)['”]? mean in English\??/i, “$1”)
+    .replace(/^Listen and choose what you heard\.?\s*/i, “”)
+    .trim();
+
+  return sentence || raw;
 }
 
 /**
@@ -1146,24 +1158,24 @@ async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQuestion,
   // ── 1. Pick feedback URL ───────────────────────────────────────────────────
   let feedbackUrl;
   if (isCorrect) {
-    // Try language-specific "correct" clip, fall back to German
-    const correctUrl = `/audio/${langCode}/richtig.mp3`;
-    try {
-      const r = await fetch(correctUrl, { method: "HEAD", cache: "force-cache" });
-      feedbackUrl = r.ok ? correctUrl : "/audio/de/richtig.mp3";
-    } catch {
-      feedbackUrl = "/audio/de/richtig.mp3";
+    // Try: language correct.mp3 → language richtig.mp3 → German richtig.mp3
+    const candidates = [`/audio/${langCode}/correct.mp3`, `/audio/${langCode}/richtig.mp3`, "/audio/de/richtig.mp3"];
+    feedbackUrl = "/audio/de/richtig.mp3";
+    for (const url of candidates) {
+      try { const r = await fetch(url, { method: "HEAD", cache: "force-cache" }); if (r.ok) { feedbackUrl = url; break; } } catch {}
     }
   } else {
-    // Try per-question wrong clip first, then language generic, then German generic
+    // Try: per-question wrong clip → language incorrect.mp3 → language falsch.mp3 → German falsch.mp3
     const perQWrong = `/audio/exam/${langCode}/${level}_${currentQuestion?.id}_wrong.mp3`;
     try {
       const r = await fetch(perQWrong, { method: "HEAD", cache: "force-cache" });
       if (r.ok) { feedbackUrl = perQWrong; }
       else {
-        const genericWrong = `/audio/${langCode}/falsch.mp3`;
-        const r2 = await fetch(genericWrong, { method: "HEAD", cache: "force-cache" });
-        feedbackUrl = r2.ok ? genericWrong : "/audio/de/falsch.mp3";
+        const genericCandidates = [`/audio/${langCode}/incorrect.mp3`, `/audio/${langCode}/falsch.mp3`, "/audio/de/falsch.mp3"];
+        feedbackUrl = "/audio/de/falsch.mp3";
+        for (const url of genericCandidates) {
+          try { const r2 = await fetch(url, { method: "HEAD", cache: "force-cache" }); if (r2.ok) { feedbackUrl = url; break; } } catch {}
+        }
       }
     } catch {
       feedbackUrl = "/audio/de/falsch.mp3";
