@@ -193,6 +193,17 @@ function buildQuestions(module, langCode) {
       });
     });
 
+    // ── Type 5: Speaking exercise (1-2 per lesson) ──────────────────────────────
+    const speakCandidates = vocab.filter(w => {
+      const t = getTarget(w, langCode);
+      return t && w.en && t.split(" ").length <= 4; // short enough to speak
+    });
+    shuffle(speakCandidates).slice(0, 2).forEach(w => {
+      const t = getTarget(w, langCode);
+      if (!t || !w.en) return;
+      qs.push({ type:"speak", q: w.en, ans: t });
+    });
+
     // Interleave types, max 10
     const byType = {};
     qs.forEach(q => { if (!byType[q.type]) byType[q.type]=[]; byType[q.type].push(q); });
@@ -844,6 +855,86 @@ function TileQuestion({ q, onAnswer, langCode }) {
 }
 
 
+// ─── Voice recognition component ─────────────────────────────────────────────
+function SpeakQuestion({ q, langCode, onAnswer }) {
+  const [status, setStatus] = useState("idle"); // idle | listening | correct | wrong | unsupported
+  const [heard, setHeard] = useState("");
+  const T2 = getLessonTheme();
+
+  const langMap = { de:"de-DE", es:"es-ES", fr:"fr-FR", it:"it-IT", pt:"pt-BR", zh:"zh-CN", ja:"ja-JP", ko:"ko-KR", ru:"ru-RU", el:"el-GR", pl:"pl-PL" };
+
+  function normalize(s) { return (s || "").toLowerCase().trim().replace(/[.,!?;:'"]/g,""); }
+
+  function startListening() {
+    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRec) { setStatus("unsupported"); return; }
+    const rec = new SpeechRec();
+    rec.lang = langMap[langCode] || "de-DE";
+    rec.interimResults = false;
+    rec.maxAlternatives = 5;
+    setStatus("listening"); setHeard("");
+    rec.onresult = (e) => {
+      const alts = Array.from(e.results[0]).map(r => normalize(r.transcript));
+      const expected = normalize(q.ans);
+      const correct = alts.some(t => t === expected || t.includes(expected) || expected.includes(t));
+      setHeard(alts[0] || "");
+      setStatus(correct ? "correct" : "wrong");
+      onAnswer(correct);
+    };
+    rec.onerror = (e) => { setStatus(e.error === "not-allowed" ? "unsupported" : "wrong"); setHeard("(mic error)"); onAnswer(false); };
+    rec.start();
+  }
+
+  const icons = { idle:"🎤", listening:"🔴", correct:"✅", wrong:"❌", unsupported:"🎤" };
+  const labels = { idle:"Tap to speak", listening:"Listening…", correct:"Correct!", wrong:"Try again?", unsupported:"Mic unavailable" };
+
+  return (
+    <div style={{ textAlign:"center", padding:"8px 0" }}>
+      <div style={{ fontSize:13, fontWeight:700, color:T2.muted, marginBottom:18, letterSpacing:0.5 }}>
+        🗣️ Say this in {langCode === "de" ? "German" : langCode === "es" ? "Spanish" : langCode === "fr" ? "French" : "the language"}:
+      </div>
+      <div style={{ fontSize:20, fontWeight:800, color:T2.text, marginBottom:24, fontFamily:"'Playfair Display',Georgia,serif", lineHeight:1.4 }}>
+        "{q.q}"
+      </div>
+
+      <button
+        onClick={status === "idle" || status === "wrong" ? startListening : undefined}
+        disabled={status === "listening" || status === "correct"}
+        style={{
+          width:90, height:90, borderRadius:"50%", border:"none", cursor: status === "listening" || status === "correct" ? "default" : "pointer",
+          background: status === "correct" ? "rgba(34,197,94,0.15)" : status === "wrong" ? "rgba(239,68,68,0.12)" : status === "listening" ? `${T2.path}22` : `${T2.path}18`,
+          boxShadow: status === "listening" ? `0 0 0 12px ${T2.path}22, 0 0 0 24px ${T2.path}0a` : "none",
+          fontSize:38, transition:"all 0.3s",
+          animation: status === "listening" ? "pulse 1.2s ease-in-out infinite" : "none",
+        }}>
+        {icons[status]}
+      </button>
+
+      <div style={{ marginTop:14, fontSize:13, fontWeight:700, color: status === "correct" ? "#22c55e" : status === "wrong" ? "#ef4444" : T2.muted }}>
+        {labels[status]}
+      </div>
+
+      {heard && status !== "listening" && (
+        <div style={{ marginTop:8, fontSize:12, color:T2.muted }}>
+          Heard: <em>"{heard}"</em>
+        </div>
+      )}
+
+      {status === "wrong" && (
+        <div style={{ marginTop:12, padding:"10px 14px", borderRadius:12, background:"rgba(239,68,68,0.08)", border:"1px solid rgba(239,68,68,0.2)", fontSize:13, color:"#ef4444" }}>
+          💡 Correct answer: <strong>"{q.ans}"</strong>
+        </div>
+      )}
+
+      {status === "unsupported" && (
+        <div style={{ marginTop:10, fontSize:12, color:T2.muted }}>
+          Voice input not available on this browser. Try Chrome or Safari.
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Quiz({ module, langCode, userId, onDone }) {
   const langName = { es:"Spanish",de:"German",fr:"French",it:"Italian",
     pt:"Portuguese",zh:"Mandarin",ja:"Japanese",ko:"Korean",
@@ -867,8 +958,9 @@ function Quiz({ module, langCode, userId, onDone }) {
   if (!q) return null;
 
   const isTile = q.type === "tile";
-  const answered = isTile ? tileCorrect !== null : chosen !== null;
-  const isCorrect = isTile ? tileCorrect : chosen === q.ans;
+  const isSpeak = q.type === "speak";
+  const answered = isTile ? tileCorrect !== null : isSpeak ? tileCorrect !== null : chosen !== null;
+  const isCorrect = isTile ? tileCorrect : isSpeak ? tileCorrect : chosen === q.ans;
 
   const langEmoji = {
     de:"🇩🇪", es:"🇪🇸", fr:"🇫🇷", it:"🇮🇹", pt:"🇧🇷",
@@ -880,6 +972,7 @@ function Quiz({ module, langCode, userId, onDone }) {
     tgt:  `🗣️ Translate to ${langName}`,
     response: "💬 Best response",
     tile: "🧩 Build the sentence",
+    speak: "🎤 Say it aloud",
   }[q.type] || "✏️ Question";
 
   function pickMCQ(opt) {
@@ -958,7 +1051,8 @@ function Quiz({ module, langCode, userId, onDone }) {
       </div>
 
       <div style={{ fontFamily:"'Playfair Display',Georgia,serif", fontSize:20,
-        fontWeight:700, marginBottom: q.subtext ? 8 : 22, lineHeight:1.4, color:"#4a2800" }}>
+        fontWeight:700, marginBottom: q.subtext ? 8 : 22, lineHeight:1.4, color:"#4a2800",
+        display: isSpeak ? "none" : undefined }}>
         {q.q}
         {/* Speak button for German/target-language words in the question */}
         {(q.type === "en") && q.subtext && (
@@ -1027,6 +1121,11 @@ function Quiz({ module, langCode, userId, onDone }) {
       {/* Tile / keyboard question */}
       {isTile && (
         <TileQuestion key={"tile-" + qIdx} q={q} onAnswer={handleTileAnswer} langCode={langCode} />
+      )}
+
+      {/* Speaking exercise */}
+      {isSpeak && (
+        <SpeakQuestion key={"speak-" + qIdx} q={q} langCode={langCode} onAnswer={handleTileAnswer} />
       )}
 
       {/* Feedback for tile */}

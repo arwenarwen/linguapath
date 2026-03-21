@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import BottomNavPro from "../components/BottomNavPro";
+import WaitlistPage from "./WaitlistPage";
+import StatueShopPage from "./StatueShopPage";
 import LearnJourneyPage from "./LearnJourneyPage";
 import SituationsHub from "./SituationsHub";
 import TutorModesPage from "./TutorModesPage";
@@ -18,7 +20,8 @@ import {
   getUserPlan, isPro,
   canStartLesson, incrementDailyLesson, getDailyUsage, addDailyXp,
   FREE_LESSONS_PER_DAY, levelUsesEnergy, savePlacementState, getPlacementState,
-  getTrailPoints, addTrailPoints, trailPointsForLesson, getCheckpointPass
+  getTrailPoints, addTrailPoints, trailPointsForLesson, getCheckpointPass,
+  saveLessonStars, getLessonStarsMap, getXPLevel, LEVEL_TITLES, getDailyGoalProgress, DAILY_LESSON_GOAL
 } from "../lib/appState";
 import {
   calculateRewards,
@@ -302,6 +305,12 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
   const [modal, setModal] = useState(null);
   const [toast, setToast] = useState(null);
   const [rewardSummary, setRewardSummary] = useState(null);
+  const [levelUpModal, setLevelUpModal] = useState(null); // { from, to, title }
+  const [chestModal, setChestModal] = useState(null);     // { xp, stars }
+  const [showWaitlist, setShowWaitlist] = useState(false);
+  const [showStatues, setShowStatues] = useState(false);
+  const [starsMap, setStarsMap] = useState(() => getLessonStarsMap(user?.id, activeLangProp || "de"));
+  const prevXPLevelRef = useRef(getXPLevel(loadProgress(user?.id, activeLangProp || "de").xp).level);
   const progressRef = useRef(progress);
   const userPlan = getUserPlan(user?.id);
   const proUser = userPlan === "pro";
@@ -418,6 +427,23 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         completed: next.completed, xp: next.xp,
         updated_at: new Date().toISOString(),
       }, { onConflict: "user_id,language" }).catch(() => {});
+    }
+
+    // Save stars per lesson
+    saveLessonStars(user?.id, activeLang, moduleId, stars);
+    setStarsMap(getLessonStarsMap(user?.id, activeLang));
+
+    // Check for level-up
+    const newXPTotal = next.xp;
+    const newLevel = getXPLevel(newXPTotal).level;
+    if (newLevel > prevXPLevelRef.current) {
+      setLevelUpModal({ from: prevXPLevelRef.current, to: newLevel, title: LEVEL_TITLES[newLevel] });
+    }
+    prevXPLevelRef.current = newLevel;
+
+    // Chest reward every 3 lessons
+    if (next.completed.length % 3 === 0) {
+      setTimeout(() => setChestModal({ xp: summary.totalXP, stars }), 800);
     }
 
     setRewardSummary(summary);
@@ -539,6 +565,17 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         </div>
       )}
 
+      {/* Waitlist banner — subtle, dismissible */}
+      {tab === "learn" && !proUser && (
+        <div style={{ position:"relative", zIndex:10, margin:"8px 14px 0", background:"rgba(245,165,36,0.08)", border:"1px solid rgba(245,165,36,0.28)", borderRadius:14, padding:"9px 14px", display:"flex", alignItems:"center", gap:10 }}>
+          <span style={{ fontSize:18 }}>🎁</span>
+          <div style={{ flex:1, fontSize:12, color:"#4a2800" }}>
+            <strong>Join the waitlist</strong> — first 50 get 1 month Pro free!
+          </div>
+          <button onClick={() => setShowWaitlist(true)} style={{ background:"linear-gradient(135deg,#f5a524,#c9a84c)", color:"#fff", border:"none", borderRadius:10, padding:"6px 12px", fontSize:11, fontWeight:800, cursor:"pointer" }}>Join →</button>
+        </div>
+      )}
+
       <div style={{ position: "relative", zIndex: 1, paddingBottom: 64 }}>
         {tab === "learn" && (
           <LearnJourneyPage
@@ -547,9 +584,10 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
             user={user} isPro={proUser}
             justCompletedId={justCompletedId} lastStars={lastStars} animTrigger={animTrigger}
             autoStartLesson={autoStartLesson}
+            starsMap={starsMap}
             onSelectLesson={requestLesson}
             onUpgrade={() => setModal("upgrade")}
-            langCode={activeLang}
+            onStatues={() => setShowStatues(true)}
             placedLevel={(getPlacementState(user?.id, activeLang)?.placedLevel)||"A1"}
           />
         )}
@@ -604,6 +642,47 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
             if (didUpgrade) window.location.reload();
           }}
         />
+      )}
+
+      {/* 📋 Waitlist */}
+      {showWaitlist && <WaitlistPage onClose={() => setShowWaitlist(false)} />}
+
+      {/* 🗿 Cultural statues */}
+      {showStatues && <StatueShopPage userId={user?.id} langCode={activeLang} onClose={() => setShowStatues(false)} />}
+
+      {/* 🎉 Level-up celebration */}
+      {levelUpModal && (
+        <div style={{ position:"fixed", inset:0, zIndex:500, background:"rgba(0,0,0,0.55)", display:"flex", alignItems:"center", justifyContent:"center", padding:"0 24px" }} onClick={() => setLevelUpModal(null)}>
+          <div onClick={e => e.stopPropagation()} style={{ background:"linear-gradient(135deg,#fff7ea,#ffe7c2)", borderRadius:28, padding:"36px 28px", textAlign:"center", maxWidth:340, width:"100%", boxShadow:"0 24px 60px rgba(245,165,36,0.35)", border:"2px solid rgba(245,165,36,0.35)", animation:"slideUp 0.5s cubic-bezier(0.34,1.56,0.64,1) both" }}>
+            <div style={{ fontSize:56, marginBottom:8, animation:"idleBob 2s ease-in-out infinite" }}>🏆</div>
+            <div style={{ fontSize:13, fontWeight:800, letterSpacing:2, color:"rgba(107,61,16,0.55)", textTransform:"uppercase", marginBottom:4 }}>Level Up!</div>
+            <div style={{ fontSize:28, fontWeight:900, color:"#4a2800", fontFamily:"'Playfair Display',Georgia,serif", marginBottom:8 }}>{levelUpModal.title}</div>
+            <div style={{ fontSize:13, color:"rgba(107,61,16,0.65)", marginBottom:24 }}>You reached a new rank on the trail. Keep climbing! 🌄</div>
+            <button onClick={() => setLevelUpModal(null)} style={{ background:"linear-gradient(135deg,#f5a524,#c9a84c)", color:"#fff", border:"none", borderRadius:16, padding:"13px 32px", fontSize:15, fontWeight:800, cursor:"pointer", boxShadow:"0 4px 16px rgba(245,165,36,0.4)" }}>Keep Going →</button>
+          </div>
+        </div>
+      )}
+
+      {/* 📦 Chest reward every 3 lessons */}
+      {chestModal && (
+        <div style={{ position:"fixed", inset:0, zIndex:499, background:"rgba(0,0,0,0.55)", display:"flex", alignItems:"center", justifyContent:"center", padding:"0 24px" }} onClick={() => setChestModal(null)}>
+          <div onClick={e => e.stopPropagation()} style={{ background:"linear-gradient(135deg,#fff7ea,#ffe7c2)", borderRadius:28, padding:"36px 28px", textAlign:"center", maxWidth:340, width:"100%", boxShadow:"0 24px 60px rgba(245,165,36,0.3)", border:"2px solid rgba(245,165,36,0.3)" }}>
+            <div style={{ fontSize:60, marginBottom:8, animation:"idleBob 1.6s ease-in-out infinite" }}>📦</div>
+            <div style={{ fontSize:13, fontWeight:800, letterSpacing:2, color:"rgba(107,61,16,0.55)", textTransform:"uppercase", marginBottom:4 }}>Chest Unlocked!</div>
+            <div style={{ fontSize:22, fontWeight:900, color:"#4a2800", fontFamily:"'Playfair Display',Georgia,serif", marginBottom:8 }}>3-Lesson Reward</div>
+            <div style={{ display:"flex", gap:10, justifyContent:"center", margin:"16px 0" }}>
+              <div style={{ background:"rgba(245,165,36,0.12)", border:"1px solid rgba(245,165,36,0.3)", borderRadius:14, padding:"12px 18px", textAlign:"center" }}>
+                <div style={{ fontSize:20 }}>⚡</div>
+                <div style={{ fontSize:14, fontWeight:900, color:"#f5a524" }}>+{chestModal.xp} XP</div>
+              </div>
+              <div style={{ background:"rgba(245,165,36,0.12)", border:"1px solid rgba(245,165,36,0.3)", borderRadius:14, padding:"12px 18px", textAlign:"center" }}>
+                <div style={{ fontSize:20 }}>{"⭐".repeat(chestModal.stars)}</div>
+                <div style={{ fontSize:14, fontWeight:900, color:"#f5a524" }}>{chestModal.stars} Stars</div>
+              </div>
+            </div>
+            <button onClick={() => setChestModal(null)} style={{ background:"linear-gradient(135deg,#f5a524,#c9a84c)", color:"#fff", border:"none", borderRadius:16, padding:"13px 32px", fontSize:15, fontWeight:800, cursor:"pointer", boxShadow:"0 4px 16px rgba(245,165,36,0.4)" }}>Awesome! 🎉</button>
+          </div>
+        </div>
       )}
     </div>
   );

@@ -2,23 +2,41 @@ import React, { useState, useEffect } from "react";
 import { getAllModulesFromCurriculum } from "../lib/appState";
 import { ACHIEVEMENTS, ACHIEVEMENT_CATEGORY_ORDER, getAchievements } from "../lib/rewards";
 
+const T = {
+  bg: "linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)",
+  panel: "rgba(255,255,255,0.82)",
+  card: "rgba(255,255,255,0.72)",
+  border: "rgba(245,165,36,0.25)",
+  borderStrong: "rgba(245,165,36,0.4)",
+  text: "#4a2800",
+  muted: "rgba(107,61,16,0.6)",
+  faint: "rgba(107,61,16,0.38)",
+  path: "#f5a524",
+  gold: "#c9a84c",
+  goldLight: "#f0cf83",
+  red: "#ef4444",
+  redBg: "rgba(239,68,68,0.07)",
+  green: "#16a34a",
+  greenBg: "rgba(22,163,74,0.07)",
+};
+
 const CSS = `
   @keyframes prof-shine { 0%{background-position:200% center} 100%{background-position:-200% center} }
   @keyframes prof-bar-fill { from{width:0%} to{width:var(--tw)} }
   @keyframes prof-slide-in { from{opacity:0;transform:translateX(-16px)} to{opacity:1;transform:translateX(0)} }
   @keyframes prof-fade-up { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
-  @keyframes prof-avatar-glow { 0%,100%{box-shadow:0 0 0 0 rgba(212,175,95,0.25)} 50%{box-shadow:0 0 22px 8px rgba(212,175,95,0.15)} }
+  @keyframes prof-avatar-glow { 0%,100%{box-shadow:0 0 0 0 rgba(245,165,36,0.2)} 50%{box-shadow:0 0 22px 8px rgba(245,165,36,0.15)} }
   @keyframes prof-count { from{opacity:0;transform:scale(0.85)} to{opacity:1;transform:scale(1)} }
 
   .pf-stat-card { transition:all 0.2s ease; }
-  .pf-stat-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,0.35) !important; }
+  .pf-stat-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(245,165,36,0.2) !important; }
   .pf-tab-btn { transition:all 0.18s ease; cursor:pointer; border:none; font-family:inherit; }
   .pf-achievement-card { transition:all 0.2s ease; }
   .pf-achievement-card.earned:hover { transform:translateY(-2px); }
   .pf-lb-row { transition:background 0.15s ease; }
-  .pf-lb-row:hover { background:rgba(255,255,255,0.05) !important; }
+  .pf-lb-row:hover { background:rgba(245,165,36,0.06) !important; }
   .pf-lang-item { transition:background 0.15s ease; cursor:pointer; border:none; font-family:inherit; }
-  .pf-lang-item:hover { background:rgba(255,255,255,0.07) !important; }
+  .pf-lang-item:hover { background:rgba(245,165,36,0.08) !important; }
   .pf-bar { animation:prof-bar-fill 0.9s cubic-bezier(0.34,1.56,0.64,1) both; }
   .pf-avatar { animation:prof-avatar-glow 3s ease-in-out infinite; }
   .pf-tab-content { animation:prof-fade-up 0.3s ease both; }
@@ -80,23 +98,23 @@ function LangModal({ curricula, activeLang, progressMap, onPick, onClose }) {
     .sort((a, b) => a.code === activeLang ? -1 : b.code === activeLang ? 1 : b.started - a.started || a.name.localeCompare(b.name));
 
   return (
-    <div onClick={onClose} style={{ position:"fixed", inset:0, zIndex:600, background:"rgba(0,0,0,0.72)", backdropFilter:"blur(8px)", display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
-      <div onClick={e => e.stopPropagation()} style={{ background:"#0d1117", borderRadius:"24px 24px 0 0", width:"100%", maxWidth:480, maxHeight:"78vh", overflowY:"auto", padding:"22px 18px 44px", border:"1px solid rgba(255,255,255,0.09)", borderBottom:"none" }}>
-        <div style={{ width:36, height:4, background:"rgba(255,255,255,0.12)", borderRadius:999, margin:"0 auto 18px" }} />
-        <div style={{ fontFamily:"'Syne',sans-serif", fontSize:17, fontWeight:800, marginBottom:14 }}>Choose Language</div>
+    <div onClick={onClose} style={{ position:"fixed", inset:0, zIndex:600, background:"rgba(107,61,16,0.35)", backdropFilter:"blur(8px)", display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
+      <div onClick={e => e.stopPropagation()} style={{ background:"#fff7ea", borderRadius:"24px 24px 0 0", width:"100%", maxWidth:480, maxHeight:"78vh", overflowY:"auto", padding:"22px 18px 44px", border:`1px solid ${T.borderStrong}`, borderBottom:"none" }}>
+        <div style={{ width:36, height:4, background:"rgba(245,165,36,0.25)", borderRadius:999, margin:"0 auto 18px" }} />
+        <div style={{ fontFamily:"'Syne',sans-serif", fontSize:17, fontWeight:800, color:T.text, marginBottom:14 }}>Choose Language</div>
         {langs.map(l => (
           <button key={l.code} className="pf-lang-item" onClick={() => onPick(l.code)} style={{
             width:"100%", display:"flex", alignItems:"center", gap:14, padding:"12px 14px", borderRadius:14, marginBottom:8,
-            background: l.code === activeLang ? "rgba(212,175,95,0.09)" : "rgba(255,255,255,0.025)",
-            border:`1px solid ${l.code === activeLang ? "rgba(212,175,95,0.28)" : "rgba(255,255,255,0.07)"}`,
+            background: l.code === activeLang ? `rgba(245,165,36,0.09)` : T.card,
+            border:`1px solid ${l.code === activeLang ? T.borderStrong : T.border}`,
             textAlign:"left",
           }}>
             <span style={{ fontSize:26 }}>{l.flag}</span>
             <div style={{ flex:1 }}>
-              <div style={{ fontSize:14, fontWeight:700, color:"#f0f0f5" }}>{l.name}</div>
-              <div style={{ fontSize:11, color:"rgba(255,255,255,0.35)", marginTop:2 }}>{l.pct}% complete</div>
+              <div style={{ fontSize:14, fontWeight:700, color:T.text }}>{l.name}</div>
+              <div style={{ fontSize:11, color:T.muted, marginTop:2 }}>{l.pct}% complete</div>
             </div>
-            {l.code === activeLang && <span style={{ fontSize:10, fontWeight:700, color:"#d4af5f", background:"rgba(212,175,95,0.1)", padding:"3px 10px", borderRadius:20 }}>Current</span>}
+            {l.code === activeLang && <span style={{ fontSize:10, fontWeight:700, color:T.path, background:`rgba(245,165,36,0.1)`, padding:"3px 10px", borderRadius:20 }}>Current</span>}
           </button>
         ))}
       </div>
@@ -121,31 +139,31 @@ function ProgressTab({ progress, curriculum, langName }) {
   return (
     <div style={{ display:"flex", flexDirection:"column", gap:12 }}>
       {/* Readiness */}
-      <div style={{ background:"rgba(255,255,255,0.03)", border:"1px solid rgba(255,255,255,0.07)", borderRadius:18, padding:16 }}>
+      <div style={{ background:T.panel, border:`1px solid ${T.border}`, borderRadius:18, padding:16, boxShadow:"0 2px 12px rgba(245,165,36,0.08)" }}>
         <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:8 }}>
-          <span style={{ fontSize:13, fontWeight:700, color:"rgba(255,255,255,0.65)" }}>Readiness · {langName}</span>
-          <span style={{ fontSize:15, fontWeight:900, color:"#d4af5f" }}>{readiness}%</span>
+          <span style={{ fontSize:13, fontWeight:700, color:T.text }}>Readiness · {langName}</span>
+          <span style={{ fontSize:15, fontWeight:900, color:T.path }}>{readiness}%</span>
         </div>
-        <div style={{ height:7, background:"rgba(255,255,255,0.07)", borderRadius:999, overflow:"hidden", marginBottom:5 }}>
-          <div className="pf-bar" style={{ height:"100%", borderRadius:999, background:"linear-gradient(90deg,#c9a84c,#f0cf83)", boxShadow:"0 0 10px rgba(212,175,95,0.35)", "--tw":`${readiness}%` }} />
+        <div style={{ height:7, background:"rgba(245,165,36,0.12)", borderRadius:999, overflow:"hidden", marginBottom:5 }}>
+          <div className="pf-bar" style={{ height:"100%", borderRadius:999, background:`linear-gradient(90deg,${T.path},${T.goldLight})`, boxShadow:`0 0 10px rgba(245,165,36,0.3)`, "--tw":`${readiness}%` }} />
         </div>
-        <div style={{ fontSize:11, color:"rgba(255,255,255,0.3)" }}>{totalDone} of {allMods.length} lessons</div>
+        <div style={{ fontSize:11, color:T.muted }}>{totalDone} of {allMods.length} lessons</div>
       </div>
 
       {/* Next goal */}
       {nextGoal && (
-        <div style={{ background:"rgba(212,175,95,0.05)", border:"1px solid rgba(212,175,95,0.15)", borderRadius:14, padding:"11px 14px", display:"flex", alignItems:"center", gap:10 }}>
+        <div style={{ background:`rgba(245,165,36,0.06)`, border:`1px solid ${T.border}`, borderRadius:14, padding:"11px 14px", display:"flex", alignItems:"center", gap:10 }}>
           <span style={{ fontSize:22 }}>{nextGoal.icon}</span>
           <div>
-            <div style={{ fontSize:11, color:"#d4af5f", fontWeight:700 }}>Next Achievement</div>
-            <div style={{ fontSize:13, color:"rgba(255,255,255,0.55)", marginTop:2 }}>{nextGoal.label} — {nextGoal.target - totalDone} lessons away</div>
+            <div style={{ fontSize:11, color:T.path, fontWeight:700 }}>Next Achievement</div>
+            <div style={{ fontSize:13, color:T.muted, marginTop:2 }}>{nextGoal.label} — {nextGoal.target - totalDone} lessons away</div>
           </div>
         </div>
       )}
 
       {/* Level breakdown */}
-      <div style={{ background:"rgba(255,255,255,0.03)", border:"1px solid rgba(255,255,255,0.07)", borderRadius:18, padding:16 }}>
-        <div style={{ fontSize:11, fontWeight:700, color:"rgba(255,255,255,0.3)", textTransform:"uppercase", letterSpacing:1.5, marginBottom:14 }}>Level Progress</div>
+      <div style={{ background:T.panel, border:`1px solid ${T.border}`, borderRadius:18, padding:16, boxShadow:"0 2px 12px rgba(245,165,36,0.08)" }}>
+        <div style={{ fontSize:11, fontWeight:700, color:T.faint, textTransform:"uppercase", letterSpacing:1.5, marginBottom:14 }}>Level Progress</div>
         <div style={{ display:"flex", flexDirection:"column", gap:13 }}>
           {["A1","A2","B1","B2","C1","C2"].map(k => {
             const mods = curriculum[k]?.modules || [];
@@ -157,11 +175,11 @@ function ProgressTab({ progress, curriculum, langName }) {
               <div key={k}>
                 <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:5 }}>
                   <span style={{ fontSize:15 }}>{LEVEL_ICONS[k]}</span>
-                  <span style={{ fontSize:10, fontWeight:700, padding:"2px 7px", borderRadius:20, background:`${color}18`, color, border:`1px solid ${color}28` }}>{k}</span>
-                  <span style={{ fontSize:12, color:"rgba(255,255,255,0.5)", flex:1 }}>{LEVEL_LABELS[k]}</span>
+                  <span style={{ fontSize:10, fontWeight:700, padding:"2px 7px", borderRadius:20, background:`${color}18`, color, border:`1px solid ${color}30` }}>{k}</span>
+                  <span style={{ fontSize:12, color:T.muted, flex:1 }}>{LEVEL_LABELS[k]}</span>
                   <span style={{ fontSize:12, color, fontWeight:700 }}>{done}/{mods.length}</span>
                 </div>
-                <div style={{ height:5, background:"rgba(255,255,255,0.07)", borderRadius:999, overflow:"hidden" }}>
+                <div style={{ height:5, background:"rgba(245,165,36,0.1)", borderRadius:999, overflow:"hidden" }}>
                   <div className="pf-bar" style={{ height:"100%", borderRadius:999, background:color, boxShadow:`0 0 8px ${color}44`, "--tw":`${pct}%` }} />
                 </div>
               </div>
@@ -193,13 +211,13 @@ function AchievementsTab({ userId, progress }) {
   return (
     <div>
       <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:14 }}>
-        <span style={{ fontSize:12, color:"rgba(255,255,255,0.3)", flex:1 }}>{earned}/{ACHIEVEMENTS.length} earned</span>
+        <span style={{ fontSize:12, color:T.muted, flex:1 }}>{earned}/{ACHIEVEMENTS.length} earned</span>
         {[["all","All"],["earned","✓ Earned"],["locked","🔒 Locked"]].map(([v,l]) => (
           <button key={v} className="pf-tab-btn" onClick={() => setFilter(v)} style={{
             padding:"5px 11px", borderRadius:20, fontSize:11, fontWeight:700,
-            background: filter===v ? "rgba(167,139,250,0.18)" : "transparent",
-            border:`1px solid ${filter===v ? "rgba(167,139,250,0.45)" : "rgba(255,255,255,0.09)"}`,
-            color: filter===v ? "#a78bfa" : "rgba(255,255,255,0.35)",
+            background: filter===v ? `rgba(245,165,36,0.12)` : "transparent",
+            border:`1px solid ${filter===v ? T.borderStrong : T.border}`,
+            color: filter===v ? T.path : T.muted,
           }}>{l}</button>
         ))}
       </div>
@@ -220,12 +238,12 @@ function AchievementsTab({ userId, progress }) {
           <div key={cat} style={{ marginBottom:10 }}>
             <button className="pf-tab-btn" onClick={toggle} style={{
               width:"100%", display:"flex", alignItems:"center", gap:8, padding:"10px 13px",
-              background:"rgba(255,255,255,0.03)", border:"1px solid rgba(255,255,255,0.07)",
-              borderRadius:13, color:"rgba(255,255,255,0.65)", textAlign:"left",
+              background:T.card, border:`1px solid ${T.border}`,
+              borderRadius:13, color:T.text, textAlign:"left",
             }}>
               <span style={{ fontSize:13, fontWeight:700, flex:1 }}>{cat}</span>
-              <span style={{ fontSize:11, color:"rgba(255,255,255,0.3)" }}>{catEarned}/{items.length}</span>
-              <span style={{ fontSize:11, color:"rgba(255,255,255,0.25)", transform:isOpen?"rotate(180deg)":"none", transition:"transform 0.2s" }}>▾</span>
+              <span style={{ fontSize:11, color:T.muted }}>{catEarned}/{items.length}</span>
+              <span style={{ fontSize:11, color:T.faint, transform:isOpen?"rotate(180deg)":"none", transition:"transform 0.2s" }}>▾</span>
             </button>
 
             {isOpen && (
@@ -236,23 +254,23 @@ function AchievementsTab({ userId, progress }) {
                   return (
                     <div key={a.id} className={`pf-achievement-card ${e ? "earned" : ""}`} style={{
                       padding:"12px 11px", borderRadius:15, textAlign:"center",
-                      background: e ? "rgba(212,175,95,0.07)" : "rgba(255,255,255,0.02)",
-                      border:`1px solid ${e ? "rgba(212,175,95,0.28)" : "rgba(255,255,255,0.05)"}`,
-                      opacity: e ? 1 : 0.48,
-                      boxShadow: e ? "0 0 14px rgba(212,175,95,0.07)" : "none",
+                      background: e ? `rgba(245,165,36,0.08)` : T.card,
+                      border:`1px solid ${e ? T.borderStrong : T.border}`,
+                      opacity: e ? 1 : 0.55,
+                      boxShadow: e ? `0 0 14px rgba(245,165,36,0.1)` : "none",
                     }}>
                       <div style={{ fontSize:22, marginBottom:5, filter:e?"none":"grayscale(1)" }}>{e ? a.icon : "🔒"}</div>
-                      <div style={{ fontFamily:"'Syne',sans-serif", fontSize:11, fontWeight:700, marginBottom:3, color:e?"#f0f0f5":"rgba(255,255,255,0.45)" }}>{a.name}</div>
-                      <div style={{ fontSize:10, color:"rgba(255,255,255,0.3)", lineHeight:1.4, marginBottom: p ? 7 : 0 }}>{a.desc}</div>
+                      <div style={{ fontFamily:"'Syne',sans-serif", fontSize:11, fontWeight:700, marginBottom:3, color:e?T.text:T.muted }}>{a.name}</div>
+                      <div style={{ fontSize:10, color:T.muted, lineHeight:1.4, marginBottom: p ? 7 : 0 }}>{a.desc}</div>
                       {p && (
                         <div>
-                          <div style={{ height:3, background:"rgba(255,255,255,0.08)", borderRadius:999, overflow:"hidden", marginBottom:3 }}>
-                            <div style={{ height:"100%", background:"#d4af5f", borderRadius:999, width:`${Math.round(p.v/p.max*100)}%`, transition:"width 0.6s" }} />
+                          <div style={{ height:3, background:"rgba(245,165,36,0.12)", borderRadius:999, overflow:"hidden", marginBottom:3 }}>
+                            <div style={{ height:"100%", background:T.path, borderRadius:999, width:`${Math.round(p.v/p.max*100)}%`, transition:"width 0.6s" }} />
                           </div>
-                          <div style={{ fontSize:9, color:"rgba(255,255,255,0.28)" }}>{p.v}/{p.max}</div>
+                          <div style={{ fontSize:9, color:T.faint }}>{p.v}/{p.max}</div>
                         </div>
                       )}
-                      {e && <div style={{ marginTop:5, fontSize:9, fontWeight:800, color:"#d4af5f" }}>✦ EARNED{a.xp ? ` · +${a.xp} XP` : ""}</div>}
+                      {e && <div style={{ marginTop:5, fontSize:9, fontWeight:800, color:T.path }}>✦ EARNED{a.xp ? ` · +${a.xp} XP` : ""}</div>}
                     </div>
                   );
                 })}
@@ -279,20 +297,20 @@ function LeaderboardTab({ userId, userXP, displayName }) {
   return (
     <div>
       {me && (
-        <div style={{ background:"rgba(212,175,95,0.07)", border:"1.5px solid rgba(212,175,95,0.22)", borderRadius:17, padding:"13px 16px", marginBottom:14, display:"flex", alignItems:"center", gap:12 }}>
-          <div style={{ width:42, height:42, borderRadius:"50%", background:"linear-gradient(135deg,#f0cf83,#c9a84c)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:20 }}>🧗</div>
+        <div style={{ background:`rgba(245,165,36,0.08)`, border:`1.5px solid ${T.borderStrong}`, borderRadius:17, padding:"13px 16px", marginBottom:14, display:"flex", alignItems:"center", gap:12 }}>
+          <div style={{ width:42, height:42, borderRadius:"50%", background:`linear-gradient(135deg,${T.goldLight},${T.gold})`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:20 }}>🧗</div>
           <div style={{ flex:1 }}>
-            <div style={{ fontSize:10, color:"rgba(212,175,95,0.7)", fontWeight:700, textTransform:"uppercase", letterSpacing:1 }}>Your Rank</div>
-            <div style={{ fontFamily:"'Syne',sans-serif", fontSize:21, fontWeight:900, color:"#f0cf83", lineHeight:1.1 }}>#{me.rank}</div>
+            <div style={{ fontSize:10, color:T.path, fontWeight:700, textTransform:"uppercase", letterSpacing:1 }}>Your Rank</div>
+            <div style={{ fontFamily:"'Syne',sans-serif", fontSize:21, fontWeight:900, color:T.text, lineHeight:1.1 }}>#{me.rank}</div>
           </div>
           <div style={{ textAlign:"right" }}>
-            <div style={{ fontSize:17, fontWeight:900, color:"#d4af5f" }}>{me.xp.toLocaleString()} XP</div>
-            <div style={{ fontSize:10, color:"rgba(255,255,255,0.3)", marginTop:2 }}>this week</div>
+            <div style={{ fontSize:17, fontWeight:900, color:T.path }}>{me.xp.toLocaleString()} XP</div>
+            <div style={{ fontSize:10, color:T.muted, marginTop:2 }}>this week</div>
           </div>
         </div>
       )}
 
-      <div style={{ background:"rgba(167,139,250,0.06)", border:"1px solid rgba(167,139,250,0.18)", borderRadius:11, padding:"8px 13px", marginBottom:14, fontSize:12, color:"rgba(167,139,250,0.75)" }}>
+      <div style={{ background:`rgba(245,165,36,0.07)`, border:`1px solid ${T.border}`, borderRadius:11, padding:"8px 13px", marginBottom:14, fontSize:12, color:T.path }}>
         🏆 Top 3 earn a bonus XP multiplier next week
       </div>
 
@@ -300,9 +318,9 @@ function LeaderboardTab({ userId, userXP, displayName }) {
         {[["weekly","🔥 Weekly"],["global","🌍 Global"]].map(([v,l]) => (
           <button key={v} className="pf-tab-btn" onClick={() => setScope(v)} style={{
             padding:"6px 15px", borderRadius:20, fontSize:11, fontWeight:700,
-            background: scope===v ? "rgba(167,139,250,0.18)" : "transparent",
-            border:`1px solid ${scope===v ? "rgba(167,139,250,0.45)" : "rgba(255,255,255,0.09)"}`,
-            color: scope===v ? "#a78bfa" : "rgba(255,255,255,0.35)",
+            background: scope===v ? `rgba(245,165,36,0.12)` : "transparent",
+            border:`1px solid ${scope===v ? T.borderStrong : T.border}`,
+            color: scope===v ? T.path : T.muted,
           }}>{l}</button>
         ))}
       </div>
@@ -312,15 +330,15 @@ function LeaderboardTab({ userId, userXP, displayName }) {
         {top3.map((r, i) => (
           <div key={r.id} style={{
             flex:1, padding:"13px 8px", borderRadius:17, textAlign:"center",
-            background: r.isYou ? "rgba(212,175,95,0.11)" : MBG[i],
-            border:`1.5px solid ${r.isYou ? "rgba(212,175,95,0.45)" : MBR[i]}`,
-            boxShadow: `0 0 18px ${r.isYou ? "rgba(212,175,95,0.12)" : "rgba(0,0,0,0.1)"}`,
+            background: r.isYou ? `rgba(245,165,36,0.1)` : T.card,
+            border:`1.5px solid ${r.isYou ? T.borderStrong : T.border}`,
+            boxShadow: `0 2px 12px ${r.isYou ? "rgba(245,165,36,0.15)" : "rgba(0,0,0,0.04)"}`,
           }}>
             <div style={{ fontSize:18, marginBottom:3 }}>{MEDALS[i]}</div>
             <div style={{ fontSize:20, marginBottom:5 }}>{r.avatar}</div>
-            <div style={{ fontSize:10, fontWeight:700, color:r.isYou?"#f0cf83":"rgba(255,255,255,0.65)", marginBottom:3, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{r.name}</div>
-            <div style={{ fontSize:13, fontWeight:900, color:r.isYou?"#d4af5f":"rgba(255,255,255,0.75)" }}>{r.xp.toLocaleString()}</div>
-            <div style={{ fontSize:9, color:"rgba(255,255,255,0.28)" }}>XP</div>
+            <div style={{ fontSize:10, fontWeight:700, color:r.isYou?T.path:T.muted, marginBottom:3, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{r.name}</div>
+            <div style={{ fontSize:13, fontWeight:900, color:r.isYou?T.path:T.text }}>{r.xp.toLocaleString()}</div>
+            <div style={{ fontSize:9, color:T.faint }}>XP</div>
           </div>
         ))}
       </div>
@@ -330,13 +348,13 @@ function LeaderboardTab({ userId, userXP, displayName }) {
         {rest.map(r => (
           <div key={r.id} className="pf-lb-row" style={{
             display:"flex", alignItems:"center", gap:12, padding:"9px 13px", borderRadius:13,
-            background: r.isYou ? "rgba(212,175,95,0.06)" : "rgba(255,255,255,0.018)",
-            border:`1px solid ${r.isYou ? "rgba(212,175,95,0.22)" : "rgba(255,255,255,0.05)"}`,
+            background: r.isYou ? `rgba(245,165,36,0.07)` : T.card,
+            border:`1px solid ${r.isYou ? T.borderStrong : T.border}`,
           }}>
-            <div style={{ width:22, fontSize:12, fontWeight:700, color:"rgba(255,255,255,0.3)", textAlign:"center", flexShrink:0 }}>#{r.rank}</div>
-            <div style={{ width:30, height:30, borderRadius:"50%", background:"rgba(255,255,255,0.07)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:15, flexShrink:0 }}>{r.avatar}</div>
-            <div style={{ flex:1, fontSize:13, fontWeight:r.isYou?800:600, color:r.isYou?"#f0cf83":"rgba(255,255,255,0.65)" }}>{r.name}{r.isYou ? " (You)" : ""}</div>
-            <div style={{ fontSize:12, fontWeight:800, color:r.isYou?"#d4af5f":"rgba(255,255,255,0.5)" }}>{r.xp.toLocaleString()}</div>
+            <div style={{ width:22, fontSize:12, fontWeight:700, color:T.faint, textAlign:"center", flexShrink:0 }}>#{r.rank}</div>
+            <div style={{ width:30, height:30, borderRadius:"50%", background:`rgba(245,165,36,0.1)`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:15, flexShrink:0 }}>{r.avatar}</div>
+            <div style={{ flex:1, fontSize:13, fontWeight:r.isYou?800:600, color:r.isYou?T.path:T.text }}>{r.name}{r.isYou ? " (You)" : ""}</div>
+            <div style={{ fontSize:12, fontWeight:800, color:r.isYou?T.path:T.muted }}>{r.xp.toLocaleString()}</div>
           </div>
         ))}
       </div>
@@ -348,47 +366,46 @@ function LeaderboardTab({ userId, userXP, displayName }) {
 function SettingsTab({ langName, langCode, onChangeLang, onLogout, onUpgrade, isPro }) {
   return (
     <div style={{ display:"flex", flexDirection:"column", gap:9 }}>
-      <div style={{ fontSize:10, color:"rgba(255,255,255,0.28)", textTransform:"uppercase", letterSpacing:1.5, marginBottom:2 }}>Language</div>
+      <div style={{ fontSize:10, color:T.faint, textTransform:"uppercase", letterSpacing:1.5, marginBottom:2 }}>Language</div>
       <button className="pf-lang-item pf-tab-btn" onClick={onChangeLang} style={{
         display:"flex", alignItems:"center", gap:12, padding:"13px 15px", borderRadius:15, width:"100%",
-        background:"rgba(255,255,255,0.03)", border:"1px solid rgba(255,255,255,0.08)", textAlign:"left",
-        color:"#f0f0f5",
+        background:T.card, border:`1px solid ${T.border}`, textAlign:"left", color:T.text,
       }}>
         <span style={{ fontSize:24 }}>{FLAGS[langCode] || "🌍"}</span>
         <div style={{ flex:1 }}>
           <div style={{ fontSize:14, fontWeight:700 }}>Change Language</div>
-          <div style={{ fontSize:11, color:"rgba(255,255,255,0.37)", marginTop:2 }}>Currently: {langName}</div>
+          <div style={{ fontSize:11, color:T.muted, marginTop:2 }}>Currently: {langName}</div>
         </div>
-        <span style={{ fontSize:12, color:"rgba(255,255,255,0.28)" }}>→</span>
+        <span style={{ fontSize:12, color:T.faint }}>→</span>
       </button>
 
-      <div style={{ fontSize:10, color:"rgba(255,255,255,0.28)", textTransform:"uppercase", letterSpacing:1.5, marginBottom:2, marginTop:8 }}>Account</div>
+      <div style={{ fontSize:10, color:T.faint, textTransform:"uppercase", letterSpacing:1.5, marginBottom:2, marginTop:8 }}>Account</div>
 
       {!isPro && (
         <button className="pf-tab-btn" onClick={onUpgrade} style={{
           display:"flex", alignItems:"center", gap:12, padding:"13px 15px", borderRadius:15, width:"100%",
-          background:"linear-gradient(135deg,rgba(212,175,95,0.11),rgba(212,175,95,0.04))",
-          border:"1px solid rgba(212,175,95,0.28)", cursor:"pointer", textAlign:"left",
+          background:`linear-gradient(135deg,rgba(245,165,36,0.1),rgba(245,165,36,0.04))`,
+          border:`1px solid ${T.borderStrong}`, cursor:"pointer", textAlign:"left",
         }}>
           <span style={{ fontSize:22 }}>⭐</span>
           <div style={{ flex:1 }}>
-            <div style={{ fontSize:14, fontWeight:700, color:"#d4af5f" }}>Upgrade to Pro</div>
-            <div style={{ fontSize:11, color:"rgba(212,175,95,0.55)", marginTop:2 }}>Unlimited lessons · +15% XP · No limits</div>
+            <div style={{ fontSize:14, fontWeight:700, color:T.path }}>Upgrade to Pro</div>
+            <div style={{ fontSize:11, color:T.muted, marginTop:2 }}>Unlimited lessons · +15% XP · No limits</div>
           </div>
-          <span style={{ fontSize:12, color:"#d4af5f" }}>→</span>
+          <span style={{ fontSize:12, color:T.path }}>→</span>
         </button>
       )}
       {isPro && (
-        <div style={{ display:"flex", alignItems:"center", gap:12, padding:"13px 15px", borderRadius:15, background:"rgba(212,175,95,0.05)", border:"1px solid rgba(212,175,95,0.18)" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:12, padding:"13px 15px", borderRadius:15, background:`rgba(245,165,36,0.07)`, border:`1px solid ${T.border}` }}>
           <span style={{ fontSize:22 }}>👑</span>
-          <div><div style={{ fontSize:14, fontWeight:700, color:"#d4af5f" }}>Pro Member</div><div style={{ fontSize:11, color:"rgba(255,255,255,0.37)", marginTop:2 }}>Full access enabled</div></div>
+          <div><div style={{ fontSize:14, fontWeight:700, color:T.path }}>Pro Member</div><div style={{ fontSize:11, color:T.muted, marginTop:2 }}>Full access enabled</div></div>
         </div>
       )}
 
       <button className="pf-tab-btn" onClick={onLogout} style={{
         display:"flex", alignItems:"center", gap:12, padding:"13px 15px", borderRadius:15, width:"100%",
-        background:"rgba(239,68,68,0.055)", border:"1px solid rgba(239,68,68,0.17)", textAlign:"left",
-        color:"#f87171", cursor:"pointer",
+        background:"rgba(239,68,68,0.06)", border:"1px solid rgba(239,68,68,0.2)", textAlign:"left",
+        color:"#dc2626", cursor:"pointer",
       }}>
         <span style={{ fontSize:20 }}>🚪</span>
         <div style={{ fontSize:14, fontWeight:700 }}>Log Out</div>
@@ -418,31 +435,32 @@ export default function ProfileSummitPage({ user, progress, curriculum, curricul
   ];
 
   return (
-    <div style={{ flex:1, overflowY:"auto", paddingBottom:90 }}>
+    <div style={{ flex:1, overflowY:"auto", paddingBottom:90, background:T.bg, minHeight:"100vh" }}>
       <style>{CSS}</style>
       <div style={{ padding:"18px 18px 0" }}>
 
         {/* ── HEADER CARD ─────────────────────────────────────────────── */}
         <div style={{
-          background:"rgba(255,255,255,0.025)", backdropFilter:"blur(14px)",
-          border:"1px solid rgba(255,255,255,0.08)", borderRadius:22, padding:"19px 17px",
+          background:T.panel, backdropFilter:"blur(14px)",
+          border:`1px solid ${T.borderStrong}`, borderRadius:22, padding:"19px 17px",
           marginBottom:14, position:"relative", overflow:"hidden",
+          boxShadow:"0 4px 24px rgba(245,165,36,0.12)",
         }}>
-          <div style={{ position:"absolute", top:-50, right:-50, width:180, height:180, borderRadius:"50%", background:"radial-gradient(circle, rgba(212,175,95,0.07) 0%, transparent 70%)", pointerEvents:"none" }} />
+          <div style={{ position:"absolute", top:-50, right:-50, width:180, height:180, borderRadius:"50%", background:"radial-gradient(circle, rgba(245,165,36,0.1) 0%, transparent 70%)", pointerEvents:"none" }} />
 
           <div style={{ display:"flex", alignItems:"center", gap:14, marginBottom:15 }}>
             <div className="pf-avatar" style={{
               width:58, height:58, borderRadius:"50%",
-              background:"linear-gradient(135deg,#f0cf83,#c9a84c)",
+              background:`linear-gradient(135deg,${T.goldLight},${T.gold})`,
               display:"flex", alignItems:"center", justifyContent:"center",
-              fontFamily:"'Syne',sans-serif", fontSize:21, fontWeight:900, color:"#1a1000", flexShrink:0,
+              fontFamily:"'Syne',sans-serif", fontSize:21, fontWeight:900, color:"#4a2800", flexShrink:0,
             }}>{initials}</div>
             <div style={{ flex:1 }}>
-              <div style={{ fontFamily:"'Syne',sans-serif", fontSize:18, fontWeight:900, lineHeight:1.1 }}>{displayName}</div>
-              <div style={{ fontSize:12, color:"#d4af5f", fontWeight:700, marginTop:3 }}>{getLevelTitle(totalXP)}</div>
-              <div style={{ fontSize:11, color:"rgba(255,255,255,0.3)", marginTop:2 }}>{user?.email}</div>
+              <div style={{ fontFamily:"'Syne',sans-serif", fontSize:18, fontWeight:900, color:T.text, lineHeight:1.1 }}>{displayName}</div>
+              <div style={{ fontSize:12, color:T.path, fontWeight:700, marginTop:3 }}>{getLevelTitle(totalXP)}</div>
+              <div style={{ fontSize:11, color:T.muted, marginTop:2 }}>{user?.email}</div>
             </div>
-            {isPro && <div style={{ fontSize:9, fontWeight:800, color:"#d4af5f", background:"rgba(212,175,95,0.1)", border:"1px solid rgba(212,175,95,0.28)", padding:"4px 10px", borderRadius:20 }}>PRO</div>}
+            {isPro && <div style={{ fontSize:9, fontWeight:800, color:T.path, background:`rgba(245,165,36,0.1)`, border:`1px solid ${T.border}`, padding:"4px 10px", borderRadius:20 }}>PRO</div>}
           </div>
 
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:8 }}>
@@ -452,27 +470,28 @@ export default function ProfileSummitPage({ user, progress, curriculum, curricul
               { icon:"🎖️", v:`${earnedCount}`, l:"Badges" },
             ].map(({ icon, v, l }) => (
               <div key={l} className="pf-stat-card" style={{
-                background:"rgba(255,255,255,0.04)", border:"1px solid rgba(255,255,255,0.07)",
+                background:`rgba(245,165,36,0.07)`, border:`1px solid ${T.border}`,
                 borderRadius:13, padding:"11px 8px", textAlign:"center",
+                boxShadow:"0 2px 8px rgba(245,165,36,0.06)",
               }}>
                 <div style={{ fontSize:17, marginBottom:3 }}>{icon}</div>
-                <div style={{ fontFamily:"'Syne',sans-serif", fontSize:15, fontWeight:900, color:"#d4af5f" }}>{v}</div>
-                <div style={{ fontSize:10, color:"rgba(255,255,255,0.32)", marginTop:2 }}>{l}</div>
+                <div style={{ fontFamily:"'Syne',sans-serif", fontSize:15, fontWeight:900, color:T.path }}>{v}</div>
+                <div style={{ fontSize:10, color:T.muted, marginTop:2 }}>{l}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* ── TAB BAR ─────────────────────────────────────────────────── */}
-        <div style={{ display:"flex", gap:5, marginBottom:14, background:"rgba(255,255,255,0.025)", padding:4, borderRadius:15, border:"1px solid rgba(255,255,255,0.07)" }}>
+        <div style={{ display:"flex", gap:5, marginBottom:14, background:T.card, padding:4, borderRadius:15, border:`1px solid ${T.border}` }}>
           {TABS.map(t => (
             <button key={t.id} className="pf-tab-btn" onClick={() => setTab(t.id)} style={{
               flex:1, padding:"8px 3px", borderRadius:12, fontSize:10, fontWeight:800,
               display:"flex", flexDirection:"column", alignItems:"center", gap:3,
-              background: tab===t.id ? "rgba(212,175,95,0.14)" : "transparent",
-              border:`1px solid ${tab===t.id ? "rgba(212,175,95,0.32)" : "transparent"}`,
-              color: tab===t.id ? "#d4af5f" : "rgba(255,255,255,0.38)",
-              boxShadow: tab===t.id ? "0 0 12px rgba(212,175,95,0.07)" : "none",
+              background: tab===t.id ? `rgba(245,165,36,0.14)` : "transparent",
+              border:`1px solid ${tab===t.id ? T.borderStrong : "transparent"}`,
+              color: tab===t.id ? T.path : T.muted,
+              boxShadow: tab===t.id ? `0 0 12px rgba(245,165,36,0.1)` : "none",
             }}>
               <span style={{ fontSize:17 }}>{t.icon}</span>
               {t.label}

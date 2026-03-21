@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { getStreak, FREE_LESSONS_PER_DAY, getDailyUsage, getCheckpointPass, setCheckpointPass, getPlacementState } from "../lib/appState";
+import { getStreak, FREE_LESSONS_PER_DAY, getDailyUsage, getCheckpointPass, setCheckpointPass, getPlacementState, getXPLevel, DAILY_LESSON_GOAL } from "../lib/appState";
 
 const CEFR = ["A1","A2","B1","B2","C1","C2"];
 
@@ -969,7 +969,7 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
               onMouseLeave={e=>{e.currentTarget.style.transform="";e.currentTarget.style.boxShadow=isNext?"0 0 0 3px rgba(245,165,36,0.14),0 10px 28px rgba(255,166,57,0.26)":"0 3px 12px rgba(0,0,0,0.07)";}}
             >
               {/* Done checkmark */}
-              {state==="done"&&<div style={{position:"absolute",top:8,right:10,fontSize:12,color:"#f5a524",fontWeight:900}}>✓</div>}
+              {state==="done"&&(()=>{const s=starsMap?.[mod.id]||0;return<div style={{position:"absolute",top:6,right:8,fontSize:11,letterSpacing:-1}}>{s===3?"⭐⭐⭐":s===2?"⭐⭐☆":s===1?"⭐☆☆":"✓"}</div>;})()}
               {/* Active indicator */}
               {isNext&&isCurrentLevel&&<div style={{position:"absolute",top:8,right:10,width:8,height:8,borderRadius:"50%",background:"#32d266",boxShadow:"0 0 6px rgba(50,210,102,0.7)",animation:"pulse 1.8s ease-in-out infinite"}}/>}
               <div style={{fontSize:12,fontWeight:800,color:locked?"rgba(107,61,16,0.38)":"#6b3d10",lineHeight:1.25,marginBottom:3,paddingRight:14}}>
@@ -1015,7 +1015,7 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────
-export default function LearnJourneyPage({curriculum,progress,langName,user,justCompletedId,animTrigger,onSelectLesson,onUpgrade,isPro,langCode}) {
+export default function LearnJourneyPage({curriculum,progress,langName,user,justCompletedId,animTrigger,onSelectLesson,onUpgrade,isPro,langCode,starsMap,onStatues}) {
   const C=getTheme();
   const completed=progress?.completed||[];
   const totalXP=progress?.xp||0;
@@ -1072,18 +1072,50 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
         <div style={{background:C.panel,border:`1px solid ${C.border}`,borderRadius:22,overflow:"hidden",boxShadow:`0 16px 40px ${C.glow}`}}>
 
           {/* Header */}
-          <div style={{padding:"14px 16px 10px",borderBottom:`1px solid ${C.border}`,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-            <div>
-              <div style={{fontSize:19,fontWeight:900}}>{langName} Trail</div>
-              <div style={{fontSize:12,color:C.muted}}>Keep moving lesson by lesson</div>
-            </div>
-            <div style={{display:"flex",gap:8,alignItems:"center"}}>
-              {streak?.count>1&&<div style={{fontSize:12,fontWeight:800,color:"#ff7b4e"}}>🔥 {streak.count}</div>}
-              <div style={{fontSize:12,fontWeight:800,color:C.path}}>⚡ {totalXP.toLocaleString()}</div>
-            </div>
-          </div>
+          {(()=>{
+            const xpInfo = getXPLevel(totalXP);
+            const dailyUsage = getDailyUsage(user?.id);
+            const dailyDone = dailyUsage.lessons || 0;
+            const dailyPct = Math.min(100, Math.round((dailyDone / DAILY_LESSON_GOAL) * 100));
+            const xpPct = xpInfo.next ? Math.round((xpInfo.current / (xpInfo.next - (xpInfo.xp - xpInfo.current))) * 100) : 100;
+            return (
+              <div style={{padding:"14px 16px 12px",borderBottom:`1px solid ${C.border}`}}>
+                <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
+                  <div>
+                    <div style={{fontSize:19,fontWeight:900}}>{langName} Trail</div>
+                    <div style={{fontSize:11,color:C.muted}}>{xpInfo.title} · {totalXP.toLocaleString()} XP</div>
+                  </div>
+                  <div style={{display:"flex",gap:8,alignItems:"center"}}>
+                    {streak?.count>1&&<div style={{fontSize:12,fontWeight:800,color:"#ff7b4e"}}>🔥 {streak.count}</div>}
+                    <div style={{fontSize:12,fontWeight:800,color:C.path}}>⚡ {totalXP.toLocaleString()}</div>
+                  </div>
+                </div>
+                {/* XP level bar */}
+                {xpInfo.next && (
+                  <div style={{marginBottom:8}}>
+                    <div style={{display:"flex",justifyContent:"space-between",fontSize:10,color:C.muted,marginBottom:3}}>
+                      <span>Level: {xpInfo.title}</span>
+                      <span>{xpInfo.current} / {xpInfo.next - (xpInfo.xp - xpInfo.current)} XP</span>
+                    </div>
+                    <div style={{height:5,borderRadius:999,overflow:"hidden",background:"rgba(245,165,36,0.15)"}}>
+                      <div style={{width:`${xpPct}%`,height:"100%",background:`linear-gradient(90deg,${C.path},#f0cf83)`,transition:"width 0.8s ease",borderRadius:999}}/>
+                    </div>
+                  </div>
+                )}
+                {/* Daily goal */}
+                <div style={{display:"flex",alignItems:"center",gap:8}}>
+                  <div style={{flex:1,height:4,borderRadius:999,overflow:"hidden",background:"rgba(245,165,36,0.15)"}}>
+                    <div style={{width:`${dailyPct}%`,height:"100%",background:dailyDone>=DAILY_LESSON_GOAL?"#22c55e":C.path,transition:"width 0.6s ease",borderRadius:999}}/>
+                  </div>
+                  <div style={{fontSize:10,fontWeight:800,color:dailyDone>=DAILY_LESSON_GOAL?"#22c55e":C.muted,flexShrink:0}}>
+                    {dailyDone>=DAILY_LESSON_GOAL?"✅ Goal done!": `${dailyDone}/${DAILY_LESSON_GOAL} daily`}
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
 
-          {/* Progress bar */}
+          {/* Fluency progress bar */}
           <div style={{padding:"10px 16px 0"}}>
             <div style={{height:6,borderRadius:999,overflow:"hidden",background:"rgba(255,255,255,0.15)"}}>
               <div style={{width:`${readinessPct}%`,height:"100%",background:`linear-gradient(90deg,${C.path},#3ddc73)`,transition:"width 0.8s ease"}}/>
@@ -1106,7 +1138,11 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
             </div>
           )}
 
-          <div style={{position:"sticky",top:0,zIndex:20,padding:"10px 14px 8px",display:"flex",gap:8,overflowX:"auto",background:"rgba(255,247,234,0.95)",backdropFilter:"blur(8px)",borderBottom:"1px solid rgba(245,165,36,0.15)",WebkitOverflowScrolling:"touch"}}>{CEFR.filter(k=>(curriculum[k]?.modules||[]).length>0).map(k => <button key={k} onClick={() => document.getElementById(`level-${k}`)?.scrollIntoView({behavior:"smooth", block:"start"})} style={{border:"1px solid rgba(245,165,36,0.35)",background:"rgba(255,255,255,0.85)",borderRadius:999,padding:"7px 14px",fontSize:12,fontWeight:800,color:C.path,cursor:"pointer",flexShrink:0,boxShadow:"0 1px 4px rgba(245,165,36,0.1)"}}>{k}</button>)}</div>
+          <div style={{position:"sticky",top:0,zIndex:20,padding:"8px 14px 8px",display:"flex",gap:8,alignItems:"center",overflowX:"auto",background:"rgba(255,247,234,0.97)",backdropFilter:"blur(8px)",borderBottom:"1px solid rgba(245,165,36,0.18)",WebkitOverflowScrolling:"touch"}}>
+            <span style={{fontSize:10,fontWeight:800,letterSpacing:1.2,color:"rgba(107,61,16,0.45)",textTransform:"uppercase",flexShrink:0}}>Jump to:</span>
+            {CEFR.filter(k=>(curriculum[k]?.modules||[]).length>0).map(k => <button key={k} onClick={() => document.getElementById(`level-${k}`)?.scrollIntoView({behavior:"smooth", block:"start"})} style={{border:"1px solid rgba(245,165,36,0.35)",background:"rgba(255,255,255,0.85)",borderRadius:999,padding:"6px 14px",fontSize:12,fontWeight:800,color:C.path,cursor:"pointer",flexShrink:0,boxShadow:"0 1px 4px rgba(245,165,36,0.1)"}}>{k}</button>)}
+            {onStatues&&<button onClick={onStatues} style={{marginLeft:"auto",border:"1px solid rgba(245,165,36,0.35)",background:"rgba(255,255,255,0.85)",borderRadius:999,padding:"6px 12px",fontSize:12,fontWeight:800,color:C.path,cursor:"pointer",flexShrink:0,boxShadow:"0 1px 4px rgba(245,165,36,0.1)"}}>🗿 Phrases</button>}
+          </div>
 
           {/* Trail map per level */}
           {CEFR.filter(k=>(curriculum[k]?.modules||[]).length>0).map(levelKey=>{

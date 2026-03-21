@@ -238,6 +238,35 @@ export function canUseAISession(userId, modeKey = "default") {
   return { allowed: true, remainingMessages: remaining, sessionStarted: false, isPro: pro };
 }
 
+// ─── LESSON STARS ─────────────────────────────────────────────────────────────
+const lessonStarsKey = (userId, langCode) => `lp_lstars_${userId || "anon"}_${langCode || "de"}`;
+export function saveLessonStars(userId, langCode, lessonId, stars) {
+  const map = lsGetJSON(lessonStarsKey(userId, langCode), {});
+  map[lessonId] = Math.max(map[lessonId] || 0, stars || 0);
+  lsSetJSON(lessonStarsKey(userId, langCode), map);
+}
+export function getLessonStarsMap(userId, langCode) {
+  return lsGetJSON(lessonStarsKey(userId, langCode), {});
+}
+
+// ─── DAILY GOALS ──────────────────────────────────────────────────────────────
+export const DAILY_LESSON_GOAL = 3;
+export function getDailyGoalProgress(userId) {
+  const usage = getDailyUsage(userId);
+  return { done: usage.lessons || 0, goal: DAILY_LESSON_GOAL };
+}
+
+// ─── LEVEL TITLES & THRESHOLDS ────────────────────────────────────────────────
+export const LEVEL_THRESHOLDS = [0, 100, 300, 700, 1500, 3000, 6000];
+export const LEVEL_TITLES = ["Newcomer","Explorer","Hiker","Climber","Mountaineer","Summit Seeker","Peak Master"];
+export function getXPLevel(xp) {
+  let lvl = 0;
+  for (let i = LEVEL_THRESHOLDS.length - 1; i >= 0; i--) {
+    if ((xp || 0) >= LEVEL_THRESHOLDS[i]) { lvl = i; break; }
+  }
+  return { level: lvl, title: LEVEL_TITLES[lvl], current: (xp || 0) - LEVEL_THRESHOLDS[lvl], next: LEVEL_THRESHOLDS[lvl + 1] || null, xp: xp || 0 };
+}
+
 export function loadProgress(userId, langCode) {
   try {
     const raw = localStorage.getItem(`lp_progress_${userId || "anon"}_${langCode}`);
