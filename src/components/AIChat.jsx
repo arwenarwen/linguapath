@@ -1069,6 +1069,134 @@ function buildExamSpeechText(question, index = 1, total = 20, langCode = "de") {
   return `Question ${index}. ${raw}`;
 }
 
+/**
+ * Play exam question audio — static first, live TTS fallback.
+ * - listen questions: plays the German phrase from public/audio/de/
+ * - all others: plays public/audio/exam/de/<LEVEL>_<ID>.mp3
+ * @param {object} question  - exam bank question object
+ * @param {string} level     - CEFR level e.g. "A1"
+ * @param {string} langCode  - language code e.g. "de"
+ * @param {number} qIndex    - 1-based index for TTS fallback
+ * @param {number} total     - total question count for TTS fallback
+ */
+async function playExamQuestionAudio(question, level, langCode, qIndex = 1, total = 25) {
+  if (!question) return;
+  stopAllAudio();
+
+  // ── 1. "Question N." number clip — per-language voice, falls back to shared Rachel clips ──
+  const numUrl = `/audio/exam/${langCode}/numbers/${qIndex}.mp3`;
+  try {
+    const nr = await fetch(numUrl, { method: "HEAD", cache: "force-cache" });
+    if (nr.ok) {
+      const numAudio = new Audio(numUrl);
+      numAudio.preload = "auto";
+      await numAudio.play().catch(() => {});
+      await new Promise(res => { numAudio.onended = res; setTimeout(res, 2000); });
+      await new Promise(res => setTimeout(res, 120)); // tiny gap before question
+    }
+  } catch {}
+
+  // ── 2. Question content ───────────────────────────────────────────────────
+  // LISTEN questions: try pre-generated exam audio first, then static vocab audio, then TTS
+  if (question.exercise_type === "listen" && question.audio) {
+    const examListenUrl = `/audio/exam/${langCode}/${level}_${question.id}.mp3`;
+    try {
+      const r = await fetch(examListenUrl, { method: "HEAD", cache: "force-cache" });
+      if (r.ok) {
+        const audio = new Audio(examListenUrl);
+        audio.preload = "auto";
+        audio.play().catch(() => playWordAudio(question.audio, langCode, { voiceId: getTutorVoiceId(langCode) }));
+        return;
+      }
+    } catch {}
+    // Fallback: static vocab audio (e.g. public/audio/de/<slug>.mp3 for German)
+    const played = await tryPlayStaticAudio({ text: question.audio, langCode, stopAllAudio });
+    if (!played) playWordAudio(question.audio, langCode, { voiceId: getTutorVoiceId(langCode) });
+    return;
+  }
+
+  // All other questions: try the pre-generated exam audio file
+  const url = `/audio/exam/${langCode}/${level}_${question.id}.mp3`;
+  try {
+    const r = await fetch(url, { method: "HEAD", cache: "force-cache" });
+    if (r.ok) {
+      const audio = new Audio(url);
+      audio.preload = "auto";
+      audio.play().catch(() =>
+        playWordAudio(buildExamSpeechText(question, qIndex, total, langCode), langCode, { voiceId: getTutorVoiceId(langCode) })
+      );
+      return;
+    }
+  } catch {}
+
+  // TTS fallback
+  playWordAudio(buildExamSpeechText(question, qIndex, total, langCode), langCode, { voiceId: getTutorVoiceId(langCode) });
+}
+
+/**
+ * Play exam feedback then (optionally) the next question after a short pause.
+ *
+ * Correct:  /audio/<lang>/richtig.mp3  (or /audio/de/richtig.mp3 as fallback)
+ * Wrong:    /audio/exam/<lang>/<LEVEL>_<ID>_wrong.mp3
+ *           Falls back to /audio/<lang>/falsch.mp3 → /audio/de/falsch.mp3.
+ *
+ * After feedback finishes, chains the next question audio automatically.
+ */
+async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQuestion, level, langCode, nextIndex, total) {
+  // ── 1. Pick feedback URL ───────────────────────────────────────────────────
+  let feedbackUrl;
+  if (isCorrect) {
+    // Try language-specific "correct" clip, fall back to German
+    const correctUrl = `/audio/${langCode}/richtig.mp3`;
+    try {
+      const r = await fetch(correctUrl, { method: "HEAD", cache: "force-cache" });
+      feedbackUrl = r.ok ? correctUrl : "/audio/de/richtig.mp3";
+    } catch {
+      feedbackUrl = "/audio/de/richtig.mp3";
+    }
+  } else {
+    // Try per-question wrong clip first, then language generic, then German generic
+    const perQWrong = `/audio/exam/${langCode}/${level}_${currentQuestion?.id}_wrong.mp3`;
+    try {
+      const r = await fetch(perQWrong, { method: "HEAD", cache: "force-cache" });
+      if (r.ok) { feedbackUrl = perQWrong; }
+      else {
+        const genericWrong = `/audio/${langCode}/falsch.mp3`;
+        const r2 = await fetch(genericWrong, { method: "HEAD", cache: "force-cache" });
+        feedbackUrl = r2.ok ? genericWrong : "/audio/de/falsch.mp3";
+      }
+    } catch {
+      feedbackUrl = "/audio/de/falsch.mp3";
+    }
+  }
+
+  // ── 2. Play feedback, wait for it to finish ────────────────────────────────
+  try {
+    const r = await fetch(feedbackUrl, { method: "HEAD", cache: "force-cache" });
+    if (r.ok) {
+      stopAllAudio();
+      const fb = new Audio(feedbackUrl);
+      fb.preload = "auto";
+      await fb.play().catch(() => {});
+      await new Promise(res => { fb.onended = res; setTimeout(res, 3500); }); // safety cap
+    } else {
+      const fallbackText = isCorrect
+        ? "Richtig."
+        : `Falsch. Die richtige Antwort ist: ${currentQuestion?.correct_answer || ""}.`;
+      playWordAudio(fallbackText, langCode, { voiceId: getTutorVoiceId(langCode) });
+      await new Promise(res => setTimeout(res, 2000));
+    }
+  } catch {
+    await new Promise(res => setTimeout(res, 1500));
+  }
+
+  // ── 3. Brief pause then play the next question ─────────────────────────────
+  if (nextQuestion) {
+    await new Promise(res => setTimeout(res, 350));
+    playExamQuestionAudio(nextQuestion, level, langCode, nextIndex, total);
+  }
+}
+
 function extractOptionChoice(userText, options = []) {
   const raw = String(userText || "").trim();
   if (!raw) return { index: -1, normalized: "" };
@@ -4016,7 +4144,8 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
           }
           const opening = formatLocalExamQuestion(first, bank?.question_count || 20, 1);
           setMessages([{ role: "assistant", content: opening, translation: null }]);
-          playWordAudio(buildExamSpeechText(first, 1, bank?.question_count || 20, langCode), langCode, { voiceId: getTutorVoiceId(langCode) });
+          // Play static pre-recorded question audio; fall back to live TTS
+          playExamQuestionAudio(first, cefrLevel, langCode, 1, bank?.question_count || 25);
         })
         .catch(() => {
           setMessages([{ role: "assistant", content: "I couldn't load the local exam bank right now.", translation: null }]);
@@ -4084,10 +4213,37 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
     if (messages.length !== 1) return;
     if (didSpeakOpeningRef.current) return;
 
+    didSpeakOpeningRef.current = true;
+
+    // For situation sessions, try to play the pre-recorded fox intro first
+    const situationId = scenario?.id || scenario?.scenarioId || null;
+    if (situationId && mode !== "exam" && mode !== "conversation") {
+      const introUrl = `/audio/intros/${situationId}.mp3`;
+      fetch(introUrl, { method: "HEAD" })
+        .then(r => {
+          if (r.ok) {
+            stopAllAudio();
+            const audio = new Audio(introUrl);
+            audio.preload = "auto";
+            audio.play().catch(() => {
+              // fallback to TTS if playback fails
+              const clean = normalizeTextForSpeech(last.content, langCode);
+              if (clean) playWordAudio(clean, langCode, { voiceId: getTutorVoiceId(langCode) });
+            });
+          } else {
+            const clean = normalizeTextForSpeech(last.content, langCode);
+            if (clean) playWordAudio(clean, langCode, { voiceId: getTutorVoiceId(langCode) });
+          }
+        })
+        .catch(() => {
+          const clean = normalizeTextForSpeech(last.content, langCode);
+          if (clean) playWordAudio(clean, langCode, { voiceId: getTutorVoiceId(langCode) });
+        });
+      return;
+    }
+
     const clean = normalizeTextForSpeech(last.content, langCode);
     if (!clean) return;
-
-    didSpeakOpeningRef.current = true;
     playWordAudio(clean, langCode, { voiceId: getTutorVoiceId(langCode) });
   }, [messages, langCode]);
 
@@ -4178,19 +4334,30 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
       const isLast = localExamIndex >= ((localExamBank.questions?.length || 1) - 1);
 
       let assistantReply = feedback;
+      let nextQuestion = null;
+      let nextQuestionIndex = 0;
 
       if (isLast) {
         const report = buildLocalExamReport(localExamBank, nextScore);
         assistantReply = `${feedback}\n\n${report}`;
         setLocalExamFinished(true);
       } else {
-        const nextIndex = localExamIndex + 1;
-        const nextQuestion = localExamBank.questions[nextIndex];
+        nextQuestionIndex = localExamIndex + 1;
+        nextQuestion = localExamBank.questions[nextQuestionIndex];
         assistantReply = `${feedback}\n\n${formatLocalExamQuestion(nextQuestion, localExamBank?.question_count || 20)}`;
-        setLocalExamIndex(nextIndex);
+        setLocalExamIndex(nextQuestionIndex);
       }
 
-      playWordAudio(isCorrect ? "Richtig. Gute Arbeit." : `Falsch. Die richtige Antwort ist ${currentQuestion.correct_answer}.`, langCode, { voiceId: getTutorVoiceId(langCode) });
+      // Play static feedback then chain next question audio
+      playExamFeedbackAndNext(
+        isCorrect,
+        currentQuestion,   // needed for per-question wrong-feedback clip
+        nextQuestion,
+        cefrLevel,
+        langCode,
+        nextQuestionIndex + 1,
+        localExamBank?.question_count || 25
+      );
 
       const newMsg = { role:"assistant", content: assistantReply, translation:null };
       setMessages(m => [...m, newMsg]);
