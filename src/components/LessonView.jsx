@@ -265,7 +265,7 @@ const LESSON_CSS = `
 const T = getLessonTheme();
 
 const root = {
-  position:"fixed", inset:0, zIndex:400,
+  position:"relative", width:"100%", height:"100%",
   overflowY:"auto",
   background: T.bg,
   color: T.text,
