@@ -265,7 +265,10 @@ const LESSON_CSS = `
 const T = getLessonTheme();
 
 const root = {
-  position:"relative", width:"100%", minHeight:"100%",
+  // position:absolute + inset:0 pins LessonView to every pixel of the fixed wrapper.
+  // This guarantees the warm background always fills the viewport and gives the flex
+  // container an explicit height so flex:1 children (Complete, Quiz screens) work correctly.
+  position:"absolute", inset:0,
   overflowY:"auto",
   background: T.bg,
   color: T.text,
