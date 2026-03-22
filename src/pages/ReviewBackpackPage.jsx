@@ -123,7 +123,7 @@ function getCardFrontTitle(m) {
 }
 function getCardBackTitle(m) {
   if (m?.source === "Exam Mode") return "✓ Correct answer";
-  return m?.isLesson ? "✓ Correct answer" : "{getCardBackTitle(current)}";
+  return m?.isLesson ? "✓ Correct answer" : "✓ Correction";
 }
 function getRevealLabel(m) {
   return m?.source === "Exam Mode" || m?.isLesson ? "answer" : "correction";

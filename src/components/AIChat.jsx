@@ -29,8 +29,22 @@ function renderFingerString(num) {
   return map[num] || null;
 }
 
+function getNumberValue(source) {
+  if (source == null) return null;
+  const raw = (typeof source === "object"
+    ? (source.en || source.target || Object.values(source).find(v => typeof v === "string") || "")
+    : String(source)
+  ).trim().toLowerCase();
+  if (raw in NUMBER_VALUE_MAP) return NUMBER_VALUE_MAP[raw];
+  // Also try individual words in a phrase (e.g. "the number five")
+  for (const word of raw.split(/\s+/)) {
+    if (word in NUMBER_VALUE_MAP) return NUMBER_VALUE_MAP[word];
+  }
+  return null;
+}
+
 function NumberVisual({ source, langCode = "en" }) {
-  const value = getNumberValue(source, langCode);
+  const value = getNumberValue(source);
   const fingerText = value !== null ? renderFingerString(value) : null;
   if (!fingerText) return null;
   return (
