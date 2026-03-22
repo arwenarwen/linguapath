@@ -4,6 +4,7 @@ import { GLOBAL_CSS } from '../config/theme';
 import { getAIChatLangConfig } from '../config/langConfig';
 import { EXTRA_SITUATION_PHRASES, getSituationPhrases, formatTutorPhraseList } from '../data/situations';
 import { AI_SCENARIOS } from '../data/aiScenarios';
+import { stopAllAudio, playWordAudio } from '../lib/audioPlayer';
 
 
 // ── Trail animal tutors ───────────────────────────────────────────────────────
@@ -49,7 +50,7 @@ function TutorAnimalCard({ a, i, C, onPick }) {
   );
 }
 
-function SituationDetail({ situation, langCode = "es", userId, onClose, onGoReview }) {
+function SituationDetail({ situation, langCode = "es", userId, onClose, onGoReview, onStartAI }) {
   const [mode, setMode] = useState("pick"); // pick | quick | ai
   const [aiScenario, setAiScenario] = useState(null);
   const [currentPhrase, setCurrentPhrase] = useState(0);
@@ -178,7 +179,12 @@ Use natural, high-frequency language that sounds helpful and real.`
                 <div style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8 }}>
                   {TUTOR_ANIMALS.map((a,i) => (
                     <TutorAnimalCard key={a.key} a={a} i={i} C={C}
-                      onPick={() => { setAiScenario(buildSituationAIScenario(a)); setMode("ai"); }} />
+                      onPick={() => {
+                        const sc = buildSituationAIScenario(a);
+                        if (!sc) return;
+                        if (onStartAI) { onStartAI(sc); }
+                        else { setAiScenario(sc); setMode("ai"); }
+                      }} />
                   ))}
                 </div>
               </div>
@@ -218,7 +224,12 @@ Use natural, high-frequency language that sounds helpful and real.`
             </div>
             {matchingScenario && (
               <button className="btn btn-gold" style={{ width: "100%", marginTop: 24 }}
-                onClick={() => { setAiScenario(buildSituationAIScenario()); setMode("ai"); }}>
+                onClick={() => {
+                  const sc = buildSituationAIScenario(TUTOR_ANIMALS[0]);
+                  if (!sc) return;
+                  if (onStartAI) { onStartAI(sc); }
+                  else { setAiScenario(sc); setMode("ai"); }
+                }}>
                 🤖 Now practice with AI →
               </button>
             )}

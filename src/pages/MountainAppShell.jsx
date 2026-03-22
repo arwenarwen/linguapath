@@ -685,17 +685,21 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         </div>
       )}
       {activeAI && (
-        <AIChat key={`${activeAI.mode}_${activeAI.id || activeAI.scenarioId || "_"}`}
-          scenario={activeAI} langCode={activeLang} userId={user?.id} isPro={proUser}
-          onClose={() => { stopAllAudio(); setActiveAI(null); }}
-          onGoReview={() => { stopAllAudio(); setActiveAI(null); handleTabChange("review"); }}
-        />
+        <div style={{ position:"fixed", inset:0, zIndex:499, overflowY:"auto" }}>
+          <AIChat key={`${activeAI.mode}_${activeAI.id || activeAI.scenarioId || "_"}`}
+            scenario={activeAI} langCode={activeLang} userId={user?.id} isPro={proUser}
+            onClose={() => { stopAllAudio(); setActiveAI(null); }}
+            onGoReview={() => { stopAllAudio(); setActiveAI(null); handleTabChange("review"); }}
+          />
+        </div>
       )}
       {activeSituation && (
-        <SituationDetail situation={activeSituation} langCode={activeLang} userId={user?.id} isPro={proUser}
-          onClose={() => { stopAllAudio(); setActiveSituation(null); }}
-          onStartAI={s => { stopAllAudio(); setActiveSituation(null); setActiveAI(s); }}
-        />
+        <div style={{ position:"fixed", inset:0, zIndex:450, overflowY:"auto" }}>
+          <SituationDetail situation={activeSituation} langCode={activeLang} userId={user?.id} isPro={proUser}
+            onClose={() => { stopAllAudio(); setActiveSituation(null); }}
+            onStartAI={s => { stopAllAudio(); setActiveSituation(null); setActiveAI(s); }}
+          />
+        </div>
       )}
     </div>
   );

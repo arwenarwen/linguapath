@@ -1048,7 +1048,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
     const selected = LEVEL_ANIMALS.find(l => l.lvl === cefrLevel) || LEVEL_ANIMALS[2];
 
     return (
-      <div style={{ minHeight:"100vh", background:eT.bg, fontFamily:"var(--font-body)", color:eT.text }}>
+      <div style={{ position:"fixed", inset:0, overflowY:"auto", background:eT.bg, fontFamily:"var(--font-body)", color:eT.text }}>
         <style>{GLOBAL_CSS}</style>
         <div style={{ padding:"13px 18px", borderBottom:`1px solid ${eT.border}`,
           background:eT.panel, backdropFilter:"blur(16px)",

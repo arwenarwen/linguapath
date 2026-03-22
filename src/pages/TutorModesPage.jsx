@@ -149,7 +149,7 @@ export default function TutorModesPage({ langCode, langName, onStartAI }) {
             C={C}
             icon="📝"
             title="Exam"
-            desc="20-question test"
+            desc="30-question test"
             accent="#8b5cf6"
             onClick={() => startMode("exam")}
           />
