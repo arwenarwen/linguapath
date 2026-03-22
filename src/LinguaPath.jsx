@@ -41,8 +41,8 @@ const LANGUAGES = [
   { code:"zh", name:"Mandarin",   native:"普通话",     flag:"🇨🇳" },
   { code:"ja", name:"Japanese",   native:"日本語",     flag:"🇯🇵" },
   { code:"ko", name:"Korean",     native:"한국어",     flag:"🇰🇷" },
-  { code:"pl", name:"Polish",     native:"Polski",    flag:"🇵🇱" },
-  { code:"en", name:"English",    native:"English",   flag:"🇬🇧" },
+  { code:"ru", name:"Russian",    native:"Русский",   flag:"🇷🇺" },
+  { code:"el", name:"Greek",      native:"Ελληνικά",  flag:"🇬🇷" },
 ];
 
 // ─── Global CSS ───────────────────────────────────────────────────────────────
@@ -226,7 +226,8 @@ const CSS = `
   .col-us { background:#fff7ed; }
 
   /* ── Language grid ── */
-  .lang-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:48px; }
+  .lang-grid { display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:48px; }
+  @media (max-width:640px) { .lang-grid { grid-template-columns:repeat(2,1fr); } }
   .lang-c { background:var(--lp-surface);border:1.5px solid var(--lp-border);border-radius:16px;padding:20px 14px;text-align:center;transition:all .2s; }
   .lang-c:hover { background:var(--lp-green-bg);border-color:var(--lp-green);transform:translateY(-3px);box-shadow:0 8px 24px rgba(249,115,22,.15); }
 
@@ -1310,7 +1311,7 @@ function MiniLesson({ onSignup }) {
 const FEATURES = [
   {icon:"🎯",c:"#d97706",bg:"#fef3c7",title:"Logic-First Curriculum",desc:"CEFR A1→C2 structured exactly as your brain absorbs language — real conversations before grammar rules."},
   {icon:"🤖",c:"#0ea5e9",bg:"#e0f2fe",title:"Live AI Conversation",desc:"10+ real-world scenarios — restaurant, hotel, job interview and more. The AI speaks your language and corrects you naturally."},
-  {icon:"🌍",c:"#7c5cfc",bg:"#f0ecff",title:"10 Languages",desc:"Spanish, German, French, Italian, Portuguese, Mandarin, Japanese, Korean, Polish & English — fully launched."},
+  {icon:"🌍",c:"#7c5cfc",bg:"#f0ecff",title:"10 Languages",desc:"Spanish, German, French, Italian, Portuguese, Mandarin, Japanese, Korean, Russian & Greek — fully launched."},
   {icon:"⚡",c:"#ff6b35",bg:"#fff2ec",title:"Situation Packs",desc:"Jump into real-life scenarios instantly — airport, shopping, doctor, taxi. Quick mode or full AI roleplay."},
   {icon:"🧠",c:"#2db87a",bg:"#edfaf3",title:"Spaced Repetition",desc:"Your mistakes become flashcards. Words resurface exactly when you're about to forget them."},
   {icon:"📊",c:"#ec4899",bg:"#fdf2f8",title:"Readiness Score",desc:"A single score that tells you honestly how ready you are for a real conversation — not just a test."},
@@ -1579,7 +1580,7 @@ className="wl-input"
         <div style={{textAlign:"center"}}>
           <div className="sec-lbl">Languages</div>
           <h2 className="sec-ttl">10 languages. More coming soon.</h2>
-          <p className="sec-sub" style={{margin:"0 auto"}}>Spanish, German, French, Italian, Portuguese, Mandarin, Japanese, Korean, Polish and English — with more languages on the way.</p>
+          <p className="sec-sub" style={{margin:"0 auto"}}>Spanish, German, French, Italian, Portuguese, Mandarin, Japanese, Korean, Russian and Greek — with more languages on the way.</p>
         </div>
         <div className="lang-grid">
           {LANGUAGES.map(l=>(
