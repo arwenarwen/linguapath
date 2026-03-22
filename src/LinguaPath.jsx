@@ -1936,8 +1936,9 @@ export default function Root() {
   const [defaultPage, setDefaultPage] = useState("learn");
 
   function handleOnboardingFinish(profile) {
-    const langCode = "de";
-    const normalized = { ...profile, langCode, selectedLanguage: "German" };
+    const langCode = profile.langCode || "de";
+    const langName = profile.selectedLanguage || "German";
+    const normalized = { ...profile, langCode, selectedLanguage: langName };
     if (user?.id) {
       saveOnboardingProfile(user.id, normalized);
       savePlacementState(user.id, langCode, {

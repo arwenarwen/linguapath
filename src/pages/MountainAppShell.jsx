@@ -490,68 +490,19 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
     ? { ...progress, completed: [...new Set([...progress.completed, ...getAllMods().map(m => m.id)])] }
     : progress;
 
-  // ── Fullscreen views ──
-  if (activeLesson) {
-    const allMods = getAllMods();
-    const idx = allMods.findIndex(m => m.id === activeLesson.module.id);
-    const nextMod = allMods[idx + 1] || null;
-    const findLevel = (mod) => {
-      for (const k of ["A1","A2","B1","B2","C1","C2"]) {
-        if (curriculum[k]?.modules?.some(m => m.id === mod.id))
-          return { key: k, color: curriculum[k]?.color || "#22c55e" };
-      }
-      return { key: "A1", color: "#22c55e" };
-    };
-    return (
-      <LessonView
-        module={activeLesson.module}
-        levelKey={activeLesson.levelKey}
-        levelColor={activeLesson.levelColor}
-        langCode={activeLang}
-        userId={user?.id}
-        isDone={progress.completed.includes(activeLesson.module.id)}
-        onComplete={(id, xp, stars, meta) => markComplete(id, xp, stars, meta)}
-        onBack={() => { stopAllAudio(); setActiveLesson(null); setAnimTrigger(t => t + 1); }}
-        onGoReview={() => { stopAllAudio(); setActiveLesson(null); handleTabChange("review"); }}
-        rewardSummary={rewardSummary}
-        onNextLesson={(() => {
-          if (!nextMod) return null;
-          const sameUnit = nextMod.unit === activeLesson.module.unit;
-          const passedCheckpoint = !!getCheckpointPass(user?.id, activeLang, activeLesson.module.unit)?.passed;
-          if (!sameUnit && !passedCheckpoint) return null;
-          return () => {
-            stopAllAudio();
-            const lv = findLevel(nextMod);
-            // Go directly to the next lesson without setting activeLesson to null first.
-            // Setting null→delay→new creates a gap where the dark shell background shows (black screen).
-            setJustCompletedId(null);
-            setRewardSummary(null);
-            setActiveLesson({ module: nextMod, levelKey: lv.key, levelColor: lv.color });
-          };
-        })()}
-      />
-    );
-  }
+  // ── Fullscreen overlay helpers (computed outside main return so vars are available) ──
+  const allModsForLesson = getAllMods();
+  const activeLessonIdx = activeLesson ? allModsForLesson.findIndex(m => m.id === activeLesson.module.id) : -1;
+  const nextModForLesson = activeLesson ? (allModsForLesson[activeLessonIdx + 1] || null) : null;
+  const findLevel = (mod) => {
+    for (const k of ["A1","A2","B1","B2","C1","C2"]) {
+      if (curriculum[k]?.modules?.some(m => m.id === mod.id))
+        return { key: k, color: curriculum[k]?.color || "#22c55e" };
+    }
+    return { key: "A1", color: "#22c55e" };
+  };
 
-  if (activeAI) {
-    return (
-      <AIChat scenario={activeAI} langCode={activeLang} userId={user?.id} isPro={proUser}
-        onClose={() => { stopAllAudio(); setActiveAI(null); }}
-        onGoReview={() => { stopAllAudio(); setActiveAI(null); handleTabChange("review"); }}
-      />
-    );
-  }
-
-  if (activeSituation) {
-    return (
-      <SituationDetail situation={activeSituation} langCode={activeLang} userId={user?.id} isPro={proUser}
-        onClose={() => { stopAllAudio(); setActiveSituation(null); }}
-        onStartAI={s => { stopAllAudio(); setActiveSituation(null); setActiveAI(s); }}
-      />
-    );
-  }
-
-  // ── Main tabbed UI ──
+  // ── Main tabbed UI — overlays rendered inside so shell stays mounted (no black-screen on close) ──
   return (
     <div className="mountain-app-shell">
       <div className="mountain-backdrop">
@@ -684,6 +635,49 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
             <button onClick={() => setChestModal(null)} style={{ background:"linear-gradient(135deg,#f5a524,#c9a84c)", color:"#fff", border:"none", borderRadius:16, padding:"13px 32px", fontSize:15, fontWeight:800, cursor:"pointer", boxShadow:"0 4px 16px rgba(245,165,36,0.4)" }}>Awesome! 🎉</button>
           </div>
         </div>
+      )}
+
+      {/* ── Fullscreen overlays — rendered inside shell so shell stays mounted underneath.
+           This prevents the black-screen flash that occurred when these were early returns
+           and the shell had to fully remount on close. ── */}
+      {activeLesson && (
+        <LessonView
+          module={activeLesson.module}
+          levelKey={activeLesson.levelKey}
+          levelColor={activeLesson.levelColor}
+          langCode={activeLang}
+          userId={user?.id}
+          isDone={progress.completed.includes(activeLesson.module.id)}
+          onComplete={(id, xp, stars, meta) => markComplete(id, xp, stars, meta)}
+          onBack={() => { stopAllAudio(); setActiveLesson(null); setAnimTrigger(t => t + 1); }}
+          onGoReview={() => { stopAllAudio(); setActiveLesson(null); handleTabChange("review"); }}
+          rewardSummary={rewardSummary}
+          onNextLesson={(() => {
+            if (!nextModForLesson) return null;
+            const sameUnit = nextModForLesson.unit === activeLesson.module.unit;
+            const passedCheckpoint = !!getCheckpointPass(user?.id, activeLang, activeLesson.module.unit)?.passed;
+            if (!sameUnit && !passedCheckpoint) return null;
+            return () => {
+              stopAllAudio();
+              const lv = findLevel(nextModForLesson);
+              setJustCompletedId(null);
+              setRewardSummary(null);
+              setActiveLesson({ module: nextModForLesson, levelKey: lv.key, levelColor: lv.color });
+            };
+          })()}
+        />
+      )}
+      {activeAI && (
+        <AIChat scenario={activeAI} langCode={activeLang} userId={user?.id} isPro={proUser}
+          onClose={() => { stopAllAudio(); setActiveAI(null); }}
+          onGoReview={() => { stopAllAudio(); setActiveAI(null); handleTabChange("review"); }}
+        />
+      )}
+      {activeSituation && (
+        <SituationDetail situation={activeSituation} langCode={activeLang} userId={user?.id} isPro={proUser}
+          onClose={() => { stopAllAudio(); setActiveSituation(null); }}
+          onStartAI={s => { stopAllAudio(); setActiveSituation(null); setActiveAI(s); }}
+        />
       )}
     </div>
   );
