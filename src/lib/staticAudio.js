@@ -17,7 +17,9 @@ export async function tryPlayStaticAudio({ text, langCode, stopAllAudio, setActi
   const clean = String(text || "").trim();
   if (!clean) return false;
 
-  if (langCode !== "de" && clean.length > 80) return false;
+  // German and English have pre-recorded files of any length (German: vocab; English: exam questions/feedback)
+  // All other languages: skip HEAD request for long strings unlikely to have a static file
+  if (langCode !== "de" && langCode !== "en" && clean.length > 80) return false;
 
   const candidateUrls = [];
   if (audioFolder) candidateUrls.push(getStaticAudioUrl(langCode, clean, audioFolder));
