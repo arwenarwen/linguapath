@@ -1427,46 +1427,76 @@ function LessonViewInner({
     background: lT.isDark ? "rgba(255,255,255,0.07)" : "rgba(0,0,0,0.07)" };
 
   return (
-    <div style={dynamicRoot}>
-      <style>{LESSON_CSS}</style>
-      {/* Topbar */}
-      <div style={dynamicTopbar}>
-        <button style={dynamicClose} onClick={onBack}>✕</button>
-        <div style={{ flex:1, position:"relative", height:8, borderRadius:4,
-          background: lT.isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)",
-          overflow:"hidden" }}>
-          <div style={{ height:"100%", borderRadius:4,
-            background:`linear-gradient(90deg, ${resolvedColor}, ${lT.path})`,
-            width:`${progress*100}%`, transition:"width 0.5s cubic-bezier(0.4,0,0.2,1)",
-            boxShadow:`0 0 8px ${lT.path}88` }}/>
+    <>
+      {/* ── Lesson wrapper (quiz phases) ── */}
+      <div style={dynamicRoot}>
+        <style>{LESSON_CSS}</style>
+        {/* Topbar */}
+        <div style={dynamicTopbar}>
+          <button style={dynamicClose} onClick={onBack}>✕</button>
+          <div style={{ flex:1, position:"relative", height:8, borderRadius:4,
+            background: lT.isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)",
+            overflow:"hidden" }}>
+            <div style={{ height:"100%", borderRadius:4,
+              background:`linear-gradient(90deg, ${resolvedColor}, ${lT.path})`,
+              width:`${progress*100}%`, transition:"width 0.5s cubic-bezier(0.4,0,0.2,1)",
+              boxShadow:`0 0 8px ${lT.path}88` }}/>
+          </div>
+          <div style={{ fontSize:12, fontWeight:800, color:lT.isDark?"#120d00":"#fff",
+            background:`linear-gradient(135deg,${lT.path},${lT.path}bb)`,
+            borderRadius:20, padding:"5px 13px", flexShrink:0,
+            boxShadow:`0 2px 10px ${lT.path}55` }}>
+            +{35} XP max
+          </div>
         </div>
-        <div style={{ fontSize:12, fontWeight:800, color:lT.isDark?"#120d00":"#fff",
-          background:`linear-gradient(135deg,${lT.path},${lT.path}bb)`,
-          borderRadius:20, padding:"5px 13px", flexShrink:0,
-          boxShadow:`0 2px 10px ${lT.path}55` }}>
-          +{35} XP max
-        </div>
+        {/* Lesson phases — unmounted once quizResult is set */}
+        {!quizResult && (
+          <>
+            {phase === "intro"   && <Intro    module={module} onStart={goNext} />}
+            {phase === "vocab"   && <Vocab    module={module} langCode={langCode} onDone={goNext} />}
+            {phase === "grammar" && <Grammar  module={module} onDone={goNext} />}
+            {phase === "quiz"    && <Quiz     key={attemptKey} module={module} langCode={langCode}
+              userId={userId} onDone={handleQuizDone} />}
+          </>
+        )}
       </div>
 
-      {/* Complete screen is driven by quizResult, NOT by phase.
-          Once quizResult is set nothing can clear it except a module change,
-          so the Complete screen is guaranteed to stay visible until the user
-          explicitly navigates away. */}
-      {quizResult ? (
-        <Complete module={module}
-          score={quizResult.score} total={quizResult.total}
-          levelColor={resolvedColor}
-          onBack={onBack} onNext={onNextLesson} onReview={onGoReview} />
-      ) : (
-        <>
-          {phase === "intro"   && <Intro    module={module} onStart={goNext} />}
-          {phase === "vocab"   && <Vocab    module={module} langCode={langCode} onDone={goNext} />}
-          {phase === "grammar" && <Grammar  module={module} onDone={goNext} />}
-          {phase === "quiz"    && <Quiz     key={attemptKey} module={module} langCode={langCode}
-            userId={userId} onDone={handleQuizDone} />}
-        </>
+      {/* ── Complete screen — separate fixed overlay so it can NEVER be hidden
+           by anything inside the lesson wrapper. Renders above the lesson wrapper
+           (zIndex 410 > 400) with its own warm background, fully independent
+           of flex layout, scroll state, or parent animations. ── */}
+      {quizResult && (
+        <div style={{
+          position:"fixed", inset:0, zIndex:410,
+          background:"linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)",
+          display:"flex", flexDirection:"column",
+          overflowY:"auto",
+        }}>
+          {/* Topbar with 100% progress bar */}
+          <div style={dynamicTopbar}>
+            <button style={dynamicClose} onClick={onBack}>✕</button>
+            <div style={{ flex:1, position:"relative", height:8, borderRadius:4,
+              background: lT.isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)",
+              overflow:"hidden" }}>
+              <div style={{ height:"100%", borderRadius:4,
+                background:`linear-gradient(90deg, ${resolvedColor}, ${lT.path})`,
+                width:"100%",
+                boxShadow:`0 0 8px ${lT.path}88` }}/>
+            </div>
+            <div style={{ fontSize:12, fontWeight:800, color:lT.isDark?"#120d00":"#fff",
+              background:`linear-gradient(135deg,${lT.path},${lT.path}bb)`,
+              borderRadius:20, padding:"5px 13px", flexShrink:0,
+              boxShadow:`0 2px 10px ${lT.path}55` }}>
+              +{35} XP max
+            </div>
+          </div>
+          <Complete module={module}
+            score={quizResult.score} total={quizResult.total}
+            levelColor={resolvedColor}
+            onBack={onBack} onNext={onNextLesson} onReview={onGoReview} />
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
