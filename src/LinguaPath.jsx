@@ -58,6 +58,7 @@ const CSS = `
   @keyframes wiggle   { 0%,100%{transform:rotate(-2deg)} 50%{transform:rotate(2deg)} }
   @keyframes slideUp  { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
   @keyframes pop      { 0%{transform:scale(.92)} 60%{transform:scale(1.04)} 100%{transform:scale(1)} }
+  @keyframes ping     { 75%,100%{transform:scale(2);opacity:0} }
 
   /* ── Tokens ── */
   .lp-root {
@@ -229,9 +230,28 @@ const CSS = `
   .lang-c { background:var(--lp-surface);border:1.5px solid var(--lp-border);border-radius:16px;padding:20px 14px;text-align:center;transition:all .2s; }
   .lang-c:hover { background:var(--lp-green-bg);border-color:var(--lp-green);transform:translateY(-3px);box-shadow:0 8px 24px rgba(249,115,22,.15); }
 
+  /* ── How It Works ── */
+  .hiw-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-top:56px;position:relative; }
+  .hiw-card { display:flex;flex-direction:column;align-items:center;text-align:center;position:relative; }
+  .hiw-icon-wrap { position:relative;margin-bottom:20px; }
+  .hiw-icon-bg { width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--lp-green),var(--lp-green2));display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 8px 28px rgba(249,115,22,.3);position:relative;z-index:1; }
+  .hiw-num { position:absolute;top:-6px;right:-6px;width:24px;height:24px;background:#fff;border:2.5px solid var(--lp-green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--lp-green);z-index:2; }
+  .hiw-glow { position:absolute;inset:0;border-radius:50%;background:var(--lp-green);filter:blur(16px);opacity:.25; }
+  .hiw-title { font-weight:800;font-size:15px;color:var(--lp-text);margin-bottom:8px; }
+  .hiw-desc { font-size:13px;color:var(--lp-muted);line-height:1.7;font-weight:500;max-width:200px; }
+
+  /* ── Stats bar ── */
+  .stats-bar { display:flex;gap:0;justify-content:center;flex-wrap:wrap;margin-top:64px;border:1.5px solid var(--lp-border);border-radius:20px;overflow:hidden;background:var(--lp-surface); }
+  .stat-item { flex:1;min-width:140px;padding:24px 16px;text-align:center;border-right:1px solid var(--lp-border); }
+  .stat-item:last-child { border-right:none; }
+  .stat-num { font-family:var(--lp-font-d);font-size:32px;font-weight:400;color:var(--lp-green);line-height:1; }
+  .stat-label { font-size:12px;color:var(--lp-muted);margin-top:4px;font-weight:600;letter-spacing:.3px; }
+
   /* ── Testimonials ── */
   .testi-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:48px; }
-  .testi { background:var(--lp-surface);border:1.5px solid var(--lp-border);border-radius:20px;padding:26px; }
+  .testi { background:var(--lp-surface);border:1.5px solid var(--lp-border);border-radius:20px;padding:26px;transition:all .2s;cursor:default; }
+  .testi:hover { border-color:var(--lp-green);transform:translateY(-4px) scale(1.01);box-shadow:0 16px 48px rgba(249,115,22,.1); }
+  .testi-level { display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:800;letter-spacing:.5px;background:rgba(249,115,22,.12);color:var(--lp-green);border:1px solid rgba(249,115,22,.25); }
 
   /* ── Waitlist input ── */
   .wl-input {
@@ -1297,9 +1317,9 @@ const FEATURES = [
 ];
 
 const TESTIMONIALS = [
-  {stars:5,text:"Finally an app that teaches in the right order. I was conversational in German in 6 weeks — something that took years with Duolingo.",name:"Sarah M.",meta:"Learned German · 6 weeks",av:"👩"},
-  {stars:5,text:"The AI conversation feature is game-changing. I practiced French before my Paris trip and it went perfectly.",name:"James K.",meta:"Learned French · 3 months",av:"👨"},
-  {stars:5,text:"The grammar insights explain WHY — not just rules to memorize. Changed how I learn Japanese.",name:"Priya L.",meta:"Learning Japanese · A2",av:"👩💼"},
+  {stars:5,text:"Finally an app that teaches in the right order. I was conversational in German in 6 weeks — something that took years with Duolingo.",name:"Sarah M.",meta:"German · 6 weeks",av:"👩",level:"A1 → B1"},
+  {stars:5,text:"The AI conversation practice is game-changing. I did the restaurant scenario three times before my Paris trip and it went perfectly.",name:"James K.",meta:"French · 3 months",av:"👨",level:"A2 → B2"},
+  {stars:5,text:"The grammar explanations tell you WHY, not just rules to memorize. It completely changed how I approach Japanese.",name:"Priya L.",meta:"Japanese · 8 weeks",av:"👩‍💼",level:"A1 → A2"},
 ];
 
 function LandingPage({ onOpenAuth }) {
@@ -1315,12 +1335,14 @@ function LandingPage({ onOpenAuth }) {
   const [wlEarlyAccess, setWlEarlyAccess] = useState(false);
   const [showWlPopup, setShowWlPopup] = useState(false);
 
-  // Load waitlist count on mount
+  // Load waitlist count on mount — fetch via server endpoint so service key bypasses RLS
   useEffect(() => {
     (async () => {
       try {
-        const { count } = await supabase.from("waitlist").select("id", { count: "exact", head: true });
-        if (count != null) setWlCount(count);
+        const res = await fetch("/api/waitlist");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.count != null) setWlCount(data.count);
       } catch (_) {}
     })();
   }, []);
@@ -1413,7 +1435,13 @@ function LandingPage({ onOpenAuth }) {
       <section className="lp-hero">
         <div className="h-blob h-blob-1"/><div className="h-blob h-blob-2"/><div className="h-blob h-blob-3"/>
         <div className="h-dots"/>
-        <div className="h-eyebrow"><span>🦊</span> The language app that gets you fluent</div>
+        <div className="h-eyebrow">
+          <span style={{position:"relative",display:"inline-flex",alignItems:"center",justifyContent:"center",width:10,height:10}}>
+            <span style={{position:"absolute",display:"inline-flex",width:"100%",height:"100%",borderRadius:"50%",background:"var(--lp-green)",opacity:.75,animation:"ping 1.5s cubic-bezier(0,0,.2,1) infinite"}}/>
+            <span style={{position:"relative",display:"inline-flex",width:8,height:8,borderRadius:"50%",background:"var(--lp-green)"}}/>
+          </span>
+          The language app that gets you fluent
+        </div>
         <h1 className="h-title">Learn any language.<br/><span className="accent">Actually speak it.</span></h1>
         <p className="h-sub">Trail-based lessons, a fox guide who never judges you, and real AI conversation practice. No lives. No frustration.</p>
         {/* Waitlist capture */}
@@ -1443,9 +1471,14 @@ className="wl-input"
           <div className="av-stack">{["👩","👨","🧑","👩","👨"].map((a,i)=><div key={i} className="av">{a}</div>)}</div>
           <p style={{fontSize:13,color:"var(--lp-muted)"}}>
             {wlCount != null
-              ? <><strong style={{color:"var(--lp-green2)"}}>{wlCount.toLocaleString()}</strong> people on the waitlist</>
-              : <><strong style={{color:"var(--lp-green2)"}}>Join</strong> the waitlist — first 150 get 1 month free</>}
+              ? <><strong style={{color:"var(--lp-green2)"}}>{wlCount.toLocaleString()}</strong> people already on the trail</>
+              : <>First <strong style={{color:"var(--lp-green2)"}}>150</strong> get 1 month Pro free — no credit card</>}
           </p>
+          {wlCount != null && wlCount <= 150 && (
+            <span style={{padding:"3px 10px",borderRadius:20,fontSize:10,fontWeight:800,background:"rgba(249,115,22,.12)",color:"var(--lp-green2)",border:"1px solid rgba(249,115,22,.25)",whiteSpace:"nowrap"}}>
+              {150 - wlCount} spots left
+            </span>
+          )}
         </div>
       </section>
 
@@ -1469,6 +1502,33 @@ className="wl-input"
               <div className="feat-icon" style={{background:f.bg}}>{f.icon}</div>
               <div style={{fontFamily:"var(--lp-font-d)",fontSize:19,fontWeight:700,marginBottom:10}}>{f.title}</div>
               <div style={{fontSize:14,color:"var(--lp-muted)",lineHeight:1.75,fontWeight:300}}>{f.desc}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="lp-sec" style={{paddingTop:0}}>
+        <div style={{textAlign:"center"}}>
+          <div className="sec-lbl">How it works</div>
+          <h2 className="sec-ttl">From zero to real conversations</h2>
+          <p className="sec-sub" style={{margin:"0 auto"}}>Four steps. No fluff. Built around how your brain actually learns language.</p>
+        </div>
+        <div className="hiw-grid">
+          {[
+            {icon:"🌍",num:1,title:"Choose your language",desc:"Pick from 10 fully-launched languages. Spanish to Japanese — all with native audio."},
+            {icon:"🎯",num:2,title:"Test your level or start fresh",desc:"Take a quick CEFR placement test or jump straight in at A1. No judgment."},
+            {icon:"🗺️",num:3,title:"Follow your trail",desc:"Lessons unlock step by step. Each one builds on the last — no random vocab dumps."},
+            {icon:"🤖",num:4,title:"Talk with the AI tutor",desc:"Practice real conversations. The fox corrects you gently and celebrates your wins."},
+          ].map(s=>(
+            <div key={s.num} className="hiw-card">
+              <div className="hiw-icon-wrap">
+                <div className="hiw-glow"/>
+                <div className="hiw-icon-bg">{s.icon}</div>
+                <div className="hiw-num">{s.num}</div>
+              </div>
+              <div className="hiw-title">{s.title}</div>
+              <div className="hiw-desc">{s.desc}</div>
             </div>
           ))}
         </div>
@@ -1539,14 +1599,27 @@ className="wl-input"
         <div className="testi-grid">
           {TESTIMONIALS.map((t,i)=>(
             <div key={i} className="testi">
-              <div style={{color:"var(--lp-green)",fontSize:14,marginBottom:14,letterSpacing:3}}>{"★".repeat(t.stars)}</div>
+              <div style={{color:"#fbbf24",fontSize:14,marginBottom:14,letterSpacing:3}}>{"★".repeat(t.stars)}</div>
               <p style={{fontSize:14,color:"#3d3830",lineHeight:1.8,marginBottom:18,fontStyle:"italic",fontWeight:600}}>"{t.text}"</p>
-              <div style={{display:"flex",alignItems:"center",gap:10}}>
-                <div style={{width:36,height:36,borderRadius:"50%",background:"var(--lp-faint)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18}}>{t.av}</div>
-                <div><div style={{fontWeight:600,fontSize:13}}>{t.name}</div><div style={{fontSize:11,color:"var(--lp-muted)"}}>{t.meta}</div></div>
+              <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10}}>
+                <div style={{display:"flex",alignItems:"center",gap:10}}>
+                  <div style={{width:36,height:36,borderRadius:"50%",background:"var(--lp-faint)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18}}>{t.av}</div>
+                  <div><div style={{fontWeight:700,fontSize:13}}>{t.name}</div><div style={{fontSize:11,color:"var(--lp-muted)"}}>{t.meta}</div></div>
+                </div>
+                {t.level && <span className="testi-level">{t.level}</span>}
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* STATS BAR */}
+      <section className="lp-sec" style={{paddingTop:0}}>
+        <div className="stats-bar">
+          <div className="stat-item"><div className="stat-num">10</div><div className="stat-label">Languages</div></div>
+          <div className="stat-item"><div className="stat-num">A1→C2</div><div className="stat-label">Full CEFR path</div></div>
+          <div className="stat-item"><div className="stat-num">~3,959</div><div className="stat-label">Audio clips (German)</div></div>
+          <div className="stat-item"><div className="stat-num">150+</div><div className="stat-label">Early members</div></div>
         </div>
       </section>
 
