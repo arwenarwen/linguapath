@@ -106,17 +106,20 @@ export function buildLocalExamReport(examBank, score) {
 
 // ── Audio playback ─────────────────────────────────────────────────────────────
 /**
- * Play question audio.
- * Priority: pre-recorded static file → TTS fallback.
- * Static files are named:  public/audio/exam/{langCode}/{level}_{question.id}.mp3
- * When you provide correctly-recorded files at those paths, live TTS is never called.
+ * Play question audio — always uses live TTS so audio 100% matches displayed text.
+ * Pre-recorded static files are intentionally skipped: bank updates change question
+ * content but not file names, causing mismatches (e.g. file says "good night" but
+ * screen shows "danke"). TTS is the only source of truth.
+ *
+ * Only the number announcement (numbers/1.mp3 … numbers/30.mp3) uses static files
+ * because those contain just a number and cannot go out of sync.
  */
 export async function playExamQuestionAudio(question, level, langCode, qIndex = 1, total = 25) {
   if (!question) return;
   stopAllAudio();
 
-  // ① Question-number announcement (numbers/1.mp3 … numbers/30.mp3) — always reliable
-  const numUrl = `/audio/exam/${langCode}/numbers/${qIndex}.mp3`;
+  // ① Question-number announcement — these are just spoken numbers, always correct
+  const numUrl = `/audio/exam/numbers/${qIndex}.mp3`;
   try {
     const nr = await fetch(numUrl, { method: "HEAD", cache: "force-cache" });
     if (nr.ok) {
@@ -128,24 +131,10 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
     }
   } catch {}
 
-  // ② Try pre-recorded static file (zero API cost, consistent across users)
-  //    File must contain the correct content — see docs/exam-audio-guide.md
-  const staticUrl = `/audio/exam/${langCode}/${level}_${question.id}.mp3`;
-  try {
-    const r = await fetch(staticUrl, { method: "HEAD", cache: "force-cache" });
-    if (r.ok) {
-      const audio = new Audio(staticUrl);
-      audio.preload = "auto";
-      // If playback fails, fall through to TTS
-      const played = await audio.play().catch(() => null);
-      if (played !== null) return; // successfully started
-    }
-  } catch {}
-
-  // ③ TTS fallback — used until correct static files are provided
+  // ② Always use TTS — guaranteed to match what the user sees on screen
   const type = question.exercise_type || "";
   if (type === "translate") {
-    // Speak the English source phrase in English voice
+    // Translate questions: speak the English source phrase in English
     const phrase = String(question.question || "")
       .replace(/^Translate to [^:]+:\s*/i, "")
       .replace(/^["'\u201c\u201d]|["'\u201c\u201d]$/g, "")
@@ -153,8 +142,14 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
     if (phrase) playWordAudio(phrase, "en", { voiceId: getTutorVoiceId("en") });
     return;
   }
+  // For translate-en / listen: speak the target-language audio field if present
+  if ((type === "translate-en" || type === "listen") && question.audio) {
+    playWordAudio(question.audio, langCode, { voiceId: getTutorVoiceId(langCode) });
+    return;
+  }
+  // Default: read the question text (MCQ, fill, etc.)
   const speechText = buildExamSpeechText(question, qIndex, total, langCode);
-  if (speechText) playWordAudio(speechText, langCode, { voiceId: getTutorVoiceId(langCode) });
+  if (speechText) playWordAudio(speechText, "en", { voiceId: getTutorVoiceId("en") });
 }
 
 /**
@@ -170,21 +165,10 @@ export async function playExamOptionAudio(question, level, langCode, optionIndex
   if (!question || optionIndex < 0) return;
   stopAllAudio();
 
-  const letter = String.fromCharCode(65 + optionIndex); // 0→A, 1→B, etc.
-  const staticUrl = `/audio/exam/${langCode}/${level}_${question.id}_${letter}.mp3`;
-
-  try {
-    const r = await fetch(staticUrl, { method: "HEAD", cache: "force-cache" });
-    if (r.ok) {
-      const audio = new Audio(staticUrl);
-      audio.preload = "auto";
-      const played = await audio.play().catch(() => null);
-      if (played !== null) return;
-    }
-  } catch {}
-
-  // TTS fallback — determine language for this option type
+  // Always use TTS — static option files can be misaligned with bank updates
   const type = question.exercise_type || "";
+  // translate-en / listen: options are English words/phrases → speak in English
+  // everything else (mcq, fill, translate): options are in target language
   const isEnglishOption = type === "translate-en" || type === "listen";
   const speakLang = isEnglishOption ? "en" : langCode;
   if (optionText) playWordAudio(String(optionText), speakLang, { voiceId: getTutorVoiceId(speakLang) });

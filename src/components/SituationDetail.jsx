@@ -193,44 +193,66 @@ Use natural, high-frequency language that sounds helpful and real.`
         )}
 
         {mode === "quick" && (
-          <div className="fade-up">
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: 20 }}>⚡ Quick Phrases</h2>
-              <button className="btn btn-ghost btn-sm" onClick={() => setMode("pick")}>← Back</button>
+          <div style={{ animation:"situFadeUp 0.4s ease both" }}>
+            {/* Header */}
+            <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:18 }}>
+              <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+                <span style={{ fontSize:18 }}>⚡</span>
+                <span style={{ fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:17, color:C.text }}>Quick Phrases</span>
+              </div>
+              <button onClick={() => setMode("pick")}
+                style={{ background:`${C.path}12`, border:`1px solid ${C.path}35`, borderRadius:10,
+                  padding:"6px 14px", color:C.path, fontWeight:700, fontSize:12, cursor:"pointer",
+                  fontFamily:"var(--font-body)" }}>← Back</button>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+
+            {/* Phrase cards */}
+            <div style={{ display:"flex", flexDirection:"column", gap:9 }}>
               {quickPhrases.map((p, i) => (
-                <div key={i} style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 14, padding: "14px 18px",
-                  cursor: "pointer", transition: "all 0.15s" }}
+                <div key={i}
+                  style={{ background:"rgba(255,255,255,0.72)", border:`1px solid ${C.border}`,
+                    borderRadius:14, padding:"14px 16px", cursor:"pointer",
+                    boxShadow:"0 2px 8px rgba(0,0,0,0.06)", transition:"all 0.15s" }}
                   onClick={() => setShowTranslation(prev => ({ ...prev, [i]: !prev[i] }))}>
                   <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start" }}>
                     <div style={{ flex:1 }}>
-                      <div style={{ fontWeight: 700, fontSize: 15, color:"var(--text)", marginBottom: showTranslation[i] ? 6 : 0 }}>{p.en}</div>
+                      <div style={{ fontWeight:700, fontSize:14, color:C.text,
+                        marginBottom: showTranslation[i] ? 5 : 0 }}>{p.en}</div>
                       {showTranslation[i] && (
-                        <div style={{ fontSize: 14, color: situation.color, fontWeight: 600 }} className="fade-in">
+                        <div style={{ fontSize:14, color:situation.color, fontWeight:700, letterSpacing:0.2 }}>
                           {p[langCode] || p.es || p.de || p.fr || p.it || p.pt || p.zh || p.ja || p.ko || p.pl || "Translation not available"}
                         </div>
                       )}
-                      {!showTranslation[i] && <div style={{ fontSize: 11, color: "var(--muted)", marginTop:3 }}>tap to reveal translation</div>}
+                      {!showTranslation[i] && (
+                        <div style={{ fontSize:11, color:C.muted, marginTop:2 }}>tap to reveal</div>
+                      )}
                     </div>
-                    <button onClick={e => { e.stopPropagation(); playWordAudio((p[langCode] || p.de || p.es || p.fr || p.it || p.pt || p.zh || p.ja || p.ko || p.pl || p.en), langCode); }}
-                      style={{ background:"rgba(245,200,66,0.1)", border:"1px solid rgba(245,200,66,0.25)",
-                        borderRadius:20, padding:"5px 12px", color:"var(--gold)", fontSize:12, cursor:"pointer", flexShrink:0, marginLeft:10 }}>
+                    <button
+                      onClick={e => { e.stopPropagation(); playWordAudio((p[langCode] || p.de || p.es || p.fr || p.it || p.pt || p.zh || p.ja || p.ko || p.pl || p.en), langCode); }}
+                      style={{ background:`${C.path}15`, border:`1px solid ${C.path}40`,
+                        borderRadius:20, padding:"5px 12px", color:C.path, fontSize:12,
+                        cursor:"pointer", flexShrink:0, marginLeft:10, fontWeight:700 }}>
                       🔊
                     </button>
                   </div>
                 </div>
               ))}
             </div>
+
+            {/* Practice with AI */}
             {matchingScenario && (
-              <button className="btn btn-gold" style={{ width: "100%", marginTop: 24 }}
+              <button
+                style={{ width:"100%", marginTop:20, padding:"14px", borderRadius:14, border:"none",
+                  background:`linear-gradient(135deg,${C.path},${C.path}bb)`, color:"#fff",
+                  fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:14, cursor:"pointer",
+                  boxShadow:`0 4px 16px ${C.path}40` }}
                 onClick={() => {
                   const sc = buildSituationAIScenario(TUTOR_ANIMALS[0]);
                   if (!sc) return;
                   if (onStartAI) { onStartAI(sc); }
                   else { setAiScenario(sc); setMode("ai"); }
                 }}>
-                🤖 Now practice with AI →
+                🦊 Now practice with AI →
               </button>
             )}
           </div>
