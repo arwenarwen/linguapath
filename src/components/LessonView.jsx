@@ -265,7 +265,7 @@ const LESSON_CSS = `
 const T = getLessonTheme();
 
 const root = {
-  position:"relative", width:"100%", height:"100%",
+  position:"relative", width:"100%", minHeight:"100%",
   overflowY:"auto",
   background: T.bg,
   color: T.text,
@@ -1404,14 +1404,18 @@ function LessonViewInner({
     setQuizScore(score);
     setQuizTotal(total);
     setPhase("complete");
-    try {
-      // stars passed directly from Quiz (0 mistakes=3, 1-2=2, 3+=1)
-      const earnedStars = (typeof stars === "number" && stars >= 1) ? stars : 1;
-      const earnedXP = earnedStars === 3 ? 35 : earnedStars === 2 ? 25 : 15;
-      if (onComplete) onComplete(module.id, earnedXP, earnedStars);
-    } catch (e) {
-      console.error("onComplete error:", e);
-    }
+    // Defer onComplete by one frame so the Complete screen renders before
+    // MountainAppShell's cascade of state updates (markComplete) triggers a
+    // re-render — this prevents the dark-shell flash during the quiz→complete transition.
+    requestAnimationFrame(() => {
+      try {
+        const earnedStars = (typeof stars === "number" && stars >= 1) ? stars : 1;
+        const earnedXP = earnedStars === 3 ? 35 : earnedStars === 2 ? 25 : 15;
+        if (onComplete) onComplete(module.id, earnedXP, earnedStars);
+      } catch (e) {
+        console.error("onComplete error:", e);
+      }
+    });
   }
 
   const lT = getLessonTheme();

@@ -661,6 +661,7 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
            and the shell had to fully remount on close. ── */}
       {activeLesson && (
         <div style={{ position:"fixed", inset:0, zIndex:400,
+          background: "linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)",
           opacity: lessonVisible ? 1 : 0,
           transition: "opacity 0.2s ease",
           pointerEvents: lessonVisible ? "auto" : "none" }}>
