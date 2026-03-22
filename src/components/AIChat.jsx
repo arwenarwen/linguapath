@@ -1062,20 +1062,20 @@ function formatLocalExamQuestion(question, total = 20, index = null) {
   return lines.join("\n");
 }
 
-function buildExamSpeechText(question, index = 1, total = 20, langCode = “de”) {
-  if (!question) return “”;
-  const raw  = String(question.question || “”).trim();
-  const type = question.exercise_type || “”;
+function buildExamSpeechText(question, index = 1, total = 20, langCode = "de") {
+  if (!question) return "";
+  const raw  = String(question.question || "").trim();
+  const type = question.exercise_type || "";
 
   // For translate-en / listen, just speak the target-language audio field
-  if ((type === “translate-en” || type === “listen”) && question.audio) return question.audio;
+  if ((type === "translate-en" || type === "listen") && question.audio) return question.audio;
 
   // Strip known English prefixes so the TTS speaks clean target-language text
   const sentence = raw
-    .replace(/^Complete the sentence:\s*/i, “”)
-    .replace(/^Translate to [^:]+:\s*/i, “”)
-    .replace(/^What does ['”]?(.+?)['”]? mean in English\??/i, “$1”)
-    .replace(/^Listen and choose what you heard\.?\s*/i, “”)
+    .replace(/^Complete the sentence:\s*/i, "")
+    .replace(/^Translate to [^:]+:\s*/i, "")
+    .replace(/^What does ['"]?(.+?)['"]? mean in English\??/i, "$1")
+    .replace(/^Listen and choose what you heard\.?\s*/i, "")
     .trim();
 
   return sentence || raw;
