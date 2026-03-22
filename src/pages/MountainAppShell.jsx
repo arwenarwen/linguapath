@@ -440,17 +440,20 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
     saveLessonStars(user?.id, activeLang, moduleId, stars);
     setStarsMap(getLessonStarsMap(user?.id, activeLang));
 
-    // Check for level-up
+    // Check for level-up — delay so the Complete screen is visible first
     const newXPTotal = next.xp;
     const newLevel = getXPLevel(newXPTotal).level;
     if (newLevel > prevXPLevelRef.current) {
-      setLevelUpModal({ from: prevXPLevelRef.current, to: newLevel, title: LEVEL_TITLES[newLevel] });
+      const _from = prevXPLevelRef.current;
+      const _to   = newLevel;
+      const _title = LEVEL_TITLES[newLevel];
+      setTimeout(() => setLevelUpModal({ from: _from, to: _to, title: _title }), 1200);
     }
     prevXPLevelRef.current = newLevel;
 
     // Chest reward every 3 lessons
     if (next.completed.length % 3 === 0) {
-      setTimeout(() => setChestModal({ xp: summary.totalXP, stars }), 800);
+      setTimeout(() => setChestModal({ xp: summary.totalXP, stars }), 1400);
     }
 
     setRewardSummary(summary);

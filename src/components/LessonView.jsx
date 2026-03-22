@@ -1371,8 +1371,10 @@ function LessonViewInner({
   onComplete, onBack, onNextLesson, onGoReview,
 }) {
   const [phase, setPhase] = useState("intro");
-  const [quizScore, setQuizScore] = useState(0);
-  const [quizTotal, setQuizTotal] = useState(0);
+  // quizResult is the single source of truth for whether the Complete screen shows.
+  // Once set it can ONLY be cleared by a module change — no other state update,
+  // prop change, or render cycle can remove the Complete screen from view.
+  const [quizResult, setQuizResult] = useState(null); // null | { score, total, stars }
   // Incremented on each re-attempt, forcing Quiz to fully remount and reset
   const [attemptKey, setAttemptKey] = useState(0);
 
@@ -1386,13 +1388,14 @@ function LessonViewInner({
     return true;
   });
 
-  const phaseIdx = phases.indexOf(phase);
+  // Show 100% progress bar when quiz is done
+  const phaseIdx = quizResult ? phases.length - 1 : phases.indexOf(phase);
   const progress = phaseIdx < 0 ? 0 : phaseIdx / Math.max(phases.length - 1, 1);
 
+  // Reset ALL state when the module changes (Next Lesson, or lesson restarted)
   useEffect(() => {
     setPhase("intro");
-    setQuizScore(0);
-    setQuizTotal(0);
+    setQuizResult(null);
     setAttemptKey(k => k + 1);
   }, [module?.id]);
 
@@ -1404,14 +1407,12 @@ function LessonViewInner({
   }
 
   function handleQuizDone(score, total, stars) {
-    setQuizScore(score);
-    setQuizTotal(total);
+    const earnedStars = (typeof stars === "number" && stars >= 1) ? stars : 1;
+    // Set quizResult FIRST — this is the lock that keeps the Complete screen visible.
+    // Nothing except a module change can unset it after this point.
+    setQuizResult({ score, total, stars: earnedStars });
     setPhase("complete");
-    // Call onComplete synchronously — React 18 batches all setState calls in one
-    // render pass, so markComplete's state updates in MountainAppShell are batched
-    // with phase:"complete" and there is no intermediate blank frame.
     try {
-      const earnedStars = (typeof stars === "number" && stars >= 1) ? stars : 1;
       const earnedXP = earnedStars === 3 ? 35 : earnedStars === 2 ? 25 : 15;
       if (onComplete) onComplete(module.id, earnedXP, earnedStars);
     } catch (e) {
@@ -1447,14 +1448,24 @@ function LessonViewInner({
         </div>
       </div>
 
-      {phase === "intro"    && <Intro    module={module} onStart={goNext} />}
-      {phase === "vocab"    && <Vocab    module={module} langCode={langCode} onDone={goNext} />}
-      {phase === "grammar"  && <Grammar  module={module} onDone={goNext} />}
-      {phase === "quiz"     && <Quiz     key={attemptKey} module={module} langCode={langCode}
-        userId={userId} onDone={handleQuizDone} />}
-      {phase === "complete" && <Complete module={module} score={quizScore}
-        total={quizTotal} levelColor={resolvedColor}
-        onBack={onBack} onNext={onNextLesson} onReview={onGoReview} />}
+      {/* Complete screen is driven by quizResult, NOT by phase.
+          Once quizResult is set nothing can clear it except a module change,
+          so the Complete screen is guaranteed to stay visible until the user
+          explicitly navigates away. */}
+      {quizResult ? (
+        <Complete module={module}
+          score={quizResult.score} total={quizResult.total}
+          levelColor={resolvedColor}
+          onBack={onBack} onNext={onNextLesson} onReview={onGoReview} />
+      ) : (
+        <>
+          {phase === "intro"   && <Intro    module={module} onStart={goNext} />}
+          {phase === "vocab"   && <Vocab    module={module} langCode={langCode} onDone={goNext} />}
+          {phase === "grammar" && <Grammar  module={module} onDone={goNext} />}
+          {phase === "quiz"    && <Quiz     key={attemptKey} module={module} langCode={langCode}
+            userId={userId} onDone={handleQuizDone} />}
+        </>
+      )}
     </div>
   );
 }
