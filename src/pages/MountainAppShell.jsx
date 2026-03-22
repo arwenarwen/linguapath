@@ -295,7 +295,6 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
   const [tab, setTab] = useState(defaultPage || "learn");
   const [activeLang, setActiveLang] = useState(activeLangProp || "de");
   const [activeLesson, setActiveLesson] = useState(null);
-  const [lessonVisible, setLessonVisible] = useState(false); // controls fade-in/out
   const [activeAI, setActiveAI] = useState(null);
   const [activeSituation, setActiveSituation] = useState(null);
   const [progress, setProgress] = useState(() => loadProgress(user?.id, activeLangProp || "de"));
@@ -319,21 +318,11 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
   useEffect(() => { progressRef.current = progress; }, [progress]);
   useEffect(() => { if (activeLangProp) setActiveLang(activeLangProp); }, [activeLangProp]);
 
-  // Fade-in when lesson mounts, fade-out before unmounting — prevents dark-shell flash
-  useEffect(() => {
-    if (activeLesson) {
-      // slight delay so the DOM node exists before opacity transitions from 0 → 1
-      const t = setTimeout(() => setLessonVisible(true), 20);
-      return () => clearTimeout(t);
-    }
-  }, [activeLesson]);
-
+  // Close lesson instantly — no fade-out, so the dark shell never flashes through.
+  // The trail is always rendered behind the lesson overlay; closing simply reveals it.
   function closeLesson(callback) {
-    setLessonVisible(false); // start fade-out
-    setTimeout(() => {
-      setActiveLesson(null);
-      callback?.();
-    }, 220); // match CSS transition duration
+    setActiveLesson(null);
+    callback?.();
   }
 
   // FIX 8: auto-start the next lesson after completion (with optional delay)
@@ -472,7 +461,7 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
 
   function handleTabChange(t) {
     stopAllAudio();
-    setLessonVisible(false); setActiveLesson(null); setActiveAI(null); setActiveSituation(null);
+    setActiveLesson(null); setActiveAI(null); setActiveSituation(null);
     if (t !== "learn") { setJustCompletedId(null); setAutoStartLesson(null); }
     lsSet("lp_tab", t); setTab(t);
   }
@@ -490,7 +479,6 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
     setJustCompletedId(null);
     setAutoStartLesson(null);
     setRewardSummary(null);
-    setLessonVisible(false); // will fade in after mount via useEffect
     setActiveLesson({ module, levelKey, levelColor });
   }
 
@@ -656,15 +644,15 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         </div>
       )}
 
-      {/* ── Fullscreen overlays — rendered inside shell so shell stays mounted underneath.
-           This prevents the black-screen flash that occurred when these were early returns
-           and the shell had to fully remount on close. ── */}
+      {/* ── Fullscreen lesson overlay.
+           key=module.id ensures LessonView fully remounts when switching lessons,
+           and re-triggers the slide-in CSS animation. Never uses opacity:0 so the
+           dark shell background can never flash through. ── */}
       {activeLesson && (
-        <div style={{ position:"fixed", inset:0, zIndex:400,
-          background: "linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)",
-          opacity: lessonVisible ? 1 : 0,
-          transition: "opacity 0.2s ease",
-          pointerEvents: lessonVisible ? "auto" : "none" }}>
+        <div key={activeLesson.module.id}
+          style={{ position:"fixed", inset:0, zIndex:400,
+            background: "linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)",
+            animation: "lessonSlideIn 0.18s cubic-bezier(0.22,1,0.36,1) both" }}>
         <LessonView
           module={activeLesson.module}
           levelKey={activeLesson.levelKey}
@@ -684,13 +672,10 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
             return () => {
               stopAllAudio();
               const lv = findLevel(nextModForLesson);
-              // Fade out current lesson, then swap to next (fade-in via useEffect)
-              setLessonVisible(false);
-              setTimeout(() => {
-                setJustCompletedId(null);
-                setRewardSummary(null);
-                setActiveLesson({ module: nextModForLesson, levelKey: lv.key, levelColor: lv.color });
-              }, 220);
+              setJustCompletedId(null);
+              setRewardSummary(null);
+              // Swap lesson instantly — key change triggers remount + slide-in animation
+              setActiveLesson({ module: nextModForLesson, levelKey: lv.key, levelColor: lv.color });
             };
           })()}
         />

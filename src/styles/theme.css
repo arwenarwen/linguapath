@@ -112,6 +112,8 @@ body {
 @keyframes shimmer  { from { transform:translateX(-100%) } to { transform:translateX(200%) } }
 @keyframes spin     { to { transform:rotate(360deg) } }
 @keyframes bounce   { 0%,100% { transform:translateY(0) } 40% { transform:translateY(-8px) } }
+/* Lesson overlay enters with a subtle scale — never touches opacity so dark shell never flashes through */
+@keyframes lessonSlideIn { from { transform:scale(0.97) } to { transform:scale(1) } }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
