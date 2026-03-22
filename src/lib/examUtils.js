@@ -18,12 +18,40 @@ export async function loadLocalExamBank(langCode, level) {
 
   // Deduplicate only — preserve original order for consistent audio file mapping
   const seen = new Set();
-  const questions = (bank?.questions || []).filter((q) => {
+  const deduped = (bank?.questions || []).filter((q) => {
     const key = `${q?.question || ""}__${(q?.options || []).join("|")}__${q?.correct_answer || ""}`;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
-  }).map((q, idx) => ({ ...q, question_number: idx + 1 }));
+  });
+
+  // ── Transform translate-en questions from DE→EN to EN→DE ──────────────────
+  // Original: "What does 'danke' mean in English?" with English options
+  // Transformed: "What does 'thank you' mean in German?" with German options
+  const langName = bankNameMap[langCode] || "German";
+  const allAudioWords = deduped
+    .filter(q => q.exercise_type === "translate-en" && q.audio)
+    .map(q => q.audio);
+
+  const transformed = deduped.map(q => {
+    if (q.exercise_type !== "translate-en" || !q.audio || !q.correct_answer) return q;
+    const engWord = q.correct_answer;   // e.g. "thank you"
+    const targetWord = q.audio;         // e.g. "danke"
+    const pool = [...new Set(allAudioWords.filter(w => w !== targetWord))];
+    // shuffle pool, take 3 distractors
+    const distractors = pool.sort(() => Math.random() - 0.5).slice(0, 3);
+    if (distractors.length < 3) return q; // not enough distractors, leave as-is
+    const options = [...distractors, targetWord].sort(() => Math.random() - 0.5);
+    return {
+      ...q,
+      question: `What does "${engWord}" mean in ${langName}?`,
+      correct_answer: targetWord,
+      options,
+      correct_index: options.indexOf(targetWord),
+    };
+  });
+
+  const questions = transformed.map((q, idx) => ({ ...q, question_number: idx + 1 }));
 
   return { ...bank, question_count: questions.length || bank?.question_count || 20, questions };
 }
@@ -42,18 +70,14 @@ export function formatLocalExamQuestion(question, total = 20, index = null) {
 }
 
 /**
- * Returns the text to speak for a given question type.
- * translate-en / listen → the target-language word/phrase (question.audio)
- * fill              → complete sentence with correct answer filled in
- * translate         → the English source phrase
- * mcq               → the question text in target language
+ * Returns the text to speak for a given question.
+ * After the EN→DE transform, all translate-en questions are English instructions
+ * ("What does 'thank you' mean in German?"), so we just read the question text.
  */
 export function buildExamSpeechText(question, index = 1, total = 20, langCode = "de") {
   if (!question) return "";
   const raw  = String(question.question || "").trim();
   const type = question.exercise_type || "";
-
-  if ((type === "translate-en" || type === "listen") && question.audio) return question.audio;
 
   if (type === "fill") {
     const sentence = raw.replace(/^Complete the sentence:\s*/i, "").trim();
@@ -67,7 +91,8 @@ export function buildExamSpeechText(question, index = 1, total = 20, langCode = 
       .trim();
   }
 
-  return raw; // mcq — read question text
+  // translate-en (now EN→DE), listen, mcq — all read the question text in English
+  return raw;
 }
 
 export function extractOptionChoice(userText, options = []) {
@@ -107,47 +132,17 @@ export function buildLocalExamReport(examBank, score) {
 // ── Audio playback ─────────────────────────────────────────────────────────────
 /**
  * Play question audio — always uses live TTS so audio 100% matches displayed text.
- * Pre-recorded static files are intentionally skipped: bank updates change question
- * content but not file names, causing mismatches (e.g. file says "good night" but
- * screen shows "danke"). TTS is the only source of truth.
- *
- * Only the number announcement (numbers/1.mp3 … numbers/30.mp3) uses static files
- * because those contain just a number and cannot go out of sync.
+ * No pre-recorded files are used: bank updates change question content but not
+ * file names, causing mismatches. TTS is the only source of truth.
+ * The number announcement is intentionally omitted — the full question text
+ * already contains the question number and avoids the jarring voice mismatch.
  */
 export async function playExamQuestionAudio(question, level, langCode, qIndex = 1, total = 25) {
   if (!question) return;
   stopAllAudio();
 
-  // ① Question-number announcement — these are just spoken numbers, always correct
-  const numUrl = `/audio/exam/numbers/${qIndex}.mp3`;
-  try {
-    const nr = await fetch(numUrl, { method: "HEAD", cache: "force-cache" });
-    if (nr.ok) {
-      const numAudio = new Audio(numUrl);
-      numAudio.preload = "auto";
-      await numAudio.play().catch(() => {});
-      await new Promise(res => { numAudio.onended = res; setTimeout(res, 2500); });
-      await new Promise(res => setTimeout(res, 150));
-    }
-  } catch {}
-
-  // ② Always use TTS — guaranteed to match what the user sees on screen
-  const type = question.exercise_type || "";
-  if (type === "translate") {
-    // Translate questions: speak the English source phrase in English
-    const phrase = String(question.question || "")
-      .replace(/^Translate to [^:]+:\s*/i, "")
-      .replace(/^["'\u201c\u201d]|["'\u201c\u201d]$/g, "")
-      .trim();
-    if (phrase) playWordAudio(phrase, "en", { voiceId: getTutorVoiceId("en") });
-    return;
-  }
-  // For translate-en / listen: speak the target-language audio field if present
-  if ((type === "translate-en" || type === "listen") && question.audio) {
-    playWordAudio(question.audio, langCode, { voiceId: getTutorVoiceId(langCode) });
-    return;
-  }
-  // Default: read the question text (MCQ, fill, etc.)
+  // Always use TTS — guaranteed to match what the user sees on screen.
+  // After the EN→DE transform all translate-en questions are English instructions.
   const speechText = buildExamSpeechText(question, qIndex, total, langCode);
   if (speechText) playWordAudio(speechText, "en", { voiceId: getTutorVoiceId("en") });
 }
@@ -165,13 +160,9 @@ export async function playExamOptionAudio(question, level, langCode, optionIndex
   if (!question || optionIndex < 0) return;
   stopAllAudio();
 
-  // Always use TTS — static option files can be misaligned with bank updates
-  const type = question.exercise_type || "";
-  // translate-en / listen: options are English words/phrases → speak in English
-  // everything else (mcq, fill, translate): options are in target language
-  const isEnglishOption = type === "translate-en" || type === "listen";
-  const speakLang = isEnglishOption ? "en" : langCode;
-  if (optionText) playWordAudio(String(optionText), speakLang, { voiceId: getTutorVoiceId(speakLang) });
+  // After the EN→DE transform, translate-en options are German words → speak in target language.
+  // All other types (mcq, fill, translate) are also in the target language.
+  if (optionText) playWordAudio(String(optionText), langCode, { voiceId: getTutorVoiceId(langCode) });
 }
 
 /**
@@ -213,26 +204,12 @@ export async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQu
       await new Promise(res => setTimeout(res, 1500));
     }
   } else {
-    // Try per-question wrong clip (pre-recorded, zero API cost)
-    const wrongUrl = `/audio/exam/${langCode}/${level}_${currentQuestion?.id}_wrong.mp3`;
-    let played = false;
-    try {
-      const r = await fetch(wrongUrl, { method: "HEAD", cache: "force-cache" });
-      if (r.ok) {
-        const fb = new Audio(wrongUrl);
-        fb.preload = "auto";
-        await fb.play().catch(() => {});
-        await new Promise(res => { fb.onended = res; setTimeout(res, 4000); });
-        played = true;
-      }
-    } catch {}
-
-    if (!played) {
-      // TTS fallback until pre-recorded wrong clips are provided
-      const correctText = `Incorrect. The correct answer is: ${currentQuestion?.correct_answer || ""}`;
-      playWordAudio(correctText, "en", { voiceId: getTutorVoiceId(langCode) });
-      await new Promise(res => setTimeout(res, 3200));
-    }
+    // Always use TTS — pre-recorded wrong files are keyed by question.id and go out
+    // of sync whenever the bank is updated, producing wrong feedback (e.g. "die richtige
+    // antwort ist: guten abend" for a question about "danke").
+    const correctText = `Incorrect. The correct answer is: ${currentQuestion?.correct_answer || ""}`;
+    playWordAudio(correctText, "en", { voiceId: getTutorVoiceId("en") });
+    await new Promise(res => setTimeout(res, 3200));
   }
 
   if (nextQuestion) {

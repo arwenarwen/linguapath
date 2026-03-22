@@ -116,15 +116,8 @@ Use natural, high-frequency language that sounds helpful and real.`
     );
   }
 
-  // ── Trail theme ──────────────────────────────────────────────────────────────
-  const h = new Date().getHours();
-  const C = h>=6&&h<12
-    ? {bg:"linear-gradient(180deg,#fff7ea,#ffe7c2)",text:"#6b3d10",muted:"rgba(107,61,16,0.6)",path:"#f5a524",border:"rgba(245,165,36,0.25)",panel:"rgba(255,255,255,0.72)"}
-    : h>=12&&h<18
-    ? {bg:"linear-gradient(180deg,#fff8ef,#ffe9cf)",text:"#6c3a0a",muted:"rgba(108,58,10,0.58)",path:"#f59e0b",border:"rgba(245,158,11,0.2)",panel:"rgba(255,255,255,0.7)"}
-    : h>=18&&h<21
-    ? {bg:"linear-gradient(180deg,#2b1408,#54260d)",text:"#fff0da",muted:"rgba(255,233,204,0.58)",path:"#ffb340",border:"rgba(255,179,64,0.22)",panel:"rgba(70,31,10,0.78)"}
-    : {bg:"linear-gradient(180deg,#121420,#21191a)",text:"#f8ead0",muted:"rgba(248,234,208,0.56)",path:"#ffb84d",border:"rgba(255,184,77,0.18)",panel:"rgba(22,23,37,0.82)"};
+  // ── Trail theme — fixed warm light (matches SituationsHub and exam level picker) ──
+  const C = { bg:"linear-gradient(180deg,#fff7ea,#ffe7c2)", text:"#6b3d10", muted:"rgba(107,61,16,0.6)", path:"#f5a524", border:"rgba(245,165,36,0.25)", panel:"rgba(255,255,255,0.72)" };
 
   return (
     <div style={{ minHeight: "100vh", background: C.bg, fontFamily:"var(--font-body)", color:C.text }}>
