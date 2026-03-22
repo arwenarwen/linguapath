@@ -522,10 +522,11 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
           return () => {
             stopAllAudio();
             const lv = findLevel(nextMod);
-            setActiveLesson(null);
-            lsSet("lp_tab", "learn");
-            setTab("learn");
-            setAutoStartLesson({ module: nextMod, levelKey: lv.key, levelColor: lv.color, delayMs: 1250 });
+            // Go directly to the next lesson without setting activeLesson to null first.
+            // Setting null→delay→new creates a gap where the dark shell background shows (black screen).
+            setJustCompletedId(null);
+            setRewardSummary(null);
+            setActiveLesson({ module: nextMod, levelKey: lv.key, levelColor: lv.color });
           };
         })()}
       />

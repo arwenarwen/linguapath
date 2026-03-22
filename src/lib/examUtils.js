@@ -2,17 +2,9 @@
 
 import { stopAllAudio, playWordAudio, getTutorVoiceId } from "./audioPlayer";
 
-// ── Helpers ────────────────────────────────────────────────────────────────────
-function shuffleArray(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 // ── Bank loading ───────────────────────────────────────────────────────────────
+// Questions are loaded in their original bank order (consistent for all users).
+// Static audio files are keyed by question ID — same ID = same audio for every user.
 export async function loadLocalExamBank(langCode, level) {
   const bankNameMap = {
     de: "German", fr: "French",  es: "Spanish",  it: "Italian",
@@ -24,34 +16,15 @@ export async function loadLocalExamBank(langCode, level) {
   if (!res.ok) throw new Error(`Failed to load local exam bank: HTTP ${res.status}`);
   const bank = await res.json();
 
-  // Deduplicate
+  // Deduplicate only — preserve original order for consistent audio file mapping
   const seen = new Set();
-  const unique = (bank?.questions || []).filter((q) => {
+  const questions = (bank?.questions || []).filter((q) => {
     const key = `${q?.question || ""}__${(q?.options || []).join("|")}__${q?.correct_answer || ""}`;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
-  });
+  }).map((q, idx) => ({ ...q, question_number: idx + 1 }));
 
-  // Interleave question types so user gets variety (not 6 translate-en in a row)
-  const byType = {};
-  unique.forEach(q => {
-    const t = q.exercise_type || "other";
-    if (!byType[t]) byType[t] = [];
-    byType[t].push(q);
-  });
-  const types = Object.keys(byType);
-  types.forEach(t => { byType[t] = shuffleArray(byType[t]); });
-
-  const interleaved = [];
-  let i = 0;
-  while (interleaved.length < unique.length && i < unique.length * 10) {
-    const pool = byType[types[i % types.length]];
-    if (pool?.length) interleaved.push(pool.shift());
-    i++;
-  }
-
-  const questions = interleaved.map((q, idx) => ({ ...q, question_number: idx + 1 }));
   return { ...bank, question_count: questions.length || bank?.question_count || 20, questions };
 }
 
@@ -69,24 +42,24 @@ export function formatLocalExamQuestion(question, total = 20, index = null) {
 }
 
 /**
- * Returns the text that should be spoken aloud for a given exam question.
- * Each exercise_type has a specific "what to say" rule.
+ * Returns the text to speak for a given question type.
+ * translate-en / listen → the target-language word/phrase (question.audio)
+ * fill              → complete sentence with correct answer filled in
+ * translate         → the English source phrase
+ * mcq               → the question text in target language
  */
 export function buildExamSpeechText(question, index = 1, total = 20, langCode = "de") {
   if (!question) return "";
   const raw  = String(question.question || "").trim();
   const type = question.exercise_type || "";
 
-  // translate-en / listen → speak the target-language word or phrase
   if ((type === "translate-en" || type === "listen") && question.audio) return question.audio;
 
-  // fill → read the complete sentence with the blank filled in
   if (type === "fill") {
     const sentence = raw.replace(/^Complete the sentence:\s*/i, "").trim();
     return sentence.replace(/___+/g, question.correct_answer || "");
   }
 
-  // translate (English → target language) → speak the English source phrase
   if (type === "translate") {
     return raw
       .replace(/^Translate to [^:]+:\s*/i, "")
@@ -94,8 +67,7 @@ export function buildExamSpeechText(question, index = 1, total = 20, langCode = 
       .trim();
   }
 
-  // mcq → return the raw question text (usually in target language)
-  return raw;
+  return raw; // mcq — read question text
 }
 
 export function extractOptionChoice(userText, options = []) {
@@ -118,11 +90,9 @@ export function extractOptionChoice(userText, options = []) {
 export function buildLocalExamReport(examBank, score) {
   const total = examBank?.questions?.length || 20;
   const verdict =
-    score >= Math.ceil(total * 0.8)
-      ? "Ready"
-      : score >= Math.ceil(total * 0.6)
-      ? "Nearly Ready"
-      : "Needs More Practice";
+    score >= Math.ceil(total * 0.8) ? "Ready"
+    : score >= Math.ceil(total * 0.6) ? "Nearly Ready"
+    : "Needs More Practice";
 
   return [
     "\u{1f4ca} EXAM REPORT",
@@ -136,15 +106,16 @@ export function buildLocalExamReport(examBank, score) {
 
 // ── Audio playback ─────────────────────────────────────────────────────────────
 /**
- * Play exam question audio — always TTS, never static files.
- * The pre-recorded static question files (.mp3) have been found to contain
- * mismatched recordings and are not used here.
+ * Play question audio.
+ * Priority: pre-recorded static file → TTS fallback.
+ * Static files are named:  public/audio/exam/{langCode}/{level}_{question.id}.mp3
+ * When you provide correctly-recorded files at those paths, live TTS is never called.
  */
 export async function playExamQuestionAudio(question, level, langCode, qIndex = 1, total = 25) {
   if (!question) return;
   stopAllAudio();
 
-  // ① Play the question-number announcement (e.g. "Question 3") — these are reliable
+  // ① Question-number announcement (numbers/1.mp3 … numbers/30.mp3) — always reliable
   const numUrl = `/audio/exam/${langCode}/numbers/${qIndex}.mp3`;
   try {
     const nr = await fetch(numUrl, { method: "HEAD", cache: "force-cache" });
@@ -157,11 +128,24 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
     }
   } catch {}
 
-  const type = question.exercise_type || "";
+  // ② Try pre-recorded static file (zero API cost, consistent across users)
+  //    File must contain the correct content — see docs/exam-audio-guide.md
+  const staticUrl = `/audio/exam/${langCode}/${level}_${question.id}.mp3`;
+  try {
+    const r = await fetch(staticUrl, { method: "HEAD", cache: "force-cache" });
+    if (r.ok) {
+      const audio = new Audio(staticUrl);
+      audio.preload = "auto";
+      // If playback fails, fall through to TTS
+      const played = await audio.play().catch(() => null);
+      if (played !== null) return; // successfully started
+    }
+  } catch {}
 
-  // ② For translate (English → target language): speak the English phrase in English voice
-  //    so the user knows what they need to translate.
+  // ③ TTS fallback — used until correct static files are provided
+  const type = question.exercise_type || "";
   if (type === "translate") {
+    // Speak the English source phrase in English voice
     const phrase = String(question.question || "")
       .replace(/^Translate to [^:]+:\s*/i, "")
       .replace(/^["'\u201c\u201d]|["'\u201c\u201d]$/g, "")
@@ -169,27 +153,25 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
     if (phrase) playWordAudio(phrase, "en", { voiceId: getTutorVoiceId("en") });
     return;
   }
-
-  // ③ For all other types: build the correct speech text and TTS in the target language.
-  //    translate-en / listen → the target-language word/phrase
-  //    fill → complete sentence with answer filled in
-  //    mcq → the question text
   const speechText = buildExamSpeechText(question, qIndex, total, langCode);
-  if (speechText) {
-    playWordAudio(speechText, langCode, { voiceId: getTutorVoiceId(langCode) });
-  }
+  if (speechText) playWordAudio(speechText, langCode, { voiceId: getTutorVoiceId(langCode) });
 }
 
 /**
- * Play exam feedback audio then chain to the next question.
- * Correct: tries richtig.mp3 / correct.mp3, falls back to TTS "Correct!"
- * Incorrect: always TTS — static _wrong.mp3 files are mismatched.
+ * Play feedback audio, then chain to next question audio.
+ *
+ * Correct:   tries  public/audio/{langCode}/correct.mp3  →  public/audio/de/richtig.mp3  →  TTS
+ * Incorrect: tries  public/audio/exam/{langCode}/{level}_{question.id}_wrong.mp3  →  TTS
+ *
+ * To eliminate TTS costs entirely, provide:
+ *   • public/audio/de/correct.mp3  (or richtig.mp3 — already exists)
+ *   • public/audio/exam/de/A1_Q01_wrong.mp3 … A1_Q30_wrong.mp3  per question
+ *     Content: "Incorrect. The correct answer is: <answer>"
  */
 export async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQuestion, level, langCode, nextIndex, total) {
   stopAllAudio();
 
   if (isCorrect) {
-    // Try the language-specific "correct" clip, fall back to TTS
     const candidates = [
       `/audio/${langCode}/correct.mp3`,
       `/audio/${langCode}/richtig.mp3`,
@@ -214,10 +196,26 @@ export async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQu
       await new Promise(res => setTimeout(res, 1500));
     }
   } else {
-    // For wrong answers: always TTS the correct answer (static _wrong.mp3 files are mismatched)
-    const correctText = `Incorrect. The correct answer is: ${currentQuestion?.correct_answer || ""}`;
-    playWordAudio(correctText, "en", { voiceId: getTutorVoiceId(langCode) });
-    await new Promise(res => setTimeout(res, 3200));
+    // Try per-question wrong clip (pre-recorded, zero API cost)
+    const wrongUrl = `/audio/exam/${langCode}/${level}_${currentQuestion?.id}_wrong.mp3`;
+    let played = false;
+    try {
+      const r = await fetch(wrongUrl, { method: "HEAD", cache: "force-cache" });
+      if (r.ok) {
+        const fb = new Audio(wrongUrl);
+        fb.preload = "auto";
+        await fb.play().catch(() => {});
+        await new Promise(res => { fb.onended = res; setTimeout(res, 4000); });
+        played = true;
+      }
+    } catch {}
+
+    if (!played) {
+      // TTS fallback until pre-recorded wrong clips are provided
+      const correctText = `Incorrect. The correct answer is: ${currentQuestion?.correct_answer || ""}`;
+      playWordAudio(correctText, "en", { voiceId: getTutorVoiceId(langCode) });
+      await new Promise(res => setTimeout(res, 3200));
+    }
   }
 
   if (nextQuestion) {

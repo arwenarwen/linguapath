@@ -949,6 +949,20 @@ function SpeakQuestion({ q, langCode, onAnswer }) {
           Voice input not available on this browser. Try Chrome or Safari.
         </div>
       )}
+
+      {/* Skip button — always visible, no XP deduction */}
+      {status !== "correct" && (
+        <button
+          onClick={() => onAnswer(true, true)}
+          style={{
+            marginTop:20, padding:"8px 22px", borderRadius:999,
+            background:"transparent", border:`1px solid ${T2.path}55`,
+            fontSize:12, fontWeight:700, color:T2.muted, cursor:"pointer",
+            fontFamily:"inherit", letterSpacing:0.3,
+          }}>
+          Skip for now
+        </button>
+      )}
     </div>
   );
 }
@@ -1003,9 +1017,10 @@ function Quiz({ module, langCode, userId, onDone }) {
     }
   }
 
-  function handleTileAnswer(correct) {
-    setTileCorrect(correct);
-    if (!correct) {
+  function handleTileAnswer(correct, isSkip) {
+    // isSkip = true when user taps "Skip for now" on speaking question — no penalty
+    setTileCorrect(isSkip ? true : correct);
+    if (!correct && !isSkip) {
       mistakesRef.current += 1;
       setMistakes(mistakesRef.current);
       saveMistake(userId, langCode, q.q, "(word tiles)", q.ans);
