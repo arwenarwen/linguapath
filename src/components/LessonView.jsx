@@ -1298,7 +1298,7 @@ function Complete({ module, score, total, levelColor, onBack, onNext, onReview }
           <span key={i} style={{
             fontSize:44, display:"inline-block",
             filter: i < stars ? "none" : "grayscale(1) opacity(0.18)",
-            animation: i < stars ? `starSeq 0.4s ${i*0.15+0.45}s both` : "none",
+            animation: i < stars ? `starSeq 0.4s ${i*0.08}s both` : "none",
           }}>⭐</span>
         ))}
       </div>
@@ -1313,20 +1313,20 @@ function Complete({ module, score, total, levelColor, onBack, onNext, onReview }
         <div style={{ padding:"9px 16px", borderRadius:40, fontSize:13, fontWeight:800,
           background:`linear-gradient(135deg,${T.path}22,${T.path}12)`,
           border:`1px solid ${T.path}45`, color:T.path,
-          animation:"xpPop 0.4s 0.75s both",
+          animation:"xpPop 0.35s 0.1s both",
           boxShadow:`0 4px 14px ${T.path}28` }}>
           ⚡ +{xp} XP
         </div>
         <div style={{ padding:"9px 16px", borderRadius:40, fontSize:13, fontWeight:800,
           background:"rgba(167,139,250,0.12)", border:"1px solid rgba(167,139,250,0.3)",
-          color:"#a78bfa", animation:"xpPop 0.4s 0.9s both" }}>
+          color:"#a78bfa", animation:"xpPop 0.35s 0.15s both" }}>
           🏔️ +{trailPts} trail pts
         </div>
         <div style={{ padding:"9px 16px", borderRadius:40, fontSize:13, fontWeight:800,
           background: mistakes===0 ? "rgba(34,197,94,0.12)" : T.isDark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)",
           border:`1px solid ${mistakes===0 ? "rgba(34,197,94,0.35)" : T.border}`,
           color: mistakes===0 ? "#22c55e" : T.muted,
-          animation:"xpPop 0.4s 0.85s both" }}>
+          animation:"xpPop 0.35s 0.12s both" }}>
           {mistakes === 0 ? "✓ Perfect!" : `✓ ${score}/${total} correct`}
         </div>
       </div>
@@ -1339,7 +1339,7 @@ function Complete({ module, score, total, levelColor, onBack, onNext, onReview }
         {onNext && (
           <button className="lv-primary"
             style={{ ...primaryBtn,
-              animation:"lv-fadeUp 0.4s 1.1s ease both" }}
+              animation:"lv-fadeUp 0.35s 0.2s ease both" }}
             onClick={onNext}>
             ▶ Next Lesson
           </button>
@@ -1348,13 +1348,13 @@ function Complete({ module, score, total, levelColor, onBack, onNext, onReview }
           <button style={{ ...secondaryBtn,
             background: T.isDark ? "rgba(167,139,250,0.1)" : "rgba(139,92,246,0.08)",
             border:"1px solid rgba(167,139,250,0.3)", color:"#a78bfa",
-            animation:"lv-fadeUp 0.4s 1.2s ease both" }}
+            animation:"lv-fadeUp 0.35s 0.27s ease both" }}
             onClick={onReview}>
             📝 Review Flashcards
           </button>
         )}
         <button style={{ ...secondaryBtn,
-          animation:"lv-fadeUp 0.4s 1.3s ease both",
+          animation:"lv-fadeUp 0.35s 0.33s ease both",
           background: T.isDark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.05)",
           border:`1px solid ${T.border}`, color:T.muted }}
           onClick={onBack}>
@@ -1407,18 +1407,16 @@ function LessonViewInner({
     setQuizScore(score);
     setQuizTotal(total);
     setPhase("complete");
-    // Defer onComplete by one frame so the Complete screen renders before
-    // MountainAppShell's cascade of state updates (markComplete) triggers a
-    // re-render — this prevents the dark-shell flash during the quiz→complete transition.
-    requestAnimationFrame(() => {
-      try {
-        const earnedStars = (typeof stars === "number" && stars >= 1) ? stars : 1;
-        const earnedXP = earnedStars === 3 ? 35 : earnedStars === 2 ? 25 : 15;
-        if (onComplete) onComplete(module.id, earnedXP, earnedStars);
-      } catch (e) {
-        console.error("onComplete error:", e);
-      }
-    });
+    // Call onComplete synchronously — React 18 batches all setState calls in one
+    // render pass, so markComplete's state updates in MountainAppShell are batched
+    // with phase:"complete" and there is no intermediate blank frame.
+    try {
+      const earnedStars = (typeof stars === "number" && stars >= 1) ? stars : 1;
+      const earnedXP = earnedStars === 3 ? 35 : earnedStars === 2 ? 25 : 15;
+      if (onComplete) onComplete(module.id, earnedXP, earnedStars);
+    } catch (e) {
+      console.error("onComplete error:", e);
+    }
   }
 
   const lT = getLessonTheme();
