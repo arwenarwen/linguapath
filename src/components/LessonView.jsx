@@ -711,7 +711,7 @@ function TileQuestion({ q, onAnswer, langCode }) {
     if (submitted || !hasInput) return;
     setSubmitted(true);
     const correct = finalAnswer.trim().toLowerCase() === q.ans.trim().toLowerCase();
-    onAnswer(correct);
+    onAnswer(correct, false, finalAnswer);
   }
 
   const T2 = getLessonTheme();
@@ -1020,13 +1020,13 @@ function Quiz({ module, langCode, userId, onDone }) {
     }
   }
 
-  function handleTileAnswer(correct, isSkip) {
+  function handleTileAnswer(correct, isSkip, userAnswer) {
     // isSkip = true when user taps "Skip for now" on speaking question — no penalty
     setTileCorrect(isSkip ? true : correct);
     if (!correct && !isSkip) {
       mistakesRef.current += 1;
       setMistakes(mistakesRef.current);
-      saveMistake(userId, langCode, q.q, "(word tiles)", q.ans);
+      saveMistake(userId, langCode, q.q, userAnswer || "(word tiles)", q.ans);
     }
   }
 

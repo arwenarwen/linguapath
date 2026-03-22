@@ -606,6 +606,34 @@ ${mistakeFormat}`;
 
 // ── Parse correction blocks from AI reply ────────────────────────────────────
 
+// ── Inline markdown renderer (bold / italic) ──────────────────────────────────
+function parseInlineMarkdown(text) {
+  const segments = [];
+  const regex = /(\*\*[^*\n]+\*\*|_[^_\n]+_)/g;
+  let lastIndex = 0;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      segments.push({ type:"text", content: text.slice(lastIndex, match.index) });
+    }
+    const raw = match[0];
+    if (raw.startsWith("**")) {
+      segments.push({ type:"bold", content: raw.slice(2, -2) });
+    } else {
+      segments.push({ type:"italic", content: raw.slice(1, -1) });
+    }
+    lastIndex = match.index + raw.length;
+  }
+  if (lastIndex < text.length) {
+    segments.push({ type:"text", content: text.slice(lastIndex) });
+  }
+  return segments.map((seg, i) => {
+    if (seg.type === "bold")   return <strong key={i} style={{ fontWeight:700 }}>{seg.content}</strong>;
+    if (seg.type === "italic") return <em key={i}>{seg.content}</em>;
+    return <span key={i}>{seg.content}</span>;
+  });
+}
+
 // ── Main AIChat component ─────────────────────────────────────────────────────
 
 
@@ -922,9 +950,29 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
       .map(m => ({ role:m.role, content:m.content }));
 
     if (mode !== "exam" && /^help$/i.test(userText.trim())) {
-      const helper = `Here's a quick English explanation: I'll help you understand the last line, give you 1–2 natural ${cfg.name} replies, and then we'll continue.`;
-      setMessages(m => [...m, { role:"assistant", content: helper, translation:null }]);
-      playWordAudio(helper, "en", { voiceId: getTutorVoiceId("en") });
+      // Replace the "help" user message with a proper English explanation request
+      const helpInstruction = `[Respond entirely in English for this message] The learner typed "help". Please: 1) Briefly explain in plain English what you said in your last message. 2) Give 1-2 natural ${cfg.name} replies they could use, numbered as options. 3) Then invite them to try responding.`;
+      const helpApiMessages = apiMessages.map((m, i) =>
+        (i === apiMessages.length - 1 && m.role === "user")
+          ? { ...m, content: helpInstruction }
+          : m
+      );
+      try {
+        const res = await fetch("/api/chat", {
+          method:"POST", headers:{ "Content-Type":"application/json" },
+          body: JSON.stringify({
+            system: systemPrompt + `\n\nYou started the conversation with: "${updatedMessages[0]?.content}"`,
+            messages: helpApiMessages
+          })
+        });
+        const data = await res.json();
+        if (!res.ok || data.error) throw new Error(data.error || `API error ${res.status}`);
+        const reply = data.reply || cfg.fallback;
+        setMessages(m => [...m, { role:"assistant", content: reply, translation:null }]);
+        playWordAudio(normalizeTextForSpeech(reply, "en"), "en", { voiceId: getTutorVoiceId("en") });
+      } catch {
+        setMessages(m => [...m, { role:"assistant", content: cfg.fallback, translation:null }]);
+      }
       setLoading(false);
       return;
     }
@@ -1277,12 +1325,12 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
                                 </div>
                               );
                             }
-                            return line ? <span key={li}>{line + (li < lines.length-1 ? "\n" : "")}</span> : <span key={li}>{"\n"}</span>;
+                            return line ? <span key={li}>{parseInlineMarkdown(line)}{li < lines.length-1 ? "\n" : ""}</span> : <span key={li}>{"\n"}</span>;
                           })}
                         </span>
                       );
                     }
-                    return <span key={pi}>{part}</span>;
+                    return <span key={pi}>{parseInlineMarkdown(part)}</span>;
                   });
                 })()}
               </div>

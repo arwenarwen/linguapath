@@ -685,7 +685,8 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         </div>
       )}
       {activeAI && (
-        <AIChat scenario={activeAI} langCode={activeLang} userId={user?.id} isPro={proUser}
+        <AIChat key={`${activeAI.mode}_${activeAI.id || activeAI.scenarioId || "_"}`}
+          scenario={activeAI} langCode={activeLang} userId={user?.id} isPro={proUser}
           onClose={() => { stopAllAudio(); setActiveAI(null); }}
           onGoReview={() => { stopAllAudio(); setActiveAI(null); handleTabChange("review"); }}
         />
