@@ -1138,10 +1138,14 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
             </div>
           )}
 
-          <div style={{position:"sticky",top:0,zIndex:20,padding:"8px 14px 8px",display:"flex",gap:8,alignItems:"center",overflowX:"auto",background:"rgba(255,247,234,0.97)",backdropFilter:"blur(8px)",borderBottom:"1px solid rgba(245,165,36,0.18)",WebkitOverflowScrolling:"touch"}}>
-            <span style={{fontSize:10,fontWeight:800,letterSpacing:1.2,color:"rgba(107,61,16,0.45)",textTransform:"uppercase",flexShrink:0}}>Jump to:</span>
-            {CEFR.filter(k=>(curriculum[k]?.modules||[]).length>0).map(k => <button key={k} onClick={() => document.getElementById(`level-${k}`)?.scrollIntoView({behavior:"smooth", block:"start"})} style={{border:"1px solid rgba(245,165,36,0.35)",background:"rgba(255,255,255,0.85)",borderRadius:999,padding:"6px 14px",fontSize:12,fontWeight:800,color:C.path,cursor:"pointer",flexShrink:0,boxShadow:"0 1px 4px rgba(245,165,36,0.1)"}}>{k}</button>)}
-            {onStatues&&<button onClick={onStatues} style={{marginLeft:"auto",border:"1px solid rgba(245,165,36,0.35)",background:"rgba(255,255,255,0.85)",borderRadius:999,padding:"6px 12px",fontSize:12,fontWeight:800,color:C.path,cursor:"pointer",flexShrink:0,boxShadow:"0 1px 4px rgba(245,165,36,0.1)"}}>🗿 Phrases</button>}
+          <div style={{position:"sticky",top:0,zIndex:20,background:"rgba(255,247,234,0.97)",backdropFilter:"blur(8px)",borderBottom:"1px solid rgba(245,165,36,0.18)"}}>
+            <div style={{display:"flex",alignItems:"center",gap:0,padding:"8px 14px 8px"}}>
+              <div style={{display:"flex",gap:8,alignItems:"center",overflowX:"auto",flex:1,WebkitOverflowScrolling:"touch",msOverflowStyle:"none",scrollbarWidth:"none"}}>
+                <span style={{fontSize:10,fontWeight:800,letterSpacing:1.2,color:"rgba(107,61,16,0.45)",textTransform:"uppercase",flexShrink:0}}>Jump to:</span>
+                {CEFR.filter(k=>(curriculum[k]?.modules||[]).length>0).map(k => <button key={k} onClick={() => document.getElementById(`level-${k}`)?.scrollIntoView({behavior:"smooth", block:"start"})} style={{border:"1px solid rgba(245,165,36,0.35)",background:"rgba(255,255,255,0.85)",borderRadius:999,padding:"6px 14px",fontSize:12,fontWeight:800,color:C.path,cursor:"pointer",flexShrink:0,boxShadow:"0 1px 4px rgba(245,165,36,0.1)"}}>{k}</button>)}
+              </div>
+              {onStatues&&<button onClick={onStatues} style={{flexShrink:0,marginLeft:8,border:"1px solid rgba(245,165,36,0.5)",background:"linear-gradient(135deg,rgba(245,165,36,0.12),rgba(245,165,36,0.06))",borderRadius:999,padding:"6px 13px",fontSize:12,fontWeight:800,color:"#c97b0a",cursor:"pointer",whiteSpace:"nowrap",boxShadow:"0 1px 6px rgba(245,165,36,0.15)"}}>🗿 Bonus</button>}
+            </div>
           </div>
 
           {/* Trail map per level */}

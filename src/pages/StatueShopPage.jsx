@@ -97,7 +97,27 @@ export default function StatueShopPage({ userId, langCode = "de", onClose }) {
   const [activeCategory, setActiveCategory] = useState(0);
 
   const market = langCode === "de" ? DE_STATUE_MARKETPLACE : null;
-  if (!market) return null;
+
+  if (!market) {
+    const LANG_NAMES = { fr:"French", es:"Spanish", it:"Italian", pt:"Portuguese", ru:"Russian", el:"Greek", zh:"Chinese", ja:"Japanese", ko:"Korean" };
+    const langName = LANG_NAMES[langCode] || "this language";
+    return (
+      <div style={{ position:"fixed", inset:0, zIndex:500, background:"rgba(107,61,16,0.35)", backdropFilter:"blur(8px)", display:"flex", alignItems:"flex-end", justifyContent:"center" }} onClick={onClose}>
+        <div onClick={e=>e.stopPropagation()} style={{ background:T.bg, borderRadius:"24px 24px 0 0", width:"100%", maxWidth:480, padding:"28px 24px 48px", border:`1px solid ${T.borderStrong}`, borderBottom:"none" }}>
+          <div style={{ width:36, height:4, background:"rgba(245,165,36,0.3)", borderRadius:999, margin:"0 auto 20px" }} />
+          <div style={{ textAlign:"center" }}>
+            <div style={{ fontSize:48, marginBottom:12 }}>🗿</div>
+            <div style={{ fontSize:18, fontWeight:900, color:T.text, fontFamily:"'Playfair Display',Georgia,serif", marginBottom:8 }}>Bonus Phrases</div>
+            <div style={{ fontSize:14, color:T.muted, marginBottom:20, lineHeight:1.5 }}>
+              Unlock cultural expressions & insider phrases for {langName} with your Trail Points.<br/><br/>
+              <span style={{ color:T.path, fontWeight:700 }}>Coming soon for {langName}!</span> Earn Trail Points by completing lessons — they'll be ready to spend when the content launches.
+            </div>
+            <button onClick={onClose} style={{ background:`linear-gradient(135deg,${T.path},#c9a84c)`, border:"none", borderRadius:12, padding:"10px 28px", fontSize:14, fontWeight:800, color:"#fff", cursor:"pointer", fontFamily:"inherit" }}>Got it</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   function unlock(setKey) {
     const result = spendTrailPoints(userId, UNLOCK_COST);

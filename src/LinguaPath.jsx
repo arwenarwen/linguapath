@@ -211,8 +211,8 @@ const CSS = `
   .spinner { width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block; }
 
   /* ── Picker ── */
-  .pick-bd { position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(8px);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn .2s both; }
-  .pick-m { background:var(--lp-surface);border:1.5px solid var(--lp-border);border-radius:24px;padding:36px;width:100%;max-width:680px;max-height:92vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.14);animation:slideUp .3s cubic-bezier(.16,1,.3,1) both; }
+  .pick-bd { position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(8px);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px 20px 90px;animation:fadeIn .2s both; }
+  .pick-m { background:var(--lp-surface);border:1.5px solid var(--lp-border);border-radius:24px;padding:36px;width:100%;max-width:680px;max-height:calc(100vh - 110px);overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.14);animation:slideUp .3s cubic-bezier(.16,1,.3,1) both; }
   .lp-card { background:var(--lp-faint);border:2px solid var(--lp-border);border-radius:16px;padding:18px 14px;text-align:center;cursor:pointer;transition:all .15s;position:relative; }
   .lp-card:hover { border-color:var(--lp-green);background:var(--lp-green-bg);transform:translateY(-2px);box-shadow:0 8px 24px rgba(249,115,22,.12); }
   .lp-card.has-p { border-color:rgba(45,184,122,.4);background:var(--lp-green-bg); }
@@ -1310,7 +1310,7 @@ function MiniLesson({ onSignup }) {
 // ─── LANDING PAGE ─────────────────────────────────────────────────────────────
 const FEATURES = [
   {icon:"🎯",c:"#d97706",bg:"#fef3c7",title:"Logic-First Curriculum",desc:"CEFR A1→C2 structured exactly as your brain absorbs language — real conversations before grammar rules."},
-  {icon:"🤖",c:"#0ea5e9",bg:"#e0f2fe",title:"Live AI Conversation",desc:"10+ real-world scenarios — restaurant, hotel, job interview and more. The AI speaks your language and corrects you naturally."},
+  {icon:"🤖",c:"#0ea5e9",bg:"#e0f2fe",title:"Live AI Conversation",desc:"20 real-life situations — restaurant, hotel, job interview and more. The AI speaks your language and corrects you naturally."},
   {icon:"🌍",c:"#7c5cfc",bg:"#f0ecff",title:"10 Languages",desc:"Spanish, German, French, Italian, Portuguese, Mandarin, Japanese, Korean, Russian & Greek — fully launched."},
   {icon:"⚡",c:"#ff6b35",bg:"#fff2ec",title:"Situation Packs",desc:"Jump into real-life scenarios instantly — airport, shopping, doctor, taxi. Quick mode or full AI roleplay."},
   {icon:"🧠",c:"#2db87a",bg:"#edfaf3",title:"Spaced Repetition",desc:"Your mistakes become flashcards. Words resurface exactly when you're about to forget them."},
@@ -1619,7 +1619,7 @@ className="wl-input"
         <div className="stats-bar">
           <div className="stat-item"><div className="stat-num">10</div><div className="stat-label">Languages</div></div>
           <div className="stat-item"><div className="stat-num">A1→C2</div><div className="stat-label">Full CEFR path</div></div>
-          <div className="stat-item"><div className="stat-num">~3,959</div><div className="stat-label">Audio clips (German)</div></div>
+          <div className="stat-item"><div className="stat-num">20</div><div className="stat-label">Real-life situations</div></div>
           <div className="stat-item"><div className="stat-num">150+</div><div className="stat-label">Early members</div></div>
         </div>
       </section>

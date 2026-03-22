@@ -181,8 +181,8 @@ export async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQu
       await new Promise(res => { fb.onended = res; setTimeout(res, 3500); });
     } else {
       const fallbackText = isCorrect
-        ? "Richtig."
-        : `Falsch. Die richtige Antwort ist: ${currentQuestion?.correct_answer || ""}.`;
+        ? "Correct!"
+        : `Incorrect. The correct answer is: ${currentQuestion?.correct_answer || ""}.`;
       playWordAudio(fallbackText, langCode, { voiceId: getTutorVoiceId(langCode) });
       await new Promise(res => setTimeout(res, 2000));
     }

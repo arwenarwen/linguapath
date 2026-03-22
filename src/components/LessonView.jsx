@@ -94,7 +94,7 @@ function buildQuestions(module, langCode) {
     const dialogue = Array.isArray(module?.dialogue) ? module.dialogue : [];
     const langName = { es:"Spanish",de:"German",fr:"French",it:"Italian",
       pt:"Portuguese",zh:"Mandarin",ja:"Japanese",ko:"Korean",
-      pl:"Polish",en:"English" }[langCode] || "the language";
+      ru:"Russian",el:"Greek",pl:"Polish",en:"English" }[langCode] || "the language";
 
     const qs = [];
 
@@ -201,18 +201,27 @@ function buildQuestions(module, langCode) {
       qs.push({ type:"speak", q: w.en, ans: t });
     });
 
-    // Interleave types, max 10
+    // Interleave types, max 10, deduplicating by answer so the same word never appears twice
     const byType = {};
     qs.forEach(q => { if (!byType[q.type]) byType[q.type]=[]; byType[q.type].push(q); });
     const result = [];
+    const seenAns = new Set();
     const types = Object.keys(byType);
     let i = 0;
-    while (result.length < Math.min(10, qs.length) && i < 200) {
+    while (result.length < Math.min(10, qs.length) && i < 400) {
       const pool = byType[types[i % types.length]];
-      if (pool?.length) result.push(pool.shift());
+      if (pool?.length) {
+        const q = pool.shift();
+        const key = String(q.ans || "").toLowerCase();
+        if (!seenAns.has(key)) {
+          seenAns.add(key);
+          result.push(q);
+        }
+      }
       i++;
     }
-    return shuffle(result).slice(0,10);
+    // Shuffle the final set so question types appear in random order
+    return shuffle(result).slice(0, 10);
   } catch (e) {
     console.error("buildQuestions error:", e);
     return [];
@@ -256,7 +265,8 @@ const LESSON_CSS = `
 const T = getLessonTheme();
 
 const root = {
-  minHeight:"100vh",
+  position:"fixed", inset:0, zIndex:400,
+  overflowY:"auto",
   background: T.bg,
   color: T.text,
   fontFamily:"'DM Sans','Lato',system-ui,sans-serif",

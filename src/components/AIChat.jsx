@@ -848,8 +848,8 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
       setLocalExamScore(nextScore);
 
       const feedback = isCorrect
-        ? `✅ Correct\nRichtig.`
-        : `❌ Incorrect\nDie richtige Antwort ist: ${currentQuestion.correct_answer}`;
+        ? `✅ Correct`
+        : `❌ Incorrect — the right answer is: ${currentQuestion.correct_answer}`;
 
       const isLast = localExamIndex >= ((localExamBank.questions?.length || 1) - 1);
 

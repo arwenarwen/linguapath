@@ -12,13 +12,14 @@ export default function LanguagePicker({ curricula = {}, onPick }) {
 
   return (
     <div style={{
-      minHeight: "100vh",
+      position: "fixed", inset: 0, zIndex: 300,
       background: "#07070d",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      padding: "32px 20px",
+      padding: "32px 20px 100px",  /* 100px bottom pad clears bottom nav */
+      overflowY: "auto",
       color: "#f0f0f5",
       fontFamily: "'Lato', sans-serif",
     }}>
