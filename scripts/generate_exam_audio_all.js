@@ -6,18 +6,25 @@
  *   node scripts/generate_exam_audio_all.js
  *
  * Output structure:
- *   public/audio/exam/<lang>/numbers/<n>.mp3         — "Question N." in that language's voice
+ *   public/audio/exam/<lang>/correct.mp3             — "Correct!" in target language
+ *   public/audio/exam/<lang>/numbers/<n>.mp3         — "Question N." in target language voice
  *   public/audio/exam/<lang>/<LEVEL>_<ID>.mp3        — question audio
+ *   public/audio/exam/<lang>/<LEVEL>_<ID>_A.mp3      — option A (tap-to-hear)
+ *   public/audio/exam/<lang>/<LEVEL>_<ID>_B.mp3      — option B
+ *   public/audio/exam/<lang>/<LEVEL>_<ID>_C.mp3      — option C
+ *   public/audio/exam/<lang>/<LEVEL>_<ID>_D.mp3      — option D
  *   public/audio/exam/<lang>/<LEVEL>_<ID>_wrong.mp3  — wrong-answer feedback
  *
  * All existing files are skipped — safe to re-run if interrupted.
  *
  * Estimated total files:
- *   10 languages × 30 number clips             =   300
- *   10 languages × 6 levels × 30 questions     = 1,800
- *   10 languages × 6 levels × 18 feedback clips= 1,080  (skip translate-en + listen)
+ *   10 languages × 1 correct clip               =    10
+ *   10 languages × 30 number clips              =   300
+ *   10 languages × 6 levels × 30 questions      = 1,800
+ *   10 languages × 6 levels × 30 × 4 options    = 7,200
+ *   10 languages × 6 levels × 30 feedback clips = 1,800
  *   ─────────────────────────────────────────────────────
- *   Total:                                       ~3,180 files  (~32 min at 600ms/file)
+ *   Total:                                       ~11,110 files  (~112 min at 600ms/file)
  */
 
 import fs from "fs";
@@ -30,12 +37,16 @@ const API_KEY     = process.env.ELEVENLABS_API_KEY;
 const LEVELS      = ["A1", "A2", "B1", "B2", "C1", "C2"];
 const MAX_QUESTION = 30;
 
+// English voice for options that are in English (translate-en + listen types)
+const EN_VOICE = "EXAVITQu4vr4xnSDxMaL"; // ElevenLabs "Sarah" — clear, neutral English
+
 // ── Language registry ──────────────────────────────────────────────────────────
 const LANGUAGES = [
   {
     code:     "de",
     bankName: "German",
     voice:    "kUqnjA18C6ISqjtKOpsJ",
+    correctWord:  "Richtig!",
     wrongPrefix:  "Falsch. Die richtige Antwort ist:",
     fillPrefix:   "Ergänze den Satz:",
     translateFmt: (en) => `Wie sagt man "${en}" auf Deutsch?`,
@@ -44,6 +55,7 @@ const LANGUAGES = [
     code:     "fr",
     bankName: "French",
     voice:    "ttrVUBHgC9AEENt2kGi6",
+    correctWord:  "Correct !",
     wrongPrefix:  "Incorrect. La bonne réponse est :",
     fillPrefix:   "Complétez la phrase :",
     translateFmt: (en) => `Comment dit-on "${en}" en français ?`,
@@ -52,6 +64,7 @@ const LANGUAGES = [
     code:     "es",
     bankName: "Spanish",
     voice:    "zdzXtQ5BTOYMDG04sR8R",
+    correctWord:  "¡Correcto!",
     wrongPrefix:  "Incorrecto. La respuesta correcta es:",
     fillPrefix:   "Completa la oración:",
     translateFmt: (en) => `¿Cómo se dice "${en}" en español?`,
@@ -60,6 +73,7 @@ const LANGUAGES = [
     code:     "it",
     bankName: "Italian",
     voice:    "BUAZlX1JYGONhOQdurfl",
+    correctWord:  "Corretto!",
     wrongPrefix:  "Sbagliato. La risposta corretta è:",
     fillPrefix:   "Completa la frase:",
     translateFmt: (en) => `Come si dice "${en}" in italiano?`,
@@ -68,6 +82,7 @@ const LANGUAGES = [
     code:     "pt",
     bankName: "Portuguese",
     voice:    "CImjz27snHwe55ik6hke",
+    correctWord:  "Correto!",
     wrongPrefix:  "Incorreto. A resposta correta é:",
     fillPrefix:   "Complete a frase:",
     translateFmt: (en) => `Como se diz "${en}" em português?`,
@@ -76,6 +91,7 @@ const LANGUAGES = [
     code:     "ru",
     bankName: "Russian",
     voice:    "1iQuCymkuonZDnoteVZT",
+    correctWord:  "Правильно!",
     wrongPrefix:  "Неверно. Правильный ответ:",
     fillPrefix:   "Дополните предложение:",
     translateFmt: (en) => `Как сказать "${en}" по-русски?`,
@@ -84,6 +100,7 @@ const LANGUAGES = [
     code:     "zh",
     bankName: "Chinese",
     voice:    "RrYpxumYIVoc5NKCTGOg",
+    correctWord:  "正确！",
     wrongPrefix:  "不对。正确答案是：",
     fillPrefix:   "填写空白：",
     translateFmt: (en) => `"${en}"用中文怎么说？`,
@@ -92,6 +109,7 @@ const LANGUAGES = [
     code:     "ja",
     bankName: "Japanese",
     voice:    "9XG6vvb5sQYWawDizIlo",
+    correctWord:  "正解！",
     wrongPrefix:  "不正解です。正解は：",
     fillPrefix:   "文を完成させてください：",
     translateFmt: (en) => `「${en}」は日本語でどう言いますか？`,
@@ -100,6 +118,7 @@ const LANGUAGES = [
     code:     "ko",
     bankName: "Korean",
     voice:    "FNrsMcVkTfKeSyL1UYXS",
+    correctWord:  "정답!",
     wrongPrefix:  "틀렸습니다. 정답은:",
     fillPrefix:   "문장을 완성하세요:",
     translateFmt: (en) => `"${en}"를 한국어로 어떻게 말합니까?`,
@@ -108,6 +127,7 @@ const LANGUAGES = [
     code:     "el",
     bankName: "Greek",
     voice:    "8C0RosTo9KZhAz8UmM7c",
+    correctWord:  "Σωστά!",
     wrongPrefix:  "Λάθος. Η σωστή απάντηση είναι:",
     fillPrefix:   "Συμπληρώστε τη φράση:",
     translateFmt: (en) => `Πώς λέγεται "${en}" στα ελληνικά;`,
@@ -182,6 +202,17 @@ async function main() {
     fs.mkdirSync(examDir,    { recursive: true });
     fs.mkdirSync(numbersDir, { recursive: true });
 
+    // ── correct.mp3 — one shared "Correct!" clip per language ────────────────
+    const correctPath = path.join(examDir, "correct.mp3");
+    if (!fs.existsSync(correctPath)) {
+      toGenerate.push({
+        label:      `[${lang.code}] correct`,
+        speechText: lang.correctWord,
+        outPath:    correctPath,
+        voiceId:    lang.voice,
+      });
+    }
+
     // ── "Question 1." … "Question 30." — read by this language's voice ──────
     for (let n = 1; n <= MAX_QUESTION; n++) {
       const outPath = path.join(numbersDir, `${n}.mp3`);
@@ -219,18 +250,38 @@ async function main() {
           }
         }
 
-        // Wrong-answer feedback — only when the correct answer is in the target language.
-        // translate-en and listen have English answers → skip them.
-        const hasTargetLangAnswer = !["translate-en", "listen"].includes(q.exercise_type);
-        if (hasTargetLangAnswer && q.correct_answer) {
-          const wrongText = `${lang.wrongPrefix} ${q.correct_answer}.`;
+        // ── Option A / B / C / D — tap-to-hear ─────────────────────────────
+        // translate-en and listen have English options → use EN_VOICE
+        // all other types have target-language options → use lang.voice
+        const isEnglishOptions = ["translate-en", "listen"].includes(q.exercise_type);
+        const optVoice = isEnglishOptions ? EN_VOICE : lang.voice;
+        (q.options || []).forEach((optText, i) => {
+          const letter  = String.fromCharCode(65 + i); // A B C D
+          const outPath = path.join(examDir, `${level}_${q.id}_${letter}.mp3`);
+          if (!fs.existsSync(outPath)) {
+            toGenerate.push({
+              label:      `[${lang.code}] ${level} ${q.id} opt${letter}`,
+              speechText: optText,
+              outPath,
+              voiceId:    optVoice,
+            });
+          }
+        });
+
+        // ── Wrong-answer feedback ────────────────────────────────────────────
+        // Use target-language prefix for target-lang answers, English for EN answers
+        if (q.correct_answer) {
+          const wrongText = isEnglishOptions
+            ? `Incorrect. The correct answer is: ${q.correct_answer}`
+            : `${lang.wrongPrefix} ${q.correct_answer}.`;
           const outPath   = path.join(examDir, `${level}_${q.id}_wrong.mp3`);
+          const wrongVoice = isEnglishOptions ? EN_VOICE : lang.voice;
           if (!fs.existsSync(outPath)) {
             toGenerate.push({
               label:      `[${lang.code}] ${level} ${q.id} wrong`,
               speechText: wrongText,
               outPath,
-              voiceId:    lang.voice,
+              voiceId:    wrongVoice,
             });
           }
         }
