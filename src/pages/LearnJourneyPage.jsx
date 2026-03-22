@@ -1179,8 +1179,22 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
                     // FIX 5: cpPassRevision forces re-evaluation of checkpoint state after passing
                     const prevCheckpointPassed = idx === 0 ? true : (cpPassRevision >= 0 && !!getCheckpointPass(user?.id, langCode || curriculum.code, prevUnit.unit)?.passed);
                     return (
-                    <div key={unit.unit} style={{marginTop:idx?12:2}}>
-                      <div style={{textAlign:"center",fontSize:11,letterSpacing:2,fontWeight:900,color:C.muted,marginBottom:4}}>
+                    <div key={unit.unit} style={{marginTop:idx?0:2}}>
+                      {/* Bonus Phrases teaser — appears between units when checkpoint is done */}
+                      {idx > 0 && onStatues && (
+                        <div onClick={onStatues} style={{margin:"8px 0 10px",padding:"10px 16px",borderRadius:16,background:"linear-gradient(135deg,rgba(245,165,36,0.09),rgba(245,165,36,0.04))",border:"1.5px dashed rgba(245,165,36,0.38)",cursor:"pointer",display:"flex",alignItems:"center",gap:10,transition:"background 0.2s"}}
+                          onMouseEnter={e=>e.currentTarget.style.background="linear-gradient(135deg,rgba(245,165,36,0.16),rgba(245,165,36,0.08))"}
+                          onMouseLeave={e=>e.currentTarget.style.background="linear-gradient(135deg,rgba(245,165,36,0.09),rgba(245,165,36,0.04))"}>
+                          <div style={{fontSize:24,flexShrink:0}}>🗿</div>
+                          <div style={{flex:1}}>
+                            <div style={{fontSize:12,fontWeight:900,color:C.path,marginBottom:1}}>Bonus Phrases</div>
+                            <div style={{fontSize:11,color:C.muted}}>Unlock cultural expressions with your Trail Points</div>
+                          </div>
+                          <div style={{fontSize:10,fontWeight:800,color:C.path,opacity:0.7}}>→</div>
+                        </div>
+                      )}
+                      {/* Unit header */}
+                      <div style={{textAlign:"center",fontSize:11,letterSpacing:2,fontWeight:900,color:C.muted,marginBottom:4,marginTop:idx?2:0}}>
                         {unit.unit.toUpperCase()} · {unit.lessons.filter(l=>completed.includes(l.id)).length}/{unit.lessons.length}{idx>0 && !prevCheckpointPassed ? " · Checkpoint locked" : ""}
                       </div>
                       <TrailUnit

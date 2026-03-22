@@ -271,12 +271,14 @@ export const GLOBAL_CSS = `
     animation: fadeUp 0.32s cubic-bezier(.16,1,.3,1) both;
   }
   .chat-ai {
-    background: var(--surface2);
-    border: 1px solid var(--border2);
+    background: var(--chat-ai-bg, var(--surface2));
+    color: var(--chat-text, var(--text));
+    border: 1px solid var(--chat-border, var(--border2));
     border-bottom-left-radius: 4px;
   }
   .chat-user {
-    background: linear-gradient(135deg, #2563eb 0%, #1a3fbf 100%);
+    background: var(--chat-user-bg, linear-gradient(135deg, #2563eb 0%, #1a3fbf 100%));
+    color: var(--chat-user-text, #fff);
     border-bottom-right-radius: 4px;
     align-self: flex-end;
     box-shadow: 0 4px 16px rgba(37,99,235,0.3);

@@ -1104,7 +1104,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         @keyframes animalBob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}
         @keyframes tipSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
         body,html{background:${chatTheme.bg} !important;}
-        :root{--chat-ai-bg:${chatTheme.bubbleAI};--chat-user-bg:${chatTheme.bubbleUser};--chat-text:${chatTheme.text};--chat-border:${chatTheme.border};}
+        :root{--chat-ai-bg:${chatTheme.bubbleAI};--chat-user-bg:${chatTheme.bubbleUser};--chat-text:${chatTheme.text};--chat-border:${chatTheme.border};--chat-user-text:${chatTheme.userText || "#fff"};}
       `}</style>
 
       {/* XP toast */}

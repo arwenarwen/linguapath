@@ -99,7 +99,7 @@ function LangModal({ curricula, activeLang, progressMap, onPick, onClose }) {
 
   return (
     <div onClick={onClose} style={{ position:"fixed", inset:0, zIndex:600, background:"rgba(107,61,16,0.35)", backdropFilter:"blur(8px)", display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
-      <div onClick={e => e.stopPropagation()} style={{ background:"#fff7ea", borderRadius:"24px 24px 0 0", width:"100%", maxWidth:480, maxHeight:"78vh", overflowY:"auto", padding:"22px 18px 44px", border:`1px solid ${T.borderStrong}`, borderBottom:"none" }}>
+      <div onClick={e => e.stopPropagation()} style={{ background:"#fff7ea", borderRadius:"24px 24px 0 0", width:"100%", maxWidth:480, maxHeight:"85vh", overflowY:"auto", padding:"22px 18px 100px", border:`1px solid ${T.borderStrong}`, borderBottom:"none" }}>
         <div style={{ width:36, height:4, background:"rgba(245,165,36,0.25)", borderRadius:999, margin:"0 auto 18px" }} />
         <div style={{ fontFamily:"'Syne',sans-serif", fontSize:17, fontWeight:800, color:T.text, marginBottom:14 }}>Choose Language</div>
         {langs.map(l => (

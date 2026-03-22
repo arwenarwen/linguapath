@@ -111,6 +111,14 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
     }
   } catch {}
 
+  // For translate-en questions: always TTS the target word directly from question.audio.
+  // Static files for these questions have been found to contain mismatched recordings.
+  if (question.exercise_type === "translate-en" && question.audio) {
+    playWordAudio(question.audio, langCode, { voiceId: getTutorVoiceId(langCode) });
+    return;
+  }
+
+  // For listen-type: try static pre-recorded file first (these are intentional listen exercises).
   if (question.exercise_type === "listen" && question.audio) {
     const examListenUrl = `/audio/exam/${langCode}/${level}_${question.id}.mp3`;
     try {
@@ -127,6 +135,7 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
     return;
   }
 
+  // For fill/translate/mcq: try static file, fall back to TTS of sentence.
   const url = `/audio/exam/${langCode}/${level}_${question.id}.mp3`;
   try {
     const r = await fetch(url, { method: "HEAD", cache: "force-cache" });
@@ -155,6 +164,19 @@ export async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQu
       try { const r = await fetch(url, { method: "HEAD", cache: "force-cache" }); if (r.ok) { feedbackUrl = url; break; } } catch {}
     }
   } else {
+    // For translate-en questions, skip per-question wrong clips (may be mismatched).
+    // Use TTS to speak the correct answer clearly instead.
+    if (currentQuestion?.exercise_type === "translate-en") {
+      stopAllAudio();
+      const correctText = `Incorrect. The correct answer is: ${currentQuestion?.correct_answer || ""}`;
+      playWordAudio(correctText, "en", { voiceId: getTutorVoiceId(langCode) });
+      await new Promise(res => setTimeout(res, 3000));
+      if (nextQuestion) {
+        await new Promise(res => setTimeout(res, 350));
+        playExamQuestionAudio(nextQuestion, level, langCode, nextIndex, total);
+      }
+      return;
+    }
     const perQWrong = `/audio/exam/${langCode}/${level}_${currentQuestion?.id}_wrong.mp3`;
     try {
       const r = await fetch(perQWrong, { method: "HEAD", cache: "force-cache" });

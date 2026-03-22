@@ -576,7 +576,7 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         </div>
       )}
 
-      <div style={{ position: "relative", zIndex: 1, paddingBottom: 64 }}>
+      <div style={{ position: "relative", paddingBottom: 64 }}>
         {tab === "learn" && (
           <LearnJourneyPage
             curriculum={curriculum} progress={effectiveProgress}
