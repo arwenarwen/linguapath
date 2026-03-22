@@ -793,7 +793,7 @@ function CheckpointScreen({animal,unitName,lessons,onClose,userId,langCode,onChe
 }
 
 // ── TrailUnit ─────────────────────────────────────────────────────────────────
-function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,onSelectLesson,levelKey,isCurrentLevel,mist,unitAnimal,unitIdx,userId,langCode,unitLocked,onCheckpointPass}) {
+function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,onSelectLesson,levelKey,isCurrentLevel,mist,unitAnimal,unitIdx,userId,langCode,unitLocked,onCheckpointPass,starsMap}) {
   const lessons=unit.lessons;
   const [torchList,setTorchList]=useState([]);
   const [foxPos,setFoxPos]=useState(null);     // {x,y} current fox position during walk
@@ -1208,6 +1208,7 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
                         langCode={langCode || curriculum.code}
                         unitLocked={!prevCheckpointPassed}
                         onCheckpointPass={handleCheckpointPass}
+                        starsMap={starsMap}
                       />
                     </div>
                   )})

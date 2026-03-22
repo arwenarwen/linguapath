@@ -433,7 +433,7 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         user_id: user.id, language: activeLang,
         completed: next.completed, xp: next.xp,
         updated_at: new Date().toISOString(),
-      }, { onConflict: "user_id,language" }).catch(() => {});
+      }, { onConflict: "user_id,language" }).then(null, () => {});
     }
 
     // Save stars per lesson
