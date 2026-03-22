@@ -13,7 +13,7 @@ import {
 } from '../lib/progressUtils';
 import {
   loadLocalExamBank, formatLocalExamQuestion, buildExamSpeechText,
-  playExamQuestionAudio, playExamFeedbackAndNext,
+  playExamQuestionAudio, playExamFeedbackAndNext, playExamOptionAudio,
   extractOptionChoice, buildLocalExamReport,
 } from '../lib/examUtils';
 import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
@@ -1219,17 +1219,35 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
                     if (hasOptions && msg.role === "assistant") {
                       // Split into lines, render option lines as buttons
                       const lines = part.split("\n");
+                      // Get current exam question for option audio
+                      const examQ = (mode === "exam" && localExamBank)
+                        ? localExamBank.questions?.[localExamIndex]
+                        : null;
                       return (
                         <span key={pi}>
                           {lines.map((line, li) => {
                             const optMatch = line.match(/^([A-D])[)] (.+)/);
                             if (optMatch) {
                               const [, letter, text] = optMatch;
+                              const optIdx = letter.charCodeAt(0) - 65; // A→0, B→1 …
                               return (
-                                <div key={li} style={{ marginTop:8 }}>
+                                <div key={li} style={{ marginTop:8, display:"flex", gap:6, alignItems:"stretch" }}>
+                                  {/* 🔊 tap-to-hear button — plays without submitting */}
+                                  <button
+                                    onClick={() => examQ && playExamOptionAudio(examQ, cefrLevel, langCode, optIdx, text)}
+                                    title="Tap to hear"
+                                    style={{ flexShrink:0, width:34, borderRadius:8, border:"1px solid rgba(255,255,255,0.15)",
+                                      background:"rgba(255,255,255,0.04)", color:"var(--muted)", cursor:"pointer",
+                                      fontSize:14, display:"flex", alignItems:"center", justifyContent:"center",
+                                      transition:"all 0.15s" }}
+                                    onMouseOver={e => { e.currentTarget.style.background="rgba(245,200,66,0.1)"; e.currentTarget.style.color="var(--gold)"; }}
+                                    onMouseOut={e => { e.currentTarget.style.background="rgba(255,255,255,0.04)"; e.currentTarget.style.color="var(--muted)"; }}>
+                                    🔊
+                                  </button>
+                                  {/* Main option button — submits the answer */}
                                   <button
                                     onClick={() => send(letter + ") " + text)}
-                                    style={{ display:"flex", alignItems:"center", gap:10, width:"100%",
+                                    style={{ flex:1, display:"flex", alignItems:"center", gap:10,
                                       background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.15)",
                                       borderRadius:10, padding:"10px 14px", cursor:"pointer", textAlign:"left",
                                       color:"var(--text)", fontSize:14, fontFamily:"var(--font-body)",
@@ -1245,7 +1263,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
                                 </div>
                               );
                             }
-                                                        return line ? <span key={li}>{line + (li < lines.length-1 ? "\n" : "")}</span> : <span key={li}>{"\n"}</span>;
+                            return line ? <span key={li}>{line + (li < lines.length-1 ? "\n" : "")}</span> : <span key={li}>{"\n"}</span>;
                           })}
                         </span>
                       );

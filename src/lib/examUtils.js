@@ -158,6 +158,39 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
 }
 
 /**
+ * Play audio for a single answer option when the user taps it.
+ * Static file: public/audio/exam/{langCode}/{level}_{question.id}_{letter}.mp3
+ *   where letter = A | B | C | D
+ * Falls back to TTS using the option text.
+ *
+ * Usage: playExamOptionAudio(question, level, langCode, optionIndex, optionText)
+ *   optionIndex = 0–3 (maps to A–D)
+ */
+export async function playExamOptionAudio(question, level, langCode, optionIndex, optionText) {
+  if (!question || optionIndex < 0) return;
+  stopAllAudio();
+
+  const letter = String.fromCharCode(65 + optionIndex); // 0→A, 1→B, etc.
+  const staticUrl = `/audio/exam/${langCode}/${level}_${question.id}_${letter}.mp3`;
+
+  try {
+    const r = await fetch(staticUrl, { method: "HEAD", cache: "force-cache" });
+    if (r.ok) {
+      const audio = new Audio(staticUrl);
+      audio.preload = "auto";
+      const played = await audio.play().catch(() => null);
+      if (played !== null) return;
+    }
+  } catch {}
+
+  // TTS fallback — determine language for this option type
+  const type = question.exercise_type || "";
+  const isEnglishOption = type === "translate-en" || type === "listen";
+  const speakLang = isEnglishOption ? "en" : langCode;
+  if (optionText) playWordAudio(String(optionText), speakLang, { voiceId: getTutorVoiceId(speakLang) });
+}
+
+/**
  * Play feedback audio, then chain to next question audio.
  *
  * Correct:   tries  public/audio/{langCode}/correct.mp3  →  public/audio/de/richtig.mp3  →  TTS
