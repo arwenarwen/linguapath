@@ -20,7 +20,7 @@ import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
 import { GLOBAL_CSS } from '../config/theme';
 import { getAIChatLangConfig } from '../config/langConfig';
 import { LANGUAGES, VISUAL_QUERY_MAP, NUMBER_VALUE_MAP } from '../config/languages';
-import { SITUATIONS, EXTRA_SITUATION_PHRASES, getSituationPhrases, formatTutorPhraseList } from '../data/situations';
+import { SITUATIONS } from '../data/situations';
 import { AI_SCENARIOS } from '../data/aiScenarios';
 import { useProgress, getLevelColor, getCompletedModuleIds, getCachedProgress } from '../lib/progressHooks';
 
@@ -593,28 +593,6 @@ ${mistakeFormat}`;
 // ── Parse correction blocks from AI reply ────────────────────────────────────
 
 // ── Main AIChat component ─────────────────────────────────────────────────────
-
-
-function getSituationPhrases(situation) {
-  const base = Array.isArray(situation?.quickPhrases) ? situation.quickPhrases : [];
-  const extra = EXTRA_SITUATION_PHRASES[situation?.id] || [];
-  const merged = [...base, ...extra];
-  const seen = new Set();
-  return merged.filter((p) => {
-    const key = `${p?.en || ""}__${p?.de || ""}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  }).slice(0, Math.max(10, merged.length));
-}
-
-function formatTutorPhraseList(situation, langCode) {
-  const phrases = getSituationPhrases(situation || {}).slice(0, 10);
-  return phrases.map((p, i) => {
-    const target = p?.[langCode] || p?.de || p?.es || p?.fr || p?.it || p?.zh || p?.en || "";
-    return `${i + 1}. ${target} — ${p?.en || ""}`;
-  }).join("\n");
-}
 
 
 // AI Conversation Scenarios
