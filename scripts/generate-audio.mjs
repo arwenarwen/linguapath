@@ -253,8 +253,9 @@ async function generateBatch(label, texts, langCode, audioDir, stats) {
       const i = idx++;
       const text = missing[i];
       const slug = slugify(text);
-      // Guard: OS filename limit is 255 bytes; skip anything that would exceed it
-      if (Buffer.byteLength(slug + ".mp3") > 240) {
+      // Guard: OS filename limit is 255 bytes; use 180 as safe ceiling to account
+      // for multi-byte UTF-8 chars (Japanese/Korean/Russian = 2-4 bytes each).
+      if (Buffer.byteLength(slug + ".mp3") > 180) {
         console.log(`     ⚠️  Skipped (slug too long): "${text.slice(0, 50)}..."`);
         continue;
       }
