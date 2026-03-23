@@ -7,10 +7,10 @@
 import React, { useState, useEffect } from "react";
 import { subscribeSpeaking } from "../lib/audioPlayer";
 
-// ── Royalty-free cinematic fox portrait (Unsplash) ───────────────────────────
-// Replace with your own fox mascot image (e.g. "/images/fox-mascot.png") whenever ready
-const FOX_IMAGE =
-  "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=700&q=90&fit=crop&crop=faces,top";
+// ── Fox mascot video ─────────────────────────────────────────────────────────
+// Cinematic 3D fox — looping MP4, falls back to PNG if needed
+const FOX_VIDEO = "/images/fox-mascot.mp4";
+const FOX_IMAGE = "/images/fox-mascot.png"; // fallback (optional)
 
 // ── CSS keyframes ────────────────────────────────────────────────────────────
 const KEYFRAMES = `
@@ -88,9 +88,12 @@ function CompactFox({ size, style, isSpeaking }) {
       transition: "box-shadow 0.3s ease",
       ...style,
     }}>
-      <img
-        src={FOX_IMAGE}
-        alt="Fox tutor"
+      <video
+        src={FOX_VIDEO}
+        autoPlay
+        loop
+        muted
+        playsInline
         style={{
           width: "100%", height: "100%",
           objectFit: "cover",
@@ -147,9 +150,12 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
       ...style,
     }}>
       {/* ── Fox photo — fills the whole panel ── */}
-      <img
-        src={FOX_IMAGE}
-        alt="Fox AI tutor"
+      <video
+        src={FOX_VIDEO}
+        autoPlay
+        loop
+        muted
+        playsInline
         style={{
           position: "absolute",
           inset: 0,
