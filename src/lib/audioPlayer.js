@@ -191,3 +191,67 @@ export async function playWordAudio(text, langCode, opts = {}) {
     }
   }
 }
+
+/**
+ * Like playWordAudio but AWAITS audio completion before resolving.
+ * Use this when you need to chain audio sequentially (e.g. exam feedback → next question).
+ * Always calls stopAllAudio first. Falls back to a timed wait on error.
+ */
+export async function playAndWait(text, langCode, opts = {}) {
+  if (!text || typeof window === "undefined") return;
+  const resolvedLang = langCode || "en";
+  stopAllAudio();
+
+  _ttsAbortController = new AbortController();
+  const signal = _ttsAbortController.signal;
+
+  try {
+    const res = await fetch("/api/tts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      signal,
+      body: JSON.stringify({
+        text: normalizeTextForSpeech(text, resolvedLang),
+        langCode: resolvedLang,
+        ...(opts.voiceId ? { voiceId: opts.voiceId } : {})
+      })
+    });
+
+    if (!res.ok) {
+      await new Promise(r => setTimeout(r, opts.fallbackMs || 2500));
+      return;
+    }
+
+    const blob = await res.blob();
+    if (!blob || blob.size === 0) {
+      await new Promise(r => setTimeout(r, opts.fallbackMs || 2500));
+      return;
+    }
+
+    const url = URL.createObjectURL(blob);
+    const audio = new Audio(url);
+    audio.preload = "auto";
+    _activeHtmlAudio = audio;
+
+    await audio.play();
+
+    await new Promise(resolve => {
+      const cleanup = () => {
+        try { URL.revokeObjectURL(url); } catch {}
+        if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
+        resolve();
+      };
+      audio.onended = cleanup;
+      audio.onerror = cleanup;
+      setTimeout(cleanup, opts.maxMs || 12000);
+    });
+  } catch (e) {
+    if (e?.name !== "AbortError") {
+      console.error("[TTS playAndWait] failed:", e);
+    }
+    // fallback wait so callers don't chain instantly on error
+    if (e?.name !== "AbortError") {
+      await new Promise(r => setTimeout(r, opts.fallbackMs || 1500));
+    }
+  }
+}

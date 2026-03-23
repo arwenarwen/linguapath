@@ -1,6 +1,6 @@
 // Exam bank loading, formatting, audio playback, and scoring utilities.
 
-import { stopAllAudio, playWordAudio, getTutorVoiceId } from "./audioPlayer";
+import { stopAllAudio, playWordAudio, playAndWait, getTutorVoiceId } from "./audioPlayer";
 
 // ── Bank loading ───────────────────────────────────────────────────────────────
 export async function loadLocalExamBank(langCode, level) {
@@ -133,8 +133,8 @@ export function buildExamSpeechText(question, index = 1, total = 20, langCode = 
   if (type === "listen") return null;
 
   if (type === "fill") {
-    const sentence = raw.replace(/^Complete the sentence:\s*/i, "").trim();
-    return sentence.replace(/___+/g, "blank");
+    // Just say the instruction in English — the German sentence is visible on screen
+    return "Complete the sentence";
   }
 
   if (type === "translate") {
@@ -169,18 +169,42 @@ export function extractOptionChoice(userText, options = []) {
 
 export function buildLocalExamReport(examBank, score) {
   const total = examBank?.questions?.length || 20;
+  const pct = Math.round((score / total) * 100);
+
   const verdict =
-    score >= Math.ceil(total * 0.8) ? "Ready"
-    : score >= Math.ceil(total * 0.6) ? "Nearly Ready"
-    : "Needs More Practice";
+    score >= Math.ceil(total * 0.8) ? "Ready to advance! 🚀"
+    : score >= Math.ceil(total * 0.6) ? "Almost there! 💪"
+    : "Keep practicing! 🔥";
+
+  const stars =
+    score >= Math.ceil(total * 0.8) ? "⭐⭐⭐"
+    : score >= Math.ceil(total * 0.6) ? "⭐⭐"
+    : "⭐";
+
+  const bar = (() => {
+    const filled = Math.round((score / total) * 10);
+    return "█".repeat(filled) + "░".repeat(10 - filled);
+  })();
+
+  const tip =
+    score >= Math.ceil(total * 0.8)
+      ? "Excellent work — you've mastered this level! Try the next one."
+      : score >= Math.ceil(total * 0.6)
+      ? "You're close to passing. Focus on vocabulary precision and reading."
+      : "Keep going — review grammar patterns and practice listening daily.";
 
   return [
-    "\u{1f4ca} EXAM REPORT",
-    "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501",
-    `Total Score: ${score}/${total}`,
-    `Verdict: ${verdict}`,
-    "Top areas to improve: Vocabulary precision, grammar control, and reading accuracy.",
-    "Keep going \u2014 you're making good progress."
+    "🏔️  EXAM COMPLETE",
+    "━━━━━━━━━━━━━━━━━━━━",
+    "",
+    `   ${stars}  ${verdict}`,
+    "",
+    `   Score:  ${score} / ${total}  (${pct}%)`,
+    `   ${bar}`,
+    "",
+    `💡 ${tip}`,
+    "",
+    "Your fox guide is proud of you. Keep climbing! 🦊",
   ].join("\n");
 }
 
@@ -197,12 +221,26 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
 
   const type = question.exercise_type || "";
 
+  // listen: play the target-language word — that IS the question
   if (type === "listen" && question.audio) {
-    // Play the target language word — that IS the question for listen type
     playWordAudio(String(question.audio), langCode, { voiceId: getTutorVoiceId(langCode) });
     return;
   }
 
+  // fill: just say "Complete the sentence" in English — German text is on screen
+  if (type === "fill") {
+    playWordAudio("Complete the sentence", "en", { voiceId: getTutorVoiceId("en") });
+    return;
+  }
+
+  // mcq: question text is in the target language — use target language voice
+  if (type === "mcq") {
+    const speechText = buildExamSpeechText(question, qIndex, total, langCode);
+    if (speechText) playWordAudio(speechText, langCode, { voiceId: getTutorVoiceId(langCode) });
+    return;
+  }
+
+  // translate / translate-en: read the English phrase in English
   const speechText = buildExamSpeechText(question, qIndex, total, langCode);
   if (speechText) playWordAudio(speechText, "en", { voiceId: getTutorVoiceId("en") });
 }
@@ -251,12 +289,8 @@ export async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQu
     const answer = currentQuestion?.correct_answer || "";
     const correctText = `Incorrect. The correct answer is: ${answer}`;
 
-    // Estimate duration: ~55ms per character, min 2.5s, max 8s
-    // This prevents cutting off long answers while not waiting forever
-    const estimatedMs = Math.min(8000, Math.max(2500, correctText.length * 55));
-
-    playWordAudio(correctText, "en", { voiceId: getTutorVoiceId("en") });
-    await new Promise(res => setTimeout(res, estimatedMs));
+    // playAndWait properly awaits TTS audio completion — no more cut-off feedback
+    await playAndWait(correctText, "en", { voiceId: getTutorVoiceId("en"), maxMs: 12000 });
   }
 
   if (nextQuestion) {

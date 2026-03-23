@@ -705,7 +705,8 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
             return;
           }
           const opening = formatLocalExamQuestion(first, bank?.question_count || 20, 1);
-          setMessages([{ role: "assistant", content: opening, translation: null }]);
+          setMessages([{ role: "assistant", content: opening, translation: null,
+            listenAudio: first.exercise_type === "listen" ? first.audio : null }]);
           // Play static pre-recorded question audio; fall back to live TTS
           playExamQuestionAudio(first, cefrLevel, langCode, 1, bank?.question_count || 25);
         })
@@ -931,7 +932,8 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
           setMessages(m => [...m, {
             role:"assistant",
             content: formatLocalExamQuestion(nextQuestion, localExamBank?.question_count || 20),
-            translation:null
+            translation:null,
+            listenAudio: nextQuestion.exercise_type === "listen" ? nextQuestion.audio : null,
           }]);
         }, delay);
       }
@@ -1334,6 +1336,23 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
                   });
                 })()}
               </div>
+              {msg.role==="assistant" && msg.listenAudio && (
+                <button
+                  onClick={() => playWordAudio(String(msg.listenAudio), langCode, { voiceId: getTutorVoiceId(langCode) })}
+                  title="Replay audio"
+                  style={{
+                    display:"flex", alignItems:"center", gap:6,
+                    background:"rgba(249,115,22,0.12)", border:"1.5px solid rgba(249,115,22,0.35)",
+                    borderRadius:20, padding:"5px 14px", cursor:"pointer",
+                    fontSize:13, fontWeight:700, color:"#f97316",
+                    marginTop:4, alignSelf:"flex-start",
+                    transition:"all 0.15s",
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.background="rgba(249,115,22,0.22)"; }}
+                  onMouseOut={e => { e.currentTarget.style.background="rgba(249,115,22,0.12)"; }}>
+                  🔊 Replay
+                </button>
+              )}
               {msg.role==="assistant" && showTrans && (
                 <div style={{ fontSize:12, color:"var(--muted)", fontStyle:"italic",
                   borderLeft:"2px solid rgba(245,200,66,0.3)", paddingLeft:8 }}>
