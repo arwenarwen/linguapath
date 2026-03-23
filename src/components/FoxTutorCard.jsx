@@ -220,18 +220,7 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
         alignItems: "center", gap: 6,
         zIndex: 3,
       }}>
-        {isSpeaking
-          ? <SpeakingWave />
-          : (
-            <div style={{
-              fontSize: 10, fontWeight: 800, letterSpacing: 2.5,
-              color: "rgba(255,255,255,0.32)", textTransform: "uppercase",
-              fontFamily: "'Nunito', sans-serif",
-            }}>
-              AI Guide · Fox
-            </div>
-          )
-        }
+        {isSpeaking && <SpeakingWave />}
       </div>
 
       {/* ── Speech bubble ── */}

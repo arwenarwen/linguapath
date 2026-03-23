@@ -1237,12 +1237,12 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
       {/* Messages — two-column in exam mode (fox left, questions right) */}
       <div style={{ flex:1, display:"flex", flexDirection:"row", overflow:"hidden" }}>
 
-        {/* ── Cinematic fox panel — exam mode only ── */}
-        {mode === "exam" && !localExamFinished && (
+        {/* ── Cinematic fox panel — all chat modes ── */}
+        {!localExamFinished && (
           <div style={{
-            width: "44%",
-            minWidth: 180,
-            maxWidth: 340,
+            width: "46%",
+            minWidth: 200,
+            maxWidth: 420,
             flexShrink: 0,
             alignSelf: "stretch",
             position: "relative",
@@ -1254,8 +1254,8 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
 
         {/* ── Scrollable messages column ── */}
         <div style={{ flex:1, overflowY:"auto", padding:"14px 14px 18px", display:"flex", flexDirection:"column", gap:12, position:"relative" }}>
-        {/* Decorative bg animal — non-exam modes only */}
-        {mode !== "exam" && tutorAnimalBg && CHAT_ANIMAL_SVGS[tutorAnimalKey] && (
+        {/* Decorative bg animal — only when fox panel is not visible */}
+        {localExamFinished && tutorAnimalBg && CHAT_ANIMAL_SVGS[tutorAnimalKey] && (
           <div style={{
             position:"sticky", top:0, float:"right", width:110, height:130,
             marginLeft:8, marginBottom:-130, marginRight:-4,
@@ -1270,7 +1270,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         <div style={{ width:"100%", maxWidth:980, margin:"0 auto", flex:1, display:"flex", flexDirection:"column", gap:12 }}>
         {messages.map((msg, i) => (
           <div key={i} style={{ display:"flex", justifyContent:msg.role==="user"?"flex-end":"flex-start", alignItems:"flex-end", gap:8 }}>
-            {msg.role === "assistant" && (
+            {msg.role === "assistant" && localExamFinished && (
               <div style={{ flexShrink:0, width:34, overflow:"visible" }}>
                 <FoxTutorCard size={34} compact style={{ borderRadius:10, width:34 }} />
               </div>
