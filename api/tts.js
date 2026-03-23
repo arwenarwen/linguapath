@@ -26,7 +26,7 @@ function getVoiceId(langCode, overrideVoiceId) {
     ru: "1iQuCymkuonZDnoteVZT",  // Russian man
     el: "8C0RosTo9KZhAz8UmM7c",  // Greek man
     pt: "CImjz27snHwe55ik6hke",  // Portuguese man
-    en: "21m00Tcm4TlvDq8ikWAM",  // Rachel — English tutor voice for exam questions & feedback
+    en: "pNInz6obpgDQGcFmaJgB",  // Adam — English tutor voice for exam questions & feedback
   };
 
   return VOICES[langCode] || VOICES.de;

@@ -108,7 +108,7 @@ export function getTutorVoiceId(langCode) {
     ru: "1iQuCymkuonZDnoteVZT",
     el: "8C0RosTo9KZhAz8UmM7c",
     pt: "CImjz27snHwe55ik6hke",
-    en: "21m00Tcm4TlvDq8ikWAM", // Rachel — English tutor voice for exam questions & feedback
+    en: "pNInz6obpgDQGcFmaJgB", // Adam — English tutor voice for exam questions & feedback
   };
   return VOICES[langCode] || null;
 }
