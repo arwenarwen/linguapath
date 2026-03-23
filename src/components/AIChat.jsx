@@ -17,7 +17,7 @@ import {
   extractOptionChoice, buildLocalExamReport,
 } from '../lib/examUtils';
 import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
-import FoxTutorCard from './FoxTutorCard';
+import FoxTutorCard, { ANIMAL_VIDEOS, CEFR_ANIMAL, DEFAULT_VIDEO } from './FoxTutorCard';
 import { GLOBAL_CSS } from '../config/theme';
 import { getAIChatLangConfig } from '../config/langConfig';
 import { LANGUAGES, VISUAL_QUERY_MAP, NUMBER_VALUE_MAP } from '../config/languages';
@@ -1237,7 +1237,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
       {/* Messages — two-column in exam mode (fox left, questions right) */}
       <div style={{ flex:1, display:"flex", flexDirection:"row", overflow:"hidden" }}>
 
-        {/* ── Cinematic fox panel — all chat modes ── */}
+        {/* ── Cinematic animal panel — fox for chat/tutor, CEFR animal for exam ── */}
         {!localExamFinished && (
           <div style={{
             width: "46%",
@@ -1248,7 +1248,12 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
             position: "relative",
             overflow: "hidden",
           }}>
-            <FoxTutorCard style={{ position: "absolute", inset: 0, borderRadius: 0 }} />
+            <FoxTutorCard
+              style={{ position: "absolute", inset: 0, borderRadius: 0 }}
+              src={mode === "exam"
+                ? (ANIMAL_VIDEOS[CEFR_ANIMAL[cefrLevel]] || DEFAULT_VIDEO)
+                : DEFAULT_VIDEO}
+            />
           </div>
         )}
 

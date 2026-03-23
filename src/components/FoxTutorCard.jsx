@@ -1,17 +1,33 @@
 /**
  * FoxTutorCard — cinematic AI tutor card.
- * Switches between idle (slow, calm) and talking (full speed) video clips
- * based on the audioPlayer speaking state. Both videos are preloaded so
- * the switch is instant with no buffering flash.
+ * Accepts any animal video via the `src` prop.
+ * Defaults to the fox for free chat / tutor modes.
+ * Exam mode passes the CEFR-level animal (rabbit/owl/fox etc).
  */
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { subscribeSpeaking } from "../lib/audioPlayer";
 
-// ── Fox mascot videos ─────────────────────────────────────────────────────────
-const FOX_IDLE    = "/images/fox-idle.mp4";    // slowed ~0.55x — calm breathing
-const FOX_TALKING = "/images/fox-talking.mp4"; // normal speed  — full energy
-const FOX_VIDEO   = "/images/fox-mascot.mp4";  // legacy fallback
+// ── Animal video map — keyed by CEFR level & mode ────────────────────────────
+export const ANIMAL_VIDEOS = {
+  fox:      "/images/animals/fox.mp4",
+  rabbit:   "/images/animals/rabbit.mp4",
+  owl:      "/images/animals/owl.mp4",
+  squirrel: "/images/animals/fox.mp4",  // placeholder until squirrel uploaded
+  wolf:     "/images/animals/fox.mp4",  // placeholder until wolf uploaded
+  lion:     "/images/animals/fox.mp4",  // placeholder until lion uploaded
+};
+
+export const CEFR_ANIMAL = {
+  A1: "rabbit",
+  A2: "squirrel",
+  B1: "owl",
+  B2: "wolf",
+  C1: "lion",
+  C2: "fox",
+};
+
+export const DEFAULT_VIDEO = ANIMAL_VIDEOS.fox;
 
 // ── CSS keyframes ────────────────────────────────────────────────────────────
 const KEYFRAMES = `
@@ -63,8 +79,7 @@ function SpeakingWave() {
     <div style={{ display: "flex", alignItems: "center", gap: 3, height: 24 }}>
       {bars.map((h, i) => (
         <div key={i} style={{
-          width: 3.5,
-          borderRadius: 5,
+          width: 3.5, borderRadius: 5,
           background: "linear-gradient(to top, #f97316, #fdba74)",
           height: `${h * 22}px`,
           animation: `foxWave 0.9s ease-in-out ${(i * 0.08).toFixed(2)}s infinite`,
@@ -74,80 +89,35 @@ function SpeakingWave() {
   );
 }
 
-// ── Dual-video switcher — both preloaded, only one visible ───────────────────
-function FoxVideo({ isSpeaking, style = {}, objectPosition = "center 10%" }) {
-  const idleRef    = useRef(null);
-  const talkRef    = useRef(null);
-
-  // Keep both videos playing silently so the switch is instantaneous
-  useEffect(() => {
-    [idleRef, talkRef].forEach(ref => {
-      if (ref.current) {
-        ref.current.play().catch(() => {});
-      }
-    });
-  }, []);
-
-  const sharedStyle = {
-    position: "absolute", inset: 0,
-    width: "100%", height: "100%",
-    objectFit: "cover",
-    objectPosition,
-    transition: "opacity 0.4s ease",
-    ...style,
-  };
-
-  return (
-    <>
-      {/* Idle clip — visible when NOT speaking */}
-      <video
-        ref={idleRef}
-        src={FOX_IDLE}
-        autoPlay loop muted playsInline
-        style={{
-          ...sharedStyle,
-          opacity: isSpeaking ? 0 : 1,
-          animation: isSpeaking ? undefined : "foxIdleBreath 4.5s ease-in-out infinite",
-        }}
-      />
-      {/* Talking clip — visible when speaking */}
-      <video
-        ref={talkRef}
-        src={FOX_TALKING}
-        autoPlay loop muted playsInline
-        style={{
-          ...sharedStyle,
-          opacity: isSpeaking ? 1 : 0,
-          animation: isSpeaking ? "foxSpeakBob 0.52s ease-in-out infinite" : undefined,
-        }}
-      />
-    </>
-  );
-}
-
 // ── Compact version (tiny avatar in header / message bubbles) ────────────────
-function CompactFox({ size, style, isSpeaking }) {
+function CompactFox({ size, style, isSpeaking, src }) {
   return (
     <div style={{
       width: size, height: size,
-      borderRadius: 10,
-      overflow: "hidden",
-      position: "relative",
-      flexShrink: 0,
+      borderRadius: 10, overflow: "hidden",
+      position: "relative", flexShrink: 0,
       boxShadow: isSpeaking
         ? "0 0 0 2px #f97316, 0 0 12px rgba(249,115,22,0.5)"
         : "0 2px 8px rgba(0,0,0,0.3)",
       transition: "box-shadow 0.3s ease",
       ...style,
     }}>
-      <FoxVideo isSpeaking={isSpeaking} objectPosition="center 15%" style={{ position: "absolute", inset: 0 }} />
-      {/* Dark overlay */}
+      <video
+        src={src}
+        autoPlay loop muted playsInline
+        style={{
+          width: "100%", height: "100%",
+          objectFit: "cover", objectPosition: "center 15%",
+          animation: isSpeaking
+            ? "foxSpeakBob 0.5s ease-in-out infinite"
+            : "foxIdleBreath 4s ease-in-out infinite",
+        }}
+      />
       <div style={{
         position: "absolute", inset: 0,
         background: "radial-gradient(ellipse at 50% 30%, transparent 40%, rgba(0,0,0,0.35) 100%)",
         pointerEvents: "none",
       }} />
-      {/* Speaking ring */}
       {isSpeaking && (
         <div style={{
           position: "absolute", inset: 0, borderRadius: 10,
@@ -160,10 +130,11 @@ function CompactFox({ size, style, isSpeaking }) {
   );
 }
 
-// ── Full cinematic panel version ─────────────────────────────────────────────
-export default function FoxTutorCard({ style = {}, size = 220, compact = false }) {
+// ── Full cinematic panel ─────────────────────────────────────────────────────
+export default function FoxTutorCard({ style = {}, size = 220, compact = false, src }) {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [speechText, setSpeechText] = useState("");
+  const videoSrc = src || DEFAULT_VIDEO;
 
   useEffect(() => {
     injectKF();
@@ -174,47 +145,48 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
   }, []);
 
   if (compact) {
-    return <CompactFox size={size} style={style} isSpeaking={isSpeaking} />;
+    return <CompactFox size={size} style={style} isSpeaking={isSpeaking} src={videoSrc} />;
   }
 
-  // ── Full panel ─────────────────────────────────────────────────────────────
   return (
     <div style={{
-      position: "relative",
-      width: "100%",
-      height: "100%",
-      overflow: "hidden",
-      background: "#081510",
-      ...style,
+      position: "relative", width: "100%", height: "100%",
+      overflow: "hidden", background: "#081510", ...style,
     }}>
-      {/* ── Dual fox videos — idle ↔ talking ── */}
-      <FoxVideo isSpeaking={isSpeaking} />
+      {/* ── Animal video — loops continuously ── */}
+      <video
+        key={videoSrc}
+        src={videoSrc}
+        autoPlay loop muted playsInline
+        style={{
+          position: "absolute", inset: 0,
+          width: "100%", height: "100%",
+          objectFit: "cover", objectPosition: "center 10%",
+          animation: isSpeaking
+            ? "foxSpeakBob 0.52s ease-in-out infinite"
+            : "foxIdleBreath 4.5s ease-in-out infinite",
+        }}
+      />
 
-      {/* ── Vignette for cinematic depth ── */}
+      {/* ── Vignette ── */}
       <div style={{
         position: "absolute", inset: 0,
-        background:
-          "radial-gradient(ellipse at 50% 38%, rgba(0,0,0,0) 28%, rgba(0,0,0,0.52) 100%)",
+        background: "radial-gradient(ellipse at 50% 38%, rgba(0,0,0,0) 28%, rgba(0,0,0,0.52) 100%)",
         pointerEvents: "none",
       }} />
 
       {/* ── Bottom gradient ── */}
       <div style={{
         position: "absolute", bottom: 0, left: 0, right: 0, height: "38%",
-        background:
-          "linear-gradient(to top, rgba(8,21,16,0.96) 0%, rgba(8,21,16,0.5) 55%, transparent 100%)",
+        background: "linear-gradient(to top, rgba(8,21,16,0.96) 0%, rgba(8,21,16,0.5) 55%, transparent 100%)",
         pointerEvents: "none",
       }} />
 
-      {/* ── Mouth-area pulse overlay (lip-sync illusion) ── */}
+      {/* ── Mouth pulse overlay ── */}
       {isSpeaking && (
         <div style={{
-          position: "absolute",
-          top: "66%",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: 36,
-          borderRadius: 12,
+          position: "absolute", top: "66%", left: "50%",
+          transform: "translateX(-50%)", width: 36, borderRadius: 12,
           background: "rgba(0,0,0,0.42)",
           animation: "foxMouthPulse 0.22s ease-in-out infinite",
         }} />
@@ -231,12 +203,11 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
         animation: isSpeaking ? "foxBorderGlow 1.3s ease-in-out infinite" : undefined,
       }} />
 
-      {/* ── Bottom wave bar ── */}
+      {/* ── Wave bar ── */}
       <div style={{
         position: "absolute", bottom: 0, left: 0, right: 0,
         padding: "10px 16px 14px",
-        display: "flex", flexDirection: "column",
-        alignItems: "center", gap: 6,
+        display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
         zIndex: 3,
       }}>
         {isSpeaking && <SpeakingWave />}
@@ -245,17 +216,13 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
       {/* ── Speech bubble ── */}
       {speechText && isSpeaking && (
         <div style={{
-          position: "absolute",
-          top: 14, right: 14,
-          zIndex: 10,
+          position: "absolute", top: 14, right: 14, zIndex: 10,
           background: "rgba(255,255,255,0.97)",
           borderRadius: "14px 14px 14px 4px",
-          padding: "10px 14px",
-          maxWidth: 170,
+          padding: "10px 14px", maxWidth: 170,
           boxShadow: "0 8px 28px rgba(0,0,0,0.4)",
           animation: "foxBubbleIn 0.22s cubic-bezier(0.34,1.56,0.64,1) both",
-          backdropFilter: "blur(8px)",
-          pointerEvents: "none",
+          backdropFilter: "blur(8px)", pointerEvents: "none",
         }}>
           <div style={{
             position: "absolute", top: 12, left: -9,
@@ -267,9 +234,7 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
             fontSize: 9, fontWeight: 800, color: "#f97316",
             letterSpacing: 1.5, textTransform: "uppercase",
             marginBottom: 4, fontFamily: "'Nunito', sans-serif",
-          }}>
-            AI Guide
-          </div>
+          }}>AI Guide</div>
           <div style={{
             fontSize: 12.5, color: "#1a1a1a",
             lineHeight: 1.45, fontStyle: "italic",
