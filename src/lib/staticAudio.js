@@ -17,8 +17,10 @@ export async function tryPlayStaticAudio({ text, langCode, stopAllAudio, setActi
   const clean = String(text || "").trim();
   if (!clean) return false;
 
-  // German and English have pre-recorded files of any length (German: vocab; English: exam questions/feedback)
-  // All other languages: skip HEAD request for long strings unlikely to have a static file
+  // Hard cap: slugs over 120 chars produce unwieldy filenames and are never pre-recorded.
+  // (English exam questions can be ~80 chars; feedback for short answers ~60 chars.)
+  if (clean.length > 120) return false;
+  // Other languages: skip HEAD request for strings > 80 chars (unlikely to have a static file)
   if (langCode !== "de" && langCode !== "en" && clean.length > 80) return false;
 
   const candidateUrls = [];

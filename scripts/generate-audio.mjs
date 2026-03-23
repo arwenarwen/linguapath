@@ -174,11 +174,14 @@ function collectExamAudio(langCode) {
     if (!questions) continue;
 
     for (const q of questions) {
-      // Question text (English instruction)
-      if (q.question) enTexts.add(q.question.trim());
+      // Question text (English instruction) — skip very long C1/C2 questions whose
+      // slugs would exceed the OS 255-byte filename limit. Live TTS handles those.
+      if (q.question && q.question.trim().length <= 150) enTexts.add(q.question.trim());
 
-      // Wrong feedback (English)
-      if (q.correct_answer) {
+      // Wrong feedback (English) — only pre-record for short answers (single words /
+      // short phrases). Long C1/C2 sentence answers are unique per question and too
+      // expensive to pre-record; the app falls back to live TTS for those.
+      if (q.correct_answer && q.correct_answer.length <= 40) {
         enTexts.add(`Incorrect. The correct answer is: ${q.correct_answer}`);
       }
 
@@ -250,6 +253,11 @@ async function generateBatch(label, texts, langCode, audioDir, stats) {
       const i = idx++;
       const text = missing[i];
       const slug = slugify(text);
+      // Guard: OS filename limit is 255 bytes; skip anything that would exceed it
+      if (Buffer.byteLength(slug + ".mp3") > 240) {
+        console.log(`     ⚠️  Skipped (slug too long): "${text.slice(0, 50)}..."`);
+        continue;
+      }
       const filePath = path.join(audioDir, `${slug}.mp3`);
 
       if (fs.existsSync(filePath)) { stats.skipped++; continue; }
