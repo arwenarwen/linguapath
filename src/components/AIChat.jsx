@@ -1202,7 +1202,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
           onClick={handleClose}>←</button>
         {/* Cinematic fox tutor avatar */}
         <div style={{ flexShrink:0, width:52, overflow:"visible" }}>
-          <FoxTutorCard size={52} style={{ borderRadius:14, width:52 }} />
+          <FoxTutorCard size={52} compact style={{ borderRadius:14, width:52 }} />
         </div>
         <div style={{ flex:1, minWidth:0 }}>
           <div style={{ fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:14, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", color:chatTheme.text }}>
@@ -1234,10 +1234,27 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         </div>
       )}
 
-      {/* Messages */}
-      <div style={{ flex:1, overflowY:"auto", padding:"14px 14px 18px", display:"flex", flexDirection:"column", gap:12, position:"relative" }}>
-        {/* Large decorative animal character — right side */}
-        {tutorAnimalBg && CHAT_ANIMAL_SVGS[tutorAnimalKey] && (
+      {/* Messages — two-column in exam mode (fox left, questions right) */}
+      <div style={{ flex:1, display:"flex", flexDirection:"row", overflow:"hidden" }}>
+
+        {/* ── Cinematic fox panel — exam mode only ── */}
+        {mode === "exam" && !localExamFinished && (
+          <div style={{
+            width: 240, flexShrink: 0,
+            display: "flex", flexDirection: "column",
+            alignItems: "center", justifyContent: "center",
+            padding: "20px 12px 16px",
+            background: "linear-gradient(180deg, #0f2018 0%, #142a1e 100%)",
+            borderRight: `1px solid rgba(255,255,255,0.07)`,
+          }}>
+            <FoxTutorCard size={200} style={{ width: 200, borderRadius: 20 }} />
+          </div>
+        )}
+
+        {/* ── Scrollable messages column ── */}
+        <div style={{ flex:1, overflowY:"auto", padding:"14px 14px 18px", display:"flex", flexDirection:"column", gap:12, position:"relative" }}>
+        {/* Decorative bg animal — non-exam modes only */}
+        {mode !== "exam" && tutorAnimalBg && CHAT_ANIMAL_SVGS[tutorAnimalKey] && (
           <div style={{
             position:"sticky", top:0, float:"right", width:110, height:130,
             marginLeft:8, marginBottom:-130, marginRight:-4,
@@ -1254,7 +1271,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
           <div key={i} style={{ display:"flex", justifyContent:msg.role==="user"?"flex-end":"flex-start", alignItems:"flex-end", gap:8 }}>
             {msg.role === "assistant" && (
               <div style={{ flexShrink:0, width:34, overflow:"visible" }}>
-                <FoxTutorCard size={34} style={{ borderRadius:10, width:34 }} />
+                <FoxTutorCard size={34} compact style={{ borderRadius:10, width:34 }} />
               </div>
             )}
             <div style={{ maxWidth:"82%", display:"flex", flexDirection:"column", gap:4,
@@ -1359,7 +1376,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         {loading && (
           <div style={{ display:"flex", alignItems:"center", gap:8 }}>
             <div style={{ flexShrink:0, width:34, overflow:"visible" }}>
-              <FoxTutorCard size={34} style={{ borderRadius:10, width:34 }} />
+              <FoxTutorCard size={34} compact style={{ borderRadius:10, width:34 }} />
             </div>
             <div className="chat-bubble chat-ai" style={{ display:"flex", gap:5, padding:"10px 14px" }}>
               {[0,0.2,0.4].map(d => (
@@ -1371,7 +1388,8 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         )}
         <div ref={bottomRef} />
         </div>
-      </div>
+        </div>{/* end scrollable messages column */}
+      </div>{/* end two-column row */}
 
       {/* End-of-session quick links */}
       {messages.length >= 6 && mode !== "exam" && getMistakes(userId, langCode).length > 0 && (
