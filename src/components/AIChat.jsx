@@ -1240,14 +1240,15 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         {/* ── Cinematic fox panel — exam mode only ── */}
         {mode === "exam" && !localExamFinished && (
           <div style={{
-            width: 240, flexShrink: 0,
-            display: "flex", flexDirection: "column",
-            alignItems: "center", justifyContent: "center",
-            padding: "20px 12px 16px",
-            background: "linear-gradient(180deg, #0f2018 0%, #142a1e 100%)",
-            borderRight: `1px solid rgba(255,255,255,0.07)`,
+            width: "44%",
+            minWidth: 180,
+            maxWidth: 340,
+            flexShrink: 0,
+            alignSelf: "stretch",
+            position: "relative",
+            overflow: "hidden",
           }}>
-            <FoxTutorCard size={200} style={{ width: 200, borderRadius: 20 }} />
+            <FoxTutorCard style={{ position: "absolute", inset: 0, borderRadius: 0 }} />
           </div>
         )}
 
