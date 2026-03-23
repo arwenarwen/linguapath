@@ -1,6 +1,6 @@
 // Exam bank loading, formatting, audio playback, and scoring utilities.
 
-import { stopAllAudio, playWordAudio, playAndWait, getTutorVoiceId } from "./audioPlayer";
+import { stopAllAudio, playWordAudio, playAndWait, getTutorVoiceId, notifySpeaking } from "./audioPlayer";
 
 // ── Bank loading ───────────────────────────────────────────────────────────────
 export async function loadLocalExamBank(langCode, level) {
@@ -274,16 +274,20 @@ export async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQu
         if (r.ok) {
           const fb = new Audio(url);
           fb.preload = "auto";
+          notifySpeaking(true, "Correct!");
           await fb.play().catch(() => {});
-          await new Promise(res => { fb.onended = res; setTimeout(res, 2500); });
+          await new Promise(res => {
+            fb.onended = () => { notifySpeaking(false); res(); };
+            fb.onerror = () => { notifySpeaking(false); res(); };
+            setTimeout(() => { notifySpeaking(false); res(); }, 2500);
+          });
           played = true;
           break;
         }
       } catch {}
     }
     if (!played) {
-      playWordAudio("Correct!", "en", { voiceId: getTutorVoiceId("en") });
-      await new Promise(res => setTimeout(res, 1500));
+      await playAndWait("Correct!", "en", { voiceId: getTutorVoiceId("en"), fallbackMs: 1000 });
     }
   } else {
     const answer = currentQuestion?.correct_answer || "";

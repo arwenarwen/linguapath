@@ -25,6 +25,9 @@ export function subscribeSpeaking(fn) {
 
 export function getLastSpeechText() { return _lastSpeechText; }
 
+/** Manually fire speaking on/off — used by examUtils for direct Audio() playback */
+export function notifySpeaking(on, text = "") { _notifySpeaking(on, text); }
+
 function _notifySpeaking(on, text = "") {
   if (on) _lastSpeechText = text;
   _speakingListeners.forEach(fn => fn(on, _lastSpeechText));
