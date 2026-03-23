@@ -8,14 +8,23 @@
 import React, { useState, useEffect } from "react";
 import { subscribeSpeaking } from "../lib/audioPlayer";
 
-// ── Animal video map — keyed by CEFR level & mode ────────────────────────────
+// ── Animal asset map — JPG for idle (still), MP4 for talking ─────────────────
 export const ANIMAL_VIDEOS = {
   fox:      "/images/animals/fox.mp4",
   rabbit:   "/images/animals/rabbit.mp4",
   owl:      "/images/animals/owl.mp4",
-  squirrel: "/images/animals/fox.mp4",  // placeholder until squirrel uploaded
-  wolf:     "/images/animals/fox.mp4",  // placeholder until wolf uploaded
-  lion:     "/images/animals/fox.mp4",  // placeholder until lion uploaded
+  squirrel: "/images/animals/fox.mp4",       // placeholder until squirrel uploaded
+  wolf:     "/images/animals/fox.mp4",       // placeholder until wolf uploaded
+  lion:     "/images/animals/fox.mp4",       // placeholder until lion uploaded
+};
+
+export const ANIMAL_STILLS = {
+  fox:      "/images/animals/fox-idle.jpg",
+  rabbit:   "/images/animals/rabbit-idle.jpg",
+  owl:      "/images/animals/owl-idle.jpg",
+  squirrel: "/images/animals/fox-idle.jpg",  // placeholder
+  wolf:     "/images/animals/fox-idle.jpg",  // placeholder
+  lion:     "/images/animals/fox-idle.jpg",  // placeholder
 };
 
 export const CEFR_ANIMAL = {
@@ -28,6 +37,7 @@ export const CEFR_ANIMAL = {
 };
 
 export const DEFAULT_VIDEO = ANIMAL_VIDEOS.fox;
+export const DEFAULT_STILL = ANIMAL_STILLS.fox;
 
 // ── CSS keyframes ────────────────────────────────────────────────────────────
 const KEYFRAMES = `
@@ -90,7 +100,7 @@ function SpeakingWave() {
 }
 
 // ── Compact version (tiny avatar in header / message bubbles) ────────────────
-function CompactFox({ size, style, isSpeaking, src }) {
+function CompactFox({ size, style, isSpeaking, src, still }) {
   return (
     <div style={{
       width: size, height: size,
@@ -102,17 +112,31 @@ function CompactFox({ size, style, isSpeaking, src }) {
       transition: "box-shadow 0.3s ease",
       ...style,
     }}>
-      <video
-        src={src}
-        autoPlay loop muted playsInline
+      {/* Still JPG — shown when silent */}
+      <img
+        src={still}
+        alt="tutor"
         style={{
+          position: "absolute", inset: 0,
           width: "100%", height: "100%",
           objectFit: "cover", objectPosition: "center 15%",
-          animation: isSpeaking
-            ? "foxSpeakBob 0.5s ease-in-out infinite"
-            : "foxIdleBreath 4s ease-in-out infinite",
+          opacity: isSpeaking ? 0 : 1,
+          transition: "opacity 0.3s ease",
         }}
       />
+      {/* Talking MP4 — shown when speaking */}
+      {isSpeaking && (
+        <video
+          key={src}
+          src={src}
+          autoPlay loop muted playsInline
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%",
+            objectFit: "cover", objectPosition: "center 15%",
+          }}
+        />
+      )}
       <div style={{
         position: "absolute", inset: 0,
         background: "radial-gradient(ellipse at 50% 30%, transparent 40%, rgba(0,0,0,0.35) 100%)",
@@ -131,10 +155,11 @@ function CompactFox({ size, style, isSpeaking, src }) {
 }
 
 // ── Full cinematic panel ─────────────────────────────────────────────────────
-export default function FoxTutorCard({ style = {}, size = 220, compact = false, src }) {
+export default function FoxTutorCard({ style = {}, size = 220, compact = false, src, still }) {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [speechText, setSpeechText] = useState("");
-  const videoSrc = src || DEFAULT_VIDEO;
+  const videoSrc  = src   || DEFAULT_VIDEO;
+  const stillSrc  = still || DEFAULT_STILL;
 
   useEffect(() => {
     injectKF();
@@ -145,7 +170,7 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false, 
   }, []);
 
   if (compact) {
-    return <CompactFox size={size} style={style} isSpeaking={isSpeaking} src={videoSrc} />;
+    return <CompactFox size={size} style={style} isSpeaking={isSpeaking} src={videoSrc} still={stillSrc} />;
   }
 
   return (
@@ -153,20 +178,31 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false, 
       position: "relative", width: "100%", height: "100%",
       overflow: "hidden", background: "#081510", ...style,
     }}>
-      {/* ── Animal video — loops continuously ── */}
-      <video
-        key={videoSrc}
-        src={videoSrc}
-        autoPlay loop muted playsInline
+      {/* ── Still JPG — always present, fades out when speaking ── */}
+      <img
+        src={stillSrc}
+        alt="tutor"
         style={{
           position: "absolute", inset: 0,
           width: "100%", height: "100%",
           objectFit: "cover", objectPosition: "center 10%",
-          animation: isSpeaking
-            ? "foxSpeakBob 0.52s ease-in-out infinite"
-            : "foxIdleBreath 4.5s ease-in-out infinite",
+          opacity: isSpeaking ? 0 : 1,
+          transition: "opacity 0.35s ease",
         }}
       />
+      {/* ── Talking MP4 — mounts only when speaking, unmounts when done ── */}
+      {isSpeaking && (
+        <video
+          key={videoSrc}
+          src={videoSrc}
+          autoPlay loop muted playsInline
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%",
+            objectFit: "cover", objectPosition: "center 10%",
+          }}
+        />
+      )}
 
       {/* ── Vignette ── */}
       <div style={{

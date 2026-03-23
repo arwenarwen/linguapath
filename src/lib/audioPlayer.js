@@ -146,13 +146,27 @@ export async function playWordAudio(text, langCode, opts = {}) {
   const resolvedLang = langCode || _currentAudioLang || "en";
 
   try {
+    // Try static audio first — wire up speaking notifications so the mascot reacts
+    let staticAudio = null;
     const usedStatic = await tryPlayStaticAudio({
       text,
       langCode: resolvedLang,
       stopAllAudio,
-      setActiveAudio: (audio) => { _activeHtmlAudio = audio; }
+      setActiveAudio: (audio) => { _activeHtmlAudio = audio; staticAudio = audio; }
     });
 
+    if (usedStatic && staticAudio) {
+      _notifySpeaking(true, text);
+      staticAudio.onended = () => {
+        if (_activeHtmlAudio === staticAudio) _activeHtmlAudio = null;
+        _notifySpeaking(false);
+      };
+      staticAudio.onerror = () => {
+        if (_activeHtmlAudio === staticAudio) _activeHtmlAudio = null;
+        _notifySpeaking(false);
+      };
+      return;
+    }
     if (usedStatic) return;
 
     stopAllAudio();

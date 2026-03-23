@@ -17,7 +17,7 @@ import {
   extractOptionChoice, buildLocalExamReport,
 } from '../lib/examUtils';
 import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
-import FoxTutorCard, { ANIMAL_VIDEOS, CEFR_ANIMAL, DEFAULT_VIDEO } from './FoxTutorCard';
+import FoxTutorCard, { ANIMAL_VIDEOS, ANIMAL_STILLS, CEFR_ANIMAL, DEFAULT_VIDEO, DEFAULT_STILL } from './FoxTutorCard';
 import { GLOBAL_CSS } from '../config/theme';
 import { getAIChatLangConfig } from '../config/langConfig';
 import { LANGUAGES, VISUAL_QUERY_MAP, NUMBER_VALUE_MAP } from '../config/languages';
@@ -1253,6 +1253,9 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
               src={mode === "exam"
                 ? (ANIMAL_VIDEOS[CEFR_ANIMAL[cefrLevel]] || DEFAULT_VIDEO)
                 : DEFAULT_VIDEO}
+              still={mode === "exam"
+                ? (ANIMAL_STILLS[CEFR_ANIMAL[cefrLevel]] || DEFAULT_STILL)
+                : DEFAULT_STILL}
             />
           </div>
         )}
