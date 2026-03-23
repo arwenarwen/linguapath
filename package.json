@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.0",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "three": "^0.169.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "openai": "^4.103.0"

@@ -18,6 +18,7 @@ import {
 } from '../lib/examUtils';
 import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
 import FoxTutorCard, { ANIMAL_VIDEOS, ANIMAL_STILLS, CEFR_ANIMAL, DEFAULT_VIDEO, DEFAULT_STILL } from './FoxTutorCard';
+import FoxTutor3D from './FoxTutor3D';
 import { GLOBAL_CSS } from '../config/theme';
 import { getAIChatLangConfig } from '../config/langConfig';
 import { LANGUAGES, VISUAL_QUERY_MAP, NUMBER_VALUE_MAP } from '../config/languages';
@@ -1248,15 +1249,16 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
             position: "relative",
             overflow: "hidden",
           }}>
-            <FoxTutorCard
-              style={{ position: "absolute", inset: 0, borderRadius: 0 }}
-              src={mode === "exam"
-                ? (ANIMAL_VIDEOS[CEFR_ANIMAL[cefrLevel]] || DEFAULT_VIDEO)
-                : DEFAULT_VIDEO}
-              still={mode === "exam"
-                ? (ANIMAL_STILLS[CEFR_ANIMAL[cefrLevel]] || DEFAULT_STILL)
-                : DEFAULT_STILL}
-            />
+            {/* 3D fox for chat/tutor; video card for exam (keeps per-animal videos) */}
+            {mode !== "exam" ? (
+              <FoxTutor3D style={{ position: "absolute", inset: 0, borderRadius: 0 }} />
+            ) : (
+              <FoxTutorCard
+                style={{ position: "absolute", inset: 0, borderRadius: 0 }}
+                src={ANIMAL_VIDEOS[CEFR_ANIMAL[cefrLevel]] || DEFAULT_VIDEO}
+                still={ANIMAL_STILLS[CEFR_ANIMAL[cefrLevel]] || DEFAULT_STILL}
+              />
+            )}
           </div>
         )}
 
