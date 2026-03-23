@@ -12,8 +12,23 @@ let _currentAudioLang = "es";
 let _activeHtmlAudio = null;
 let _speechTimeouts = [];
 let _ttsAbortController = null;
+let _speakingListeners = [];
+let _lastSpeechText = "";
 
 export function setAudioLang(code) { _currentAudioLang = code || "es"; }
+
+/** Subscribe to speaking state changes. Returns an unsubscribe function. */
+export function subscribeSpeaking(fn) {
+  _speakingListeners.push(fn);
+  return () => { _speakingListeners = _speakingListeners.filter(f => f !== fn); };
+}
+
+export function getLastSpeechText() { return _lastSpeechText; }
+
+function _notifySpeaking(on, text = "") {
+  if (on) _lastSpeechText = text;
+  _speakingListeners.forEach(fn => fn(on, _lastSpeechText));
+}
 
 export function stopAllAudio() {
   try {
@@ -39,6 +54,7 @@ export function stopAllAudio() {
       _activeHtmlAudio = null;
     }
   } catch (e) {}
+  _notifySpeaking(false);
 }
 
 export function queueSpeech(fn, delay = 0) {
@@ -173,17 +189,22 @@ export async function playWordAudio(text, langCode, opts = {}) {
     audio.preload = "auto";
     _activeHtmlAudio = audio;
 
+    _notifySpeaking(true, text);
+
     audio.onended = () => {
       try { URL.revokeObjectURL(url); } catch(e) {}
       if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
+      _notifySpeaking(false);
     };
     audio.onerror = () => {
       try { URL.revokeObjectURL(url); } catch(e) {}
       if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
+      _notifySpeaking(false);
     };
 
     await audio.play();
   } catch (e) {
+    _notifySpeaking(false);
     if (e?.name === "AbortError") return;
     console.error("[TTS] Static/ElevenLabs playWordAudio failed:", e);
     if (typeof window !== "undefined") {
@@ -233,12 +254,14 @@ export async function playAndWait(text, langCode, opts = {}) {
     audio.preload = "auto";
     _activeHtmlAudio = audio;
 
+    _notifySpeaking(true, text);
     await audio.play();
 
     await new Promise(resolve => {
       const cleanup = () => {
         try { URL.revokeObjectURL(url); } catch {}
         if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
+        _notifySpeaking(false);
         resolve();
       };
       audio.onended = cleanup;
@@ -246,6 +269,7 @@ export async function playAndWait(text, langCode, opts = {}) {
       setTimeout(cleanup, opts.maxMs || 12000);
     });
   } catch (e) {
+    _notifySpeaking(false);
     if (e?.name !== "AbortError") {
       console.error("[TTS playAndWait] failed:", e);
     }

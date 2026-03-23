@@ -17,6 +17,7 @@ import {
   extractOptionChoice, buildLocalExamReport,
 } from '../lib/examUtils';
 import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
+import FoxTutorCard from './FoxTutorCard';
 import { GLOBAL_CSS } from '../config/theme';
 import { getAIChatLangConfig } from '../config/langConfig';
 import { LANGUAGES, VISUAL_QUERY_MAP, NUMBER_VALUE_MAP } from '../config/languages';
@@ -1199,11 +1200,9 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         backdropFilter:"blur(12px)", display:"flex", alignItems:"center", gap:10, flexShrink:0 }}>
         <button style={{ background:"none", border:"none", color:chatTheme.muted, cursor:"pointer", fontSize:22, padding:"2px 6px", borderRadius:8, flexShrink:0 }}
           onClick={handleClose}>←</button>
-        {/* Animal tutor avatar */}
-        <div style={{ width:44, height:44, borderRadius:14, background:`${chatTheme.path}18`, border:`1px solid ${chatTheme.path}35`, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0, animation:"animalBob 3s ease-in-out infinite", overflow:"hidden", padding:2 }}>
-          {CHAT_ANIMAL_SVGS[tutorAnimalKey]
-            ? <div style={{width:40,height:40}}>{CHAT_ANIMAL_SVGS[tutorAnimalKey]}</div>
-            : <span style={{fontSize:24}}>{tutorAnimalKey}</span>}
+        {/* Cinematic fox tutor avatar */}
+        <div style={{ flexShrink:0, width:52, overflow:"visible" }}>
+          <FoxTutorCard size={52} style={{ borderRadius:14, width:52 }} />
         </div>
         <div style={{ flex:1, minWidth:0 }}>
           <div style={{ fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:14, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", color:chatTheme.text }}>
@@ -1254,13 +1253,8 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         {messages.map((msg, i) => (
           <div key={i} style={{ display:"flex", justifyContent:msg.role==="user"?"flex-end":"flex-start", alignItems:"flex-end", gap:8 }}>
             {msg.role === "assistant" && (
-              <div style={{ width:34, height:34, borderRadius:"50%", background:`${chatTheme.path}18`,
-                border:`1px solid ${chatTheme.path}35`, display:"flex", alignItems:"center",
-                justifyContent:"center", fontSize:14, flexShrink:0, animation:"animalBob 3s ease-in-out infinite",
-                overflow:"hidden", padding:2 }}>
-                {CHAT_ANIMAL_SVGS[tutorAnimalKey]
-                  ? <div style={{width:30,height:30}}>{CHAT_ANIMAL_SVGS[tutorAnimalKey]}</div>
-                  : tutorAnimalKey}
+              <div style={{ flexShrink:0, width:34, overflow:"visible" }}>
+                <FoxTutorCard size={34} style={{ borderRadius:10, width:34 }} />
               </div>
             )}
             <div style={{ maxWidth:"82%", display:"flex", flexDirection:"column", gap:4,
@@ -1364,12 +1358,8 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         ))}
         {loading && (
           <div style={{ display:"flex", alignItems:"center", gap:8 }}>
-            <div style={{ width:34, height:34, borderRadius:"50%", background:`${chatTheme.path}18`,
-              border:`1px solid ${chatTheme.path}35`, display:"flex", alignItems:"center",
-              justifyContent:"center", flexShrink:0, overflow:"hidden", padding:2 }}>
-              {CHAT_ANIMAL_SVGS[tutorAnimalKey]
-                ? <div style={{width:30,height:30}}>{CHAT_ANIMAL_SVGS[tutorAnimalKey]}</div>
-                : <span style={{fontSize:14}}>{scenario.icon || "🤖"}</span>}
+            <div style={{ flexShrink:0, width:34, overflow:"visible" }}>
+              <FoxTutorCard size={34} style={{ borderRadius:10, width:34 }} />
             </div>
             <div className="chat-bubble chat-ai" style={{ display:"flex", gap:5, padding:"10px 14px" }}>
               {[0,0.2,0.4].map(d => (
