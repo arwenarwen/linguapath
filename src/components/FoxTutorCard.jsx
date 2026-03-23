@@ -1,16 +1,17 @@
 /**
- * FoxTutorCard — cinematic AI tutor card using a real photo.
- * Mouth-area overlay pulses when audio plays.
- * Auto-subscribes to audioPlayer speaking state.
+ * FoxTutorCard — cinematic AI tutor card.
+ * Switches between idle (slow, calm) and talking (full speed) video clips
+ * based on the audioPlayer speaking state. Both videos are preloaded so
+ * the switch is instant with no buffering flash.
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { subscribeSpeaking } from "../lib/audioPlayer";
 
-// ── Fox mascot video ─────────────────────────────────────────────────────────
-// Cinematic 3D fox — looping MP4, falls back to PNG if needed
-const FOX_VIDEO = "/images/fox-mascot.mp4";
-const FOX_IMAGE = "/images/fox-mascot.png"; // fallback (optional)
+// ── Fox mascot videos ─────────────────────────────────────────────────────────
+const FOX_IDLE    = "/images/fox-idle.mp4";    // slowed ~0.55x — calm breathing
+const FOX_TALKING = "/images/fox-talking.mp4"; // normal speed  — full energy
+const FOX_VIDEO   = "/images/fox-mascot.mp4";  // legacy fallback
 
 // ── CSS keyframes ────────────────────────────────────────────────────────────
 const KEYFRAMES = `
@@ -73,6 +74,57 @@ function SpeakingWave() {
   );
 }
 
+// ── Dual-video switcher — both preloaded, only one visible ───────────────────
+function FoxVideo({ isSpeaking, style = {}, objectPosition = "center 10%" }) {
+  const idleRef    = useRef(null);
+  const talkRef    = useRef(null);
+
+  // Keep both videos playing silently so the switch is instantaneous
+  useEffect(() => {
+    [idleRef, talkRef].forEach(ref => {
+      if (ref.current) {
+        ref.current.play().catch(() => {});
+      }
+    });
+  }, []);
+
+  const sharedStyle = {
+    position: "absolute", inset: 0,
+    width: "100%", height: "100%",
+    objectFit: "cover",
+    objectPosition,
+    transition: "opacity 0.4s ease",
+    ...style,
+  };
+
+  return (
+    <>
+      {/* Idle clip — visible when NOT speaking */}
+      <video
+        ref={idleRef}
+        src={FOX_IDLE}
+        autoPlay loop muted playsInline
+        style={{
+          ...sharedStyle,
+          opacity: isSpeaking ? 0 : 1,
+          animation: isSpeaking ? undefined : "foxIdleBreath 4.5s ease-in-out infinite",
+        }}
+      />
+      {/* Talking clip — visible when speaking */}
+      <video
+        ref={talkRef}
+        src={FOX_TALKING}
+        autoPlay loop muted playsInline
+        style={{
+          ...sharedStyle,
+          opacity: isSpeaking ? 1 : 0,
+          animation: isSpeaking ? "foxSpeakBob 0.52s ease-in-out infinite" : undefined,
+        }}
+      />
+    </>
+  );
+}
+
 // ── Compact version (tiny avatar in header / message bubbles) ────────────────
 function CompactFox({ size, style, isSpeaking }) {
   return (
@@ -88,21 +140,7 @@ function CompactFox({ size, style, isSpeaking }) {
       transition: "box-shadow 0.3s ease",
       ...style,
     }}>
-      <video
-        src={FOX_VIDEO}
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          width: "100%", height: "100%",
-          objectFit: "cover",
-          objectPosition: "center 15%",
-          animation: isSpeaking
-            ? "foxSpeakBob 0.5s ease-in-out infinite"
-            : "foxIdleBreath 4s ease-in-out infinite",
-        }}
-      />
+      <FoxVideo isSpeaking={isSpeaking} objectPosition="center 15%" style={{ position: "absolute", inset: 0 }} />
       {/* Dark overlay */}
       <div style={{
         position: "absolute", inset: 0,
@@ -149,25 +187,8 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
       background: "#081510",
       ...style,
     }}>
-      {/* ── Fox photo — fills the whole panel ── */}
-      <video
-        src={FOX_VIDEO}
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center 10%",
-          animation: isSpeaking
-            ? "foxSpeakBob 0.52s ease-in-out infinite"
-            : "foxIdleBreath 4.5s ease-in-out infinite",
-        }}
-      />
+      {/* ── Dual fox videos — idle ↔ talking ── */}
+      <FoxVideo isSpeaking={isSpeaking} />
 
       {/* ── Vignette for cinematic depth ── */}
       <div style={{
@@ -185,9 +206,7 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
         pointerEvents: "none",
       }} />
 
-      {/* ── Mouth-area pulse overlay (lip-sync illusion) ──
-            Positioned ~67% down the image, centered. Adjust top% if your own
-            mascot image has a different face position.                          */}
+      {/* ── Mouth-area pulse overlay (lip-sync illusion) ── */}
       {isSpeaking && (
         <div style={{
           position: "absolute",
@@ -212,7 +231,7 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
         animation: isSpeaking ? "foxBorderGlow 1.3s ease-in-out infinite" : undefined,
       }} />
 
-      {/* ── Bottom badge / wave bar ── */}
+      {/* ── Bottom wave bar ── */}
       <div style={{
         position: "absolute", bottom: 0, left: 0, right: 0,
         padding: "10px 16px 14px",
@@ -238,7 +257,6 @@ export default function FoxTutorCard({ style = {}, size = 220, compact = false }
           backdropFilter: "blur(8px)",
           pointerEvents: "none",
         }}>
-          {/* Orange dot */}
           <div style={{
             position: "absolute", top: 12, left: -9,
             width: 10, height: 10, borderRadius: "50%",
