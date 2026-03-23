@@ -347,6 +347,20 @@ function AuthModal({ mode: init, onAuth, onClose }) {
           setUserRole(userId, tier);
         }
 
+        // Send transactional email — fire and forget, never block signup
+        {
+          const userEmail = email.trim().toLowerCase();
+          const userName  = name.trim();
+          const emailType = (inviteCode && tier !== "free" && tier !== "waitlist")
+            ? "access-code" : tier === "waitlist" ? null : "welcome";
+          if (emailType) {
+            fetch("/api/email", {
+              method: "POST", headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ type: emailType, email: userEmail, name: userName, tier, code: inviteCode }),
+            }).catch(() => {});
+          }
+        }
+
         // Success — always route based on tier
         // data.user exists even when email confirmation is required
         // data.session is null when confirmation is required — that's OK

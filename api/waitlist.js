@@ -61,6 +61,18 @@ export default async function handler(req, res) {
 
     if (error) throw error;
 
+    // Send waitlist email — fire and forget
+    fetch(`${process.env.VITE_APP_URL || "https://linguapath.app"}/api/email`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "waitlist-join",
+        email: email.toLowerCase().trim(),
+        name: (name || "").trim(),
+        position,
+      }),
+    }).catch(err => console.error("[waitlist] email failed:", err));
+
     return res.status(200).json({ ok: true, position, earlyAccess });
   } catch (err) {
     console.error("Waitlist error:", err);
