@@ -21,7 +21,7 @@ import {
   getUserPlan, isPro,
   canStartLesson, incrementDailyLesson, getDailyUsage, addDailyXp,
   FREE_LESSONS_PER_DAY, levelUsesEnergy, savePlacementState, getPlacementState,
-  getTrailPoints, addTrailPoints, trailPointsForLesson, getCheckpointPass,
+  getTrailPoints, addTrailPoints, trailPointsForLesson, getCheckpointPass, CHECKPOINT_TP_REQUIRED,
   saveLessonStars, getLessonStarsMap, getXPLevel, LEVEL_TITLES, getDailyGoalProgress, DAILY_LESSON_GOAL,
   hasClaimedWeeklyReward, getWeeklyXP, getWeeklyLessons, addWeeklyLesson, addWeeklyXP,
 } from "../lib/appState";
