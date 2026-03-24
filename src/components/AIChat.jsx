@@ -1200,9 +1200,17 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         backdropFilter:"blur(12px)", display:"flex", alignItems:"center", gap:10, flexShrink:0 }}>
         <button style={{ background:"none", border:"none", color:chatTheme.muted, cursor:"pointer", fontSize:22, padding:"2px 6px", borderRadius:8, flexShrink:0 }}
           onClick={handleClose}>←</button>
-        {/* Cinematic fox tutor avatar */}
+        {/* Header avatar — CEFR emoji for exam, fox card for chat/tutor */}
         <div style={{ flexShrink:0, width:52, overflow:"visible" }}>
-          <FoxTutorCard size={52} compact style={{ borderRadius:14, width:52 }} />
+          {mode === "exam" ? (
+            <div style={{ width:52, height:52, borderRadius:14, background:"rgba(249,115,22,0.12)",
+              border:"1px solid rgba(249,115,22,0.25)", display:"flex", alignItems:"center",
+              justifyContent:"center", fontSize:28 }}>
+              {{"A1":"🐇","A2":"🐿️","B1":"🦉","B2":"🐺","C1":"🦁","C2":"🦊"}[cefrLevel] || "🦊"}
+            </div>
+          ) : (
+            <FoxTutorCard size={52} compact style={{ borderRadius:14, width:52 }} />
+          )}
         </div>
         <div style={{ flex:1, minWidth:0 }}>
           <div style={{ fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:14, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", color:chatTheme.text }}>
@@ -1239,11 +1247,27 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
 
         {/* ── Scrollable messages column ── */}
         <div style={{ flex:1, overflowY:"auto", padding:"14px 14px 18px", display:"flex", flexDirection:"column", gap:12, position:"relative" }}>
-        {/* Floating mascot — always visible, CEFR animal for exam, fox for chat/tutor */}
+        {/* Floating mascot — emoji for exam (all CEFR levels), SVG for chat/tutor */}
         {(() => {
-          const EXAM_SVG = { A1:"🐇", A2:"🐇", B1:"🦉", B2:"🐺", C1:"🦁", C2:"🦊" };
-          const svgKey = mode === "exam" ? (EXAM_SVG[cefrLevel] || "🦊") : (tutorAnimalKey || "🦊");
-          const svg = CHAT_ANIMAL_SVGS[svgKey];
+          const CEFR_EMOJI = { A1:"🐇", A2:"🐿️", B1:"🦉", B2:"🐺", C1:"🦁", C2:"🦊" };
+          if (mode === "exam") {
+            const emoji = CEFR_EMOJI[cefrLevel] || "🦊";
+            return (
+              <div style={{
+                position:"sticky", top:0, float:"right", width:90, height:90,
+                marginLeft:8, marginBottom:-90, marginRight:0,
+                flexShrink:0, pointerEvents:"none", zIndex:1,
+                display:"flex", alignItems:"center", justifyContent:"center",
+                fontSize:72, lineHeight:1,
+                filter:"drop-shadow(0 4px 12px rgba(0,0,0,0.15))",
+                animation:"animalBob 3.5s ease-in-out infinite",
+              }}>
+                {emoji}
+              </div>
+            );
+          }
+          // Chat/tutor: use SVG
+          const svg = CHAT_ANIMAL_SVGS[tutorAnimalKey || "🦊"];
           if (!svg) return null;
           return (
             <div style={{
@@ -1262,8 +1286,15 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         {messages.map((msg, i) => (
           <div key={i} style={{ display:"flex", justifyContent:msg.role==="user"?"flex-end":"flex-start", alignItems:"flex-end", gap:8 }}>
             {msg.role === "assistant" && (
-              <div style={{ flexShrink:0, width:34, overflow:"visible" }}>
-                <FoxTutorCard size={34} compact style={{ borderRadius:10, width:34 }} />
+              <div style={{ flexShrink:0, width:34, height:34, overflow:"visible" }}>
+                {mode === "exam" ? (
+                  <div style={{ width:34, height:34, borderRadius:10, background:"rgba(249,115,22,0.1)",
+                    display:"flex", alignItems:"center", justifyContent:"center", fontSize:20 }}>
+                    {{"A1":"🐇","A2":"🐿️","B1":"🦉","B2":"🐺","C1":"🦁","C2":"🦊"}[cefrLevel] || "🦊"}
+                  </div>
+                ) : (
+                  <FoxTutorCard size={34} compact style={{ borderRadius:10, width:34 }} />
+                )}
               </div>
             )}
             <div style={{ maxWidth:"82%", display:"flex", flexDirection:"column", gap:4,
