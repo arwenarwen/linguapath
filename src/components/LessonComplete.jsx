@@ -161,6 +161,17 @@ export default function LessonComplete({
   const challenges   = rewardSummary?.challengesCompleted ?? [];
   const hasChallengeBonus = breakdown.fullHouseBonus > 0;
 
+  // Trail XP info from rewardSummary (injected by MountainAppShell.markComplete)
+  const trailXP        = rewardSummary?.trailXP ?? 0;
+  const trailTotal     = rewardSummary?.trailPointsTotal ?? 0;
+  const trailRequired  = rewardSummary?.trailRequired ?? 100;
+  const trailNeeded    = Math.max(0, trailRequired - trailTotal);
+  const trailPct       = Math.min(100, Math.round((trailTotal / trailRequired) * 100));
+
+  // Bonus-lesson XP threshold (Statue Shop costs 200 XP)
+  const BONUS_XP_COST = 200;
+  const xpNeededForBonus = Math.max(0, BONUS_XP_COST - totalXP % BONUS_XP_COST);
+
   const displayXP = useCountUp(totalXP, 1000);
 
   // Separate breakdown rows from achievement-bonus rows so they appear cleanly
@@ -213,6 +224,72 @@ export default function LessonComplete({
           }}>
             <span style={{ fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.8)" }}>Total</span>
             <span style={{ fontSize: 13, fontWeight: 800, color: "#d4af5f" }}>+{totalXP} XP</span>
+          </div>
+        </div>
+      )}
+
+      {/* Trail XP earned this lesson */}
+      {trailXP > 0 && (
+        <div style={{
+          background: "rgba(245,165,36,0.07)", border: "1px solid rgba(245,165,36,0.25)",
+          borderRadius: 16, padding: "14px 16px", marginTop: 14, marginBottom: 0,
+        }}>
+          <div style={{
+            fontSize: 11, fontWeight: 700, letterSpacing: 1.5,
+            textTransform: "uppercase", color: "rgba(245,165,36,0.6)", marginBottom: 10,
+          }}>Trail XP — unlocks unit checkpoint</div>
+
+          {/* Earned this lesson */}
+          <div style={{
+            display: "flex", justifyContent: "space-between", alignItems: "center",
+            padding: "7px 0", borderBottom: "1px solid rgba(245,165,36,0.12)",
+          }}>
+            <span style={{ fontSize: 13, color: "rgba(255,255,255,0.7)" }}>⚡ Earned this lesson</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: "#f5a524" }}>+{trailXP} Trail XP</span>
+          </div>
+
+          {/* Progress bar toward checkpoint */}
+          <div style={{ marginTop: 10 }}>
+            <div style={{
+              display: "flex", justifyContent: "space-between",
+              fontSize: 11, color: "rgba(255,255,255,0.45)", marginBottom: 5,
+            }}>
+              <span>Total Trail XP</span>
+              <span>{trailTotal} / {trailRequired}</span>
+            </div>
+            <div style={{ height: 6, borderRadius: 99, background: "rgba(245,165,36,0.15)", overflow: "hidden" }}>
+              <div style={{
+                height: "100%", width: `${trailPct}%`,
+                borderRadius: 99, background: "linear-gradient(90deg,#f5a524,#e8730a)",
+                transition: "width 0.6s ease",
+              }} />
+            </div>
+            <div style={{ fontSize: 11, color: "rgba(245,165,36,0.7)", marginTop: 6, fontWeight: 700 }}>
+              {trailNeeded > 0
+                ? `⚡ ${trailNeeded} more Trail XP to unlock unit checkpoint`
+                : "✅ Unit checkpoint unlocked — tap the cabin to begin!"}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Regular XP hint toward bonus lesson */}
+      {totalXP > 0 && (
+        <div style={{
+          display: "flex", alignItems: "center", gap: 10,
+          padding: "10px 14px", borderRadius: 14, marginTop: 10,
+          background: "rgba(163,230,53,0.06)", border: "1px solid rgba(163,230,53,0.18)",
+        }}>
+          <span style={{ fontSize: 20 }}>⭐</span>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", lineHeight: 1.4 }}>
+              <span style={{ fontWeight: 700, color: "#a3e635" }}>Regular XP</span> is used in the Statue Shop for bonus lessons.
+            </div>
+            <div style={{ fontSize: 11, color: "rgba(163,230,53,0.65)", marginTop: 2 }}>
+              {xpNeededForBonus < BONUS_XP_COST
+                ? `${xpNeededForBonus} more XP until your next bonus lesson 🎁`
+                : `Earn XP to unlock bonus lessons in the Statue Shop`}
+            </div>
           </div>
         </div>
       )}

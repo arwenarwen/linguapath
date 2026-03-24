@@ -67,7 +67,23 @@ export function spendTrailPoints(userId, amount) {
   lsSetJSON(`lp_tp_${userId || "anon"}`, cur - amount);
   return true;
 }
-export function trailPointsForLesson(stars) { return stars === 3 ? 15 : stars === 2 ? 10 : 5; }
+/**
+ * Trail Points earned per lesson, scaled so that completing ALL lessons
+ * in a unit at 3-star earns ~110% of CHECKPOINT_TP_REQUIRED.
+ *
+ * Fewer lessons per unit → more TP each (e.g. 4-lesson unit = 28 TP/lesson)
+ * More lessons per unit → less TP each  (e.g. 8-lesson unit = 14 TP/lesson)
+ * Stars: 3=full, 2=70%, 1=40%
+ */
+export function trailPointsForLesson(stars, lessonsInUnit = 6) {
+  const safeLen = Math.max(1, lessonsInUnit);
+  const tp3 = Math.ceil(CHECKPOINT_TP_REQUIRED * 1.1 / safeLen); // 3-star
+  const tp2 = Math.ceil(tp3 * 0.7);                               // 2-star
+  const tp1 = Math.ceil(tp3 * 0.4);                               // 1-star
+  if (stars === 3) return tp3;
+  if (stars === 2) return tp2;
+  return tp1;
+}
 
 // ── XP spend (for bonus lesson / phrase unlocks in the shop) ─────────────────
 // Regular XP is earned from lessons, streaks, AI sessions, achievements.

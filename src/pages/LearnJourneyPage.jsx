@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { getStreak, FREE_LESSONS_PER_DAY, getDailyUsage, getCheckpointPass, setCheckpointPass, getPlacementState, getXPLevel, DAILY_LESSON_GOAL } from "../lib/appState";
+import { getStreak, FREE_LESSONS_PER_DAY, getDailyUsage, getCheckpointPass, setCheckpointPass, getPlacementState, getXPLevel, DAILY_LESSON_GOAL, spendTrailPoints, CHECKPOINT_TP_REQUIRED } from "../lib/appState";
 
 const CEFR = ["A1","A2","B1","B2","C1","C2"];
 
@@ -149,28 +149,59 @@ function FreeLimitBanner({used,max,onUpgrade,C}) {
 }
 
 // ── CheckpointCard: the cabin at end of each unit with a unit animal ──────────
-function CheckpointCard({cpPos,completedCt,totalLessons,unitAnimal,onOpen,allDone}) {
+function CheckpointCard({cpPos,completedCt,totalLessons,unitAnimal,onOpen,allDone,trailPoints=0,trailRequired=100}) {
   const name = ANIMAL_NAMES[unitAnimal]||"Friend";
+  const hasEnoughTP = trailPoints >= trailRequired;
+  // Can open checkpoint if all lessons done AND enough Trail XP
+  const canOpen = allDone && hasEnoughTP;
+  const tpPct = Math.min(100, Math.round((trailPoints / trailRequired) * 100));
+  const lessonsLeft = totalLessons - completedCt;
+
   return (
     <div
-      onClick={allDone?onOpen:undefined}
+      onClick={canOpen ? onOpen : undefined}
       style={{
         position:"absolute",left:cpPos.x,top:cpPos.y,width:CW,
         textAlign:"center",padding:"12px 10px 14px",borderRadius:18,
-        background:allDone?"rgba(255,248,232,0.99)":"rgba(255,248,240,0.92)",
-        border:`1.5px solid ${allDone?"rgba(245,165,36,0.5)":"rgba(245,165,36,0.22)"}`,
-        boxShadow:allDone?"0 8px 28px rgba(255,166,57,0.18)":"0 4px 14px rgba(255,166,57,0.08)",
-        zIndex:2,cursor:allDone?"pointer":"default",
+        background:canOpen?"rgba(255,248,232,0.99)":allDone?"rgba(255,248,240,0.97)":"rgba(255,248,240,0.92)",
+        border:`1.5px solid ${canOpen?"rgba(245,165,36,0.5)":allDone?"rgba(245,165,36,0.38)":"rgba(245,165,36,0.22)"}`,
+        boxShadow:canOpen?"0 8px 28px rgba(255,166,57,0.18)":"0 4px 14px rgba(255,166,57,0.08)",
+        zIndex:2,cursor:canOpen?"pointer":"default",
         transition:"all 0.3s",
       }}
     >
-      <div style={{fontSize:28,marginBottom:2,filter:allDone?"none":"grayscale(0.6) opacity(0.6)"}}>{unitAnimal}</div>
+      <div style={{fontSize:28,marginBottom:2,filter:canOpen?"none":"grayscale(0.5) opacity(0.65)"}}>{unitAnimal}</div>
       <div style={{fontSize:11,fontWeight:800,color:"#6b3d10",marginBottom:2}}>{name}</div>
-      <div style={{fontSize:10,color:"rgba(107,61,16,0.65)"}}>
-        {allDone?"Tap to talk →":`${totalLessons-completedCt} lessons away`}
-      </div>
-      {allDone&&(
+
+      {!allDone ? (
+        /* Lessons still remaining */
+        <div style={{fontSize:10,color:"rgba(107,61,16,0.65)"}}>
+          {lessonsLeft} lesson{lessonsLeft!==1?"s":""} away
+        </div>
+      ) : canOpen ? (
+        /* All done + enough TP → ready */
+        <div style={{fontSize:10,color:"rgba(107,61,16,0.65)"}}>Tap to talk →</div>
+      ) : (
+        /* All lessons done but not enough Trail XP */
+        <>
+          {/* TP progress bar */}
+          <div style={{margin:"5px 0 3px",height:5,borderRadius:99,background:"rgba(107,61,16,0.12)",overflow:"hidden"}}>
+            <div style={{height:"100%",width:`${tpPct}%`,borderRadius:99,background:"linear-gradient(90deg,#f5a524,#e8730a)",transition:"width 0.4s"}} />
+          </div>
+          <div style={{fontSize:9,fontWeight:800,color:"#e8730a",lineHeight:1.3}}>
+            ⚡ {trailPoints}/{trailRequired} Trail XP
+          </div>
+          <div style={{fontSize:9,color:"rgba(107,61,16,0.55)",marginTop:2,lineHeight:1.3}}>
+            Review lessons to earn more
+          </div>
+        </>
+      )}
+
+      {canOpen&&(
         <div style={{position:"absolute",top:-8,right:-6,background:"#f97316",color:"#fff",fontSize:9,fontWeight:900,padding:"2px 7px",borderRadius:20,letterSpacing:0.5}}>READY</div>
+      )}
+      {allDone && !canOpen && (
+        <div style={{position:"absolute",top:-8,right:-6,background:"rgba(107,61,16,0.55)",color:"#fff",fontSize:9,fontWeight:900,padding:"2px 7px",borderRadius:20,letterSpacing:0.5}}>🔒 TP</div>
       )}
     </div>
   );
@@ -769,7 +800,7 @@ function CheckpointScreen({animal,unitName,lessons,onClose,userId,langCode,onChe
           </div>
           <div style={{display:"flex",flexDirection:"column",gap:10,width:"100%",maxWidth:300}}>
             {pct >= 70 ? (
-              <button onClick={() => { setCheckpointPass(userId, langCode, unitName, pct); onCheckpointPass?.(); onClose(); }}
+              <button onClick={() => { setCheckpointPass(userId, langCode, unitName, pct); spendTrailPoints(userId, CHECKPOINT_TP_REQUIRED); onCheckpointPass?.(); onClose(); }}
                 style={{background:data.color,color:"#fff",border:"none",borderRadius:14,padding:"14px 36px",fontSize:16,fontWeight:800,cursor:"pointer",boxShadow:`0 8px 24px ${data.color}55`}}>
                 Continue on the Trail →
               </button>
@@ -793,7 +824,7 @@ function CheckpointScreen({animal,unitName,lessons,onClose,userId,langCode,onChe
 }
 
 // ── TrailUnit ─────────────────────────────────────────────────────────────────
-function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,onSelectLesson,levelKey,isCurrentLevel,mist,unitAnimal,unitIdx,userId,langCode,unitLocked,onCheckpointPass,starsMap}) {
+function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,onSelectLesson,levelKey,isCurrentLevel,mist,unitAnimal,unitIdx,userId,langCode,unitLocked,onCheckpointPass,starsMap,trailPoints=0,trailRequired=100}) {
   const lessons=unit.lessons;
   const [torchList,setTorchList]=useState([]);
   const [foxPos,setFoxPos]=useState(null);     // {x,y} current fox position during walk
@@ -996,6 +1027,8 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
         cpPos={cpPos} completedCt={completedCt} totalLessons={lessons.length}
         unitAnimal={unitAnimal} allDone={allDone}
         onOpen={()=>setAnimalModal(true)}
+        trailPoints={trailPoints}
+        trailRequired={trailRequired}
       />
 
       {/* Animal talk modal */}
@@ -1015,7 +1048,7 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────
-export default function LearnJourneyPage({curriculum,progress,langName,user,justCompletedId,animTrigger,onSelectLesson,onUpgrade,isPro,langCode,starsMap,onStatues}) {
+export default function LearnJourneyPage({curriculum,progress,langName,user,justCompletedId,animTrigger,onSelectLesson,onUpgrade,isPro,langCode,starsMap,onStatues,trailPoints=0,trailRequired=100}) {
   const C=getTheme();
   const completed=progress?.completed||[];
   const totalXP=progress?.xp||0;
@@ -1209,6 +1242,8 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
                         unitLocked={!prevCheckpointPassed}
                         onCheckpointPass={handleCheckpointPass}
                         starsMap={starsMap}
+                        trailPoints={trailPoints}
+                        trailRequired={trailRequired}
                       />
                     </div>
                   )})

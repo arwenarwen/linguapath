@@ -416,7 +416,17 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
       hasDialoguePhase: lessonMeta.hasDialogue ?? false,
     });
 
-    const earnedTP = trailPointsForLesson(stars);
+    // Scale Trail XP based on how many lessons are in this unit
+    const unitModules = (curriculum[activeLesson?.levelKey]?.modules || [])
+      .filter(m => m.unit === activeLesson?.module?.unit);
+    const lessonsInUnit = unitModules.length || 6;
+    const earnedTP = trailPointsForLesson(stars, lessonsInUnit);
+    const newTPTotal = getTrailPoints(user?.id) + earnedTP;
+
+    // Enrich summary with trail XP info for the reward screen
+    summary.trailXP = earnedTP;
+    summary.trailPointsTotal = newTPTotal;
+    summary.trailRequired = CHECKPOINT_TP_REQUIRED;
 
     const next = {
       completed: [...current.completed, moduleId],
@@ -581,6 +591,8 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
             onUpgrade={() => setModal("upgrade")}
             onStatues={() => setShowStatues(true)}
             placedLevel={(getPlacementState(user?.id, activeLang)?.placedLevel)||"A1"}
+            trailPoints={getTrailPoints(user?.id)}
+            trailRequired={CHECKPOINT_TP_REQUIRED}
           />
         )}
         {tab === "situations" && (
