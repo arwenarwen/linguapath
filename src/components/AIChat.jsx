@@ -12,8 +12,8 @@ import {
   getChallengeData, saveChallengeData, awardChallengeXP,
 } from '../lib/progressUtils';
 import {
-  loadLocalExamBank, formatLocalExamQuestion, buildExamSpeechText,
-  playExamQuestionAudio, playExamFeedbackAndNext, playExamOptionAudio,
+  loadLocalExamBank, formatLocalExamQuestion,
+  playExamQuestionAudio, playExamFeedbackAudio, playExamOptionAudio,
   extractOptionChoice, buildLocalExamReport,
 } from '../lib/examUtils';
 import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
@@ -660,6 +660,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
   const [localExamIndex, setLocalExamIndex] = useState(0);
   const [localExamScore, setLocalExamScore] = useState(0);
   const [localExamFinished, setLocalExamFinished] = useState(false);
+  const [examWrongQuestions, setExamWrongQuestions] = useState([]);
   const [aiLimitNotice, setAiLimitNotice] = useState("");
   const modeKey = `${mode}_${scenario?.id || scenario?.scenarioId || "general"}`;
 
@@ -878,14 +879,9 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
           (currentQuestion.options?.[choice.index] === currentQuestion.correct_answer));
 
       if (!isCorrect) {
-        pushMistake(
-          userId,
-          langCode,
-          choice.normalized || userText,
-          currentQuestion.correct_answer,
-          "Exam multiple-choice correction",
-          "Exam Mode"
-        );
+        pushMistake(userId, langCode, choice.normalized || userText,
+          currentQuestion.correct_answer, "Exam multiple-choice correction", "Exam Mode");
+        setExamWrongQuestions(prev => [...prev, currentQuestion]);
       }
 
       const nextScore = localExamScore + (isCorrect ? 1 : 0);
@@ -897,46 +893,42 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
 
       const isLast = localExamIndex >= ((localExamBank.questions?.length || 1) - 1);
 
-      // ── Message 1: feedback only (shown immediately) ──────────────────────
-      const feedbackMsg = { role:"assistant", content: feedbackText, translation:null };
-      setMessages(m => [...m, feedbackMsg]);
+      // Show feedback message immediately
+      setMessages(m => [...m, { role:"assistant", content: feedbackText, translation:null }]);
+
+      // Sequence: feedback audio → show next question → play question audio
+      // All in an async IIFE so audio never plays before the message is visible
+      const wrongSoFar = isCorrect ? examWrongQuestions : [...examWrongQuestions, currentQuestion];
 
       if (isLast) {
-        // Final question — show report after short pause
-        const report = buildLocalExamReport(localExamBank, nextScore);
         setLocalExamFinished(true);
-        // Play correct/incorrect audio
-        playExamFeedbackAndNext(isCorrect, currentQuestion, null, cefrLevel, langCode, 0, localExamBank?.question_count || 25);
-        setTimeout(() => {
+        (async () => {
+          await playExamFeedbackAudio(isCorrect, currentQuestion, langCode);
+          const report = buildLocalExamReport(localExamBank, nextScore, wrongSoFar);
           setMessages(m => [...m, { role:"assistant", content: report, translation:null }]);
-        }, 2200);
+        })();
       } else {
-        // ── Message 2: next question (shown after feedback audio finishes) ──
         const nextQuestionIndex = localExamIndex + 1;
         const nextQuestion = localExamBank.questions[nextQuestionIndex];
         setLocalExamIndex(nextQuestionIndex);
 
-        // Feedback audio plays, then next question audio chains automatically inside playExamFeedbackAndNext
-        playExamFeedbackAndNext(
-          isCorrect,
-          currentQuestion,
-          nextQuestion,
-          cefrLevel,
-          langCode,
-          nextQuestionIndex + 1,
-          localExamBank?.question_count || 25
-        );
+        (async () => {
+          // 1. Play feedback audio (awaited — finishes before anything else)
+          await playExamFeedbackAudio(isCorrect, currentQuestion, langCode);
 
-        // Delay the next question message to appear after feedback audio (~2s correct, ~3.5s incorrect)
-        const delay = isCorrect ? 2000 : 3500;
-        setTimeout(() => {
+          // 2. Show next question message
           setMessages(m => [...m, {
-            role:"assistant",
+            role: "assistant",
             content: formatLocalExamQuestion(nextQuestion, localExamBank?.question_count || 20),
-            translation:null,
+            translation: null,
             listenAudio: nextQuestion.exercise_type === "listen" ? nextQuestion.audio : null,
           }]);
-        }, delay);
+
+          // 3. Brief pause so message renders, then play question audio
+          await new Promise(r => setTimeout(r, 400));
+          await playExamQuestionAudio(nextQuestion, cefrLevel, langCode,
+            nextQuestionIndex + 1, localExamBank?.question_count || 25);
+        })();
       }
 
       setLoading(false);

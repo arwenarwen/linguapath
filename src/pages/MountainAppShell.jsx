@@ -527,16 +527,7 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         </div>
       )}
 
-      {/* Waitlist banner — subtle, dismissible */}
-      {tab === "learn" && !proUser && (
-        <div style={{ position:"relative", zIndex:10, margin:"8px 14px 0", background:"rgba(245,165,36,0.08)", border:"1px solid rgba(245,165,36,0.28)", borderRadius:14, padding:"9px 14px", display:"flex", alignItems:"center", gap:10 }}>
-          <span style={{ fontSize:18 }}>🎁</span>
-          <div style={{ flex:1, fontSize:12, color:"#4a2800" }}>
-            <strong>Join the waitlist</strong> — first 50 get 1 month Pro free!
-          </div>
-          <button onClick={() => setShowWaitlist(true)} style={{ background:"linear-gradient(135deg,#f5a524,#c9a84c)", color:"#fff", border:"none", borderRadius:10, padding:"6px 12px", fontSize:11, fontWeight:800, cursor:"pointer" }}>Join →</button>
-        </div>
-      )}
+      {/* Waitlist banner removed */}
 
       <div style={{ position: "relative", paddingBottom: 64 }}>
         {tab === "learn" && (
