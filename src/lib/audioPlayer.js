@@ -198,59 +198,11 @@ export async function playWordAudio(text, langCode, opts = {}) {
     }
     if (usedStatic) return;
 
-    stopAllAudio();
-
-    _ttsAbortController = new AbortController();
-    const signal = _ttsAbortController.signal;
-
-    const res = await fetch("/api/tts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      signal,
-      body: JSON.stringify({
-        text: normalizeTextForSpeech(text, resolvedLang),
-        langCode: resolvedLang,
-        ...(opts.voiceId ? { voiceId: opts.voiceId } : {})
-      })
-    });
-
-    if (!res.ok) {
-      const errText = await res.text().catch(() => "");
-      let message = errText || `TTS HTTP ${res.status}`;
-      try {
-        const parsed = JSON.parse(errText);
-        if (parsed?.error) message = parsed.error;
-      } catch {}
-      throw new Error(message);
-    }
-
-    const blob = await res.blob();
-    if (!blob || blob.size === 0) throw new Error("Empty audio response");
-
-    const url = URL.createObjectURL(blob);
-    const audio = new Audio(url);
-    audio.preload = "auto";
-    _activeHtmlAudio = audio;
-
-    _notifySpeaking(true, text);
-
-    audio.onended = () => {
-      try { URL.revokeObjectURL(url); } catch(e) {}
-      if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
-      _notifySpeaking(false);
-    };
-    audio.onerror = () => {
-      try { URL.revokeObjectURL(url); } catch(e) {}
-      if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
-      _notifySpeaking(false);
-    };
-
-    await audio.play();
+    // No static file — use browser Web Speech
+    await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
   } catch (e) {
     _notifySpeaking(false);
     if (e?.name === "AbortError") return;
-    console.error("[TTS] Static/ElevenLabs playWordAudio failed:", e);
-    // Fall back to browser TTS
     await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
   }
 }
@@ -300,13 +252,12 @@ export async function playExamAudio(text, langCode, opts = {}) {
     } catch {}
   }
 
-  // ── 2. Browser Web Speech fallback (free, no API quota) ──────────────────
-  await _webSpeechSpeak(normalizeTextForSpeech(clean, resolvedLang), resolvedLang);
+  // No static file found — stay silent (exam audio is 100% pre-recorded)
 }
 
 /**
  * Like playWordAudio but AWAITS audio completion before resolving.
- * Priority: 1) pre-recorded static file  2) ElevenLabs TTS  3) browser speechSynthesis
+ * Priority: 1) pre-recorded static file  2) browser speechSynthesis
  */
 export async function playAndWait(text, langCode, opts = {}) {
   if (!text || typeof window === "undefined") return;
@@ -348,58 +299,6 @@ export async function playAndWait(text, langCode, opts = {}) {
     }
   }
 
-  // ── 2. ElevenLabs TTS ─────────────────────────────────────────────────────
-  _ttsAbortController = new AbortController();
-  const signal = _ttsAbortController.signal;
-
-  try {
-    const res = await fetch("/api/tts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      signal,
-      body: JSON.stringify({
-        text: normalizeTextForSpeech(text, resolvedLang),
-        langCode: resolvedLang,
-        ...(opts.voiceId ? { voiceId: opts.voiceId } : {})
-      })
-    });
-
-    if (!res.ok) {
-      // ElevenLabs failed (quota, error) — fall back to browser TTS
-      await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
-      return;
-    }
-
-    const blob = await res.blob();
-    if (!blob || blob.size === 0) {
-      await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
-      return;
-    }
-
-    const url = URL.createObjectURL(blob);
-    const audio = new Audio(url);
-    audio.preload = "auto";
-    _activeHtmlAudio = audio;
-
-    _notifySpeaking(true, text);
-    await audio.play();
-
-    await new Promise(resolve => {
-      const cleanup = () => {
-        try { URL.revokeObjectURL(url); } catch {}
-        if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
-        _notifySpeaking(false);
-        resolve();
-      };
-      audio.onended = cleanup;
-      audio.onerror = cleanup;
-      setTimeout(cleanup, opts.maxMs || 12000);
-    });
-  } catch (e) {
-    _notifySpeaking(false);
-    if (e?.name === "AbortError") return;
-    console.error("[TTS playAndWait] failed:", e);
-    // Fall back to browser TTS on any error
-    await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
-  }
+  // ── 2. Browser Web Speech (no static file found) ─────────────────────────
+  await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
 }
