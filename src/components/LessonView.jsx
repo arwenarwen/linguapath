@@ -1134,7 +1134,7 @@ function Quiz({ module, langCode, userId, onDone }) {
               : opt===chosen ? "wrong" : "dim";
             return (
               <button key={`${oi}-${opt}`} style={optionStyle(state, getLessonTheme())}
-                disabled={!!chosen} onClick={() => { speak(opt, langCode); pickMCQ(opt); }}>
+                disabled={!!chosen} onClick={() => { if (q.type !== "en") speak(opt, langCode); pickMCQ(opt); }}>
                 <span>{opt}</span>
                 {chosen && opt===q.ans && <span>✓</span>}
                 {chosen && opt===chosen && opt!==q.ans && <span>✗</span>}

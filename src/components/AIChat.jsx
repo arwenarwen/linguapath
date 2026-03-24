@@ -838,32 +838,13 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior:"smooth" }); }, [messages]);
 
-  // Play pre-recorded intro audio for situation sessions only (no TTS fallback)
+  // No auto-play for any mode — user can tap speaker icon to listen
   useEffect(() => {
     if (!messages.length) return;
-    const last = messages[messages.length - 1];
-    if (last.role !== "assistant") return;
-    if (messages.length !== 1) return;
     if (didSpeakOpeningRef.current) return;
     didSpeakOpeningRef.current = true;
-
-    // Only play pre-recorded audio for situation sessions — no auto TTS
-    const situationId = scenario?.id || scenario?.scenarioId || null;
-    if (situationId && mode !== "exam" && mode !== "conversation") {
-      const introUrl = `/audio/intros/${situationId}.mp3`;
-      fetch(introUrl, { method: "HEAD" })
-        .then(r => {
-          if (r.ok) {
-            stopAllAudio();
-            const audio = new Audio(introUrl);
-            audio.preload = "auto";
-            audio.play().catch(() => {});
-          }
-        })
-        .catch(() => {});
-    }
-    // No auto-TTS for any mode — user can tap speaker icon to listen
-  }, [messages, langCode]);
+    // Free Chat, Tutor, and all other modes are completely silent by default
+  }, [messages]);
 
   useEffect(() => {
     if (!showTrans) return;
