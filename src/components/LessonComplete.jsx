@@ -280,7 +280,7 @@ export default function LessonComplete({
           padding: "10px 14px", borderRadius: 14, marginTop: 10,
           background: "rgba(163,230,53,0.06)", border: "1px solid rgba(163,230,53,0.18)",
         }}>
-          <span style={{ fontSize: 20 }}>⭐</span>
+          <span style={{ fontSize: 20 }}>🪙</span>
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", lineHeight: 1.4 }}>
               <span style={{ fontWeight: 700, color: "#a3e635" }}>Regular XP</span> is used in the Statue Shop for bonus lessons.

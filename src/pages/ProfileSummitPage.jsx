@@ -465,7 +465,7 @@ export default function ProfileSummitPage({ user, progress, curriculum, curricul
 
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:8 }}>
             {[
-              { icon:"⭐", v:<AnimNum value={totalXP} />, l:"Regular XP" },
+              { icon:"🪙", v:<AnimNum value={totalXP} />, l:"Regular XP" },
               { icon:"📚", v:`${totalDone}/${allMods.length}`, l:"Lessons" },
               { icon:"🎖️", v:`${earnedCount}`, l:"Badges" },
             ].map(({ icon, v, l }) => (
@@ -489,7 +489,7 @@ export default function ProfileSummitPage({ user, progress, curriculum, curricul
               borderRadius:14, padding:"11px 12px",
             }}>
               <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:4 }}>
-                <span style={{ fontSize:16 }}>⭐</span>
+                <span style={{ fontSize:16 }}>🪙</span>
                 <span style={{ fontSize:13, fontWeight:900, color:"#a3e635" }}>{totalXP.toLocaleString()} XP</span>
               </div>
               <div style={{ fontSize:10, color:"rgba(255,255,255,0.7)", lineHeight:1.45, fontWeight:700 }}>Regular XP</div>

@@ -278,10 +278,10 @@ function XPToast({ xp, tp, stars, onDone }) {
       animation: "fadeUp .3s ease, fadeIn .3s ease",
     }}>
       <div style={S.pill("#c9a84c")}>
-        <span>⚡</span><span>+{xp} XP</span>
+        <span>🪙</span><span>+{xp} XP</span>
       </div>
-      <div style={S.pill("#a78bfa")}>
-        <span>🏔️</span><span>+{tp} pts</span>
+      <div style={S.pill("#f5a524")}>
+        <span>⚡</span><span>+{tp} Trail XP</span>
       </div>
       {stars === 3 && (
         <div style={S.pill("#f5c842")}>
@@ -697,7 +697,7 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
             <div style={{ fontSize:22, fontWeight:900, color:"#4a2800", fontFamily:"'Playfair Display',Georgia,serif", marginBottom:8 }}>3-Lesson Reward</div>
             <div style={{ display:"flex", gap:10, justifyContent:"center", margin:"16px 0" }}>
               <div style={{ background:"rgba(245,165,36,0.12)", border:"1px solid rgba(245,165,36,0.3)", borderRadius:14, padding:"12px 18px", textAlign:"center" }}>
-                <div style={{ fontSize:20 }}>⚡</div>
+                <div style={{ fontSize:20 }}>🪙</div>
                 <div style={{ fontSize:14, fontWeight:900, color:"#f5a524" }}>+{chestModal.xp} XP</div>
               </div>
               <div style={{ background:"rgba(245,165,36,0.12)", border:"1px solid rgba(245,165,36,0.3)", borderRadius:14, padding:"12px 18px", textAlign:"center" }}>

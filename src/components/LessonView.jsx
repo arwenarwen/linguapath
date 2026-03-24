@@ -1320,7 +1320,7 @@ function Complete({ module, score, total, levelColor, onBack, onNext, onReview, 
           border:`1px solid ${T.path}45`, color:T.path,
           animation:"xpPop 0.35s 0.1s both",
           boxShadow:`0 4px 14px ${T.path}28` }}>
-          ⚡ +{xp} XP
+          🪙 +{xp} XP
         </div>
         <div style={{ padding:"9px 16px", borderRadius:40, fontSize:13, fontWeight:800,
           background:"rgba(245,165,36,0.12)", border:"1px solid rgba(245,165,36,0.3)",
