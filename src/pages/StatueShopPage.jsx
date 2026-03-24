@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DE_STATUE_MARKETPLACE } from "../data/deStatueMarketplace";
-import { getTrailPoints, spendTrailPoints } from "../lib/appState";
+import { getStoredXP, spendXP } from "../lib/appState";
 
 const T = {
   bg: "linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)",
@@ -14,7 +14,9 @@ const T = {
   faint: "rgba(107,61,16,0.38)",
 };
 
-const UNLOCK_COST = 50; // trail points per set
+// Bonus phrase sets cost XP (regular XP, earned from lessons/streaks/AI/achievements)
+// Trail Points are kept separate — they gate unit tests instead.
+const UNLOCK_COST_XP = 200; // XP per phrase set
 
 function PhraseCard({ item, revealed }) {
   return (
@@ -33,9 +35,9 @@ function PhraseCard({ item, revealed }) {
   );
 }
 
-function SetCard({ set, tp, onUnlock, unlocked }) {
+function SetCard({ set, xp, onUnlock, unlocked }) {
   const [expanded, setExpanded] = useState(false);
-  const canAfford = tp >= UNLOCK_COST;
+  const canAfford = xp >= UNLOCK_COST_XP;
 
   return (
     <div style={{ background: T.panel, border: `1px solid ${T.border}`, borderRadius: 18, padding: 16, marginBottom: 12, boxShadow: "0 2px 12px rgba(245,165,36,0.07)" }}>
@@ -62,7 +64,7 @@ function SetCard({ set, tp, onUnlock, unlocked }) {
               fontSize: 12, fontWeight: 800, color: canAfford ? "#fff" : T.muted,
               cursor: canAfford ? "pointer" : "default", fontFamily: "inherit",
             }}>
-            🔓 {UNLOCK_COST} TP
+            🔓 {UNLOCK_COST_XP} XP
           </button>
         )}
       </div>
@@ -89,7 +91,7 @@ function SetCard({ set, tp, onUnlock, unlocked }) {
 }
 
 export default function StatueShopPage({ userId, langCode = "de", onClose }) {
-  const [tp, setTp] = useState(() => getTrailPoints(userId));
+  const [xp, setXp] = useState(() => getStoredXP(userId, langCode));
   const [unlocked, setUnlocked] = useState(() => {
     try { return JSON.parse(localStorage.getItem(`lp_statues_${userId || "anon"}`) || "[]"); } catch { return []; }
   });
@@ -110,7 +112,7 @@ export default function StatueShopPage({ userId, langCode = "de", onClose }) {
             <div style={{ fontSize:18, fontWeight:900, color:T.text, fontFamily:"'Playfair Display',Georgia,serif", marginBottom:8 }}>Bonus Phrases</div>
             <div style={{ fontSize:14, color:T.muted, marginBottom:20, lineHeight:1.5 }}>
               Unlock cultural expressions & insider phrases for {langName} with your Trail Points.<br/><br/>
-              <span style={{ color:T.path, fontWeight:700 }}>Coming soon for {langName}!</span> Earn Trail Points by completing lessons — they'll be ready to spend when the content launches.
+              <span style={{ color:T.path, fontWeight:700 }}>Coming soon for {langName}!</span> Earn XP by completing lessons, keeping streaks, and chatting with the AI — they'll be ready to spend when the content launches.
             </div>
             <button onClick={onClose} style={{ background:`linear-gradient(135deg,${T.path},#c9a84c)`, border:"none", borderRadius:12, padding:"10px 28px", fontSize:14, fontWeight:800, color:"#fff", cursor:"pointer", fontFamily:"inherit" }}>Got it</button>
           </div>
@@ -120,12 +122,12 @@ export default function StatueShopPage({ userId, langCode = "de", onClose }) {
   }
 
   function unlock(setKey) {
-    const result = spendTrailPoints(userId, UNLOCK_COST);
-    if (!result) { setToast("Not enough Trail Points!"); setTimeout(() => setToast(""), 2500); return; }
+    const result = spendXP(userId, langCode, UNLOCK_COST_XP);
+    if (!result) { setToast("Not enough XP! Keep doing lessons to earn more."); setTimeout(() => setToast(""), 2500); return; }
     const next = [...unlocked, setKey];
     setUnlocked(next);
     localStorage.setItem(`lp_statues_${userId || "anon"}`, JSON.stringify(next));
-    setTp(getTrailPoints(userId));
+    setXp(getStoredXP(userId, langCode));
     setToast("🎉 Phrases unlocked!");
     setTimeout(() => setToast(""), 2500);
   }
@@ -154,11 +156,11 @@ export default function StatueShopPage({ userId, langCode = "de", onClose }) {
           <div style={{ fontSize: 28 }}>🗿</div>
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 17, fontWeight: 900, color: T.text, fontFamily: "'Playfair Display',Georgia,serif" }}>Cultural Phrases</div>
-            <div style={{ fontSize: 11, color: T.muted }}>Unlock bonus expressions with Trail Points</div>
+            <div style={{ fontSize: 11, color: T.muted }}>Unlock bonus expressions with XP</div>
           </div>
           <div style={{ background: `rgba(245,165,36,0.1)`, border: `1px solid ${T.border}`, borderRadius: 12, padding: "6px 12px", textAlign: "center" }}>
-            <div style={{ fontSize: 13, fontWeight: 900, color: T.path }}>⚡ {tp}</div>
-            <div style={{ fontSize: 9, color: T.faint, textTransform: "uppercase", letterSpacing: 0.8 }}>TP</div>
+            <div style={{ fontSize: 13, fontWeight: 900, color: T.path }}>⭐ {xp}</div>
+            <div style={{ fontSize: 9, color: T.faint, textTransform: "uppercase", letterSpacing: 0.8 }}>XP</div>
           </div>
           <button onClick={onClose} style={{ background: "none", border: "none", fontSize: 20, color: T.muted, cursor: "pointer", padding: "4px 8px", lineHeight: 1 }}>✕</button>
         </div>
@@ -199,7 +201,7 @@ export default function StatueShopPage({ userId, langCode = "de", onClose }) {
               <SetCard
                 key={set.key}
                 set={set}
-                tp={tp}
+                xp={xp}
                 unlocked={unlocked.includes(set.key)}
                 onUnlock={unlock}
               />

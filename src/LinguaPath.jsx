@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import MountainAppShell from "./pages/MountainAppShell";
 import OnboardingLevelGate from "./components/OnboardingLevelGate";
-import { supabase, setUserRole, getOnboardingProfile, saveOnboardingProfile, clearOnboardingProfile, savePlacementState } from "./lib/appState";
+import { supabase, setUserRole, getOnboardingProfile, saveOnboardingProfile, clearOnboardingProfile, savePlacementState, getPlacementState } from "./lib/appState";
 
 // ─── Access control ──────────────────────────────────────────────────────────
 const ADMIN_EMAIL    = "borowiakarwen@gmail.com";
@@ -1858,6 +1858,9 @@ export default function Root() {
   const [activeLang, setActiveLang] = useState(null);
   const [userTier, setUserTier] = useState("free");
   const [onboardingProfile, setOnboardingProfile] = useState(null);
+  // When switching to a brand-new language, holds the pre-selected code so
+  // OnboardingLevelGate skips the language-picker step and starts at "Do you know some?"
+  const [pendingOnboardingLang, setPendingOnboardingLang] = useState(null);
 
   useEffect(()=>{
     // ── Detect recovery token in URL (hash or query param) ──
@@ -1972,8 +1975,21 @@ export default function Root() {
   }
 
   function handlePick(code) {
-    localStorage.setItem("lp_lang",code);
-    setActiveLang(code); setShowPicker(false); setView("app");
+    const existing = getPlacementState(user?.id, code);
+    if (existing?.placedLevel) {
+      // Already onboarded for this language — just switch straight in
+      localStorage.setItem("lp_lang", code);
+      setActiveLang(code);
+      setShowPicker(false);
+      setView("app");
+    } else {
+      // New language — run the proficiency check (skipping the language picker step)
+      setPendingOnboardingLang(code);
+      setActiveLang(code);
+      localStorage.setItem("lp_lang", code);
+      setShowPicker(false);
+      setView("onboarding");
+    }
   }
 
   if (view==="loading") return (
@@ -1997,7 +2013,11 @@ export default function Root() {
   if (view==="onboarding" && user) return (
     <div className="lp-root" style={{minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",padding:"24px",background:"linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)"}}>
       <style>{CSS}</style>
-      <OnboardingLevelGate onFinish={handleOnboardingFinish} appName="LinguaPath" />
+      <OnboardingLevelGate
+        onFinish={(profile) => { setPendingOnboardingLang(null); handleOnboardingFinish(profile); }}
+        appName="LinguaPath"
+        initialLang={pendingOnboardingLang}
+      />
     </div>
   );
 

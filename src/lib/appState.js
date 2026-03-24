@@ -49,6 +49,12 @@ export function calcLessonXP(stars, streakDays, proUser) {
   return Math.round((base + bonus) * (proUser ? 1.15 : 1));
 }
 
+// ── Trail Points (TP) ─────────────────────────────────────────────────────────
+// Earned by completing lessons. Spent to UNLOCK UNIT TESTS (checkpoints).
+// You need CHECKPOINT_TP_REQUIRED TP to start a checkpoint exam.
+// If you don't have enough, redo lessons to earn more TP first.
+export const CHECKPOINT_TP_REQUIRED = 100;
+
 export function getTrailPoints(userId) { return lsGetJSON(`lp_tp_${userId || "anon"}`, 0); }
 export function addTrailPoints(userId, amount) {
   const next = getTrailPoints(userId) + amount;
@@ -62,6 +68,52 @@ export function spendTrailPoints(userId, amount) {
   return true;
 }
 export function trailPointsForLesson(stars) { return stars === 3 ? 15 : stars === 2 ? 10 : 5; }
+
+// ── XP spend (for bonus lesson / phrase unlocks in the shop) ─────────────────
+// Regular XP is earned from lessons, streaks, AI sessions, achievements.
+// It is spent in the Cultural Phrases shop to unlock bonus content.
+export function getStoredXP(userId, langCode) {
+  const p = lsGetJSON(`lp_progress_${userId || "anon"}_${langCode || "de"}`, { xp: 0 });
+  return p.xp || 0;
+}
+export function spendXP(userId, langCode, amount) {
+  const key = `lp_progress_${userId || "anon"}_${langCode || "de"}`;
+  const p = lsGetJSON(key, { xp: 0, completed: [] });
+  if ((p.xp || 0) < amount) return false;
+  p.xp = (p.xp || 0) - amount;
+  lsSetJSON(key, p);
+  return true;
+}
+
+// ── Weekly stats helpers ──────────────────────────────────────────────────────
+function _isoWeekKey() {
+  const d = new Date(); d.setHours(0,0,0,0);
+  d.setDate(d.getDate() + 3 - (d.getDay() + 6) % 7);
+  const w1 = new Date(d.getFullYear(), 0, 4);
+  const wn = 1 + Math.round(((d - w1) / 86400000 - 3 + (w1.getDay() + 6) % 7) / 7);
+  return `${d.getFullYear()}-W${String(wn).padStart(2,"0")}`;
+}
+export function getWeekKey() { return _isoWeekKey(); }
+export function addWeeklyLesson(userId) {
+  const key = `lp_wl_${userId || "anon"}_${_isoWeekKey()}`;
+  lsSetJSON(key, (lsGetJSON(key, 0) || 0) + 1);
+}
+export function getWeeklyLessons(userId) {
+  return lsGetJSON(`lp_wl_${userId || "anon"}_${_isoWeekKey()}`, 0) || 0;
+}
+export function addWeeklyXP(userId, amount) {
+  const key = `lp_wxp_${userId || "anon"}_${_isoWeekKey()}`;
+  lsSetJSON(key, (lsGetJSON(key, 0) || 0) + amount);
+}
+export function getWeeklyXP(userId) {
+  return lsGetJSON(`lp_wxp_${userId || "anon"}_${_isoWeekKey()}`, 0) || 0;
+}
+export function hasClaimedWeeklyReward(userId) {
+  return !!lsGetJSON(`lp_wclaimed_${userId || "anon"}_${_isoWeekKey()}`, false);
+}
+export function claimWeeklyReward(userId) {
+  lsSetJSON(`lp_wclaimed_${userId || "anon"}_${_isoWeekKey()}`, true);
+}
 
 export const ENERGY_MAX = 100;
 export const ENERGY_PER_LESSON = 20;

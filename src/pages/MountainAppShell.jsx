@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import BottomNavPro from "../components/BottomNavPro";
 import WaitlistPage from "./WaitlistPage";
 import StatueShopPage from "./StatueShopPage";
+import WeeklyFoxReward from "../components/WeeklyFoxReward";
 import LearnJourneyPage from "./LearnJourneyPage";
 import SituationsHub from "./SituationsHub";
 import TutorModesPage from "./TutorModesPage";
@@ -21,7 +22,8 @@ import {
   canStartLesson, incrementDailyLesson, getDailyUsage, addDailyXp,
   FREE_LESSONS_PER_DAY, levelUsesEnergy, savePlacementState, getPlacementState,
   getTrailPoints, addTrailPoints, trailPointsForLesson, getCheckpointPass,
-  saveLessonStars, getLessonStarsMap, getXPLevel, LEVEL_TITLES, getDailyGoalProgress, DAILY_LESSON_GOAL
+  saveLessonStars, getLessonStarsMap, getXPLevel, LEVEL_TITLES, getDailyGoalProgress, DAILY_LESSON_GOAL,
+  hasClaimedWeeklyReward, getWeeklyXP, getWeeklyLessons, addWeeklyLesson, addWeeklyXP,
 } from "../lib/appState";
 import {
   calculateRewards,
@@ -309,6 +311,7 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
   const [chestModal, setChestModal] = useState(null);     // { xp, stars }
   const [showWaitlist, setShowWaitlist] = useState(false);
   const [showStatues, setShowStatues] = useState(false);
+  const [showWeeklyReward, setShowWeeklyReward] = useState(false);
   const [starsMap, setStarsMap] = useState(() => getLessonStarsMap(user?.id, activeLangProp || "de"));
   const prevXPLevelRef = useRef(getXPLevel(loadProgress(user?.id, activeLangProp || "de").xp).level);
   const progressRef = useRef(progress);
@@ -317,6 +320,18 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
 
   useEffect(() => { progressRef.current = progress; }, [progress]);
   useEffect(() => { if (activeLangProp) setActiveLang(activeLangProp); }, [activeLangProp]);
+
+  // Show weekly fox reward once per ISO week, after a brief delay so the trail loads first
+  useEffect(() => {
+    if (!user?.id) return;
+    if (hasClaimedWeeklyReward(user.id)) return;
+    // Only show if user has done at least 1 lesson ever (don't show on brand-new accounts)
+    const p = loadProgress(user.id, activeLang);
+    if (!p?.completed?.length) return;
+    const t = setTimeout(() => setShowWeeklyReward(true), 1800);
+    return () => clearTimeout(t);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.id]);
 
   // Close lesson instantly — no fade-out, so the dark shell never flashes through.
   // The trail is always rendered behind the lesson overlay; closing simply reveals it.
@@ -412,6 +427,8 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
     progressRef.current = next;
     saveProgress(user?.id, activeLang, next);
     addTrailPoints(user?.id, earnedTP);
+    addWeeklyLesson(user?.id);
+    addWeeklyXP(user?.id, summary.totalXP);
     addDailyXp(user?.id, summary.totalXP);
 
     // Check if this lesson completed an entire CEFR level
@@ -491,7 +508,29 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
   }
 
   const curriculum = CURRICULA[activeLang] || {};
-  const langName = curriculum.language || activeLang.toUpperCase();
+  const langName = curriculum.language || activeLang?.toUpperCase() || "Language";
+
+  // Guard against missing curriculum data (prevents black screen on bad data)
+  const CEFR_KEYS = ["A1","A2","B1","B2","C1","C2"];
+  const hasCurriculum = CEFR_KEYS.some(k => Array.isArray(curriculum[k]?.modules) && curriculum[k].modules.length > 0);
+  if (!hasCurriculum) {
+    return (
+      <div style={{ minHeight:"100vh", background:"#07070d", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:32, textAlign:"center", color:"rgba(240,237,230,0.6)", fontFamily:"'DM Sans',sans-serif" }}>
+        <div style={{ fontSize:52, marginBottom:16 }}>⛰️</div>
+        <div style={{ fontSize:18, fontWeight:700, color:"rgba(240,237,230,0.85)", marginBottom:8 }}>
+          Couldn't load the {langName} trail
+        </div>
+        <div style={{ fontSize:14, maxWidth:320, lineHeight:1.6, marginBottom:28 }}>
+          The lesson data didn't load properly. This usually fixes itself on a refresh.
+        </div>
+        <button
+          onClick={() => window.location.reload()}
+          style={{ padding:"12px 32px", borderRadius:999, border:"none", background:"#f5a524", color:"#fff", fontWeight:800, fontSize:15, cursor:"pointer" }}>
+          Reload App
+        </button>
+      </div>
+    );
+  }
 
   const getAllMods = () => ["A1","A2","B1","B2","C1","C2"].flatMap(k => curriculum[k]?.modules || []);
 
@@ -602,6 +641,27 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
 
       {/* 🗿 Cultural statues */}
       {showStatues && <StatueShopPage userId={user?.id} langCode={activeLang} onClose={() => setShowStatues(false)} />}
+
+      {/* 🦊 Weekly fox reward */}
+      {showWeeklyReward && (
+        <WeeklyFoxReward
+          userId={user?.id}
+          weeklyXP={getWeeklyXP(user?.id)}
+          streak={getStreak(user?.id)?.count || 0}
+          lessonsThisWeek={getWeeklyLessons(user?.id)}
+          onClaim={(bonusXP) => {
+            setShowWeeklyReward(false);
+            // Add the bonus XP to progress
+            const cur = progressRef.current;
+            const next = { ...cur, xp: (cur.xp || 0) + bonusXP };
+            setProgress(next);
+            progressRef.current = next;
+            saveProgress(user?.id, activeLang, next);
+            setToast({ msg: `+${bonusXP} XP — weekly reward claimed! 🦊`, type: "xp" });
+            setTimeout(() => setToast(null), 3000);
+          }}
+        />
+      )}
 
       {/* 🎉 Level-up celebration */}
       {levelUpModal && (

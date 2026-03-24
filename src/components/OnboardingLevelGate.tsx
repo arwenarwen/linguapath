@@ -14,9 +14,10 @@ const LANGUAGES = [
   { code:"el", name:"Greek",      native:"Ελληνικά",  flag:"🇬🇷" },
 ];
 
-export default function OnboardingLevelGate({ onFinish, appName = "LinguaPath" }) {
-  const [step, setStep] = useState("language");
-  const [selectedLang, setSelectedLang] = useState(null);
+export default function OnboardingLevelGate({ onFinish, appName = "LinguaPath", initialLang = null }: any) {
+  // initialLang: skip the language picker when switching to a new language from inside the app
+  const [step, setStep] = useState(initialLang ? "welcome" : "language");
+  const [selectedLang, setSelectedLang] = useState<string | null>(initialLang || null);
   const [answers, setAnswers] = useState({});
   const correctAnswers = useMemo(() => PLACEMENT_QUESTIONS.reduce((sum, q) => sum + (answers[q.id] === q.correctIndex ? 1 : 0), 0), [answers]);
   const placedLevel = useMemo(() => calculatePlacementLevel(correctAnswers), [correctAnswers]);
