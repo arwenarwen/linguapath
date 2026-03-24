@@ -257,14 +257,49 @@ export async function playWordAudio(text, langCode, opts = {}) {
 
 /**
  * Like playWordAudio but AWAITS audio completion before resolving.
- * Use this when you need to chain audio sequentially (e.g. exam feedback → next question).
- * Always calls stopAllAudio first. Falls back to a timed wait on error.
+ * Priority: 1) pre-recorded static file  2) ElevenLabs TTS  3) browser speechSynthesis
  */
 export async function playAndWait(text, langCode, opts = {}) {
   if (!text || typeof window === "undefined") return;
   const resolvedLang = langCode || "en";
   stopAllAudio();
 
+  // ── 1. Try pre-recorded static audio first (free, instant) ────────────────
+  const clean = String(text).trim();
+  if (clean.length <= 120) {
+    const { slugifyStaticAudio } = await import("./staticAudio");
+    const slug = slugifyStaticAudio(clean);
+    const candidates = [
+      `/audio/${resolvedLang}/${slug}.mp3`,
+      `/audio/exam/${resolvedLang}/${slug}.mp3`,
+      `/audio/${resolvedLang}/statues/${slug}.mp3`,
+    ];
+    for (const url of candidates) {
+      try {
+        const head = await fetch(url, { method: "HEAD", cache: "force-cache" });
+        if (head.ok) {
+          const audio = new Audio(url);
+          audio.preload = "auto";
+          _activeHtmlAudio = audio;
+          _notifySpeaking(true, text);
+          await audio.play();
+          await new Promise(resolve => {
+            const done = () => {
+              if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
+              _notifySpeaking(false);
+              resolve();
+            };
+            audio.onended = done;
+            audio.onerror = done;
+            setTimeout(done, opts.maxMs || 15000);
+          });
+          return;
+        }
+      } catch {}
+    }
+  }
+
+  // ── 2. ElevenLabs TTS ─────────────────────────────────────────────────────
   _ttsAbortController = new AbortController();
   const signal = _ttsAbortController.signal;
 
