@@ -1,6 +1,6 @@
 // Exam bank loading, formatting, audio playback, and scoring utilities.
 
-import { stopAllAudio, playWordAudio, playAndWait, getTutorVoiceId, notifySpeaking } from "./audioPlayer";
+import { stopAllAudio, playWordAudio, playExamAudio, getTutorVoiceId, notifySpeaking } from "./audioPlayer";
 
 // ── Bank loading ───────────────────────────────────────────────────────────────
 export async function loadLocalExamBank(langCode, level) {
@@ -253,21 +253,15 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
 
   // ── listen: English prompt first, then the target-language word ──────────
   if (type === "listen" && question.audio) {
-    await playAndWait("Listen and choose what you heard.", "en", {
-      voiceId: getTutorVoiceId("en"), maxMs: 4000, fallbackMs: 800,
-    });
+    await playExamAudio("Listen and choose what you heard.", "en", { maxMs: 4000 });
     await new Promise(r => setTimeout(r, 350));
-    await playAndWait(String(question.audio), langCode, {
-      voiceId: getTutorVoiceId(langCode), maxMs: 6000, fallbackMs: 1000,
-    });
+    await playExamAudio(String(question.audio), langCode, { maxMs: 6000 });
     return;
   }
 
   // ── fill: say the instruction in English only ────────────────────────────
   if (type === "fill") {
-    await playAndWait("Complete the sentence.", "en", {
-      voiceId: getTutorVoiceId("en"), maxMs: 4000, fallbackMs: 800,
-    });
+    await playExamAudio("Complete the sentence.", "en", { maxMs: 4000 });
     return;
   }
 
@@ -275,9 +269,7 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
   if (type === "mcq") {
     const text = String(question.question || "").trim();
     if (text) {
-      await playAndWait(text, langCode, {
-        voiceId: getTutorVoiceId(langCode), maxMs: 10000, fallbackMs: 1000,
-      });
+      await playExamAudio(text, langCode, { maxMs: 10000 });
     }
     return;
   }
@@ -285,9 +277,7 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
   // ── translate + translate-en: read full question text in English ─────────
   const text = String(question.question || "").trim();
   if (text) {
-    await playAndWait(text, "en", {
-      voiceId: getTutorVoiceId("en"), maxMs: 10000, fallbackMs: 1000,
-    });
+    await playExamAudio(text, "en", { maxMs: 10000 });
   }
 }
 
@@ -296,8 +286,7 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
  */
 export async function playExamOptionAudio(question, level, langCode, optionIndex, optionText) {
   if (!question || optionIndex < 0) return;
-  stopAllAudio();
-  if (optionText) playWordAudio(String(optionText), langCode, { voiceId: getTutorVoiceId(langCode) });
+  if (optionText) await playExamAudio(String(optionText), langCode, { maxMs: 5000 });
 }
 
 /**
@@ -335,12 +324,12 @@ export async function playExamFeedbackAudio(isCorrect, currentQuestion, langCode
       } catch {}
     }
     if (!played) {
-      await playAndWait("Correct!", "en", { voiceId: getTutorVoiceId("en"), maxMs: 3000, fallbackMs: 800 });
+      await playExamAudio("Correct!", "en", { maxMs: 3000 });
     }
   } else {
     const answer = currentQuestion?.correct_answer || "";
     const text = `Incorrect. The correct answer is: ${answer}`;
-    await playAndWait(text, "en", { voiceId: getTutorVoiceId("en"), maxMs: 10000, fallbackMs: 1500 });
+    await playExamAudio(text, "en", { maxMs: 10000 });
   }
 }
 

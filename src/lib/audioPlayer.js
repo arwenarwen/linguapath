@@ -256,6 +256,55 @@ export async function playWordAudio(text, langCode, opts = {}) {
 }
 
 /**
+ * Exam-safe audio — NO ElevenLabs, EVER.
+ * Priority: 1) pre-recorded static file  2) browser speechSynthesis
+ * Use this for ALL exam question / feedback / option audio.
+ */
+export async function playExamAudio(text, langCode, opts = {}) {
+  if (!text || typeof window === "undefined") return;
+  const resolvedLang = langCode || "en";
+  stopAllAudio();
+
+  const clean = String(text).trim();
+  if (!clean) return;
+
+  // ── 1. Try pre-recorded static audio ─────────────────────────────────────
+  const { slugifyStaticAudio } = await import("./staticAudio");
+  const slug = slugifyStaticAudio(clean);
+  const candidates = [
+    `/audio/${resolvedLang}/${slug}.mp3`,
+    `/audio/exam/${resolvedLang}/${slug}.mp3`,
+    `/audio/${resolvedLang}/statues/${slug}.mp3`,
+  ];
+  for (const url of candidates) {
+    try {
+      const head = await fetch(url, { method: "HEAD", cache: "force-cache" });
+      if (head.ok) {
+        const audio = new Audio(url);
+        audio.preload = "auto";
+        _activeHtmlAudio = audio;
+        _notifySpeaking(true, text);
+        await audio.play();
+        await new Promise(resolve => {
+          const done = () => {
+            if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
+            _notifySpeaking(false);
+            resolve();
+          };
+          audio.onended = done;
+          audio.onerror = done;
+          setTimeout(done, opts.maxMs || 15000);
+        });
+        return; // ✅ played from static file — done
+      }
+    } catch {}
+  }
+
+  // ── 2. Browser Web Speech fallback (free, no API quota) ──────────────────
+  await _webSpeechSpeak(normalizeTextForSpeech(clean, resolvedLang), resolvedLang);
+}
+
+/**
  * Like playWordAudio but AWAITS audio completion before resolving.
  * Priority: 1) pre-recorded static file  2) ElevenLabs TTS  3) browser speechSynthesis
  */
