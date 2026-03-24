@@ -17,7 +17,7 @@ import {
   extractOptionChoice, buildLocalExamReport,
 } from '../lib/examUtils';
 import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
-import FoxTutorCard, { ANIMAL_VIDEOS, ANIMAL_STILLS, CEFR_ANIMAL, DEFAULT_VIDEO, DEFAULT_STILL } from './FoxTutorCard';
+import FoxTutorCard from './FoxTutorCard';
 import { GLOBAL_CSS } from '../config/theme';
 import { getAIChatLangConfig } from '../config/langConfig';
 import { LANGUAGES, VISUAL_QUERY_MAP, NUMBER_VALUE_MAP } from '../config/languages';
@@ -1234,51 +1234,34 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         </div>
       )}
 
-      {/* Messages — two-column in exam mode (fox left, questions right) */}
+      {/* Messages — full width, mascot floats in corner */}
       <div style={{ flex:1, display:"flex", flexDirection:"row", overflow:"hidden" }}>
-
-        {/* ── Cinematic animal panel — fox for chat/tutor, CEFR animal for exam ── */}
-        {!localExamFinished && (
-          <div style={{
-            width: "46%",
-            minWidth: 200,
-            maxWidth: 420,
-            flexShrink: 0,
-            alignSelf: "stretch",
-            position: "relative",
-            overflow: "hidden",
-          }}>
-            <FoxTutorCard
-              style={{ position: "absolute", inset: 0, borderRadius: 0 }}
-              src={mode === "exam"
-                ? (ANIMAL_VIDEOS[CEFR_ANIMAL[cefrLevel]] || DEFAULT_VIDEO)
-                : DEFAULT_VIDEO}
-              still={mode === "exam"
-                ? (ANIMAL_STILLS[CEFR_ANIMAL[cefrLevel]] || DEFAULT_STILL)
-                : DEFAULT_STILL}
-            />
-          </div>
-        )}
 
         {/* ── Scrollable messages column ── */}
         <div style={{ flex:1, overflowY:"auto", padding:"14px 14px 18px", display:"flex", flexDirection:"column", gap:12, position:"relative" }}>
-        {/* Decorative bg animal — only when fox panel is not visible */}
-        {localExamFinished && tutorAnimalBg && CHAT_ANIMAL_SVGS[tutorAnimalKey] && (
-          <div style={{
-            position:"sticky", top:0, float:"right", width:110, height:130,
-            marginLeft:8, marginBottom:-130, marginRight:-4,
-            flexShrink:0, pointerEvents:"none", zIndex:1,
-            filter:`drop-shadow(0 8px 20px ${tutorAnimalColor}44)`,
-            animation:"animalBob 3.5s ease-in-out infinite",
-            opacity:0.9,
-          }}>
-            {CHAT_ANIMAL_SVGS[tutorAnimalKey]}
-          </div>
-        )}
+        {/* Floating mascot — always visible, CEFR animal for exam, fox for chat/tutor */}
+        {(() => {
+          const EXAM_SVG = { A1:"🐇", A2:"🐇", B1:"🦉", B2:"🐺", C1:"🦁", C2:"🦊" };
+          const svgKey = mode === "exam" ? (EXAM_SVG[cefrLevel] || "🦊") : (tutorAnimalKey || "🦊");
+          const svg = CHAT_ANIMAL_SVGS[svgKey];
+          if (!svg) return null;
+          return (
+            <div style={{
+              position:"sticky", top:0, float:"right", width:100, height:120,
+              marginLeft:8, marginBottom:-120, marginRight:-4,
+              flexShrink:0, pointerEvents:"none", zIndex:1,
+              filter:`drop-shadow(0 6px 16px rgba(249,115,22,0.3))`,
+              animation:"animalBob 3.5s ease-in-out infinite",
+              opacity:0.92,
+            }}>
+              {svg}
+            </div>
+          );
+        })()}
         <div style={{ width:"100%", maxWidth:980, margin:"0 auto", flex:1, display:"flex", flexDirection:"column", gap:12 }}>
         {messages.map((msg, i) => (
           <div key={i} style={{ display:"flex", justifyContent:msg.role==="user"?"flex-end":"flex-start", alignItems:"flex-end", gap:8 }}>
-            {msg.role === "assistant" && localExamFinished && (
+            {msg.role === "assistant" && (
               <div style={{ flexShrink:0, width:34, overflow:"visible" }}>
                 <FoxTutorCard size={34} compact style={{ borderRadius:10, width:34 }} />
               </div>
