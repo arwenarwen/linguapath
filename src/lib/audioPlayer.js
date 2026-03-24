@@ -33,6 +33,32 @@ function _notifySpeaking(on, text = "") {
   _speakingListeners.forEach(fn => fn(on, _lastSpeechText));
 }
 
+/**
+ * Web Speech API fallback — free, built into every modern browser.
+ * Used automatically whenever ElevenLabs quota is exceeded or the API fails.
+ */
+function _webSpeechSpeak(text, langCode) {
+  return new Promise((resolve) => {
+    if (typeof window === "undefined" || !window.speechSynthesis) { resolve(); return; }
+    try {
+      window.speechSynthesis.cancel(); // clear any pending utterances
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang  = _LANG_BCP47[langCode] || "en-US";
+      utterance.rate  = 0.88;
+      utterance.pitch = 1.0;
+      _notifySpeaking(true, text);
+      utterance.onend   = () => { _notifySpeaking(false); resolve(); };
+      utterance.onerror = () => { _notifySpeaking(false); resolve(); };
+      window.speechSynthesis.speak(utterance);
+      // Safety timeout (30s max)
+      setTimeout(() => { _notifySpeaking(false); resolve(); }, 30000);
+    } catch (e) {
+      _notifySpeaking(false);
+      resolve();
+    }
+  });
+}
+
 export function stopAllAudio() {
   try {
     if (_ttsAbortController) {
@@ -224,9 +250,8 @@ export async function playWordAudio(text, langCode, opts = {}) {
     _notifySpeaking(false);
     if (e?.name === "AbortError") return;
     console.error("[TTS] Static/ElevenLabs playWordAudio failed:", e);
-    if (typeof window !== "undefined") {
-      window.__LP_LAST_TTS_ERROR__ = String(e?.message || e || "Unknown TTS error");
-    }
+    // Fall back to browser TTS
+    await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
   }
 }
 
@@ -256,13 +281,14 @@ export async function playAndWait(text, langCode, opts = {}) {
     });
 
     if (!res.ok) {
-      await new Promise(r => setTimeout(r, opts.fallbackMs || 2500));
+      // ElevenLabs failed (quota, error) — fall back to browser TTS
+      await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
       return;
     }
 
     const blob = await res.blob();
     if (!blob || blob.size === 0) {
-      await new Promise(r => setTimeout(r, opts.fallbackMs || 2500));
+      await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
       return;
     }
 
@@ -287,12 +313,9 @@ export async function playAndWait(text, langCode, opts = {}) {
     });
   } catch (e) {
     _notifySpeaking(false);
-    if (e?.name !== "AbortError") {
-      console.error("[TTS playAndWait] failed:", e);
-    }
-    // fallback wait so callers don't chain instantly on error
-    if (e?.name !== "AbortError") {
-      await new Promise(r => setTimeout(r, opts.fallbackMs || 1500));
-    }
+    if (e?.name === "AbortError") return;
+    console.error("[TTS playAndWait] failed:", e);
+    // Fall back to browser TTS on any error
+    await _webSpeechSpeak(normalizeTextForSpeech(text, resolvedLang), resolvedLang);
   }
 }
