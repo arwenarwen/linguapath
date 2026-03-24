@@ -1,6 +1,7 @@
 // Exam bank loading, formatting, audio playback, and scoring utilities.
 
-import { stopAllAudio, playWordAudio, playExamAudio, getTutorVoiceId, notifySpeaking } from "./audioPlayer";
+import { stopAllAudio, playExamAudio } from "./audioPlayer";
+import { slugifyStaticAudio } from "./staticAudio";
 
 // ── Bank loading ───────────────────────────────────────────────────────────────
 export async function loadLocalExamBank(langCode, level) {
@@ -234,110 +235,55 @@ export function buildLocalExamReport(examBank, score, wrongQuestions = []) {
 }
 
 // ── Audio playback ─────────────────────────────────────────────────────────────
+// All exam audio uses PRE-RECORDED files only.
+// File naming: /audio/exam/{lang}/{LEVEL}_Q{NN}.mp3      ← question
+//              /audio/exam/{lang}/{LEVEL}_Q{NN}_wrong.mp3 ← wrong feedback
+//              /audio/exam/{lang}/correct.mp3              ← correct feedback
+//              /audio/{lang}/{slug}.mp3                    ← individual words (options)
+
+function _examQId(question, fallbackIndex = 1) {
+  if (question.id) return question.id;
+  const n = question.question_number || fallbackIndex;
+  return `Q${String(n).padStart(2, "0")}`;
+}
 
 /**
- * Play the audio for a question.
- * All branches are properly awaitable — callers can await this to know when audio finishes.
- *
- * listen      → "Listen and choose what you heard." (EN) + target-lang word
- * fill        → "Complete the sentence." (EN)
- * translate   → full question text in English  e.g. "Translate to German: My name is Anna"
- * translate-en→ full question text in English  e.g. "What does 'danke' mean in German?"
- * mcq         → question text in target language (situational / real-life scenarios)
+ * Play the pre-recorded audio for an exam question.
+ * Uses /audio/exam/{lang}/{LEVEL}_{ID}.mp3  e.g. /audio/exam/de/A1_Q01.mp3
+ * Silent if the file hasn't been recorded yet.
  */
 export async function playExamQuestionAudio(question, level, langCode, qIndex = 1, total = 25) {
   if (!question) return;
-  stopAllAudio();
-
-  const type = question.exercise_type || "";
-
-  // ── listen: English prompt first, then the target-language word ──────────
-  if (type === "listen" && question.audio) {
-    await playExamAudio("Listen and choose what you heard.", "en", { maxMs: 4000 });
-    await new Promise(r => setTimeout(r, 350));
-    await playExamAudio(String(question.audio), langCode, { maxMs: 6000 });
-    return;
-  }
-
-  // ── fill: say the instruction in English only ────────────────────────────
-  if (type === "fill") {
-    await playExamAudio("Complete the sentence.", "en", { maxMs: 4000 });
-    return;
-  }
-
-  // ── mcq (situational/real-life): read the full question in target language ─
-  if (type === "mcq") {
-    const text = String(question.question || "").trim();
-    if (text) {
-      await playExamAudio(text, langCode, { maxMs: 10000 });
-    }
-    return;
-  }
-
-  // ── translate + translate-en: read full question text in English ─────────
-  const text = String(question.question || "").trim();
-  if (text) {
-    await playExamAudio(text, "en", { maxMs: 10000 });
-  }
+  const id  = _examQId(question, qIndex);
+  const url = `/audio/exam/${langCode}/${level}_${id}.mp3`;
+  await playExamAudio(url, { maxMs: 15000 });
 }
 
 /**
- * Play audio for a single answer option when the user taps it.
+ * Play the pre-recorded audio for an answer option the user tapped.
+ * Options are shuffled so we look up the word directly from /audio/{lang}/{slug}.mp3
  */
 export async function playExamOptionAudio(question, level, langCode, optionIndex, optionText) {
-  if (!question || optionIndex < 0) return;
-  if (optionText) await playExamAudio(String(optionText), langCode, { maxMs: 5000 });
+  if (!question || optionIndex < 0 || !optionText) return;
+  const slug = slugifyStaticAudio(String(optionText));
+  await playExamAudio(`/audio/${langCode}/${slug}.mp3`, { maxMs: 5000 });
 }
 
 /**
- * Play feedback audio only (correct chime or incorrect spoken feedback).
- * Returns a Promise that resolves when audio finishes.
- * Does NOT chain to the next question — caller is responsible for that.
+ * Play feedback audio for a correct or wrong answer.
+ * Correct → /audio/exam/{lang}/correct.mp3
+ * Wrong   → /audio/exam/{lang}/{LEVEL}_{ID}_wrong.mp3
+ * Silent if the file doesn't exist.
+ *
+ * NOTE: `level` is required for wrong-answer feedback.
  */
-export async function playExamFeedbackAudio(isCorrect, currentQuestion, langCode) {
-  stopAllAudio();
-
+export async function playExamFeedbackAudio(isCorrect, currentQuestion, langCode, level) {
   if (isCorrect) {
-    // Try a pre-recorded "Correct!" / "Richtig!" chime first
-    const candidates = [
-      `/audio/${langCode}/correct.mp3`,
-      `/audio/${langCode}/richtig.mp3`,
-      "/audio/de/richtig.mp3",
-    ];
-    let played = false;
-    for (const url of candidates) {
-      try {
-        const r = await fetch(url, { method: "HEAD", cache: "force-cache" });
-        if (r.ok) {
-          const fb = new Audio(url);
-          fb.preload = "auto";
-          notifySpeaking(true, "Correct!");
-          await fb.play().catch(() => {});
-          await new Promise(res => {
-            fb.onended  = () => { notifySpeaking(false); res(); };
-            fb.onerror  = () => { notifySpeaking(false); res(); };
-            setTimeout(() => { notifySpeaking(false); res(); }, 2500);
-          });
-          played = true;
-          break;
-        }
-      } catch {}
-    }
-    if (!played) {
-      await playExamAudio("Correct!", "en", { maxMs: 3000 });
-    }
+    await playExamAudio(`/audio/exam/${langCode}/correct.mp3`, { maxMs: 3000 });
   } else {
-    const answer = currentQuestion?.correct_answer || "";
-    const text = `Incorrect. The correct answer is: ${answer}`;
-    await playExamAudio(text, "en", { maxMs: 10000 });
-  }
-}
-
-// Keep for backwards compat — now just wraps feedback + optional next question
-export async function playExamFeedbackAndNext(isCorrect, currentQuestion, nextQuestion, level, langCode, nextIndex, total) {
-  await playExamFeedbackAudio(isCorrect, currentQuestion, langCode);
-  if (nextQuestion) {
-    await new Promise(r => setTimeout(r, 300));
-    await playExamQuestionAudio(nextQuestion, level, langCode, nextIndex, total);
+    const id  = currentQuestion ? _examQId(currentQuestion) : "";
+    if (id && level) {
+      await playExamAudio(`/audio/exam/${langCode}/${level}_${id}_wrong.mp3`, { maxMs: 10000 });
+    }
   }
 }

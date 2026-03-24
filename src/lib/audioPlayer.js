@@ -208,51 +208,34 @@ export async function playWordAudio(text, langCode, opts = {}) {
 }
 
 /**
- * Exam-safe audio — NO ElevenLabs, EVER.
- * Priority: 1) pre-recorded static file  2) browser speechSynthesis
- * Use this for ALL exam question / feedback / option audio.
+ * Play a pre-recorded exam audio file by exact URL.
+ * Silent if the file doesn't exist — NO ElevenLabs, NO Web Speech.
+ * maxMs: safety timeout in ms (default 15000).
  */
-export async function playExamAudio(text, langCode, opts = {}) {
-  if (!text || typeof window === "undefined") return;
-  const resolvedLang = langCode || "en";
+export async function playExamAudio(url, opts = {}) {
+  if (!url || typeof window === "undefined") return;
   stopAllAudio();
-
-  const clean = String(text).trim();
-  if (!clean) return;
-
-  // ── 1. Try pre-recorded static audio ─────────────────────────────────────
-  const { slugifyStaticAudio } = await import("./staticAudio");
-  const slug = slugifyStaticAudio(clean);
-  const candidates = [
-    `/audio/${resolvedLang}/${slug}.mp3`,
-    `/audio/exam/${resolvedLang}/${slug}.mp3`,
-    `/audio/${resolvedLang}/statues/${slug}.mp3`,
-  ];
-  for (const url of candidates) {
-    try {
-      const head = await fetch(url, { method: "HEAD", cache: "force-cache" });
-      if (head.ok) {
-        const audio = new Audio(url);
-        audio.preload = "auto";
-        _activeHtmlAudio = audio;
-        _notifySpeaking(true, text);
-        await audio.play();
-        await new Promise(resolve => {
-          const done = () => {
-            if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
-            _notifySpeaking(false);
-            resolve();
-          };
-          audio.onended = done;
-          audio.onerror = done;
-          setTimeout(done, opts.maxMs || 15000);
-        });
-        return; // ✅ played from static file — done
-      }
-    } catch {}
+  try {
+    const head = await fetch(url, { method: "HEAD", cache: "force-cache" });
+    if (!head.ok) return; // file not found — stay silent
+    const audio = new Audio(url);
+    audio.preload = "auto";
+    _activeHtmlAudio = audio;
+    _notifySpeaking(true, url);
+    await audio.play();
+    await new Promise(resolve => {
+      const done = () => {
+        if (_activeHtmlAudio === audio) _activeHtmlAudio = null;
+        _notifySpeaking(false);
+        resolve();
+      };
+      audio.onended = done;
+      audio.onerror = done;
+      setTimeout(done, opts.maxMs || 15000);
+    });
+  } catch {
+    _notifySpeaking(false);
   }
-
-  // No static file found — stay silent (exam audio is 100% pre-recorded)
 }
 
 /**

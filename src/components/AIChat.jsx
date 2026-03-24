@@ -903,7 +903,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
       if (isLast) {
         setLocalExamFinished(true);
         (async () => {
-          await playExamFeedbackAudio(isCorrect, currentQuestion, langCode);
+          await playExamFeedbackAudio(isCorrect, currentQuestion, langCode, cefrLevel);
           const report = buildLocalExamReport(localExamBank, nextScore, wrongSoFar);
           setMessages(m => [...m, { role:"assistant", content: report, translation:null }]);
         })();
@@ -914,7 +914,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
 
         (async () => {
           // 1. Play feedback audio (awaited — finishes before anything else)
-          await playExamFeedbackAudio(isCorrect, currentQuestion, langCode);
+          await playExamFeedbackAudio(isCorrect, currentQuestion, langCode, cefrLevel);
 
           // 2. Show next question message
           setMessages(m => [...m, {
