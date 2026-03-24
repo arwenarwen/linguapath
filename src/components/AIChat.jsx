@@ -607,10 +607,10 @@ ${mistakeFormat}`;
 
 // ── Parse correction blocks from AI reply ────────────────────────────────────
 
-// ── Inline markdown renderer (bold / italic) ──────────────────────────────────
+// ── Inline markdown renderer (bold / italic / inline code) ───────────────────
 function parseInlineMarkdown(text) {
   const segments = [];
-  const regex = /(\*\*[^*\n]+\*\*|_[^_\n]+_)/g;
+  const regex = /(\*\*[^*\n]+\*\*|_[^_\n]+_|`[^`\n]+`)/g;
   let lastIndex = 0;
   let match;
   while ((match = regex.exec(text)) !== null) {
@@ -620,6 +620,8 @@ function parseInlineMarkdown(text) {
     const raw = match[0];
     if (raw.startsWith("**")) {
       segments.push({ type:"bold", content: raw.slice(2, -2) });
+    } else if (raw.startsWith("`")) {
+      segments.push({ type:"code", content: raw.slice(1, -1) });
     } else {
       segments.push({ type:"italic", content: raw.slice(1, -1) });
     }
@@ -631,8 +633,75 @@ function parseInlineMarkdown(text) {
   return segments.map((seg, i) => {
     if (seg.type === "bold")   return <strong key={i} style={{ fontWeight:700 }}>{seg.content}</strong>;
     if (seg.type === "italic") return <em key={i}>{seg.content}</em>;
+    if (seg.type === "code")   return <code key={i} style={{ background:"rgba(0,0,0,0.12)", padding:"1px 5px", borderRadius:4, fontSize:"0.9em", fontFamily:"monospace" }}>{seg.content}</code>;
     return <span key={i}>{seg.content}</span>;
   });
+}
+
+// ── Block markdown renderer — handles ###, ##, #, bullets, numbered lists ─────
+function renderMarkdown(text, key) {
+  if (!text) return null;
+  const lines = text.split("\n");
+  const elements = [];
+  let listItems = [];
+  let listType = null; // "ul" | "ol"
+
+  function flushList() {
+    if (!listItems.length) return;
+    const Tag = listType === "ol" ? "ol" : "ul";
+    elements.push(
+      <Tag key={`list-${elements.length}`} style={{
+        margin: "6px 0 6px 16px", padding: 0,
+        listStyleType: listType === "ol" ? "decimal" : "disc",
+      }}>
+        {listItems.map((item, i) => (
+          <li key={i} style={{ fontSize:14, lineHeight:1.6, color:"var(--text)", marginBottom:2 }}>
+            {parseInlineMarkdown(item)}
+          </li>
+        ))}
+      </Tag>
+    );
+    listItems = [];
+    listType = null;
+  }
+
+  lines.forEach((line, i) => {
+    // Headers
+    if (/^### /.test(line)) {
+      flushList();
+      elements.push(<div key={i} style={{ fontSize:14, fontWeight:800, color:"var(--text)", marginTop:10, marginBottom:3, opacity:0.85 }}>{parseInlineMarkdown(line.slice(4))}</div>);
+    } else if (/^## /.test(line)) {
+      flushList();
+      elements.push(<div key={i} style={{ fontSize:15, fontWeight:800, color:"var(--text)", marginTop:12, marginBottom:4 }}>{parseInlineMarkdown(line.slice(3))}</div>);
+    } else if (/^# /.test(line)) {
+      flushList();
+      elements.push(<div key={i} style={{ fontSize:16, fontWeight:900, color:"var(--text)", marginTop:12, marginBottom:5 }}>{parseInlineMarkdown(line.slice(2))}</div>);
+    // Bullet list
+    } else if (/^[*\-] /.test(line)) {
+      if (listType && listType !== "ul") flushList();
+      listType = "ul";
+      listItems.push(line.slice(2));
+    // Numbered list
+    } else if (/^\d+\. /.test(line)) {
+      if (listType && listType !== "ol") flushList();
+      listType = "ol";
+      listItems.push(line.replace(/^\d+\. /, ""));
+    // Horizontal rule
+    } else if (/^---+$/.test(line.trim())) {
+      flushList();
+      elements.push(<hr key={i} style={{ border:"none", borderTop:"1px solid rgba(0,0,0,0.1)", margin:"8px 0" }} />);
+    // Empty line
+    } else if (line.trim() === "") {
+      flushList();
+      if (elements.length) elements.push(<div key={`sp-${i}`} style={{ height:4 }} />);
+    // Normal paragraph line
+    } else {
+      flushList();
+      elements.push(<div key={i} style={{ fontSize:14, lineHeight:1.65, color:"var(--text)" }}>{parseInlineMarkdown(line)}</div>);
+    }
+  });
+  flushList();
+  return <div key={key}>{elements}</div>;
 }
 
 // ── Main AIChat component ─────────────────────────────────────────────────────
@@ -747,7 +816,6 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
       }).then(r => r.json()).then(data => {
         const reply = data.reply || cfg2.fallback;
         setMessages([{ role:"assistant", content: reply, translation: null }]);
-        playWordAudio(normalizeTextForSpeech(reply, langCode), langCode, { voiceId: getTutorVoiceId(langCode) });
       }).catch(() => {
         setMessages([{ role:"assistant", content: `I couldn't load the answer right now. Please type your question and I'll help you!`, translation: null }]);
       }).finally(() => setLoading(false));
@@ -770,17 +838,16 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior:"smooth" }); }, [messages]);
 
-  // Auto-read only the initial assistant opening; later replies are spoken immediately in send()
+  // Play pre-recorded intro audio for situation sessions only (no TTS fallback)
   useEffect(() => {
     if (!messages.length) return;
     const last = messages[messages.length - 1];
     if (last.role !== "assistant") return;
     if (messages.length !== 1) return;
     if (didSpeakOpeningRef.current) return;
-
     didSpeakOpeningRef.current = true;
 
-    // For situation sessions, try to play the pre-recorded fox intro first
+    // Only play pre-recorded audio for situation sessions — no auto TTS
     const situationId = scenario?.id || scenario?.scenarioId || null;
     if (situationId && mode !== "exam" && mode !== "conversation") {
       const introUrl = `/audio/intros/${situationId}.mp3`;
@@ -790,26 +857,12 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
             stopAllAudio();
             const audio = new Audio(introUrl);
             audio.preload = "auto";
-            audio.play().catch(() => {
-              // fallback to TTS if playback fails
-              const clean = normalizeTextForSpeech(last.content, langCode);
-              if (clean) playWordAudio(clean, langCode, { voiceId: getTutorVoiceId(langCode) });
-            });
-          } else {
-            const clean = normalizeTextForSpeech(last.content, langCode);
-            if (clean) playWordAudio(clean, langCode, { voiceId: getTutorVoiceId(langCode) });
+            audio.play().catch(() => {});
           }
         })
-        .catch(() => {
-          const clean = normalizeTextForSpeech(last.content, langCode);
-          if (clean) playWordAudio(clean, langCode, { voiceId: getTutorVoiceId(langCode) });
-        });
-      return;
+        .catch(() => {});
     }
-
-    const clean = normalizeTextForSpeech(last.content, langCode);
-    if (!clean) return;
-    playWordAudio(clean, langCode, { voiceId: getTutorVoiceId(langCode) });
+    // No auto-TTS for any mode — user can tap speaker icon to listen
   }, [messages, langCode]);
 
   useEffect(() => {
@@ -964,7 +1017,6 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         if (!res.ok || data.error) throw new Error(data.error || `API error ${res.status}`);
         const reply = data.reply || cfg.fallback;
         setMessages(m => [...m, { role:"assistant", content: reply, translation:null }]);
-        playWordAudio(normalizeTextForSpeech(reply, "en"), "en", { voiceId: getTutorVoiceId("en") });
       } catch {
         setMessages(m => [...m, { role:"assistant", content: cfg.fallback, translation:null }]);
       }
@@ -999,7 +1051,6 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
 
       const spokenReply = normalizeTextForSpeech(reply, langCode);
       lastSpokenAssistantRef.current = spokenReply;
-      playWordAudio(spokenReply, langCode, { voiceId: getTutorVoiceId(langCode) });
 
       const newMsg = { role:"assistant", content:reply, translation:null };
       setMessages(m => {
@@ -1358,7 +1409,10 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
                         </span>
                       );
                     }
-                    return <span key={pi}>{parseInlineMarkdown(part)}</span>;
+                    // Use full block markdown renderer for assistant messages
+                    return msg.role === "assistant"
+                      ? renderMarkdown(part, pi)
+                      : <span key={pi}>{parseInlineMarkdown(part)}</span>;
                   });
                 })()}
               </div>

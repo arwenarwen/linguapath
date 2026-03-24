@@ -2038,7 +2038,7 @@ export default function Root() {
         user={user}
         activeLang={activeLang}
         defaultPage={defaultPage}
-        onChangeLang={(code)=>{ if(code&&typeof code==="string"&&code.length===2){localStorage.setItem("lp_lang",code);setActiveLang(code);}else{setShowPicker(true);} }}
+        onChangeLang={(code)=>{ if(code&&typeof code==="string"&&code.length===2){ handlePick(code); }else{setShowPicker(true);} }}
         onLogout={async()=>{
           await supabase.auth.signOut();
           localStorage.removeItem("lp_lang");

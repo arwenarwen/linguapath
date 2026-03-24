@@ -1250,7 +1250,7 @@ const COMPLETE_CSS = `
 `;
 
 /* ─── COMPLETE ────────────────────────────────────────────────────────────── */
-function Complete({ module, score, total, levelColor, onBack, onNext, onReview }) {
+function Complete({ module, score, total, levelColor, onBack, onNext, onReview, rewardSummary }) {
   const mistakes = total - score;
   const stars = mistakes === 0 ? 3 : mistakes <= 2 ? 2 : 1;
   const xp = stars === 3 ? 35 : stars === 2 ? 25 : 15;
@@ -1265,7 +1265,12 @@ function Complete({ module, score, total, levelColor, onBack, onNext, onReview }
   const foxAnim = stars === 3 ? "stars3" : stars === 2 ? "stars2" : "stars1";
 
   const T = getLessonTheme();
-  const trailPts = stars === 3 ? 15 : stars === 2 ? 10 : 5;
+  // Use dynamic trail XP from rewardSummary if available, else fall back to simple formula
+  const trailPts = rewardSummary?.trailXP ?? (stars === 3 ? 15 : stars === 2 ? 10 : 5);
+  const trailTotal = rewardSummary?.trailPointsTotal ?? trailPts;
+  const trailRequired = rewardSummary?.trailRequired ?? 100;
+  const trailNeeded = Math.max(0, trailRequired - trailTotal);
+  const trailPct = Math.min(100, Math.round((trailTotal / trailRequired) * 100));
 
   return (
     <div style={{ ...screen, textAlign:"center", paddingTop:28 }}>
@@ -1318,9 +1323,9 @@ function Complete({ module, score, total, levelColor, onBack, onNext, onReview }
           ⚡ +{xp} XP
         </div>
         <div style={{ padding:"9px 16px", borderRadius:40, fontSize:13, fontWeight:800,
-          background:"rgba(167,139,250,0.12)", border:"1px solid rgba(167,139,250,0.3)",
-          color:"#a78bfa", animation:"xpPop 0.35s 0.15s both" }}>
-          🏔️ +{trailPts} trail pts
+          background:"rgba(245,165,36,0.12)", border:"1px solid rgba(245,165,36,0.3)",
+          color:"#f5a524", animation:"xpPop 0.35s 0.15s both" }}>
+          ⚡ +{trailPts} Trail XP
         </div>
         <div style={{ padding:"9px 16px", borderRadius:40, fontSize:13, fontWeight:800,
           background: mistakes===0 ? "rgba(34,197,94,0.12)" : T.isDark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)",
@@ -1328,6 +1333,26 @@ function Complete({ module, score, total, levelColor, onBack, onNext, onReview }
           color: mistakes===0 ? "#22c55e" : T.muted,
           animation:"xpPop 0.35s 0.12s both" }}>
           {mistakes === 0 ? "✓ Perfect!" : `✓ ${score}/${total} correct`}
+        </div>
+      </div>
+
+      {/* Trail XP progress toward checkpoint */}
+      <div style={{ width:"100%", maxWidth:300, margin:"0 auto 20px", padding:"10px 14px",
+        background:"rgba(245,165,36,0.07)", border:"1px solid rgba(245,165,36,0.2)",
+        borderRadius:14, textAlign:"left" }}>
+        <div style={{ display:"flex", justifyContent:"space-between", fontSize:11,
+          color:"rgba(107,61,16,0.65)", marginBottom:5, fontWeight:700 }}>
+          <span>⚡ Trail XP to checkpoint</span>
+          <span>{trailTotal}/{trailRequired}</span>
+        </div>
+        <div style={{ height:5, borderRadius:99, background:"rgba(107,61,16,0.1)", overflow:"hidden" }}>
+          <div style={{ height:"100%", width:`${trailPct}%`, borderRadius:99,
+            background:"linear-gradient(90deg,#f5a524,#e8730a)",
+            transition:"width 0.6s ease" }} />
+        </div>
+        <div style={{ fontSize:10, color: trailNeeded === 0 ? "#22c55e" : "#e8730a",
+          marginTop:5, fontWeight:700 }}>
+          {trailNeeded === 0 ? "✅ Checkpoint unlocked!" : `⚡ ${trailNeeded} more Trail XP to unlock checkpoint`}
         </div>
       </div>
 
@@ -1368,7 +1393,7 @@ function Complete({ module, score, total, levelColor, onBack, onNext, onReview }
 /* ─── MAIN LESSONVIEW ─────────────────────────────────────────────────────── */
 function LessonViewInner({
   module, levelKey, level, levelColor, langCode, userId,
-  onComplete, onBack, onNextLesson, onGoReview,
+  onComplete, onBack, onNextLesson, onGoReview, rewardSummary,
 }) {
   const [phase, setPhase] = useState("intro");
   // quizResult is the single source of truth for whether the Complete screen shows.
@@ -1493,6 +1518,7 @@ function LessonViewInner({
           <Complete module={module}
             score={quizResult.score} total={quizResult.total}
             levelColor={resolvedColor}
+            rewardSummary={rewardSummary}
             onBack={onBack} onNext={onNextLesson} onReview={onGoReview} />
         </div>
       )}

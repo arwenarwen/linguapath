@@ -1118,9 +1118,10 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
                     <div style={{fontSize:19,fontWeight:900}}>{langName} Trail</div>
                     <div style={{fontSize:11,color:C.muted}}>{xpInfo.title} · {totalXP.toLocaleString()} XP</div>
                   </div>
-                  <div style={{display:"flex",gap:8,alignItems:"center"}}>
+                  <div style={{display:"flex",gap:8,alignItems:"center",flexWrap:"wrap",justifyContent:"flex-end"}}>
                     {streak?.count>1&&<div style={{fontSize:12,fontWeight:800,color:"#ff7b4e"}}>🔥 {streak.count}</div>}
-                    <div style={{fontSize:12,fontWeight:800,color:C.path}}>⚡ {totalXP.toLocaleString()}</div>
+                    <div title="Regular XP — spend in Statue Shop for bonus lessons" style={{fontSize:12,fontWeight:800,color:C.path}}>⭐ {totalXP.toLocaleString()}</div>
+                    <div title="Trail XP — spend to unlock unit checkpoints" style={{fontSize:12,fontWeight:800,color:"#f5a524",background:"rgba(245,165,36,0.12)",padding:"2px 8px",borderRadius:20,border:"1px solid rgba(245,165,36,0.3)"}}>⚡ {trailPoints}</div>
                   </div>
                 </div>
                 {/* XP level bar */}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { tryPlayStaticAudio } from '../lib/staticAudio';
 import { lookupLocalDictionary } from '../lib/localDictionary';
+import { loadProgress, saveProgress } from '../lib/appState';
 
 // ─── THEME (matches Trail / Situations exactly) ───────────────────────────────
 const T = {
@@ -68,6 +69,7 @@ function stopAllAudio() {
   try { window.speechSynthesis?.cancel(); } catch {}
   try { if (_audio) { _audio.pause(); _audio.currentTime = 0; _audio = null; } } catch {}
 }
+// Used ONLY in the dictionary — tries static audio then ElevenLabs TTS
 async function playAudio(text, langCode) {
   if (!text || typeof window === "undefined") return;
   try {
@@ -83,6 +85,19 @@ async function playAudio(text, langCode) {
     _audio = a;
     a.onended = () => { try { URL.revokeObjectURL(url); } catch {} if (_audio === a) _audio = null; };
     await a.play();
+  } catch {}
+}
+
+// Used in flashcards — browser Web Speech only, no ElevenLabs
+function playWebSpeech(text, langCode) {
+  if (!text || typeof window === "undefined") return;
+  try {
+    stopAllAudio();
+    const utter = new SpeechSynthesisUtterance(String(text).slice(0, 300));
+    const langMap = { de:"de-DE", es:"es-ES", fr:"fr-FR", it:"it-IT", pt:"pt-BR", ja:"ja-JP", ko:"ko-KR", zh:"zh-CN", ru:"ru-RU", el:"el-GR", pl:"pl-PL", en:"en-US" };
+    utter.lang = langMap[langCode] || langCode || "en-US";
+    utter.rate = 0.9;
+    window.speechSynthesis.speak(utter);
   } catch {}
 }
 
@@ -277,7 +292,13 @@ export default function ReviewPanel({ userId, langCode, langName: langNameProp, 
 
   function handleMastered() {
     if (!current) return;
-    setXpFloat(12); setSessionXP(x=>x+12);
+    const xpEarned = 12;
+    setXpFloat(xpEarned); setSessionXP(x=>x+xpEarned);
+    // Persist XP to the user's progress so it shows up in profile
+    if (userId && langCode) {
+      const prog = loadProgress(userId, langCode);
+      saveProgress(userId, langCode, { ...prog, xp: (prog.xp || 0) + xpEarned });
+    }
     setMascot("happy"); setTimeout(()=>setMascot("idle"),2200);
     const updated = getMistakes(userId,langCode).filter(m=>m.id!==current.id);
     saveMistakes(userId,langCode,updated); setMistakes(updated);
@@ -292,11 +313,10 @@ export default function ReviewPanel({ userId, langCode, langName: langNameProp, 
     setCardIdx(i => (i + 1) % Math.max(1, active.length));
   }
 
-  async function handleListen() {
+  function handleListen() {
     if (!current) return;
-    // Always speak the correct German word/phrase
     const text = current.corrected || current.original || "";
-    setPlaying(true); await playAudio(text, langCode); setTimeout(()=>setPlaying(false),2200);
+    setPlaying(true); playWebSpeech(text, langCode); setTimeout(()=>setPlaying(false),2200);
   }
 
   async function lookupDict(term) {
@@ -475,7 +495,7 @@ Query: ${q}`;
                           <div style={{ fontSize:11, color:T.mutedLight, marginBottom:14 }}>Tap the card to see the correct answer</div>
                           {/* Speak the German word */}
                           <AudioBtn text={current?.corrected} langCode={langCode} size={44} playing={playing}
-                            onPlay={async()=>{ setPlaying(true); await playAudio(current?.corrected, langCode); setTimeout(()=>setPlaying(false),2000); }} />
+                            onPlay={()=>{ setPlaying(true); playWebSpeech(current?.corrected, langCode); setTimeout(()=>setPlaying(false),2000); }} />
                         </div>
                       ) : (
                         <div className="rv-flip" style={{ width:"100%" }}>

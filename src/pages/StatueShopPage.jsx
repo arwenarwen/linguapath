@@ -111,8 +111,8 @@ export default function StatueShopPage({ userId, langCode = "de", onClose }) {
             <div style={{ fontSize:48, marginBottom:12 }}>🗿</div>
             <div style={{ fontSize:18, fontWeight:900, color:T.text, fontFamily:"'Playfair Display',Georgia,serif", marginBottom:8 }}>Bonus Phrases</div>
             <div style={{ fontSize:14, color:T.muted, marginBottom:20, lineHeight:1.5 }}>
-              Unlock cultural expressions & insider phrases for {langName} with your Trail Points.<br/><br/>
-              <span style={{ color:T.path, fontWeight:700 }}>Coming soon for {langName}!</span> Earn XP by completing lessons, keeping streaks, and chatting with the AI — they'll be ready to spend when the content launches.
+              Unlock bonus lesson sets for {langName} using your Regular XP.<br/><br/>
+              Each set costs <span style={{ color:T.path, fontWeight:700 }}>200 XP</span> — earn XP by completing lessons, keeping streaks, and chatting with the AI.
             </div>
             <button onClick={onClose} style={{ background:`linear-gradient(135deg,${T.path},#c9a84c)`, border:"none", borderRadius:12, padding:"10px 28px", fontSize:14, fontWeight:800, color:"#fff", cursor:"pointer", fontFamily:"inherit" }}>Got it</button>
           </div>
