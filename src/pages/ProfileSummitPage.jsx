@@ -492,23 +492,23 @@ export default function ProfileSummitPage({ user, progress, curriculum, curricul
                 <span style={{ fontSize:16 }}>🪙</span>
                 <span style={{ fontSize:13, fontWeight:900, color:"#a3e635" }}>{totalXP.toLocaleString()} XP</span>
               </div>
-              <div style={{ fontSize:10, color:"rgba(255,255,255,0.7)", lineHeight:1.45, fontWeight:700 }}>Regular XP</div>
-              <div style={{ fontSize:10, color:"rgba(255,255,255,0.45)", lineHeight:1.4, marginTop:2 }}>
+              <div style={{ fontSize:10, color:"rgba(74,40,0,0.75)", lineHeight:1.45, fontWeight:800 }}>Regular XP</div>
+              <div style={{ fontSize:10, color:"rgba(74,40,0,0.55)", lineHeight:1.4, marginTop:2 }}>
                 Spend in Statue Shop to unlock bonus lessons (200 XP each)
               </div>
             </div>
             {/* Trail XP */}
             <div style={{
-              flex:1, background:"rgba(245,165,36,0.07)", border:"1px solid rgba(245,165,36,0.22)",
+              flex:1, background:"rgba(245,165,36,0.10)", border:"1px solid rgba(245,165,36,0.3)",
               borderRadius:14, padding:"11px 12px",
             }}>
               <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:4 }}>
                 <span style={{ fontSize:16 }}>⚡</span>
                 <span style={{ fontSize:13, fontWeight:900, color:T.path }}>{(trailPoints||0).toLocaleString()} TP</span>
               </div>
-              <div style={{ fontSize:10, color:"rgba(255,255,255,0.7)", lineHeight:1.45, fontWeight:700 }}>Trail XP</div>
-              <div style={{ fontSize:10, color:"rgba(255,255,255,0.45)", lineHeight:1.4, marginTop:2 }}>
-                Spend to unlock unit checkpoints (100 TP each) — earned by completing lessons
+              <div style={{ fontSize:10, color:"rgba(74,40,0,0.75)", lineHeight:1.45, fontWeight:800 }}>Trail XP</div>
+              <div style={{ fontSize:10, color:"rgba(74,40,0,0.55)", lineHeight:1.4, marginTop:2 }}>
+                Spend to unlock unit checkpoints (100 TP each)
               </div>
             </div>
           </div>

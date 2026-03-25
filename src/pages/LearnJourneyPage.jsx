@@ -1067,8 +1067,36 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
   const [cpPassRevision, setCpPassRevision] = useState(0);
   const handleCheckpointPass = () => setCpPassRevision(r => r + 1);
 
+  // Duolingo-style: find the first unlocked level with incomplete lessons
+  const activeLevel = useMemo(() => {
+    for (const k of CEFR) {
+      const mods = curriculum[k]?.modules || [];
+      if (!mods.length) continue;
+      if (isLevelLocked(curriculum, completed, k, placedLevel)) continue;
+      if (mods.filter(m => completed.includes(m.id)).length < mods.length) return k;
+    }
+    return CEFR.find(k => (curriculum[k]?.modules||[]).length > 0) || "A1";
+  }, [curriculum, completed, placedLevel]);
+
+  // null = auto-track activeLevel; set explicitly when user taps a collapsed header
+  const [expandedLevel, setExpandedLevel] = useState(null);
+  const effectiveExpanded = expandedLevel || activeLevel;
+
+  // Floating jump popover
+  const [showJumpMenu, setShowJumpMenu] = useState(false);
+
   const [doAnimate,setDoAnimate]=useState(false);
   const prevTrigger=useRef(0);
+
+  // Close jump menu on outside click
+  useEffect(()=>{
+    if(!showJumpMenu) return;
+    const close = (e) => {
+      if(!e.target.closest("[data-jump-menu]")) setShowJumpMenu(false);
+    };
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
+  },[showJumpMenu]);
 
   useEffect(()=>{
     if(!animTrigger||animTrigger===prevTrigger.current) return;
@@ -1182,77 +1210,153 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
             </div>
           </div>
 
-          {/* Trail map per level */}
-          {CEFR.filter(k=>(curriculum[k]?.modules||[]).length>0).map(levelKey=>{
+          {/* Trail map per level — Duolingo-style accordion */}
+          {CEFR.filter(k=>(curriculum[k]?.modules||[]).length>0).map((levelKey,li)=>{
             const mods=curriculum[levelKey]?.modules||[];
             const units=groupUnits(mods);
             const locked=isLevelLocked(curriculum,completed,levelKey,placedLevel);
             const done=mods.filter(m=>completed.includes(m.id)).length;
             const pct=mods.length?Math.round((done/mods.length)*100):0;
             const levelAnimals=UNIT_ANIMALS[levelKey]||[];
+            const isExpanded = effectiveExpanded === levelKey;
             return (
-              <div key={levelKey} id={`level-${levelKey}`} style={{padding:"16px 14px 8px"}}>
-                <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
-                  <div>
-                    <div style={{fontSize:12,letterSpacing:1.5,fontWeight:900,color:C.muted}}>{levelKey}</div>
-                    <div style={{fontSize:18,fontWeight:900}}>{WNAME[levelKey]}</div>
-                    <div style={{fontSize:12,color:C.path,fontStyle:"italic"}}>{WLINE[levelKey]}</div>
-                    <div style={{fontSize:12,color:C.muted}}>{locked?"Complete the previous level":`${pct}% complete`}</div>
+              <div key={levelKey} id={`level-${levelKey}`} style={{borderTop:li>0?`1px solid ${C.border}`:"none"}}>
+                {/* Tappable level header — always visible */}
+                <div
+                  onClick={() => { if(!locked) setExpandedLevel(isExpanded ? null : levelKey); }}
+                  style={{padding:"12px 14px",display:"flex",alignItems:"center",gap:10,cursor:locked?"default":"pointer",
+                    background: isExpanded ? "rgba(245,165,36,0.04)" : "transparent",
+                    transition:"background 0.15s"}}>
+                  {/* Emoji badge */}
+                  <div style={{fontSize:22,flexShrink:0,filter:locked?"grayscale(1) opacity(0.35)":"none"}}>
+                    {WANIM[levelKey]?.split("").find(c=>c.trim())||"🌲"}
                   </div>
-                  <div style={{fontSize:14,fontWeight:900,color:C.path}}>{levelKey}</div>
-                </div>
-                {locked?(
-                  <div style={{borderRadius:18,padding:"28px 16px",background:C.mist,backdropFilter:"blur(10px)",WebkitBackdropFilter:"blur(10px)",border:`1px solid ${C.border}`,textAlign:"center",color:C.muted}}>
-                    <div style={{fontSize:24,marginBottom:8,filter:"grayscale(1) opacity(0.35)",letterSpacing:6}}>{WANIM[levelKey]}</div>
-                    <div style={{fontSize:13,fontWeight:700}}>🌫️ Shrouded in mist</div>
-                    <div style={{fontSize:11,marginTop:4,opacity:0.65}}>Complete the previous level to reveal this path</div>
-                  </div>
-                ):(
-                  units.map((unit,idx)=>{
-                    const prevUnit = idx > 0 ? units[idx - 1] : null;
-                    // FIX 5: cpPassRevision forces re-evaluation of checkpoint state after passing
-                    const prevCheckpointPassed = idx === 0 ? true : (cpPassRevision >= 0 && !!getCheckpointPass(user?.id, langCode || curriculum.code, prevUnit.unit)?.passed);
-                    return (
-                    <div key={unit.unit} style={{marginTop:idx?0:2}}>
-                      {/* Bonus Phrases teaser — appears between units when checkpoint is done */}
-                      {idx > 0 && onStatues && (
-                        <div onClick={onStatues} style={{margin:"8px 0 10px",padding:"10px 16px",borderRadius:16,background:"linear-gradient(135deg,rgba(245,165,36,0.09),rgba(245,165,36,0.04))",border:"1.5px dashed rgba(245,165,36,0.38)",cursor:"pointer",display:"flex",alignItems:"center",gap:10,transition:"background 0.2s"}}
-                          onMouseEnter={e=>e.currentTarget.style.background="linear-gradient(135deg,rgba(245,165,36,0.16),rgba(245,165,36,0.08))"}
-                          onMouseLeave={e=>e.currentTarget.style.background="linear-gradient(135deg,rgba(245,165,36,0.09),rgba(245,165,36,0.04))"}>
-                          <div style={{fontSize:24,flexShrink:0}}>🗿</div>
-                          <div style={{flex:1}}>
-                            <div style={{fontSize:12,fontWeight:900,color:C.path,marginBottom:1}}>Bonus Phrases</div>
-                            <div style={{fontSize:11,color:C.muted}}>Unlock cultural expressions with your Trail Points</div>
-                          </div>
-                          <div style={{fontSize:10,fontWeight:800,color:C.path,opacity:0.7}}>→</div>
-                        </div>
-                      )}
-                      {/* Unit header */}
-                      <div style={{textAlign:"center",fontSize:11,letterSpacing:2,fontWeight:900,color:C.muted,marginBottom:4,marginTop:idx?2:0}}>
-                        {unit.unit.toUpperCase()} · {unit.lessons.filter(l=>completed.includes(l.id)).length}/{unit.lessons.length}{idx>0 && !prevCheckpointPassed ? " · Checkpoint locked" : ""}
-                      </div>
-                      <TrailUnit
-                        unit={unit} color={C.path} completed={completed}
-                        nextLessonId={nextLesson?.id} justCompletedId={justCompletedId}
-                        doAnimate={doAnimate} onSelectLesson={onSelectLesson}
-                        levelKey={levelKey} isCurrentLevel={!locked} mist={C.mist}
-                        unitAnimal={levelAnimals[idx]||"🏡"}
-                        unitIdx={idx}
-                        userId={user?.id}
-                        langCode={langCode || curriculum.code}
-                        unitLocked={!prevCheckpointPassed}
-                        onCheckpointPass={handleCheckpointPass}
-                        starsMap={starsMap}
-                        trailPoints={trailPoints}
-                        trailRequired={trailRequired}
-                      />
+                  <div style={{flex:1,minWidth:0}}>
+                    <div style={{display:"flex",alignItems:"center",gap:6}}>
+                      <span style={{fontSize:10,letterSpacing:1.5,fontWeight:900,color:C.muted,flexShrink:0}}>{levelKey}</span>
+                      <span style={{fontSize:15,fontWeight:900,color:locked?C.muted:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{WNAME[levelKey]}</span>
                     </div>
-                  )})
+                    <div style={{fontSize:11,color:locked?"rgba(107,61,16,0.4)":C.muted,marginTop:1}}>
+                      {locked ? "🔒 Complete previous level" : done===mods.length ? "✅ Level complete!" : `${done}/${mods.length} lessons · ${pct}%`}
+                    </div>
+                    {/* Mini progress bar */}
+                    {!locked && (
+                      <div style={{marginTop:5,height:3,borderRadius:99,background:"rgba(245,165,36,0.15)",overflow:"hidden"}}>
+                        <div style={{height:"100%",width:`${pct}%`,borderRadius:99,background:done===mods.length?"#22c55e":C.path,transition:"width 0.6s ease"}}/>
+                      </div>
+                    )}
+                  </div>
+                  {/* Chevron */}
+                  {!locked && (
+                    <div style={{fontSize:16,color:C.muted,flexShrink:0,transition:"transform 0.25s",transform:isExpanded?"rotate(180deg)":"rotate(0deg)"}}>▾</div>
+                  )}
+                  {locked && <div style={{fontSize:16,color:"rgba(107,61,16,0.25)",flexShrink:0}}>🔒</div>}
+                </div>
+
+                {/* Expanded content */}
+                {isExpanded && (
+                  <div style={{padding:"0 14px 12px"}}>
+                    {locked ? (
+                      <div style={{borderRadius:18,padding:"28px 16px",background:C.mist,backdropFilter:"blur(10px)",WebkitBackdropFilter:"blur(10px)",border:`1px solid ${C.border}`,textAlign:"center",color:C.muted}}>
+                        <div style={{fontSize:24,marginBottom:8,filter:"grayscale(1) opacity(0.35)",letterSpacing:6}}>{WANIM[levelKey]}</div>
+                        <div style={{fontSize:13,fontWeight:700}}>🌫️ Shrouded in mist</div>
+                        <div style={{fontSize:11,marginTop:4,opacity:0.65}}>Complete the previous level to reveal this path</div>
+                      </div>
+                    ) : (
+                      units.map((unit,idx)=>{
+                        const prevUnit = idx > 0 ? units[idx - 1] : null;
+                        const prevCheckpointPassed = idx === 0 ? true : (cpPassRevision >= 0 && !!getCheckpointPass(user?.id, langCode || curriculum.code, prevUnit.unit)?.passed);
+                        return (
+                          <div key={unit.unit} style={{marginTop:idx?0:2}}>
+                            {idx > 0 && onStatues && (
+                              <div onClick={onStatues} style={{margin:"8px 0 10px",padding:"10px 16px",borderRadius:16,background:"linear-gradient(135deg,rgba(245,165,36,0.09),rgba(245,165,36,0.04))",border:"1.5px dashed rgba(245,165,36,0.38)",cursor:"pointer",display:"flex",alignItems:"center",gap:10,transition:"background 0.2s"}}
+                                onMouseEnter={e=>e.currentTarget.style.background="linear-gradient(135deg,rgba(245,165,36,0.16),rgba(245,165,36,0.08))"}
+                                onMouseLeave={e=>e.currentTarget.style.background="linear-gradient(135deg,rgba(245,165,36,0.09),rgba(245,165,36,0.04))"}>
+                                <div style={{fontSize:24,flexShrink:0}}>🗿</div>
+                                <div style={{flex:1}}>
+                                  <div style={{fontSize:12,fontWeight:900,color:C.path,marginBottom:1}}>Bonus Phrases</div>
+                                  <div style={{fontSize:11,color:C.muted}}>Unlock cultural expressions with your Trail Points</div>
+                                </div>
+                                <div style={{fontSize:10,fontWeight:800,color:C.path,opacity:0.7}}>→</div>
+                              </div>
+                            )}
+                            <div style={{textAlign:"center",fontSize:11,letterSpacing:2,fontWeight:900,color:C.muted,marginBottom:4,marginTop:idx?2:0}}>
+                              {unit.unit.toUpperCase()} · {unit.lessons.filter(l=>completed.includes(l.id)).length}/{unit.lessons.length}{idx>0 && !prevCheckpointPassed ? " · Checkpoint locked" : ""}
+                            </div>
+                            <TrailUnit
+                              unit={unit} color={C.path} completed={completed}
+                              nextLessonId={nextLesson?.id} justCompletedId={justCompletedId}
+                              doAnimate={doAnimate} onSelectLesson={onSelectLesson}
+                              levelKey={levelKey} isCurrentLevel={!locked} mist={C.mist}
+                              unitAnimal={levelAnimals[idx]||"🏡"}
+                              unitIdx={idx}
+                              userId={user?.id}
+                              langCode={langCode || curriculum.code}
+                              unitLocked={!prevCheckpointPassed}
+                              onCheckpointPass={handleCheckpointPass}
+                              starsMap={starsMap}
+                              trailPoints={trailPoints}
+                              trailRequired={trailRequired}
+                            />
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
                 )}
               </div>
             );
           })}
         </div>
+      </div>
+
+      {/* Floating Jump button — always accessible, bottom-right above nav */}
+      <div data-jump-menu style={{position:"fixed",bottom:78,right:14,zIndex:50}}>
+        {showJumpMenu && (
+          <div style={{
+            position:"absolute",bottom:"calc(100% + 8px)",right:0,
+            background:"rgba(255,247,234,0.97)",backdropFilter:"blur(12px)",
+            border:"1px solid rgba(245,165,36,0.3)",borderRadius:16,
+            padding:"10px 8px",boxShadow:"0 8px 24px rgba(245,165,36,0.18)",
+            display:"flex",flexDirection:"column",gap:4,minWidth:90,
+          }}>
+            {CEFR.filter(k=>(curriculum[k]?.modules||[]).length>0).map(k => {
+              const mLocked = isLevelLocked(curriculum,completed,k,placedLevel);
+              return (
+                <button key={k} onClick={()=>{
+                  setShowJumpMenu(false);
+                  if(!mLocked) setExpandedLevel(k);
+                  setTimeout(()=>document.getElementById(`level-${k}`)?.scrollIntoView({behavior:"smooth",block:"start"}),50);
+                }} style={{
+                  background: effectiveExpanded===k ? `${C.path}18` : "transparent",
+                  border: effectiveExpanded===k ? `1px solid ${C.path}55` : "1px solid transparent",
+                  borderRadius:10,padding:"7px 12px",fontSize:13,fontWeight:800,
+                  color: mLocked ? "rgba(107,61,16,0.3)" : C.path,
+                  cursor: mLocked ? "default" : "pointer",
+                  textAlign:"left",display:"flex",alignItems:"center",gap:6,
+                }}>
+                  {mLocked ? "🔒" : effectiveExpanded===k ? "▸" : ""} {k}
+                </button>
+              );
+            })}
+          </div>
+        )}
+        <button
+          onClick={()=>setShowJumpMenu(v=>!v)}
+          style={{
+            background:`linear-gradient(135deg,${C.path},#ff6d00)`,
+            border:"none",borderRadius:999,
+            padding:"9px 14px",fontSize:12,fontWeight:800,
+            color:"#fff9f0",cursor:"pointer",
+            boxShadow:`0 4px 14px ${C.glow}`,
+            display:"flex",alignItems:"center",gap:5,
+            transition:"transform 0.15s",
+          }}
+          onMouseDown={e=>e.currentTarget.style.transform="scale(0.93)"}
+          onMouseUp={e=>e.currentTarget.style.transform="scale(1)"}
+        >
+          {showJumpMenu ? "✕" : "⇅"} Jump
+        </button>
       </div>
     </div>
   );

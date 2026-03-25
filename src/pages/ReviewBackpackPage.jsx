@@ -402,7 +402,7 @@ Query: ${q}`;
               {/* Stat chips */}
               <div style={{ display:"flex", gap:8, marginBottom:14 }}>
                 <StatChip icon="🔥" value={active.length}   label="To Review"    color={T.pathDark} />
-                <StatChip icon="⚡" value={`+${sessionXP}`} label="Session XP"   color={T.pathDark} />
+                <StatChip icon="✅" value={Object.keys(dismissed).length} label="Mastered"  color="#22c55e" />
                 <StatChip icon="📚" value={allSources.length} label="Sources"    color={T.purple} />
               </div>
 
