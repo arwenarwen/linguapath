@@ -833,6 +833,19 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
   const prevDoAnimate=useRef(false);
   const animTimers=useRef([]);
 
+  // Measure container so SVG paths always align with absolutely-positioned cards
+  const wrapRef=useRef(null);
+  const [scale,setScale]=useState(1);
+  useEffect(()=>{
+    const el=wrapRef.current;
+    if(!el) return;
+    const update=()=>setScale((el.offsetWidth||VW)/VW);
+    update();
+    const obs=new ResizeObserver(update);
+    obs.observe(el);
+    return()=>obs.disconnect();
+  },[]);
+
   const {positions,cpPos,connectors}=useMemo(()=>{
     const pos=lessons.map((mod,idx)=>({
       id:mod.id, x:idx%2===0?LX:RX, y:T0+idx*GAP, side:idx%2===0?"left":"right"
@@ -906,10 +919,14 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
 
   const svgH=cpPos.y+90;
   const allDone=completedCt>=lessons.length;
+  const scaledH=Math.round(svgH*scale);
 
   return (
-    <div style={{position:"relative",height:svgH,marginTop:8}}>
-      <svg width="100%" height={svgH} viewBox={`0 0 ${VW} ${svgH}`}
+    // Outer div: measured, holds the scaled height so layout doesn't collapse
+    <div ref={wrapRef} style={{position:"relative",width:"100%",height:scaledH,marginTop:8,overflow:"hidden"}}>
+      {/* Inner div: fixed VW wide, scaled uniformly — SVG paths stay aligned with cards */}
+      <div style={{position:"absolute",top:0,left:0,width:VW,height:svgH,transformOrigin:"top left",transform:`scale(${scale})`}}>
+      <svg width={VW} height={svgH} viewBox={`0 0 ${VW} ${svgH}`}
         style={{position:"absolute",inset:0,pointerEvents:"none",zIndex:1,overflow:"visible"}}>
 
         {/* Dim base paths */}
@@ -938,20 +955,6 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
           />
         )}
 
-        {/* Node dots at connector start points */}
-        {positions.map((pos,i)=>{
-          const state=lessonState(lessons,i,completed);
-          const isNext=lessons[i]?.id===nextLessonId;
-          const cx=pos.side==="left"?pos.x+CW+STOP:pos.x-STOP;
-          const cy=pos.y+CH*0.5;
-          return (
-            <circle key={`nd${i}`} cx={cx} cy={cy} r={isNext?6:4}
-              fill={state==="done"?color:"rgba(255,255,255,0.2)"}
-              stroke={isNext?"#32d266":color} strokeWidth={isNext?3:1.5}
-              style={isNext?{filter:"drop-shadow(0 0 8px rgba(50,210,102,0.75))"}:{}}
-            />
-          );
-        })}
       </svg>
 
       {/* 🔥 Torch flames — absolute positioned over SVG */}
@@ -1043,6 +1046,7 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
           onCheckpointPass={onCheckpointPass}
         />
       )}
+      </div>{/* end inner scale wrapper */}
     </div>
   );
 }
@@ -1229,7 +1233,7 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
                     transition:"background 0.15s"}}>
                   {/* Emoji badge */}
                   <div style={{fontSize:22,flexShrink:0,filter:locked?"grayscale(1) opacity(0.35)":"none"}}>
-                    {WANIM[levelKey]?.split("").find(c=>c.trim())||"🌲"}
+                    {([...(WANIM[levelKey]||"")][0])||"🌲"}
                   </div>
                   <div style={{flex:1,minWidth:0}}>
                     <div style={{display:"flex",alignItems:"center",gap:6}}>
