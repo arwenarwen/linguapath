@@ -2,6 +2,7 @@
 
 import { stopAllAudio, playExamAudio } from "./audioPlayer";
 import { slugifyStaticAudio } from "./staticAudio";
+import { getRom, getRomSync, NEEDS_ROM } from "./romanize";
 
 // ── Bank loading ───────────────────────────────────────────────────────────────
 export async function loadLocalExamBank(langCode, level) {
@@ -107,14 +108,28 @@ export async function loadLocalExamBank(langCode, level) {
 }
 
 // ── Formatting ─────────────────────────────────────────────────────────────────
-export function formatLocalExamQuestion(question, total = 20, index = null) {
+export async function formatLocalExamQuestion(question, total = 20, index = null, langCode = null) {
   if (!question) return "";
   const qn = index || question.question_number || 1;
+  const opts = question.options || [];
+
+  // For non-Latin languages, annotate each option with its romanization
+  let optLines;
+  if (langCode && NEEDS_ROM.has(langCode)) {
+    optLines = await Promise.all(opts.map(async (opt, i) => {
+      const letter = String.fromCharCode(65 + i);
+      const rom = await getRom(opt, langCode);
+      return rom ? `${letter}) ${opt}  (${rom})` : `${letter}) ${opt}`;
+    }));
+  } else {
+    optLines = opts.map((opt, i) => `${String.fromCharCode(65 + i)}) ${opt}`);
+  }
+
   const lines = [
     `Question ${qn}/${total}`,
     question.question,
     "",
-    ...(question.options || []).map((opt, idx) => `${String.fromCharCode(65 + idx)}) ${opt}`)
+    ...optLines
   ];
   return lines.join("\n");
 }

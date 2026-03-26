@@ -46,3 +46,4 @@ coverage/
 # Local scripts / scratch files
 scratch/
 tmp/
+package-lock.json

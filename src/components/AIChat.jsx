@@ -479,9 +479,18 @@ ${starter}`;
 
 
 
+// Romanization systems per language
+const ROMANIZATION_LABEL = { zh: 'pinyin', ko: 'romanization', ja: 'romaji' };
+
 function buildSystemPrompt(mode, langCode, scenarioContext, cefrLevel, scenarioId) {
   const langName = getAIChatLangConfig(langCode).name;
   const lvl = cefrLevel || "B1";
+
+  // For non-Latin script languages, ask AI to always include pronunciation guide
+  const romLabel = ROMANIZATION_LABEL[langCode];
+  const romInstruction = romLabel
+    ? `\nPRONUNCIATION: Every time you write any ${langName} word, phrase, or sentence, ALWAYS immediately follow it with its ${romLabel} in parentheses. Example format: 你好 (nǐ hǎo). Do this consistently for EVERY piece of ${langName} text in your response without exception.`
+    : '';
 
   const mistakeFormat = `When the learner makes a grammar, vocabulary, conjugation, gender, preposition or spelling mistake, append a correction block at the END of your reply using EXACTLY this format (one per mistake):
 ⚠️ CORRECTION: "[original]" → "[corrected]" | [brief rule explanation in English]`;
@@ -512,7 +521,7 @@ WHEN LEARNER SAYS "help", "I don't understand", "explain", or writes in English 
 - Break down exactly what they're struggling with.
 - Give 2-3 very simple examples building up gradually.
 - NEVER keep speaking mostly in ${langName} when someone asks for help.
-
+${romInstruction}
 ${mistakeFormat}`;
   }
 
@@ -524,6 +533,7 @@ RULES:
 - Ask follow-up questions to keep the conversation going.
 - Only correct mistakes that seriously impede understanding — do not interrupt the flow constantly.
 - At the end of the session (when the user says goodbye/finish), provide a brief summary in English: strengths, common mistakes, 2-3 improvement suggestions.
+${romInstruction}
 ${mistakeFormat}`;
   }
 
@@ -560,7 +570,7 @@ QUALITY BAR:
 - Ask follow-up questions that keep the scenario alive.
 - Sound like a calm private tutor, not a generic assistant.
 - Never overwhelm the learner with long grammar lectures.
-
+${romInstruction}
 ${mistakeFormat}`;
   }
 
@@ -598,11 +608,11 @@ Vocabulary: X/4 | Grammar: X/4 | Comprehension: X/3 | Writing: X/6 | Fluency: X/
 Verdict: [Ready / Nearly Ready / Needs More Practice] for ${lvl}
 Top areas to improve: [2-3 specific points in English]
 [One encouraging sentence in ${langName}]
-
+${romInstruction}
 ${mistakeFormat}`;
   }
 
-  return `You are a helpful ${langName} language assistant. Speak in ${langName}.`;
+  return `You are a helpful ${langName} language assistant. Speak in ${langName}.${romInstruction}`;
 }
 
 // ── Parse correction blocks from AI reply ────────────────────────────────────
@@ -775,7 +785,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
             setMessages([{ role: "assistant", content: "I couldn't load the exam questions for this level.", translation: null }]);
             return;
           }
-          const opening = formatLocalExamQuestion(first, bank?.question_count || 20, 1);
+          const opening = await formatLocalExamQuestion(first, bank?.question_count || 20, 1, langCode);
           setMessages([{ role: "assistant", content: opening, translation: null,
             listenAudio: first.exercise_type === "listen" ? first.audio : null }]);
           // Play static pre-recorded question audio; fall back to live TTS
@@ -951,9 +961,10 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
           await playExamFeedbackAudio(isCorrect, currentQuestion, langCode, cefrLevel);
 
           // 2. Show next question message
+          const nextQContent = await formatLocalExamQuestion(nextQuestion, localExamBank?.question_count || 20, null, langCode);
           setMessages(m => [...m, {
             role: "assistant",
-            content: formatLocalExamQuestion(nextQuestion, localExamBank?.question_count || 20),
+            content: nextQContent,
             translation: null,
             listenAudio: nextQuestion.exercise_type === "listen" ? nextQuestion.audio : null,
           }]);

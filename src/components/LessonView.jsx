@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, Component } from "react";
 import { tryPlayStaticAudio } from "../lib/staticAudio";
+import { getRom, getRomSync, NEEDS_ROM } from "../lib/romanize";
 
 /* ─── Error Boundary ──────────────────────────────────────────────────────── */
 class ErrorBoundary extends Component {
@@ -33,6 +34,17 @@ class ErrorBoundary extends Component {
 }
 
 /* ─── Helpers ─────────────────────────────────────────────────────────────── */
+/** Small inline component: shows romanization (pinyin/romaji/romanization) below a word */
+function RomLabel({ text, langCode, style = {} }) {
+  const [rom, setRom] = useState(() => getRomSync(text, langCode));
+  useEffect(() => {
+    if (!NEEDS_ROM.has(langCode) || !text) { setRom(''); return; }
+    getRom(text, langCode).then(r => setRom(r || ''));
+  }, [text, langCode]);
+  if (!rom) return null;
+  return <span style={{ fontSize:11, opacity:0.6, display:'block', fontWeight:400, marginTop:2, ...style }}>{rom}</span>;
+}
+
 function getTarget(word, langCode) {
   if (!word) return "";
   return word[langCode] || word.de || word.es || word.fr || word.it ||
@@ -475,12 +487,23 @@ function Vocab({ module, langCode, onDone }) {
   const vocab = module?.vocab || [];
   const [idx, setIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const [romText, setRomText] = useState('');
 
   useEffect(() => { if (vocab.length === 0) onDone(); }, []);
   if (vocab.length === 0) return null;
 
   const word = vocab[idx] || {};
   const target = getTarget(word, langCode);
+
+  // Compute romanization (pinyin/romaji/romanization) when word changes
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    if (!NEEDS_ROM.has(langCode) || !target) { setRomText(''); return; }
+    // word.phonetic already populated? Use it directly.
+    if (word.phonetic) { setRomText(word.phonetic); return; }
+    // Otherwise compute dynamically
+    getRom(target, langCode).then(r => setRomText(r || ''));
+  }, [target, langCode]);
 
   function advance() {
     if (idx + 1 >= vocab.length) onDone();
@@ -519,8 +542,8 @@ function Vocab({ module, langCode, onDone }) {
             <div style={{ fontSize:11, fontWeight:700, letterSpacing:2, textTransform:"uppercase",
               color:T.muted, marginBottom:16, opacity:0.7 }}>Tap to reveal</div>
             <div style={{ ...bigWord, color:T.text }}>{target || "—"}</div>
-            {word.phonetic && (
-              <div style={{ fontSize:13, color:T.muted, marginTop:4 }}>/{word.phonetic}/</div>
+            {romText && (
+              <div style={{ fontSize:15, color:T.muted, marginTop:6, fontWeight:500, letterSpacing:0.3 }}>{romText}</div>
             )}
             <div style={{ marginTop:20, display:"flex", alignItems:"center", gap:6,
               padding:"7px 16px", borderRadius:20,
@@ -541,7 +564,10 @@ function Vocab({ module, langCode, onDone }) {
               color:T.text, marginBottom:8, animation:"lv-flip 0.3s ease" }}>
               {word.en || "—"}
             </div>
-            <div style={{ fontSize:16, color:T.muted, marginBottom:18 }}>{target}</div>
+            <div style={{ fontSize:16, color:T.muted, marginBottom:romText?4:18 }}>{target}</div>
+            {romText && (
+              <div style={{ fontSize:13, color:T.muted, marginBottom:18, opacity:0.75 }}>{romText}</div>
+            )}
             {word.example && (
               <div style={{ fontSize:12, color:T.muted, fontStyle:"italic",
                 borderLeft:`3px solid ${T.path}55`, paddingLeft:10, textAlign:"left",
@@ -1135,7 +1161,12 @@ function Quiz({ module, langCode, userId, onDone }) {
             return (
               <button key={`${oi}-${opt}`} style={optionStyle(state, getLessonTheme())}
                 disabled={!!chosen} onClick={() => { if (q.type !== "en") speak(opt, langCode); pickMCQ(opt); }}>
-                <span>{opt}</span>
+                <span style={{ display:'flex', alignItems:'center', gap:6, flex:1 }}>
+                  <span style={{ flex:1 }}>
+                    {opt}
+                    {q.type !== "en" && <RomLabel text={opt} langCode={langCode} />}
+                  </span>
+                </span>
                 {chosen && opt===q.ans && <span>✓</span>}
                 {chosen && opt===chosen && opt!==q.ans && <span>✗</span>}
               </button>
