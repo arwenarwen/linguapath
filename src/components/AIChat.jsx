@@ -778,7 +778,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
       setLocalExamFinished(false);
 
       loadLocalExamBank(langCode, cefrLevel)
-        .then((bank) => {
+        .then(async (bank) => {
           const first = bank?.questions?.[0];
           setLocalExamBank(bank);
           if (!first) {
