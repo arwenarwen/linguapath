@@ -1,6 +1,28 @@
 import { useState } from "react";
 import { DE_STATUE_MARKETPLACE } from "../data/deStatueMarketplace";
+import { FR_STATUE_MARKETPLACE } from "../data/frStatueMarketplace";
+import { ES_STATUE_MARKETPLACE } from "../data/esStatueMarketplace";
+import { IT_STATUE_MARKETPLACE } from "../data/itStatueMarketplace";
+import { PT_STATUE_MARKETPLACE } from "../data/ptStatueMarketplace";
+import { ZH_STATUE_MARKETPLACE } from "../data/zhStatueMarketplace";
+import { JA_STATUE_MARKETPLACE } from "../data/jaStatueMarketplace";
+import { KO_STATUE_MARKETPLACE } from "../data/koStatueMarketplace";
+import { RU_STATUE_MARKETPLACE } from "../data/ruStatueMarketplace";
+import { EL_STATUE_MARKETPLACE } from "../data/elStatueMarketplace";
 import { getStoredXP, spendXP } from "../lib/appState";
+
+const MARKETPLACE_BY_LANG = {
+  de: DE_STATUE_MARKETPLACE,
+  fr: FR_STATUE_MARKETPLACE,
+  es: ES_STATUE_MARKETPLACE,
+  it: IT_STATUE_MARKETPLACE,
+  pt: PT_STATUE_MARKETPLACE,
+  zh: ZH_STATUE_MARKETPLACE,
+  ja: JA_STATUE_MARKETPLACE,
+  ko: KO_STATUE_MARKETPLACE,
+  ru: RU_STATUE_MARKETPLACE,
+  el: EL_STATUE_MARKETPLACE,
+};
 
 const T = {
   bg: "linear-gradient(180deg,#fff7ea 0%,#ffe7c2 100%)",
@@ -98,20 +120,19 @@ export default function StatueShopPage({ userId, langCode = "de", onClose }) {
   const [toast, setToast] = useState("");
   const [activeCategory, setActiveCategory] = useState(0);
 
-  const market = langCode === "de" ? DE_STATUE_MARKETPLACE : null;
+  const market = MARKETPLACE_BY_LANG[langCode] || null;
 
+  // Fallback for any language without marketplace data yet
   if (!market) {
-    const LANG_NAMES = { fr:"French", es:"Spanish", it:"Italian", pt:"Portuguese", ru:"Russian", el:"Greek", zh:"Chinese", ja:"Japanese", ko:"Korean" };
-    const langName = LANG_NAMES[langCode] || "this language";
     return (
       <div style={{ position:"fixed", inset:0, zIndex:500, background:"rgba(107,61,16,0.35)", backdropFilter:"blur(8px)", display:"flex", alignItems:"flex-end", justifyContent:"center" }} onClick={onClose}>
         <div onClick={e=>e.stopPropagation()} style={{ background:T.bg, borderRadius:"24px 24px 0 0", width:"100%", maxWidth:480, padding:"28px 24px 48px", border:`1px solid ${T.borderStrong}`, borderBottom:"none" }}>
           <div style={{ width:36, height:4, background:"rgba(245,165,36,0.3)", borderRadius:999, margin:"0 auto 20px" }} />
           <div style={{ textAlign:"center" }}>
             <div style={{ fontSize:48, marginBottom:12 }}>🗿</div>
-            <div style={{ fontSize:18, fontWeight:900, color:T.text, fontFamily:"'Playfair Display',Georgia,serif", marginBottom:8 }}>Bonus Phrases</div>
+            <div style={{ fontSize:18, fontWeight:900, color:T.text, fontFamily:"'Playfair Display',Georgia,serif", marginBottom:8 }}>Cultural Phrases</div>
             <div style={{ fontSize:14, color:T.muted, marginBottom:20, lineHeight:1.5 }}>
-              Unlock bonus lesson sets for {langName} using your Regular XP.<br/><br/>
+              Coming soon for this language!<br/><br/>
               Each set costs <span style={{ color:T.path, fontWeight:700 }}>200 XP</span> — earn XP by completing lessons, keeping streaks, and chatting with the AI.
             </div>
             <button onClick={onClose} style={{ background:`linear-gradient(135deg,${T.path},#c9a84c)`, border:"none", borderRadius:12, padding:"10px 28px", fontSize:14, fontWeight:800, color:"#fff", cursor:"pointer", fontFamily:"inherit" }}>Got it</button>
@@ -159,7 +180,7 @@ export default function StatueShopPage({ userId, langCode = "de", onClose }) {
             <div style={{ fontSize: 11, color: T.muted }}>Unlock bonus expressions with XP</div>
           </div>
           <div style={{ background: `rgba(245,165,36,0.1)`, border: `1px solid ${T.border}`, borderRadius: 12, padding: "6px 12px", textAlign: "center" }}>
-            <div style={{ fontSize: 13, fontWeight: 900, color: T.path }}>⭐ {xp}</div>
+            <div style={{ fontSize: 13, fontWeight: 900, color: T.path }}>🪙 {xp}</div>
             <div style={{ fontSize: 9, color: T.faint, textTransform: "uppercase", letterSpacing: 0.8 }}>XP</div>
           </div>
           <button onClick={onClose} style={{ background: "none", border: "none", fontSize: 20, color: T.muted, cursor: "pointer", padding: "4px 8px", lineHeight: 1 }}>✕</button>
