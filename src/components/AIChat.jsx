@@ -1324,7 +1324,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
             <div style={{ maxWidth:"82%", display:"flex", flexDirection:"column", gap:4,
               alignItems:msg.role==="user"?"flex-end":"flex-start" }}>
               <div className={`chat-bubble ${msg.role==="assistant"?"chat-ai":"chat-user"}`}
-                style={{ whiteSpace: "pre-wrap" }}>
+                style={{ whiteSpace: "pre-wrap", color: msg.role==="assistant" ? chatTheme.text : (chatTheme.userText||"#fff") }}>
                 {(() => {
                   const content = msg.content;
                   const parts = content.split(/(⚠️ CORRECTION:[^\n]+)/g);
@@ -1428,7 +1428,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
             <div style={{ flexShrink:0, width:34, overflow:"visible" }}>
               <FoxTutorCard size={34} compact style={{ borderRadius:10, width:34 }} />
             </div>
-            <div className="chat-bubble chat-ai" style={{ display:"flex", gap:5, padding:"10px 14px" }}>
+            <div className="chat-bubble chat-ai" style={{ display:"flex", gap:5, padding:"10px 14px", color: chatTheme.text }}>
               {[0,0.2,0.4].map(d => (
                 <span key={d} style={{ width:7, height:7, borderRadius:"50%", background:"var(--muted)",
                   animation:`pulse 1s infinite ${d}s`, display:"inline-block" }} />
