@@ -239,6 +239,14 @@ export async function playExamAudio(url, opts = {}) {
 }
 
 /**
+ * Speak arbitrary text via browser Web Speech API — no ElevenLabs, no network call.
+ * Use for exam questions in English where no pre-recorded file is available.
+ */
+export function speakText(text, langCode = "en") {
+  return _webSpeechSpeak(normalizeTextForSpeech(text, langCode), langCode);
+}
+
+/**
  * Like playWordAudio but AWAITS audio completion before resolving.
  * Priority: 1) pre-recorded static file  2) browser speechSynthesis
  */

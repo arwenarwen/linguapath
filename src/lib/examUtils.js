@@ -1,6 +1,6 @@
 // Exam bank loading, formatting, audio playback, and scoring utilities.
 
-import { stopAllAudio, playExamAudio } from "./audioPlayer";
+import { stopAllAudio, playExamAudio, speakText } from "./audioPlayer";
 import { slugifyStaticAudio } from "./staticAudio";
 import { getRom, getRomSync, NEEDS_ROM } from "./romanize";
 
@@ -263,15 +263,41 @@ function _examQId(question, fallbackIndex = 1) {
 }
 
 /**
- * Play the pre-recorded audio for an exam question.
- * Uses /audio/exam/{lang}/{LEVEL}_{ID}.mp3  e.g. /audio/exam/de/A1_Q01.mp3
- * Silent if the file hasn't been recorded yet.
+ * Play the audio for an exam question.
+ * Priority:
+ *   1) Pre-recorded file: /audio/exam/{lang}/{LEVEL}_{ID}.mp3
+ *   2) Fallback: browser Web Speech reading the English question text
+ *
+ * For "listen" type: play pre-recorded keyword file only (no English fallback).
+ * For all other types: try pre-recorded, then speak English question via Web Speech.
  */
 export async function playExamQuestionAudio(question, level, langCode, qIndex = 1, total = 25) {
   if (!question) return;
-  const id  = _examQId(question, qIndex);
-  const url = `/audio/exam/${langCode}/${level}_${id}.mp3`;
-  await playExamAudio(url, { maxMs: 15000 });
+  const type = question.exercise_type || "";
+  const id   = _examQId(question, qIndex);
+  const url  = `/audio/exam/${langCode}/${level}_${id}.mp3`;
+
+  // For "listen" questions, play the pre-recorded keyword pronunciation only
+  if (type === "listen") {
+    await playExamAudio(url, { maxMs: 15000 });
+    return;
+  }
+
+  // For all other types: try pre-recorded question file first.
+  // If the file is missing or the HEAD request fails, fall back to Web Speech.
+  try {
+    const head = await fetch(url, { method: "HEAD", cache: "force-cache" });
+    if (head.ok) {
+      await playExamAudio(url, { maxMs: 15000 });
+      return;
+    }
+  } catch {}
+
+  // Fallback: read the full English question text via browser Web Speech (no ElevenLabs)
+  const questionText = String(question.question || "").trim();
+  if (questionText) {
+    await speakText(questionText, "en");
+  }
 }
 
 /**
