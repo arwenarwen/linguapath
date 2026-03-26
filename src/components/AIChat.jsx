@@ -649,8 +649,10 @@ function parseInlineMarkdown(text) {
 }
 
 // ── Block markdown renderer — handles ###, ##, #, bullets, numbered lists ─────
-function renderMarkdown(text, key) {
+function renderMarkdown(text, key, textColor) {
   if (!text) return null;
+  // textColor falls back to a safe dark value — never use var(--text) which is near-white
+  const tc = textColor || "#3a2000";
   const lines = text.split("\n");
   const elements = [];
   let listItems = [];
@@ -665,7 +667,7 @@ function renderMarkdown(text, key) {
         listStyleType: listType === "ol" ? "decimal" : "disc",
       }}>
         {listItems.map((item, i) => (
-          <li key={i} style={{ fontSize:14, lineHeight:1.6, color:"var(--text)", marginBottom:2 }}>
+          <li key={i} style={{ fontSize:14, lineHeight:1.6, color:tc, marginBottom:2 }}>
             {parseInlineMarkdown(item)}
           </li>
         ))}
@@ -679,13 +681,13 @@ function renderMarkdown(text, key) {
     // Headers
     if (/^### /.test(line)) {
       flushList();
-      elements.push(<div key={i} style={{ fontSize:14, fontWeight:800, color:"var(--text)", marginTop:10, marginBottom:3, opacity:0.85 }}>{parseInlineMarkdown(line.slice(4))}</div>);
+      elements.push(<div key={i} style={{ fontSize:14, fontWeight:800, color:tc, marginTop:10, marginBottom:3, opacity:0.85 }}>{parseInlineMarkdown(line.slice(4))}</div>);
     } else if (/^## /.test(line)) {
       flushList();
-      elements.push(<div key={i} style={{ fontSize:15, fontWeight:800, color:"var(--text)", marginTop:12, marginBottom:4 }}>{parseInlineMarkdown(line.slice(3))}</div>);
+      elements.push(<div key={i} style={{ fontSize:15, fontWeight:800, color:tc, marginTop:12, marginBottom:4 }}>{parseInlineMarkdown(line.slice(3))}</div>);
     } else if (/^# /.test(line)) {
       flushList();
-      elements.push(<div key={i} style={{ fontSize:16, fontWeight:900, color:"var(--text)", marginTop:12, marginBottom:5 }}>{parseInlineMarkdown(line.slice(2))}</div>);
+      elements.push(<div key={i} style={{ fontSize:16, fontWeight:900, color:tc, marginTop:12, marginBottom:5 }}>{parseInlineMarkdown(line.slice(2))}</div>);
     // Bullet list
     } else if (/^[*\-] /.test(line)) {
       if (listType && listType !== "ul") flushList();
@@ -699,7 +701,7 @@ function renderMarkdown(text, key) {
     // Horizontal rule
     } else if (/^---+$/.test(line.trim())) {
       flushList();
-      elements.push(<hr key={i} style={{ border:"none", borderTop:"1px solid rgba(0,0,0,0.1)", margin:"8px 0" }} />);
+      elements.push(<hr key={i} style={{ border:"none", borderTop:`1px solid ${tc}22`, margin:"8px 0" }} />);
     // Empty line
     } else if (line.trim() === "") {
       flushList();
@@ -707,7 +709,7 @@ function renderMarkdown(text, key) {
     // Normal paragraph line
     } else {
       flushList();
-      elements.push(<div key={i} style={{ fontSize:14, lineHeight:1.65, color:"var(--text)" }}>{parseInlineMarkdown(line)}</div>);
+      elements.push(<div key={i} style={{ fontSize:14, lineHeight:1.65, color:tc }}>{parseInlineMarkdown(line)}</div>);
     }
   });
   flushList();
@@ -1403,7 +1405,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
                     }
                     // Use full block markdown renderer for assistant messages
                     return msg.role === "assistant"
-                      ? renderMarkdown(part, pi)
+                      ? renderMarkdown(part, pi, chatTheme.text)
                       : <span key={pi}>{parseInlineMarkdown(part)}</span>;
                   });
                 })()}
