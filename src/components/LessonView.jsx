@@ -1304,13 +1304,12 @@ function CelebrationBurst({ stars, xp, onDone }) {
   return (
     <div style={{
       position: "fixed", inset: 0, zIndex: 420,
-      display: "flex", alignItems: "center", justifyContent: "center",
       pointerEvents: "none",
       animation: "celebFadeOut 1.9s ease both",
     }}>
       <style>{CELEBRATION_CSS}</style>
 
-      {/* Confetti rain */}
+      {/* Confetti rain — full screen, behind everything */}
       {particles.map(p => (
         <div key={p.id} style={{
           position: "absolute", top: 0, left: p.left,
@@ -1322,36 +1321,28 @@ function CelebrationBurst({ stars, xp, onDone }) {
         }} />
       ))}
 
-      {/* Center: fox + text */}
-      <div style={{ textAlign: "center", zIndex: 1, position: "relative" }}>
-        {/* Background glow */}
+      {/* Fox + label — pinned to bottom-left so center content stays visible */}
+      <div style={{
+        position: "absolute", bottom: 90, left: 16,
+        display: "flex", alignItems: "flex-end", gap: 10,
+        zIndex: 1,
+      }}>
         <div style={{
-          position: "absolute", top: "50%", left: "50%",
-          transform: "translate(-50%,-50%)",
-          width: 220, height: 220, borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,200,50,0.45) 0%, transparent 70%)",
-          filter: "blur(24px)",
-          pointerEvents: "none",
-        }} />
-        <div style={{
-          fontSize: 108, lineHeight: 1, display: "inline-block",
+          fontSize: 72, lineHeight: 1, display: "inline-block",
           animation: "foxLeap 0.8s cubic-bezier(0.34,1.56,0.64,1) both",
-          filter: "drop-shadow(0 12px 36px rgba(245,165,36,0.65))",
-          position: "relative", zIndex: 1,
+          filter: "drop-shadow(0 8px 24px rgba(245,165,36,0.6))",
         }}>🦊</div>
         <div style={{
-          fontSize: 20, fontWeight: 900, color: "#4a2800",
-          fontFamily: "'Playfair Display',Georgia,serif",
-          animation: "celebTextPop 0.45s 0.25s ease both",
-          textShadow: "0 2px 14px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.7)",
-          position: "relative", zIndex: 1, marginTop: 6,
-        }}>{label}</div>
-        <div style={{
-          fontSize: 17, fontWeight: 800, color: "#f5a524", marginTop: 6,
-          animation: "celebTextPop 0.45s 0.4s ease both",
-          textShadow: "0 2px 10px rgba(255,255,255,0.9)",
-          position: "relative", zIndex: 1,
-        }}>🪙 +{xp} XP</div>
+          background: "rgba(255,255,255,0.92)",
+          border: "1.5px solid rgba(245,165,36,0.4)",
+          borderRadius: "16px 16px 16px 4px",
+          padding: "10px 14px",
+          animation: "celebTextPop 0.4s 0.2s ease both",
+          boxShadow: "0 4px 20px rgba(245,165,36,0.2)",
+        }}>
+          <div style={{ fontSize: 14, fontWeight: 900, color: "#4a2800", lineHeight: 1.3 }}>{label}</div>
+          <div style={{ fontSize: 13, fontWeight: 800, color: "#f5a524", marginTop: 3 }}>🪙 +{xp} XP</div>
+        </div>
       </div>
     </div>
   );
