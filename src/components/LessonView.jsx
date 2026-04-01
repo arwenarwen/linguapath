@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Component } from "react";
+import { useState, useEffect, useRef, useMemo, Component } from "react";
 import { tryPlayStaticAudio } from "../lib/staticAudio";
 import { getRom, getRomSync, NEEDS_ROM } from "../lib/romanize";
 
@@ -74,6 +74,29 @@ function saveMistake(userId, langCode, question, wrong, correct) {
       localStorage.setItem(`lp_mistakes_${userId}_${langCode}`,
         JSON.stringify(list.slice(0,500)));
     }
+  } catch {}
+}
+
+function saveVocabToBook(userId, langCode, module) {
+  if (!module?.vocab?.length || !langCode) return;
+  try {
+    const key = `lp_vocab_${userId || "anon"}_${langCode}`;
+    const existing = JSON.parse(localStorage.getItem(key) || "[]");
+    // Don't duplicate lessons already saved
+    const alreadySaved = existing.some(e => e.moduleId === module.id);
+    if (alreadySaved) return;
+    existing.unshift({
+      moduleId: module.id,
+      title: module.lesson_focus || module.title || "Lesson",
+      unit: module.unit || "",
+      icon: module.icon || "📖",
+      date: new Date().toISOString().slice(0, 10),
+      words: (module.vocab || []).map(w => ({
+        en: w.en || "",
+        target: w[langCode] || w.de || w.es || w.fr || w.it || w.pt || w.zh || w.ja || w.ko || "",
+      })).filter(w => w.en && w.target),
+    });
+    localStorage.setItem(key, JSON.stringify(existing.slice(0, 200)));
   } catch {}
 }
 
@@ -1243,6 +1266,97 @@ const FOX_COMPLETE_MSGS = {
   ],
 };
 
+/* ─── CELEBRATION BURST (confetti + fox jump) ───────────────────────────────── */
+const CELEBRATION_CSS = `
+  @keyframes celebFadeOut { 0%{opacity:1} 60%{opacity:1} 100%{opacity:0} }
+  @keyframes foxLeap { 0%{transform:scale(0) translateY(50px);opacity:0} 35%{transform:scale(1.35) translateY(-40px);opacity:1} 55%{transform:scale(0.95) translateY(0);opacity:1} 70%{transform:scale(1.12) translateY(-18px)} 85%{transform:scale(0.98) translateY(0)} 100%{transform:scale(1.06) translateY(-8px)} }
+  @keyframes celebTextPop { 0%{transform:scale(0.4) translateY(10px);opacity:0} 60%{transform:scale(1.08);opacity:1} 100%{transform:scale(1);opacity:1} }
+  @keyframes confettiFall { 0%{transform:translateY(-20px) rotate(0deg);opacity:1} 80%{opacity:1} 100%{transform:translateY(110vh) rotate(720deg);opacity:0} }
+  @keyframes confettiBurst { 0%{transform:translate(0,0) rotate(0deg);opacity:1} 100%{transform:translate(var(--bx),var(--by)) rotate(360deg);opacity:0} }
+`;
+
+const CONFETTI_COLORS = ["#f5a524","#22c55e","#3b82f6","#ec4899","#f97316","#a78bfa","#fbbf24","#34d399","#fb7185","#60a5fa"];
+
+function CelebrationBurst({ stars, xp, onDone }) {
+  const particles = useMemo(() => {
+    const arr = [];
+    for (let i = 0; i < 32; i++) {
+      arr.push({
+        id: i,
+        color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+        left: `${5 + Math.random() * 90}%`,
+        size: 5 + Math.random() * 9,
+        shape: Math.random() > 0.45 ? "50%" : "2px",
+        delay: (Math.random() * 0.5).toFixed(2),
+        duration: (1.0 + Math.random() * 0.9).toFixed(2),
+      });
+    }
+    return arr;
+  }, []);
+
+  useEffect(() => {
+    const t = setTimeout(onDone, 1900);
+    return () => clearTimeout(t);
+  }, [onDone]);
+
+  const label = stars === 3 ? "🌟 Perfect score!" : stars === 2 ? "⭐⭐ Great work!" : "✅ Lesson complete!";
+
+  return (
+    <div style={{
+      position: "fixed", inset: 0, zIndex: 420,
+      display: "flex", alignItems: "center", justifyContent: "center",
+      pointerEvents: "none",
+      animation: "celebFadeOut 1.9s ease both",
+    }}>
+      <style>{CELEBRATION_CSS}</style>
+
+      {/* Confetti rain */}
+      {particles.map(p => (
+        <div key={p.id} style={{
+          position: "absolute", top: 0, left: p.left,
+          width: p.size, height: p.size,
+          borderRadius: p.shape,
+          background: p.color,
+          animation: `confettiFall ${p.duration}s ${p.delay}s ease-in both`,
+          zIndex: 0,
+        }} />
+      ))}
+
+      {/* Center: fox + text */}
+      <div style={{ textAlign: "center", zIndex: 1, position: "relative" }}>
+        {/* Background glow */}
+        <div style={{
+          position: "absolute", top: "50%", left: "50%",
+          transform: "translate(-50%,-50%)",
+          width: 220, height: 220, borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(255,200,50,0.45) 0%, transparent 70%)",
+          filter: "blur(24px)",
+          pointerEvents: "none",
+        }} />
+        <div style={{
+          fontSize: 108, lineHeight: 1, display: "inline-block",
+          animation: "foxLeap 0.8s cubic-bezier(0.34,1.56,0.64,1) both",
+          filter: "drop-shadow(0 12px 36px rgba(245,165,36,0.65))",
+          position: "relative", zIndex: 1,
+        }}>🦊</div>
+        <div style={{
+          fontSize: 20, fontWeight: 900, color: "#4a2800",
+          fontFamily: "'Playfair Display',Georgia,serif",
+          animation: "celebTextPop 0.45s 0.25s ease both",
+          textShadow: "0 2px 14px rgba(255,255,255,0.9), 0 0 40px rgba(255,255,255,0.7)",
+          position: "relative", zIndex: 1, marginTop: 6,
+        }}>{label}</div>
+        <div style={{
+          fontSize: 17, fontWeight: 800, color: "#f5a524", marginTop: 6,
+          animation: "celebTextPop 0.45s 0.4s ease both",
+          textShadow: "0 2px 10px rgba(255,255,255,0.9)",
+          position: "relative", zIndex: 1,
+        }}>🪙 +{xp} XP</div>
+      </div>
+    </div>
+  );
+}
+
 const COMPLETE_CSS = `
   @keyframes foxPopIn   { 0%{transform:scale(0) rotate(-15deg);opacity:0} 60%{transform:scale(1.2) rotate(5deg);opacity:1} 100%{transform:scale(1) rotate(0);opacity:1} }
   @keyframes foxWiggle  { 0%,100%{transform:rotate(0)} 20%{transform:rotate(-10deg)} 40%{transform:rotate(10deg)} 60%{transform:rotate(-6deg)} 80%{transform:rotate(6deg)} }
@@ -1431,6 +1545,7 @@ function LessonViewInner({
   // Once set it can ONLY be cleared by a module change — no other state update,
   // prop change, or render cycle can remove the Complete screen from view.
   const [quizResult, setQuizResult] = useState(null); // null | { score, total, stars }
+  const [showCelebration, setShowCelebration] = useState(false);
   // Incremented on each re-attempt, forcing Quiz to fully remount and reset
   const [attemptKey, setAttemptKey] = useState(0);
 
@@ -1452,6 +1567,7 @@ function LessonViewInner({
   useEffect(() => {
     setPhase("intro");
     setQuizResult(null);
+    setShowCelebration(false);
     setAttemptKey(k => k + 1);
   }, [module?.id]);
 
@@ -1464,12 +1580,15 @@ function LessonViewInner({
 
   function handleQuizDone(score, total, stars) {
     const earnedStars = (typeof stars === "number" && stars >= 1) ? stars : 1;
+    const earnedXP = earnedStars === 3 ? 35 : earnedStars === 2 ? 25 : 15;
     // Set quizResult FIRST — this is the lock that keeps the Complete screen visible.
     // Nothing except a module change can unset it after this point.
-    setQuizResult({ score, total, stars: earnedStars });
+    setQuizResult({ score, total, stars: earnedStars, xp: earnedXP });
+    setShowCelebration(true);
     setPhase("complete");
+    // Save vocab words to the vocab book
+    saveVocabToBook(userId, langCode, module);
     try {
-      const earnedXP = earnedStars === 3 ? 35 : earnedStars === 2 ? 25 : 15;
       if (onComplete) onComplete(module.id, earnedXP, earnedStars);
     } catch (e) {
       console.error("onComplete error:", e);
@@ -1552,6 +1671,15 @@ function LessonViewInner({
             rewardSummary={rewardSummary}
             onBack={onBack} onNext={onNextLesson} onReview={onGoReview} />
         </div>
+      )}
+
+      {/* ── Celebration burst — renders above everything for ~1.9s then auto-dismisses */}
+      {showCelebration && quizResult && (
+        <CelebrationBurst
+          stars={quizResult.stars}
+          xp={quizResult.xp ?? 25}
+          onDone={() => setShowCelebration(false)}
+        />
       )}
     </>
   );

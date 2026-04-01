@@ -132,6 +132,11 @@ function pushMistake(userId, langCode, original, corrected, explanation, source)
 function getLangName(code) {
   return { es:"Spanish", fr:"French", de:"German", it:"Italian", pt:"Portuguese", zh:"Chinese", ja:"Japanese", ko:"Korean", pl:"Polish", ru:"Russian", el:"Greek", en:"English" }[code] || code?.toUpperCase() || "Language";
 }
+function getVocabBook(userId, langCode) {
+  try {
+    return JSON.parse(localStorage.getItem(`lp_vocab_${userId || "anon"}_${langCode}`) || "[]");
+  } catch { return []; }
+}
 function getCardFrontTitle(m) {
   if (m?.source === "Exam Mode") return "❓ Exam review";
   return m?.question ? "❓ Review question" : (m?.isLesson ? "❓ Exercise" : "✗ You chose");
@@ -245,6 +250,88 @@ function SrcColor(src) {
 }
 
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
+function VocabLessonCard({ lesson, langCode }) {
+  const [expanded, setExpanded] = React.useState(false);
+  const [playingWord, setPlayingWord] = React.useState(null);
+
+  async function playWord(text) {
+    if (!text || playingWord) return;
+    setPlayingWord(text);
+    try {
+      const used = await tryPlayStaticAudio({ text, langCode, stopAllAudio, setActiveAudio: a => { _audio = a; } });
+      if (!used) {
+        // Fallback: ElevenLabs TTS
+        const res = await fetch("/api/tts", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ text, langCode }) });
+        if (res.ok) {
+          const blob = await res.blob();
+          const url = URL.createObjectURL(blob);
+          const a = new Audio(url);
+          _audio = a;
+          a.onended = () => { URL.revokeObjectURL(url); if (_audio===a) _audio=null; };
+          await a.play();
+        }
+      }
+    } catch {}
+    setTimeout(() => setPlayingWord(null), 1800);
+  }
+
+  return (
+    <div style={{ background:T.panel, border:`1px solid ${T.panelBorder}`, borderRadius:16, marginBottom:10, overflow:"hidden" }}>
+      <button className="rv-btn" onClick={()=>setExpanded(e=>!e)} style={{
+        width:"100%", padding:"13px 16px", textAlign:"left",
+        background:"transparent", display:"flex", alignItems:"center", gap:10,
+      }}>
+        <span style={{ fontSize:22 }}>{lesson.icon||"📖"}</span>
+        <div style={{ flex:1, minWidth:0 }}>
+          <div style={{ fontSize:13, fontWeight:800, color:T.text, lineHeight:1.2 }}>{lesson.title}</div>
+          <div style={{ fontSize:11, color:T.mutedLight, marginTop:2 }}>
+            {lesson.unit ? `${lesson.unit} · ` : ""}{lesson.words?.length||0} words · {lesson.date||""}
+          </div>
+        </div>
+        <span style={{ fontSize:12, color:T.muted, fontWeight:700 }}>{expanded ? "▲" : "▼"}</span>
+      </button>
+
+      {expanded && (
+        <div style={{ padding:"0 14px 14px", borderTop:`1px solid ${T.panelBorder}` }}>
+          <div style={{ paddingTop:12, display:"flex", flexDirection:"column", gap:7 }}>
+            {(lesson.words||[]).map((w, wi) => (
+              <div key={wi} style={{
+                display:"flex", alignItems:"center", gap:10,
+                background:T.card, border:`1px solid ${T.cardBorder}`,
+                borderRadius:12, padding:"9px 12px",
+              }}>
+                <div style={{ flex:1 }}>
+                  <div style={{ fontSize:15, fontWeight:800, color:T.text }}>{w.target}</div>
+                  <div style={{ fontSize:12, color:T.muted, marginTop:2 }}>{w.en}</div>
+                </div>
+                <button
+                  className="rv-btn"
+                  onClick={() => playWord(w.target)}
+                  style={{
+                    width:36, height:36, borderRadius:"50%", flexShrink:0,
+                    background: playingWord===w.target ? "rgba(245,165,36,0.22)" : "rgba(245,165,36,0.10)",
+                    border:`1.5px solid rgba(245,165,36,0.3)`,
+                    color:T.pathDark, fontSize:15,
+                    display:"flex", alignItems:"center", justifyContent:"center",
+                  }}
+                >
+                  {playingWord===w.target ? (
+                    <div style={{ display:"flex", gap:2, alignItems:"center", height:12 }}>
+                      {[0.35,0.7,1,0.7,0.35].map((h,i) => (
+                        <div key={i} style={{ width:2.5, borderRadius:2, background:T.pathDark, height:`${h*12}px`, animation:`rv-wave 0.6s ease-in-out ${i*0.1}s infinite` }} />
+                      ))}
+                    </div>
+                  ) : "🔊"}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ReviewPanel({ userId, langCode, langName: langNameProp, onMenuOpen }) {
   const langName = langNameProp || getLangName(langCode);
   const [view, setView]         = useState("flashcards");
@@ -359,7 +446,7 @@ Query: ${q}`;
           </div>
           {/* Segmented switch */}
           <div style={{ display:"flex", background:T.panel, borderRadius:12, padding:3, border:`1px solid ${T.panelBorder}`, boxShadow:"0 2px 8px rgba(245,165,36,0.1)" }}>
-            {[["flashcards","📇 Cards"],["dictionary","📖 Dict"]].map(([v,l])=>(
+            {[["flashcards","📇 Cards"],["dictionary","📖 Dict"],["vocab","📚 Vocab"]].map(([v,l])=>(
               <button key={v} className="rv-tab" onClick={()=>setView(v)} style={{
                 padding:"6px 11px", fontSize:11, fontWeight:800, borderRadius:10,
                 background: view===v ? T.path : "transparent",
@@ -665,6 +752,32 @@ Query: ${q}`;
             )}
           </div>
         )}
+
+        {/* ── VOCAB BOOK ──────────────────────────────────────────────── */}
+        {view==="vocab" && (() => {
+          const vocabBook = getVocabBook(userId, langCode);
+
+          if (vocabBook.length === 0) return (
+            <div className="rv-fade" style={{ textAlign:"center", padding:"60px 20px" }}>
+              <div style={{ fontSize:60, marginBottom:16 }}>📚</div>
+              <div style={{ fontFamily:"'Syne',sans-serif", fontSize:20, fontWeight:800, color:T.text, marginBottom:8 }}>Your vocab book is empty</div>
+              <div style={{ fontSize:14, color:T.muted, lineHeight:1.7, maxWidth:280, margin:"0 auto" }}>
+                Complete lessons to fill your vocab book — every word you learn will be saved here for review.
+              </div>
+            </div>
+          );
+
+          return (
+            <div className="rv-fade">
+              <div style={{ fontSize:11, color:T.mutedLight, textTransform:"uppercase", letterSpacing:1.5, fontWeight:700, marginBottom:14 }}>
+                {vocabBook.reduce((s,l)=>s+(l.words?.length||0),0)} words across {vocabBook.length} lesson{vocabBook.length!==1?"s":""}
+              </div>
+              {vocabBook.map((lesson, li) => (
+                <VocabLessonCard key={lesson.moduleId||li} lesson={lesson} langCode={langCode} />
+              ))}
+            </div>
+          );
+        })()}
 
       </div>
     </div>

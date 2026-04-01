@@ -1,6 +1,6 @@
 // Exam bank loading, formatting, audio playback, and scoring utilities.
 
-import { stopAllAudio, playExamAudio, speakText } from "./audioPlayer";
+import { stopAllAudio, playExamAudio } from "./audioPlayer";
 import { slugifyStaticAudio } from "./staticAudio";
 import { getRom, getRomSync, NEEDS_ROM } from "./romanize";
 
@@ -276,10 +276,11 @@ export function getExamQuestionAudioUrl(question, level, langCode, qIndex = 1) {
 /**
  * Play exam question audio.
  * ONLY plays for "listen" type questions — all other types are silent.
- * Priority for listen questions:
- *   1) Pre-recorded ElevenLabs exam file: /audio/exam/{lang}/{LEVEL}_Q{NN}.mp3
- *   2) Pre-recorded static word file:     /audio/{lang}/{slug}.mp3
- *   3) Web Speech in target language (browser TTS, always correct sentence)
+ * Pre-recorded files only — NO Web Speech fallback.
+ * Priority:
+ *   1) ElevenLabs exam file: /audio/exam/{lang}/{LEVEL}_Q{NN}.mp3
+ *   2) Static word/phrase file: /audio/{lang}/{slug}.mp3
+ *   3) Silent if neither exists
  */
 export async function playExamQuestionAudio(question, level, langCode, qIndex = 1, total = 25) {
   if (!question) return;
@@ -293,10 +294,7 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
   const examUrl = `/audio/exam/${langCode}/${level}_${id}.mp3`;
   try {
     const head = await fetch(examUrl, { method: "HEAD", cache: "force-cache" });
-    if (head.ok) {
-      await playExamAudio(examUrl, { maxMs: 10000 });
-      return;
-    }
+    if (head.ok) { await playExamAudio(examUrl, { maxMs: 10000 }); return; }
   } catch {}
 
   // 2. Try pre-recorded static word/phrase file
@@ -304,35 +302,26 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
   const staticUrl = `/audio/${langCode}/${slug}.mp3`;
   try {
     const head = await fetch(staticUrl, { method: "HEAD", cache: "force-cache" });
-    if (head.ok) {
-      await playExamAudio(staticUrl, { maxMs: 10000 });
-      return;
-    }
+    if (head.ok) { await playExamAudio(staticUrl, { maxMs: 10000 }); return; }
   } catch {}
 
-  // 3. Fallback: Web Speech in target language
-  await speakText(audioText, langCode);
+  // 3. Silent — no Web Speech, no robot voice
 }
 
 /**
  * Play audio when the user taps an answer option on a listen question.
- * Lets them hear each option to compare — plays static word file or Web Speech.
+ * Pre-recorded files only — NO Web Speech fallback.
  */
 export async function playExamOptionAudio(question, level, langCode, optionIndex, optionText) {
   if (!question || optionIndex < 0 || !optionText) return;
-  // Only play option audio for listen exercises
   if ((question.exercise_type || "") !== "listen") return;
   const slug = slugifyStaticAudio(String(optionText));
   const staticUrl = `/audio/${langCode}/${slug}.mp3`;
   try {
     const head = await fetch(staticUrl, { method: "HEAD", cache: "force-cache" });
-    if (head.ok) {
-      await playExamAudio(staticUrl, { maxMs: 8000 });
-      return;
-    }
+    if (head.ok) { await playExamAudio(staticUrl, { maxMs: 8000 }); return; }
   } catch {}
-  // Fallback: Web Speech so user always hears the option
-  await speakText(String(optionText), langCode);
+  // Silent — no Web Speech fallback
 }
 
 /**
