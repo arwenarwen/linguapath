@@ -3,7 +3,7 @@ import { supabase, canUseAISession, startAISession, incrementAISessionMessage, i
 import { findPrerecordedAnswer, getTopicAnswer } from '../lib/prerecorded';
 import {
   setAudioLang, stopAllAudio, queueSpeech,
-  normalizeTextForSpeech, getTutorVoiceId, getLessonWordText, playWordAudio,
+  normalizeTextForSpeech, getTutorVoiceId, getLessonWordText, playWordAudio, playExamAudio,
 } from '../lib/audioPlayer';
 import {
   isRealReviewMistake, getMistakes, saveMistakes,
@@ -14,7 +14,7 @@ import {
 import {
   loadLocalExamBank, formatLocalExamQuestion,
   playExamQuestionAudio, playExamFeedbackAudio, playExamOptionAudio,
-  extractOptionChoice, buildLocalExamReport,
+  extractOptionChoice, buildLocalExamReport, getExamQuestionAudioUrl,
 } from '../lib/examUtils';
 import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
 import FoxTutorCard from './FoxTutorCard';
@@ -789,8 +789,10 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
           }
           const opening = await formatLocalExamQuestion(first, bank?.question_count || 20, 1, langCode);
           setMessages([{ role: "assistant", content: opening, translation: null,
-            listenAudio: first.exercise_type === "listen" ? first.audio : null }]);
-          // Play static pre-recorded question audio; fall back to live TTS
+            listenAudio: first.exercise_type === "listen"
+              ? getExamQuestionAudioUrl(first, cefrLevel, langCode, 1)
+              : null }]);
+          // Play static pre-recorded question audio; fall back to Web Speech
           playExamQuestionAudio(first, cefrLevel, langCode, 1, bank?.question_count || 25);
         })
         .catch(() => {
@@ -968,7 +970,9 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
             role: "assistant",
             content: nextQContent,
             translation: null,
-            listenAudio: nextQuestion.exercise_type === "listen" ? nextQuestion.audio : null,
+            listenAudio: nextQuestion.exercise_type === "listen"
+              ? getExamQuestionAudioUrl(nextQuestion, cefrLevel, langCode, nextQuestionIndex + 1)
+              : null,
           }]);
 
           // 3. Brief pause so message renders, then play question audio
@@ -1251,10 +1255,16 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         </div>
         <div style={{ flex:1, minWidth:0 }}>
           <div style={{ fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:14, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", color:chatTheme.text }}>
-            {scenario.title || modeLabels[mode]}
+            {mode === "exam"
+              ? `${cfg.name} Exam`
+              : (scenario.title || modeLabels[mode])}
           </div>
           <div style={{ fontSize:11, color:chatTheme.muted }}>
-            <span style={{ color:chatTheme.path, fontWeight:700 }}>{tutorAnimalName}</span>
+            {mode === "exam" ? (
+              <span style={{ color:chatTheme.path, fontWeight:700 }}>{cefrLevel || "A1"}</span>
+            ) : (
+              <span style={{ color:chatTheme.path, fontWeight:700 }}>{tutorAnimalName}</span>
+            )}
             {" · "}{cfg.name}
           </div>
         </div>
@@ -1412,7 +1422,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
               </div>
               {msg.role==="assistant" && msg.listenAudio && (
                 <button
-                  onClick={() => playWordAudio(String(msg.listenAudio), langCode, { voiceId: getTutorVoiceId(langCode) })}
+                  onClick={() => playExamAudio(String(msg.listenAudio), { maxMs: 15000 })}
                   title="Replay audio"
                   style={{
                     display:"flex", alignItems:"center", gap:6,

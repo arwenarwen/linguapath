@@ -262,6 +262,13 @@ function _examQId(question, fallbackIndex = 1) {
   return `Q${String(n).padStart(2, "0")}`;
 }
 
+/** Returns the pre-recorded audio URL for a question (used by replay button). */
+export function getExamQuestionAudioUrl(question, level, langCode, qIndex = 1) {
+  if (!question || !level || !langCode) return null;
+  const id = _examQId(question, qIndex);
+  return `/audio/exam/${langCode}/${level}_${id}.mp3`;
+}
+
 /**
  * Play the audio for an exam question.
  * Priority:
