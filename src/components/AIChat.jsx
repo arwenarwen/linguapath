@@ -14,7 +14,7 @@ import {
 import {
   loadLocalExamBank, formatLocalExamQuestion,
   playExamQuestionAudio, playExamFeedbackAudio, playExamOptionAudio,
-  extractOptionChoice, buildLocalExamReport, getExamQuestionAudioUrl,
+  extractOptionChoice, buildLocalExamReport,
 } from '../lib/examUtils';
 import { parseMistakes, normalizeTutorSpeechText } from '../lib/tutorUtils';
 import FoxTutorCard from './FoxTutorCard';
@@ -789,9 +789,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
           }
           const opening = await formatLocalExamQuestion(first, bank?.question_count || 20, 1, langCode);
           setMessages([{ role: "assistant", content: opening, translation: null,
-            listenAudio: first.exercise_type === "listen"
-              ? getExamQuestionAudioUrl(first, cefrLevel, langCode, 1)
-              : null }]);
+            listenAudio: first.exercise_type === "listen" ? 1 : null }]);
           // Play static pre-recorded question audio; fall back to Web Speech
           playExamQuestionAudio(first, cefrLevel, langCode, 1, bank?.question_count || 25);
         })
@@ -970,9 +968,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
             role: "assistant",
             content: nextQContent,
             translation: null,
-            listenAudio: nextQuestion.exercise_type === "listen"
-              ? getExamQuestionAudioUrl(nextQuestion, cefrLevel, langCode, nextQuestionIndex + 1)
-              : null,
+            listenAudio: nextQuestion.exercise_type === "listen" ? nextQuestionIndex + 1 : null,
           }]);
 
           // 3. Brief pause so message renders, then play question audio
@@ -1422,7 +1418,10 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
               </div>
               {msg.role==="assistant" && msg.listenAudio && (
                 <button
-                  onClick={() => playWordAudio(String(msg.listenAudio), langCode)}
+                  onClick={() => {
+                    const q = localExamBank?.questions?.[Number(msg.listenAudio) - 1];
+                    if (q) playExamQuestionAudio(q, cefrLevel, langCode, Number(msg.listenAudio));
+                  }}
                   title="Replay audio"
                   style={{
                     display:"flex", alignItems:"center", gap:6,

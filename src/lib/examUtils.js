@@ -276,19 +276,30 @@ export function getExamQuestionAudioUrl(question, level, langCode, qIndex = 1) {
 /**
  * Play exam question audio.
  * ONLY plays for "listen" type questions — all other types are silent.
- * For listen: plays question.audio (the actual target-language sentence to identify).
- *   1) Tries the pre-recorded static word file /audio/{lang}/{slug}.mp3
- *   2) Falls back to Web Speech in the target language
- * Never uses the generic question file (A1_Q13.mp3) which may have wrong content.
+ * Priority for listen questions:
+ *   1) Pre-recorded ElevenLabs exam file: /audio/exam/{lang}/{LEVEL}_Q{NN}.mp3
+ *   2) Pre-recorded static word file:     /audio/{lang}/{slug}.mp3
+ *   3) Web Speech in target language (browser TTS, always correct sentence)
  */
 export async function playExamQuestionAudio(question, level, langCode, qIndex = 1, total = 25) {
   if (!question) return;
   const type = question.exercise_type || "";
-  // Only listening comprehension questions get auto-played audio
   if (type !== "listen") return;
   const audioText = String(question.audio || "").trim();
   if (!audioText) return;
-  // Try static word audio file first
+
+  // 1. Try pre-recorded ElevenLabs exam file first
+  const id = _examQId(question, qIndex);
+  const examUrl = `/audio/exam/${langCode}/${level}_${id}.mp3`;
+  try {
+    const head = await fetch(examUrl, { method: "HEAD", cache: "force-cache" });
+    if (head.ok) {
+      await playExamAudio(examUrl, { maxMs: 10000 });
+      return;
+    }
+  } catch {}
+
+  // 2. Try pre-recorded static word/phrase file
   const slug = slugifyStaticAudio(audioText);
   const staticUrl = `/audio/${langCode}/${slug}.mp3`;
   try {
@@ -298,7 +309,8 @@ export async function playExamQuestionAudio(question, level, langCode, qIndex = 
       return;
     }
   } catch {}
-  // Fallback: Web Speech in target language (guaranteed to say the correct sentence)
+
+  // 3. Fallback: Web Speech in target language
   await speakText(audioText, langCode);
 }
 
