@@ -1,6 +1,6 @@
 // Exam bank loading, formatting, audio playback, and scoring utilities.
 
-import { stopAllAudio, playExamAudio } from "./audioPlayer";
+import { stopAllAudio, playExamAudio, speakText } from "./audioPlayer";
 import { slugifyStaticAudio } from "./staticAudio";
 import { getRom, getRomSync, NEEDS_ROM } from "./romanize";
 
@@ -262,38 +262,65 @@ function _examQId(question, fallbackIndex = 1) {
   return `Q${String(n).padStart(2, "0")}`;
 }
 
-/** Returns the pre-recorded audio URL for a question (used by replay button). */
+/**
+ * Returns the audio text for a listen question's Replay button.
+ * The replay button will call playExamQuestionAudio() which handles static→TTS fallback.
+ * We return the question.audio text as a sentinel so AIChat knows audio exists.
+ */
 export function getExamQuestionAudioUrl(question, level, langCode, qIndex = 1) {
-  if (!question || !level || !langCode) return null;
-  const id = _examQId(question, qIndex);
-  return `/audio/exam/${langCode}/${level}_${id}.mp3`;
+  if (!question || !langCode) return null;
+  // Return the actual sentence text — replay button uses this to re-trigger audio
+  return String(question.audio || "").trim() || null;
 }
 
 /**
  * Play exam question audio.
  * ONLY plays for "listen" type questions — all other types are silent.
- * For listen: plays the pre-recorded target-language sentence the user must identify.
+ * For listen: plays question.audio (the actual target-language sentence to identify).
+ *   1) Tries the pre-recorded static word file /audio/{lang}/{slug}.mp3
+ *   2) Falls back to Web Speech in the target language
+ * Never uses the generic question file (A1_Q13.mp3) which may have wrong content.
  */
 export async function playExamQuestionAudio(question, level, langCode, qIndex = 1, total = 25) {
   if (!question) return;
   const type = question.exercise_type || "";
   // Only listening comprehension questions get auto-played audio
   if (type !== "listen") return;
-  const id  = _examQId(question, qIndex);
-  const url = `/audio/exam/${langCode}/${level}_${id}.mp3`;
-  await playExamAudio(url, { maxMs: 15000 });
+  const audioText = String(question.audio || "").trim();
+  if (!audioText) return;
+  // Try static word audio file first
+  const slug = slugifyStaticAudio(audioText);
+  const staticUrl = `/audio/${langCode}/${slug}.mp3`;
+  try {
+    const head = await fetch(staticUrl, { method: "HEAD", cache: "force-cache" });
+    if (head.ok) {
+      await playExamAudio(staticUrl, { maxMs: 10000 });
+      return;
+    }
+  } catch {}
+  // Fallback: Web Speech in target language (guaranteed to say the correct sentence)
+  await speakText(audioText, langCode);
 }
 
 /**
- * Play the pre-recorded audio for an answer option the user tapped.
- * Only fires for "listen" questions — tapping an option plays that sentence.
+ * Play audio when the user taps an answer option on a listen question.
+ * Lets them hear each option to compare — plays static word file or Web Speech.
  */
 export async function playExamOptionAudio(question, level, langCode, optionIndex, optionText) {
   if (!question || optionIndex < 0 || !optionText) return;
   // Only play option audio for listen exercises
   if ((question.exercise_type || "") !== "listen") return;
   const slug = slugifyStaticAudio(String(optionText));
-  await playExamAudio(`/audio/${langCode}/${slug}.mp3`, { maxMs: 5000 });
+  const staticUrl = `/audio/${langCode}/${slug}.mp3`;
+  try {
+    const head = await fetch(staticUrl, { method: "HEAD", cache: "force-cache" });
+    if (head.ok) {
+      await playExamAudio(staticUrl, { maxMs: 8000 });
+      return;
+    }
+  } catch {}
+  // Fallback: Web Speech so user always hears the option
+  await speakText(String(optionText), langCode);
 }
 
 /**

@@ -1422,7 +1422,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
               </div>
               {msg.role==="assistant" && msg.listenAudio && (
                 <button
-                  onClick={() => playExamAudio(String(msg.listenAudio), { maxMs: 15000 })}
+                  onClick={() => playWordAudio(String(msg.listenAudio), langCode)}
                   title="Replay audio"
                   style={{
                     display:"flex", alignItems:"center", gap:6,
