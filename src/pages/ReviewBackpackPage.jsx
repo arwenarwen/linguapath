@@ -292,13 +292,7 @@ export default function ReviewPanel({ userId, langCode, langName: langNameProp, 
 
   function handleMastered() {
     if (!current) return;
-    const xpEarned = 12;
-    setXpFloat(xpEarned); setSessionXP(x=>x+xpEarned);
-    // Persist XP to the user's progress so it shows up in profile
-    if (userId && langCode) {
-      const prog = loadProgress(userId, langCode);
-      saveProgress(userId, langCode, { ...prog, xp: (prog.xp || 0) + xpEarned });
-    }
+    // No XP for marking a mistake as mastered — XP is earned during lessons/streaks/AI
     setMascot("happy"); setTimeout(()=>setMascot("idle"),2200);
     const updated = getMistakes(userId,langCode).filter(m=>m.id!==current.id);
     saveMistakes(userId,langCode,updated); setMistakes(updated);

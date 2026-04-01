@@ -1279,7 +1279,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
 
       {/* Tip banner — trail themed */}
       {aiLimitNotice && (<div style={{ margin:"10px 14px 0", padding:"9px 13px", background:"rgba(239,68,68,0.08)", border:"1px solid rgba(239,68,68,0.2)", borderRadius:10, fontSize:12, color:"#b91c1c" }}>{aiLimitNotice}</div>)}
-      {tipVisible && (
+      {tipVisible && mode !== "exam" && (
         <div style={{ margin:"10px 14px 0", padding:"9px 13px", background:`${chatTheme.path}14`,
           border:`1px solid ${chatTheme.path}30`, borderRadius:10, fontSize:12, color:chatTheme.path,
           display:"flex", justifyContent:"space-between", alignItems:"center", flexShrink:0, animation:"tipSlide 0.3s ease both" }}>
