@@ -4,18 +4,13 @@ import OnboardingLevelGate from "./components/OnboardingLevelGate";
 import { supabase, setUserRole, getOnboardingProfile, saveOnboardingProfile, clearOnboardingProfile, savePlacementState, getPlacementState } from "./lib/appState";
 
 // ─── Access control ──────────────────────────────────────────────────────────
-const ADMIN_EMAIL    = "borowiakarwen@gmail.com";
-const VALID_CODES    = {
-  "TESTER2026":      "tester",
-  "INFLUENCER2026":  "influencer",
-};
-function getTierForSignup(email, code) {
+const ADMIN_EMAIL = "borowiakarwen@gmail.com";
+function getTierForSignup(email) {
   if (email.toLowerCase() === ADMIN_EMAIL) return "admin";
-  if (code && VALID_CODES[code.toUpperCase()]) return VALID_CODES[code.toUpperCase()];
   return "free";
 }
 function canAccessApp(tier) {
-  return ["admin","tester","beta","influencer","free","pro"].includes(tier);
+  return ["admin","free","pro"].includes(tier);
 }
 
 // ─── Load language curricula from JSON files ──────────────────────────────────
@@ -310,7 +305,7 @@ function AuthModal({ mode: init, onAuth, onClose }) {
 
     if (mode === "signup") {
       try {
-        const tier = getTierForSignup(email, inviteCode);
+        const tier = getTierForSignup(email);
         const { data, error: err } = await supabase.auth.signUp({
           email: email.trim().toLowerCase(), password,
           options: { data: { name: name.trim(), access_tier: tier } }
@@ -340,7 +335,7 @@ function AuthModal({ mode: init, onAuth, onClose }) {
           try {
             await supabase.from("profiles").upsert({
               id: userId, email: email.trim().toLowerCase(),
-              access_tier: tier, invite_code: inviteCode.toUpperCase() || null,
+              access_tier: tier,
             }, { onConflict: "id" });
           } catch (_ignored) {}
           localStorage.setItem("lp_tier_" + userId, tier);
@@ -351,12 +346,10 @@ function AuthModal({ mode: init, onAuth, onClose }) {
         {
           const userEmail = email.trim().toLowerCase();
           const userName  = name.trim();
-          const emailType = (inviteCode && tier !== "free" && tier !== "waitlist")
-            ? "access-code" : tier === "waitlist" ? null : "welcome";
-          if (emailType) {
+          if (tier !== "waitlist") {
             fetch("/api/email", {
               method: "POST", headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ type: emailType, email: userEmail, name: userName, tier, code: inviteCode }),
+              body: JSON.stringify({ type: "welcome", email: userEmail, name: userName, tier }),
             }).catch(() => {});
           }
         }
@@ -439,12 +432,6 @@ function AuthModal({ mode: init, onAuth, onClose }) {
           <input className="auth-inp" type="email" placeholder="you@example.com" value={email} onChange={e=>setEmail(e.target.value)}/>
           <label className="auth-lbl">Password</label>
           <input className="auth-inp" type="password" placeholder={mode==="signup"?"Min. 6 characters":"Your password"} value={password} onChange={e=>setPassword(e.target.value)}/>
-          {mode==="signup" && (
-            <div style={{marginBottom:12}}>
-              <label className="auth-lbl">Invite code <span style={{color:"#a09890",fontWeight:400,textTransform:"none",letterSpacing:0}}>(optional — leave blank for waitlist)</span></label>
-              <input className="auth-inp" placeholder="e.g. TESTER2026" value={inviteCode} onChange={e=>setInviteCode(e.target.value)} style={{letterSpacing:1.5,textTransform:"uppercase"}}/>
-            </div>
-          )}
           {mode==="login" && (
             <div style={{textAlign:"right",marginBottom:12,marginTop:-4}}>
               {resetSent
