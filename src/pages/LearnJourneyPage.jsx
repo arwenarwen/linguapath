@@ -1102,6 +1102,17 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
     return () => document.removeEventListener("mousedown", close);
   },[showJumpMenu]);
 
+  // Scroll current lesson into center on initial load
+  useEffect(()=>{
+    if(!nextLesson?.id) return;
+    const t=setTimeout(()=>{
+      const el=document.getElementById(`lesson-${nextLesson.id}`);
+      if(el) el.scrollIntoView({behavior:"smooth",block:"center"});
+    }, 300);
+    return ()=>clearTimeout(t);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
+
   useEffect(()=>{
     if(!animTrigger||animTrigger===prevTrigger.current) return;
     prevTrigger.current=animTrigger;
@@ -1110,7 +1121,7 @@ export default function LearnJourneyPage({curriculum,progress,langName,user,just
       const targetId = justCompletedId || nextLesson?.id;
       if(!targetId) return;
       const el=document.getElementById(`lesson-${targetId}`);
-      if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
+      if(el) el.scrollIntoView({behavior:"smooth",block:"center"});
     },450);
     const t2=setTimeout(()=>setDoAnimate(false),5500);
     return()=>{clearTimeout(t1);clearTimeout(t2);};
