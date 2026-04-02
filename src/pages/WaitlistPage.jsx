@@ -79,13 +79,13 @@ export default function WaitlistPage({ onClose }) {
               You're <strong style={{ color: T.path }}>#{position}</strong> on the waitlist.
               {earlyAccess
                 ? " 🎁 You're in the first 50 — you'll get 1 month of Pro free when we launch!"
-                : " We'll email you as soon as LinguaPath is ready."}
+                : " We'll email you as soon as Lingotrailz is ready."}
             </div>
             {earlyAccess && (
               <div style={{ background: `rgba(245,165,36,0.1)`, border: `1.5px solid ${T.borderStrong}`, borderRadius: 16, padding: "14px 18px", marginBottom: 20, fontSize: 13, color: T.text, lineHeight: 1.6 }}>
                 🏆 <strong>Early Access Reward</strong><br />
                 As one of our first 50 supporters, you'll receive<br />
-                <strong style={{ color: T.path }}>1 month of LinguaPath Pro — completely free</strong>.
+                <strong style={{ color: T.path }}>1 month of Lingotrailz Pro — completely free</strong>.
               </div>
             )}
             <button onClick={onClose} style={{
@@ -114,7 +114,7 @@ export default function WaitlistPage({ onClose }) {
                 Join the Waitlist
               </div>
               <div style={{ fontSize: 13, color: T.muted, lineHeight: 1.6 }}>
-                LinguaPath is coming soon. Join early and the<br />
+                Lingotrailz is coming soon. Join early and the<br />
                 <strong style={{ color: T.path }}>first 50 people get 1 month of Pro free 🎁</strong>
               </div>
             </div>

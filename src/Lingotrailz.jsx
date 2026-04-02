@@ -1419,7 +1419,7 @@ function LandingPage({ onOpenAuth }) {
             <div style={{ fontSize:15, color:"rgba(107,61,16,0.75)", lineHeight:1.6, marginBottom:18 }}>
               {wlEarlyAccess
                 ? <>You're <strong style={{color:"#f5a524"}}>#{wlPosition}</strong> on the waitlist 🎁<br/>You're in the first 50 — you get <strong style={{color:"#f5a524"}}>1 month of Pro free</strong> when we launch!</>
-                : <>You're <strong style={{color:"#f5a524"}}>#{wlPosition}</strong> on the waitlist.<br/>We'll email you the moment LinguaPath is ready. Stay tuned!</>
+                : <>You're <strong style={{color:"#f5a524"}}>#{wlPosition}</strong> on the waitlist.<br/>We'll email you the moment Lingotrailz is ready. Stay tuned!</>
               }
             </div>
             <button onClick={() => setShowWlPopup(false)} style={{
@@ -2058,7 +2058,7 @@ export default function Root() {
       <style>{CSS}</style>
       <OnboardingLevelGate
         onFinish={(profile) => { setPendingOnboardingLang(null); handleOnboardingFinish(profile); }}
-        appName="LinguaPath"
+        appName="Lingotrailz"
         initialLang={pendingOnboardingLang}
       />
     </div>

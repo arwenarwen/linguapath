@@ -1,4 +1,4 @@
-// Audio playback state and utilities for LinguaPath
+// Audio playback state and utilities for Lingotrailz
 // Extracted from AIChat.jsx — single source of truth for all TTS/audio logic.
 
 import { tryPlayStaticAudio } from "./staticAudio";

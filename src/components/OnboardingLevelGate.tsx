@@ -14,7 +14,7 @@ const LANGUAGES = [
   { code:"el", name:"Greek",      native:"Ελληνικά",  flag:"🇬🇷" },
 ];
 
-export default function OnboardingLevelGate({ onFinish, appName = "LinguaPath", initialLang = null }: any) {
+export default function OnboardingLevelGate({ onFinish, appName = "Lingotrailz", initialLang = null }: any) {
   // initialLang: skip the language picker when switching to a new language from inside the app
   const [step, setStep] = useState(initialLang ? "welcome" : "language");
   const [selectedLang, setSelectedLang] = useState<string | null>(initialLang || null);

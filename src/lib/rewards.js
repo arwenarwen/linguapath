@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// rewards.js  –  LinguaPath gamification layer
+// rewards.js  –  Lingotrailz gamification layer
 // Drop into src/lib/rewards.js  and import into MountainAppShell.jsx
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -51,11 +51,11 @@ export const ACHIEVEMENTS = [
   { id: "streak-100",     icon: "☀️", name: "Centurion Sun",       desc: "Maintain a 100-day streak",              category: "Streaks",    xp: 100 },
   { id: "streak-365",     icon: "🌟", name: "Year of the Mountain",desc: "Maintain a 365-day streak",              category: "Streaks",    xp: 365 },
   // Time on app
-  { id: "days-30",        icon: "🌿", name: "Month Hiker",         desc: "Use LinguaPath for 30 days",             category: "Time",       xp:  30 },
-  { id: "days-60",        icon: "🍃", name: "Two Months",          desc: "Use LinguaPath for 60 days",             category: "Time",       xp:  60 },
-  { id: "days-90",        icon: "🌲", name: "Quarter Year",        desc: "Use LinguaPath for 90 days",             category: "Time",       xp:  90 },
-  { id: "days-180",       icon: "🌳", name: "Half Year",           desc: "Use LinguaPath for 180 days",            category: "Time",       xp: 180 },
-  { id: "days-365",       icon: "🏆", name: "One Year on the Mountain", desc: "Use LinguaPath for 365 days",       category: "Time",       xp: 365 },
+  { id: "days-30",        icon: "🌿", name: "Month Hiker",         desc: "Use Lingotrailz for 30 days",             category: "Time",       xp:  30 },
+  { id: "days-60",        icon: "🍃", name: "Two Months",          desc: "Use Lingotrailz for 60 days",             category: "Time",       xp:  60 },
+  { id: "days-90",        icon: "🌲", name: "Quarter Year",        desc: "Use Lingotrailz for 90 days",             category: "Time",       xp:  90 },
+  { id: "days-180",       icon: "🌳", name: "Half Year",           desc: "Use Lingotrailz for 180 days",            category: "Time",       xp: 180 },
+  { id: "days-365",       icon: "🏆", name: "One Year on the Mountain", desc: "Use Lingotrailz for 365 days",       category: "Time",       xp: 365 },
   // CEFR levels completed
   { id: "a1-complete",    icon: "🌿", name: "Base Camp",           desc: "Complete all A1 lessons",                category: "Level",      xp:  50 },
   { id: "a2-complete",    icon: "🏕️", name: "Forest Trail",        desc: "Complete all A2 lessons",                category: "Level",      xp:  75 },
