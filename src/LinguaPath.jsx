@@ -1858,6 +1858,60 @@ export default function Root() {
   const [activeLang, setActiveLang] = useState(null);
   const [userTier, setUserTier] = useState("free");
   const [onboardingProfile, setOnboardingProfile] = useState(null);
+
+  // ── Recover a returning user's profile without forcing re-onboarding ─────────
+  // Returns true if we found existing data and routed to app, false if new user.
+  async function tryRouteReturningUser(u) {
+    // 1. localStorage profile (same device, happy path)
+    const saved = getOnboardingProfile(u.id);
+    if (saved) {
+      const lang = saved.langCode || localStorage.getItem("lp_lang") || "de";
+      localStorage.setItem("lp_lang", lang);
+      setOnboardingProfile(saved);
+      setActiveLang(lang);
+      setShowPicker(false);
+      setView("app");
+      return true;
+    }
+
+    // 2. localStorage has lang + placement (profile key got cleared but rest survived)
+    const lsLang = localStorage.getItem("lp_lang");
+    const placement = lsLang ? getPlacementState(u.id, lsLang) : null;
+    if (lsLang && placement?.placedLevel) {
+      const reconstructed = { langCode: lsLang, selectedLanguage: lsLang, placedLevel: placement.placedLevel };
+      saveOnboardingProfile(u.id, reconstructed);
+      setOnboardingProfile(reconstructed);
+      setActiveLang(lsLang);
+      setShowPicker(false);
+      setView("app");
+      return true;
+    }
+
+    // 3. Cross-device: check Supabase progress table for any existing record
+    try {
+      const { data: rows } = await supabase
+        .from("progress")
+        .select("language, xp")
+        .eq("user_id", u.id)
+        .order("xp", { ascending: false })
+        .limit(5);
+      if (rows?.length) {
+        const lang = rows[0].language || "de";
+        const placedLevel = getPlacementState(u.id, lang)?.placedLevel || "A1";
+        const reconstructed = { langCode: lang, selectedLanguage: lang, placedLevel };
+        saveOnboardingProfile(u.id, reconstructed);
+        setOnboardingProfile(reconstructed);
+        setActiveLang(lang);
+        localStorage.setItem("lp_lang", lang);
+        setShowPicker(false);
+        setView("app");
+        return true;
+      }
+    } catch {}
+
+    // Truly new user
+    return false;
+  }
   // When switching to a brand-new language, holds the pre-selected code so
   // OnboardingLevelGate skips the language-picker step and starts at "Do you know some?"
   const [pendingOnboardingLang, setPendingOnboardingLang] = useState(null);
@@ -1906,14 +1960,8 @@ export default function Root() {
         }
         setUserTier(tier);
         if (!canAccessApp(tier)) { setView("waitlist"); return; }
-        const savedProfile = getOnboardingProfile(u.id);
-        if (!savedProfile) { setOnboardingProfile(null); setActiveLang(null); setShowPicker(false); setView("onboarding"); return; }
-        setOnboardingProfile(savedProfile);
-        const langToUse = savedProfile?.langCode || localStorage.getItem("lp_lang") || "de";
-        localStorage.setItem("lp_lang", langToUse);
-        setActiveLang(langToUse);
-        setShowPicker(false);
-        setView("app");
+        const isReturning = await tryRouteReturningUser(u);
+        if (!isReturning) { setActiveLang(null); setShowPicker(false); setView("onboarding"); }
       } else {
         setView("landing");
       }
@@ -1922,7 +1970,7 @@ export default function Root() {
     return () => sub?.subscription?.unsubscribe();
   },[]);
 
-  function handleAuth(u, tier) {
+  async function handleAuth(u, tier) {
     setAuthModal(null);
     // u can be null if no session (email confirm required) — still handle gracefully
     if (u) setUser(u);
@@ -1934,20 +1982,15 @@ export default function Root() {
       setView("waitlist");
       return;
     }
-    const existingProfile = u?.id ? getOnboardingProfile(u.id) : null;
-    if (existingProfile) {
-      setOnboardingProfile(existingProfile);
-      const langToUse = existingProfile?.langCode || localStorage.getItem("lp_lang") || "de";
-      localStorage.setItem("lp_lang", langToUse);
-      setActiveLang(langToUse);
+    if (u?.id) {
+      setDefaultPage("learn");
+      const isReturning = await tryRouteReturningUser(u);
+      if (!isReturning) { setActiveLang(null); setShowPicker(false); setView("onboarding"); }
+    } else {
+      setActiveLang(null);
       setShowPicker(false);
-      setDefaultPage("learn"); // always land on trail
-      setView("app");
-      return;
+      setView("onboarding");
     }
-    setActiveLang(null);
-    setShowPicker(false);
-    setView("onboarding");
   }
 
   const [defaultPage, setDefaultPage] = useState("learn");
