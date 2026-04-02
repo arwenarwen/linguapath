@@ -17,7 +17,7 @@ export function lsSet(key, value) {
 function lsGetJSON(key, fallback) {
   try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch { return fallback; }
 }
-function lsSetJSON(key, value) {
+export function lsSetJSON(key, value) {
   try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
 }
 

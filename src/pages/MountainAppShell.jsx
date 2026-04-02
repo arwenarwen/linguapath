@@ -13,7 +13,7 @@ import AIChat from "../components/AIChat";
 import SituationDetail from "../components/SituationDetail";
 import "../styles/theme.css";
 import {
-  supabase, lsGet, lsSet,
+  supabase, lsGet, lsSet, lsSetJSON,
   loadProgress, saveProgress, stopAllAudio,
   updateStreak, getStreak,
   getEnergy, spendEnergy, addEnergy, applyAdRefill, getEnergyRechargeMinutes,
@@ -357,12 +357,12 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoStartLesson]);
 
-  // Load progress + merge with Supabase
+  // Load progress + merge with Supabase (restores XP + trail XP cross-device)
   useEffect(() => {
     const p = loadProgress(user?.id, activeLang);
     setProgress(p); progressRef.current = p;
     if (user?.id) {
-      supabase.from("progress").select("completed,xp")
+      supabase.from("progress").select("completed,xp,trail_xp")
         .eq("user_id", user.id).eq("language", activeLang).maybeSingle()
         .then(({ data }) => {
           if (!data) return;
@@ -373,6 +373,13 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
           };
           setProgress(merged); progressRef.current = merged;
           saveProgress(user?.id, activeLang, merged);
+          // Restore trail XP from Supabase if local is lower (cross-device recovery)
+          const remoteTrail = data.trail_xp || 0;
+          const localTrail  = getTrailPoints(user?.id);
+          if (remoteTrail > localTrail) {
+            lsSetJSON(`lp_tp_${user.id}`, remoteTrail);
+            setStarsMap(getLessonStarsMap(user?.id, activeLang));
+          }
         }).catch(() => {});
     }
   }, [user?.id, activeLang]);
@@ -459,6 +466,7 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
       supabase.from("progress").upsert({
         user_id: user.id, language: activeLang,
         completed: next.completed, xp: next.xp,
+        trail_xp: getTrailPoints(user.id),
         updated_at: new Date().toISOString(),
       }, { onConflict: "user_id,language" }).then(null, () => {});
     }
