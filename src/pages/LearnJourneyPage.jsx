@@ -1021,7 +1021,7 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
               )}
             </div>
             {/* Small fox on the next lesson card */}
-            {isNext&&isCurrentLevel&&!foxPos&&(
+            {isNext&&isCurrentLevel&&!foxPos&&!unitLocked&&(
               <div style={{position:"absolute",bottom:-6,right:-4,fontSize:18,filter:"drop-shadow(0 2px 6px rgba(255,130,0,0.4))",animation:"idleBob 2.4s ease-in-out infinite",zIndex:6,pointerEvents:"none"}}>🦊</div>
             )}
           </div>
@@ -1037,7 +1037,11 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
         trailRequired={trailRequired}
       />
 
-      {/* Animal talk modal */}
+      {/* Fox sits at checkpoint when all lessons done */}
+        {allDone&&!foxPos&&(
+          <div style={{position:"absolute",left:cpPos.x+(CW/2)-10,top:cpPos.y-14,fontSize:20,filter:"drop-shadow(0 2px 6px rgba(255,130,0,0.4))",animation:"idleBob 2.4s ease-in-out infinite",zIndex:6,pointerEvents:"none"}}>🦊</div>
+        )}
+        {/* Animal talk modal */}
       {animalModal&&(
         <CheckpointScreen
           animal={unitAnimal}

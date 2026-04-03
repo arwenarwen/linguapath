@@ -62,9 +62,23 @@ function shuffle(arr) {
 
 /** Normalize a string for similarity comparison — lowercase, no punctuation, collapse spaces */
 function normAnswer(s) {
-  return String(s || "").toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, " ").trim();
+  let t = String(s || "").toLowerCase();
+  // Expand contractions so "What's" and "What is" are treated as identical
+  t = t.replace(/what's/g,"what is").replace(/it's/g,"it is").replace(/that's/g,"that is")
+       .replace(/there's/g,"there is").replace(/here's/g,"here is").replace(/where's/g,"where is")
+       .replace(/who's/g,"who is").replace(/how's/g,"how is").replace(/he's/g,"he is")
+       .replace(/she's/g,"she is").replace(/i'm/g,"i am").replace(/you're/g,"you are")
+       .replace(/we're/g,"we are").replace(/they're/g,"they are").replace(/i've/g,"i have")
+       .replace(/you've/g,"you have").replace(/we've/g,"we have").replace(/they've/g,"they have")
+       .replace(/i'll/g,"i will").replace(/you'll/g,"you will").replace(/he'll/g,"he will")
+       .replace(/she'll/g,"she will").replace(/we'll/g,"we will").replace(/they'll/g,"they will")
+       .replace(/won't/g,"will not").replace(/can't/g,"cannot").replace(/don't/g,"do not")
+       .replace(/doesn't/g,"does not").replace(/didn't/g,"did not").replace(/isn't/g,"is not")
+       .replace(/aren't/g,"are not").replace(/wasn't/g,"was not").replace(/weren't/g,"were not")
+       .replace(/hasn't/g,"has not").replace(/haven't/g,"have not").replace(/hadn't/g,"had not")
+       .replace(/wouldn't/g,"would not").replace(/couldn't/g,"could not").replace(/shouldn't/g,"should not");
+  return t.replace(/[^a-z0-9\s]/g,"").replace(/\s+/g," ").trim();
 }
-
 /** Remove options that are too similar to the correct answer or to each other */
 function dedupeOptions(correct, candidates) {
   const normCorrect = normAnswer(correct);
