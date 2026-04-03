@@ -362,14 +362,18 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
     const p = loadProgress(user?.id, activeLang);
     setProgress(p); progressRef.current = p;
     if (user?.id) {
-      supabase.from("progress").select("completed,xp,trail_xp")
+      supabase.from("progress").select("completed,xp,trail_xp,updated_at")
         .eq("user_id", user.id).eq("language", activeLang).maybeSingle()
         .then(({ data }) => {
           if (!data) return;
           const cur = progressRef.current;
           const merged = {
             completed: Array.from(new Set([...cur.completed, ...(data.completed || [])])),
-            xp: Math.max(cur.xp, data.xp || 0),
+            xp: (() => {
+              const localXpTs = parseInt(localStorage.getItem(`lp_xpts_${user.id}_${activeLang}`) || '0');
+              const remoteXpTs = data.updated_at ? new Date(data.updated_at).getTime() : 0;
+              return localXpTs > remoteXpTs ? cur.xp : Math.max(cur.xp, data.xp || 0);
+            })(),
           };
           setProgress(merged); progressRef.current = merged;
           saveProgress(user?.id, activeLang, merged);
@@ -667,7 +671,7 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
           const next = { ...cur, xp: cur.xp - amount };
           setProgress(next); progressRef.current = next;
           saveProgress(user?.id, activeLang, next);
-          if (user?.id) {
+          if (user?.id) { localStorage.setItem(`lp_xpts_${user.id}_${activeLang}`, Date.now().toString());
             supabase.from("progress").upsert({
               user_id: user.id, language: activeLang,
               completed: next.completed, xp: next.xp,

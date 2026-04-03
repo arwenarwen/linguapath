@@ -212,7 +212,7 @@ Use natural, high-frequency language that sounds helpful and real.`
                       <div style={{ fontWeight:700, fontSize:14, color:C.text,
                         marginBottom: showTranslation[i] ? 5 : 0 }}>{p.en}</div>
                       {showTranslation[i] && (
-                        <div style={{ fontSize:14, color:situation.color, fontWeight:700, letterSpacing:0.2 }}>
+                        <div style={{ fontSize:14, color:"#4f80ff", fontWeight:700, letterSpacing:0.2 }}>
                           {p[langCode] || p.es || p.de || p.fr || p.it || p.pt || p.zh || p.ja || p.ko || p.pl || "Translation not available"}
                         </div>
                       )}

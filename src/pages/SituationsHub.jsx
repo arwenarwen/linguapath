@@ -83,12 +83,6 @@ export default function SituationsHub({ langCode, onSelectSituation }) {
       <div style={{ padding:"22px 18px 0", position:"relative", overflow:"hidden" }}>
         <div style={{ position:"absolute",top:-40,left:"50%",transform:"translateX(-50%)",width:280,height:180,background:`radial-gradient(circle,${C.path}18,transparent 70%)`,pointerEvents:"none" }}/>
         <div style={{ position:"relative", animation:"fadeUp 0.45s ease both" }}>
-          {/* Eyebrow */}
-          <div style={{ display:"flex",alignItems:"center",gap:8,marginBottom:10 }}>
-            <div style={{ width:18,height:2,borderRadius:99,background:`${C.path}66` }}/>
-            <span style={{ fontSize:10,fontWeight:800,letterSpacing:2.5,textTransform:"uppercase",color:`${C.path}` }}>Side Quests</span>
-            <div style={{ flex:1,height:1,background:`linear-gradient(90deg,${C.path}30,transparent)` }}/>
-          </div>
           {/* Title */}
           <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:6 }}>
             <div style={{ fontSize:26,animation:"lanternPulse 3s ease-in-out infinite" }}>🏮</div>

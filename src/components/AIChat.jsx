@@ -1246,7 +1246,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
               {{"A1":"🐇","A2":"🐿️","B1":"🦉","B2":"🐺","C1":"🦁","C2":"🦊"}[cefrLevel] || "🦊"}
             </div>
           ) : (
-            <FoxTutorCard size={52} compact style={{ borderRadius:14, width:52 }} />
+            <div style={{ width:52, height:52, borderRadius:14, overflow:"hidden" }}>{CHAT_ANIMAL_SVGS[tutorAnimalKey] || CHAT_ANIMAL_SVGS['🦊']}</div>
           )}
         </div>
         <div style={{ flex:1, minWidth:0 }}>
@@ -1336,7 +1336,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
                     {{"A1":"🐇","A2":"🐿️","B1":"🦉","B2":"🐺","C1":"🦁","C2":"🦊"}[cefrLevel] || "🦊"}
                   </div>
                 ) : (
-                  <FoxTutorCard size={34} compact style={{ borderRadius:10, width:34 }} />
+                  <div style={{ width:34, height:34, borderRadius:10, overflow:"hidden" }}>{CHAT_ANIMAL_SVGS[tutorAnimalKey] || CHAT_ANIMAL_SVGS['🦊']}</div>
                 )}
               </div>
             )}
@@ -1448,7 +1448,7 @@ function AIChat({ scenario, onClose, langCode = "es", userId, onGoReview, onBack
         {loading && (
           <div style={{ display:"flex", alignItems:"center", gap:8 }}>
             <div style={{ flexShrink:0, width:34, overflow:"visible" }}>
-              <FoxTutorCard size={34} compact style={{ borderRadius:10, width:34 }} />
+              <div style={{ width:34, height:34, borderRadius:10, overflow:"hidden" }}>{CHAT_ANIMAL_SVGS[tutorAnimalKey] || CHAT_ANIMAL_SVGS['🦊']}</div>
             </div>
             <div className="chat-bubble chat-ai" style={{ display:"flex", gap:5, padding:"10px 14px", color: chatTheme.text }}>
               {[0,0.2,0.4].map(d => (

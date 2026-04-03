@@ -1878,12 +1878,30 @@ export default function Root() {
     try {
       const { data: rows } = await supabase
         .from("progress")
-        .select("language, xp")
+        .select("language, xp, completed, trail_xp")
         .eq("user_id", u.id)
         .order("xp", { ascending: false })
         .limit(5);
       if (rows?.length) {
         const lang = rows[0].language || "de";
+        // Restore progress (completed lessons + XP + trail XP) from Supabase to localStorage
+        rows.forEach(row => {
+          if (!row.language) return;
+          const key = `lp_progress_${u.id}_${row.language}`;
+          let local = {};
+          try { local = JSON.parse(localStorage.getItem(key) || '{}'); } catch {}
+          const merged = {
+            completed: Array.from(new Set([...(local.completed || []), ...(row.completed || [])])),
+            xp: Math.max(local.xp || 0, row.xp || 0),
+          };
+          localStorage.setItem(key, JSON.stringify(merged));
+          // Restore trail points if Supabase has more
+          if (row.trail_xp) {
+            const tpKey = `lp_tp_${u.id}`;
+            const localTP = parseInt(localStorage.getItem(tpKey) || '0');
+            if (row.trail_xp > localTP) localStorage.setItem(tpKey, String(row.trail_xp));
+          }
+        });
         const placedLevel = getPlacementState(u.id, lang)?.placedLevel || "A1";
         const reconstructed = { langCode: lang, selectedLanguage: lang, placedLevel };
         saveOnboardingProfile(u.id, reconstructed);
