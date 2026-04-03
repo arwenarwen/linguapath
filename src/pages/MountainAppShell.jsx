@@ -660,7 +660,24 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
       {showWaitlist && <WaitlistPage onClose={() => setShowWaitlist(false)} />}
 
       {/* 🗿 Cultural statues */}
-      {showStatues && <StatueShopPage userId={user?.id} langCode={activeLang} onClose={() => setShowStatues(false)} />}
+      {showStatues && <StatueShopPage userId={user?.id} langCode={activeLang} onClose={() => setShowStatues(false)}
+        onSpendXP={(amount) => {
+          const cur = progressRef.current;
+          if ((cur.xp || 0) < amount) return false;
+          const next = { ...cur, xp: cur.xp - amount };
+          setProgress(next); progressRef.current = next;
+          saveProgress(user?.id, activeLang, next);
+          if (user?.id) {
+            supabase.from("progress").upsert({
+              user_id: user.id, language: activeLang,
+              completed: next.completed, xp: next.xp,
+              trail_xp: getTrailPoints(user.id),
+              updated_at: new Date().toISOString(),
+            }, { onConflict: "user_id,language" }).then(null, () => {});
+          }
+          return true;
+        }}
+      />}
 
       {/* 🦊 Weekly fox reward */}
       {showWeeklyReward && (

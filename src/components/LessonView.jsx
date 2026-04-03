@@ -60,6 +60,25 @@ function shuffle(arr) {
   return a;
 }
 
+/** Normalize a string for similarity comparison — lowercase, no punctuation, collapse spaces */
+function normAnswer(s) {
+  return String(s || "").toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, " ").trim();
+}
+
+/** Remove options that are too similar to the correct answer or to each other */
+function dedupeOptions(correct, candidates) {
+  const normCorrect = normAnswer(correct);
+  const seen = new Set([normCorrect]);
+  return candidates.filter(c => {
+    const n = normAnswer(c);
+    if (seen.has(n)) return false;
+    // Also reject if one string fully contains the other (e.g. "What is your name" vs "What's your name")
+    if (n.includes(normCorrect) || normCorrect.includes(n)) return false;
+    seen.add(n);
+    return true;
+  });
+}
+
 function saveMistake(userId, langCode, question, wrong, correct) {
   if (!wrong || !correct || wrong === correct) return;
   try {
@@ -137,7 +156,7 @@ function buildQuestions(module, langCode) {
       if (!w) return;
       const t = getTarget(w, langCode);
       if (!t || !w.en) return;
-      const wrong = shuffle(vocab.filter(v => v && v.en !== w.en && v.en).map(v => v.en));
+      const wrong = dedupeOptions(w.en, shuffle(vocab.filter(v => v && v.en !== w.en && v.en).map(v => v.en)));
       if (wrong.length < 3) return;
       qs.push({ type:"en", q:`What does this mean? "${t}"`, subtext: t,
         opts: shuffle([w.en, ...wrong.slice(0,3)]), ans: w.en });
@@ -147,9 +166,9 @@ function buildQuestions(module, langCode) {
       if (!w) return;
       const t = getTarget(w, langCode);
       if (!t || !w.en) return;
-      const wrong = shuffle(vocab
+      const wrong = dedupeOptions(t, shuffle(vocab
         .filter(v => v && getTarget(v,langCode) !== t && getTarget(v,langCode))
-        .map(v => getTarget(v,langCode)));
+        .map(v => getTarget(v,langCode))));
       if (wrong.length < 3) return;
       qs.push({ type:"tgt", q:`Say this in ${langName}: "${w.en}"`, subtext: w.en,
         opts: shuffle([t, ...wrong.slice(0,3)]), ans: t });

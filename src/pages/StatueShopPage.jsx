@@ -50,7 +50,15 @@ function PhraseCard({ item, revealed }) {
       transition: "all 0.4s ease",
     }}>
       <div style={{ fontSize: 15, fontWeight: 800, color: T.text, marginBottom: 4 }}>{item.phrase}</div>
-      <div style={{ fontSize: 12, color: T.path, fontWeight: 700, marginBottom: 6 }}>"{item.meaning}"</div>
+      <div style={{ fontSize: 12, color: T.path, fontWeight: 700, marginBottom: item.literal ? 3 : 6 }}>"{item.meaning}"</div>
+      {item.literal && (
+        <div style={{ display: "flex", alignItems: "center", gap: 5, marginBottom: 7 }}>
+          <span style={{ fontSize: 13 }}>🤣</span>
+          <span style={{ fontSize: 11, color: "#b45309", fontStyle: "italic", fontWeight: 600 }}>
+            Literally: "{item.literal}"
+          </span>
+        </div>
+      )}
       <div style={{ fontSize: 12, color: T.muted, fontStyle: "italic", marginBottom: 4 }}>{item.example}</div>
       <div style={{ fontSize: 11, color: T.faint }}>{item.explain}</div>
     </div>
@@ -112,7 +120,7 @@ function SetCard({ set, xp, onUnlock, unlocked }) {
   );
 }
 
-export default function StatueShopPage({ userId, langCode = "de", onClose }) {
+export default function StatueShopPage({ userId, langCode = "de", onClose, onSpendXP }) {
   const [xp, setXp] = useState(() => getStoredXP(userId, langCode));
   const [unlocked, setUnlocked] = useState(() => {
     try { return JSON.parse(localStorage.getItem(`lp_statues_${userId || "anon"}`) || "[]"); } catch { return []; }
@@ -143,12 +151,13 @@ export default function StatueShopPage({ userId, langCode = "de", onClose }) {
   }
 
   function unlock(setKey) {
-    const result = spendXP(userId, langCode, UNLOCK_COST_XP);
+    // Use parent callback if available (keeps Supabase in sync), else fallback to local
+    const result = onSpendXP ? onSpendXP(UNLOCK_COST_XP) : spendXP(userId, langCode, UNLOCK_COST_XP);
     if (!result) { setToast("Not enough XP! Keep doing lessons to earn more."); setTimeout(() => setToast(""), 2500); return; }
     const next = [...unlocked, setKey];
     setUnlocked(next);
     localStorage.setItem(`lp_statues_${userId || "anon"}`, JSON.stringify(next));
-    setXp(getStoredXP(userId, langCode));
+    setXp(prev => prev - UNLOCK_COST_XP);
     setToast("🎉 Phrases unlocked!");
     setTimeout(() => setToast(""), 2500);
   }

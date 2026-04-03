@@ -1002,12 +1002,15 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
               onMouseEnter={e=>{if(!locked){e.currentTarget.style.transform="translateY(-2px)";e.currentTarget.style.boxShadow=isNext?"0 0 0 3px rgba(245,165,36,0.2),0 14px 32px rgba(255,166,57,0.35)":"0 8px 20px rgba(0,0,0,0.14)";}}}
               onMouseLeave={e=>{e.currentTarget.style.transform="";e.currentTarget.style.boxShadow=isNext?"0 0 0 3px rgba(245,165,36,0.14),0 10px 28px rgba(255,166,57,0.26)":"0 3px 12px rgba(0,0,0,0.07)";}}
             >
-              {/* Done checkmark */}
-              {state==="done"&&(()=>{const s=starsMap?.[mod.id]||0;return<div style={{position:"absolute",top:6,right:8,fontSize:11,letterSpacing:-1}}>{s===3?"⭐⭐⭐":s===2?"⭐⭐☆":s===1?"⭐☆☆":"✓"}</div>;})()}
-              {/* Active indicator */}
-              {isNext&&isCurrentLevel&&<div style={{position:"absolute",top:8,right:10,width:8,height:8,borderRadius:"50%",background:"#32d266",boxShadow:"0 0 6px rgba(50,210,102,0.7)",animation:"pulse 1.8s ease-in-out infinite"}}/>}
-              <div style={{fontSize:12,fontWeight:800,color:locked?"rgba(107,61,16,0.38)":"#6b3d10",lineHeight:1.25,marginBottom:3,paddingRight:14}}>
-                {title}
+              {/* Title row: text + stars/indicator side by side */}
+              <div style={{display:"flex",alignItems:"flex-start",gap:6,marginBottom:4}}>
+                <div style={{fontSize:12,fontWeight:800,color:locked?"rgba(107,61,16,0.38)":"#6b3d10",lineHeight:1.3,flex:1}}>
+                  {title}
+                </div>
+                {/* Stars for completed lessons */}
+                {state==="done"&&(()=>{const s=starsMap?.[mod.id]||0;return<div style={{fontSize:10,letterSpacing:0,flexShrink:0,marginTop:1,lineHeight:1}}>{s===3?"⭐⭐⭐":s===2?"⭐⭐☆":s===1?"⭐☆☆":"✓"}</div>;})()}
+                {/* Active green dot */}
+                {isNext&&isCurrentLevel&&<div style={{flexShrink:0,marginTop:4,width:8,height:8,borderRadius:"50%",background:"#32d266",boxShadow:"0 0 6px rgba(50,210,102,0.7)",animation:"pulse 1.8s ease-in-out infinite"}}/>}
               </div>
               <div style={{fontSize:10,color:locked||unitLocked?"rgba(107,61,16,0.28)":"rgba(107,61,16,0.6)"}}>
                 {state==="done"?`Completed · +${mod.xp||25} XP`:unitLocked?"🔒 Pass checkpoint first":locked?"Locked":`${(mod.vocab||[]).length||10} words · ${mod.xp||25} XP`}
