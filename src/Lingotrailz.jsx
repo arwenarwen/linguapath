@@ -1874,7 +1874,28 @@ export default function Root() {
       return true;
     }
 
-    // 3. Cross-device: check Supabase progress table for any existing record
+    // 2.5. Supabase auth user metadata – set when onboarding completed on any device
+  const meta = u.user_metadata || {};
+  if (meta.active_lang) {
+    const lang = meta.active_lang;
+    let profile = {};
+    try { profile = JSON.parse(meta.lp_profile || '{}'); } catch {}
+    const reconstructed = {
+      langCode: lang,
+      selectedLanguage: profile.selectedLanguage || lang,
+      placedLevel: profile.placedLevel || 'A1',
+      ...profile,
+    };
+    saveOnboardingProfile(u.id, reconstructed);
+    setOnboardingProfile(reconstructed);
+    setActiveLang(lang);
+    localStorage.setItem('lp_lang', lang);
+    setShowPicker(false);
+    setView('app');
+    return true;
+  }
+
+  // 3. Cross-device: check Supabase progress table for any existing record
     try {
       const { data: rows } = await supabase
         .from("progress")
@@ -2014,6 +2035,19 @@ export default function Root() {
         isBeginner: !!normalized?.isBeginner,
         updatedAt: Date.now(),
       });
+    // ── Cross-device: save to Supabase auth metadata + seed progress row ──
+    supabase.auth.updateUser({ data: {
+      active_lang: langCode,
+      lp_profile: JSON.stringify(normalized),
+    }}).catch(() => {});
+    (async () => {
+      await supabase.from("progress").delete().eq("user_id", user.id).eq("language", langCode);
+      await supabase.from("progress").insert({
+        user_id: user.id, language: langCode,
+        completed: [], xp: 0, trail_xp: 0,
+        updated_at: new Date().toISOString()
+      });
+    })().catch(() => {});
     }
     setOnboardingProfile(normalized);
     setActiveLang(langCode);
