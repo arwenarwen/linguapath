@@ -363,8 +363,9 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
     setProgress(p); progressRef.current = p;
     if (user?.id) {
       supabase.from("progress").select("completed,xp,trail_xp,updated_at")
-        .eq("user_id", user.id).eq("language", activeLang).maybeSingle()
-        .then(({ data }) => {
+        .eq("user_id", user.id).eq("language", activeLang).order("updated_at", { ascending: false }).limit(1)
+        .then(({ data: rows }) => {
+          const data = rows?.[0];
           if (!data) return;
           const cur = progressRef.current;
           const merged = {
@@ -467,12 +468,15 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
     }
 
     if (user?.id) {
-      supabase.from("progress").upsert({
-        user_id: user.id, language: activeLang,
-        completed: next.completed, xp: next.xp,
-        trail_xp: getTrailPoints(user.id),
-        updated_at: new Date().toISOString(),
-      }, { onConflict: "user_id,language" }).then(null, () => {});
+      (async () => {
+        const _p = progressRef.current;
+        const _payload = { user_id: user.id, language: activeLang,
+          completed: _p.completed, xp: _p.xp,
+          trail_xp: getTrailPoints(user.id),
+          updated_at: new Date().toISOString() };
+        await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
+        await supabase.from("progress").insert(_payload);
+      })().catch(() => {});
     }
 
     // Save stars per lesson
@@ -672,12 +676,15 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
           setProgress(next); progressRef.current = next;
           saveProgress(user?.id, activeLang, next);
           if (user?.id) { localStorage.setItem(`lp_xpts_${user.id}_${activeLang}`, Date.now().toString());
-            supabase.from("progress").upsert({
-              user_id: user.id, language: activeLang,
-              completed: next.completed, xp: next.xp,
-              trail_xp: getTrailPoints(user.id),
-              updated_at: new Date().toISOString(),
-            }, { onConflict: "user_id,language" }).then(null, () => {});
+            (async () => {
+              const _p = progressRef.current;
+              const _payload = { user_id: user.id, language: activeLang,
+                completed: _p.completed, xp: _p.xp,
+                trail_xp: getTrailPoints(user.id),
+                updated_at: new Date().toISOString() };
+              await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
+              await supabase.from("progress").insert(_payload);
+            })().catch(() => {});
           }
           return true;
         }}
