@@ -358,13 +358,19 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
   }, [autoStartLesson]);
 
   // Load progress + merge with Supabase (restores XP + trail XP cross-device)
+  // FIX: Do NOT select trail_xp (doesn't exist in DB). Only load completed and xp.
+  // Always restore trail points from localStorage since they're stored separately.
   useEffect(() => {
     const p = loadProgress(user?.id, activeLang);
     setProgress(p); progressRef.current = p;
     if (user?.id) {
-      supabase.from("progress").select("completed,xp,trail_xp,updated_at")
+      supabase.from("progress").select("completed,xp,updated_at")
         .eq("user_id", user.id).eq("language", activeLang).order("updated_at", { ascending: false }).limit(1)
-        .then(({ data: rows }) => {
+        .then(({ data: rows, error: err }) => {
+          if (err) {
+            console.error("[Progress Load] Supabase query error:", err);
+            return;
+          }
           const data = rows?.[0];
           if (!data) return;
           const cur = progressRef.current;
@@ -378,14 +384,9 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
           };
           setProgress(merged); progressRef.current = merged;
           saveProgress(user?.id, activeLang, merged);
-          // Restore trail XP from Supabase if local is lower (cross-device recovery)
-          const remoteTrail = data.trail_xp || 0;
-          const localTrail  = getTrailPoints(user?.id);
-          if (remoteTrail > localTrail) {
-            lsSetJSON(`lp_tp_${user.id}`, remoteTrail);
-            setStarsMap(getLessonStarsMap(user?.id, activeLang));
-          }
-        }).catch(() => {});
+        }).catch((err) => {
+          console.error("[Progress Load] Supabase error:", err);
+        });
     }
   }, [user?.id, activeLang]);
 
@@ -448,6 +449,10 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
     setProgress(next);
     progressRef.current = next;
     saveProgress(user?.id, activeLang, next);
+    // FIX: Set XP timestamp when saving to ensure proper merge on next login
+    if (user?.id) {
+      localStorage.setItem(`lp_xpts_${user.id}_${activeLang}`, Date.now().toString());
+    }
     addTrailPoints(user?.id, earnedTP);
     addWeeklyLesson(user?.id);
     addWeeklyXP(user?.id, summary.totalXP);
@@ -476,7 +481,9 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
           updated_at: new Date().toISOString() };
         await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
         await supabase.from("progress").insert(_payload);
-      })().catch(() => {});
+      })().catch((err) => {
+        console.error("[Progress Save] Supabase error:", err);
+      });
     }
 
     // Save stars per lesson
@@ -684,7 +691,9 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
                 updated_at: new Date().toISOString() };
               await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
               await supabase.from("progress").insert(_payload);
-            })().catch(() => {});
+            })().catch((err) => {
+              console.error("[Statue Shop] Supabase error:", err);
+            });
           }
           return true;
         }}
