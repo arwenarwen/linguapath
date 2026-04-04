@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { getStreak, FREE_LESSONS_PER_DAY, getDailyUsage, getCheckpointPass, setCheckpointPass, getPlacementState, getXPLevel, DAILY_LESSON_GOAL, spendTrailPoints, CHECKPOINT_TP_REQUIRED } from "../lib/appState";
 
 const CEFR = ["A1","A2","B1","B2","C1","C2"];

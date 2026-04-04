@@ -477,7 +477,6 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         const _p = progressRef.current;
         const _payload = { user_id: user.id, language: activeLang,
           completed: _p.completed, xp: _p.xp,
-          trail_xp: getTrailPoints(user.id),
           updated_at: new Date().toISOString() };
         await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
         await supabase.from("progress").insert(_payload);
@@ -687,7 +686,6 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
               const _p = progressRef.current;
               const _payload = { user_id: user.id, language: activeLang,
                 completed: _p.completed, xp: _p.xp,
-                trail_xp: getTrailPoints(user.id),
                 updated_at: new Date().toISOString() };
               await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
               await supabase.from("progress").insert(_payload);
