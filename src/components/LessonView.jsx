@@ -140,7 +140,7 @@ async function speak(text, langCode) {
     const played = await tryPlayStaticAudio({ text, langCode });
     if (played) return;
     // German uses static audio only — missing files should be pre-recorded
-    if (langCode === "de") return;
+    // Fall through to ElevenLabs for any missing static audio
     // Other languages fall through to ElevenLabs
     const res = await fetch("/api/tts", {
       method:"POST", headers:{"Content-Type":"application/json"},
@@ -180,12 +180,18 @@ function buildQuestions(module, langCode) {
       if (!w) return;
       const t = getTarget(w, langCode);
       if (!t || !w.en) return;
-      const wrong = dedupeOptions(t, shuffle(vocab
-        .filter(v => v && getTarget(v,langCode) !== t && getTarget(v,langCode))
-        .map(v => getTarget(v,langCode))));
-      if (wrong.length < 3) return;
-      qs.push({ type:"tgt", q:`Say this in ${langName}: "${w.en}"`, subtext: w.en,
-        opts: shuffle([t, ...wrong.slice(0,3)]), ans: t });
+      const normEn = normAnswer(w.en);
+    const allValidTargets = new Set(
+      vocab.filter(v => v && normAnswer(v.en || '') === normEn)
+           .map(v => getTarget(v, langCode)).filter(Boolean)
+    );
+    const wrong = dedupeOptions(t, shuffle(vocab
+      .filter(v => v && !allValidTargets.has(getTarget(v,langCode)) && getTarget(v,langCode))
+      .map(v => getTarget(v,langCode))));
+    if (wrong.length < 3) return;
+    qs.push({ type:"tgt", q:`Say this in ${langName}: "${w.en}"`, subtext: w.en,
+      opts: shuffle([t, ...wrong.slice(0,3)]), ans: t,
+      allAns: [...allValidTargets] });
     });
 
     dialogue.forEach(line => {

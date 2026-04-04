@@ -149,11 +149,11 @@ function FreeLimitBanner({used,max,onUpgrade,C}) {
 }
 
 // ── CheckpointCard: the cabin at end of each unit with a unit animal ──────────
-function CheckpointCard({cpPos,completedCt,totalLessons,unitAnimal,onOpen,allDone,trailPoints=0,trailRequired=100}) {
+function CheckpointCard({cpPos,completedCt,totalLessons,unitAnimal,onOpen,allDone,trailPoints=0,trailRequired=100, cpPassed=false}) {
   const name = ANIMAL_NAMES[unitAnimal]||"Friend";
   const hasEnoughTP = trailPoints >= trailRequired;
   // Can open checkpoint if all lessons done AND enough Trail XP
-  const canOpen = allDone && hasEnoughTP;
+  const canOpen = allDone && (hasEnoughTP || cpPassed);
   const tpPct = Math.min(100, Math.round((trailPoints / trailRequired) * 100));
   const lessonsLeft = totalLessons - completedCt;
 
@@ -919,6 +919,7 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
 
   const svgH=cpPos.y+90;
   const allDone=completedCt>=lessons.length;
+  const cpPassed=!!getCheckpointPass(userId,langCode,unit.unit)?.passed;
   const scaledH=Math.round(svgH*scale);
 
   return (
@@ -1035,6 +1036,7 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
         onOpen={()=>setAnimalModal(true)}
         trailPoints={trailPoints}
         trailRequired={trailRequired}
+        cpPassed={cpPassed}
       />
 
       {/* Fox sits at checkpoint when all lessons done */}
@@ -1042,7 +1044,7 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
           <div style={{position:"absolute",left:cpPos.x+(CW/2)-10,top:cpPos.y-14,fontSize:20,filter:"drop-shadow(0 2px 6px rgba(255,130,0,0.4))",animation:"idleBob 2.4s ease-in-out infinite",zIndex:6,pointerEvents:"none"}}>🦊</div>
         )}
         {/* Animal talk modal */}
-      {animalModal&&(
+      {animalModal&&createPortal(
         <CheckpointScreen
           animal={unitAnimal}
           unitName={unit.unit}
