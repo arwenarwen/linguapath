@@ -1054,7 +1054,8 @@ function TrailUnit({unit,color,completed,nextLessonId,justCompletedId,doAnimate,
           langCode={langCode}
           onClose={()=>setAnimalModal(false)}
           onCheckpointPass={onCheckpointPass}
-        />
+        />,
+        document.body
       )}
       </div>{/* end inner scale wrapper */}
     </div>

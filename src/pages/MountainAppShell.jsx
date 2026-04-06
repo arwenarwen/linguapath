@@ -478,8 +478,10 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
         const _payload = { user_id: user.id, language: activeLang,
           completed: _p.completed, xp: _p.xp,
           updated_at: new Date().toISOString() };
-        await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
-        await supabase.from("progress").insert(_payload);
+        const { error: delErr } = await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
+        if (delErr) console.error("[Progress Save] DELETE error:", JSON.stringify(delErr));
+        const { error: insErr } = await supabase.from("progress").insert(_payload);
+        if (insErr) console.error("[Progress Save] INSERT error:", JSON.stringify(insErr), "payload keys:", Object.keys(_payload));
       })().catch((err) => {
         console.error("[Progress Save] Supabase error:", err);
       });
@@ -687,8 +689,10 @@ export default function MountainAppShell({ user, activeLang: activeLangProp, onC
               const _payload = { user_id: user.id, language: activeLang,
                 completed: _p.completed, xp: _p.xp,
                 updated_at: new Date().toISOString() };
-              await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
-              await supabase.from("progress").insert(_payload);
+              const { error: delErr2 } = await supabase.from("progress").delete().eq("user_id", user.id).eq("language", activeLang);
+              if (delErr2) console.error("[Statue Shop] DELETE error:", JSON.stringify(delErr2));
+              const { error: insErr2 } = await supabase.from("progress").insert(_payload);
+              if (insErr2) console.error("[Statue Shop] INSERT error:", JSON.stringify(insErr2), "payload keys:", Object.keys(_payload));
             })().catch((err) => {
               console.error("[Statue Shop] Supabase error:", err);
             });
